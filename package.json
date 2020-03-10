@@ -1,0 +1,22 @@
+{
+  "name": "insights-docs",
+  "version": "0.0.1",
+  "description": ":book: Welcome to the documentation for [Fairwinds Insights](https://fairwinds.com/insights)!",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "vuepress build -d ./docs/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FairwindsOps/insights-docs.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FairwindsOps/insights-docs/issues"
+  },
+  "homepage": "https://github.com/FairwindsOps/insights-docs#readme"
+}
