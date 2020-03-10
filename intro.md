@@ -17,3 +17,4 @@ Fairwinds Insights currently supports the following Kubernetes auditing tools:
 * Release Watcher - checks for updates to Helm 3 charts
 * RBAC Reporter - uploads metadata about RBAC profiles
 * Workload Reporter - uploads metadata about workloads
+

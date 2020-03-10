@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/FairwindsOps/insights-docs/issues"
   },
-  "homepage": "https://github.com/FairwindsOps/insights-docs#readme"
+  "homepage": "https://github.com/FairwindsOps/insights-docs#readme",
+  "devDependencies": {
+    "vuepress-plugin-clean-urls": "^1.1.1",
+    "vuepress-plugin-redirect": "^1.2.3"
+  }
 }

@@ -12,8 +12,24 @@ module.exports = {
     logo: 'img/logo.svg',
     heroText: "",
     sidebar: [
-      ['/', 'Home'],
-      '/getting-started.html',
+      ['/intro', 'Home'],
+      '/getting-started',
     ],
-  }
+  },
+  plugins: {
+    'vuepress-plugin-clean-urls': {
+      normalSuffix: '',
+      notFoundPath: '/404.html',
+    },
+    redirect: {
+      redirectors: [
+        {
+          base: '/',
+          alternative: [
+            'intro',
+          ],
+        },
+      ],
+    },
+  },
 }
