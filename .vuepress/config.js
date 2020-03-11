@@ -9,13 +9,24 @@ module.exports = {
     docsRepo: 'FairwindsOps/insights-docs',
     editLinks: true,
     editLinkText: 'Help us improve this page',
-    logo: 'img/logo.svg',
+    logo: '/img/logo.svg',
     heroText: "",
     sidebar: [
       ['/intro', 'Home'],
-      '/getting-started',
-      '/insights-agent',
-    ],
+    {
+      title: "Installation",
+      collapsable: false,
+      children: [
+        '/getting-started',
+        '/insights-agent',
+      ],
+    }, {
+      title: "Features",
+      collapsable: false,
+      children: [
+        "/features/action-items",
+      ],
+    }],
   },
   plugins: {
     'vuepress-plugin-clean-urls': {
