@@ -17,14 +17,44 @@ module.exports = {
       title: "Installation",
       collapsable: false,
       children: [
-        '/getting-started',
-        '/insights-agent',
+        '/installation/getting-started',
+        '/installation/insights-agent',
       ],
     }, {
       title: "Features",
-      collapsable: false,
       children: [
         "/features/action-items",
+        "/features/cluster-comparison",
+        "/features/workloads",
+        "/features/add-ons",
+        "/features/rbac",
+      ],
+    }, {
+      title: "Plugins",
+      children: [
+        "/plugins/new",
+        "/plugins/polaris",
+        "/plugins/goldilocks",
+        "/plugins/trivy",
+        "/plugins/kubesec",
+        "/plugins/kube-hunter",
+        "/plugins/release-watcher",
+        "/plugins/rbac-reporter",
+        "/plugins/workloads",
+      ],
+    }, {
+      title: "Management",
+      children: [
+        "/management/membership",
+        "/management/delete",
+      ],
+    }, {
+      title: "API Access",
+      children: [
+        "/api/authentication",
+        "/api/clusters",
+        "/api/reports",
+        "/api/custom-reports",
       ],
     }],
   },
