@@ -13,6 +13,7 @@ module.exports = {
     heroText: "",
     sidebar: [
       ['/intro', 'Home'],
+      ["/release-notes", "Release Notes"],
     {
       title: "Installation",
       collapsable: false,
