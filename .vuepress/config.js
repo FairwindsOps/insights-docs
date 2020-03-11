@@ -14,6 +14,7 @@ module.exports = {
     sidebar: [
       ['/intro', 'Home'],
       '/getting-started',
+      '/insights-agent',
     ],
   },
   plugins: {

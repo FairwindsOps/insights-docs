@@ -23,3 +23,8 @@ We recommend using Helm (either v2 or v3) to install the agent, as this will
 allow you to customize your installation.
 
 ![Helm install](img/helm-install.png)
+
+Once you run the helm command provided in your cluster's settings page, you should see the
+page refresh after about 60 seconds, with some high-level data about your cluster.
+
+If the page doesn't refresh automatically, check out the [debugging instructions](./insights-agent#debugging)
