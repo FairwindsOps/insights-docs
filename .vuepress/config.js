@@ -59,7 +59,6 @@ module.exports = {
     }],
   },
   plugins: {
-    /*
     'vuepress-plugin-clean-urls': {
       normalSuffix: '',
       notFoundPath: '/404.html',
@@ -72,8 +71,13 @@ module.exports = {
             'intro',
           ],
         },
+        {
+          base: '/insights-docs/',
+          alternative: [
+            'intro',
+          ],
+        },
       ],
     },
-    */
   },
 }
