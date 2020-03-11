@@ -76,7 +76,7 @@ module.exports = {
         {
           base: '/insights-docs/',
           alternative: [
-            'intro',
+            'intro.html',
           ],
         },
       ],
