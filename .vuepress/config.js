@@ -32,8 +32,8 @@ module.exports = {
       ],
     }, {
       title: "Plugins",
+      sidebarDepth: 0,
       children: [
-        "/plugins/new",
         "/plugins/polaris",
         "/plugins/goldilocks",
         "/plugins/trivy",
@@ -42,6 +42,7 @@ module.exports = {
         "/plugins/release-watcher",
         "/plugins/rbac-reporter",
         "/plugins/workloads",
+        "/plugins/new",
       ],
     }, {
       title: "Management",
