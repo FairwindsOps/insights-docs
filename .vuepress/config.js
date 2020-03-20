@@ -11,7 +11,7 @@ module.exports = {
     logo: '/img/logo.svg',
     heroText: "",
     sidebar: [
-      ['/intro', 'Home'],
+      ['/', 'Home'],
       ["/release-notes", "Release Notes"],
     {
       title: "Installation",
