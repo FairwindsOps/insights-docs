@@ -1,4 +1,14 @@
 # Fairwinds Insights Documentation
+<blockquote class="github-only">
+<p>
+You're currently viewing the documenation on GitHub. Links, images,
+and other features will not work properly.
+</p>
+<p>
+To view the full docs, visit
+<a href="http://insights.docs.fairwinds.com">insights.docs.fairwinds.com</a>
+</p>
+</blockquote>
 
 :book: Welcome to the documentation for [Fairwinds Insights](https://fairwinds.com/insights)!
 
