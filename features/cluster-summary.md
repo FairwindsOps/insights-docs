@@ -34,7 +34,7 @@ The **Overall** score is an average of the **Security**, **Efficiency**, and **R
 ## Cost Estimates
 <img :src="$withBase('/img/cost-estimates.png')" alt="cluster cost estimates">
 
-We estimate costs based on pricing for AWS on-demand EC2 instances.
+We estimate costs based on pricing for AWS reserved EC2 instances.
 
 We use the numbers provided by AWS to come up with average per-CPU and per-GB-RAM costs.
 We multiply these by the resources available in your cluster, and use the maximum of CPU and RAM pricing to come up with the final number.
