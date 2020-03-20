@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "vuepress build -d ./docs/",
+    "build": "vuepress build -d ./docs/ && git checkout -- ./docs/CNAME",
     "serve": "vuepress dev --port 3003"
   },
   "repository": {
