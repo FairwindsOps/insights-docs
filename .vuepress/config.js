@@ -66,21 +66,5 @@ module.exports = {
       notFoundPath: '/404.html',
     },
     */
-    redirect: {
-      redirectors: [
-        {
-          base: '/',
-          alternative: [
-            'intro',
-          ],
-        },
-        {
-          base: '/insights-docs/',
-          alternative: [
-            'intro.html',
-          ],
-        },
-      ],
-    },
   },
 }
