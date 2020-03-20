@@ -23,6 +23,7 @@ module.exports = {
     }, {
       title: "Features",
       children: [
+        "/features/cluster-summary",
         "/features/action-items",
         "/features/cluster-comparison",
         "/features/workloads",
