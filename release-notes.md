@@ -5,6 +5,28 @@ tags: fairwinds insights kubernetes security reliability efficiency docker audit
 
 # Release Notes
 
+## 0.8.0
+### Export Action Items to CSV
+Action Items can now be exported from the Fairwinds Insights platform into CSV format. This enables DevOps Leads and Managers to build custom reports, charts, and integrate findings with other business processes.
+
+### View RBAC Roles
+Well configured RBAC permissions is important for maintaining a secure Kubernetes environment. As infrastructure changes, DevOps engineers and SREs need a way to keep tabs on RBAC configurations so users and applications only get access to the permissions they need. We have made it easy to view which users/accounts have access to what resources, and whether they may be over-permissioned.
+
+### Usability Improvements for Container Image Vulnerabilities
+Within a container image finding, the layout of vulnerable package information is now easier to read and navigate.
+
+### Vulnerable Packages now include “Fixed In Version” information
+Fairwinds Insights now reports “Fixed Version” information for vulnerable packages identified within container images. This saves time for DevOps engineers who need to find a secure version to upgrade to.
+
+### Slack Notification Improvements
+We’ve continued to enhance our Slack integration based on customer feedback. Admins can now select which channel Slack notifications are sent to. In addition, Admins can select whether to receive notifications for new findings in real-time, or as a “Daily Digest” summarizing new findings from the past day.
+
+### Limit cluster comparison to a specific namespace
+In the previous release, we released a cluster comparison feature that enables DevOps engineers and SREs to visually review configuration differences between two different clusters. For a cluster with dozens of workloads or namespaces, this can be a lot of information. Users now have the option to limit the comparison to specific namespaces, making results easier to review and analyze.
+
+### CIS Benchmark Scanning
+The CIS Kubernetes benchmark is a popular standard and baseline for assessing the security of your cluster. The test includes manual and automated tests; for the current implementation, Fairwinds runs the automated tests from the kube-bench open source project and reports back items that currently fail the test. CIS Benchmark Scanning is just the start of some larger Policy Management use cases we’re hearing from clients, so expect additional innovation in this area.
+
 ## 0.7.0
 ### Admin users can limit cluster access for users
 Admins who add a user to an existing Organization can select whether they see all clusters, or specific clusters only. In the future, Admins will also be able to manage namespace access via UI controls.
