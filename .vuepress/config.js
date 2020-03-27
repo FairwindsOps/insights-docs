@@ -29,6 +29,7 @@ module.exports = {
         "/features/workloads",
         "/features/add-ons",
         "/features/rbac",
+        "/features/slack",
       ],
     }, {
       title: "Plugins",
