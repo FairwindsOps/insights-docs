@@ -23,7 +23,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: npm run build
+    - run: npm install
     - run: |
         git config user.email "insights@fairwinds.com"
         git config user.name "Circle CI"
