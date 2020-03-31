@@ -27,8 +27,5 @@ kubectl create secret generic insights-pull --from-file=config.json=$HOME/.docke
 Note that we named the secret `insights-pull`, and put it in the `insights-agent` namespace.
 We can then install the agent with
 ```bash
-helm upgrade --install insights-agent fairwinds-stable/insights-agent \
-  --namespace insights-agent \
   --set trivy.privateImages.dockerConfigSecret=insights-pull
-  # Don't forget any other values the chart needs!
 ```

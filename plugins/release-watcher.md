@@ -1,5 +1,5 @@
 # Release Watcher
-Release Watcher is a (not-yet-released) project for checking your
+Release Watcher is a (not-yet-released) project from Fairwinds for checking your
 installed Helm 3 charts against the latest versions available.
 If there's a new release available, Release Watcher will create an
 Action Item for the upgrade.

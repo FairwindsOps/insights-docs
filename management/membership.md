@@ -8,7 +8,7 @@ For each organization, there are two levels of access:
 
 ## Managing Members
 To add a new user to your organization, go to your organization's settings page.
-You can then enter an email address, and decide what their level of access should be.
+You can then enter an email address, and decide what their level of access should be. For **members** you can further restrict access to particular clusters by unchecking **All Clusters** and clicking the check boxes next to each cluster that user should have access to.
 
 <img :src="$withBase('/img/new-member.png')" alt="add a user">
 

@@ -1,6 +1,6 @@
 # Delete
 > Note: If you'd like your data to be permanently
-> deleted, please contact insights@fairwinds.com
+> deleted, please contact <insights@fairwinds.com>
 >
 > Also note that deletes are permanent, and cannot be undone.
 

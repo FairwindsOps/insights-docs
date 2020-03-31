@@ -44,7 +44,7 @@ Keeping track of the add-ons installed in your cluster, the version you’re usi
 Trivy now runs more efficiently. Instead of scanning all images each time it runs, it will only scan 20 images at a time, with a preference for new images. This helps reduce overall compute overhead required for image scanning.
 
 ### Self-hosted
-We have also started assessing demand for a self-hosted version of Fairwinds Insights. If you are interested in this capability, please reply to this email or contact us at insights@fairwinds.com.
+We have also started assessing demand for a self-hosted version of Fairwinds Insights. If you are interested in this capability, please reply to this email or contact us at <insights@fairwinds.com>.
 
 ## 0.6.0
 #### Cost metrics improvements
@@ -83,7 +83,7 @@ field. This allows you to easily share links to specific views of the action ite
 
 #### API key support
 You can now interact with the Insights API programmatically using API key authorization.
-If you're interested in using the Insights API, get in touch with us at `insights@fairwinds.com`
+If you're interested in using the Insights API, get in touch with us at <insights@fairwinds.com>
 for more details.
 
 #### Helm install customization
@@ -95,7 +95,7 @@ To better understand and serve our users, we've added a post-signup survey. The 
 in, you'll be asked to provide your name, title, organization, and any feedback you have for us.
 
 We're always looking to improve the application, so if you have suggestions for new features,
-don't hesitate to reach out to us at `insights@fairwinds.com`.
+don't hesitate to reach out to us at <insights@fairwinds.com>.
 
 #### Email alerts
 When you add a user to your organization, they'll get an email letting them know.
