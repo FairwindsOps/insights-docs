@@ -1,8 +1,10 @@
 # Cluster Comparison
 If you have the Insights Agent installed on multiple Kubernetes clusters, you
 can use Fairwinds Insights to compare the workloads in those clusters.
-This is particularly useful if you've got **staging** and **production** clusters,
+This is particularly useful if you have **staging** and **production** clusters,
 or multiple clusters that are meant to mirror one another.
+
+You can also compare two namespaces within the same cluster.
 
 In the example below, we examine the differences in the `kube-system` namespace
 between a production cluster and a staging cluster:
