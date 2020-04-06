@@ -6,10 +6,10 @@ tags: fairwinds insights kubernetes security reliability efficiency docker audit
 # Release Notes
 
 ## 1.0.0
-## Trial Functionality
+### Trial Functionality
 New Organizations created on Fairwinds Insights will automatically opt-in to a 14 Day Trial with access to all functionality. After the 14 day period, users will have the option of purchasing a subscription for their Organization or moving to the Community tier, which is feature-limited but free to use.
 
-## Updates to our Customer Agreement
+### Updates to our Customer Agreement
 As part of our General Availability, we have updated our [Customer Agreement](https://insights.fairwinds.com/customer-agreement). The Customer Agreement (formerly referred to as the Fairwinds Insights Terms of Use), effective March 13th, 2020, provides the following major updates:
 * Customer definitions. Customers who do not meet the definition of a “Commercial Customer” may lose functionality. This typically occurs at the end of a Trial period if no commercial subscription is purchased; as a result, the Organization is assigned to the Fairwinds Insights Community tier.
 * Customers who have purchased Fairwinds Insights to run locally in a self-hosted manner are classified as a “Local Customer” in the Customer Agreement.
