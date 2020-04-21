@@ -5,6 +5,13 @@ tags: fairwinds insights kubernetes security reliability efficiency docker audit
 
 # Release Notes
 
+## 1.1.0
+### Free Text Search through Action Items
+The Action Items page now includes free text search, enabling users to quickly locate Action Items by any of the visible columns in the table.
+
+### UI Refresh
+Various UI refreshes have been made, including enhancements to the data tables. Additional UI enhancements are expected in the coming months.
+
 ## 1.0.0
 ### Trial Functionality
 New Organizations created on Fairwinds Insights will automatically opt-in to a 14 Day Trial with access to all functionality. After the 14 day period, users will have the option of purchasing a subscription for their Organization or moving to the Community tier, which is feature-limited but free to use.
