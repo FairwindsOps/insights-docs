@@ -12,13 +12,10 @@ To view the full docs, visit
 
 :book: Welcome to the documentation for [Fairwinds Insights](https://fairwinds.com/insights)!
 
-Fairwinds Insights is a Kubernetes auditing platform. We integrate several different
-open source auditing tools, and aggregate their results. This helps Kubernetes
-administrators understand any risks to security, reliablity, and efficiency
-lurking in their clusters. Findings are automatically ranked by severity, and can
-be assigned, annotated, or closed.
+Fairwinds Insights is a configuration validation platform that enables engineering and DevOps teams to run Kubernetes workloads securely, efficiently, and reliably. The platform integrates trusted open source tools that proactively monitor Kubernetes and container configurations, recommending improvements that help avoid problems before they arise. Recommendations are stored in a single location which enables teams to track and prioritize issues, collaborate across teams, and apply best practices as applications move from development to production. 
 
-Fairwinds Insights currently supports the following Kubernetes auditing tools:
+Learn more about [installing Fairwinds Insights](https://insights.docs.fairwinds.com/installation/getting-started.html), features like [Slack notifications](https://insights.docs.fairwinds.com/features/slack.html), and our supported plugins below:
+
 * [Fairwinds Polaris](https://github.com/FairwindsOps/polaris) - checks best practices in workload configuration
 * [Goldilocks](https://github.com/FairwindsOps/goldilocks) - recommends resource limits and requests based on actual resource usage
 * [Trivy](https://github.com/aquasecurity/trivy) - scans Docker images for known vulnerabilities
