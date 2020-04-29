@@ -9,7 +9,7 @@ and will disappear from the default Action Items view.
 
 ## Filtering
 By default, Insights won't show you items that have been fixed or resolved. If you'd like to
-see these items, you can clear the filters by clicking the `x` next to them:
+see these items, you can clear the filters by clicking the down arrow next to each and unchecking the selected value:
 
 <div class="mini-img">
   <img :src="$withBase('/img/action-item-filters.png')" alt="action item filters">
@@ -24,7 +24,7 @@ next to a column's name:
 
 ## Sorting
 By default, Insights sorts Action Items by severity. You can sort by a different field
-by clicking the sort icon next to its column:
+by clicking the header of a column:
 
 <div class="mini-img">
   <img :src="$withBase('/img/action-item-sort.png')" alt="action item sort">
