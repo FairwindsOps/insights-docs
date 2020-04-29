@@ -5,6 +5,33 @@ tags: fairwinds insights kubernetes security reliability efficiency docker audit
 
 # Release Notes
 
+##1.2.0
+### Cluster Overview Enhancements
+Fairwinds Insights is a comprehensive configuration validation platform that enables engineering and DevOps teams to run applications on Kubernetes securely, efficiently, and reliably. The software reports findings and recommendations for containers, deployments, and cluster infrastructure. Ultimately, making sense of this data and helping users answer “now what” is a key problem that Fairwinds Insights is uniquely positioned to solve. 
+
+We have completely redesigned the Cluster Overview page to summarize data in your cluster and namespaces by severity and category. Users can click into these specific views to get “shortcut” access to relevant findings.
+
+### DataDog Integration (Beta)
+We are excited to announce the Beta release of our integration with DataDog. Many Fairwinds Insights customers use DataDog to monitor overall infrastructure performance and respond to problems. Integrating proactive recommendations around security, efficiency, and reliability is a natural extension of this experience. With this integration, SREs and DevOps engineers can leverage Fairwinds Insights data from within DataDog.
+
+The feature can be found under the Organization Settings section and requires you to have a DataDog API key. Give it a try and tell us what you think!
+
+### Accessibility Improvements
+Accessibility has been improved throughout the Fairwinds Insights platform to make the system more operable and understandable for all users. Specific changes include:
+Icon buttons, such as pagination controls on the Action Items page, now have labels
+Non-icon buttons, such as the filters on the Action items page, now have labels
+Form fields have been paired with labels, such as those found on the login and registration forms
+Logical groupings now have title attributes, such as the row of filters on the Action Items page
+
+### Ease of use Improvements for CIS Benchmark (Kube-bench) Findings
+The CIS Benchmark for Kubernetes is a popular baseline for assessing the security posture of a cluster. By default, Fairwinds leverages [Kube-bench](https://github.com/aquasecurity/kube-bench) for this information. The following improvements have been made to the display of findings:
+Test number is now displayed in the finding title, making it easier to map findings back to specific CIS Benchmark tests.
+The command used to run the test is now available in the Description, providing easier reproducibility.
+Fine grained severities have been applied to Kube-bench findings, making it easier to prioritize results.
+
+### Fairwinds Announcements
+Fairwinds has introduced a new “Announcements” tab under the Organization overview screen to provide visibility into security and vulnerability announcements investigated by the Fairwinds SRE team. This is a feature of the ClusterOps Managed Service that is now available to commercial users of Fairwinds Insights.
+
 ## 1.1.0
 ### Free Text Search through Action Items
 The Action Items page now includes free text search, enabling users to quickly locate Action Items by any of the visible columns in the table.
