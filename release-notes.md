@@ -5,7 +5,7 @@ tags: fairwinds insights kubernetes security reliability efficiency docker audit
 
 # Release Notes
 
-##1.2.0
+## 1.2.0
 ### Cluster Overview Enhancements
 Fairwinds Insights is a comprehensive configuration validation platform that enables engineering and DevOps teams to run applications on Kubernetes securely, efficiently, and reliably. The software reports findings and recommendations for containers, deployments, and cluster infrastructure. Ultimately, making sense of this data and helping users answer “now what” is a key problem that Fairwinds Insights is uniquely positioned to solve. 
 
