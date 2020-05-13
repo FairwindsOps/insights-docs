@@ -15,7 +15,7 @@ configured independently using Helm:
 * `releasewatcher`
 * `rbacreporter`
 
-To read more about the different report types, visit [the home page](./README)
+To read more about the different report types, visit [the home page](/)
 
 ## Configuration
 The Insights Agent is installed and configured using Helm. To see the full list of options,
@@ -83,7 +83,7 @@ resource-related issues, try setting higher resource limits.
 If you're using the helm chart, you can do this by adding
 
 ```bash
---set $reportType.resources.limits.memory=1G
+--set $reportType.resources.limits.memory=1Gi
 # or
 --set $reportType.resources.limits.cpu=1000m
 ```

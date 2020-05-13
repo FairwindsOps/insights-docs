@@ -30,6 +30,7 @@ module.exports = {
         "/features/add-ons",
         "/features/rbac",
         "/features/slack",
+        "/features/datadog",
       ],
     }, {
       title: "Plugins",

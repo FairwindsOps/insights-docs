@@ -4,13 +4,15 @@ The Cluster Summary page gives an overview of your cluster. You can find
 the following information here:
 * Priorities
 * Namespace Summaries
+* Report Breakdown
 * Cluster Breakdown
-  * Current version of the Insights Agent
   * Kubernetes Version
-  * Nodes
-  * Namespaces
-  * Workloads
-  * Pods
+  * Current version of the Insights Agent
+  * Node count
+  * Namespace count
+  * Workload count
+  * Pod count
+* Plugins list
 
 ## Priorities
 The Priorities section will show you the total number of action items broken down by severity and category.
@@ -25,3 +27,10 @@ and assigned a severity of `warning` (orange) severity or `danger` (red).
 
 <img :src="$withBase('/img/cluster-summary-namespaces-summary.png')" alt="namespace summary screenshot">
 
+## Report Breakdown
+The Report Breakdown shows a summary of open action items organized by report configured in the Insights Agent.
+
+<img :src="$withBase('/img/cluster-summary-reports-breakdown.png')" alt="nreport breakdown screenshot">
+
+## Plugins List
+The Plugins section shows different integrations that can be setup from Insights including sending notifications to Slack and metrics to Datadog.
