@@ -1,3 +1,12 @@
+---
+meta:
+  - name: title
+    content: Getting Started with Fairwinds Insights
+  - name: description
+    content: How to install the Insights Agent and start auditing your Kubernetes cluster
+  - name: keywords
+    content: Insights Agent, Fairwinds Insights, Getting Started, Kuberenetes Audit
+---
 # Getting Started
 
 ## Create a new Cluster
