@@ -15,7 +15,7 @@ configured independently using Helm:
 * `releasewatcher`
 * `rbacreporter`
 
-To read more about the different report types, visit [the home page](./README)
+To read more about the different report types, see the [Plugins Section](/plugins/polaris).
 
 ## Configuration
 The Insights Agent is installed and configured using Helm. To see the full list of options,
