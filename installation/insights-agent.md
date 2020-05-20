@@ -83,7 +83,7 @@ resource-related issues, try setting higher resource limits.
 If you're using the helm chart, you can do this by adding
 
 ```bash
---set $reportType.resources.limits.memory=1G
+--set $reportType.resources.limits.memory=1Gi
 # or
 --set $reportType.resources.limits.cpu=1000m
 ```
