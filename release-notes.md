@@ -5,6 +5,14 @@ tags: fairwinds insights kubernetes security reliability efficiency docker audit
 
 # Release Notes
 
+## 1.3.0
+### Recategorized Action Items
+All findings are now normalized to one of three categories: Security, Efficiency, and Reliability. Categories can also have findings from multiple report types and sources. For example, Fairwinds Polaris will report findings for all three categories, while Kube-bench will only report findings for Security.
+
+### New Dashboard: Findings by Report Type
+The Cluster Overview page now includes a summary of findings by Report Type, listing the top issues and the number of workloads that are affected by those issues. For example, a user who is concerned about memory and CPU configurations may look at the Fairwinds Goldilocks report to understand how many workloads are affected with excessively high or low resource limits.
+
+
 ## 1.2.0
 ### Cluster Overview Enhancements
 Fairwinds Insights is a comprehensive configuration validation platform that enables engineering and DevOps teams to run applications on Kubernetes securely, efficiently, and reliably. The software reports findings and recommendations for containers, deployments, and cluster infrastructure. Ultimately, making sense of this data and helping users answer “now what” is a key problem that Fairwinds Insights is uniquely positioned to solve. 
