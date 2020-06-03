@@ -7,11 +7,6 @@ meta:
   - name: keywords
     content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
 ---
----
-title: Fairwinds Insights Release Notes
-tags: fairwinds insights kubernetes security reliability efficiency docker audit
----
-
 # Release Notes
 
 ## 1.3.0
