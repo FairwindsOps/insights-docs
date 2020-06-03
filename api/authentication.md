@@ -1,3 +1,12 @@
+---
+meta:
+  - name: title
+    content: Fairwinds Insights | Authentication
+  - name: description
+    content: Fairwinds Insights provides a REST API, so you can interact with your Insights data programmatically.
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
+---
 # Authentication
 
 Fairwinds Insights provides a REST API, so you can interact with your Insights data
