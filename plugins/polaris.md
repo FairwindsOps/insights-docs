@@ -1,3 +1,12 @@
+---
+meta:
+  - name: title
+    content: Polaris Integration with Fairwinds Insights
+  - name: description
+    content: Polaris, by Fairwinds, is an open source tool for checking workload configurations against a set of best-practices. Fairwinds Insights integrates Polaris.
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, Polaris, open source
+---
 # Polaris
 [Polaris](https://github.com/FairwindsOps/polaris) is an open source tool for
 checking workload configurations against a set of best-practices. It can
