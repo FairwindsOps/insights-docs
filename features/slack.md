@@ -1,3 +1,12 @@
+---
+meta:
+  - name: title
+    content: Fairwinds Insights Slack Integration
+  - name: description
+    content: Fairwinds Insights has an integration with Slack, so you can get notifications about critical changes to your clusters.
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, Slack Integration
+---
 # Slack Notifications
 
 Fairwinds Insights has an integration with Slack, so you can get notifications
