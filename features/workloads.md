@@ -1,3 +1,12 @@
+---
+meta:
+  - name: title
+    content: Fairwinds Insights Workload Feature
+  - name: description
+    content: The Fairwinds Insights workloads tab gives an overview of every workload running in your cluster. Read the documentation.
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, workload
+---
 # Workloads
 
 The Workloads tab gives an overview of every workload running in your cluster.
