@@ -1,3 +1,12 @@
+---
+meta:
+  - name: title
+    content: Fairwinds Insights RBAC Config Check
+  - name: description
+    content: The Fairwinds Insights RBAC tab shows you a list of Roles and ClusterRoles in your cluster. Read the docs.
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, RBAC
+---
 # RBAC
 <!-- TODO: use npm -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
