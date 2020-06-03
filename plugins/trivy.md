@@ -1,3 +1,13 @@
+---
+meta:
+  - name: title
+    content: Trivy and Fairwinds Insights
+  - name: description
+    content: Trivy, an open source tool for scanning Docker images for vulnerabilities, runs scans on your cluster, and results are uploaded to Fairwinds Insights.
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, Trivy, open source
+---
+
 # Trivy
 [Trivy](https://github.com/aquasecurity/trivy) is an open source tool for scanning Docker images
 for vulnerabilities. These scans run on your cluster, and the results are uploaded to Insights
