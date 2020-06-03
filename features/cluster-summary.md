@@ -1,3 +1,13 @@
+---
+meta:
+  - name: title
+    content: Fairwinds Insights Cluster Summary
+  - name: description
+    content: The Fairwinds Insights Cluster Summary page gives an overview of your cluster. Read the documentation.
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, cluster summary
+---
+
 # Cluster Summary
 
 The Cluster Summary page gives an overview of your cluster. You can find
