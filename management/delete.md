@@ -1,3 +1,12 @@
+---
+meta:
+  - name: title
+    content: Fairwinds Insights Management | Delete
+  - name: description
+    content: Learn how to remove a particular cluster from the Fairwinds Insights UI, you can delete it on its settings page. You'll need to be an admin to do this.
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
+---
 # Delete
 > Note: If you'd like your data to be permanently
 > deleted, please contact <insights@fairwinds.com>

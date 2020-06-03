@@ -1,3 +1,12 @@
+---
+meta:
+  - name: title
+    content: Kube-hunter and Fairwinds Insights
+  - name: description
+    content: Kube-hunter hunts for security weaknesses in Kubernetes clusters and is integrated in Fairwinds Insights.
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, open source, Kube-hunter
+---
 # Kube-hunter
 Kube-hunter hunts for security weaknesses in Kubernetes clusters.
 The tool was developed to increase awareness and visibility for security issues in Kubernetes environments.

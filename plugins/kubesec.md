@@ -1,3 +1,12 @@
+---
+meta:
+  - name: title
+    content: Fairwinds Insights and Kubesec
+  - name: description
+    content: Integrated with Fairwinds Insights, Kubesec is an open source tool for assessing the security risk of Kubernetes workloads based on YAML configurations.
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, Kubesec, open source
+---
 # Kubesec
 > Note: Kubesec is not installed by default. Its findings overlap heavily with Polaris.
 > We recommend using one or the other.

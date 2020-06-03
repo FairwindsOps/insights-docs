@@ -1,3 +1,13 @@
+---
+meta:
+  - name: title
+    content: Goldilocks and Fairwinds Insights
+  - name: description
+    content: Goldilocks, by Fairwinds, makes recommendations for Kubernetes resource requests and limits based on actual usage. Fairwinds Insights integrates Goldilocks
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, Goldilocks, open source
+---
+
 # Goldilocks
 [Goldilocks](https://github.com/FairwindsOps/goldilocks/) watches your Kubernetes
 deployments and makes recommendations for resource requests and limits

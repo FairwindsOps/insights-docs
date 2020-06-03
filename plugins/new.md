@@ -1,3 +1,12 @@
+---
+meta:
+  - name: title
+    content: Fairwinds Insights|Create New Plugin
+  - name: description
+    content: Documentation for creating and contributing custom plugins in Fairwinds Insights
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, plugin
+---
 # Create a new plugin
 > Documentation for creating and contributing custom plugins coming soon!
 

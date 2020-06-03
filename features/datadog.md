@@ -1,3 +1,12 @@
+---
+meta:
+  - name: title
+    content: Fairwinds Insights Datadog Integration
+  - name: description
+    content: Fairwinds Insights documentation on the beta integration to Datadog useful for correlating issues with an attempt to fix or when introducing new workloads.
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, Datadog integration
+---
 # Datadog Integration *Beta*
 
 Fairwinds Insights has a beta integration to feed data into Datadog.

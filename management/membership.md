@@ -1,3 +1,12 @@
+---
+meta:
+  - name: title
+    content: Fairwinds Insights Management Membership
+  - name: description
+    content: Fairwinds Insights provides two levels of access members and admins so you can manage who can view or make changes. Read the documentation.
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
+---
 # Membership
 <!-- TODO: use npm -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">

@@ -1,8 +1,12 @@
 ---
-title: Fairwinds Insights Release Notes
-tags: fairwinds insights kubernetes security reliability efficiency docker audit
+meta:
+  - name: title
+    content: Fairwinds Insights Release Notes
+  - name: description
+    content: Read the latest version updates at Fairwinds Insights release notes documentation.
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
 ---
-
 # Release Notes
 
 ## 1.3.0

@@ -1,3 +1,12 @@
+---
+meta:
+  - name: title
+    content: Fairwinds Insights cluster comparison feature
+  - name: description
+    content: If you have the Insights Agent installed on multiple Kubernetes clusters, you can use Fairwinds Insights to compare the workloads. Read the documentation.
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, cluster comparison
+---
 # Cluster Comparison
 If you have the Insights Agent installed on multiple Kubernetes clusters, you
 can use Fairwinds Insights to compare the workloads in those clusters.
