@@ -1,3 +1,12 @@
+---
+meta:
+  - name: title
+    content: How Fairwinds Insights Action Items Work
+  - name: description
+    content: Action Items are at the heart of Fairwinds Insights. Every audit tool may generate one or more Action Items, depending on results. Read the documentation. 
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, action items
+---
 # Action Items
 Action Items are at the heart of Fairwinds Insights. Every auditing tool may generate one or more
 Action Items, depending on what it finds in your cluster.
