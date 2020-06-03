@@ -1,3 +1,13 @@
+---
+meta:
+  - name: title
+    content: Release Watcher and Fairwinds Insights
+  - name: description
+    content: Release Watcher is a (not-yet-released) project from Fairwinds for checking your installed Helm 3 charts against the latest versions available.
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, open source, Release Watcher
+---
+
 # Release Watcher
 Release Watcher is a (not-yet-released) project from Fairwinds for checking your
 installed Helm 3 charts against the latest versions available.
