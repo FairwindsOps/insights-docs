@@ -21,7 +21,7 @@ To view the full docs, visit
 
 [Fairwinds Insights](https://fairwinds.com/insights) is a configuration validation platform that enables engineering and DevOps teams to run Kubernetes workloads securely, efficiently, and reliably. The platform integrates trusted open source tools that proactively monitor Kubernetes and container configurations, recommending improvements that help avoid problems before they arise. Recommendations are stored in a single location which enables teams to track and prioritize issues, collaborate across teams, and apply best practices as applications move from development to production. 
 
-Learn more about [installing Fairwinds Insights](https://insights.docs.fairwinds.com/installation/getting-started.html), features like [Slack notifications](https://insights.docs.fairwinds.com/features/slack.html), and our supported plugins below:
+Learn more about [installing Fairwinds Insights](https://insights.docs.fairwinds.com/installation/getting-started), features like [Slack notifications](https://insights.docs.fairwinds.com/features/slack.html), and our supported plugins below:
 
 * [Fairwinds Polaris](https://github.com/FairwindsOps/polaris) - checks best practices in workload configuration
 * [Fairwinds Goldilocks](https://github.com/FairwindsOps/goldilocks) - recommends resource limits and requests based on actual resource usage
