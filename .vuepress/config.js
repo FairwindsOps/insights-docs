@@ -64,7 +64,7 @@ module.exports = {
   },
   plugins: {
     'vuepress-plugin-clean-urls': {
-      normalSuffix: '',
+      normalSuffix: '/',
       notFoundPath: '/404.html',
     },
   },
