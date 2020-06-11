@@ -27,7 +27,7 @@ and we'll work with you to add your custom data.
 ## Example
 Let's say we have an organization-wide policy to never use the `default` namespace
 in our Kubernetes clusters. We want to create a new Insights plugin that will
-look in `default` and create an action item to delete any resources that show up there.
+look in `default` and create an Action Item that prompts us to delete any resources that appear there.
 
 ### The Data
 The first thing to do is to get the data in JSON format. For our example, that's pretty easy:
@@ -44,9 +44,6 @@ The response looks something like this:
             "apiVersion": "v1",
             "kind": "Pod",
             "metadata": {
-                "labels": {
-                    "app": "nginx"
-                },
                 "name": "nginx-deployment-5b69968587-55ljl",
                 "namespace": "default"
             },
@@ -66,8 +63,8 @@ and create them. You can check out
 but the basic idea is that we'll use it to transform one JSON object (our report)
 into another JSON object (the Action Items).
 
-For example, say we wanted to transform the `items` array above into an array of the `kind`s
-of each item. We could write:
+As an example of how to use jq, say we wanted to transform the `items` array above
+into an array of the `kind`s of each item. We could write:
 ```
 $ cat report.json | jq '[.items[].kind]'
 [
@@ -80,7 +77,7 @@ $ cat report.json | jq '[.items[].kind]'
 ]
 ```
 
-For each Action Item, we'll need a few fields:
+So how do we use jq to create Action Items? For each Action Item, we'll need a few fields:
 * `EventType` - an ID for the type of Action Item, e.g. `resource_in_default_namespace`
 * `Severity` - A number in [0, 1] describing how important the Action Item is, with 1 being critical
 * `ResourceKind` - the kind of the affected resource, e.g. `Deployment` or `RoleBinding`
