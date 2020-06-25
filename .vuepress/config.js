@@ -44,6 +44,7 @@ module.exports = {
         "/plugins/release-watcher",
         "/plugins/rbac-reporter",
         "/plugins/workloads",
+        "/plugins/rbac-requirements",
         "/plugins/new",
       ],
     }, {
