@@ -9,6 +9,20 @@ meta:
 ---
 # Release Notes
 
+## 1.7.0
+### Action Items Performance
+Performance on the Action Items table has been strongly improved by pushing more
+of the querying logic into the backend. This means the UI will have a smaller
+memory footprint, and will do less heavy-lifting of filtering and sorting data.
+
+### Report Failure Warnings
+It can be difficult to spot and debug failed reports. Now the Cluster Overview page
+will show an item under Cluster Activity if a report fails, along with a link
+to the logs.
+
+### Longer Trial Duration
+Free trials are now extended to 30 days.
+
 ## 1.6.0
 ### Bring Your Own Cloud Pricing
 Estimating workload cost in Kubernetes is a hard problem. Many factors go into estimating the cost, such as assumptions about memory/CPU intensive applications, as well as current resource requests and limits. However, another critical input is the current per-instance price you pay for your compute resources. 
