@@ -24,3 +24,9 @@ Notifications can be configured for your entire organization, or for individual 
 
 Read our [privacy policy](https://insights.fairwinds.com/privacy-policy) to learn more about how Fairwinds Insights handles user data.
 
+# Installation
+To set up Slack notifications, visit your organization's settings page and click the "Add to Slack"
+button to link your account. You can then choose which channel you'd like notifications to be sent to.
+
+If you'd like to set up notifications for a particular cluster, rather than all clusters in
+your organization, you can visit that cluster's settings page.
