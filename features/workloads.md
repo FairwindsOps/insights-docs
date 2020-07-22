@@ -16,12 +16,30 @@ and cost estimates.
 <img :src="$withBase('/img/workloads.png')" alt="workloads">
 
 ## Cost Estimates
-We estimate costs based on pricing for AWS reserved EC2 instances.
+When you first load the workloads page, you'll be prompted to provide some information
+about your cloud provider and instance type settings. We'll use this information to
+inform our cost estimates.
 
-We use the numbers provided by AWS to come up with average per-CPU and per-GB-RAM costs.
-We multiply these by the resources available in your cluster, and use the maximum
-of CPU and RAM cost to come up with the final number.
+<img :src="$withBase('/img/cost-settings.png')" alt="workloads">
 
-This results in a conservative estimate - your bill will likely be less.
+Currently, we only support setting a single instance type. If you're using multiple instance
+types in your cluster, you can simply pick the most representative type.
+
+Once we know your node size and cost per node, we assume half the cost is allocated
+to memory, and half the cost is allocated to CPU. We then extrapolate to determine
+cost-per-GB-RAM and cost-per-CPU.
+
+To determine the cost of a particular workload, we offer two strategies:
+* **conservative** - this takes into account the potential waste incurred by
+memory- or CPU- intensive workloads, if Kubernetes is unable to bin-pack efficiently.
+It is calculated as `2 * max(cpu_cost, memory_cost)`
+* **optimistic** - this assumes Kubernetes can bin-pack your workloads efficiently.
+It is calculated as `cpu_cost + memory_cost`
+
+If you have spent time optimizing your node size, or if you're running a large variety
+of workloads that are small relative to your node size, the **optimistic** strategy
+will probably be more accurate. Otherwise, we recommend the **conservative** strategy.
+
+You can [read more about cost estimation on our blog](https://www.fairwinds.com/blog/5-problems-with-kubernetes-cost-estimation-strategies)
 
 
