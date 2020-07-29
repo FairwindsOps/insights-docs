@@ -31,6 +31,7 @@ module.exports = {
         "/features/rbac",
         "/features/slack",
         "/features/datadog",
+        "/features/continuous-integration",
       ],
     }, {
       title: "Plugins",
