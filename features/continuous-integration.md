@@ -38,15 +38,13 @@ images:
 
 manifests:
   yaml:
-  - ./deploy/test.yaml
+  - ./deploy/mainfests/
+  - ./main.deployment.yaml
   helm:
   - name: prod
     path: ./deploy/chart
     values:
       foo: bar
-      resources:
-        requests:
-          memory: 1Gi
 ```
 
 Next, you'll need to add the `FAIRWINDS_TOKEN` environment variable to your CI environment. This
