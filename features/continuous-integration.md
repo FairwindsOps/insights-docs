@@ -81,6 +81,7 @@ Specify any images you'd like Insights to scan for vulnerabilities. These images
 locally in your CI environment, either through running `docker build` or `docker pull`.
 
 * `images.docker` - an array of image names and tags to scan
+* `images.folder` - path to a folder containing exported docker images as .tgz files. Helpful if your images are in an alternative daemon like podman or cri-o (if you are, let us know!)
 
 Note that you can include environment variables in your image names and tags. This is helpful
 if you set your image tag based on things like the current Git branch, tag, or commit SHA.
@@ -92,10 +93,10 @@ in your fairwinds-insights.yaml
 
 * `manifests.yaml` - an array of directories or files containing Kubernetes YAML manifests to scan
 * `manifests.helm` - an array of helm charts to template and scan
-* `manifests.helm[0].name` - a name to give this templated chart
-* `manifests.helm[0].path` - the path to the directory containing `Chart.yaml`
-* `manifests.helm[0].values` - values to pass to the chart when templating
-* `manifests.helm[0].valuesFile` - a YAML file containing values to pass to the chart when templating
+* `manifests.helm[].name` - a name to give this templated chart
+* `manifests.helm[].path` - the path to the directory containing `Chart.yaml`
+* `manifests.helm[].values` - values to pass to the chart when templating
+* `manifests.helm[].valuesFile` - a YAML file containing values to pass to the chart when templating
 
 ## Connect to GitHub
 > Using Gitlab, Bitbucket, or another Git host? Let us know!
