@@ -42,9 +42,6 @@ manifests:
   helm:
   - name: prod
     path: ./deploy/chart
-    valuesFile: ./deploy/prod
-  - name: staging
-    path: ./deploy/chart
     values:
       foo: bar
       resources:
@@ -52,16 +49,17 @@ manifests:
           memory: 1Gi
 ```
 
-Note that Docker images can use any environment variables that are available in your CI environment.
+Next, you'll need to add the `FAIRWINDS_TOKEN` environment variable to your CI environment. This
+token can be found in the CI instructions in Insights, or on your organization's settings page. Note that
+most CI platforms provide a way to specify secrets in your environment variables.
 
-Next, you'll need to add the `FAIRWINDS_TOKEN` environment variable to your CI environment. Most
-CI platforms provide a way to specify secrets in your environment variables.
-
-Last, you'll need to execute the Insights CI script. You may want to download and store a copy
-of the script in your repository.
+Last, you'll need to execute the Insights CI script within your CI pipeline.
+You may want to download, inspect, and store a copy of the script in your repository.
 ```
 curl https://insights.fairwinds.com/static/insights-ci.sh | bash
 ```
+
+Your repository will show up in the Insights UI once that script has been successfully run.
 
 ## fairwinds-insights.yaml
 Here's a full list of options available in fairwinds-insights.yaml:
@@ -99,4 +97,39 @@ in your fairwinds-insights.yaml
 * `manifests.helm[0].values` - values to pass to the chart when templating
 * `manifests.helm[0].valuesFile` - a YAML file containing values to pass to the chart when templating
 
+## Connect to GitHub
+> Using Gitlab, Bitbucket, or another Git host? Let us know!
+
+Connecting Insights to your GitHub repository will help you get the most out of the CI integration.
+To get started, click the **Install Now** link on your organization's repositories tab.
+
+Then, in the GitHub UI, choose which repositories you'd like to link to Insights:
+<img :src="$withBase('/img/github-add-repo.png')" alt="action items">
+
+Once your repository is linked, you'll start seeing a Fairwinds Insights status on each of your
+pull requests.
+<img :src="$withBase('/img/github-status.png')" alt="action items">
+
+We recommend setting `options.setExitCode: false` in your fairwinds-insights.yaml, since
+this check will now fail in place of your CI pipeline. Also make sure that `options.repositoryName`
+matches your repository's name in GitHub, including the username/organization (e.g. `acme-co/web-app`).
+
+## Viewing the Results
+The **Repositories** tab will show you a list of all repositories that have been connected to Insights.
+Next to each repo, you can see the number of `danger` and `warning` items currently found in the main
+branch.
+<img :src="$withBase('/img/repos-list.png')" alt="action items">
+
+When you click on a particular repository, the first thing you'll see is a list of action items
+affecting the main branch.
+<img :src="$withBase('/img/repo-main-branch.png')" alt="action items">
+
+Below that, you'll see a section for each branch, along with a list of action items that have
+been created or fixed in that branch.
+
+For example, here's a branch that creates some security issues in `passing.yaml`:
+<img :src="$withBase('/img/repo-failing-branch.png')" alt="action items">
+
+And here's a branch that fixes some security issues in `failing.yaml`:
+<img :src="$withBase('/img/repo-passing-branch.png')" alt="action items">
 
