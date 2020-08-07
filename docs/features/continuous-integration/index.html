@@ -8,7 +8,7 @@
     <meta name="generator" content="VuePress 1.4.0">
     <link rel="icon" href="/favicon.png">
     
-    <link rel="preload" href="/assets/css/0.styles.ba5fd3fc.css" as="style"><link rel="preload" href="/assets/js/app.faee65a2.js" as="script"><link rel="preload" href="/assets/js/2.6d5e91c3.js" as="script"><link rel="preload" href="/assets/js/16.c00efe77.js" as="script"><link rel="prefetch" href="/assets/js/10.ea75955c.js"><link rel="prefetch" href="/assets/js/11.1f496da6.js"><link rel="prefetch" href="/assets/js/12.2c90ff43.js"><link rel="prefetch" href="/assets/js/13.5ba8c249.js"><link rel="prefetch" href="/assets/js/14.5fef1a1b.js"><link rel="prefetch" href="/assets/js/15.4a7c6b13.js"><link rel="prefetch" href="/assets/js/17.4a897beb.js"><link rel="prefetch" href="/assets/js/18.cb296ac6.js"><link rel="prefetch" href="/assets/js/19.c9f0614e.js"><link rel="prefetch" href="/assets/js/20.3a8194ce.js"><link rel="prefetch" href="/assets/js/21.912195f3.js"><link rel="prefetch" href="/assets/js/22.26059bf8.js"><link rel="prefetch" href="/assets/js/23.98ac231c.js"><link rel="prefetch" href="/assets/js/24.cb3536f3.js"><link rel="prefetch" href="/assets/js/25.d9b10cb4.js"><link rel="prefetch" href="/assets/js/26.56f8d1a0.js"><link rel="prefetch" href="/assets/js/27.7a00aca8.js"><link rel="prefetch" href="/assets/js/28.c07f678d.js"><link rel="prefetch" href="/assets/js/29.563bda29.js"><link rel="prefetch" href="/assets/js/3.87f29081.js"><link rel="prefetch" href="/assets/js/30.c074ebe1.js"><link rel="prefetch" href="/assets/js/31.2023793b.js"><link rel="prefetch" href="/assets/js/32.615494ab.js"><link rel="prefetch" href="/assets/js/33.2f388469.js"><link rel="prefetch" href="/assets/js/34.9526c40f.js"><link rel="prefetch" href="/assets/js/35.98ba7ef0.js"><link rel="prefetch" href="/assets/js/36.da44ba69.js"><link rel="prefetch" href="/assets/js/4.7a4d83b2.js"><link rel="prefetch" href="/assets/js/5.4b52774a.js"><link rel="prefetch" href="/assets/js/6.6e06e9f3.js"><link rel="prefetch" href="/assets/js/7.ef2895a8.js"><link rel="prefetch" href="/assets/js/8.9d9b5ec8.js"><link rel="prefetch" href="/assets/js/9.675d875b.js">
+    <link rel="preload" href="/assets/css/0.styles.ba5fd3fc.css" as="style"><link rel="preload" href="/assets/js/app.9705de84.js" as="script"><link rel="preload" href="/assets/js/2.6d5e91c3.js" as="script"><link rel="preload" href="/assets/js/16.34708bbe.js" as="script"><link rel="prefetch" href="/assets/js/10.ea75955c.js"><link rel="prefetch" href="/assets/js/11.1f496da6.js"><link rel="prefetch" href="/assets/js/12.2c90ff43.js"><link rel="prefetch" href="/assets/js/13.5ba8c249.js"><link rel="prefetch" href="/assets/js/14.5fef1a1b.js"><link rel="prefetch" href="/assets/js/15.4a7c6b13.js"><link rel="prefetch" href="/assets/js/17.4a897beb.js"><link rel="prefetch" href="/assets/js/18.cb296ac6.js"><link rel="prefetch" href="/assets/js/19.c9f0614e.js"><link rel="prefetch" href="/assets/js/20.3a8194ce.js"><link rel="prefetch" href="/assets/js/21.912195f3.js"><link rel="prefetch" href="/assets/js/22.26059bf8.js"><link rel="prefetch" href="/assets/js/23.98ac231c.js"><link rel="prefetch" href="/assets/js/24.cb3536f3.js"><link rel="prefetch" href="/assets/js/25.d9b10cb4.js"><link rel="prefetch" href="/assets/js/26.56f8d1a0.js"><link rel="prefetch" href="/assets/js/27.7a00aca8.js"><link rel="prefetch" href="/assets/js/28.c07f678d.js"><link rel="prefetch" href="/assets/js/29.563bda29.js"><link rel="prefetch" href="/assets/js/3.87f29081.js"><link rel="prefetch" href="/assets/js/30.c074ebe1.js"><link rel="prefetch" href="/assets/js/31.2023793b.js"><link rel="prefetch" href="/assets/js/32.615494ab.js"><link rel="prefetch" href="/assets/js/33.2f388469.js"><link rel="prefetch" href="/assets/js/34.9526c40f.js"><link rel="prefetch" href="/assets/js/35.98ba7ef0.js"><link rel="prefetch" href="/assets/js/36.da44ba69.js"><link rel="prefetch" href="/assets/js/4.7a4d83b2.js"><link rel="prefetch" href="/assets/js/5.4b52774a.js"><link rel="prefetch" href="/assets/js/6.6e06e9f3.js"><link rel="prefetch" href="/assets/js/7.ef2895a8.js"><link rel="prefetch" href="/assets/js/8.9d9b5ec8.js"><link rel="prefetch" href="/assets/js/9.675d875b.js">
     <link rel="stylesheet" href="/assets/css/0.styles.ba5fd3fc.css">
   </head>
   <body>
@@ -31,15 +31,13 @@ of your repository. Here's a minimal example:</p> <blockquote><p>Be sure to repl
 
 <span class="token key atrule">manifests</span><span class="token punctuation">:</span>
   <span class="token key atrule">yaml</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> ./deploy/test.yaml
+  <span class="token punctuation">-</span> ./deploy/mainfests/
+  <span class="token punctuation">-</span> ./main.deployment.yaml
   <span class="token key atrule">helm</span><span class="token punctuation">:</span>
   <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> prod
     <span class="token key atrule">path</span><span class="token punctuation">:</span> ./deploy/chart
     <span class="token key atrule">values</span><span class="token punctuation">:</span>
       <span class="token key atrule">foo</span><span class="token punctuation">:</span> bar
-      <span class="token key atrule">resources</span><span class="token punctuation">:</span>
-        <span class="token key atrule">requests</span><span class="token punctuation">:</span>
-          <span class="token key atrule">memory</span><span class="token punctuation">:</span> 1Gi
 </code></pre></div><p>Next, you'll need to add the <code>FAIRWINDS_TOKEN</code> environment variable to your CI environment. This
 token can be found in the CI instructions in Insights, or on your organization's settings page. Note that
 most CI platforms provide a way to specify secrets in your environment variables.</p> <p>Last, you'll need to execute the Insights CI script within your CI pipeline.
@@ -70,6 +68,6 @@ been created or fixed in that branch.</p> <p>For example, here's a branch that c
       </a>
       →
     </span></p></div> </main></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.faee65a2.js" defer></script><script src="/assets/js/2.6d5e91c3.js" defer></script><script src="/assets/js/16.c00efe77.js" defer></script>
+    <script src="/assets/js/app.9705de84.js" defer></script><script src="/assets/js/2.6d5e91c3.js" defer></script><script src="/assets/js/16.34708bbe.js" defer></script>
   </body>
 </html>
