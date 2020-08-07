@@ -112,8 +112,7 @@ pull requests.
 <img :src="$withBase('/img/github-status.png')" alt="action items">
 
 We recommend setting `options.setExitCode: false` in your fairwinds-insights.yaml, since
-this check will now fail in place of your CI pipeline. Also make sure that `options.repositoryName`
-matches your repository's name in GitHub, including the username/organization (e.g. `acme-co/web-app`).
+this check will now fail in place of your CI pipeline.
 
 ## Viewing the Results
 The **Repositories** tab will show you a list of all repositories that have been connected to Insights.
