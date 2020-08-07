@@ -9,6 +9,37 @@ meta:
 ---
 # Release Notes
 
+## 1.9.0
+
+### Group Workloads by Namespace or Label
+On the Workloads tab, you can now group your workloads by namespace or label
+in order to see aggregate costs, as well as potential cost savings.
+
+### Cleaning Out Old Action Items
+We've started removing action items for workloads that no longer exist. This is especially
+helpful for organizations that create ephemeral feature deployments in their staging clusters.
+
+### New Registration Page
+Check out insights.fairwinds.com/auth/register to see our new registration flow
+
+## 1.8.0
+
+### Better Pod Counts
+We've started tracking pod counts for each workload over the course of a month. By averaging
+the pod count over a longer period of time, we can give a more accurate view into how much
+a given workload really costs.
+
+We've also made some adjustments to how we calculate pod counts for Jobs and CronJobs, which
+are typically short-lived.
+
+### Polaris 1.0
+We now support [Polaris 1.0](https://www.fairwinds.com/blog/fairwinds-polaris-1.0-best-practices-for-kubernetes-workloads)
+in Insights. That comes with new checks, as well as the ability to create your own custom checks!
+
+### Feedback Form
+If you have feedback on your experience with Insights so far, you can click the feedback
+tab on the right side of the screen. We'd love to hear from you!
+
 ## 1.7.0
 ### Action Items Performance
 Performance on the Action Items table has been strongly improved by pushing more
