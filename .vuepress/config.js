@@ -21,6 +21,15 @@ module.exports = {
         '/installation/insights-agent',
       ],
     }, {
+      title: 'First Steps',
+      sidebarDepth: 0,
+      children: [
+        '/first-steps/getting-value',
+        '/first-steps/workload-configuration',
+        '/first-steps/container-security',
+        '/first-steps/cost-efficiency',
+      ],
+    }, {
       title: "Features",
       children: [
         "/features/cluster-summary",

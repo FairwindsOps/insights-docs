@@ -20,7 +20,7 @@ whenever security, efficiency, or reliability issues are found.
 # Setup
 To get started, visit your organization's **Repositories** tab, and click **Add Repo**
 
-<img :src="$withBase('/img/add-repo.png')" alt="action items">
+<img :src="$withBase('/img/add-repo.png')" alt="Adding a repository">
 
 Following the instructions there, add a `fairwinds-insights.yaml` configuration to the base
 of your repository. Here's a minimal example:
@@ -103,11 +103,11 @@ Connecting Insights to your GitHub repository will help you get the most out of 
 To get started, click the **Install Now** link on your organization's repositories tab.
 
 Then, in the GitHub UI, choose which repositories you'd like to link to Insights:
-<img :src="$withBase('/img/github-add-repo.png')" alt="action items">
+<img :src="$withBase('/img/github-add-repo.png')" alt="Add repo in GitHub">
 
 Once your repository is linked, you'll start seeing a Fairwinds Insights status on each of your
 pull requests.
-<img :src="$withBase('/img/github-status.png')" alt="action items">
+<img :src="$withBase('/img/github-status.png')" alt="Check GitHub status">
 
 We recommend setting `options.setExitCode: false` in your fairwinds-insights.yaml, since
 this check will now fail in place of your CI pipeline.
@@ -116,18 +116,18 @@ this check will now fail in place of your CI pipeline.
 The **Repositories** tab will show you a list of all repositories that have been connected to Insights.
 Next to each repo, you can see the number of `danger` and `warning` items currently found in the main
 branch.
-<img :src="$withBase('/img/repos-list.png')" alt="action items">
+<img :src="$withBase('/img/repos-list.png')" alt="List of all repos">
 
 When you click on a particular repository, the first thing you'll see is a list of action items
 affecting the main branch.
-<img :src="$withBase('/img/repo-main-branch.png')" alt="action items">
+<img :src="$withBase('/img/repo-main-branch.png')" alt="Action items for the main branch">
 
 Below that, you'll see a section for each branch, along with a list of action items that have
 been created or fixed in that branch.
 
 For example, here's a branch that creates some security issues in `passing.yaml`:
-<img :src="$withBase('/img/repo-failing-branch.png')" alt="action items">
+<img :src="$withBase('/img/repo-failing-branch.png')" alt="Action items for a failing branch">
 
 And here's a branch that fixes some security issues in `failing.yaml`:
-<img :src="$withBase('/img/repo-passing-branch.png')" alt="action items">
+<img :src="$withBase('/img/repo-passing-branch.png')" alt="Fixed action items for a passing branch">
 
