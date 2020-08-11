@@ -66,7 +66,7 @@ of 95%.
 
 Note that these recommendations should be sanity checked by the user. If your application experiences
 periodic bursts in traffic, you may want to keep your limits relatively high. For mission-critical
-applications, it's wise to make these changes gradually, monitoring your application for any degradation
+applications, it's wise to make any reduction in resources gradually, monitoring your application for any degradation
 in performance along the way.
 
 It's also good to let Goldilocks gather usage data for 1-7 days before taking its recommendations.
