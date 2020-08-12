@@ -54,6 +54,9 @@ to the logs.
 ### Longer Trial Duration
 Free trials are now extended to 30 days.
 
+### Cost Estimates now available in Datadog
+For customers who integrate Fairwinds Insights with Datadog, workload cost estimates are now available as a custom metric. Fairwinds Insights provides an estimated cost for these custom metrics on the Organization Settings page.
+
 ## 1.6.0
 ### Bring Your Own Cloud Pricing
 Estimating workload cost in Kubernetes is a hard problem. Many factors go into estimating the cost, such as assumptions about memory/CPU intensive applications, as well as current resource requests and limits. However, another critical input is the current per-instance price you pay for your compute resources. 
