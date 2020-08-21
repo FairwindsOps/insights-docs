@@ -1,14 +1,4 @@
 # Continuous Integration
-> This is an **experimental feature**.
->
-> To enable the Contiuous Integration beta, open
-> your browser console on insights.fairwinds.com and type
-> ```
-> localStorage.setItem('ci_beta', 'true');
-> ```
-> Then hit enter and refresh the page. You should see a new tab, `Repositories`, on your organization
-> page.
-
 Fairwinds Insights can do more than just scan and audit a live Kubernetes Cluster. It can also
 help you spot issues _before_ they make it into production.
 
