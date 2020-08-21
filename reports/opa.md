@@ -190,8 +190,10 @@ rego: |
     hpa.metadata.namespace == elem.metadata.namespace
     hpa.spec.scaleTargetRef.apiVersion == elem.apiVersion
   }
-  hpaRequired[description] {
+  hpaRequired[actionItem] {
     not hasMatchingHPA(kubernetes("HorizontalPodAutoscaler"), input)
-    description := "No horizontal pod autoscaler found"
+    actionItem := {
+      description: "No horizontal pod autoscaler found"
+    }
   }
 ```
