@@ -72,7 +72,7 @@ export checkName=replicas
 export organization=acme-co # your org name in Insights
 export token=abcde # get this from your org settings page
 curl -X PUT -H "Content-type: application/x-yaml" \
-  -H "Authorization: Bearer $admintoken" \
+  -H "Authorization: Bearer $token" \
   "https://insights.fairwinds.com/v0/organizations/$organization/opa/customChecks/$checkName" \
   --data-binary @replicas.yaml
 ```
@@ -89,7 +89,7 @@ targets:
 ```bash
 export instanceName=deployments
 curl -X PUT -H "Content-type: application/x-yaml" \
-  -H "Authorization: Bearer $admintoken" \
+  -H "Authorization: Bearer $token" \
   "https://insights.fairwinds.com/v0/organizations/$organization/opa/customChecks/$checkName/instances/$instanceName" \
   --data-binary @deployments.yaml
 ```
@@ -140,7 +140,7 @@ but StatefulSets were OK with a single replica. Then we could write:
 ```yaml
 rego: |
   appLabelRequired[actionItem] {
-    input.spec.replicas < minReplicas
+    input.spec.replicas < input.parameters.minReplicas
     actionItem := {
       title: input.kind + " does not have replicas set",
       description: "All workloads at acme-co must explicitly set the number of replicas. [Read more](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment)",
@@ -197,3 +197,6 @@ rego: |
     }
   }
 ```
+
+## More Examples
+You can find more examples in the [Insights Plugins repository](https://github.com/FairwindsOps/insights-plugins/tree/master/opa/examples)
