@@ -183,7 +183,7 @@ additionalKubernetesData:
   kinds: ["HorizontalPodAutoscaler"]
 rego: |
   package fairwinds
-  contains(hpas, elem) {
+  hasMatchingHPA(hpas, elem) {
     hpa := hpas[_]
     hpa.spec.scaleTargetRef.kind == elem.kind
     hpa.spec.scaleTargetRef.name == elem.metadata.name
@@ -191,7 +191,7 @@ rego: |
     hpa.spec.scaleTargetRef.apiVersion == elem.apiVersion
   }
   hpaRequired[description] {
-    not contains(kubernetes("HorizontalPodAutoscaler"), input)
+    not hasMatchingHPA(kubernetes("HorizontalPodAutoscaler"), input)
     description := "No horizontal pod autoscaler found"
   }
 ```
