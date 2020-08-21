@@ -47,6 +47,7 @@ module.exports = {
         "/reports/polaris",
         "/reports/goldilocks",
         "/reports/trivy",
+        "/reports/opa",
         "/reports/kubesec",
         "/reports/kube-hunter",
         "/reports/release-watcher",
