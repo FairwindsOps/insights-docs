@@ -26,6 +26,7 @@ Learn more about [installing Fairwinds Insights](https://insights.docs.fairwinds
 * [Fairwinds Polaris](https://github.com/FairwindsOps/polaris) - checks best practices in workload configuration
 * [Fairwinds Goldilocks](https://github.com/FairwindsOps/goldilocks) - recommends resource limits and requests based on actual resource usage
 * [Trivy](https://github.com/aquasecurity/trivy) - scans Docker images for known vulnerabilities
+* [OPA](https://www.openpolicyagent.org/) - specify custom checks for Kubernetes resources
 * [Kubesec](https://github.com/controlplaneio/kubesec) - checks workload configuration for security issues
 * [Kube-hunter](https://github.com/aquasecurity/kube-hunter) - checks for cluster- and node-level security vulnerabilities
 * [kube-bench](https://github.com/aquasecurity/kube-bench) - checks the cluster against the CIS Benchmark
