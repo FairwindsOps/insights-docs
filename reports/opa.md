@@ -113,6 +113,8 @@ but wanted a higher severity for `Deployments`.
 First, we'd stop specifying `severity` inside our OPA, so that it can be set by the instance:
 **replicas.rego**
 ```rego
+package fairwinds
+
 replicasRequired[actionItem] {
   input.spec.replicas == 0
   actionItem := {
@@ -148,10 +150,12 @@ We can also pass parameters to our instances. Say, for instance, that we wanted 
 but StatefulSets were OK with a single replica. Then we could write:
 
 ```rego
+package fairwinds
+
 replicasRequired[actionItem] {
   input.spec.replicas < input.parameters.minReplicas
   actionItem := {
-    "title": concat(" ", [input.kind, "does not have replicas set"]),
+    "title": concat(" ", [input.kind, "does not have enough replicas set"]),
     "description": "All workloads at acme-co must explicitly set the number of replicas. [Read more](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment)",
     "remediation": "Please set `spec.replicas`",
     "category": "Reliability",
@@ -183,6 +187,7 @@ this check to ensure that all `Deployments` have an associated `HorizontalPodAut
 
 ```rego
 package fairwinds
+
 hasMatchingHPA(hpas, elem) {
   hpa := hpas[_]
   hpa.spec.scaleTargetRef.kind == elem.kind
