@@ -198,7 +198,7 @@ hasMatchingHPA(hpas, elem) {
 hpaRequired[actionItem] {
   not hasMatchingHPA(kubernetes("autoscaling", "HorizontalPodAutoscaler"), input)
   actionItem := {
-    "description": "No horizontal pod autoscaler found"
+    "title": "No horizontal pod autoscaler found"
   }
 }
 ```
