@@ -17,6 +17,7 @@ configured independently using Helm:
 * `workloads` (required)
 * `polaris`
 * `goldilocks`
+* `opa`
 * `trivy`
 * `kubesec`
 * `kubehunter`
