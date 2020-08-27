@@ -12,19 +12,19 @@ meta:
 ## 1.10.0
 
 ### Dynamic Open Policy Agent - Beta
-	You can now create and run custom checks to create Action Items. Read our docs to learn more https://insights.docs.fairwinds.com/reports/opa/
+You can now create and run custom checks to create Action Items. Read our docs to learn more https://insights.docs.fairwinds.com/reports/opa/
 
 ### CI/CD - Beta
-	By adding Fairwinds Insights into your Continuous Integration process, you can catch image vulnerabilities and Kubernetes misconfigurations early in the development process. https://insights.docs.fairwinds.com/features/continuous-integration/
+By adding Fairwinds Insights into your Continuous Integration process, you can catch image vulnerabilities and Kubernetes misconfigurations early in the development process. https://insights.docs.fairwinds.com/features/continuous-integration/
 
 ### Introducing Nova
-	We open sourced Release Watcher and renamed it to Nova. Learn more here https://github.com/FairwindsOps/Nova
+We open sourced Release Watcher and renamed it to Nova. Learn more here https://github.com/FairwindsOps/Nova
 
 ### Unsubscribe from Email
-	Fixed bug that didn’t allow users to unsubscribe from marketing emails
+Fixed bug that didn’t allow users to unsubscribe from marketing emails
 
 ### Read Only Account Type
-	A super admin can now add read only account types
+A super admin can now add read only account types
 
 ## 1.9.0
 
