@@ -11,20 +11,19 @@ meta:
 
 ## 1.10.0
 
-### Dynamic Open Policy Agent - Beta
-You can now create and run custom checks to create Action Items. Read our docs to learn more https://insights.docs.fairwinds.com/reports/opa/
+### Dynamic Open Policy Agent (OPA) - Beta
+You can now create and run custom checks in Rego (OPA's policy language) to create Action Items in Fairwinds Insights. To get started, visit our Docs to [learn how to add Rego policies to Fairwinds Insights](https://insights.docs.fairwinds.com/reports/opa/).
 
-### CI/CD - Beta
-By adding Fairwinds Insights into your Continuous Integration process, you can catch image vulnerabilities and Kubernetes misconfigurations early in the development process. https://insights.docs.fairwinds.com/features/continuous-integration/
+### CI/CD Integration - Beta
+We’ve recently shipped a CI/CD integration with Fairwinds Insights to shift Kubernetes configuration validation earlier in the development process. We’ve found that the handoff of Kubernetes applications from development to operations can result in configuration mistakes that lead to future incidents, security risks, and extra infrastructure cost. Today, Ops teams are manually looking for these mistakes, but with our CI/CD integration we are able to shift that closer to the development team to prevent mistakes from entering production.
+
+We support all major CI/CD platforms and check container images for vulnerabilities, as well as Kubernetes deployment configurations (e.g. YAML files and helm charts) for common configuration mistakes. [Check out our docs to learn how to integrate Fairwinds Insights into your CI/CD workflow](https://insights.docs.fairwinds.com/features/continuous-integration/).
 
 ### Introducing Nova
-We open sourced Release Watcher and renamed it to Nova. Learn more here https://github.com/FairwindsOps/Nova
+We have integrated [Fairwinds Nova](https://github.com/FairwindsOps/Nova) (formerly known as "Release Watcher"), an open source project that monitors Helm 2 and 3 deployments, with Fairwinds Insights. This data is available via the "Add-ons" tab.
 
 ### Unsubscribe from Email
 Fixed bug that didn’t allow users to unsubscribe from marketing emails
-
-### Read Only Account Type
-A super admin can now add read only account types
 
 ## 1.9.0
 
