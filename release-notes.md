@@ -9,6 +9,17 @@ meta:
 ---
 # Release Notes
 
+## 1.11.0
+
+### Workload Visualization
+We’ve added visualizations to help you better understand your workload costs. 
+
+### Workload Badges
+The new badges in the workload table let you know what percentage of your workloads are included in the total cost (hover to get the exact number).  
+
+### Action Items
+Minor improvements to the action items table UI.
+
 ## 1.10.0
 
 ### Dynamic Open Policy Agent (OPA) - Beta
