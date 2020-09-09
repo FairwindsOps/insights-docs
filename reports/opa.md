@@ -92,7 +92,7 @@ targets:
 export instanceName=deployments
 curl -X PUT -H "Content-type: application/x-yaml" \
   -H "Authorization: Bearer $token" \
-  "https://insights.fairwinds.com/v0/organizations/$organization/opa/customChecks/$checkName/instances/$instanceName" \
+  "https://insights.fairwinds.com/v0/organizations/$organization/opa/customChecks/$checkName/$instanceName" \
   --data-binary @deployments.yaml
 ```
 
