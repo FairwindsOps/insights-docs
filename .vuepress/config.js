@@ -50,7 +50,7 @@ module.exports = {
         "/reports/opa",
         "/reports/kubesec",
         "/reports/kube-hunter",
-        "/reports/release-watcher",
+        "/reports/nova",
         "/reports/rbac-reporter",
         "/reports/workloads",
         "/reports/rbac-requirements",
@@ -76,7 +76,16 @@ module.exports = {
         "/api/reports",
         "/api/custom-reports",
       ],
-    }],
+    },
+      //["/architecture", "Architecture"],
+      {
+        title: "Architecture",
+        children: [
+          "/architecture/architecture",
+          "/architecture/sample-reports",
+        ]
+      }
+    ],
   },
   plugins: {
     'vuepress-plugin-clean-urls': {
