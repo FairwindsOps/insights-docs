@@ -74,7 +74,8 @@ organization. It will need `view` access to the cluster in order to run those po
 Pluto needs `view` access to the cluster in order to check for deprecated API versions.
 
 ### Polaris
-Polaris needs `view` access to the cluster in order to analyze workload configurations.
+Polaris needs `view` access to the cluster in order to analyze workload configurations. It also needs
+access to Secrets in order to examine Helm charts.
 
 ### RBAC Reporter
 RBAC Reporter needs `view` access to the cluster to aggregate information about RBAC roles and bindings.
