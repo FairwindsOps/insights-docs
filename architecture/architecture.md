@@ -14,6 +14,8 @@ Insights Agent:
 * Network access to `insights.fairwinds.com`
 
 Additional architecture notes and RBAC requirements for different reports are listed below.
+Note that the Insights Agent only requires _egress_ from the cluster - you will not need to
+open up access for any kind of network ingress.
 
 ## Report Architectures
 Typically, each report runs as a CronJob on a configurable schedule (usually once/hour by default).
