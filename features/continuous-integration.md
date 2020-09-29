@@ -87,6 +87,8 @@ in your fairwinds-insights.yaml
 * `manifests.helm[].valuesFile` - a YAML file containing values to pass to the chart when templating
 
 ## Connect to GitHub
+> You can still use the Continuous Integration feature without GitHub.
+>
 > Using Gitlab, Bitbucket, or another Git host? Let us know!
 
 Connecting Insights to your GitHub repository will help you get the most out of the CI integration.
