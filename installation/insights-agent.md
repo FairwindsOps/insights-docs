@@ -25,7 +25,7 @@ configured independently using Helm:
 * `releasewatcher`
 * `rbacreporter`
 
-To read more about the different report types, see the [Plugins Section](/reports/polaris).
+To read more about the different report types, see the [Reports Section](/reports/polaris).
 
 ## Configuration
 The Insights Agent is installed and configured using Helm. To see the full list of options,
@@ -34,9 +34,9 @@ you can check out the
 
 In particular, for any given report type, you can set the following options:
 * `enabled` - this is typically set to `true` by default
-* `schedule` - a cron expression dictating when this plugin should run. This is typically set to a random minute every hour
+* `schedule` - a cron expression dictating when this report should run. This is typically set to a random minute every hour
 * `timeout` - how long to wait for output, in seconds
-* `resources` - requests and limits for CPU and memory for this plugin
+* `resources` - requests and limits for CPU and memory for this report
 
 ## Debugging
 If you suspect something is wrong with the Insights Agent, you can use `kubectl` to

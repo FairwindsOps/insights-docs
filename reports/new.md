@@ -1,23 +1,23 @@
 ---
 meta:
   - name: title
-    content: Fairwinds Insights|Create New Plugin
+    content: Fairwinds Insights|Create New Report
   - name: description
-    content: Documentation for creating and contributing custom plugins in Fairwinds Insights
+    content: Documentation for creating and contributing custom reports in Fairwinds Insights
   - name: keywords
-    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, plugin
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, report, plugin
 ---
-# Create a new plugin
+# Create a new report
 
 The plugin-based architecture of Fairwinds Insights makes it easy to add new data and create
 your own Action Items. You just need to generate some JSON, pull out any Action Items, and
 send a POST request to the Insights API.
 
-If you develop a custom Insights plugin, you can either keep it private, or contribute it
-back to the community as open source. If your plugin is accepted as a core Insights plugin,
+If you develop a custom Insights report, you can either keep it private, or contribute it
+back to the community as open source. If your report is accepted as a core Insights report,
 it may get some extra functionality, like report events or a special UI.
 
-Most of our existing plugins are open source, so you can check out
+Most of our existing reports are open source, so you can check out
 [the repository](https://github.com/FairwindsOps/insights-plugins)
 for examples.
 
@@ -26,7 +26,7 @@ and we'll work with you to add your custom data.
 
 ## Example
 Let's say we have an organization-wide policy to never use the `default` namespace
-in our Kubernetes clusters. We want to create a new Insights plugin that will
+in our Kubernetes clusters. We want to create a new Insights report that will
 look in `default` and create an Action Item that prompts us to delete any resources that appear there.
 
 ### The Data

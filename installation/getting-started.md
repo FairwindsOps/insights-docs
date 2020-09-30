@@ -29,7 +29,7 @@ Once you've created an organization, you can create a new cluster, e.g. `staging
 
 ## Install the Agent
 
-When you create the cluster, you'll be prompted to install the [Insights Agent](../insights-agent)
+When you create the cluster, you'll be prompted to install the [Insights Agent](insights-agent)
 We recommend using Helm (either v2 or v3) to install the agent, as this will
 allow you to customize your installation.
 
@@ -38,4 +38,4 @@ allow you to customize your installation.
 Once you run the helm command provided in your cluster's settings page, you should see the
 page refresh after about 60 seconds, with some high-level data about your cluster.
 
-If the page doesn't refresh automatically, check out the [debugging instructions](../insights-agent#debugging)
+If the page doesn't refresh automatically, check out the [debugging instructions](insights-agent#debugging)
