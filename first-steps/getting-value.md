@@ -23,7 +23,7 @@ Containers are the easiest way for vulnerabilities to sneak into your applicatio
 comes with its own operating system and installed libraries, so detecting and prioritizing vulnerabilities
 can become a huge burden at scale.
 
-Check out the [container security section](../contianer-security) to learn how to audit your Docker
+Check out the [container security section](../container-security) to learn how to audit your Docker
 images for known CVEs.
 
 ## Cost Efficiency
