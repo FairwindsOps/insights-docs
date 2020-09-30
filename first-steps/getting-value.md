@@ -15,7 +15,7 @@ their work is done. But if you fail to set some basic configuration
 (like resource limits and liveness probes) for each workload,
 it can cause serious headaches down the line.
 
-Check out the [workload configuration section](../workload-configuration) to learn how to audit your
+Check out the [workload configuration section](workload-configuration) to learn how to audit your
 workloads for best practices.
 
 ## Container Security
@@ -23,7 +23,7 @@ Containers are the easiest way for vulnerabilities to sneak into your applicatio
 comes with its own operating system and installed libraries, so detecting and prioritizing vulnerabilities
 can become a huge burden at scale.
 
-Check out the [container security section](../container-security) to learn how to audit your Docker
+Check out the [container security section](container-security) to learn how to audit your Docker
 images for known CVEs.
 
 ## Cost Efficiency
@@ -31,5 +31,5 @@ Running workloads in Kubernetes can get expensive quickly. It can be hard to und
 workloads have the biggest impact on your bottom line, and often teams are tempted to overprovision
 resources in order to ensure their application always functions properly.
 
-Check out the [cost efficiency section](../cost-efficiency) to learn how to get a better understanding
+Check out the [cost efficiency section](cost-efficiency) to learn how to get a better understanding
 of workload cost, as well as detect workloads that are under- or over-provisioned.
