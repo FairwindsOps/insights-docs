@@ -5,6 +5,15 @@ Fairwinds Insights can also run as an Admission Controller -
 it will reject any Kubernetes resources from entering your cluster
 if they don't conform to your organization's policies.
 
+## Requirements
+The default installation requires [cert-manager](https://cert-manager.io/docs/installation/kubernetes/)
+v1.0 or greater.
+
+If you don't have cert-manager, or if you'd like to provide your own certificate for the webhook, you can use the
+`caBundle` and `secretName` parameters to pass a CA Bundle and the location of a TLS certificate
+stored in your cluster.
+
+## Installation
 To use the Admission Controller, install it on your cluster:
 
 ```bash
