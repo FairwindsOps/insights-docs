@@ -111,7 +111,10 @@ where:
 ### Polaris
 You can also upload a custom
 [Polaris configuration](https://github.com/FairwindsOps/polaris/blob/master/docs/usage.md#configuration)
-to set which checks should be marked as `danger`, or to create custom checks.
+to set which checks are marked as `danger`, and will therefore cause a workload to be rejected.
+
+You can also use the Polaris configuration to write
+[custom checks using JSON Schema](https://github.com/FairwindsOps/polaris/blob/master/docs/usage.md#custom-checks)
 
 ```
 curl -X POST https://insights.fairwinds.com/v0/organizations/$org/admission/reports/polaris/config \
