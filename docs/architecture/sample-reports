@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sample Reports | Fairwinds Insights Documentation</title>
+    <meta name="generator" content="VuePress 1.5.3">
+    <link rel="icon" href="/favicon.png">
+    <meta name="description" content="Documentation for the Fairwinds Insights Kubernetes auditing platform">
+    <link rel="preload" href="/assets/css/0.styles.ba7d046e.css" as="style"><link rel="preload" href="/assets/js/app.1151cd72.js" as="script"><link rel="preload" href="/assets/js/2.d0aaf875.js" as="script"><link rel="preload" href="/assets/js/13.417d7acf.js" as="script"><link rel="prefetch" href="/assets/js/10.95e8994a.js"><link rel="prefetch" href="/assets/js/11.94fbe278.js"><link rel="prefetch" href="/assets/js/12.fb5eea2d.js"><link rel="prefetch" href="/assets/js/14.d4ef333c.js"><link rel="prefetch" href="/assets/js/15.a1e203fe.js"><link rel="prefetch" href="/assets/js/16.b903431a.js"><link rel="prefetch" href="/assets/js/17.5270d6fa.js"><link rel="prefetch" href="/assets/js/18.87f865ca.js"><link rel="prefetch" href="/assets/js/19.057f3312.js"><link rel="prefetch" href="/assets/js/20.d94be241.js"><link rel="prefetch" href="/assets/js/21.fc7db7d2.js"><link rel="prefetch" href="/assets/js/22.cf575304.js"><link rel="prefetch" href="/assets/js/23.cde1f4cf.js"><link rel="prefetch" href="/assets/js/24.8631eaec.js"><link rel="prefetch" href="/assets/js/25.01e0c761.js"><link rel="prefetch" href="/assets/js/26.eb6584ad.js"><link rel="prefetch" href="/assets/js/27.79aa4691.js"><link rel="prefetch" href="/assets/js/28.8aab0700.js"><link rel="prefetch" href="/assets/js/29.9b044c3f.js"><link rel="prefetch" href="/assets/js/3.3d3783d4.js"><link rel="prefetch" href="/assets/js/30.a536f966.js"><link rel="prefetch" href="/assets/js/31.41ccfd5d.js"><link rel="prefetch" href="/assets/js/32.c197b362.js"><link rel="prefetch" href="/assets/js/33.a68694fc.js"><link rel="prefetch" href="/assets/js/34.da58fe50.js"><link rel="prefetch" href="/assets/js/35.565b7192.js"><link rel="prefetch" href="/assets/js/36.10e8d75d.js"><link rel="prefetch" href="/assets/js/37.c04ef61c.js"><link rel="prefetch" href="/assets/js/38.55edc7af.js"><link rel="prefetch" href="/assets/js/39.55fa06f6.js"><link rel="prefetch" href="/assets/js/4.3b6a7e49.js"><link rel="prefetch" href="/assets/js/40.9a34f4f5.js"><link rel="prefetch" href="/assets/js/41.c67cca45.js"><link rel="prefetch" href="/assets/js/42.89a89eb1.js"><link rel="prefetch" href="/assets/js/5.c03b1cde.js"><link rel="prefetch" href="/assets/js/6.7c1f35f3.js"><link rel="prefetch" href="/assets/js/7.28757c16.js"><link rel="prefetch" href="/assets/js/8.72bdfd08.js"><link rel="prefetch" href="/assets/js/9.9665c39f.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.ba7d046e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.svg" alt="Fairwinds Insights Documentation" class="logo"> <span class="site-name can-hide">Fairwinds Insights Documentation</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" aria-current="page" class="sidebar-link">Home</a></li><li><a href="/release-notes.html" class="sidebar-link">Release Notes</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Installation</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/installation/getting-started.html" class="sidebar-link">Getting Started</a></li><li><a href="/installation/insights-agent.html" class="sidebar-link">Insights Agent</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>First Steps</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Features</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Reports</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Integrations</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Management</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>API Access</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Architecture</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/architecture/architecture.html" class="sidebar-link">Insights Architecture</a></li><li><a href="/architecture/sample-reports.html" class="active sidebar-link">Sample Reports</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/architecture/sample-reports.html#goldilocks" class="sidebar-link">Goldilocks</a></li><li class="sidebar-sub-header"><a href="/architecture/sample-reports.html#kube-bench" class="sidebar-link">kube-bench</a></li><li class="sidebar-sub-header"><a href="/architecture/sample-reports.html#kube-hunter" class="sidebar-link">kube-hunter</a></li><li class="sidebar-sub-header"><a href="/architecture/sample-reports.html#kubesec" class="sidebar-link">kubesec</a></li><li class="sidebar-sub-header"><a href="/architecture/sample-reports.html#nova" class="sidebar-link">Nova</a></li><li class="sidebar-sub-header"><a href="/architecture/sample-reports.html#opa" class="sidebar-link">OPA</a></li><li class="sidebar-sub-header"><a href="/architecture/sample-reports.html#pluto" class="sidebar-link">Pluto</a></li><li class="sidebar-sub-header"><a href="/architecture/sample-reports.html#polaris" class="sidebar-link">Polaris</a></li><li class="sidebar-sub-header"><a href="/architecture/sample-reports.html#rbac-reporter" class="sidebar-link">RBAC Reporter</a></li><li class="sidebar-sub-header"><a href="/architecture/sample-reports.html#trivy" class="sidebar-link">Trivy</a></li><li class="sidebar-sub-header"><a href="/architecture/sample-reports.html#workloads" class="sidebar-link">Workloads</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="sample-reports"><a href="#sample-reports" class="header-anchor">#</a> Sample Reports</h1> <p>Below is sample data for each report type. This should help give a sense for
+what sort of data is being reported back to Fairwinds Insights.</p> <h2 id="goldilocks"><a href="#goldilocks" class="header-anchor">#</a> Goldilocks</h2> <p>Goldilocks reports contain information about resource usage for each Deployment.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;deployments&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;containers&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;containerName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;fairwinds-insights&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;limits&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token property">&quot;cpu&quot;</span><span class="token operator">:</span> <span class="token string">&quot;500m&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;memory&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1Gi&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;lowerBound&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token property">&quot;cpu&quot;</span><span class="token operator">:</span> <span class="token string">&quot;25m&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;memory&quot;</span><span class="token operator">:</span> <span class="token string">&quot;262144k&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;requests&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token property">&quot;cpu&quot;</span><span class="token operator">:</span> <span class="token string">&quot;500m&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;memory&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1Gi&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;target&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token property">&quot;cpu&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1000m&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;memory&quot;</span><span class="token operator">:</span> <span class="token string">&quot;3Gi&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;uncappedTarget&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token property">&quot;cpu&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2000m&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;memory&quot;</span><span class="token operator">:</span> <span class="token string">&quot;3Gi&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;upperBound&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token property">&quot;cpu&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2000m&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;memory&quot;</span><span class="token operator">:</span> <span class="token string">&quot;3Gi&quot;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;deploymentName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;my-app&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;namespace&quot;</span><span class="token operator">:</span> <span class="token string">&quot;my-app&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="kube-bench"><a href="#kube-bench" class="header-anchor">#</a> kube-bench</h2> <p>kube-bench reports contain a list of Nodes, plus the results of checks that have been run on those Nodes.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;5&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;5&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;node_type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;policies&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;tests&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                <span class="token property">&quot;desc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;RBAC and Service Accounts&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;fail&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;info&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;pass&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;results&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">&quot;AuditConfig&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;actual_value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;audit&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;expected_result&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;remediation&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Identify all clusterrolebindings to the cluster-admin role. Check if they are used and\nif they need this role or if they could use a role with fewer privileges.\nWhere possible, first bind users to a lower privileged role and then remove the\nclusterrolebinding to the cluster-admin role :\nkubectl delete clusterrolebinding [name]\n&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;scored&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;status&quot;</span><span class="token operator">:</span> <span class="token string">&quot;WARN&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;test_desc&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Ensure that the cluster-admin role is only used where required (Not Scored)&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;test_info&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                            <span class="token string">&quot;Identify all clusterrolebindings to the cluster-admin role. Check if they are used and\nif they need this role or if they could use a role with fewer privileges.\nWhere possible, first bind users to a lower privileged role and then remove the\nclusterrolebinding to the cluster-admin role :\nkubectl delete clusterrolebinding [name]\n&quot;</span>
+                        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;test_number&quot;</span><span class="token operator">:</span> <span class="token string">&quot;5.1.1&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;manual&quot;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="kube-hunter"><a href="#kube-hunter" class="header-anchor">#</a> kube-hunter</h2> <p>kube-hunter reports contain a list of Nodes, Services, and detected vulnerabilities.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;_fairwindsReportVersion&quot;</span><span class="token operator">:</span> <span class="token string">&quot;501&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;hunter_statistics&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Checks if Node is running a Kubernetes version vulnerable to known CVEs&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;K8s CVE Hunter&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;vulnerabilities&quot;</span><span class="token operator">:</span> <span class="token number">0</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;nodes&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;location&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10.244.0.1&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Node/Master&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;services&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;The Kubelet is the main component in every Node, all pod operations goes through the kubelet&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;location&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10.244.0.1:10250&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;service&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Kubelet API&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="kubesec"><a href="#kubesec" class="header-anchor">#</a> kubesec</h2> <p>kubesec reports contain a list of Namespaces, Deployments, StatefulSets, and DaemonSets,
+as well as any potential configuration issues discovered.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;namespaces&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;my-app&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;daemonsets&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;statefulsets&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;deployments&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;my-app&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;namespace&quot;</span><span class="token operator">:</span> <span class="token string">&quot;my-app&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;results&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token punctuation">{</span>
+                            <span class="token property">&quot;message&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Passed with a score of 4 points&quot;</span><span class="token punctuation">,</span>
+                            <span class="token property">&quot;object&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Deployment/my-app.my-app&quot;</span><span class="token punctuation">,</span>
+                            <span class="token property">&quot;score&quot;</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+                            <span class="token property">&quot;scoring&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                                <span class="token property">&quot;advise&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                                    <span class="token punctuation">{</span>
+                                        <span class="token property">&quot;points&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+                                        <span class="token property">&quot;reason&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Well defined AppArmor policies may provide greater protection from unknown threats. WARNING: NOT PRODUCTION READY&quot;</span><span class="token punctuation">,</span>
+                                        <span class="token property">&quot;selector&quot;</span><span class="token operator">:</span> <span class="token string">&quot;.metadata .annotations .\&quot;container.apparmor.security.beta.kubernetes.io/nginx\&quot;&quot;</span>
+                                    <span class="token punctuation">}</span>
+                                <span class="token punctuation">]</span>
+                            <span class="token punctuation">}</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">]</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="nova"><a href="#nova" class="header-anchor">#</a> Nova</h2> <p>Nova reports contain a list of Helm releases in the cluster, as well as the installed version.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;helm_releases&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;namespace&quot;</span><span class="token operator">:</span> <span class="token string">&quot;nginx-ingress&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;newest&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;outdated&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;release&quot;</span><span class="token operator">:</span> <span class="token string">&quot;nginx-ingress&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;version&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.2.0&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="opa"><a href="#opa" class="header-anchor">#</a> OPA</h2> <p>OPA reports contain a list of Action Items generated by your OPA policies</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;ActionItems&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;Category&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Reliability&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;String: No horizontal pod autoscaler found&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Remediation&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Create an HPA&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ResourceKind&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Deployment&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ResourceName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;local-path-provisioner&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ResourceNamespace&quot;</span><span class="token operator">:</span> <span class="token string">&quot;local-path-storage&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Severity&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;EventType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;hpa-required&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HPA is required&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="pluto"><a href="#pluto" class="header-anchor">#</a> Pluto</h2> <p>Pluto reports contain a list of resources that have deprecated API versions</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cert-manager/cert-manager-webhook&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;api&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;version&quot;</span><span class="token operator">:</span> <span class="token string">&quot;admissionregistration.k8s.io/v1beta1&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;kind&quot;</span><span class="token operator">:</span> <span class="token string">&quot;MutatingWebhookConfiguration&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;deprecated-in&quot;</span><span class="token operator">:</span> <span class="token string">&quot;v1.16.0&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;removed-in&quot;</span><span class="token operator">:</span> <span class="token string">&quot;v1.19.0&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;replacement-api&quot;</span><span class="token operator">:</span> <span class="token string">&quot;admissionregistration.k8s.io/v1&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;deprecated&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;removed&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="polaris"><a href="#polaris" class="header-anchor">#</a> Polaris</h2> <p>Polaris reports contain a list of workloads as well as any potential configuration issues in those workloads.
+The report also contains some metadata about the cluster.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;AuditTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020-07-15T15:20:38Z&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;SourceName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;SourceType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Cluster&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;ClusterInfo&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;Controllers&quot;</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;Namespaces&quot;</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;Nodes&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;Pods&quot;</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;Version&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.17&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;DisplayName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;k8test&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;PolarisOutputVersion&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.0&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;Results&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;CreatedTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0001-01-01T00:00:00Z&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Kind&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Deployment&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;coredns&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Namespace&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kube-system&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;PodResult&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;ContainerResults&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                    <span class="token punctuation">{</span>
+                        <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;coredns&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;Results&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                            <span class="token property">&quot;cpuLimitsMissing&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                                <span class="token property">&quot;Category&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Resources&quot;</span><span class="token punctuation">,</span>
+                                <span class="token property">&quot;ID&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cpuLimitsMissing&quot;</span><span class="token punctuation">,</span>
+                                <span class="token property">&quot;Message&quot;</span><span class="token operator">:</span> <span class="token string">&quot;CPU limits should be set&quot;</span><span class="token punctuation">,</span>
+                                <span class="token property">&quot;Severity&quot;</span><span class="token operator">:</span> <span class="token string">&quot;warning&quot;</span><span class="token punctuation">,</span>
+                                <span class="token property">&quot;Success&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span>
+                            <span class="token punctuation">}</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="rbac-reporter"><a href="#rbac-reporter" class="header-anchor">#</a> RBAC Reporter</h2> <p>RBAC Reporter reports contain a list of Roles, ClusterRoles, RoleBindings, and ClusterRoleBindings.</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;cluster_role_bindings&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;metadata&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;annotations&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">&quot;rbac.authorization.kubernetes.io/autoupdate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;creationTimestamp&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020-01-30T10:36:18Z&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;labels&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">&quot;kubernetes.io/bootstrapping&quot;</span><span class="token operator">:</span> <span class="token string">&quot;rbac-defaults&quot;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cluster-admin&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;resourceVersion&quot;</span><span class="token operator">:</span> <span class="token string">&quot;96&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;selfLink&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/cluster-admin&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;uid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;297abf64-0f2f-4263-b15d-7fb74f75f154&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;roleRef&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;apiGroup&quot;</span><span class="token operator">:</span> <span class="token string">&quot;rbac.authorization.k8s.io&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;kind&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ClusterRole&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cluster-admin&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;subjects&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;apiGroup&quot;</span><span class="token operator">:</span> <span class="token string">&quot;rbac.authorization.k8s.io&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;kind&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Group&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;system:masters&quot;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;cluster_roles&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;metadata&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;annotations&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">&quot;rbac.authorization.kubernetes.io/autoupdate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;creationTimestamp&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020-01-30T10:36:18Z&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;labels&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">&quot;kubernetes.io/bootstrapping&quot;</span><span class="token operator">:</span> <span class="token string">&quot;rbac-defaults&quot;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cluster-admin&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;resourceVersion&quot;</span><span class="token operator">:</span> <span class="token string">&quot;45&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;selfLink&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/apis/rbac.authorization.k8s.io/v1/clusterroles/cluster-admin&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;uid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ad307e81-e1f3-4d57-a2f3-19dbfe196c9d&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;rules&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;apiGroups&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token string">&quot;*&quot;</span>
+                    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;resources&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token string">&quot;*&quot;</span>
+                    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;verbs&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token string">&quot;*&quot;</span>
+                    <span class="token punctuation">]</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;nonResourceURLs&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token string">&quot;*&quot;</span>
+                    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;verbs&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token string">&quot;*&quot;</span>
+                    <span class="token punctuation">]</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="trivy"><a href="#trivy" class="header-anchor">#</a> Trivy</h2> <p>Trivy reports contain a list of images running in the cluster, as well as any CVEs in those images</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;Images&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;ID&quot;</span><span class="token operator">:</span> <span class="token string">&quot;docker.io/bitnami/postgresql@sha256:8008fdf764dc072a04fabf71812c8bbb39d2611f54310fbc325405d85437baf1&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;docker.io/bitnami/postgresql:11.6.0-debian-9-r48&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Namespace&quot;</span><span class="token operator">:</span> <span class="token string">&quot;my-app&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;OwnerKind&quot;</span><span class="token operator">:</span> <span class="token string">&quot;StatefulSet&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;OwnerName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;my-app-postgresql/my-app-postgresql&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Report&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;Target&quot;</span><span class="token operator">:</span> <span class="token string">&quot;docker_io_bitnami_postgresql_sha256_8008fdf764dc072a04fabf71812c8bbb39d2611f54310fbc325405d85437baf1 (debian 9.11)&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;Vulnerabilities&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token punctuation">{</span>
+                            <span class="token property">&quot;InstalledVersion&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.4.9&quot;</span><span class="token punctuation">,</span>
+                            <span class="token property">&quot;PkgName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;apt&quot;</span><span class="token punctuation">,</span>
+                            <span class="token property">&quot;VulnerabilityID&quot;</span><span class="token operator">:</span> <span class="token string">&quot;CVE-2011-3374&quot;</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">]</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;Vulnerabilities&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;CVE-2011-3374&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;Description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;It was found that apt-key in apt, all versions, do not correctly validate gpg keys with the master keyring, leading to a potential man-in-the-middle attack.&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;References&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;https://access.redhat.com/security/cve/cve-2011-3374&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=642480&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;https://people.canonical.com/~ubuntu-security/cve/2011/CVE-2011-3374.html&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;https://security-tracker.debian.org/tracker/CVE-2011-3374&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;https://snyk.io/vuln/SNYK-LINUX-APT-116518&quot;</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Severity&quot;</span><span class="token operator">:</span> <span class="token string">&quot;MEDIUM&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;VulnerabilityID&quot;</span><span class="token operator">:</span> <span class="token string">&quot;CVE-2011-3374&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="workloads"><a href="#workloads" class="header-anchor">#</a> Workloads</h2> <p>Workloads reports contain a list of workloads, Namespaces, and Nodes in the cluster</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+    <span class="token property">&quot;CreationTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020-02-11T19:08:07.287236228Z&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;ServerVersion&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1.16&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;SourceName&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://10.96.0.1:443&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;SourceType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Cluster&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;Controllers&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;Containers&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;CreationTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0001-01-01T00:00:00Z&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;Image&quot;</span><span class="token operator">:</span> <span class="token string">&quot;k8s.gcr.io/coredns:1.6.2&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;ImageID&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;coredns&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;Resource&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token property">&quot;Limits&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                            <span class="token property">&quot;CPU&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span>
+                            <span class="token property">&quot;Memory&quot;</span><span class="token operator">:</span> <span class="token string">&quot;170Mi&quot;</span>
+                        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;Requests&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                            <span class="token property">&quot;CPU&quot;</span><span class="token operator">:</span> <span class="token string">&quot;100m&quot;</span><span class="token punctuation">,</span>
+                            <span class="token property">&quot;Memory&quot;</span><span class="token operator">:</span> <span class="token string">&quot;70Mi&quot;</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Kind&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Deployment&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;coredns&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Namespace&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kube-system&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;ParentUID&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;UID&quot;</span><span class="token operator">:</span> <span class="token string">&quot;081e8080-4649-420b-87da-ff48401842a7&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;Namespaces&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;metadata&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;creationTimestamp&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020-02-11T17:55:14Z&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;default&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;resourceVersion&quot;</span><span class="token operator">:</span> <span class="token string">&quot;146&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;selfLink&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/api/v1/namespaces/default&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;uid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;604f448f-6613-40b0-a01c-10702f2d742e&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;spec&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;finalizers&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                    <span class="token string">&quot;kubernetes&quot;</span>
+                <span class="token punctuation">]</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;status&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;phase&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Active&quot;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;Nodes&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;Allocatable&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;cpu&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;ephemeral-storage&quot;</span><span class="token operator">:</span> <span class="token string">&quot;61255492Ki&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;hugepages-1Gi&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;hugepages-2Mi&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;memory&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2037620Ki&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;pods&quot;</span><span class="token operator">:</span> <span class="token string">&quot;110&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;AllocatedLimits&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;cpu&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1250m&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;memory&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2471Mi&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;pods&quot;</span><span class="token operator">:</span> <span class="token string">&quot;13&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;AllocatedRequests&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;cpu&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1665m&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;memory&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1988Mi&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;pods&quot;</span><span class="token operator">:</span> <span class="token string">&quot;13&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Annotations&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;kubeadm.alpha.kubernetes.io/cri-socket&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/run/containerd/containerd.sock&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;node.alpha.kubernetes.io/ttl&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;volumes.kubernetes.io/controller-managed-attach-detach&quot;</span><span class="token operator">:</span> <span class="token string">&quot;true&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Capacity&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;cpu&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;ephemeral-storage&quot;</span><span class="token operator">:</span> <span class="token string">&quot;61255492Ki&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;hugepages-1Gi&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;hugepages-2Mi&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;memory&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2037620Ki&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;pods&quot;</span><span class="token operator">:</span> <span class="token string">&quot;110&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;CreationTimestamp&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020-02-11T17:55:12Z&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;KubeProxyVersion&quot;</span><span class="token operator">:</span> <span class="token string">&quot;v1.16.3&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;KubeletVersion&quot;</span><span class="token operator">:</span> <span class="token string">&quot;v1.16.3&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Labels&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;beta.kubernetes.io/arch&quot;</span><span class="token operator">:</span> <span class="token string">&quot;amd64&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;beta.kubernetes.io/os&quot;</span><span class="token operator">:</span> <span class="token string">&quot;linux&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;kubernetes.io/arch&quot;</span><span class="token operator">:</span> <span class="token string">&quot;amd64&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;kubernetes.io/hostname&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kind-control-plane&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;kubernetes.io/os&quot;</span><span class="token operator">:</span> <span class="token string">&quot;linux&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;node-role.kubernetes.io/master&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;kind-control-plane&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;Utilization&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;cpuLimitsFraction&quot;</span><span class="token operator">:</span> <span class="token number">0.625</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;cpuRequestsFraction&quot;</span><span class="token operator">:</span> <span class="token number">0.8325</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;memoryLimitsFraction&quot;</span><span class="token operator">:</span> <span class="token number">1.2417938575396787</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;memoryRequestsFraction&quot;</span><span class="token operator">:</span> <span class="token number">0.9990636134313562</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/FairwindsOps/insights-docs/edit/master/architecture/sample-reports.md" target="_blank" rel="noopener noreferrer">Help us improve this page</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.1151cd72.js" defer></script><script src="/assets/js/2.d0aaf875.js" defer></script><script src="/assets/js/13.417d7acf.js" defer></script>
+  </body>
+</html>
