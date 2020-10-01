@@ -102,7 +102,7 @@ rules:
 You can fine-tune which rules are applied by the admission controller. Specifically, the following auditing tools
 can be enabled or disabled as part of admission control:
 * Polaris - checks for security and best practices
-* OPA - apply custom policies to resources [see docs]()
+* OPA - apply custom policies to resources [see docs](/reports/opa)
 * Pluto - disallow resources that have been deprecated
 
 To enable or disable a particular report, run:
