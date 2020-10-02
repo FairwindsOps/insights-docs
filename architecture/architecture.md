@@ -22,8 +22,9 @@ Fairwinds Insights will need access to the following domains:
 * insights.fairwinds.com
 * quay.io
 * hub.docker.com (kube-hunter)
-* github.com (trivy)
 * raw.githubusercontent.com (goldilocks)
+* github.com (trivy)
+* github-production-release-asset-*.s3.amazonaws.com (trivy)
 
 ## Report Architectures
 Typically, each report runs as a CronJob on a configurable schedule (usually once/hour by default).
