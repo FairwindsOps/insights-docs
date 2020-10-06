@@ -9,6 +9,16 @@ meta:
 ---
 # Release Notes
 
+## 1.12.0
+### Tracking Vulnerable Image
+If a vulnerable image is referenced in a Kubernetes manifest, we’ll now track the container name.
+
+### Identifying Repo Names
+Fairwinds Insights now supports integrations into your CI/CD pipeline. We've added a cleaner way to detect repository names, making it easy to get started with this feature.
+
+### Docker Pull
+We will now run docker pull if an image isn’t available locally.
+
 ## 1.11.0
 
 ### Workload Visualization
