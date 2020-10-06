@@ -14,7 +14,7 @@ meta:
 If a vulnerable image is referenced in a Kubernetes manifest, we’ll now track the container name.
 
 ### Identifying Repo Names
-We’ve added a cleaner way to detect repository names.
+Fairwinds Insights now supports integrations into your CI/CD pipeline. We've added a cleaner way to detect repository names, making it easy to get started with this feature.
 
 ### Docker Pull
 We will now run docker pull if an image isn’t available locally.
