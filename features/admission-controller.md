@@ -56,7 +56,6 @@ spec:
         image: busybox:1.32
         securityContext:
           allowPrivilegeEscalation: true
-EOF
 ```
 
 ```bash
