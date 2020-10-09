@@ -60,7 +60,7 @@ spec:
 
 ```bash
 kubectl create ns testing
-kubeclt apply -f bad-config.yaml
+kubectl apply -f bad-config.yaml
 ```
 
 You should see a message saying:
