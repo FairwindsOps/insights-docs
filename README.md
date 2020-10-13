@@ -19,7 +19,7 @@ To view the full docs, visit
 </p>
 </blockquote>
 
-[Fairwinds Insights](https://fairwinds.com/insights) is a configuration validation platform that enables engineering and DevOps teams to run Kubernetes workloads securely, efficiently, and reliably. The platform integrates trusted open source tools that proactively monitor Kubernetes and container configurations, recommending improvements that help avoid problems before they arise. Recommendations are stored in a single location which enables teams to track and prioritize issues, collaborate across teams, and apply best practices as applications move from development to production. 
+[Fairwinds Insights](https://fairwinds.com/insights) is a policy-driven Configuration Validation platform that integrates an extensible framework of trusted open source that runs across the entire development lifecycle. The platform enables DevOps teams to find and prevent configuration problems as applications move from development to production. It provides out-of-the-box integrations into CI/CD workflows, an admission controller for enforcing custom policies (using Open Policy Agent) at pre-deployment, and automation for running Kubernetes auditing tools. Findings and recommendations are stored in a single location, enabling operators to gain visibility and control over multiple Kubernetes clusters, track and prioritize issues, and monitor the security and cost of Kubernetes workloads.
 
 Learn more about [installing Fairwinds Insights](https://insights.docs.fairwinds.com/installation/getting-started), features like [Slack notifications](https://insights.docs.fairwinds.com/features/slack/), and our supported plugins below:
 
