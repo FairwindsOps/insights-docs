@@ -49,12 +49,13 @@ module.exports = {
         "/reports/goldilocks",
         "/reports/trivy",
         "/reports/opa",
-        "/reports/kubesec",
-        "/reports/kube-hunter",
+        "/reports/kube-bench",
         "/reports/nova",
+        "/reports/pluto",
+        "/reports/kube-hunter",
+        "/reports/kubesec",
         "/reports/rbac-reporter",
         "/reports/workloads",
-        "/reports/rbac-requirements",
         "/reports/new",
       ],
     }, {
@@ -78,7 +79,6 @@ module.exports = {
         "/api/custom-reports",
       ],
     },
-      //["/architecture", "Architecture"],
       {
         title: "Architecture",
         children: [
