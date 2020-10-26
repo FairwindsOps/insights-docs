@@ -1,3 +1,12 @@
+---
+meta:
+  - name: title
+    content: Pluto Integration with Fairwinds Insights
+  - name: description
+    content: Pluto, by Fairwinds, is an open source tool for detecting deprecated Kubernetes resources
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, Pluto, open source, deprecation
+---
 # Pluto
 
 [Pluto](https://github.com/FairwindsOps/pluto) is an open source utility for

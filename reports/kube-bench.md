@@ -1,3 +1,12 @@
+---
+meta:
+  - name: title
+    content: Kube-bench and Fairwinds Insights
+  - name: description
+    content: Kube-bench checks Kubernetes clusters against the CIS Kubernetes Benchmark
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, open source, Kube-hunter, CIS Benchmark
+---
 # Kube-bench
 
 [Kube-bench](https://github.com/aquasecurity/kube-bench/) checks your Kubernetes cluster against the
