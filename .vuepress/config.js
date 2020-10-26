@@ -18,6 +18,7 @@ module.exports = {
       collapsable: false,
       children: [
         '/installation/getting-started',
+        '/installation/report-hub',
         '/installation/insights-agent',
       ],
     }, {
