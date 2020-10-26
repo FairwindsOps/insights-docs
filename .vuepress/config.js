@@ -47,9 +47,9 @@ module.exports = {
       sidebarDepth: 0,
       children: [
         "/reports/polaris",
-        "/reports/goldilocks",
         "/reports/trivy",
         "/reports/opa",
+        "/reports/goldilocks",
         "/reports/kube-bench",
         "/reports/nova",
         "/reports/pluto",
