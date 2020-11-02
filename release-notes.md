@@ -9,6 +9,29 @@ meta:
 ---
 # Release Notes
 
+## 2.0.0
+### Report Hub
+We are happy to introduce The Report Hub, a way for users to cut down on the number of findings they receive when they first sign up for Insights.
+
+The Report Hub allows users to decide which reports they would like to run in their clusters. Users will be able to configure each report and set the timeout and schedule when the report runs.
+
+[Learn More](https://insights.docs.fairwinds.com/installation/report-hub/#customization)
+
+### Filtering on Workloads
+We’ve added filtering options to the Workloads table, and now the graphs will reflect the data from the table shown.
+
+### Add Exemptions to CI
+You can now add exemptions into your CI flow. You can tell Insights that certain files or checks should be excluded from the CI scan. Insights will look for Action Items that match all of the provided fields and mark them as exempt.
+
+### Added Commit Messages to CI/CD
+We now display commit messages wherever commits are shown.
+
+### Aggregated Trivy Results
+If you have multiple versions of the same image, we can now aggregate the results together.
+
+### Updated Customer Agreement
+We have updated our [Fairwinds Customer Agreement](https://insights.fairwinds.com/customer-agreement), effective 10/19/2020.
+
 ## 1.12.0
 ### Tracking Vulnerable Image
 If a vulnerable image is referenced in a Kubernetes manifest, we’ll now track the container name.
