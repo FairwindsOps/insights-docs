@@ -86,6 +86,18 @@ in your fairwinds-insights.yaml
 * `manifests.helm[].values` - values to pass to the chart when templating
 * `manifests.helm[].valuesFile` - a YAML file containing values to pass to the chart when templating
 
+### Exemptions
+You can tell Insights that certain files or checks should be excluded from the CI scan.
+Insights will look for Action Items that match _all_ of the provided fields, and mark them as exempt.
+
+It's a good practice to include the `reason` field for future reference.
+
+* `exemptions[].filename` - the name of the file to exempt
+* `exemptions[].image` - the name of the image to exempt for a Trivy scan
+* `exemptions[].report` - the name of the report type (e.g. `polaris`, `pluto`, `trivy`, or `opa`)
+* `exemptions[].checks[]` - an array of check IDs to skip (e.g. `runAsNonRoot`)
+* `exemptions[].reason` - a human-readable description of why this exemption is necessary
+
 ## Connect to GitHub
 > You can still use the Continuous Integration feature without GitHub.
 >
