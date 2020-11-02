@@ -11,9 +11,11 @@ meta:
 
 ## 2.0.0
 ### Report Hub
-We are happy to introduce The Report Hub! 
+We are happy to introduce The Report Hub, a way for users to cut down on the number of findings they receive when they first sign up for Insights.
 
-The Report Hub allows users to select which reports they want to receive findings from and no longer installs all the reports at once. Users will be able to configure each report and set the timeout and schedule when the report runs.
+The Report Hub allows users to decide which reports they would like to run in their clusters. Users will be able to configure each report and set the timeout and schedule when the report runs.
+
+[Learn More](https://insights.docs.fairwinds.com/installation/report-hub/#customization)
 
 ### Filtering on Workloads
 We’ve added filtering options to the Workloads table, and now the graphs will reflect the data from the table shown.
