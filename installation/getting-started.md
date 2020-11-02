@@ -30,12 +30,8 @@ Once you've created an organization, you can create a new cluster, e.g. `staging
 ## Install the Agent
 
 When you create the cluster, you'll be prompted to install the [Insights Agent](insights-agent)
-We recommend using Helm (either v2 or v3) to install the agent, as this will
-allow you to customize your installation.
+You'll need to use [Helm](https://helm.sh/) to install - if you'd like to view the Kubernetes
+manifests first, you can use `helm template` to generate the YAML files.
 
-![Helm install](/img/helm-install.png)
+[See the Report Hub documentation](report-hub) for next steps.
 
-Once you run the helm command provided in your cluster's settings page, you should see the
-page refresh after about 60 seconds, with some high-level data about your cluster.
-
-If the page doesn't refresh automatically, check out the [debugging instructions](insights-agent#debugging)

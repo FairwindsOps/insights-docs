@@ -18,6 +18,7 @@ module.exports = {
       collapsable: false,
       children: [
         '/installation/getting-started',
+        '/installation/report-hub',
         '/installation/insights-agent',
       ],
     }, {
@@ -46,15 +47,16 @@ module.exports = {
       sidebarDepth: 0,
       children: [
         "/reports/polaris",
-        "/reports/goldilocks",
         "/reports/trivy",
         "/reports/opa",
-        "/reports/kubesec",
-        "/reports/kube-hunter",
+        "/reports/goldilocks",
+        "/reports/kube-bench",
         "/reports/nova",
+        "/reports/pluto",
+        "/reports/kube-hunter",
+        "/reports/kubesec",
         "/reports/rbac-reporter",
         "/reports/workloads",
-        "/reports/rbac-requirements",
         "/reports/new",
       ],
     }, {
@@ -78,7 +80,6 @@ module.exports = {
         "/api/custom-reports",
       ],
     },
-      //["/architecture", "Architecture"],
       {
         title: "Architecture",
         children: [
