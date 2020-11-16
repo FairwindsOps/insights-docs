@@ -29,7 +29,7 @@ Once you've created an organization, you can create a new cluster, e.g. `staging
 
 ## Install the Agent
 
-When you create the cluster, you'll be prompted to install the [Insights Agent](insights-agent)
+When you create the cluster, you'll be prompted to install the [Insights Agent](https://insights.docs.fairwinds.com/installation/insights-agent/)
 You'll need to use [Helm](https://helm.sh/) to install - if you'd like to view the Kubernetes
 manifests first, you can use `helm template` to generate the YAML files.
 
