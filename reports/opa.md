@@ -92,6 +92,15 @@ To see a full list of your organization's policies, you can run:
 FAIRWINDS_TOKEN=YOUR_TOKEN insights policy list --organization your-org-name
 ```
 
+### Full Sync
+If you'd like your Git repository to be the sole source of truth for which policies
+are kept in Insights, you can add the `--fullsync` flag when running `insights policy sync`.
+This will _delete_ policies that are not present in your local directory, in addition
+to uploading new or changed policies.
+```bash
+FAIRWINDS_TOKEN=YOUR_TOKEN insights policy sync --organization your-org-name -d . --fullsync
+```
+
 ## Testing your Policies
 After uploading new checks, it's good to test that they're working properly. To do so, you can
 manually create a one-off report:
