@@ -49,10 +49,16 @@ replicasRequired[actionItem] {
 ```
 
 ## Uploading Policies
-To add your policies to Insights, you'll need to use the API. You can find your API key on your organization's
-settings page (note: you must be an admin for your organization).
+> You must be an admin for your organization in order to manage policies
 
-Lets upload our `replicasRequired` check by creating `replicas.rego`:
+To add your policies to Insights, you'll need to use the [Insights CLI](/features/cli).
+You'll also need your API key, which an organization admin can find your on your organization's
+settings page.
+
+The Insights CLI expects each policy to live in its own directory, alongside
+the rules that dictate where the rule should be applied.
+
+To upload our `replicasRequired` check, we start by creating `./replicas/policy.rego`:
 ```rego
 package fairwinds
 
@@ -68,32 +74,22 @@ replicasRequired[actionItem] {
 }
 ```
 
-Then, use the Insights API to add your check:
-```bash
-export checkName=replicas
-export organization=acme-co # your org name in Insights
-export token=abcde # get this from your org settings page
-curl -X PUT -H "Content-type: text/plain" \
-  -H "Authorization: Bearer $token" \
-  "https://insights.fairwinds.com/v0/organizations/$organization/opa/customChecks/$checkName" \
-  --data-binary @replicas.rego
-```
-
-Next, we need to create a `checkInstance` to tell Insights what sorts of resources to apply our check to:
-
-**deployments.yaml**
+Next, we'll create `./replicas/deployments.yaml` to tell Insights that this policy
+should be applied to all Deployments:
 ```yaml
 targets:
 - apiGroups: ["apps"]
   kinds: ["Deployment"]
 ```
 
+Finally, we can upload our policies using the CLI:
 ```bash
-export instanceName=deployments
-curl -X PUT -H "Content-type: application/x-yaml" \
-  -H "Authorization: Bearer $token" \
-  "https://insights.fairwinds.com/v0/organizations/$organization/opa/customChecks/$checkName/instances/$instanceName" \
-  --data-binary @deployments.yaml
+FAIRWINDS_TOKEN=YOUR_TOKEN insights policy sync --organization your-org-name -d .
+```
+
+To see a full list of your organization's policies, you can run:
+```bash
+FAIRWINDS_TOKEN=YOUR_TOKEN insights policy list --organization your-org-name
 ```
 
 ## Testing your Policies
