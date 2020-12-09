@@ -40,7 +40,8 @@ module.exports = {
         "/features/add-ons",
         "/features/rbac",
         "/features/continuous-integration",
-        "/features/admission-controller.md",
+        "/features/admission-controller",
+        "/features/cli",
       ],
     }, {
       title: "Reports",
