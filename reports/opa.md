@@ -92,6 +92,21 @@ To see a full list of your organization's policies, you can run:
 FAIRWINDS_TOKEN=YOUR_TOKEN insights policy list --organization your-org-name
 ```
 
+## Syncing Policies
+The sync functionality expects a directory structure like the following:
+```
+.
++-- policy1
+|   +-- policy.yaml
+|   +-- instance1.yaml
++-- policy2
+|   +-- policy.rego
+|   +-- instance1.yaml
+```
+
+Running `insights policy sync` from the root directory will upload any new/changed policies
+to the Insights API, and start applying them to each of your clusters.
+
 ### Full Sync
 If you'd like your Git repository to be the sole source of truth for which policies
 are kept in Insights, you can add the `--fullsync` flag when running `insights policy sync`.
