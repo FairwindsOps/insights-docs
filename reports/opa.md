@@ -49,6 +49,19 @@ replicasRequired[actionItem] {
 ```
 
 ## Uploading Policies
+
+There are two methods of adding policies to Insights, directly through the API or using the [Insights CLI](https://github.com/FairwindsOps/insights-cli).
+
+### Insights Command Line Interface
+
+To add policies with the Insights CLI you need to create a folder structure that represents your policies. We recommend storing this in source control so that changes can be tracked. Each folder will be the name of a policy with a file inside called either `policy.yaml` or `policy.rego` and then one YAML file for each instance of that policy.
+
+Retrieve your API key from Insights and add it to an environment variable with a command like this `export FAIRWINDS_INSIGHTS=<token>`.
+
+Then from the root of your policy folder structure you can run `insights policy sync --organization <org name>` if you also include the `--fullsync` flag then any policies in your organization that aren't present in your folder structure will be deleted.
+
+### API
+
 To add your policies to Insights, you'll need to use the API. You can find your API key on your organization's
 settings page (note: you must be an admin for your organization).
 
