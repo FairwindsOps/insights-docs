@@ -224,4 +224,4 @@ hpaRequired[actionItem] {
 ```
 
 ## More Examples
-You can find more examples in the [Insights Plugins repository](https://github.com/FairwindsOps/insights-plugins/tree/master/plugins/opa/examples)
+You can find more examples in the [Insights Plugins repository](https://github.com/FairwindsOps/insights-plugins/tree/main/plugins/opa/examples)
