@@ -21,9 +21,9 @@ Fairwinds Insights provides over 100 checks for Kubernetes clusters and resource
 
 The Rules Engine is currently in closed beta. Please reach out if you’re interested in using this functionality. <support@fairwinds.com>
 
-### CI/CD Free for Open Source
+### CI/CD Free for Open Source - Closed Beta
  
-If a repo is public, we will allow anyone to view that repo’s CI/CD page.
+If a repo is public, we will allow anyone to view that repo’s CI/CD page. If you’re interested in using this please reach out to us at <support@fairwinds.com>
 
 ## 2.0.0
 
