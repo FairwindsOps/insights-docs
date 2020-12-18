@@ -9,7 +9,24 @@ meta:
 ---
 # Release Notes
 
+## 2.3.0
+### Admission Controller
+We rolled out a new UI that will let you see what’s going on with your Admission Controller. If a resource is rejected from your cluster, you will now see all of the action items associated with that event, along with a remediation recommendation. 
+ 
+## 2.2.0
+### Rules Engine - Closed Beta
+We are happy to introduce The Rules Engine!
+
+Fairwinds Insights provides over 100 checks for Kubernetes clusters and resources. These checks are increasingly run in a variety of contexts, such as CI/CD, admission control, and in-cluster. Some checks may be more appropriate in specific contexts, require a higher level of severity, or trigger different alert/response mechanisms. The Rules Engine allows users to modify existing action items within Insights and customize how they see fit. 
+
+The Rules Engine is currently in closed beta. Please reach out if you’re interested in using this functionality. <support@fairwinds.com>
+
+### CI/CD Free for Open Source
+ 
+If a repo is public, we will allow anyone to view that repo’s CI/CD page.
+
 ## 2.0.0
+
 ### Report Hub
 We are happy to introduce The Report Hub, a way for users to cut down on the number of findings they receive when they first sign up for Insights.
 
