@@ -23,7 +23,7 @@ The Rules Engine is currently in closed beta. Please reach out if you’re inter
 
 ### CI/CD Free for Open Source
  
-If a repo is public, we will allow anyone to view that repo’s CI/CD page.
+If a repo is public, we will allow anyone to view that repo’s CI/CD page. If you’re interested in using this please reach out to us at <support@fairwinds.com>
 
 ## 2.0.0
 
