@@ -25,18 +25,18 @@ Farwinds Insights runs across the entire development lifecycle, from CI to Admis
 
 The platform enables DevOps teams to find and prevent configuration problems as applications move
 from development to production. It provides out-of-the-box
-[integrations into CI/CD workflows](https://insights.docs.fairwinds.com/features/continuous-integration/),
-an [admission controller](https://insights.docs.fairwinds.com/features/admission-controller/)
+[integrations into CI/CD workflows](https://insights.docs.fairwinds.com/features/continuous-integration),
+an [admission controller](https://insights.docs.fairwinds.com/features/admission-controller)
 for enforcing custom policies (using Polaris or Open Policy Agent) at pre-deployment,
 and automation for running
-[Kubernetes auditing tools](https://insights.docs.fairwinds.com/installation/insights-agent/).
+[Kubernetes auditing tools](https://insights.docs.fairwinds.com/installation/insights-agent).
 Findings and recommendations are stored in a single location, enabling operators to gain visibility
 and control over multiple Kubernetes clusters, track and prioritize issues,
 and monitor the security and cost of Kubernetes workloads.
 
 Learn more about
 [installing Fairwinds Insights](https://insights.docs.fairwinds.com/installation/getting-started),
-features like [Slack notifications](https://insights.docs.fairwinds.com/features/slack/),
+features like [Slack notifications](https://insights.docs.fairwinds.com/integrations/slack),
 and our supported plugins below:
 
 * [Fairwinds Polaris](https://github.com/FairwindsOps/polaris) - checks best practices in workload configuration
