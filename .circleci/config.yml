@@ -22,7 +22,7 @@ jobs:
           name: Publish Docs Site to S3
           command: |
             cd ./dist
-            aws s3 sync ./ s3://pluto.docs.fairwinds.com --delete
+            aws s3 sync ./ s3://insights.docs.fairwinds.com --delete
 
 workflows:
   version: 2
@@ -31,4 +31,4 @@ workflows:
       - publish_docs:
           filters:
             branches:
-              only: master
+              only: main

@@ -9,4 +9,4 @@ npm install -g vuepress
 npm run serve
 ```
 
-Changes will be automatically pushed live when merged to master.
+Changes will be automatically pushed live when merged to main.
