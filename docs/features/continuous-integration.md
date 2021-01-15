@@ -7,6 +7,12 @@ vulnerabilities and Kubernetes misconfigurations early in the development proces
 can scan changes the changes in each pull request, notifying developers or breaking the build
 whenever security, efficiency, or reliability issues are found.
 
+Insights will run the following report types in CI:
+* Polaris (configuration validation for best practices)
+* Trivy (scan Docker images for vulnerabilities)
+* OPA (run custom policies)
+* Pluto (detect deprecated resources)
+
 # Setup
 To get started, visit your organization's **Repositories** tab, and click **Add Repo**
 
