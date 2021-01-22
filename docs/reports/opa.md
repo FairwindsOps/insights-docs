@@ -165,6 +165,20 @@ targets:
   kinds: ["StatefulSet"]
 ```
 
+### Run Types
+
+In addition to targeting specific types of resources you can also specify your instance to only run in certain contexts. By default an instance will run in all available contexts, but if you specify a `RunEnvironments` section of your YAML then it will only run in the environments selected.
+
+```yaml
+RunEnvironments:
+- Admission
+- CI
+- Agent
+targets:
+- apiGroups: ["apps"]
+  kinds: ["StatefulSet"]
+```
+
 ### Parameters
 We can also pass parameters to our instances. Say, for instance, that we wanted all Deployments to have at least 3 replicas,
 but StatefulSets were OK with a single replica. Then we could write:
