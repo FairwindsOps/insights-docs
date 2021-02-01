@@ -98,7 +98,7 @@ The sync functionality expects a directory structure like the following:
 ```
 .
 +-- policy1
-|   +-- policy.yaml
+|   +-- policy.rego
 |   +-- instance1.yaml
 +-- policy2
 |   +-- policy.rego
