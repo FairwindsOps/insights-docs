@@ -38,13 +38,14 @@ features like [Slack notifications](/integrations/slack),
 and our supported plugins below:
 
 * [Fairwinds Polaris](https://github.com/FairwindsOps/polaris) - checks best practices in workload configuration
-* [Fairwinds Goldilocks](https://github.com/FairwindsOps/goldilocks) - recommends resource limits and requests based on actual resource usage
 * [Trivy](https://github.com/aquasecurity/trivy) - scans Docker images for known vulnerabilities
+* [Fairwinds Goldilocks](https://github.com/FairwindsOps/goldilocks) - recommends resource limits and requests based on actual resource usage
 * [OPA](https://www.openpolicyagent.org/) - specify custom checks for Kubernetes resources
-* [Kubesec](https://github.com/controlplaneio/kubesec) - checks workload configuration for security issues
-* [Kube-hunter](https://github.com/aquasecurity/kube-hunter) - checks for cluster- and node-level security vulnerabilities
 * [kube-bench](https://github.com/aquasecurity/kube-bench) - checks the cluster against the CIS Benchmark
-* Release Watcher - checks for updates to Helm 3 charts (exclusive to Fairwinds Insights)
+* [Fairwinds Nova](http://github.com/FairwindsOps/nova) - checks for updates to Helm charts
+* [Fairwinds Pluto](http://github.com/FairwindsOps/pluto) - checks for resources deployed using deprecated APIs
 * [RBAC Reporter](https://github.com/FairwindsOps/insights-plugins/tree/master/rbac-reporter) - uploads metadata about RBAC profiles (exclusive to Fairwinds Insights)
+* [Kube-hunter](https://github.com/aquasecurity/kube-hunter) - checks for cluster- and node-level security vulnerabilities
+* [Kubesec](https://github.com/controlplaneio/kubesec) - checks workload configuration for security issues
 * [Workload Reporter](https://github.com/FairwindsOps/insights-plugins/tree/master/workload) - uploads high-level metadata about running workloads (exclusive to Fairwinds Insights)
 
