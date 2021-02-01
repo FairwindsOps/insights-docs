@@ -58,7 +58,8 @@ settings page.
 The Insights CLI expects each policy to live in its own directory, alongside
 the rules that dictate where the rule should be applied.
 
-To upload our `replicasRequired` check, we start by creating `./replicas/policy.rego`:
+To upload our `replicasRequired` check, we start by creating `./replicas/policy.rego`
+(note that the filename _must_ be named `policy.rego`):
 ```rego
 package fairwinds
 
