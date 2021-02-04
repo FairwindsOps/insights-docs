@@ -6,7 +6,9 @@ module.exports = {
   ],
   themeConfig: {
     docsRepo: 'FairwindsOps/insights-docs',
+    docsDir: 'docs',
     editLinks: true,
+    docsBranch: 'main',
     editLinkText: 'Help us improve this page',
     logo: '/img/logo.svg',
     heroText: "",
