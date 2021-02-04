@@ -97,7 +97,7 @@ FAIRWINDS_TOKEN=YOUR_TOKEN insights policy list --organization your-org-name
 The sync functionality expects a directory structure like the following:
 ```
 .
-+-- policies
++-- checks
 |   +-- policy1
 |       +-- policy.rego
 |       +-- instance1.yaml
