@@ -97,13 +97,12 @@ FAIRWINDS_TOKEN=YOUR_TOKEN insights policy list --organization your-org-name
 The sync functionality expects a directory structure like the following:
 ```
 .
-+-- checks
-|   +-- policy1
-|       +-- policy.rego
-|       +-- instance1.yaml
-|   +-- policy2
-|       +-- policy.rego
-|       +-- instance1.yaml
++-- policy1
+|   +-- policy.rego
+|   +-- instance1.yaml
++-- policy2
+|   +-- policy.rego
+|   +-- instance1.yaml
 ```
 
 Running `insights policy sync` from the root directory will upload any new/changed policies
