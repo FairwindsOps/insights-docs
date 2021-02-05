@@ -7,7 +7,7 @@ different workloads cost, understand cost trends, and help set resource requests
 ## Use an existing Prometheus installation
 To use an existing Prometheus installation pass the following flag to the Helm chart installation:
 ```
---set resourcemetrics.address="http://prometheus-server"
+--set resourcemetrics.address="http://prometheus-server.<namespace>"
 ```
 
 ## Install a new Prometheus
