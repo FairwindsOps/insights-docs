@@ -190,6 +190,7 @@ clusters:
 targets:
 - apiGroups: ["apps"]
   kinds: ["StatefulSet"]
+```
 
 ### Parameters
 We can also pass parameters to our instances. Say, for instance, that we wanted all Deployments to have at least 3 replicas,
