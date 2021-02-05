@@ -52,6 +52,7 @@ module.exports = {
         "/reports/polaris",
         "/reports/trivy",
         "/reports/goldilocks",
+        "/reports/prometheus-collector",
         "/reports/opa",
         "/reports/kube-bench",
         "/reports/nova",
