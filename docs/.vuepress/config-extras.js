@@ -52,6 +52,7 @@ module.exports = {
         "/reports/polaris",
         "/reports/trivy",
         "/reports/goldilocks",
+        "/reports/resource-metrics",
         "/reports/opa",
         "/reports/kube-bench",
         "/reports/nova",
