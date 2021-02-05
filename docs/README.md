@@ -35,5 +35,5 @@ and monitor the security and cost of Kubernetes workloads.
 Learn more about
 [installing Fairwinds Insights](/installation/getting-started),
 features like [Slack notifications](/integrations/slack),
-and our [supported plugins](/reports).
+and our [supported plugins](/reports/polaris).
 
