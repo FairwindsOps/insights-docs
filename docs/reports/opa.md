@@ -168,10 +168,10 @@ targets:
 
 ### Run Types
 
-In addition to targeting specific types of resources you can also specify your instance to only run in certain contexts. By default an instance will run in all available contexts, but if you specify a `RunEnvironments` section of your YAML then it will only run in the environments selected.
+In addition to targeting specific types of resources you can also specify your instance to only run in certain contexts. By default an instance will run in all available contexts, but if you specify a `runEnvironments` section of your YAML then it will only run in the environments selected.
 
 ```yaml
-RunEnvironments:
+runEnvironments:
 - Admission
 - CI
 - Agent
@@ -179,6 +179,17 @@ targets:
 - apiGroups: ["apps"]
   kinds: ["StatefulSet"]
 ```
+
+### Clusters
+
+If you want to restrict a policy to only running on a specific cluster you can specify which clusters to run in. By default an instance will run in all available clusters, but if you specify a `clusters` section of your YAML then it will only run in the clusters selected.
+
+```yaml
+clusters:
+- us-east-1
+targets:
+- apiGroups: ["apps"]
+  kinds: ["StatefulSet"]
 
 ### Parameters
 We can also pass parameters to our instances. Say, for instance, that we wanted all Deployments to have at least 3 replicas,
