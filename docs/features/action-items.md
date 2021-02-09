@@ -72,3 +72,13 @@ all visible items.
   <img :src="$withBase('/img/action-item-resolve-many.png')" alt="action item resolve many">
 </div>
 
+## Ticketing Integrations
+Insights can connect to external ticketing systems (currently only GitHub) to help you track
+your Action Items where you already live.
+
+To turn an Action Item into a ticket, click the `create ticket` button in the Action Items UI:
+
+<div class="mini-img">
+  <img :src="$withBase('/img/create-ticket.png')" alt="create ticket">
+</div>
+
