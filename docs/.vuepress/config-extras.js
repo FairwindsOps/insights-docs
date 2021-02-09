@@ -37,13 +37,14 @@ module.exports = {
       children: [
         "/features/cluster-summary",
         "/features/action-items",
-        "/features/cluster-comparison",
         "/features/workloads",
-        "/features/add-ons",
-        "/features/rbac",
+        "/features/policy",
         "/features/continuous-integration",
         "/features/admission-controller",
         "/features/cli",
+        "/features/add-ons",
+        "/features/rbac",
+        "/features/cluster-comparison",
       ],
     }, {
       title: "Reports",
