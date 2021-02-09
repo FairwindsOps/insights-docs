@@ -1,10 +1,11 @@
 # OPA Policies
 
-The [OPA Report](/reports/opa/) allows you to define custom policies for checking Kubernetes resources.
+The [OPA Report](/reports/opa) allows you to define custom policies for checking Kubernetes resources.
 This is useful for enforcing policies that are specific to your organization - e.g. particular labeling
 schemes or required annotations.
 
-This page discusses the Policy UI - to learn more about how to write OPA policies you can check out the [OPA Documentation](/reports/opa/)
+This page discusses the Policy UI - to learn more about how to write OPA
+policies you can check out the [OPA Documentation](/reports/opa)
 
 ## Create a Policy
 To get started, go to the `Policy` tab, and click the `Create Custom Policy` button.

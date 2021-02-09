@@ -82,5 +82,5 @@ To turn an Action Item into a ticket, click the `create ticket` button in the Ac
   <img :src="$withBase('/img/create-ticket.png')" alt="create ticket">
 </div>
 
-You may need to [connect your GitHub org](/features/continuous-integration/#connect-to-github)
+You may need to [connect your GitHub org](/features/continuous-integration#connect-to-github)
 to Insights in order to start creating issues.
