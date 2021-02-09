@@ -1,17 +1,28 @@
+references:
+  test_and_build: &test_and_build
+    name: Build Docs Site
+    command: |
+      set -e
+      cd ./docs
+      npm install
+      npm run check-links
+      npm run build
+
+
 jobs:
+  test:
+    docker:
+      - image: cimg/node:15.5.1
+    steps:
+      - checkout
+      - run: *test_and_build
+
   publish_docs:
     docker:
       - image: cimg/node:15.5.1
     steps:
       - checkout
-      - run:
-          name: Build Docs Site
-          command: |
-            set -e
-            cd ./docs
-            npm install
-            npm run check-links
-            npm run build
+      - run: *test_and_build
       - run:
           name: Install AWS CLI
           command: |
@@ -28,6 +39,10 @@ workflows:
   version: 2
   release:
     jobs:
+      - test:
+          filters:
+            branches:
+              ignore: main
       - publish_docs:
           filters:
             branches:
