@@ -9,6 +9,41 @@ meta:
 ---
 # Release Notes
 
+## 3.1.0
+### OPA UI
+We've created a user interface for viewing, creating, and managing your OPA policies.
+
+## 3.0.0
+### New Navbar
+In response to user feedback, we've updated the application navigation to match similar applications
+like DataDog and Google Cloud Console.
+
+### Prometheus Collector
+We've added a new report type for gathering fine-grained resource usage data, which will
+help us get more accurate cost estimates, and allow users to get a better sense for where
+CPU/memory requests and limits should be set.
+
+### GitHub Issue Integration
+You can now create issues in GitHub from one or more Action Items via the Action Items page.
+If you'd like to see an integration with a different ticketing system, let us know!
+
+### Automation Engine
+We've built an engine for automating responses to action items. For example, you could:
+* Ignore all findings in the `kube-system` namespace
+* Automatically assign all findings in the `api` namespace to `api-team@acme-co.com`
+* Send a Slack message if a critical vulnerability appears in your production cluster
+
+A UI for the Automation Engine is in the works - in the meantime you can use the
+[Insights CLI](https://github.com/FairwindsOps/insights-cli/) to add new automation rules.
+
+## 2.4.0
+### Workloads CSVs
+You can now export a CSV of all your workloads, resource usage/recommendations, and cost estimates.
+
+### Bug Fixes
+* Fixed a timestamp rounding error that caused some report mismatches
+* Fixed an issue with dropdowns not collapsing in the Action Items table
+
 ## 2.3.0
 ### Admission Controller
 We rolled out a new UI that will let you see what’s going on with your Admission Controller. If a resource is rejected from your cluster, you will now see all of the action items associated with that event, along with a remediation recommendation. 
