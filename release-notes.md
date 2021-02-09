@@ -7,6 +7,7 @@ meta:
   - name: keywords
     content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
 ---
+
 # Release Notes
 
 ## 3.1.0
