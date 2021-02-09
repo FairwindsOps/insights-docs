@@ -246,6 +246,40 @@ The report also contains some metadata about the cluster.
 }
 ```
 
+## Prometheus Collector
+Prometheus Collector contains CPU and Memory usage for different workloads
+```json
+{
+    "Values": [
+        {
+            "Container": "autoscaler",
+            "ControllerKind": "Deployment",
+            "ControllerName": "kube-dns-autoscaler",
+            "ControllerNamespace": "kube-system",
+            "LimitValue": 0,
+            "Metric": "Memory",
+            "PodName": "kube-dns-autoscaler-b48d96894-mjtkt",
+            "Request": 10485760,
+            "StartTime": "2021-02-01T13:20:00Z",
+            "Value": 8777728
+        },
+        {
+            "Container": "autoscaler",
+            "ControllerKind": "Deployment",
+            "ControllerName": "kube-dns-autoscaler",
+            "ControllerNamespace": "kube-system",
+            "LimitValue": 0,
+            "Metric": "CPU",
+            "PodName": "kube-dns-autoscaler-b48d96894-mjtkt",
+            "Request": 20,
+            "StartTime": "2021-02-01T13:21:00Z",
+            "Value": 0
+        }
+    ]
+}
+```
+
+
 ## RBAC Reporter
 RBAC Reporter reports contain a list of Roles, ClusterRoles, RoleBindings, and ClusterRoleBindings.
 ```json
