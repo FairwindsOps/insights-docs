@@ -9,6 +9,42 @@ meta:
 ---
 # Release Notes
 
+## 3.1.0
+
+### OPA UI
+The frontend is out for OPA! Find this new feature under Policy in the navigation bar. You can now create and run custom checks to create Action Items. Read our docs to learn more.
+[Learn More](https://insights.docs.fairwinds.com/reports/opa/)
+
+
+### Fixed email bug
+ We fixed a bug that impacts broken buttons in outlook. Outlook users can now use the links provided in emails.
+
+## 3.0.0
+### New navigation
+
+We made changes to the navigation bar. We’ve moved the bar to the left-hand-side and rearranged the information architecture. 
+
+### Prometheus Report
+
+We added a new report called The Prometheus Collector. The report gathers workload metrics from a Prometheus installation in order to provide fine-grained resource usage data. This can be used to gauge how much different workloads cost, understand cost trends and help set resource requests and limits. Read our docs to learn more. 
+[Learn More](https://insights.docs.fairwinds.com/reports/opa/)
+
+### Prometheus Graph on Workloads view
+
+We added visualizations to the workloads feature. You will now be able to see Memory and CPU displayed via a line graph.
+
+ ### New integration with GitHub
+We added the ability to create issues in GitHub from Insights Action Items so that you can use your existing workflows for resolving issues and keeping yourself secure.
+
+
+### Deleting Clusters without Data
+
+You can now fix any cluster at any time. 
+
+### Speed improvements
+
+We’re always trying to make the application more efficient, and we’ve made some improvements that speeds up the application.
+
 ## 2.3.0
 ### Admission Controller
 We rolled out a new UI that will let you see what’s going on with your Admission Controller. If a resource is rejected from your cluster, you will now see all of the action items associated with that event, along with a remediation recommendation. 
