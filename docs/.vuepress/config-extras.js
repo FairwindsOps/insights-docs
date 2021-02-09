@@ -69,6 +69,7 @@ module.exports = {
       children: [
         "/integrations/slack",
         "/integrations/datadog",
+        "/integrations/github",
       ],
     }, {
       title: "Management",
