@@ -41,6 +41,7 @@ module.exports = {
         "/features/policy",
         "/features/continuous-integration",
         "/features/admission-controller",
+        "/features/rules",
         "/features/cli",
         "/features/add-ons",
         "/features/rbac",
