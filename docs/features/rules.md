@@ -45,7 +45,7 @@ To publish a new rule, you can use the [CLI](/features/cli).
 First, create a new YAML file in the `rules` directory. This will contain your
 JavaScript, as well as some metadata.
 ```yaml
-name: "Assign API Action Items to API team"
+name: "Assign API Action Items"
 description: "Assigns all Action Items in the api namespace to api-team@"
 action: |
   if (ActionItem.ResourceNamespace === 'api') {
@@ -66,3 +66,11 @@ If you want to be sure the rule worked, you can manually trigger the agent by ru
 kubectl -n insights-agent create job rule-test --from cronjob/$REPORT
 ```
 where $REPORT is `polaris`, `trivy`, or any other report type you'd like to test.
+
+#### Metadata Fields
+* `name`
+* `description`
+* `context` - one of `Agent`, `CI`, or `Admission`, or leave blank for all three
+* `cluster` - the name of a specific cluster this rule should apply to
+* `repository` - the name of a specific repo this rule shoudl apply to
+* `reporttype` - the type of report (e.g. `polaris` or `trivy`) this rule should apply to
