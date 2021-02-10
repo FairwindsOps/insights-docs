@@ -73,7 +73,7 @@ where $REPORT is `polaris`, `trivy`, or any other report type you'd like to test
 #### Metadata Fields
 * `name`
 * `description`
-* `context` - one of `Agent`, `CI`, or `Admission`, or leave blank for all three
+* `context` - one of `Agent`, `CI/CD`, or `AdmissionController` (or leave blank for all three)
 * `cluster` - the name of a specific cluster this rule should apply to
 * `repository` - the name of a specific repo this rule shoudl apply to
 * `reporttype` - the type of report (e.g. `polaris` or `trivy`) this rule should apply to
