@@ -14,11 +14,6 @@ brew install FairwindsOps/tap/insights
 ### Binary
 Install the binary from our [releases](https://github.com/FairwindsOps/insights-cli/releases) page.
 
-### Go Get
-```bash
-go get -u github.com/fairwindsops/insights-cli/cmd/insights
-```
-
 ## Usage
 To start using the Insights CLI, you'll need to retrieve your admin token
 from your organization's settings page at insights.fairwinds.com/orgs
