@@ -22,7 +22,7 @@ how to write OPA policies for Insights.
 The top box contains the Rego, which will check the Kubernetes resource for violations, and report back
 details of the violation to Insights.
 
-The bottom boxes tell Insights which types of resources this check should be applied to.
+The bottom boxes tell Insights which types of resources this check should be applied to. Be sure to give these a descriptive name as well.
 
 <div>
   <img :src="$withBase('/img/sample-policy.png')" alt="sample policy">
