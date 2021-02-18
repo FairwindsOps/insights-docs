@@ -9,6 +9,27 @@ meta:
 ---
 # Release Notes
 
+## 3.2.0
+
+### Automation Rules UI
+We are happy to introduce The Automation Rules UI! Insights provides over 100 checks for Kubernetes clusters and resources. These checks are increasingly run in a variety of contexts, such as CI/CD, admission control, and in-cluster. Some checks may be more appropriate in specific contexts, require a higher level of severity, or trigger different alert/response mechanisms. Rules allow users to modify existing action items within Insights and customize how they see fit. Please find the Automation Rules under Automation in the navigation bar.
+
+If you’re feeling stuck and need inspiration on how to use the automation rules, use the Create from Template section of the feature, and we have eight pre-made rules that can help you get started.
+
+[Learn More](https://insights.docs.fairwinds.com/features/rules/)
+
+### Collapsible Navigation 
+The navigation bar is now collapsible. All you need to do is click on the small arrow to expand and collapse the navigation bar.
+ 
+### Support for Chart Names in CI
+We’ve changed the way filenames for Helm charts are handled in CI. Filenames will now match the file location inside your repo. You may see some spurious action item changes as this rolls out.
+ 
+### Offline Report Notifications
+We will now alert you via our notifications to let you know if your reports have gone offline.
+
+### Mobile Fix
+We fixed a bug that made the application challenging to open on a mobile phone.
+
 ## 3.1.0
 
 ### OPA UI
