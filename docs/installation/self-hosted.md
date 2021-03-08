@@ -9,7 +9,7 @@ meta:
 ---
 # Self Hosted Installation
 
-Fairwinds Insights can be installed locally in your own Kubernetes cluster so that your data never has to leave your control.
+Fairwinds Insights can be installed locally in your own Kubernetes cluster so that your data never has to leave your control. This is currently an Alpha feature.
 
 ## Configuration
 Fairwinds Insights is installed and configured using Helm. To see the full list of options,

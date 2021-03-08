@@ -22,6 +22,7 @@ module.exports = {
         '/installation/getting-started',
         '/installation/report-hub',
         '/installation/insights-agent',
+        '/installation/self-hosted',
       ],
     }, {
       title: 'First Steps',
