@@ -125,10 +125,10 @@ You can also upload a custom
 [Polaris configuration](https://polaris.docs.fairwinds.com/customization/checks/)
 to set which checks are marked as `danger`, and will therefore cause a workload to be rejected.
 
-> For a list of Polaris checks that default to `danger`, and therefore will cause the Admission Controller to deny a deployment, please see:
-> * [Security](https://polaris.docs.fairwinds.com/checks/security/) checks
+> **IMPORTANT:** For a list of Polaris checks that default to `danger`, and therefore will cause the Admission Controller to deny a deployment, please see:
+> * [Security](https://polaris.docs.fairwinds.com/checks/security/) checks (e.g., `securityContext.privileged`, `securityContext.capabilities`, `securityContext.allowPrivilegeEscalation`)
 > * [Efficiency](https://polaris.docs.fairwinds.com/checks/efficiency/) checks
-> * [Reliability](https://polaris.docs.fairwinds.com/checks/reliability/) checks
+> * [Reliability](https://polaris.docs.fairwinds.com/checks/reliability/) checks (e.g., when an image tag is either not specified or `latest`.)
 
 You can also use the Polaris configuration to write
 [custom checks using JSON Schema](https://polaris.docs.fairwinds.com/customization/custom-checks/)
