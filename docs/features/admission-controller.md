@@ -98,11 +98,15 @@ rules:
 ```
 
 ## Configuration
-You can fine-tune which rules are applied by the admission controller. Specifically, the following auditing tools
+You can fine-tune which checks are applied by the admission controller. Any check with a `danger` severity will instruct the Admission Controller to deny the deployment. 
+
+Specifically, the following auditing tools
 can be enabled or disabled as part of admission control:
 * Polaris - checks for security and best practices
 * OPA - apply custom policies to resources ([see docs](/reports/opa))
 * Pluto - disallow resources that have been deprecated
+
+> **IMPORTANT:** By default, each of these auditing tools are enabled in Admission Controller when you first set it up. Polaris, which has some out-of-the-box checks that default to `danger`, may cause some deployments to fail. See the Polaris section below for more information.
 
 To enable or disable a particular report, run:
 ```bash
@@ -118,11 +122,16 @@ where:
 
 ### Polaris
 You can also upload a custom
-[Polaris configuration](https://github.com/FairwindsOps/polaris/blob/master/docs/usage.md#configuration)
+[Polaris configuration](https://polaris.docs.fairwinds.com/customization/checks/)
 to set which checks are marked as `danger`, and will therefore cause a workload to be rejected.
 
+> For a list of Polaris checks that default to `danger`, and therefore will cause the Admission Controller to deny a deployment, please see:
+> * [Security](https://polaris.docs.fairwinds.com/checks/security/) checks
+> * [Efficiency](https://polaris.docs.fairwinds.com/checks/efficiency/) checks
+> * [Reliability](https://polaris.docs.fairwinds.com/checks/reliability/) checks
+
 You can also use the Polaris configuration to write
-[custom checks using JSON Schema](https://github.com/FairwindsOps/polaris/blob/master/docs/usage.md#custom-checks)
+[custom checks using JSON Schema](https://polaris.docs.fairwinds.com/customization/custom-checks/)
 
 ```
 curl -X POST https://insights.fairwinds.com/v0/organizations/$org/admission/reports/polaris/config \
