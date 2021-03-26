@@ -14,24 +14,9 @@ If you don't have cert-manager, or if you'd like to provide your own certificate
 stored in your cluster.
 
 ## Installation
-To use the Admission Controller, install it on your cluster:
+To use the Admission Controller and install it on your cluster, navigate to the [Report Hub](https://insights.docs.fairwinds.com/installation/report-hub/) and select "Admission Controller". (You will need to re-install the Helm chart after selecting the Admission Controller.)
 
-```bash
-helm repo add fairwinds-stable https://charts.fairwinds.com/stable
-
-kubectl create namespace insights-admission
-
-helm upgrade --install insights-admission fairwinds-stable/insights-admission \
-  --namespace insights-admission \
-  --set insights.organization=acme-co \
-  --set insights.cluster=staging \
-  --set insights.base64token="dG9rZW4="
-```
-
-You can find the correct values for `organization`, `cluster`, and `base64token`
-on your cluster's settings page, inside the `helm upgrade` command shown there.
-
-To test it out, let's try and create a deployment that would create a `danger` Action Item
+Once installed, you can test it out by creating a deployment that creates a `danger` Action Item
 by allowing privilige escalation:
 
 **bad-config.yaml**
@@ -144,3 +129,18 @@ curl -X POST https://insights.fairwinds.com/v0/organizations/$org/admission/repo
 To create custom OPA policies for your organization, see the
 [OPA docs](/reports/opa). To reject a resource, you'll need to ensure that
 your OPA policy generates an Action Item with `severity >= 0.67`.
+
+## Using Automation Rules to Customize Admission Controller
+Fairwinds provides a powerful, flexible solution for fine-grained customization of Admission Controller actions with the [Automation Rules](https://insights.docs.fairwinds.com/features/rules/) feature. 
+
+For example, first time users of Admission Controller may want to monitor all activities, but not yet deny any deployments.
+
+To do this, you can create [Automation Rule](https://insights.docs.fairwinds.com/features/rules/) with the following settings:
+* **Context:** Admission Controller
+* **Report:** All
+* **Cluster:** All
+* **Action:** `ActionItem.Severity = 0.1;`
+
+> **NOTE:** Any severity value >.66 is automatically considered a `danger` severity. Anything <=.66 is considered a `warning` severity.
+
+When this is enabled, the Admission Controller will automatically consider all checks to be `warning`, and therefore allow all deployments to pass into the cluster.
