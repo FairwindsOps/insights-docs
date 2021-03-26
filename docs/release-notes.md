@@ -9,6 +9,22 @@ meta:
 ---
 # Release Notes
 
+## 3.4.0
+
+### Export SOC2 report
+Fairwinds Insights now has alpha support for checking compliance with SOC 2 certification within the context of Kubernetes. Insights will check that certain resources are being monitored for vulnerabilities and configuration issues, mapping these to particular SOC 2 sections. You can export the findings as a CSV you can provide to your auditor.
+
+### Fixed chart widths
+We fixed a bug that made the workloads chart expand to fullscreen upon closing the chart, it now acts as intended.
+
+## 3.3.0
+
+### Added report hub install link
+We added a way to get to the report hub from the navigation bar. 
+
+### Fixed Helm names
+We now provide more helpful file paths in the CI/CD interface.
+
 ## 3.2.0
 
 ### Automation Rules UI
