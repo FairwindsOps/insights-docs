@@ -88,6 +88,17 @@ module.exports = {
       ],
     },
       {
+        title: "Self-Hosted",
+        children: [
+          "/self-hosted/installation",
+          "/self-hosted/database",
+          "/self-hosted/file-storage",
+          "/self-hosted/ingress",
+          "/self-hosted/email",
+          "/self-hosted/sessions",
+        ]
+      },
+      {
         title: "Architecture",
         children: [
           "/architecture/architecture",

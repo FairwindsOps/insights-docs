@@ -19,7 +19,7 @@ To view the full docs, visit
 
 [Fairwinds Insights](https://fairwinds.com/insights) is a policy-driven Configuration Validation platform
 that integrates an extensible set of trusted open source auditing tools.
-Farwinds Insights runs across the entire development lifecycle, from CI to Admission to Production.
+Fairwinds Insights runs across the entire development lifecycle, from CI to Admission to Production.
 
 The platform enables DevOps teams to find and prevent configuration problems as applications move
 from development to production. It provides out-of-the-box
