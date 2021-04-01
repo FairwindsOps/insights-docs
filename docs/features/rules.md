@@ -3,8 +3,8 @@
 Fairwinds Insights can automatically respond to Action Items, setting things like
 the assignee, resolution, and severity level for Action Items that match a certain pattern.
 For instance, you could create automation rules to:
-* Mark issues in the `kube-system` namespace as `will not fix`
-* Assign issues in the `api` namespace to `api-team@acme-co.com`
+* Mark Action Items in the `kube-system` namespace as `will not fix`
+* Assign Action Items in the `api` namespace to `api-team@acme-co.com`
 * Send a Slack message whenever a critical vulnerability appears in a production cluster
 
 ## Writing Rules
@@ -27,6 +27,8 @@ information about the issue detected. The following fields are available:
 * `Severity`
 * `Category`
 * `IsNew`
+
+**Please see the [Supported Checks](https://insights.docs.fairwinds.com/reports/supported-checks/) page for a list of available `EventType` and `ReportType` options.**
 
 The following fields can be edited:
 * `Severity`
