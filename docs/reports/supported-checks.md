@@ -169,4 +169,4 @@ The table below enumerates all Action Items currently produced by Fairwinds Insi
 |polaris    |tlsSettingsMissing                               |Ingress does not have TLS configured                                                         |Security   |warning             |0.25          |
 |trivy      |image_vulnerability                              |Image has vulnerabilities                                                                    |Security   |warning             |0             |
 |trivy      |unscanned_images                                 |Images failed to scan                                                                        |Security   |warning             |0.2           |
-|[opa](https://insights.docs.fairwinds.com/reports/opa/)|create-your-own-event-EventType|Use the [Policy](https://insights.docs.fairwinds.com/features/policy/) feature to create your own custom Action Item |Any|
+|[opa](https://insights.docs.fairwinds.com/reports/opa/)|create-your-own-EventType|Use the [Policy](https://insights.docs.fairwinds.com/features/policy/) feature to create your own custom Action Item |Any|Any|0 - 1|
