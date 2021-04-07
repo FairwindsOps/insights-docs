@@ -17,7 +17,7 @@ We redesigned the cluster overview page to better visualize what's happening in 
 [Learn More](https://insights.docs.fairwinds.com/features/cluster-summary/)
 
 ### Updated customer agreement
-We’ve updated our customer agreement, and you will need to re-accept the agreement.
+We’ve updated our customer agreement, you will need to accept the new agreement the next time you login.
 
 ## 3.4.0
 
