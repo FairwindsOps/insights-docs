@@ -10,37 +10,48 @@ meta:
 
 # Cluster Summary
 
+<img :src="$withBase('/img/overview.png')" alt="cluster overview">
+
 The Cluster Summary page gives an overview of your cluster. You can find
 the following information here:
-* Priorities
-* Namespace Summaries
-* Report Breakdown
-* Cluster Breakdown
-  * Kubernetes Version
-  * Current version of the Insights Agent
-  * Node count
-  * Namespace count
-  * Workload count
-  * Pod count
-* Plugins list
+* Your cluster's health score
+* A graph of new and fixed action items
+* A graph of health score over time
+* A graph of workload costs over time
+* A list of your top action items
+* A list of action items assigned to you
 
-## Priorities
-The Priorities section will show you the total number of action items broken down by severity and category.
-Each category has a link to view the full list of associated Action Items.
+## Health Score
+<div class="mini-img">
+  <img :src="$withBase('/img/cluster-health-score.png')" alt="cluster health score">
+</div>
 
-<img :src="$withBase('/img/cluster-summary-priorities.png')" alt="priorities screenshot">
+This graph gives you a sense for how healthy your cluster is overall.
 
-## Namespace Summaries
-The Namespace Summaries section shows Namespaces in your cluster organized by the number of outstanding Action Items.
-Action Items are categorized as Security, Efficiency, and Reliability,
-and assigned a severity of `warning` (orange) severity or `danger` (red).
+The score takes into account how many Insights checks are passing or failing, weighted
+by the level of severity. To improve your score, fix some of the Action Items listed,
+especially if they have a `danger`-level severity.
 
-<img :src="$withBase('/img/cluster-summary-namespaces-summary.png')" alt="namespace summary screenshot">
+You can also see the total number of passing, warning, and dangerous checks here.
 
-## Report Breakdown
-The Report Breakdown shows a summary of open action items organized by report configured in the Insights Agent.
+## Action Items
+<img :src="$withBase('/img/cluster-action-items-graph.png')" alt="cluster action items graph">
 
-<img :src="$withBase('/img/cluster-summary-reports-breakdown.png')" alt="nreport breakdown screenshot">
+This graph shows when new action items were introduced into your cluster, as well as when
+existing action items were fixed. Red and orange bars show new action items. The green bars
+represent fixed action items.
 
-## Plugins List
-The Plugins section shows different integrations that can be setup from Insights including sending notifications to Slack and metrics to Datadog.
+You can filter this report by namespace or by report type. You can also change the date range.
+
+## Workload Costs
+<img :src="$withBase('/img/cluster-costs-graph.png')" alt="cluster costs graph">
+
+This graph shows the total cost of different namespaces over time. You can filter by namespace,
+or change the date range.
+
+## Assignments
+<img :src="$withBase('/img/cluster-assigned-ais.png')" alt="cluster assigned action items">
+
+This area shows any Action Items that have been assigned to you. If you haven't been
+assigned any action items, it will show the highest risk items in your cluster.
+
