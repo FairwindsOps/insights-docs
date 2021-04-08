@@ -22,7 +22,7 @@ helm install fairwinds-insights fairwinds-stable/fairwinds-insights \
 
 You can then access the dashboard via port-forward
 ```
-kubectl port-forward -n fairwinds-insights-3 svc/fairwinds-insights-dashboard 8081:80
+kubectl port-forward -n fairwinds-insights svc/fairwinds-insights-dashboard 8080:80
 ```
 
 ### Hardening
