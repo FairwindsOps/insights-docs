@@ -13,7 +13,6 @@ helm repo add fairwinds-stable https://charts.fairwinds.com/stable
 helm install fairwinds-insights fairwinds-stable/fairwinds-insights \
   --namespace fairwinds-insights \
   --create-namespace=true \
-  --set image.tag=3.5.0-beta3 \
   --set options.autogenerateKeys=true \
   --set options.allowHTTPCookies=true \
   --set postgresql.sslMode=disable \
@@ -22,7 +21,7 @@ helm install fairwinds-insights fairwinds-stable/fairwinds-insights \
 
 You can then access the dashboard via port-forward
 ```
-kubectl port-forward -n fairwinds-insights-3 svc/fairwinds-insights-dashboard 8081:80
+kubectl port-forward -n fairwinds-insights svc/fairwinds-insights-dashboard 8080:80
 ```
 
 ### Hardening
@@ -70,13 +69,13 @@ _secrets.yaml_
 ```yaml
 apiVersion: v1
 data:
-    cookie_hash_key: TjZCbzAzMVJ0U1lXS2RPaE9sU0ZERDJJdXpTNFhLeG91VWFYdU9DcU9kTkpmenlFNWFsT29sajZ3VGpNbjNSSA==
-    cookie_block_key: RDFNVVhWVzM4QllJd0Z5NXNIT1kxV1RrVWNweWRnbmM=
-    session_auth_key: NTczV0o0NGFBeGtXVzduZjZHV25FdFZMb0s5TE5SSWU3bG00YkNtaE93bHZUVW1VSXZUYW9ya2UzdHE2eFZXSA==
-    session_encryption_key: ME1LeFRPdTYwOVU0YlVvUGVEUUdQYjZnbTlyZUh4b2I=
-    smtp_password: aGVsbG93b3JsZA==
-    aws_access_key_id: aGVsbG93b3JsZA==
-    aws_secret_access_key: aGVsbG93b3JsZA==
+    COOKIE_HASH_KEY: TjZCbzAzMVJ0U1lXS2RPaE9sU0ZERDJJdXpTNFhLeG91VWFYdU9DcU9kTkpmenlFNWFsT29sajZ3VGpNbjNSSA==
+    COOKIE_BLOCK_KEY: RDFNVVhWVzM4QllJd0Z5NXNIT1kxV1RrVWNweWRnbmM=
+    SESSION_AUTH_KEY: NTczV0o0NGFBeGtXVzduZjZHV25FdFZMb0s5TE5SSWU3bG00YkNtaE93bHZUVW1VSXZUYW9ya2UzdHE2eFZXSA==
+    SESSION_ENCRYPTION_KEY: ME1LeFRPdTYwOVU0YlVvUGVEUUdQYjZnbTlyZUh4b2I=
+    SMTP_PASSWORD: aGVsbG93b3JsZA==
+    AWS_ACCESS_KEY_ID: aGVsbG93b3JsZA==
+    AWS_SECRET_ACCESS_KEY: aGVsbG93b3JsZA==
 kind: Secret
 metadata:
     name: fwinsights-secrets

@@ -9,6 +9,16 @@ meta:
 ---
 # Release Notes
 
+## 4.0.0
+
+### New Cluster Overview UI
+We redesigned the cluster overview page to better visualize what's happening in your cluster. Users can now see their cluster's health score, action items aggregated by namespace and report, top action items, a cost summary, assigned action items, and more!
+
+[Learn More](https://insights.docs.fairwinds.com/features/cluster-summary/)
+
+### Updated customer agreement
+We’ve updated our customer agreement, you will need to accept the new agreement the next time you login.
+
 ## 3.4.0
 
 ### Export SOC2 report
