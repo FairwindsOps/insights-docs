@@ -3,6 +3,10 @@
 > The self-hosted version of Fairwinds Insights is currently in alpha.
 > The documentation is incomplete, and it is subject to breaking changes.
 
+> You'll need a code provided by the Fairwinds team in order to try out
+> the self-hosted version of Insights. If you're interested,
+> [schedule some time to chat](https://www.fairwinds.com/fairwinds-insights-demo)
+
 ## Quickstart
 These instructions are good for a quick demo of self-hosted Insights. For production-grade
 installations, you'll want to use the instructions here to harden your installation.
@@ -16,7 +20,8 @@ helm install fairwinds-insights fairwinds-stable/fairwinds-insights \
   --set options.autogenerateKeys=true \
   --set options.allowHTTPCookies=true \
   --set postgresql.sslMode=disable \
-  --set postgresql.password=THISISASECRET
+  --set postgresql.password=THISISASECRET \
+  --set installationCode="CODE PROVIDED BY FAIRWINDS"
 ```
 
 You can then access the dashboard via port-forward
