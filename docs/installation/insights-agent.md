@@ -10,7 +10,7 @@ meta:
 # Insights Agent
 
 > Installing the agent in many different clusters? Check out the
-> [fleet installation](../fleet-installation) docs.
+> [fleet installation](/installation/fleet-installation) docs.
 
 The Insights Agent runs inside your Cluster, and sends back data to Fairwinds Insights.
 
