@@ -73,7 +73,7 @@ all visible items.
 </div>
 
 ## Ticketing Integrations
-Insights can connect to external ticketing systems (currently only GitHub) to help you track
+Insights can connect to external ticketing systems (currently GitHub and Jira) to help you track
 your Action Items where you already live.
 
 To turn an Action Item into a ticket, click the `create ticket` button in the Action Items UI:
@@ -81,6 +81,3 @@ To turn an Action Item into a ticket, click the `create ticket` button in the Ac
 <div class="mini-img">
   <img :src="$withBase('/img/create-ticket.png')" alt="create ticket">
 </div>
-
-You may need to [connect your GitHub org](/features/continuous-integration#connect-to-github)
-to Insights in order to start creating issues.

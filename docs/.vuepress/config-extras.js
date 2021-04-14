@@ -22,6 +22,7 @@ module.exports = {
         '/installation/getting-started',
         '/installation/report-hub',
         '/installation/insights-agent',
+        '/installation/fleet-installation',
       ],
     }, {
       title: 'First Steps',
@@ -70,6 +71,7 @@ module.exports = {
       children: [
         "/integrations/slack",
         "/integrations/datadog",
+        "/integrations/jira",
         "/integrations/github",
       ],
     }, {
