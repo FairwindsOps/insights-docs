@@ -9,6 +9,25 @@ meta:
 ---
 # Release Notes
 
+## 4.1.0
+
+### Installation codes for self-hosted - Beta
+All the great features of Insights but hosted on your infrastructure. Self-hosted is in beta. Contact us if you want to try it.
+[Learn More](https://insights.docs.fairwinds.com/self-hosted/installation/)
+ 
+### Jira frontend
+You can now create tickets in Jira. Use the "Create Tickets" button at the top of the Action Items table.
+[Learn More](https://insights.docs.fairwinds.com/features/action-items/#ticketing-integrations)
+ 
+### Fix health score chart
+Fixed a bug where selecting a report would not update the data on the cluster overview page.
+ 
+### Fleet installation method (charts)
+You can now easily install the Insights Agent across a large fleet of clusters using a single helm install command.
+ 
+### Removed raw reports from the history page
+We've improved the history pages' performance by providing links to download and view raw report data.
+
 ## 4.0.0
 
 ### New Cluster Overview UI
