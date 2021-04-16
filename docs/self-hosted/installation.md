@@ -1,4 +1,4 @@
-# Self-Hosted
+# Installation
 
 > The self-hosted version of Fairwinds Insights is currently in alpha.
 > The documentation is incomplete, and it is subject to breaking changes.
