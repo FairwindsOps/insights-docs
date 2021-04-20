@@ -1,5 +1,4 @@
 export default ({ router }) => {
-  console.log('router');
   router.addRoutes([
     { path: '/reports/:target', redirect: to => {
       return '/configure/reports/' + to.params.target;
