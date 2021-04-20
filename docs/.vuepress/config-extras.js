@@ -20,10 +20,6 @@ module.exports = {
       children: [
         '/installation/getting-started',
         '/installation/setup',
-        '/first-steps/getting-value',
-        '/first-steps/workload-configuration',
-        '/first-steps/container-security',
-        '/first-steps/cost-efficiency',
       ],
     }, {
       title: "Continuous Integration",
@@ -57,7 +53,15 @@ module.exports = {
         "/agent/cluster-comparison",
       ],
     }, {
-      title: "Features",
+      title: "Common Use Cases",
+      children: [
+        '/first-steps/getting-value',
+        '/first-steps/workload-configuration',
+        '/first-steps/container-security',
+        '/first-steps/cost-efficiency',
+      ],
+    }, {
+      title: "Policy and Rules",
       children: [
         "/features/policy",
         "/features/rules",
@@ -79,6 +83,7 @@ module.exports = {
         "/reports/kube-hunter",
         "/reports/kubesec",
         "/reports/workloads",
+        "/reports/supported-checks",
         "/reports/new",
       ],
     }, {
@@ -90,7 +95,7 @@ module.exports = {
         "/integrations/github",
       ],
     }, {
-      title: "Management",
+      title: "Account Management",
       children: [
         "/management/membership",
         "/management/delete",

@@ -7,7 +7,7 @@ meta:
   - name: keywords
     content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
 ---
-# Delete
+# Deleting Data
 > Note: If you'd like your data to be permanently
 > deleted, please contact <insights@fairwinds.com>
 >
