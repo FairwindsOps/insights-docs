@@ -45,7 +45,7 @@ The following fields can be edited:
 > Coming Soon!
 
 ### CLI
-To publish a new rule, you can use the [CLI](/features/cli).
+To publish a new rule, you can use the [CLI](/configure/policy/cli).
 
 First, create a new YAML file in the `rules` directory. This will contain your
 JavaScript, as well as some metadata.

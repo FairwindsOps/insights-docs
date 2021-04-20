@@ -51,7 +51,7 @@ replicasRequired[actionItem] {
 ## Uploading Policies
 > You must be an admin for your organization in order to manage policies
 
-To add your policies to Insights, you'll need to use the [Insights CLI](/features/cli).
+To add your policies to Insights, you'll need to use the [Insights CLI](/configure/policy/cli).
 You'll also need your API key, which an organization admin can find your on your organization's
 settings page.
 
