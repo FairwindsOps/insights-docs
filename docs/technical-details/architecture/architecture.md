@@ -93,7 +93,7 @@ RBAC Reporter needs `view` access to the cluster to aggregate information about 
 Trivy will download a list of known CVEs [from GitHub](https://github.com/aquasecurity/trivy-db),
 then cross-check these against images in your cluster.
 
-You may need to grant Trivy access to [private images](/reports/trivy#private-images) if your nodes
+You may need to grant Trivy access to [private images](/configure/reports/trivy#private-images) if your nodes
 don't automatically have access to your private Docker registries.
 
 ### Workloads

@@ -10,13 +10,13 @@ meta:
 # About
 
 > Installing the agent in many different clusters? Check out the
-> [fleet installation](/agent/installation#fleet-installation) docs.
+> [fleet installation](/run/agent/installation#fleet-installation) docs.
 
 The Insights Agent runs inside your Cluster, and sends back data to Fairwinds Insights.
 
 The Insights Agent comes with several different open source reporting tools, each of which can be
 configured independently using the Report Hub.
-To read more about the different report types, see the [Reports Section](/reports/polaris).
+To read more about the different report types, see the [Reports Section](/configure/reports/polaris).
 
 ## Debugging
 If you suspect something is wrong with the Insights Agent, you can use `kubectl` to

@@ -1,9 +1,9 @@
 # Getting Value from Fairwinds Insights
 
-So you've [installed the Insights agent](/agent/installation),
+So you've [installed the Insights agent](/run/agent/installation),
 and you're getting some results
 back from your audits. Chances are, you're seeing quite a few
-[Action Items](/agent/action-items) showing up. Where should you start?
+[Action Items](/run/agent/action-items) showing up. Where should you start?
 
 While its good to look through the entire list of Action Items to get a sense for what's there,
 you probably already have a sense for where you should be focusing your efforts. Below are

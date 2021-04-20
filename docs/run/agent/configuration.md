@@ -1,7 +1,7 @@
 # Configuration
 
 ## Report Hub
-We recommend using the [Report Hub](/agent/report-hub) to configure the Insights Agent.
+We recommend using the [Report Hub](/run/agent/report-hub) to configure the Insights Agent.
 Making changes in the Report Hub will change the provided installation command by setting new
 Helm parameters (see below).
 

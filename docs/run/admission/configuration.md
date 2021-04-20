@@ -34,7 +34,7 @@ You can fine-tune which checks are applied by the admission controller. Any chec
 Specifically, the following auditing tools
 can be enabled or disabled as part of admission control:
 * Polaris - checks for security and best practices
-* OPA - apply custom policies to resources ([see docs](/reports/opa))
+* OPA - apply custom policies to resources ([see docs](/configure/reports/opa))
 * Pluto - disallow resources that have been deprecated
 
 > **IMPORTANT:** By default, each of these auditing tools are enabled in Admission Controller when you first set it up. Polaris, which has some out-of-the-box checks that default to `danger`, may cause some deployments to fail. See the Polaris section below for more information.
@@ -73,6 +73,6 @@ curl -X POST https://insights.fairwinds.com/v0/organizations/$org/admission/repo
 
 ### OPA
 To create custom OPA policies for your organization, see the
-[OPA docs](/reports/opa). To reject a resource, you'll need to ensure that
+[OPA docs](/configure/reports/opa). To reject a resource, you'll need to ensure that
 your OPA policy generates an Action Item with `severity >= 0.67`.
 

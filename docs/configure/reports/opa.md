@@ -3,7 +3,7 @@ Fairwinds Insights supports the use of custom OPA policies to create Action Item
 
 ## Enable the OPA agent
 To enable OPA, make sure you pass `--set opa.enabled=true` when
-[installing the insights-agent](/agent/installation)
+[installing the insights-agent](/run/agent/installation)
 
 ## Designing Policies
 > You may want to familiarize yourself with

@@ -11,7 +11,7 @@ When you create the cluster, you'll be prompted to install the [Insights Agent](
 You'll need to use [Helm](https://helm.sh/) to install - if you'd like to view the Kubernetes
 manifests first, you can use `helm template` to generate the YAML files.
 
-[See the Report Hub documentation](/agent/report-hub) for next steps.
+[See the Report Hub documentation](/run/agent/report-hub) for next steps.
 
 ## Fleet Installation
 If you're installing the Insights Agent across a large fleet of clusters,
