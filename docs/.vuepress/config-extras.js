@@ -17,36 +17,51 @@ module.exports = {
       ["/release-notes", "Release Notes"],
     {
       title: "Installation",
-      collapsable: false,
       children: [
         '/installation/getting-started',
-        '/installation/report-hub',
-        '/installation/insights-agent',
-        '/installation/fleet-installation',
-      ],
-    }, {
-      title: 'First Steps',
-      sidebarDepth: 0,
-      children: [
+        '/installation/setup',
         '/first-steps/getting-value',
         '/first-steps/workload-configuration',
         '/first-steps/container-security',
         '/first-steps/cost-efficiency',
       ],
     }, {
+      title: "Continuous Integration",
+      children: [
+        "/ci/about",
+        "/ci/setup",
+        "/ci/configuration",
+        "/ci/results",
+        "/ci/github",
+      ],
+    }, {
+      title: "Admission Controller",
+      children: [
+        "/admission/about",
+        "/admission/setup",
+        "/admission/configuration",
+        "/admission/automation",
+      ]
+    }, {
+      title: "In-Cluster Agent",
+      children: [
+        '/agent/about',
+        '/agent/installation',
+        '/agent/configuration',
+        '/agent/report-hub',
+        "/agent/cluster-summary",
+        "/agent/action-items",
+        "/agent/workloads",
+        "/agent/add-ons",
+        "/agent/rbac",
+        "/agent/cluster-comparison",
+      ],
+    }, {
       title: "Features",
       children: [
-        "/features/cluster-summary",
-        "/features/action-items",
-        "/features/workloads",
         "/features/policy",
-        "/features/continuous-integration",
-        "/features/admission-controller",
         "/features/rules",
         "/features/cli",
-        "/features/add-ons",
-        "/features/rbac",
-        "/features/cluster-comparison",
       ],
     }, {
       title: "Reports",
