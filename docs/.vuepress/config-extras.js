@@ -15,6 +15,7 @@ module.exports = {
     sidebar: {
       '/run/': [
         ['/', 'Home'],
+        ['ways-to-run', 'Ways to Run'],
         {
           title: 'Continuous Integration',
           children: [
@@ -140,7 +141,7 @@ module.exports = {
             'first-steps/cost-efficiency',
           ],
         },
-        ['/run/agent/about', 'Ways to Run'],
+        ['/run/ways-to-run', 'Ways to Run'],
         ['/configure/policy/policy', 'Configure'],
         ['/technical-details/architecture/architecture', 'Technical Details'],
       ],
