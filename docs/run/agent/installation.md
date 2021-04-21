@@ -7,7 +7,7 @@ To get started with the agent, create a new cluster in the Insights UI, e.g. `st
 
 ## Install the Agent
 
-When you create the cluster, you'll be prompted to install the [Insights Agent](https://insights.docs.fairwinds.com/installation/insights-agent/)
+When you create the cluster, you'll be prompted to install the [Insights Agent](/run/agent/installation)
 You'll need to use [Helm](https://helm.sh/) to install - if you'd like to view the Kubernetes
 manifests first, you can use `helm template` to generate the YAML files.
 
