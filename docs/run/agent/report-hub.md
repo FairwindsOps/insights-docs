@@ -38,7 +38,7 @@ Be sure to run the new command after making any changes here.
 ## Report History
 The `History` tab will show you a list of recent reports for each report type.
 
-<img :src="$withBase('')" alt="report history">
+<img :src="$withBase('/img/report-history.png')" alt="report history">
 
 You can click the `View Report` link to see the raw data from each report.
 This can be helpful for debugging.
