@@ -1,4 +1,19 @@
-# Fleet Installation
+# Installation
+To get started with the agent, create a new cluster in the Insights UI, e.g. `staging`
+
+<div class="mini-img">
+  <img :src="$withBase('/img/new-cluster.png')" alt="new cluster">
+</div>
+
+## Install the Agent
+
+When you create the cluster, you'll be prompted to install the [Insights Agent](/run/agent/installation)
+You'll need to use [Helm](https://helm.sh/) to install - if you'd like to view the Kubernetes
+manifests first, you can use `helm template` to generate the YAML files.
+
+[See the Report Hub documentation](/run/agent/report-hub) for next steps.
+
+## Fleet Installation
 If you're installing the Insights Agent across a large fleet of clusters,
 it can be tedious to use the UI to create each cluster, then copy out the
 cluster's access token. To better serve customers with a large number of clusters,

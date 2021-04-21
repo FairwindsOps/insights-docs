@@ -7,27 +7,16 @@ meta:
  - name: keywords
    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
 ---
-# Insights Agent
+# About
 
 > Installing the agent in many different clusters? Check out the
-> [fleet installation](/installation/fleet-installation) docs.
+> [fleet installation](/run/agent/installation#fleet-installation) docs.
 
 The Insights Agent runs inside your Cluster, and sends back data to Fairwinds Insights.
 
 The Insights Agent comes with several different open source reporting tools, each of which can be
 configured independently using the Report Hub.
-To read more about the different report types, see the [Reports Section](/reports/polaris).
-
-## Configuration
-The Insights Agent is installed and configured using Helm. To see the full list of options,
-you can check out the
-[Insights Agent Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/insights-agent)
-
-In particular, for any given report type, you can set the following options:
-* `enabled` - this is typically set to `true` by default
-* `schedule` - a cron expression dictating when this report should run. This is typically set to a random minute every hour
-* `timeout` - how long to wait for output, in seconds
-* `resources` - requests and limits for CPU and memory for this report
+To read more about the different report types, see the [Reports Section](/run/agent/configuration).
 
 ## Debugging
 If you suspect something is wrong with the Insights Agent, you can use `kubectl` to
