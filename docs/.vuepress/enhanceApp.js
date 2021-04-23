@@ -2,6 +2,9 @@ const redirects = [{
   prefix: '/reports/',
   redirect: s => '/configure' + s,
 }, {
+  prefix: '/integrations/',
+  redirect: s => '/configure' + s,
+}, {
   prefix: '/architecture/',
   redirect: s => '/architecture' + s,
 }, {
