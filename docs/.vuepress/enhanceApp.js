@@ -1,34 +1,41 @@
+const redirects = [{
+  prefix: '/reports/',
+  redirect: s => '/configure' + s,
+}, {
+  prefix: '/architecture/',
+  redirect: s => '/architecture' + s,
+}, {
+  prefix: '/installation/insights-agent',
+  redirect: '/run/agent/installation',
+}, {
+  prefix: '/features/rules',
+  redirect: '/configure/policy/rules',
+}, {
+  prefix: '/features/continuous-integration',
+  redirect: '/run/ci/about',
+}, {
+  prefix: '/features/continuous-integration',
+  redirect: '/run/ci/about',
+}, {
+  prefix: '/features/workloads',
+  redirect: '/run/agent/workloads',
+}, {
+  prefix: '/features/admission-controller',
+  redirect: '/run/admission/about',
+}]
+
 export default ({ router }) => {
-  router.addRoutes([
-    { path: '/reports/:target', redirect: to => {
-      return '/configure/reports/' + to.params.target;
-    }},
-    { path: '/integrations/:target', redirect: to => {
-      return '/configure/integrations/' + to.params.target;
-    }},
-    { path: '/architecture/architecture', redirect: to => {
-      return '/technical-details/architecture/architecture';
-    }},
-    { path: '/installation/insights-agent', redirect: to => {
-      return '/run/agent/installation';
-    }},
-    { path: '/features/rules', redirect: to => {
-      return '/configure/policy/rules';
-    }},
-    { path: '/features/continuous-integration', redirect: to => {
-      return '/run/ci/about';
-    }},
-    { path: '/features/workloads', redirect: to => {
-      return '/run/agent/workloads';
-    }},
-    { path: '/features/admission-controller', redirect: to => {
-      return '/run/admission/about';
-    }},
-    { path: '/404', redirect: to => {
-      return '/';
-    }},
-    { path: '/404.html', redirect: to => {
-      return '/';
-    }},
-  ])
+  // FIXME(rbren): this is the only way I can get redirection to work on S3
+  router.beforeEach((to, from, next) => {
+    redirects.forEach(redir => {
+      if (to.path.startsWith(redir.prefix)) {
+        const target = typeof redir.redirect === 'string' ? redir.redirect : redir.redirect(to.path);
+        console.log('redirecting from', to.path, 'to', target);
+        setTimeout(() => {
+          router.push(target);
+        });
+      }
+    });
+    next();
+  });
 }
