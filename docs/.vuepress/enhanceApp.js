@@ -24,5 +24,11 @@ export default ({ router }) => {
     { path: '/features/admission-controller', redirect: to => {
       return '/run/admission/about';
     }},
+    { path: '/404', redirect: to => {
+      return '/';
+    }},
+    { path: '/404.html', redirect: to => {
+      return '/';
+    }},
   ])
 }
