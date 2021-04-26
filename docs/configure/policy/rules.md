@@ -37,12 +37,31 @@ The following fields can be edited:
 * `Notes`
 
 ### Sending Slack Notifications
-> Coming Soon!
+If you have attached a Slack installation to your organization, you can use the
+`sendSlackNotification` function to send messages. You can pick which channel
+to send to, or send via a webhook URL. You can also customize the message body
+to add mentions etc.
+
+#### Examples
+```js
+if (ActionItem.Severity >= DANGER_SEVERITY && ActionItem.IsNew) {
+    sendSlackNotification("trivy-alerts");
+}
+```
+
+```js
+if (ActionItem.Severity >= DANGER_SEVERITY && ActionItem.IsNew) {
+    sendSlackNotification("api-team", "@Jane there's a new critical vulnerability! :scream:");
+}
+```
 
 ## Publishing Rules
 
 ### User Interface
-> Coming Soon!
+You can use the Automation tab to add new rules, edit rules, and enable/disable them.
+
+<img :src="$withBase('/img/automation-rules-ui.png')" alt="rbac tab">
+
 
 ### CLI
 To publish a new rule, you can use the [CLI](/configure/policy/cli).
