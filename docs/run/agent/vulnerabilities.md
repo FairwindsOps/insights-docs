@@ -1,4 +1,4 @@
-# Conatiner Vulnerabilities
+# Container Vulnerabilities
 
 You can use Insights to see a list of all vulnerable images currently running
 in your cluster.
