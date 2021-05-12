@@ -47,6 +47,11 @@ to add mentions etc.
 You can also utilize [Slack incoming webhooks](https://slack.com/help/articles/115005265063-Incoming-webhooks-for-Slack)
 to send alerts.
 
+`sendSlackNotification` takes three arguments:
+* channel or webhook URL - destination for the message
+* message (optional) - if not set, Insights will construct a default message from the action item
+* isWebhook (optional) - set to true if the first parameter is a webhook URL
+
 #### Examples
 ```js
 if (ActionItem.Severity >= DANGER_SEVERITY && ActionItem.IsNew) {
