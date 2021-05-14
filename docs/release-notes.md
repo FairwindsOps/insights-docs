@@ -13,11 +13,11 @@ meta:
 
 ### Installation codes for self-hosted - Beta
 All the great features of Insights but hosted on your infrastructure. Self-hosted is in beta. Contact us if you want to try it.
-[Learn More](/technical-details/self-hosted/installation/)
+[Learn More](/technical-details/self-hosted/installation)
  
 ### Jira frontend
 You can now create tickets in Jira. Use the "Create Tickets" button at the top of the Action Items table.
-[Learn More](/run/agent/action-items/#ticketing-integrations)
+[Learn More](/run/agent/action-items#ticketing-integrations)
  
 ### Fix health score chart
 Fixed a bug where selecting a report would not update the data on the cluster overview page.
@@ -33,7 +33,7 @@ We've improved the history pages' performance by providing links to download and
 ### New Cluster Overview UI
 We redesigned the cluster overview page to better visualize what's happening in your cluster. Users can now see their cluster's health score, action items aggregated by namespace and report, top action items, a cost summary, assigned action items, and more!
 
-[Learn More](/run/agent/cluster-summary/)
+[Learn More](/run/agent/cluster-summary)
 
 ### Updated customer agreement
 We’ve updated our customer agreement, you will need to accept the new agreement the next time you login.
@@ -61,7 +61,7 @@ We are happy to introduce The Automation Rules UI! Insights provides over 100 ch
 
 If you’re feeling stuck and need inspiration on how to use the automation rules, use the Create from Template section of the feature, and we have eight pre-made rules that can help you get started.
 
-[Learn More](/configure/policy/rules/)
+[Learn More](/configure/policy/rules)
 
 ### Collapsible Navigation 
 The navigation bar is now collapsible. All you need to do is click on the small arrow to expand and collapse the navigation bar.
@@ -79,7 +79,7 @@ We fixed a bug that made the application challenging to open on a mobile phone.
 
 ### OPA UI
 The frontend is out for OPA! Find this new feature under Policy in the navigation bar. You can now create and run custom checks to create Action Items. Read our docs to learn more.
-[Learn More](/configure/policy/policy/)
+[Learn More](/configure/policy/policy)
 
 
 ### Fixed email bug
@@ -93,7 +93,7 @@ We made changes to the navigation bar. We’ve moved the bar to the left-hand-si
 ### Prometheus Report
 
 We added a new report called The Prometheus Collector. The report gathers workload metrics from a Prometheus installation in order to provide fine-grained resource usage data. This can be used to gauge how much different workloads cost, understand cost trends and help set resource requests and limits. Read our docs to learn more. 
-[Learn More](/configure/reports/resource-metrics/)
+[Learn More](/configure/reports/resource-metrics)
 
 ### Prometheus Graph on Workloads view
 
@@ -134,7 +134,7 @@ We are happy to introduce The Report Hub, a way for users to cut down on the num
 
 The Report Hub allows users to decide which reports they would like to run in their clusters. Users will be able to configure each report and set the timeout and schedule when the report runs.
 
-[Learn More](/run/agent/report-hub/)
+[Learn More](/run/agent/report-hub)
 
 ### Filtering on Workloads
 We’ve added filtering options to the Workloads table, and now the graphs will reflect the data from the table shown.
@@ -175,12 +175,12 @@ Minor improvements to the action items table UI.
 ## 1.10.0
 
 ### Dynamic Open Policy Agent (OPA) - Beta
-You can now create and run custom checks in Rego (OPA's policy language) to create Action Items in Fairwinds Insights. To get started, visit our Docs to [learn how to add Rego policies to Fairwinds Insights](/configure/policy/policy/#create-a-policy).
+You can now create and run custom checks in Rego (OPA's policy language) to create Action Items in Fairwinds Insights. To get started, visit our Docs to [learn how to add Rego policies to Fairwinds Insights](/configure/policy/policy#create-a-policy).
 
 ### CI/CD Integration - Beta
 We’ve recently shipped a CI/CD integration with Fairwinds Insights to shift Kubernetes configuration validation earlier in the development process. We’ve found that the handoff of Kubernetes applications from development to operations can result in configuration mistakes that lead to future incidents, security risks, and extra infrastructure cost. Today, Ops teams are manually looking for these mistakes, but with our CI/CD integration we are able to shift that closer to the development team to prevent mistakes from entering production.
 
-We support all major CI/CD platforms and check container images for vulnerabilities, as well as Kubernetes deployment configurations (e.g. YAML files and helm charts) for common configuration mistakes. [Check out our docs to learn how to integrate Fairwinds Insights into your CI/CD workflow](https://insights.docs.fairwinds.com/features/continuous-integration/).
+We support all major CI/CD platforms and check container images for vulnerabilities, as well as Kubernetes deployment configurations (e.g. YAML files and helm charts) for common configuration mistakes. [Check out our docs to learn how to integrate Fairwinds Insights into your CI/CD workflow](https://insights.docs.fairwinds.com/features/continuous-integration).
 
 ### Introducing Nova
 We have integrated [Fairwinds Nova](https://github.com/FairwindsOps/Nova) (formerly known as "Release Watcher"), an open source project that monitors Helm 2 and 3 deployments, with Fairwinds Insights. This data is available via the "Add-ons" tab.
