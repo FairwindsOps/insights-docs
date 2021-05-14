@@ -8,10 +8,17 @@ For instance, you could create automation rules to:
 * Send a Slack message whenever a critical vulnerability appears in a production cluster
 
 ## Writing Rules
-Rules are written in JavaScript. Here's an example:
+Rules are written in JavaScript.
 
+#### Examples
 ```js
 if (ActionItem.ResourceNamespace === 'api') {
+  ActionItem.AssigneeEmail = 'api-team@acme-co.com';
+}
+```
+
+```js
+if (ActionItem.ResourceLabels['app'] === 'polaris') {
   ActionItem.AssigneeEmail = 'api-team@acme-co.com';
 }
 ```
@@ -27,6 +34,8 @@ information about the issue detected. The following fields are available:
 * `Severity`
 * `Category`
 * `IsNew`
+* `ResourceLabels`
+* `ResourceAnnotations`
 
 **Please see the [Supported Checks](https://insights.docs.fairwinds.com/reports/supported-checks/) page for a list of available `EventType` and `ReportType` options.**
 
@@ -34,6 +43,8 @@ The following fields can be edited:
 * `Severity`
 * `Resolution` - can be set to the constants `WILL_NOT_FIX_RESOLUTION` or `WORKING_AS_INTENDED_RESOLUTION`
 * `AssigneeEmail`
+* `Description`
+* `Remediation`
 * `Notes`
 
 
@@ -137,5 +148,5 @@ where $REPORT is `polaris`, `trivy`, or any other report type you'd like to test
 * `description`
 * `context` - one of `Agent`, `CI/CD`, or `AdmissionController` (or leave blank for all three)
 * `cluster` - the name of a specific cluster this rule should apply to
-* `repository` - the name of a specific repo this rule shoudl apply to
+* `repository` - the name of a specific repo this rule should apply to
 * `reporttype` - the type of report (e.g. `polaris` or `trivy`) this rule should apply to
