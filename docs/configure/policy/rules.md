@@ -36,11 +36,21 @@ The following fields can be edited:
 * `AssigneeEmail`
 * `Notes`
 
-### Sending Slack Notifications
+
+## Integrations
+### Slack Notifications
 If you have attached a Slack installation to your organization, you can use the
 `sendSlackNotification` function to send messages. You can pick which channel
 to send to, or send via a webhook URL. You can also customize the message body
 to add mentions etc.
+
+You can also utilize [Slack incoming webhooks](https://slack.com/help/articles/115005265063-Incoming-webhooks-for-Slack)
+to send alerts.
+
+`sendSlackNotification` takes three arguments:
+* channel or webhook URL - destination for the message
+* message (optional) - if not set, Insights will construct a default message from the action item
+* isWebhook (optional) - set to true if the first parameter is a webhook URL
 
 #### Examples
 ```js
@@ -52,6 +62,37 @@ if (ActionItem.Severity >= DANGER_SEVERITY && ActionItem.IsNew) {
 ```js
 if (ActionItem.Severity >= DANGER_SEVERITY && ActionItem.IsNew) {
     sendSlackNotification("api-team", "@Jane there's a new critical vulnerability! :scream:");
+}
+```
+
+```js
+if (ActionItem.Severity >= DANGER_SEVERITY && ActionItem.IsNew) {
+  sendSlackNotification(
+    "https://hooks.slack.com/services/T0123456/abc/def",
+    "Uh oh! New vulnerability!",
+    true);
+}
+```
+
+### GitHub and Jira Tickets
+You can also create a Jira or GitHub issue from an action item.
+Note that only one ticket will be created per action item.
+
+The `createTicket` funciton takes three arguments:
+* integration - either `GitHub` or `Jira`
+* project - your GitHub repo name, or your Jira project ID
+* labels - a list of labels to put on the ticket
+
+#### Examples
+```js
+if (ActionItem.Namespace === "api") {
+  createTicket("Jira", "API", ["bug"])
+}
+```
+
+```js
+if (ActionItem.Namespace === "api") {
+  createTicket("GitHub", "acme-co/api-server", ["bug"])
 }
 ```
 
