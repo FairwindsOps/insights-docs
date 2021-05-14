@@ -42,6 +42,7 @@ module.exports = {
             'agent/report-hub',
             'agent/cluster-summary',
             'agent/action-items',
+            'agent/vulnerabilities',
             'agent/workloads',
             'agent/add-ons',
             'agent/rbac',
