@@ -9,6 +9,34 @@ meta:
 ---
 # Release Notes
 
+## 4.3.0
+
+### Custom notifications using automation rules
+We've added the ability to add custom Slack webhook URLs to send custom messages to the slack environment of your choosing, 
+[Learn More](https://insights.docs.fairwinds.com/configure/policy/rules/#writing-rules)
+ 
+### Fixed a bug where name/resource kind weren't always showing up
+We've fixed a bug that prevented the name/resource kind from continually showing up in the Admission Controller UI.
+
+### Fixed the "fix available" filter on the detailed CVE page
+We've fixed a bug where the "fix available" filter option wasn't filtering correctly.
+
+### On the create issue for action item page, fixed the list of labels pulled from GitHub
+We've fixed a bug where the labels weren’t showing up.
+ 
+## 4.2.0
+
+### Vulnerabilities UI
+We’re happy to introduce The Vulnerabilities UI! We introduced a new UI to help you dig into vulnerable images running in your cluster. To use this feature, click the Vulnerabilities tab in the navigation bar.
+
+### Add labels and annotations to automation work
+When creating an automation rule, we've added the feature to check and write rules based on resources label and annotations. 
+### Remove extra clusters column
+We've removed a column that presented duplicitous data in the action items table.
+
+### Add SHA hash to CI script
+We've implemented integrity checking in our CI/CD instructions. Please update your Insights CI/CD feature.
+
 ## 4.1.0
 
 ### Installation codes for self-hosted - Beta
