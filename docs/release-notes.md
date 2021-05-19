@@ -11,11 +11,11 @@ meta:
 
 ## 4.3.0
 
-### Custom notifications using automation rules
+### Custom notifications using automation rules
 We've added the ability to add custom Slack webhook URLs to send custom messages to the slack environment of your choosing, 
 [Learn More](https://insights.docs.fairwinds.com/configure/policy/rules/#writing-rules)
  
-### Fixed a bug where name/resource kind weren't always showing up
+### Fixed a bug where name/resource kind weren't always showing up
 We've fixed a bug that prevented the name/resource kind from continually showing up in the Admission Controller UI.
 
 ### Fixed the "fix available" filter on the detailed CVE page
@@ -23,18 +23,19 @@ We've fixed a bug where the "fix available" filter option wasn't filtering corre
 
 ### On the create issue for action item page, fixed the list of labels pulled from GitHub
 We've fixed a bug where the labels weren’t showing up.
- 
+
 ## 4.2.0
 
-### Vulnerabilities UI
+### Vulnerabilities UI
 We’re happy to introduce The Vulnerabilities UI! We introduced a new UI to help you dig into vulnerable images running in your cluster. To use this feature, click the Vulnerabilities tab in the navigation bar.
 
-### Add labels and annotations to automation work
-When creating an automation rule, we've added the feature to check and write rules based on resources label and annotations. 
-### Remove extra clusters column
+### Add labels and annotations to automation work
+When creating an automation rule, we've added the feature to check and write rules based on resources label and annotations.
+
+### Remove extra clusters column
 We've removed a column that presented duplicitous data in the action items table.
 
-### Add SHA hash to CI script
+### Add SHA hash to CI script
 We've implemented integrity checking in our CI/CD instructions. Please update your Insights CI/CD feature.
 
 ## 4.1.0
@@ -49,10 +50,10 @@ You can now create tickets in Jira. Use the "Create Tickets" button at the top o
  
 ### Fix health score chart
 Fixed a bug where selecting a report would not update the data on the cluster overview page.
- 
+
 ### Fleet installation method (charts)
 You can now easily install the Insights Agent across a large fleet of clusters using a single helm install command.
- 
+
 ### Removed raw reports from the history page
 We've improved the history pages' performance by providing links to download and view raw report data.
 
