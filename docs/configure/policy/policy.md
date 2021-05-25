@@ -155,7 +155,9 @@ kubectl create job my-opa-test --from=cronjob/opa -n insights-agent
 
 Watch the logs for the resulting Job to spot any potential errors in your work.
 
-## Reusing Rego Policies
+## Tips and Tricks
+
+### Reusing Rego Policies
 You can reuse the same Rego policy, setting different ActionItem attributes in different cases.
 For instance, say we wanted to apply our `replicas` policy above to both `Deployments` and `StatefulSets`,
 but wanted a higher severity for `Deployments`.
@@ -195,7 +197,7 @@ targets:
   kinds: ["StatefulSet"]
 ```
 
-### Run Types
+#### Run Types
 
 In addition to targeting specific types of resources you can also specify your instance to only run in certain contexts. By default an instance will run in all available contexts, but if you specify a `runEnvironments` section of your YAML then it will only run in the environments selected.
 
@@ -209,7 +211,7 @@ targets:
   kinds: ["StatefulSet"]
 ```
 
-### Clusters
+#### Clusters
 
 If you want to restrict a policy to only running on a specific cluster you can specify which clusters to run in. By default an instance will run in all available clusters, but if you specify a `clusters` section of your YAML then it will only run in the clusters selected.
 
@@ -221,7 +223,7 @@ targets:
   kinds: ["StatefulSet"]
 ```
 
-### Parameters
+#### Parameters
 We can also pass parameters to our instances. Say, for instance, that we wanted all Deployments to have at least 3 replicas,
 but StatefulSets were OK with a single replica. Then we could write:
 
@@ -257,7 +259,7 @@ targets:
   kinds: ["StatefulSet"]
 ```
 
-## Using the Kubernetes API
+### Using the Kubernetes API
 You can also cross-check resources with other Kubernetes objects. For example, we could use
 this check to ensure that all `Deployments` have an associated `HorizontalPodAutoscaler`:
 
