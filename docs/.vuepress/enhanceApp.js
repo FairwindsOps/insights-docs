@@ -25,6 +25,9 @@ const redirects = [{
 }, {
   prefix: '/features/admission-controller',
   redirect: '/run/admission/about',
+}, {
+  prefix: '/features/cli',
+  redirect: '/configure/policy/cli',
 }]
 
 export default ({ router }) => {
