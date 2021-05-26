@@ -204,7 +204,7 @@ Minor improvements to the action items table UI.
 ## 1.10.0
 
 ### Dynamic Open Policy Agent (OPA) - Beta
-You can now create and run custom checks in Rego (OPA's policy language) to create Action Items in Fairwinds Insights. To get started, visit our Docs to [learn how to add Rego policies to Fairwinds Insights](/configure/policy/policy#create-a-policy).
+You can now create and run custom checks in Rego (OPA's policy language) to create Action Items in Fairwinds Insights. To get started, visit our Docs to [learn how to add Rego policies to Fairwinds Insights](/configure/policy/policy).
 
 ### CI/CD Integration - Beta
 We’ve recently shipped a CI/CD integration with Fairwinds Insights to shift Kubernetes configuration validation earlier in the development process. We’ve found that the handoff of Kubernetes applications from development to operations can result in configuration mistakes that lead to future incidents, security risks, and extra infrastructure cost. Today, Ops teams are manually looking for these mistakes, but with our CI/CD integration we are able to shift that closer to the development team to prevent mistakes from entering production.
