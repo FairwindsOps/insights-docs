@@ -19,10 +19,11 @@ it can be tedious to use the UI to create each cluster, then copy out the
 cluster's access token. To better serve customers with a large number of clusters,
 we've created a flow that allows you to easily deploy the Insights Agent across your fleet.
 
-You can use the following command to install the insights-agent in many clusters,
+You can use the following commands to install the insights-agent in many clusters,
 changing `insights.cluster` to a unique identifier for each cluster (e.g. generated using
 your kube context).
 ```
+kubectl delete job --all -n insights-agent
 helm upgrade --install insights-agent fairwinds-stable/insights-agent \
   --namespace insights-agent \
   --create-namespace \
