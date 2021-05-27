@@ -42,4 +42,12 @@ will probably be more accurate. Otherwise, we recommend the **conservative** str
 
 You can [read more about cost estimation on our blog](https://www.fairwinds.com/blog/5-problems-with-kubernetes-cost-estimation-strategies)
 
+## Prometheus Recommendations
+If you elect to install the [Prometheus Collector](https://insights.docs.fairwinds.com/configure/reports/resource-metrics/), you will begin to see a graph appear at the top of every workload modal window. If this is your first time installing the Prometheus Collector, it may take 2-4 hours before the graph is visible.
 
+Once the graph is generated, you will see a timeline of the min, average, and max CPU and memory usage for all pods associated with that workload. The snapshots are taken every 2 hours. For example, if you have a workload with 5 pods:
+* the minimum metric will represent the single pod using the least CPU/memory usage
+* the maximium metric will represent the single pod using the most CPU/memory usage
+* the average metric will represent the average CPU/memory usage across all 5 pods
+
+You can also learn about the last recorded Pod count, and the averaage Pod count, on the same Workload page.
