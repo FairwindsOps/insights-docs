@@ -9,6 +9,25 @@ meta:
 ---
 # Release Notes
 
+## 4.4.0
+### Better Report Hub Syncing
+Most of our users encode their insights-agent installation in Infrastructure-as-Code,
+rather than copy/pasting the `helm install` instructions provided in the Insights UI.
+Now, if you make a change in your Helm installation, the UI will incorporate those
+changes automatically.
+
+### Sort/Filter by Ticket Creation
+You can now sort and filter action items by whether a ticket has been created or not.
+
+### Offline Reports will stop showing Admission Controller
+
+### Fixes for Admission Controller
+We fixed a few minor issues in the Admission Controller
+* Duplicate Action Items will no longer trigger a 400 response
+* Because the Admission Controller doesn't run on a regular schedule, we can't
+automatically detect if it's offline or just quiet. So we've turned off
+notifications for the Admission Controller being offline.
+
 ## 4.3.0
 
 ### Custom notifications using automation rules
