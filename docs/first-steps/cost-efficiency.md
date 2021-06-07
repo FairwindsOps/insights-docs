@@ -50,7 +50,7 @@ In the next column, you'll see _Total Costs with Recommendations_, followed by _
 If you're not seeing values in these fields, make sure the `goldilocks` report is installed and
 operating properly.
 
-Goldilocks analyzes actualy resource usage for your `Deployments`, and makes recommendations for
+Goldilocks analyzes actual resource usage for your `Deployments`, and makes recommendations for
 how much memory and CPU you _should_ be setting for your requests and limits. While it may recommend
 moving resources up or down, we typically find that teams have set resources too high, since
 workloads with resources that are too low will experience noticeable performance issues.

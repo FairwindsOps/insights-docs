@@ -2,7 +2,7 @@
 
 One of the easiest ways for vulnerabilities to sneak into your cluster is via
 a Docker image. Even if you're scanning images as part of CI/CD or your registry,
-a CVE could be announced at any time, even after the image has made it into your cluster.
+Common Vulnerabilities and Exposures (CVE) could be announced at any time, even after the image has made it into your cluster.
 So it's critical to proactively scan the images that are running in your cluster.
 
 Fairwinds Insights employs Trivy, an open source container scanning solution, to create
