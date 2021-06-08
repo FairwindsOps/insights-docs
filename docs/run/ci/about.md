@@ -4,7 +4,7 @@ helping you spot issues _before_ they make it into production.
 
 By adding Fairwinds Insights into your Continuous Integration process, you can catch image
 vulnerabilities and Kubernetes misconfigurations early in the development process. Insights
-can scan changes the changes in each pull request, notifying developers or breaking the build
+can scan changes in each pull request, notifying developers or breaking the build
 whenever security, efficiency, or reliability issues are found.
 
 Insights will run the following report types in CI:
