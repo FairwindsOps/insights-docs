@@ -22,7 +22,7 @@ Notifications can be configured for your entire organization, or for individual 
 
 <img :src="$withBase('/img/slack.png')" alt="slack settings">
 
-Read our [privacy policy](https://insights.fairwinds.com/privacy-policy) to learn more about how Fairwinds Insights handles user data.
+Read our [privacy policy](https://www.fairwinds.com/privacy-policy) to learn more about how Fairwinds Insights handles user data.
 
 # Installation
 To set up Slack notifications, visit your organization's settings page and click the "Add to Slack"

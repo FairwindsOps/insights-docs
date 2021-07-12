@@ -1,7 +1,7 @@
 # Insights Architecture
 
 Fairwinds Insights consists of two main components:
-* The Client - this consists of the users's cluster, where the Insights Agent runs each of the enabled reports
+* The Client - this consists of the users' cluster, where the Insights Agent runs each of the enabled reports
 * The Server - this consists of the Insights backend, database, and file storage
 
 <img :src="$withBase('/img/architecture.png')" alt="Insights Architecture">
