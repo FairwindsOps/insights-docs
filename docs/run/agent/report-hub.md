@@ -30,7 +30,6 @@ You can customize any of the reports by clicking on its tile.
 Some common options are:
 * `schedule` - a Cron expression describing when to run this report
 * `timeout` - the maximum time this report should run before an error is triggered
-* `save as organization default settings` - if checked, these settings will become your organization's default settings. All new and existing clusters will inherit these settings, unless custom settings have been specified for that cluster.
 
 These options will be reflected in the `helm install` command you'll see when you click the `Install` icon.
 Be sure to run the new command after making any changes here.
