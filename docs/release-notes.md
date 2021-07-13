@@ -9,6 +9,26 @@ meta:
 ---
 # Release Notes
 
+## 5.0.0
+### SAML Capabilities - Beta
+We are happy to announce we now offer SAML capabilities! Contact us if you want to try it. 
+[Learn More](/configure/management/membership/#single-sign-on-beta)
+
+### Save Views in Action Item Table
+You can now save filtered views on the action items table. Use the star button at the top of the table and assign the view a name. You will then be able to access that view in the future without needing to re-select filtering options.
+
+### Navigation Scroll Bar
+We added a scroll bar to repositories and clusters options in the navbar to improve usability.
+
+### Improved Error Message Handling in the UI
+We updated how we handle presenting error messages. We now allow users to explicitly dismiss the notifications and increased the amount of time we display the message. This way, users have more time to read the error or ignore it more quickly. 
+
+### Fixed Remediation Bug
+We fixed a bug where information wasn’t showing up under remediation for Polaris action items. 
+
+### Fixed Action Item Bugs
+We fixed a bug where superusers could not see action items in kube-system. We also fixed a bug where some action items were hidden for non-admins on commonly named namespaces.
+
 ## 4.4.0
 ### Better Report Hub Syncing
 Most of our users encode their insights-agent installation in Infrastructure-as-Code,
