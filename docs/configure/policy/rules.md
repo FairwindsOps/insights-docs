@@ -43,8 +43,6 @@ The following fields can be edited:
 * `Severity`
 * `Resolution` - can be set to the constants `WILL_NOT_FIX_RESOLUTION` or `WORKING_AS_INTENDED_RESOLUTION`
 * `AssigneeEmail`
-* `Description`
-* `Remediation`
 * `Notes`
 
 
