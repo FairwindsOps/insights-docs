@@ -25,7 +25,7 @@ We made it easier to regenerate, provision, and manage tokens. To make any futur
 We fixed a bug with how duplicate reports are displayed on the report history page.
 
 ### Updated Digest Email and Slack Notifications
-We’ve updated the digest emails and Slack notifications to include updates when charts are out-of-date.
+We’ve updated the digest emails and Slack notifications to include warnings when charts are out-of-date.
 
 ## 5.1.0
 ### No Updates
