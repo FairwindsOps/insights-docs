@@ -19,7 +19,7 @@ We fixed a bug that wouldn’t allow users to create tickets on the vulnerabilit
 We fixed a bug where a user wasn’t able to open up the Cost Settings page. We now display a toast when non-admins attempt to navigate to that section of the application.
 
 ### Token Revocation
-We made it easier to regenerate, prevision, and manage tokens. To make any future token changes find this capability under Tokens within settings.
+We made it easier to regenerate, provision, and manage tokens. To make any future token changes find this capability under Tokens within settings.
 
 ### Report History Bug
 We fixed a bug on the report history page.
