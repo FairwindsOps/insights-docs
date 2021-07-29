@@ -22,7 +22,7 @@ We fixed a bug where a user wasn’t able to open up the Cost Settings page. We 
 We made it easier to regenerate, provision, and manage tokens. To make any future token changes find this capability under Tokens within settings.
 
 ### Report History Bug
-We fixed a bug on the report history page.
+We fixed a bug with how duplicate reports are displayed on the report history page.
 
 ### Updated Digest Email and Slack Notifications
 We’ve updated the digest emails and Slack notifications to include updates when charts are out-of-date.
