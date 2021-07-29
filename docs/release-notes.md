@@ -8,6 +8,27 @@ meta:
     content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
 ---
 # Release Notes
+## 5.2.0
+### Updated Settings
+We’ve made some changes to settings. First, we’ve introduced User Settings which is the place to update any personal user information or password updates. Second, we’ve consolidated organization and cluster settings into one place.
+
+### Fixed Vulnerability Ticket Bug
+We fixed a bug that wouldn’t allow users to create tickets on the vulnerability page.
+
+### Fixed Toast
+We fixed a bug where a user wasn’t able to open up the Cost Settings page. We now display a toast when non-admins attempt to navigate to that section of the application.
+
+### Token Revocation
+We made it easier to regenerate, prevision, and manage tokens. To make any future token changes find this capability under Tokens within settings.
+
+### Report History Bug
+We fixed a bug on the report history page.
+
+### Updated Digest Email and Slack Notifications
+We’ve updated the digest emails and Slack notifications to include updates when charts are out-of-date.
+
+## 5.1.0
+### No Updates
 
 ## 5.0.0
 ### SAML Capabilities - Beta
