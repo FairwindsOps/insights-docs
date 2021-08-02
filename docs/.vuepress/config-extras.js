@@ -121,6 +121,7 @@ module.exports = {
             'self-hosted/ingress',
             'self-hosted/email',
             'self-hosted/sessions',
+            'self-hosted/integrations',
           ]
         },
       ],
