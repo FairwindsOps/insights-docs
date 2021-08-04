@@ -40,3 +40,11 @@ To set up your app,
 * enable `SSL verification`
 
 
+### Permissions
+In the `Permissions and Events` tab, add the following permissions:
+* Issues - Read and Write
+* Metadata - Read-only
+* Commit Statuses - Read and Write
+
+And the following events:
+* Status
