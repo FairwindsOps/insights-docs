@@ -3,7 +3,7 @@ meta:
   - name: title
     content: Fairwinds Insights Management | Delete
   - name: description
-    content: Learn how to remove a particular cluster from the Fairwinds Insights UI, you can delete it on its settings page. You'll need to be an admin to do this.
+    content: Learn how to remove a particular cluster from the Fairwinds Insights UI, you can delete it on its settings page
   - name: keywords
     content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
 ---
@@ -15,7 +15,7 @@ meta:
 
 ## Delete a Cluster
 If you'd like to remove a particular cluster from the UI, you can delete it
-on its settings page. You'll need to be an admin to do this.
+on its settings page. You'll need to be an owner of your organization to do this.
 
 <div class="mini-img">
   <img :src="$withBase('/img/delete-cluster.png')" alt="delete a cluster">
@@ -25,7 +25,7 @@ on its settings page. You'll need to be an admin to do this.
 > Note: deleting an organization will delete it for **all users**.
 
 If you'd like to remove a particular organization, you can delete it from
-its settings page. You'll need to be an admin to do this.
+its settings page. You'll need to be an owner of your organization to do this.
 
 <div class="mini-img">
   <img :src="$withBase('/img/delete-organization.png')" alt="delete a cluster">

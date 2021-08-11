@@ -51,7 +51,7 @@ replicasRequired[actionItem] {
 
 ### Via the CLI
 To add your policies to Insights, you'll need to use the [Insights CLI](/configure/policy/cli).
-You'll also need your API key, which an organization admin can find your on your organization's
+You'll also need your API key, which an organization owner can find your on your organization's
 settings page.
 
 #### Syncing Policies
