@@ -90,6 +90,7 @@ module.exports = {
           title: 'Account Management',
           children: [
             'management/membership',
+            'management/sso',
             'management/delete',
           ],
         },
