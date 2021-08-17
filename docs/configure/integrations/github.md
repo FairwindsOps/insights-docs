@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation. Learn how to configure GitHub for Fairwinds Insights. "
+---
 # GitHub
 Fairwinds Insights can connect to GitHub in two ways:
 

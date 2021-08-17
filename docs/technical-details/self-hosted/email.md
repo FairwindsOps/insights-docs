@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Self-hosted Documentation: Email can be sent via AWS SES, or by specifying your own SMTP options"
+---
 # Email
 Email can be sent via AWS SES, or by specifying your own SMTP options.
 

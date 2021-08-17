@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation. Fairwinds Insights can automatically respond to Action Items. Learn How. "
+---
 # Automation Rules
 
 Fairwinds Insights can automatically respond to Action Items, setting things like

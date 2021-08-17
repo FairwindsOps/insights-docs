@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation. The Prometheus Collector report provides fine-grained resource usage data. "
+---
 # Prometheus Collector
 
 The Prometheus Collector report gathers workload metrics from a Prometheus installation

@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation. Fairwinds Insights uses Trivy, an open source container scanning solution, to flag images with known vulnerabilities."
+---
 # Container Security
 
 One of the easiest ways for vulnerabilities to sneak into your cluster is via

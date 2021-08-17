@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Self-hosted install Documentation. "
+---
 # Installation
 
 > The self-hosted version of Fairwinds Insights is currently in alpha.

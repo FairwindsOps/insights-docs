@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Workload Configuration Documentation. Read Common Use Cases. "
+---
 # Workload Configuration
 
 Every workload in Kubernetes comes with a configuration that tells Kubernetes how it should run.

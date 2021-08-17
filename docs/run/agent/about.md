@@ -3,7 +3,7 @@ meta:
   - name: title
     content: Fairwinds Insights Agent
   - name: description
-    content: The Insights Agent runs inside your cluster, and sends back data to Fairwinds Insights. Read the documentation.
+    content: "Fairwinds Insights | Documentation. The Insights Agent runs inside your Cluster, and sends back data to Fairwinds Insights."
   - name: keywords
     content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
 ---

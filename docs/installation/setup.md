@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation for Installation Setup. "
+---
 # Setup
 
 Fairwinds Insights can help you discover potential Security, Efficiency, and Reliability

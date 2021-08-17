@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Self-hosted Documentation: Fairwinds Insights requires a Postgres database to store backend data."
+---
 # Database
 Fairwinds Insights requires a Postgres database to store backend data.
 

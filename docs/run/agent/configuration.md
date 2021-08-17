@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights |  Report Hub configuration documentation. "
+---
 # Configuration
 
 ## Report Hub

@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation. The Fairwinds Insights CLI is a command-line tool for interacting with the API. Keep policies synced to Git repository."
+---
 # CLI Utility
 
 The [Fairwinds Insights CLI](https://github.com/FairwindsOps/insights-cli)

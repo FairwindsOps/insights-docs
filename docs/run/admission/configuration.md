@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation. How to configure you the Admission controller. "
+---
 # Configuration
 ## Resources
 By default, the Admission Controller will monitor the following resources:

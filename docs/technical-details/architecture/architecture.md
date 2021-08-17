@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation on Insights architecture. "
+---
 # Insights Architecture
 
 Fairwinds Insights consists of two main components:

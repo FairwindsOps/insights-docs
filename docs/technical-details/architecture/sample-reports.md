@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Sample report documentation. "
+---
 # Sample Reports
 Below is sample data for each report type. This should help give a sense for
 what sort of data is being reported back to Fairwinds Insights.
