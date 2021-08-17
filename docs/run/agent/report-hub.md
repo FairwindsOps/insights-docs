@@ -1,11 +1,11 @@
 ---
 meta:
- - name: title
-   content: Fairwinds Insights Report Hub
- - description:
-   content: The Report Hub allows you to choose which Kubernetes reports run in your cluster
- - name: keywords
-   content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
+  - name: title
+    content: Fairwinds Insights Report Hub
+  - description:
+    content: The Report Hub allows you to choose which Kubernetes reports run in your cluster
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
 ---
 # Report Hub
 
