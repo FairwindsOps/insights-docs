@@ -13,7 +13,7 @@ meta:
 ### Team Management
 We launched a new interface and API for managing teams within your organization. Within an organization,
 you can create multiple teams, each of which has access to a particular set of clusters, namespaces, and repositories.
-Members of those teams can be assigned a specific roles to limit the actions they can take on those objects.
+Members of those teams can be assigned a specific role to limit the actions they can take on those objects.
 
 This is a great way to limit access to sensitive information, and to get the right information in front of the right
 people. [Read more in the docs](https://insights.docs.fairwinds.com/configure/management/membership/)
