@@ -9,6 +9,21 @@ meta:
 ---
 # Release Notes
 
+## 5.4.0
+### Fixed Action Items Bug
+We fixed a bug that used “last seen” instead of “first seen” to count fixed action items. Fixed action items are more accurate now.
+
+### Fixed Slack Bug
+We fixed a bug that didn’t display the previous channel selected when searching for a different slack channel.
+
+### Fixed Ability to Delete Repositories
+We fixed a bug where users could not delete repositories.
+
+### Fixed SMAL Errors
+We fixed a bug that occurred when enabling SAML. 
+
+[Learn More About SAML Integration](https://insights.docs.fairwinds.com/configure/management/sso/)
+
 ## 5.3.0
 ### Team Management
 We launched a new interface and API for managing teams within your organization. Within an organization,
