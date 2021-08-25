@@ -11,7 +11,7 @@ meta:
 
 ## 5.4.0
 ### Fixed Action Items Bug
-We fixed a bug that used “last seen” instead of “first seen” to count fixed action items. Fixed action items are more accurate now.
+We fixed a bug that used “last seen” instead of “first seen” to count fixed action items. Fixed action item numbers are more accurate now.
 
 ### Fixed Slack Bug
 We fixed a bug that didn’t display the previous channel selected when searching for a different slack channel.
