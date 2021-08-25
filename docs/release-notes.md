@@ -19,7 +19,7 @@ We fixed a bug that didn’t display the previous channel selected when searchin
 ### Fixed Ability to Delete Repositories
 We fixed a bug where users could not delete repositories.
 
-### Fixed SMAL Errors
+### Fixed SAML Errors
 We fixed a bug that occurred when enabling SAML. 
 
 [Learn More About SAML Integration](https://insights.docs.fairwinds.com/configure/management/sso/)
