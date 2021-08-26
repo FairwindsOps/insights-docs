@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Self-hosted Documentation. Session Keys. "
+---
 # Session keys
 In the default install, we autogenerate session and cookie keys each time the application is
 installed or upgraded, which could cause disruption for users. Instead, you should generate

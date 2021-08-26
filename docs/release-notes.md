@@ -3,11 +3,39 @@ meta:
   - name: title
     content: Fairwinds Insights Release Notes
   - name: description
-    content: Read the latest version updates at Fairwinds Insights release notes documentation.
+    content: "Fairwinds Insights | Release Notes. See what's new in the Kubernetes governance software. "
   - name: keywords
     content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
 ---
 # Release Notes
+
+## 5.4.0
+### Fixed Action Items Bug
+We fixed a bug that used “last seen” instead of “first seen” to count fixed action items. Fixed action item numbers are more accurate now.
+
+### Fixed Slack Bug
+We fixed a bug that didn’t display the previous channel selected when searching for a different slack channel.
+
+### Fixed Ability to Delete Repositories
+We fixed a bug where users could not delete repositories.
+
+### Fixed SAML Errors
+We fixed a bug that occurred when enabling SAML. 
+
+[Learn More About SAML Integration](https://insights.docs.fairwinds.com/configure/management/sso/)
+
+## 5.3.0
+### Team Management
+We launched a new interface and API for managing teams within your organization. Within an organization,
+you can create multiple teams, each of which has access to a particular set of clusters, namespaces, and repositories.
+Members of those teams can be assigned a specific role to limit the actions they can take on those objects.
+
+This is a great way to limit access to sensitive information, and to get the right information in front of the right
+people. [Read more in the docs](https://insights.docs.fairwinds.com/configure/management/membership/)
+
+### Agent v1.14
+We've updated the Insights Agent with some minor improvements, including better support for Kubernetes 1.21 and the latest plugin updates.
+
 ## 5.2.0
 ### Updated Settings
 We’ve made some changes to settings. First, we’ve introduced User Settings which is the place to update any personal user information or password updates. Second, we’ve consolidated organization and cluster settings into one place.
@@ -33,7 +61,7 @@ We’ve updated the digest emails and Slack notifications to include warnings wh
 ## 5.0.0
 ### SAML Capabilities - Beta
 We are happy to announce we now offer SAML capabilities! Contact us if you want to try it. 
-[Learn More](https://insights.docs.fairwinds.com/configure/management/membership/#single-sign-on-beta)
+[Learn More](https://insights.docs.fairwinds.com/configure/management/sso/)
 
 ### Save Views in Action Item Table
 You can now save filtered views on the action items table. Use the star button at the top of the table and assign the view a name. You will then be able to access that view in the future without needing to re-select filtering options.

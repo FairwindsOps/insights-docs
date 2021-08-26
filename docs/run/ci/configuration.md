@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation. Configuration of the CI integration happens mainly in fairwinds-insights.yaml"
+---
 # Configuration
 Configuration of the CI integration happens mainly in fairwinds-insights.yaml,
 which should be checked into the root of your infrastructure-as-code repository.

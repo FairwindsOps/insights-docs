@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation on ways to run Fairwinds Insights: Continuous Integration, Admission Controller or In-Cluster Agent. "
+---
 # Ways to Run Fairwinds Insights
 
 Fairwinds Insights can help you discover potential Security, Efficiency, and Reliability

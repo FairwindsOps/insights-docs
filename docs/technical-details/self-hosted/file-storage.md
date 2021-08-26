@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Self-hosted Documentation. Insights stores that data as a JSON file. See what it supports."
+---
 # File Storage
 When clusters report back to Fairwinds Insights (e.g. with a list of Trivy scans, or Polaris results),
 Insights stores that data as a JSON file. In order to use Insights, you'll need a place to store those

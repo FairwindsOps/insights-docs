@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation. See how to get value from Fairwinds Insights. "
+---
 # Getting Value from Fairwinds Insights
 
 So you've [installed the Insights agent](/run/agent/installation),

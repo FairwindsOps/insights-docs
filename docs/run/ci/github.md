@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation: How to connect Fairwinds Insights to GitHub. "
+---
 # Connect to GitHub
 > You can still use the Continuous Integration feature without GitHub.
 >

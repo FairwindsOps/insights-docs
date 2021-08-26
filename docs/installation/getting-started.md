@@ -1,11 +1,11 @@
 ---
 meta:
- - name: title
-   content: Getting Started with Fairwinds Insights
- - description:
-   content: Getting started documentation on Fairwinds Insights. Getting started includes three easy steps - sign up, create a cluster and install the agent.
- - name: keywords
-   content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
+  - name: title
+    content: Getting Started with Fairwinds Insights
+  - name: description
+    content: "Fairwinds Insights | Documentation for Getting Started with Fairwinds Insights."
+  - name: keywords
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
 ---
 
 

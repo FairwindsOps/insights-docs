@@ -3,7 +3,7 @@ meta:
   - name: title
     content: Fairwinds Insights Management Membership
   - name: description
-    content: Fairwinds Insights provides two levels of access members and admins so you can manage who can view or make changes. Read the documentation.
+    content: Fairwinds Insights provides fine-grained access control so you can decide who can view and edit action items for your Kubernetes environment
   - name: keywords
     content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
 ---
@@ -11,78 +11,45 @@ meta:
 <!-- TODO: use npm -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
 
-For each organization, there are two levels of access:
-* **members** can view any data in the Insights dashboard, but cannot make changes
-* **admins** can make changes, install the Insights Agent, and access the API
+In your organization's settings page, you can use Team Management to view a list
+of all users in your organization.
+<img :src="$withBase('/img/user-list.png')" alt="list of users">
 
-## Managing Members
-To add a new user to your organization, go to your organization's settings page.
-You can then enter an email address, and decide what their level of access should be. For **members** you can further restrict access to particular clusters by unchecking **All Clusters** and clicking the check boxes next to each cluster that user should have access to.
+You can use this page to add your teammates and coworkers to your Insights organization.
+You can also designate certain members as `owners`, who will be able to add new members,
+manage permissions, and perform administrative actions like deleting and adding clusters.
 
 <img :src="$withBase('/img/new-member.png')" alt="add a user">
 
-Once a user has been added to the organization, you can edit their access by clicking the
-<i class="text-warning fa fa-user-cog"></i>
-icon next to their name
 
-<img :src="$withBase('/img/edit-member.png')" alt="edit a user">
+## Teams
+Once you've added people to your organization, you'll need to grant them
+access to specific resources by adding them to one or more teams.
 
-## Namespace Restrictions
-Particular namespaces can be hidden from the UI for member users. This is helpful
-if members don't need to see issues e.g. related to `kube-system`.
+Specifically, each team has access to a list of:
+* clusters
+* namespaces
+* repositories
 
-To hide a particular namespace from the UI, you can add the following annotation to it:
-```
-insights.fairwinds.com/adminOnly=true
-```
+Every organization comes with a built-in `Full Access` team, which
+can access all resources. The creator of the organization is automatically
+added to this team.
 
-Note that this **will not** prevent member users from accessing data about those namespaces -
-they will still be able to view the raw reports, which may contain information about those
-namespaces. These namespaces will only be hidden from the Action Items table and other
-visual interfaces.
+<img :src="$withBase('/img/teams.png')" alt="full access team">
 
-## Single Sign-On - Beta
+Use the `Add team` button to add a new team with more fine-grained access.
+<img :src="$withBase('/img/create-team.png')" alt="full access team">
 
-Fairwinds Insights supports Single Sign-On via a SAML identity provider.
+From here, you can select which clusters, namespaces, and repositories the
+user will get access to. Note that if you select `All` for these, the
+team will have access to any new resources that get added as well
 
-### Identity Provider Setup
+<img :src="$withBase('/img/add-clusters-to-team.png')" alt="full access team">
 
-ACS URL: `https://insights.fairwinds.com/v0/organizations/<orgname>/auth/saml`
-Entity ID: `fairwinds-insights`
-Name ID: Email Address
-Attributes:
-* firstName: User's first name
-* lastName: User's Last Name
-* isOwner: true if this user should have admin access to the org. False if they should not. Omit this attribute to handle authorization within Insights
-* teams: A list of teams to grant the user access to. Defaults to view access to each team but an additional role can be specified as `<team>/<role>`
-
-### Insights Setup
-
-The `https://insights.fairwinds.com/v0/organizations/<orgname>/saml` endpoint can be used to save SAML settings.
-
-A URL to download metadata from and a list of email domain names to allow SAML access from are the configurable options.
-
-```
-{
-  "metadataUrl": "<url>",
-  "domains": [
-    {
-        "emailDomain": "example.com"
-    }
-  ]
-}
-```
-
-The `https://insights.fairwinds.com/v0/organizations/<orgname>/sso-strict` endpoint can be used to restrict an organization to only be viewable to a user that has logged in via SAML.
-
-```
-{
-  "enabled": true
-}
-```
-It's recommended to make sure that you have the admin token for your organization saved somewhere safe before enabling this because it's possible to be locked out of your organization.
-
-### Logging in
-
-Currently to login via SAML you must go to a special URL: `https://insights.fairwinds.com/v0/organizations/<orgname>/auth/saml`
+Once your team has been created, you can add new members to the team.
+Team members can have one of three roles:
+* a `viewer` can only see data associated with this team
+* an `editor` can take actions like assigning action items or marking them as resolved
+* an `admin` can do all of the above, plus add new members to the team
+<img :src="$withBase('/img/add-members-to-team.png')" alt="full access team">
 
