@@ -14,7 +14,11 @@ following environment variables to your `fwinsights-secrets` secret:
 You'll need to create a
 [Slack app](https://api.slack.com/apps/) to enable the Slack integration.
 
-It will need the following scopes:
+Copy the client ID and secret, and add them to the `fwinsights-secrets` secret (see above).
+
+Then, on the left side, click OAuth & Permissions.
+
+You'll need to add the following scopes:
 * `channels:join`
 * `channels:read`
 * `chat:write`
@@ -23,6 +27,9 @@ You'll also need to add callback URL for
 ```
 $HOSTNAME/v0/slack/oauth/callback
 ```
+
+Once finished, restart the API pod and then go to `<host-url>/orgs/<org-name>/settings/integrations` and install the Slack Integration.
+
 
 ## GitHub
 You'll need to create a
