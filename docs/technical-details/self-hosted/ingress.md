@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Self-hosted Documentation. The Helm chart comes with an Ingress object to expose a URL for connecting to Insights."
+---
 # Ingress
 The Helm chart comes with an Ingress object in order to expose a URL for connecting to Insights.
 Here's an example configuration, using cert-manager and nginx-ingress.

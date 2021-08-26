@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation. How to set up the Admission controller. "
+---
 # Setup
 ## Requirements
 The default installation requires [cert-manager](https://cert-manager.io/docs/installation/kubernetes/)

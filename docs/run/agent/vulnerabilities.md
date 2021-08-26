@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation Container Vulnerabilities.  Use Insights to see a list of all vulnerable images currently running in your cluster."
+---
 # Container Vulnerabilities
 
 You can use Insights to see a list of all vulnerable images currently running

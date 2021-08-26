@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation: How to install the in-cluster Agent. "
+---
 # Installation
 To get started with the agent, create a new cluster in the Insights UI, e.g. `staging`
 

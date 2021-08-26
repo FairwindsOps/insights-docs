@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation. The OPA Report allows you to define custom policies for checking Kubernetes resources. "
+---
 # OPA Policies
 
 The [OPA Report](/configure/reports/opa) allows you to define custom policies for checking Kubernetes resources.

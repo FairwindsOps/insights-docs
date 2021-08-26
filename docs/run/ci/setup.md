@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation: Setting up continuous integration. "
+---
 # Setup
 To get started, visit your organization's **Repositories** tab, and click **Add Repo**
 

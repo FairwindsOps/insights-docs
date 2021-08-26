@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation. Fairwinds Insights supports the use of custom OPA policies to create Action Items."
+---
 # OPA
 Fairwinds Insights supports the use of custom OPA policies to create Action Items.
 

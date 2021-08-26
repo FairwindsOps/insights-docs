@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation: View results in the repositories tab. "
+---
 # Viewing the Results
 The **Repositories** tab will show you a list of all repositories that have been connected to Insights.
 Next to each repo, you can see the number of `danger` and `warning` items currently found in the main

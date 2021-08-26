@@ -1,3 +1,8 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation: Integrate into the CI process for infrastructure-as-code, helping spot issues before they make it into production."
+---
 # About
 Fairwinds Insights can integrate into the CI process for your infrastructure-as-code,
 helping you spot issues _before_ they make it into production.
