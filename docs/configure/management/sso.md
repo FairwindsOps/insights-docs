@@ -4,14 +4,14 @@ Fairwinds Insights supports Single Sign-On via a SAML identity provider.
 
 ## Identity Provider Setup
 
-ACS URL: `https://insights.fairwinds.com/v0/organizations/$ORG_NAME/auth/saml`
-Entity ID: `fairwinds-insights`
-Name ID: Email Address
-Attributes:
-* firstName: User's first name
-* lastName: User's Last Name
-* isOwner: true if this user should have owner access to the org. False if they should not. Omit this attribute to handle authorization within Insights
-* teams: A list of teams to grant the user access to. Defaults to view access to each team but an additional role can be specified as `<team>/<role>`
+* ACS URL: `https://insights.fairwinds.com/v0/organizations/$ORG_NAME/auth/saml`
+* Entity ID: `fairwinds-insights`
+* Name ID: Email Address
+* Attributes:
+  * firstName: User's first name
+  * lastName: User's Last Name
+  * isOwner: true if this user should have owner access to the org. False if they should not. Omit this attribute to handle authorization within Insights
+  * teams: A list of teams to grant the user access to. Defaults to view access to each team but an additional role can be specified as `<team>/<role>`
 
 Your identity provider should then provide a URL to retrieve SAML metadata,
 which contains a public key that can be shared with Insights.
