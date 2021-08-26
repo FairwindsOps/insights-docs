@@ -61,7 +61,7 @@ We’ve updated the digest emails and Slack notifications to include warnings wh
 ## 5.0.0
 ### SAML Capabilities - Beta
 We are happy to announce we now offer SAML capabilities! Contact us if you want to try it. 
-[Learn More](https://insights.docs.fairwinds.com/configure/management/membership/#single-sign-on-beta)
+[Learn More](https://insights.docs.fairwinds.com/configure/management/sso/)
 
 ### Save Views in Action Item Table
 You can now save filtered views on the action items table. Use the star button at the top of the table and assign the view a name. You will then be able to access that view in the future without needing to re-select filtering options.
