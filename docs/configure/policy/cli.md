@@ -34,10 +34,11 @@ fairwinds-insights.yaml configuration file (below)
 
 ### fairwinds-insights.yaml
 You can set up a YAML file containing details for the CLI, including your
-organization name
+organization name and hostname (for self-hosted deployments)
 ```yaml
 options:
   organization: acme-co
+  hostname: https://example.com
 ```
 
 By default, the CLI will look for this file at `./fairwinds-insights.yaml`, but its
