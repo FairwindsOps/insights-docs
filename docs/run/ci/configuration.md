@@ -47,6 +47,14 @@ in your fairwinds-insights.yaml
 * `manifests.helm[].values` - values to pass to the chart when templating
 * `manifests.helm[].valuesFile` - a YAML file containing values to pass to the chart when templating
 
+### Reports
+You can control which reports run, as well as pass options to each report type.
+
+* `reports.opa.enabled` - set to `false` if you'd like to disable OPA
+* `reports.polaris.enabled` - set to `false` if you'd like to disable Polaris
+* `reports.trivy.enabled` - set to `false` if you'd like to disable Trivy
+* `reports.trivy.skipManifests` - set to `true` if you don't want to scan images discovered in YAML files and Helm charts
+
 ### Exemptions
 You can tell Insights that certain files or checks should be excluded from the CI scan.
 Insights will look for Action Items that match _all_ of the provided fields, and mark them as exempt.
