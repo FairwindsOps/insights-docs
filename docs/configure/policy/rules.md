@@ -52,6 +52,17 @@ The following fields can be edited:
 
 
 ## Integrations
+### HTTP Requests
+You can send arbitrary HTTP requests using the `sendHTTPRequest` function. For example:
+```
+sendHTTPRequest("POST", "https://example.com/action-item", {
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(ActionItem),
+});
+```
+
 ### Slack Notifications
 If you have attached a Slack installation to your organization, you can use the
 `sendSlackNotification` function to send messages. You can pick which channel
