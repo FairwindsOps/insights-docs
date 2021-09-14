@@ -79,19 +79,19 @@ to send alerts.
 
 #### Examples
 ```js
-if (ActionItem.Severity >= DANGER_SEVERITY && ActionItem.IsNew) {
+if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
     sendSlackNotification("trivy-alerts");
 }
 ```
 
 ```js
-if (ActionItem.Severity >= DANGER_SEVERITY && ActionItem.IsNew) {
+if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
     sendSlackNotification("api-team", "@Jane there's a new critical vulnerability! :scream:");
 }
 ```
 
 ```js
-if (ActionItem.Severity >= DANGER_SEVERITY && ActionItem.IsNew) {
+if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
   sendSlackNotification(
     "https://hooks.slack.com/services/T0123456/abc/def",
     "Uh oh! New vulnerability!",
@@ -103,7 +103,7 @@ if (ActionItem.Severity >= DANGER_SEVERITY && ActionItem.IsNew) {
 You can also create a Jira or GitHub issue from an action item.
 Note that only one ticket will be created per action item.
 
-The `createTicket` funciton takes three arguments:
+The `createTicket` function takes three arguments:
 * integration - either `GitHub` or `Jira`
 * project - your GitHub repo name, or your Jira project ID
 * labels - a list of labels to put on the ticket
