@@ -54,7 +54,7 @@ The following fields can be edited:
 ## Integrations
 ### HTTP Requests
 You can send arbitrary HTTP requests using the `sendHTTPRequest` function. For example:
-```
+```js
 sendHTTPRequest("POST", "https://example.com/action-item", {
   headers: {
     'Content-Type': 'application/json',
