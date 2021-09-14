@@ -47,7 +47,7 @@ If you elect to install the [Prometheus Collector](https://insights.docs.fairwin
 
 Once the graph is generated, you will see a timeline of the min, average, and max CPU and memory usage for all pods associated with that workload. The snapshots are taken every 2 hours. For example, if you have a workload with 5 pods:
 * the minimum metric will represent the single pod using the least CPU/memory usage
-* the maximium metric will represent the single pod using the most CPU/memory usage
+* the maximum metric will represent the single pod using the most CPU/memory usage
 * the average metric will represent the average CPU/memory usage across all 5 pods
 
 You can also learn about the last recorded Pod count, and the averaage Pod count, on the same Workload page.

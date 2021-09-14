@@ -57,7 +57,7 @@ all visible items.
 </div>
 
 ## Resolving
-Action Items can be resolved manually, by marking them as **Will not fix** or **Working as intended**.
+Action Items can be resolved manually, by marking them as `Won't Fix` or `Working As Intended`.
 Resolved Action Items will no longer appear on the default Action Items view.
 
 <div class="mini-img">
@@ -76,7 +76,7 @@ all visible items.
 Insights can connect to external ticketing systems (currently GitHub and Jira) to help you track
 your Action Items where you already live.
 
-To turn an Action Item into a ticket, click the `create ticket` button in the Action Items UI:
+To turn an Action Item into a ticket, click the `Create Ticket` button in the Action Items UI:
 
 <div class="mini-img">
   <img :src="$withBase('/img/create-ticket.png')" alt="create ticket">

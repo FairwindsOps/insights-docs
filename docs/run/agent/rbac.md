@@ -11,7 +11,7 @@ meta:
 <!-- TODO: use npm -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
 
-The RBAC tab shows you a list of `Roles` and `ClusterRoles` in your cluster.
+The RBAC page shows you a list of `Roles` and `ClusterRoles` in your cluster.
 It ranks these by their level of access:
 
 Roles that don't have any associated bindings are treated as

@@ -4,7 +4,7 @@ meta:
     content: "Fairwinds Insights | Documentation: How to install the in-cluster Agent. "
 ---
 # Installation
-To get started with the agent, create a new cluster in the Insights UI, e.g. `staging`
+To get started with the agent, create a new cluster in the Insights UI.
 
 <div class="mini-img">
   <img :src="$withBase('/img/new-cluster.png')" alt="new cluster">

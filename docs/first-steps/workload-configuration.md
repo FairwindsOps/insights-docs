@@ -54,16 +54,8 @@ and filter for the `polaris` report:
 You may also want to filter for particular namespaces. For instance, it's good to start with
 namespaces for your own applications, rather than core or add-on namespaces like `kube-system` or `metrics-server`.
 
-<div class="mini-img">
-<img :src="$withBase('/img/filter-namespaces.png')" alt="Filter namespaces">
-</div>
-
-Notice that by default, the Action Items are sorted by severity, with `danger` items at the top.
+Notice that by default, the Action Items are sorted by severity.
 This is a good way to pick out the most important items to fix.
-
-<div class="mini-img">
-<img :src="$withBase('/img/sort-by-severity.png')" alt="Sort by severity">
-</div>
 
 Once you've zeroed in on an item that you'd like to fix, expand it to see a description and
 remediation.
