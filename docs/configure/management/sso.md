@@ -1,4 +1,4 @@
-# Single Sign-On [beta]
+# Single Sign-On
 
 Fairwinds Insights supports Single Sign-On via a SAML identity provider.
 
