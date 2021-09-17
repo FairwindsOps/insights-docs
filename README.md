@@ -30,3 +30,4 @@ Learn more about
 features like [Slack notifications](https://insights.docs.fairwinds.com/configure/integrations/slack),
 and our [supported plugins](https://insights.docs.fairwinds.com/configure/reports/polaris).
 
+<!-- Begin boilerplate -->
