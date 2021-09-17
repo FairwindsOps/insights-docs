@@ -17,9 +17,7 @@ Use the Report Hub to decide which reports you'd like to run in your cluster.
 <img :src="$withBase('/img/report-hub.png')" alt="report hub tiles">
 
 The easiest way to install is to use the `Quick Add` button below a report, then click the
-`Install` icon at the top-right:
-
-<img :src="$withBase('/img/report-hub-install.png')" alt="report hub install">
+`Install` icon at the top-right.
 
 You'll then be prompted with instructions for installing the Insights Agent in your cluster:
 

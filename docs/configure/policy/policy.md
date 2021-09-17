@@ -34,7 +34,14 @@ issue. The following fields can be set:
 * `description` - a longer description of the issue. Can include markdown.
 * `remediation` - instructions for fixing the issue. Can include markdown.
 * `category` - can be Security, Efficiency, or Reliability
-* `severity` - between 0.0 and 1.0. > .66 will become a `danger` item
+* `severity` - between 0.0 and 1.0.
+
+Action Item severity is defined as:
+* 0.0 - None
+* 0.1 to 0.39 - Low
+* 0.4 to 0.69 - Medium
+* 0.7 to .89 - High
+* 0.9 to 1.0 - Critical  
 
 For instance, on our check above, we could set:
 ```rego

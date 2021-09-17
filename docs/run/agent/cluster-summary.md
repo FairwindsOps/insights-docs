@@ -30,16 +30,13 @@ This graph gives you a sense for how healthy your cluster is overall.
 
 The score takes into account how many Insights checks are passing or failing, weighted
 by the level of severity. To improve your score, fix some of the Action Items listed,
-especially if they have a `danger`-level severity.
-
-You can also see the total number of passing, warning, and dangerous checks here.
+especially if they have a `critical` level severity.
 
 ## Action Items
 <img :src="$withBase('/img/cluster-action-items-graph.png')" alt="cluster action items graph">
 
 This graph shows when new action items were introduced into your cluster, as well as when
-existing action items were fixed. Red and orange bars show new action items. The green bars
-represent fixed action items.
+existing action items were fixed.
 
 You can filter this report by namespace or by report type. You can also change the date range.
 

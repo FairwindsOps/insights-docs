@@ -49,7 +49,7 @@ team will have access to any new resources that get added as well
 Once your team has been created, you can add new members to the team.
 Team members can have one of three roles:
 * a `viewer` can only see data associated with this team
-* an `editor` can take actions like assigning action items or marking them as resolved
+* an `editor` can take actions like assigning Action Items or marking them as resolved
 * an `admin` can do all of the above, plus add new members to the team
 <img :src="$withBase('/img/add-members-to-team.png')" alt="full access team">
 

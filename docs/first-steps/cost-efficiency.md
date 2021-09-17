@@ -16,7 +16,7 @@ a memory-intensive application? In order to accurately attribute cost, we have t
 comparing apples to oranges.
 
 To help us best estimate workload costs in your cluster, we ask for a few pieces of information
-the first time you visit the **Workloads** tab: your average node size, your average node cost,
+the first time you visit the **Workloads** page: your average node size, your average node cost,
 and the strategy you'd like to use for workload estimation (more on that below).
 
 <img :src="$withBase('/img/cost-settings.png')" alt="Cost settings">
@@ -45,7 +45,7 @@ You can [read more about cost estimation on our blog](https://www.fairwinds.com/
 
 ## Viewing Workload Costs
 
-On the **Workloads** tab, you can see a list of all the workloads in your cluster. By default, they'll
+On the **Workloads** page, you can see a list of all the workloads in your cluster. By default, they'll
 be sorted by their _Average Total Cost_. This number utilizes resource requests and limits (if specified),
 and average pod count to estimate the average cost of each workload.
 

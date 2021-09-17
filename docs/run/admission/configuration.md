@@ -34,7 +34,7 @@ rules:
 ```
 
 ## Checks
-You can fine-tune which checks are applied by the admission controller. Any check with a `danger` severity will instruct the Admission Controller to deny the deployment. 
+You can fine-tune which checks are applied by the admission controller. Any check with a `high` severity will instruct the Admission Controller to deny the deployment. 
 
 Specifically, the following auditing tools
 can be enabled or disabled as part of admission control:

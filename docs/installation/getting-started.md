@@ -13,8 +13,6 @@ meta:
 
 ## Create a new Organization
 
-To get started with Fairwinds Insights, [create an account](https://insights.fairwinds.com/auth/register)
-
 Once you've signed up and confirmed your email address, you'll be prompted to
 create a new organization:
 
@@ -22,6 +20,6 @@ create a new organization:
   <img :src="$withBase('/img/new-org.png')" alt="new organization">
 </div>
 
-Choose a unique name for your organization, like `acme-co`. You'll be able to add clusters to this
+Choose a unique name for your organization. You'll be able to add clusters to this
 organization, as well as any coworkers you'd like to collaborate with.
 

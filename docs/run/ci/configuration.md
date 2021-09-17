@@ -19,7 +19,7 @@ These are high-level options for the Insights CI integration.
 * `options.setExitCode` - set a non-zero exit code if issues are found. Default `false`
 * `options.baseBranch` - the branch to compare results to. Default `master`
 * `options.newActionItemThreshold` - the maximum number of new action items that can appear for a passing test. Default `0`
-* `options.severityThreshold` - if _any_ action item hits this threshold, the test will fail. Default `danger`
+* `options.severityThreshold` - if _any_ action item hits this threshold, the test will fail. Default `0.667`
 * `options.junitOutput` - if specified, Insights will print JUnit XML results here
 * `options.repositoryName` - the name of the repository. Must match the name in GitHub if using the GitHub integration. Defaults to the output of `git remote -v`
 * `options.tempFolder` - a temporary directory to store files in. Default `./_insightsTemp/`

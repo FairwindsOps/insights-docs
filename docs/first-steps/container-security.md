@@ -22,13 +22,9 @@ To get started with Trivy, you can filter for action items that come from its re
 You may also want to filter for particular namespaces. For instance, it's good to start with
 namespaces for your own applications, rather than core or add-on namespaces like `kube-system` or `metrics-server`.
 
-<div class="mini-img">
-<img :src="$withBase('/img/filter-namespaces.png')" alt="Filter namespaces">
-</div>
-
-If you've got several vulnerable containers, you can expand them to see details for the individual
-packages that are affected, as well as the severity level for each package. Be on the lookout for
-packages that you know your applications are using, like PHP or cURL.
+After expanding a Trivy Action Item, you can see details for the individual packages that are affected,
+as well as the severity level for each package by selecting `View this CVE in the Vulnerabilities page`.
+Be on the lookout for packages that you know your applications are using, like PHP or cURL.
 
 <img :src="$withBase('/img/trivy-details.png')" alt="Trivy details">
 
@@ -76,7 +72,7 @@ every add-on like nginx-ingress and cert-manager comes with its own Docker image
 contain vulnerabilities, it can be a bit harder to remediate.
 
 The first step is to make sure you're on the latest version. If you're using Helm to install these
-add-ons, you can check the **Add-ons** tab to see if there are any updates available:
+add-ons, you can check the **Add Ons** page to see if there are any updates available:
 
 <img :src="$withBase('/img/add-ons.png')" alt="add-ons tab">
 
