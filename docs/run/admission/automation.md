@@ -15,8 +15,6 @@ To do this, you can create an [Automation Rule](https://insights.docs.fairwinds.
 * **Cluster:** All
 * **Action:** `ActionItem.Severity = 0.1;`
 
-> **NOTE:** Any severity value >.66 is automatically considered a `high` severity.
-
-When this is enabled, the Admission Controller will automatically consider all checks to be `low`, and therefore allow all deployments to pass into the cluster.
+When this is enabled, the Admission Controller will automatically consider all checks to have `low` severity, and therefore allow all deployments to pass into the cluster.
 
 
