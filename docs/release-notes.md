@@ -9,6 +9,17 @@ meta:
 ---
 # Release Notes
 
+## 5.6.0
+### Quality of Service for Workloads
+The new Quality of Service (QoS) parameter allows users to indicate the importance of their workloads and have
+Insights recommend resources based on this parameter. From highest to lowest importance the values are
+Critical, Guaranteed, Burstable and Limited.
+
+### Bug Fixes
+* The Action items count for a cluster no longer include passing Action Items in the Organization dashboard
+* Action Items table was not correctly filtering based on resolution
+* UI fixes on the organization dashboard
+
 ## 5.5.0
 ### New Organization Dashboard
 A new Organization Dashboard is now available in Insights! The dashboard allows users to see how their
