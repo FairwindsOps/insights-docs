@@ -121,6 +121,45 @@ if (ActionItem.Namespace === "api") {
 }
 ```
 
+### PagerDuty Incidents
+If you have attached a PagerDuty installation to your organization, you can use the
+`createPagerDutyIncident` function to create incidents. The function takes two arguments:
+
+* from - the email address of a valid PagerDuty user on the account associated with the auth token
+* incident - an object that expects the following properties:
+  * title - a summary of the incident
+  * serviceID - the id of the service that the incident belongs to
+  * urgency - the urgency of the incident - expect values are `high` or `low`
+  * bodyDetails (optional) - provides a detailed description of the incident
+  * escalationPolicyID (optional) - assign the incident to an escalation policy instead of assigning directly to a user
+  * assignmentIDs (optional) - a list of user IDs to assign to the incident, cannot be provided if escalationPolicyID is already specified - Only one assignee is supported at this time
+
+#### Examples
+```js
+if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
+  incident = {
+		"title": ActionItem.Title,
+		"serviceID": "PIIWGG1",
+		"urgency": "high",
+		"bodyDetails": ActionItem.EventType
+	}
+	createPagerDutyIncident("insights@acme-co.com", incident)
+}
+```
+
+```js
+if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
+  incident = {
+		"title": "Fixed title!",
+		"serviceID": "PIIWGG1",
+		"urgency": "high",
+		"bodyDetails": "Fixed body details",
+		"assignmentIDs": ["P6GC8ZZ"]
+	} 
+	createPagerDutyIncident("insights@acme-co.com", incident)
+}
+```
+
 ## Publishing Rules
 
 ### User Interface
