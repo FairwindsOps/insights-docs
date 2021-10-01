@@ -141,7 +141,7 @@ if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
 		"title": ActionItem.Title,
 		"serviceID": "PIIWGG1",
 		"urgency": "high",
-		"bodyDetails": ActionItem.EventType
+		"bodyDetails": ActionItem.Description
 	}
 	createPagerDutyIncident("insights@acme-co.com", incident)
 }
