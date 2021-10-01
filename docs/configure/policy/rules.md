@@ -141,20 +141,8 @@ if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
 		"title": ActionItem.Title,
 		"serviceID": "PIIWGG1",
 		"urgency": "high",
-		"bodyDetails": ActionItem.Description
-	}
-	createPagerDutyIncident("insights@acme-co.com", incident)
-}
-```
-
-```js
-if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
-  incident = {
-		"title": "Fixed title!",
-		"serviceID": "PIIWGG1",
-		"urgency": "high",
-		"bodyDetails": "Fixed body details",
-		"assignmentIDs": ["P6GC8ZZ"]
+		"bodyDetails": ActionItem.Description,
+		"assignmentIDs": ["P6GC8ZZ"] // optional
 	} 
 	createPagerDutyIncident("insights@acme-co.com", incident)
 }
