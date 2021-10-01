@@ -9,6 +9,14 @@ meta:
 ---
 # Release Notes
 
+## 5.7.0
+### PagerDuty Integration
+Organizations can now setup the PagerDuty integration to automatically send incident events from Insights.
+[Learn more about the PagerDuty Integration](https://insights.docs.fairwinds.com/configure/policy/rules/#pagerduty-incidents)
+
+### Bug Fixes
+* Team Management displays a better error when inviting a user that is already part of the organization
+
 ## 5.6.0
 ### Quality of Service for Workloads
 The new Quality of Service (QoS) parameter allows users to indicate the importance of their workloads and have
