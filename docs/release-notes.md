@@ -9,6 +9,16 @@ meta:
 ---
 # Release Notes
 
+## 6.0.0
+### Renaming Navigation Bar Items
+Some Navigation bar items have been renamed. We've changed Report Hub to Install Hub, Repos to All Repositories,
+and Clusters to All Clusters.
+
+### Bug Fixes
+* Main Repositories page still used old Action Items badges
+* Admission Controller items wouldn't load after collapsing
+* Links under the history bar graph on the Cluster Overview page were broken
+
 ## 5.7.0
 ### PagerDuty Integration
 Organizations can now setup the PagerDuty integration to automatically send incident events from Insights.
