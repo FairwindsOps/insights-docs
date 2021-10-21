@@ -1,13 +1,13 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights |  Report Hub configuration documentation. "
+    content: "Fairwinds Insights |  Install Hub configuration documentation. "
 ---
 # Configuration
 
-## Report Hub
-We recommend using the [Report Hub](/run/agent/report-hub) to configure the Insights Agent.
-Making changes in the Report Hub will change the provided installation command by setting new
+## Install Hub
+We recommend using the [Install Hub](/run/agent/report-hub) to configure the Insights Agent.
+Making changes in the Install Hub will change the provided installation command by setting new
 Helm parameters (see below).
 
 ## Helm

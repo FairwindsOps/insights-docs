@@ -15,7 +15,7 @@ meta:
 The Insights Agent runs inside your Cluster, and sends back data to Fairwinds Insights.
 
 The Insights Agent comes with several different open source reporting tools, each of which can be
-configured independently using the Report Hub.
+configured independently using the Install Hub.
 To read more about the different report types, see the [Reports Section](/run/agent/configuration).
 
 ## Debugging

@@ -1,20 +1,20 @@
 ---
 meta:
   - name: title
-    content: Fairwinds Insights Report Hub
+    content: Fairwinds Insights Install Hub
   - description:
-    content: The Report Hub allows you to choose which Kubernetes reports run in your cluster
+    content: The Install Hub allows you to choose which Kubernetes reports run in your cluster
   - name: keywords
     content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
   - name: description
-    content: "Fairwinds Insights | Documentation: Using the Report Hub to decide which open source tools to run in your cluster. "
+    content: "Fairwinds Insights | Documentation: Using the Install Hub to decide which open source tools to run in your cluster. "
 
 ---
-# Report Hub
+# Install Hub
 
-Use the Report Hub to decide which reports you'd like to run in your cluster.
+Use the Install Hub to decide which reports you'd like to run in your cluster.
 
-<img :src="$withBase('/img/report-hub.png')" alt="report hub tiles">
+<img :src="$withBase('/img/report-hub.png')" alt="Install Hub tiles">
 
 The easiest way to install is to use the `Quick Add` button below a report, then click the
 `Install` icon at the top-right.
