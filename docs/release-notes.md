@@ -11,7 +11,7 @@ meta:
 
 ## 6.0.0
 ### Renaming Navigation Bar Items
-Some Navigation bar items have been renamed. We've changed Report Hub to Install Hub, Repos to All Repositories,
+Some Navigation bar items have been renamed. We've changed Install Hub to Install Hub, Repos to All Repositories,
 and Clusters to All Clusters.
 
 ### Bug Fixes
@@ -112,7 +112,7 @@ We updated how we handle presenting error messages. We now allow users to explic
 * Superusers could not see Action Items in kube-system. We also fixed a bug where some Action Items were hidden for non-admins on commonly named namespaces
 
 ## 4.4.0
-### Better Report Hub Syncing
+### Better Install Hub Syncing
 Most of our users encode their insights-agent installation in Infrastructure-as-Code,
 rather than copy/pasting the `helm install` instructions provided in the Insights UI.
 Now, if you make a change in your Helm installation, the UI will incorporate those
@@ -187,8 +187,8 @@ Fairwinds Insights now has alpha support for checking compliance with SOC 2 cert
 We fixed a bug that made the workloads chart expand to fullscreen upon closing the chart, it now acts as intended.
 
 ## 3.3.0
-### Added report hub install link
-We added a way to get to the report hub from the navigation bar. 
+### Added Install Hub install link
+We added a way to get to the Install Hub from the navigation bar. 
 
 ### Fixed Helm names
 We now provide more helpful file paths in the CI/CD interface.
@@ -258,10 +258,10 @@ The Rules Engine is currently in closed beta. Please reach out if you’re inter
 If a repo is public, we will allow anyone to view that repo’s CI/CD page. If you’re interested in using this please reach out to us at <support@fairwinds.com>
 
 ## 2.0.0
-### Report Hub
-We are happy to introduce The Report Hub, a way for users to cut down on the number of findings they receive when they first sign up for Insights.
+### Install Hub
+We are happy to introduce The Install Hub, a way for users to cut down on the number of findings they receive when they first sign up for Insights.
 
-The Report Hub allows users to decide which reports they would like to run in their clusters. Users will be able to configure each report and set the timeout and schedule when the report runs.
+The Install Hub allows users to decide which reports they would like to run in their clusters. Users will be able to configure each report and set the timeout and schedule when the report runs.
 
 [Learn More](/run/agent/report-hub)
 

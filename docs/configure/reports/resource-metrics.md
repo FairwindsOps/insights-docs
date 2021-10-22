@@ -15,7 +15,7 @@ To use an existing Prometheus installation pass the following flag to the Helm c
 --set resourcemetrics.address="http://prometheus-server.<namespace>"
 ```
 
-Alternatively, you can click on **Prometheus** from the [Report Hub](/run/agent/report-hub), and then:
+Alternatively, you can click on **Prometheus** from the [Install Hub](/run/agent/report-hub), and then:
 1. Click on the **Configure** tab
 2. Enter the service address of the existing Prometheus instance
 3. Click "Save"
