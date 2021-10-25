@@ -15,7 +15,7 @@ The Prometheus Collector report will now generate Action Items based on workload
 
 ### Bug Fixes
 * Loading of clusters in the organization dashboard sometimes took a long time
-* Various UI improvements across the app
+* Various UI improvements across Insights
 
 ## 6.0.0
 ### Renaming Navigation Bar Items
