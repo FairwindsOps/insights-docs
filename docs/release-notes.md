@@ -14,7 +14,7 @@ meta:
 The Prometheus Collector report will now generate Action Items based on workload metrics. 
 
 ### Bug Fixes
-* Loading of clusters in the organization dashboard sometimes took a long time
+* Faster loading time of clusters table in organization dashboard
 * Various UI improvements across Insights
 
 ## 6.0.0
