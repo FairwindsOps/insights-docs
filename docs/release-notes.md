@@ -9,6 +9,14 @@ meta:
 ---
 # Release Notes
 
+## 6.1.0
+### New Prometheus Action Items
+The Prometheus Collector report will now generate Action Items based on workload metrics. 
+
+### Bug Fixes
+* Faster loading time of clusters table in organization dashboard
+* Various UI improvements across Insights
+
 ## 6.0.0
 ### Renaming Navigation Bar Items
 Some Navigation bar items have been renamed. We've changed Install Hub to Install Hub, Repos to All Repositories,
