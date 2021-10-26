@@ -157,7 +157,8 @@ You can use the Automation tab to add new rules, edit rules, and enable/disable 
 
 
 ### CLI
-To publish a new rule, you can use the [CLI](/configure/policy/cli).
+To manage rules in an infrastructure-as-code repository, you can use the [Insights CLI](/configure/policy/cli).
+Be sure to read the [CLI documentation](/configure/policy/cli) before getting started here.
 
 First, create a new YAML file in the `rules` directory. This will contain your
 JavaScript, as well as some metadata.
