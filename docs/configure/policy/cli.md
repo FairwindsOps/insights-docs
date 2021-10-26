@@ -68,8 +68,8 @@ An example directory structure might look like this:
 ```
 
 To learn more about the individual file formats, see the
-[OPA Policy docs](/configure/policy/policy/#uploading-policies) and the
-[Automation Rule docs](/configure/policy/rules/#cli)
+[OPA Policy docs](/configure/policy/policy#uploading-policies) and the
+[Automation Rule docs](/configure/policy/rules#cli)
 
 ## Syncing
 To sync your infrastructure-as-code repo to Insights, you can run
