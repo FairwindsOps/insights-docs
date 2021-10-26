@@ -44,3 +44,45 @@ options:
 By default, the CLI will look for this file at `./fairwinds-insights.yaml`, but its
 location can be configured by passing in the `--config <filename>` flag.
 
+## Directory Structure
+
+The Insights CLI expects to find two directories (either in the current working directory,
+or in the directory specified in the `--directory` flag):
+* `./checks/` - a directory containing any OPA policies
+* `./rules/` - a diretory containing any automation rules
+
+An example directory structure might look like this:
+```
+.
++-- checks
+|   +-- policy1
+|       +-- policy.rego
+|       +-- instance1.yaml
+|   +-- policy2
+|       +-- policy.rego
+|       +-- instance1.yaml
+|       +-- instance2.yaml
++-- rules
+|   +-- rule1.yaml
+|   +-- rule2.yaml
+```
+
+To learn more about the individual file formats, see the
+[OPA Policy docs](/configure/policy/policy/#uploading-policies) and the
+[Automation Rule docs](/configure/policy/rules/#cli)
+
+## Syncing
+To sync your infrastructure-as-code repo to Insights, you can run
+
+```bash
+insights policy sync --directory /path/to/iac/
+```
+
+### Full Sync
+By default, Insights will not _delete_ any remote rules/checks - it will
+only upload new rules/checks, or update existing rules/checks.
+This means there might be some rules/checks that are running in Insights, but not
+tracked in your IaC repository.
+
+If you'd like to ensure a perfect sync, you can add the `--fullsync` flag, which
+will delete any remote rules that do not exist in your IaC repository.

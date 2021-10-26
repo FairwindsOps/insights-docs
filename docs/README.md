@@ -37,3 +37,4 @@ Learn more about
 features like [Slack notifications](/configure/integrations/slack),
 and our [supported plugins](/configure/reports/polaris).
 
+<!-- Begin boilerplate -->

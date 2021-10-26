@@ -62,9 +62,8 @@ replicasRequired[actionItem] {
 ## Uploading Policies
 
 ### Via the CLI
-To add your policies to Insights, you'll need to use the [Insights CLI](/configure/policy/cli).
-You'll also need your API key, which an organization owner can find your on your organization's
-settings page.
+To manage policies in an infrastructure-as-code repository, you can use the [Insights CLI](/configure/policy/cli).
+Be sure to read the [CLI documentation](/configure/policy/cli) before getting started here.
 
 #### Syncing Policies
 The sync functionality expects a directory structure like the following:
@@ -81,15 +80,6 @@ The sync functionality expects a directory structure like the following:
 
 Running `insights policy sync` from the root directory will upload any new/changed policies
 to the Insights API, and start applying them to each of your clusters.
-
-#### Full Sync
-If you'd like your Git repository to be the sole source of truth for which policies
-are kept in Insights, you can add the `--fullsync` flag when running `insights policy sync`.
-This will _delete_ policies that are not present in your local directory, in addition
-to uploading new or changed policies.
-```bash
-FAIRWINDS_TOKEN=YOUR_TOKEN insights policy sync --organization your-org-name -d . --fullsync
-```
 
 #### Example
 
