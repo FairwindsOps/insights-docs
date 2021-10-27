@@ -3,7 +3,7 @@ The PagerDuty integration allows you to create PagerDuty incidents for
 any Action Item in Fairwinds Insights. This includes all three contexts -
 CI/CD, Admission Control, and In-Cluster.
 
-PagerDuty incidents are created via [Automation Rules](/configure/policy/rules).
+PagerDuty incidents are created via [Automation Rules](/configure/policy/rules#pagerduty-incidents).
 You can customize your Automation Rule to only trigger on particular events
 (like critical-level container CVEs from Trivy). You can also customize the
 PagerDuty incident with different levels of urgency, add resource metadata
@@ -48,15 +48,7 @@ Then configure an Automation Rule:
 * Click on “Automation”
 * Click “Create Custom Rule”
 * Configure the context of the rule. Learn more about Automation Rule configuration here: https://insights.docs.fairwinds.com/configure/policy/rules/#automation-rules
-* Inside the Automation Rule scripting area, you can use the `createPagerDutyIncident` function to create incidents. The function takes two arguments:
-  * from - the email address of a valid user on the PagerDuty account
-  * incident - an object that expects the following properties:
-    * title - a summary of the incident
-    * serviceID - the id of the service that the incident belongs to
-    * urgency - the urgency of the incident. Valid values are high or low
-    * bodyDetails (optional) - provides a detailed description of the incident
-    * escalationPolicyID (optional) - assign the incident to an escalation policy instead of assigning directly to a user
-    * assignmentIDs (optional) - a list of user IDs (only one assignee is supported at this time) to assign to the incident. Cannot be provided if escalationPolicyID is already specified.
+* Inside the Automation Rule scripting area, you can use the `createPagerDutyIncident` function to create incidents. You can see [details for this function here](/configure/policy/rules#integrations)
 
 ### Example
 ```js
