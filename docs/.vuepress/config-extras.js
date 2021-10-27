@@ -85,6 +85,7 @@ module.exports = {
             'integrations/datadog',
             'integrations/jira',
             'integrations/github',
+            'integrations/pagerduty',
           ],
         }, {
           title: 'Account Management',
