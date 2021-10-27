@@ -31,6 +31,9 @@ This can be done via OAuth by visiting
 [insights.fairwinds.com](https://insights.fairwinds.com)
 and going to Settings > Integrations > PagerDuty.
 
+The user who authorizes the application will appear in the PagerDuty UI as
+having triggered the incident. We suggest creating a "robot account" for authenticating
+with Fairwinds Insights to prevent any confusion.
 
 ## Support
 If you need help with this integration, please contact support@fairwinds.com.
