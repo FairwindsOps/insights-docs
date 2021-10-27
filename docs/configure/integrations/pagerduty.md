@@ -47,8 +47,8 @@ Then configure an Automation Rule:
 * Navigate to your Organization in Fairwinds Insights
 * Click on “Automation”
 * Click “Create Custom Rule”
-* Configure the context of the rule. Learn more about Automation Rule configuration here: https://insights.docs.fairwinds.com/configure/policy/rules/#automation-rules
-* Inside the Automation Rule scripting area, you can use the `createPagerDutyIncident` function to create incidents. You can see [details for this function here](/configure/policy/rules#integrations)
+* Configure the context of the rule. Learn more about [Automation Rule configuration here](/configure/policy/rules/#automation-rules)
+* Inside the Automation Rule scripting area, you can use the `createPagerDutyIncident` function to create incidents. You can see [details for this function here](/configure/policy/rules#pagerduty-incidents)
 
 ### Example
 ```js

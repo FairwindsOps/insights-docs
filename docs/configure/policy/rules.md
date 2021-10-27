@@ -125,14 +125,14 @@ if (ActionItem.Namespace === "api") {
 If you have attached a PagerDuty installation to your organization, you can use the
 `createPagerDutyIncident` function to create incidents. The function takes two arguments:
 
-* from - the email address of a valid user on the PagerDuty account
-* incident - an object that expects the following properties:
-  * title - a summary of the incident
-  * serviceID - the id of the service that the incident belongs to
-  * urgency - the urgency of the incident. Valid values are `high` or `low`
-  * bodyDetails (optional) - provides a detailed description of the incident
-  * escalationPolicyID (optional) - assign the incident to an escalation policy instead of assigning directly to a user
-  * assignmentIDs (optional) - a list of user IDs (only one assignee is supported at this time) to assign to the incident. Cannot be provided if escalationPolicyID is already specified.
+* `from` - the email address of a valid user on the PagerDuty account
+* `incident` - an object that expects the following properties:
+  * `title` - a summary of the incident
+  * `serviceID` - the id of the service that the incident belongs to
+  * `urgency` - the urgency of the incident. Valid values are `high` or `low`
+  * `bodyDetails` (optional) - provides a detailed description of the incident
+  * `escalationPolicyID` (optional) - assign the incident to an escalation policy instead of assigning directly to a user
+  * `assignmentIDs` (optional) - a list of user IDs (only one assignee is supported at this time) to assign to the incident. Cannot be provided if escalationPolicyID is already specified.
 
 #### Examples
 ```js
@@ -143,7 +143,7 @@ if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
 		"urgency": "high",
 		"bodyDetails": ActionItem.Description,
 		"assignmentIDs": ["P6GC8ZZ"] // optional
-	} 
+	}
 	createPagerDutyIncident("insights@acme-co.com", incident)
 }
 ```
