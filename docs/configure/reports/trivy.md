@@ -12,6 +12,11 @@ meta:
 [Trivy](https://github.com/aquasecurity/trivy) is an open source tool for scanning Docker images
 for vulnerabilities. These scans run on your cluster, and the results are uploaded to Insights
 
+## Vulnerability Database
+Trivy's vulnerability database is managed via [this GitHub repository](https://github.com/aquasecurity/trivy-db/tree/main/pkg/vulnsrc).
+The database is refreshed every 6 hours, and pulls from many different sources, including
+NIST's NVD, RedHat, Debian, etc. You can see the [full list here](https://github.com/aquasecurity/trivy-db/tree/main/pkg/vulnsrc)
+
 ## Remediation
 If you're seeing Action Items from the Trivy report, there are two typical routes for resolution:
 * If the report is for a third-party library (e.g. a Helm chart), try updating to the latest version.
