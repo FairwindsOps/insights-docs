@@ -9,6 +9,11 @@ meta:
 ---
 # Release Notes
 
+## 6.2.0
+### Bug Fixes
+* The "Log in with SSO" link did not redirect correctly for some organizations
+* Inconsistent count for Action Items on the cluster overview page 
+
 ## 6.1.0
 ### New Prometheus Action Items
 The Prometheus Collector report will now generate Action Items based on workload metrics. 
