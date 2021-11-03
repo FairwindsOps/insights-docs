@@ -75,6 +75,7 @@ module.exports = {
             'reports/kube-hunter',
             'reports/kubesec',
             'reports/workloads',
+            'reports/aws-costs',
             'reports/supported-checks',
             'reports/new',
           ],
