@@ -9,6 +9,16 @@ meta:
 ---
 # Release Notes
 
+## 6.3.0
+### Scanning Remote Helm Repositories
+Organizations will now be able to scan charts from remote helm repositories for issues. By providing the `name`,
+`repo` and `chart` in the `fairwinds-insights.yaml` file, Insights will be able to download the chart from the remote
+repository and run appropriate scans.
+
+### Bug Fixes
+* Modifying an Automation Rule now shows which user updated it and when it was updated
+* Passing Action Items were missing from the Health Score card
+
 ## 6.2.0
 ### Bug Fixes
 * The "Log in with SSO" link did not redirect correctly for some organizations
@@ -24,7 +34,7 @@ The Prometheus Collector report will now generate Action Items based on workload
 
 ## 6.0.0
 ### Renaming Navigation Bar Items
-Some Navigation bar items have been renamed. We've changed Install Hub to Install Hub, Repos to All Repositories,
+Some Navigation bar items have been renamed. We've changed Report Hub to Install Hub, Repos to All Repositories,
 and Clusters to All Clusters.
 
 ### Bug Fixes
