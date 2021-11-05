@@ -348,7 +348,7 @@ We've started removing Action Items for workloads that no longer exist. This is 
 helpful for organizations that create ephemeral feature deployments in their staging clusters.
 
 ### New Registration Page
-Check out insights.fairwinds.com/auth/register to see our new registration flow
+We've launched an updataed registration workflow for new users.
 
 ## 1.8.0
 ### Better Pod Counts
