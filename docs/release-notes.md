@@ -14,6 +14,8 @@ meta:
 Users are now able to enable and disable Passive Mode for the Admission Controller through the API. 
 [Learn more about the Admission Controller Passive Mode](https://insights.docs.fairwinds.com/run/admission/setup/#installation)
 
+** Starting from this release, the Admission Controller is set to Passive Mode by default for any new clusters **
+
 ### Agent v1.15
 We've updated the Insights Agent with some minor improvements and fixes.
 
