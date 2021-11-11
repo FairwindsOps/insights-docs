@@ -9,6 +9,16 @@ meta:
 ---
 # Release Notes
 
+## 6.4.0
+### Enable and Disable Admission Controller Passive Mode
+Users are now able to enable and disable Passive Mode for the Admission Controller through the API. 
+[Learn more about the Admission Controller Passive Mode](https://insights.docs.fairwinds.com/run/admission/setup/#installation)
+
+** Starting from this release, the Admission Controller is set to Passive Mode by default for any new clusters **
+
+### Agent v1.15
+We've updated the Insights Agent with some minor improvements and fixes.
+
 ## 6.3.0
 ### Scanning Remote Helm Repositories
 Organizations will now be able to scan charts from remote helm repositories for issues. By providing the `name`,
