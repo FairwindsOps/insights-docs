@@ -19,7 +19,7 @@ The Admission Controller is installed in Passive Mode by default. This means the
 
 In order to disable Passive Mode and block deployments with high severity issues, run the following command:
 ```bash
-curl -v -X POST https://insights.fairwinds.com/v0/organizations/{organization}/clusters/{cluster}/admission/settings -d '{"polarisEnabled": true, "opaEnabled": true, "passiveMode": false}' -H "Authorization: Bearer {admin_token}" -H 'content-type:application/json'
+curl -X POST https://insights.fairwinds.com/v0/organizations/{organization}/clusters/{cluster}/admission/settings -d '{"polarisEnabled": true, "opaEnabled": true, "passiveMode": false}' -H "Authorization: Bearer {admin_token}" -H 'content-type:application/json'
 ```
 
 Once Passive Mode is disabled, you can test it out by creating a deployment that creates a high level severity Action Item
