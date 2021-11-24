@@ -44,6 +44,9 @@ in your fairwinds-insights.yaml
 * `manifests.helm` - an array of helm charts to template and scan
 * `manifests.helm[].name` - a name to give this templated chart
 * `manifests.helm[].path` - the path to the directory containing `Chart.yaml`
+* `manifests.helm[].repo` - a url for a remote helm repository containing the chart
+* `manifests.helm[].chart` - if `repo` is specified, the name of the chart to download
+* `manifests.helm[].fluxFile` - a YAML file containing a Flux HelmRelease CRD (you will still need to specify `repo`)
 * `manifests.helm[].values` - values to pass to the chart when templating
 * `manifests.helm[].valuesFile` - a YAML file containing values to pass to the chart when templating
 
