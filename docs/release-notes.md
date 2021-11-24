@@ -11,8 +11,14 @@ meta:
 
 ## 6.5.0
 ### Bug Fixes
-* Faster loading time for the organization dashboard
+* Faster loading time for the Organization dashboard
 * Various UI improvements across Insights
+
+### Admission Controller events now include username of who made the deployment
+When users navigate to the Admission Controller page, they will see events that include the name of the user who made the deployment. This helps Cluster Administrators who support multiple teams/users within a cluster to understand who made a particular deployment.
+
+### Base Image information now available in Image Vulnerability Action Items
+Insights now detects the Base Image layer for Image Vulnerabilities. You can find this information in the Action Item description for Image Vulnerabilities. This helps Developers quickly determine which Base Image they are running, so they can check if a newer version is available with fixes for any reported CVEs.
 
 ## 6.4.0
 ### Enable and Disable Admission Controller Passive Mode
