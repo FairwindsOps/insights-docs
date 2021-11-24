@@ -23,7 +23,7 @@ Alternatively, you can click on **Prometheus** from the [Install Hub](/run/agent
 
 ## Install a new Prometheus
 The Insights Agent chart can also install a new Prometheus server in your cluster to use.
-To install Prometheus alonside the Agent, pass the following flag to the Helm chart installation:
+To install Prometheus alongside the Agent, pass the following flag to the Helm chart installation:
 ```
 --set resourcemetrics.installPrometheus=true
 ```
