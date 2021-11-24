@@ -9,6 +9,11 @@ meta:
 ---
 # Release Notes
 
+## 6.5.0
+### Bug Fixes
+* Faster loading time for the organization dashboard
+* Various UI improvements across Insights
+
 ## 6.4.0
 ### Enable and Disable Admission Controller Passive Mode
 Users are now able to enable and disable Passive Mode for the Admission Controller through the API. 
