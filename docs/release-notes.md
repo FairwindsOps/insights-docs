@@ -11,8 +11,8 @@ meta:
 
 ## 6.6.0
 ### New Action Items Table and Lists
-Users will find the new `Action Items` page under their Organization's navigation bar. The page includes a completely redesigned version of our Action Items table with a couple of new features such as
-hiding and showing table columns.
+Users will find the new `Action Items` page under their Organization's navigation bar as well as under a specific Cluster's navigation bar.
+The page includes a completely redesigned version of our Action Items table with a couple of new features such as hiding and showing table columns.
 Users will also be able to create lists with Action Items. Lists can be used for keeping track of important Action Items and any progress made resolving them.
 
 ### New Automation Rule Created By Default
