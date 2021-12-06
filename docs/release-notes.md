@@ -9,8 +9,22 @@ meta:
 ---
 # Release Notes
 
-## 6.5.0
+## 6.6.0
+### New Action Items Table and Lists
+Users will find the new `Action Items` page under their Organization's navigation bar as well as under a specific Cluster's navigation bar.
+The page includes a completely redesigned version of our Action Items table with a couple of new features such as hiding and showing table columns.
+Users will also be able to create lists with Action Items. Lists can be used for keeping track of important Action Items and any progress made resolving them.
 
+### New Automation Rule Created By Default
+A new Automation Rule is created which will mark Action Items in certain namespaces with a `Won't Fix` resolution. This rule will be disabled by default for existing organizations but enabled
+for new organizations.
+
+### Bug Fixes
+* Policies without an instance had issues loading and being edited
+* Only admins and editors of Clusters are now able to change the QoS of workloads
+* Vulnerabilities that have fixes available can now be filtered correctly
+
+## 6.5.0
 ### Admission Controller events now include username of who made the deployment
 When users navigate to the Admission Controller page, they will see events that include the name of the user who made the deployment. This helps Cluster Administrators who support multiple teams/users within a cluster to understand who made a particular deployment.
 
