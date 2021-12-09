@@ -40,42 +40,59 @@ awscosts:
 ```
 
 ## Terraform
+Note that you may have to apply the files below twice in order to get them to sync fully.
 
-### Variables
+### provider.tf
 ```terraform
-s3_bucket_name = "fairwinds-insights-cost-report"
-s3_region      = "us-east-1"
-time_unit      = "HOURLY"
-aws_region     = "us-east-1"
+provider "aws" {
+  region  = "us-east-1"
+  profile = "default"
+}
 ```
 
-### IAM
+### variables.tf
+```terraform
+variable "s3_bucket_name" {
+  type    = string
+  default = "fairwinds-insights-cur-report"
+}
+variable "s3_region" {
+  type    = string
+  default = "us-east-1"
+}
+variable "time_unit" {
+  type    = string
+  default = "HOURLY"
+}
+variable "aws_region" {
+  type    = string
+  default = "us-east-1"
+}
+```
+
+### iam.tf
 ```terraform
 resource "aws_iam_role" "crawler-service-role" {
   name               = "crawler-service-role"
   assume_role_policy = data.aws_iam_policy_document.crawler-assume-policy.json
 }
-
 data "aws_iam_policy_document" "crawler-assume-policy" {
   statement {
     actions = ["sts:AssumeRole"]
-
     principals {
       type        = "Service"
       identifiers = ["glue.amazonaws.com"]
     }
   }
 }
-
 resource "aws_iam_role_policy_attachment" "AWSGlueServiceRole-attachment" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSGlueServiceRole"
   role       = aws_iam_role.crawler-service-role.name
 }
-
 resource "aws_iam_policy" "cur-report-s3-access" {
-  name        = "cur-report-s3-access"
-  path        = "/"
-  policy      = <<EOF
+  name   = "cur-report-s3-access"
+  path   = "/"
+  policy = <<EOF
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -100,12 +117,10 @@ resource "aws_iam_policy" "cur-report-s3-access" {
 }
 EOF
 }
-
 resource "aws_iam_role_policy_attachment" "cur-report-s3-access" {
   role       = aws_iam_role.crawler-service-role.name
   policy_arn = aws_iam_policy.cur-report-s3-access.arn
 }
-
 resource "aws_s3_bucket_policy" "s3-bucket-cur-report-policy" {
   bucket = aws_s3_bucket.cur_bucket.id
   policy = <<EOF
@@ -121,7 +136,7 @@ resource "aws_s3_bucket_policy" "s3-bucket-cur-report-policy" {
         "s3:GetBucketAcl",
         "s3:GetBucketPolicy"
       ],
-      "Resource":"arn:aws:s3:::fairwinds-insights-cost-report"
+      "Resource":"arn:aws:s3:::${var.s3_bucket_name}"
     },
     {
       "Effect": "Allow",
@@ -129,7 +144,7 @@ resource "aws_s3_bucket_policy" "s3-bucket-cur-report-policy" {
         "Service": "billingreports.amazonaws.com"
       },
       "Action": "s3:PutObject",
-      "Resource": "arn:aws:s3:::fairwinds-insights-cost-report/*"
+      "Resource": "arn:aws:s3:::${var.s3_bucket_name}/*"
     }
   ]
 }
@@ -137,12 +152,11 @@ EOF
 }
 ```
 
-### S3 Bucket
+### main.tf
 ```terraform
-resource "aws_s3_bucket" "aws_s3_bucket_cur_report" {
-  bucket        = var.s3_bucket_name
-  acl           = "private"
-
+resource "aws_s3_bucket" "cur_bucket" {
+  bucket = var.s3_bucket_name
+  acl    = "private"
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
@@ -151,11 +165,6 @@ resource "aws_s3_bucket" "aws_s3_bucket_cur_report" {
     }
   }
 }
-```
-
-
-### Glue
-```terraform
 resource "aws_glue_crawler" "cur_report_crawler" {
   database_name = "athena_cur_database"
   schedule      = "cron(0/15 * * * ? *)"
@@ -176,15 +185,11 @@ resource "aws_glue_crawler" "cur_report_crawler" {
     path = format("s3://%s/fairwinds-insights-cur/fairwinds-insights-cur-report/", var.s3_bucket_name)
   }
 }
-```
-
-### Athena
-```terraform
 resource "aws_athena_database" "athena_cur_database" {
   name   = "athena_cur_database"
   bucket = var.s3_bucket_name
+  force_destroy = true
 }
-
 resource "aws_cur_report_definition" "fairwinds_insights_cur_report" {
   report_name                = "fairwinds-insights-cur-report"
   time_unit                  = var.time_unit
@@ -196,18 +201,17 @@ resource "aws_cur_report_definition" "fairwinds_insights_cur_report" {
   s3_prefix                  = "fairwinds-insights-cur"
   additional_artifacts       = ["ATHENA"]
   report_versioning          = "OVERWRITE_REPORT"
+  depends_on                 = [aws_s3_bucket.cur_bucket]
 }
-
 resource "aws_athena_workgroup" "cur_athena_workgroup" {
   name = "cur_athena_workgroup"
-
   configuration {
     enforce_workgroup_configuration    = true
     publish_cloudwatch_metrics_enabled = true
-
     result_configuration {
       output_location = format("s3://%s/fairwinds-insights-cur/fairwinds-insights-cur-report/output", var.s3_bucket_name)
     }
   }
 }
 ```
+
