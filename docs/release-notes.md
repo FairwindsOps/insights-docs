@@ -9,6 +9,14 @@ meta:
 ---
 # Release Notes
 
+## 6.7.0
+### Admission Controller Kubernetes 1.22 Support
+Admission Controller was updated to support kubernetes 1.22. Users running kubernetes 1.22 on their clusters are now able to use Admission Controller in their clusters.
+
+### Bug Fixes
+* Query list sometimes would show incorrect filters when creating a list from the table
+* Tooltip added to the cost settings in the workload page for the different QoS settings
+
 ## 6.6.0
 ### New Action Items Table and Lists
 Users will find the new `Action Items` page under their Organization's navigation bar as well as under a specific Cluster's navigation bar.
