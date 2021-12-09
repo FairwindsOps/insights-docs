@@ -21,6 +21,7 @@ In this case, you'll need to upload the metadata to a public
 URL (e.g. a public GitHub repository) where Insights can pull from.
 [Learn more](https://en.wikipedia.org/wiki/SAML_metadata#Metadata-driven_interoperability)
 
+### Example metadata
 Your metadata should look something like this:
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -38,6 +39,26 @@ Your metadata should look something like this:
     <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://accounts.google.com/o/saml2/idp?idpid=C0420sfkv"/>
   </md:IDPSSODescriptor>
 </md:EntityDescriptor>
+```
+
+### Example Attributes
+```xml
+<samlp:Response xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" ID="_8e8dc5f69a98cc4c1ff3427e5ce34606fd672f91e6" Version="2.0" IssueInstant="2014-07-17T01:01:48Z" Destination="http://sp.example.com/demo1/index.php?acs" InResponseTo="ONELOGIN_4fee3b046395c4e751011e97f8900b5273d56685">
+  <saml:Assertion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" ID="_d71a3a8e9fcc45c9e9d248ef7049393fc8f04e5f75" Version="2.0" IssueInstant="2014-07-17T01:01:48Z">
+    <saml:AttributeStatement>
+      <saml:Attribute Name="uid" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+        <saml:AttributeValue xsi:type="xs:string">test</saml:AttributeValue>
+      </saml:Attribute>
+      <saml:Attribute Name="mail" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+        <saml:AttributeValue xsi:type="xs:string">test@example.com</saml:AttributeValue>
+      </saml:Attribute>
+      <saml:Attribute Name="eduPersonAffiliation" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:basic">
+        <saml:AttributeValue xsi:type="xs:string">users</saml:AttributeValue>
+        <saml:AttributeValue xsi:type="xs:string">examplerole1</saml:AttributeValue>
+      </saml:Attribute>
+    </saml:AttributeStatement>
+  </saml:Assertion>
+</samlp:Response>
 ```
 
 ## Insights Setup
