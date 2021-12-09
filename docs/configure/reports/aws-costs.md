@@ -54,7 +54,7 @@ provider "aws" {
 ```terraform
 variable "s3_bucket_name" {
   type    = string
-  default = "fairwindsjohntesting2211"
+  default = "fairwinds-insights-cur-report"
 }
 variable "s3_region" {
   type    = string
