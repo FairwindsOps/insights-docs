@@ -43,3 +43,9 @@ export default {
     color: #4e6e8e;
   }
 </style>
+
+<style>
+  .sidebar-group.is-sub-group > .sidebar-heading:not(.clickable) {
+    opacity: 1;
+  }
+</style>

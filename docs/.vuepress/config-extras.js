@@ -12,152 +12,145 @@ module.exports = {
     editLinkText: 'Help us improve this page',
     logo: '/img/logo.svg',
     heroText: '',
-    sidebar: {
-      '/run/': [
-        ['/', 'Home'],
-        ['ways-to-run', 'Ways to Run'],
-        {
-          title: 'Continuous Integration',
-          children: [
-            'ci/about',
-            'ci/setup',
-            'ci/configuration',
-            'ci/results',
-            'ci/github',
-          ],
-        }, {
-          title: 'Admission Controller',
-          children: [
-            'admission/about',
-            'admission/setup',
-            'admission/configuration',
-            'admission/automation',
-          ]
-        }, {
-          title: 'In-Cluster Agent',
-          children: [
-            'agent/about',
-            'agent/installation',
-            'agent/configuration',
-            'agent/report-hub',
-            'agent/cluster-summary',
-            'agent/action-items',
-            'agent/vulnerabilities',
-            'agent/workloads',
-            'agent/add-ons',
-            'agent/rbac',
-            'agent/cluster-comparison',
-          ],
-        },
-      ],
-      '/configure/': [
-        ['/', 'Home'],
-        {
-          title: 'Policy and Rules',
-          children: [
-            'policy/policy',
-            'policy/rules',
-            'policy/cli',
-          ],
-        }, {
-          title: 'Reports',
-          sidebarDepth: 0,
-          children: [
-            'reports/polaris',
-            'reports/trivy',
-            'reports/goldilocks',
-            'reports/resource-metrics',
-            'reports/opa',
-            'reports/kube-bench',
-            'reports/nova',
-            'reports/pluto',
-            'reports/rbac-reporter',
-            'reports/kube-hunter',
-            'reports/kubesec',
-            'reports/workloads',
-            'reports/aws-costs',
-            'reports/falco',
-            'reports/supported-checks',
-            'reports/new',
-          ],
-        }, {
-          title: 'Integrations',
-          children: [
-            'integrations/slack',
-            'integrations/datadog',
-            'integrations/jira',
-            'integrations/github',
-            'integrations/pagerduty',
-          ],
-        }, {
-          title: 'Account Management',
-          children: [
-            'management/membership',
-            'management/sso',
-            'management/delete',
-          ],
-        },
-      ],
-      '/': [
-        ['/', 'Home'],
-        ['/release-notes', 'Release Notes'],
-        {
-          title: 'Installation',
-          children: [
-            'installation/getting-started',
-            'installation/setup',
-          ],
-        }, 
-        {
-          title: 'Common Use Cases',
-          children: [
-            'first-steps/getting-value',
-            'first-steps/workload-configuration',
-            'first-steps/container-security',
-            'first-steps/cost-efficiency',
-          ],
-        },
-        ['/run/ways-to-run', 'Ways to Run'],
-        ['/configure/policy/policy', 'Configure'],
-        {
-          title: 'Technical Details',
-          children: [
-            {
-              'technical-details/architecture': 
-              {
-                title: 'Architecture',
-                children: [
-                  'architecture/architecture',
-                  'architecture/sample-reports',
-                ]
-              },
-              'technical-details/api': 
-              {
-                title: 'API Access',
-                children: [
-                  'api/authentication',
-                  'api/clusters',
-                  'api/reports',
-                  'api/custom-reports',
-                ],
-              },
-              'technical-details/self-hosted': 
-              {
-                title: 'Self-Hosted',
-                children: [
-                  'self-hosted/installation',
-                  'self-hosted/database',
-                  'self-hosted/file-storage',
-                  'self-hosted/ingress',
-                  'self-hosted/email',
-                  'self-hosted/sessions',
-                  'self-hosted/integrations',
-                ]
-              },
-            }
-          ],
-        },,
-      ],
-    },
+    sidebar: [
+      ['/', 'Home'],
+      ['/release-notes', 'Release Notes'],
+      {
+        title: 'Installation',
+        children: [
+          'installation/getting-started',
+          'installation/setup',
+        ],
+      },
+      {
+        title: 'Common Use Cases',
+        children: [
+          'first-steps/getting-value',
+          'first-steps/workload-configuration',
+          'first-steps/container-security',
+          'first-steps/cost-efficiency',
+        ],
+      },
+      {
+        title: 'Ways to Run',
+        children: [
+          {
+            title: 'Continuous Integration',
+            children: [
+              'run/ci/about',
+              'run/ci/setup',
+              'run/ci/configuration',
+              'run/ci/results',
+              'run/ci/github',
+            ],
+          }, {
+            title: 'Admission Controller',
+            children: [
+              'run/admission/about',
+              'run/admission/setup',
+              'run/admission/configuration',
+              'run/admission/automation',
+            ]
+          }, {
+            title: 'In-Cluster Agent',
+            children: [
+              'run/agent/about',
+              'run/agent/installation',
+              'run/agent/configuration',
+              'run/agent/report-hub',
+              'run/agent/cluster-summary',
+              'run/agent/action-items',
+              'run/agent/vulnerabilities',
+              'run/agent/workloads',
+              'run/agent/add-ons',
+              'run/agent/rbac',
+              'run/agent/cluster-comparison',
+            ],
+          },
+        ]
+      },
+      {
+        title: 'Configure',
+        children: [
+          {
+            title: 'Policy and Rules',
+            children: [
+              'configure/policy/policy',
+              'configure/policy/rules',
+              'configure/policy/cli',
+            ],
+          }, {
+            title: 'Reports',
+            children: [
+              'configure/reports/polaris',
+              'configure/reports/trivy',
+              'configure/reports/goldilocks',
+              'configure/reports/resource-metrics',
+              'configure/reports/opa',
+              'configure/reports/kube-bench',
+              'configure/reports/nova',
+              'configure/reports/pluto',
+              'configure/reports/rbac-reporter',
+              'configure/reports/kube-hunter',
+              'configure/reports/kubesec',
+              'configure/reports/workloads',
+              'configure/reports/aws-costs',
+              'reports/falco',
+              'configure/reports/supported-checks',
+              'configure/reports/new',
+            ],
+          }, {
+            title: 'Integrations',
+            children: [
+              'configure/integrations/slack',
+              'configure/integrations/datadog',
+              'configure/integrations/jira',
+              'configure/integrations/github',
+              'configure/integrations/pagerduty',
+            ],
+          }, {
+            title: 'Account Management',
+            children: [
+              'configure/management/membership',
+              'configure/management/sso',
+              'configure/management/delete',
+            ],
+          },
+        ]
+      },
+      {
+        title: 'Technical Details',
+        children: [
+          {
+            title: 'Architecture',
+            children: [
+              'technical-details/architecture/architecture',
+              'technical-details/architecture/sample-reports',
+            ],
+          },
+          {
+            title: 'API Access',
+            children: [
+              'technical-details/api/authentication',
+              'technical-details/api/clusters',
+              'technical-details/api/reports',
+              'technical-details/api/custom-reports',
+            ],
+          },
+          {
+            title: 'Self-Hosted',
+            children: [
+              'technical-details/self-hosted/installation',
+              'technical-details/self-hosted/database',
+              'technical-details/self-hosted/file-storage',
+              'technical-details/self-hosted/ingress',
+              'technical-details/self-hosted/email',
+              'technical-details/self-hosted/sessions',
+              'technical-details/self-hosted/integrations',
+            ]
+          },
+        ],
+      },
+    ],
   },
 }
