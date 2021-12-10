@@ -95,7 +95,7 @@ module.exports = {
               'configure/reports/kubesec',
               'configure/reports/workloads',
               'configure/reports/aws-costs',
-              'reports/falco',
+              'configure/reports/falco',
               'configure/reports/supported-checks',
               'configure/reports/new',
             ],
