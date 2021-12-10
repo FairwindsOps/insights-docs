@@ -97,37 +97,6 @@ module.exports = {
           ],
         },
       ],
-      '/technical-details/': [
-        ['/', 'Home'],
-        {
-          title: 'Architecture',
-          children: [
-            'architecture/architecture',
-            'architecture/sample-reports',
-          ]
-        },
-        {
-          title: 'API Access',
-          children: [
-            'api/authentication',
-            'api/clusters',
-            'api/reports',
-            'api/custom-reports',
-          ],
-        },
-        {
-          title: 'Self-Hosted',
-          children: [
-            'self-hosted/installation',
-            'self-hosted/database',
-            'self-hosted/file-storage',
-            'self-hosted/ingress',
-            'self-hosted/email',
-            'self-hosted/sessions',
-            'self-hosted/integrations',
-          ]
-        },
-      ],
       '/': [
         ['/', 'Home'],
         ['/release-notes', 'Release Notes'],
@@ -137,7 +106,8 @@ module.exports = {
             'installation/getting-started',
             'installation/setup',
           ],
-        }, {
+        }, 
+        {
           title: 'Common Use Cases',
           children: [
             'first-steps/getting-value',
@@ -148,7 +118,44 @@ module.exports = {
         },
         ['/run/ways-to-run', 'Ways to Run'],
         ['/configure/policy/policy', 'Configure'],
-        ['/technical-details/architecture/architecture', 'Technical Details'],
+        {
+          title: 'Technical Details',
+          children: [
+            {
+              'technical-details/architecture': 
+              {
+                title: 'Architecture',
+                children: [
+                  'architecture/architecture',
+                  'architecture/sample-reports',
+                ]
+              },
+              'technical-details/api': 
+              {
+                title: 'API Access',
+                children: [
+                  'api/authentication',
+                  'api/clusters',
+                  'api/reports',
+                  'api/custom-reports',
+                ],
+              },
+              'technical-details/self-hosted': 
+              {
+                title: 'Self-Hosted',
+                children: [
+                  'self-hosted/installation',
+                  'self-hosted/database',
+                  'self-hosted/file-storage',
+                  'self-hosted/ingress',
+                  'self-hosted/email',
+                  'self-hosted/sessions',
+                  'self-hosted/integrations',
+                ]
+              },
+            }
+          ],
+        },,
       ],
     },
   },
