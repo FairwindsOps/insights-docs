@@ -14,7 +14,6 @@ module.exports = {
     heroText: '',
     sidebar: [
       ['/', 'Home'],
-      ['/release-notes', 'Release Notes'],
       {
         title: 'Installation',
         children: [
@@ -151,6 +150,7 @@ module.exports = {
           },
         ],
       },
+      ['/release-notes', 'Release Notes'],
     ],
   },
 }
