@@ -9,6 +9,12 @@ meta:
 ---
 # Release Notes
 
+## 6.8.0
+### Bug Fixes
+* Users were unable to create JIRA tickets for some Action Items
+* Added consistency across badges within All Repositories
+* Fixed PagerDuty integration
+
 ## 6.7.0
 ### Admission Controller Kubernetes 1.22 Support
 Admission Controller was updated to support kubernetes 1.22. Users running kubernetes 1.22 on their clusters are now able to use Admission Controller in their clusters.
