@@ -47,9 +47,7 @@ And we haven't even gotten to the security issues!
 To start uncovering issues with workload configuration, you can visit the Action Items tab
 and filter for the `polaris` report:
 
-<div class="mini-img">
 <img :src="$withBase('/img/filter-polaris.png')" alt="Filter for Polaris items">
-</div>
 
 You may also want to filter for particular namespaces. For instance, it's good to start with
 namespaces for your own applications, rather than core or add-on namespaces like `kube-system` or `metrics-server`.
@@ -57,16 +55,14 @@ namespaces for your own applications, rather than core or add-on namespaces like
 Notice that by default, the Action Items are sorted by severity.
 This is a good way to pick out the most important items to fix.
 
-Once you've zeroed in on an item that you'd like to fix, expand it to see a description and
+Once you've zeroed in on an item that you'd like to fix, click on it to see a description and
 remediation.
 
 <img :src="$withBase('/img/ai-remediation.png')" alt="Action item remediation">
 
 Bonus: if you notice any Action Items that can't or shouldn't be fixed, you can mark it as resolved:
 
-<div class="mini-img">
 <img :src="$withBase('/img/ai-resolution.png')" alt="Action item resolution">
-</div>
 
 And that's it! By following these steps for each of your workloads, you can ensure your applications
 stay secure and reliable.

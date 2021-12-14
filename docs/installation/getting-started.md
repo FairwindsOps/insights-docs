@@ -11,8 +11,7 @@ meta:
 
 # Getting Started
 
-## Create a new Organization
-
+## Create a New Organization
 Once you've signed up and confirmed your email address, you'll be prompted to
 create a new organization:
 

@@ -13,17 +13,15 @@ So it's critical to proactively scan the images that are running in your cluster
 Fairwinds Insights employs Trivy, an open source container scanning solution, to create
 Action Items for any image with known vulnerabilities.
 
-To get started with Trivy, you can filter for action items that come from its reports:
+To get started with Trivy, you can filter for Action Items that come from its reports:
 
-<div class="mini-img">
 <img :src="$withBase('/img/filter-trivy.png')" alt="Filter for Trivy items">
-</div>
 
 You may also want to filter for particular namespaces. For instance, it's good to start with
 namespaces for your own applications, rather than core or add-on namespaces like `kube-system` or `metrics-server`.
 
-After expanding a Trivy Action Item, you can see details for the individual packages that are affected,
-as well as the severity level for each package by selecting `View this CVE in the Vulnerabilities page`.
+After clicking on a Trivy Action Item, you can see details for the individual packages that are affected,
+as well as the severity level for each package by selecting **View this CVE in the Vulnerabilities page** under the description.
 Be on the lookout for packages that you know your applications are using, like PHP or cURL.
 
 <img :src="$withBase('/img/trivy-details.png')" alt="Trivy details">
@@ -31,7 +29,7 @@ Be on the lookout for packages that you know your applications are using, like P
 Once you've identified a vulnerable image that you'd like to fix, you have a few different options:
 
 ## Images you own
-If you own the Dockerfile that generated this image, you have a couple options at your disposal.
+If you own the Dockerfile that generated this image, you have a couple of options at your disposal.
 
 The first option is to upgrade your base image - this solves the vast majority of vulnerabilities.
 For instance, your Dockerfile might start like this:
