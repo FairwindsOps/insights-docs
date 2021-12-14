@@ -32,7 +32,7 @@ a single node, we can come to per-CPU and per-GB-memory costs.
 
 To determine the cost of a particular workload, we offer two strategies:
 * **conservative** - this takes into account the potential waste incurred by
-memory- or CPU- intensive workloads, if Kubernetes is unable to bin-pack efficiently.
+memory or CPU intensive workloads, if Kubernetes is unable to bin-pack efficiently.
 It is calculated as `2 * max(cpu_cost, memory_cost)`
 * **optimistic** - this assumes Kubernetes can bin-pack your workloads efficiently.
 It is calculated as `cpu_cost + memory_cost`
