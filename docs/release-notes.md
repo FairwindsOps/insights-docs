@@ -9,6 +9,22 @@ meta:
 ---
 # Release Notes
 
+## 6.9.0
+### New Compliance Feature
+This feature allows Organizations to create Compliance Reports for their clusters. Organizations can keep track of their SOC 2, HIPAA and ISO compliances by creating
+reports and taking the self assessments for each check. During the self assessments, users can provide evidence on how they are adhering to each check.
+The full report can also be downloaded as a PDF at any time.
+
+### Configure the Admission Controller
+Users are now able to configure settings for the Admission Controller through Insights. The Admission Controller can be set to Passive Mode which will perform the usual
+checks but will not block any admission requests. Furthermore, users are able to choose which reports should block admission requests. These settings are accessible to
+the Organization's owner when they visit the **Install Hub** and click on **Admission Controller**.
+
+### Bug Fixes
+* The Slack **Notifications** page will now show which Slack channels are used for a cluster's notifications once a cluster has been selected
+* Issue with Policy creation through **Create From Template**
+* Issue with deleting some Automation rules
+
 ## 6.8.0
 ### Bug Fixes
 * Users were unable to create JIRA tickets for some Action Items
