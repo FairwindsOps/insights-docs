@@ -35,7 +35,7 @@ helm upgrade --install insights-agent fairwinds-stable/insights-agent \
   --set fleetInstall=true  \
   --set insights.organization="$YOUR_ORGANIZATION_ID" \
   --set insights.cluster="$CLUSTER_IDENTIFIER" \
-  --set insights.tokenSecretName=insights-token \
+  --set insights.apiTokenSecretName=insights-token \
   --set insights.apiToken="$YOUR_API_TOKEN"
 ```
 
@@ -48,7 +48,7 @@ as well as any other [chart options](https://github.com/FairwindsOps/charts/tree
 Here's a description of the flags above:
 * `fleetInstall=true` - enable this flow
 * `insights.apiToken=xyz` - you can get this admin token from your organization's settings page at insights.fairwinds.com
-* `insights.tokenSecretName` - the name of the secret where Insights will store your cluster's token. We recommend `insights-token`
+* `insights.apiTokenSecretName` - the name of the secret where Insights will store your cluster's token. We recommend `insights-token`
 * `insights.organization` - the name your organization in Insights
 * `insights.cluster` - the name you want to give this cluster in the Insights UI. You might want to auto-generate this from your kubectl context
 
