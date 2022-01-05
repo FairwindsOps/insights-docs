@@ -9,6 +9,20 @@ meta:
 ---
 # Release Notes
 
+## 6.11.0
+### Action Items Charts
+The **Action Items** pages in Insights now have charts that visually categorize the Action Items by Severity, Top Issues, Top Namespaces and Top Workloads. Users are
+also able to filter the Action Items table by clicking on the items in the charts.
+
+### Bug Fixes
+* Out of date Insights Agent Slack messages now show which clusters are out of date
+* Issue with Insights Agent Fleet install
+* Some trivy vulnerabilities were not showing in the detailed vulnerability page
+* The Automation Rule **ignore-system-namespaces** (created automatically by Insights) now has **Context** set to **Agent**
+
+## 6.10.0
+* No user-facing changes
+
 ## 6.9.0
 ### New Compliance Feature
 This feature allows Organizations to create Compliance Reports for their clusters. Organizations can keep track of their SOC 2, HIPAA and ISO compliances by creating
