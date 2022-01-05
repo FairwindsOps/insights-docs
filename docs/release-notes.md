@@ -21,7 +21,7 @@ also able to filter the Action Items table by clicking on the items in the chart
 * The Insights created **ignore-system-namespaces** Automation Rule now has **Context** set to **Agent**
 
 ## 6.10.0
-* No user facing changes
+* No user-facing changes
 
 ## 6.9.0
 ### New Compliance Feature
