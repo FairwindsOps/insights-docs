@@ -18,7 +18,7 @@ also able to filter the Action Items table by clicking on the items in the chart
 * Out of date Insights Agent Slack messages now show which clusters are out of date
 * Issue with Insights Agent Fleet install
 * Some trivy vulnerabilities were not showing in the detailed vulnerability page
-* The Insights created **ignore-system-namespaces** Automation Rule now has **Context** set to **Agent**
+* The Automation Rule **ignore-system-namespaces** (created automatically by Insights) now has **Context** set to **Agent**
 
 ## 6.10.0
 * No user-facing changes
