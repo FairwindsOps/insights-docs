@@ -1,5 +1,5 @@
 # Integrations
-To add support for integrations like Slack, GitHub, and Jira, you can add the
+To add support for integrations like Slack, GitHub, and Jira, and PagerDuty you can add any of the
 following environment variables to your `fwinsights-secrets` secret:
 
 * SLACK_CLIENT_ID
@@ -9,6 +9,8 @@ following environment variables to your `fwinsights-secrets` secret:
 * GITHUB_WEBHOOK_SECRET
 * ATLASSIAN_CLIENT_ID
 * ATLASSIAN_CLIENT_SECRET
+* PAGERDUTY_CLIENT_ID
+* PAGERDUTY_CLIENT_SECRET
 
 ## Slack
 You'll need to create a
@@ -55,3 +57,10 @@ In the `Permissions and Events` tab, add the following permissions:
 
 And the following events:
 * Status
+
+## PagerDuty
+To set up PagerDuty, create an app at
+https://pagerduty.com/developer/apps (the URL for your organization may be different).
+
+You will need `Read/Write` scope, and should add a `Redirect URL` to
+`$HOSTNAME/v0/pagerduty/oauth/callback`
