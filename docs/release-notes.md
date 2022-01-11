@@ -9,6 +9,15 @@ meta:
 ---
 # Release Notes
 
+## 7.0.0
+### Bug Fixes
+* Better error messages when a repository is already scanned as part of another organization
+* Fixed link issue when creating a ticket for an Action Items list
+* Report type badges now have different colors
+* Action Items table would incorrectly show all Action Items when selecting an empty list
+* Workload page no longer shows an error when opened by an owner
+* UI improvements across Insights
+
 ## 6.11.0
 ### Action Items Charts
 The **Action Items** pages in Insights now have charts that visually categorize the Action Items by Severity, Top Issues, Top Namespaces and Top Workloads. Users are
