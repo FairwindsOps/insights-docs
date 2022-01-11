@@ -42,3 +42,17 @@ You may want to download, inspect, and store a copy of the script in your reposi
 The in-app instructions will also provide a SHA which can be checked to verify the integrity of the script.
 
 Your repository will show up in the Insights UI once that script has been successfully run.
+
+## Git Information
+The CI script needs access to the `git` command-line interface, and expects to be run in a
+fully cloned Git repository. Sometimes this is not feasible - in that case we allow users
+to manually specify the Git information that Insights needs via environment variables.
+
+We suggest specifying _all_ of the following environment variables if your CI environment
+is not able to provide access to the Git client:
+
+* `ORIGIN_URL` - the location of the remote Git repository
+* `BRANCH_NAME` - the name of the branch currently being scanned
+* `CURRENT_HASH` the hash of the commit currently being scanned
+* `MASTER_HASH` - the hash of the commit that should be diffed against
+* `COMMIT_MESSAGE` - the message associated with the commit currently being scanned
