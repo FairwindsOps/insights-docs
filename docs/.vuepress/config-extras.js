@@ -17,53 +17,53 @@ module.exports = {
       {
         title: 'Installation',
         children: [
-          'installation/getting-started',
-          'installation/setup',
-        ],
-      },
-      {
-        title: 'Common Use Cases',
-        children: [
-          'first-steps/getting-value',
-          'first-steps/workload-configuration',
-          'first-steps/container-security',
-          'first-steps/cost-efficiency',
-        ],
-      },
-      {
-        title: 'Ways to Run',
-        children: [
           {
+            title: 'First steps',
+            children: [
+              'installation/getting-started',
+              'installation/setup',
+            ],
+          }, {
             title: 'Continuous Integration',
             children: [
-              'run/ci/about',
-              'run/ci/setup',
-              'run/ci/configuration',
-              'run/ci/results',
-              'run/ci/github',
+              'installation/ci/about',
+              'installation/ci/setup',
+              'installation/ci/configuration',
+              'installation/ci/results',
+              'installation/ci/github',
             ],
           }, {
             title: 'Admission Controller',
             children: [
-              'run/admission/about',
-              'run/admission/setup',
-              'run/admission/configuration',
-              'run/admission/automation',
+              'installation/admission/about',
+              'installation/admission/setup',
+              'installation/admission/configuration',
+              'installation/admission/automation',
             ]
           }, {
             title: 'In-Cluster Agent',
             children: [
-              'run/agent/about',
-              'run/agent/installation',
-              'run/agent/configuration',
-              'run/agent/report-hub',
-              'run/agent/cluster-summary',
-              'run/agent/action-items',
-              'run/agent/vulnerabilities',
-              'run/agent/workloads',
-              'run/agent/add-ons',
-              'run/agent/rbac',
-              'run/agent/cluster-comparison',
+              'installation/agent/about',
+              'installation/agent/installation',
+              'installation/agent/configuration',
+              'installation/agent/report-hub',
+              'installation/agent/cluster-summary',
+              'installation/agent/action-items',
+              'installation/agent/vulnerabilities',
+              'installation/agent/workloads',
+              'installation/agent/add-ons',
+              'installation/agent/rbac',
+              'installation/agent/cluster-comparison',
+            ],
+          }, {
+            title: 'Single Sign-On',
+            children: [
+              'installation/sso/sso',
+            ],
+          }, {
+            title: 'Integrations',
+            children: [
+              'installation/integrations/integrations',
             ],
           },
         ]
@@ -116,6 +116,15 @@ module.exports = {
             ],
           },
         ]
+      },
+      {
+        title: 'Common Use Cases',
+        children: [
+          'first-steps/getting-value',
+          'first-steps/workload-configuration',
+          'first-steps/container-security',
+          'first-steps/cost-efficiency',
+        ],
       },
       {
         title: 'Technical Details',
