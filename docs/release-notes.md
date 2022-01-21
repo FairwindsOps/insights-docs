@@ -9,6 +9,13 @@ meta:
 ---
 # Release Notes
 
+## 7.1.0
+### Bug Fixes and Improvements
+* After updating a Policy, the page will remain on the Policy page
+* Updating Trivy to 0.22.0
+* Updating Insights CI script to new version 0.6.1
+* Overall improvements to make pages load faster
+
 ## 7.0.0
 ### Bug Fixes
 * Better error messages when a repository is already scanned as part of another organization
