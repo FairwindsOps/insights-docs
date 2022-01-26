@@ -9,6 +9,12 @@ meta:
 ---
 # Release Notes
 
+## 7.3.0
+### Bug Fixes and Improvements
+* Duplicated PagerDuty incidents were being sent out
+* Admission Controller search function would sometimes cause admission requests to disappear
+* UI improvements in Admission Controller
+
 ## 7.2.0
 ### Admission Controller Redesign
 Users will notice a completely new design for the **Admission Controller** page. This page now has a chart so users can quickly see the number of successful
