@@ -12,7 +12,7 @@ meta:
 ## 7.3.0
 ### Bug Fixes and Improvements
 * Fixed issue where duplicated PagerDuty incidents were being sent out
-* Admission Controller search function would sometimes cause admission requests to disappear
+* Admission Controller search will no longer cause admission requests to disappear
 * UI improvements in Admission Controller
 
 ## 7.2.0
