@@ -11,4 +11,4 @@ We recommend creating a "Robot User" to connect to your Insights organization,
 and granting this user the ability to create tickets on all of your Jira projects.
 The linked account show as the creator of any tickets created via the Insights UI.
 
-[Read more](/run/agent/action-items#ticketing-integrations)
+[Read more](/configure/automation/integrations)
