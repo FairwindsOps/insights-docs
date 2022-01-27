@@ -9,7 +9,8 @@ meta:
 > Using Gitlab, Bitbucket, or another Git host? Let us know!
 
 Connecting Insights to your GitHub repository will help you get the most out of the CI integration.
-To get started, click the **Install Now** link on your organization's repositories tab.
+To get started, navigate to All Repositories > Plugins and click **Configure** 
+<img :src="$withBase('/img/github-actions.png')" alt="Add GitHub configuration">
 
 Then, in the GitHub UI, choose which repositories you'd like to link to Insights:
 <img :src="$withBase('/img/github-add-repo.png')" alt="Add repo in GitHub">

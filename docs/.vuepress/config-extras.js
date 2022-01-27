@@ -28,8 +28,6 @@ module.exports = {
             children: [
               'installation/ci/about',
               'installation/ci/setup',
-              'installation/ci/configuration',
-              'installation/ci/results',
               'installation/ci/github',
             ],
           }, {
@@ -37,23 +35,12 @@ module.exports = {
             children: [
               'installation/admission/about',
               'installation/admission/setup',
-              'installation/admission/configuration',
-              'installation/admission/automation',
             ]
           }, {
             title: 'In-Cluster Agent',
             children: [
               'installation/agent/about',
-              'installation/agent/installation',
-              'installation/agent/configuration',
-              'installation/agent/report-hub',
-              'installation/agent/cluster-summary',
-              'installation/agent/action-items',
-              'installation/agent/vulnerabilities',
-              'installation/agent/workloads',
-              'installation/agent/add-ons',
-              'installation/agent/rbac',
-              'installation/agent/cluster-comparison',
+              'installation/agent/setup',
             ],
           }, {
             title: 'Single Sign-On',
@@ -63,7 +50,10 @@ module.exports = {
           }, {
             title: 'Integrations',
             children: [
-              'installation/integrations/integrations',
+              'installation/integrations/slack',
+              'installation/integrations/datadog',
+              'installation/integrations/pagerduty',
+              'installation/integrations/jira',
             ],
           },
         ]
@@ -72,46 +62,46 @@ module.exports = {
         title: 'Configure',
         children: [
           {
-            title: 'Policy and Rules',
+            title: 'Continuous Integration',
+            children: [
+              'configure/ci/configuration',
+              'configure/ci/results',
+            ],
+          }, {
+            title: 'Admission Controller',
+            children: [
+              'configure/admission/configuration',
+              'configure/admission/enforce',
+            ],
+          }, {  
+            title: 'In-Cluster Agent',
+            children: [
+              'configure/agent/configuration',
+              'configure/agent/install-hub',
+            ],
+          }, {    
+            title: 'Policies',
             children: [
               'configure/policy/policy',
-              'configure/policy/rules',
-              'configure/policy/cli',
             ],
           }, {
-            title: 'Reports',
+            title: 'Automation Rules',
             children: [
-              'configure/reports/polaris',
-              'configure/reports/trivy',
-              'configure/reports/goldilocks',
-              'configure/reports/resource-metrics',
-              'configure/reports/opa',
-              'configure/reports/kube-bench',
-              'configure/reports/nova',
-              'configure/reports/pluto',
-              'configure/reports/rbac-reporter',
-              'configure/reports/kube-hunter',
-              'configure/reports/kubesec',
-              'configure/reports/workloads',
-              'configure/reports/aws-costs',
-              'configure/reports/falco',
-              'configure/reports/supported-checks',
-              'configure/reports/new',
+              'configure/automation/rules',
+              'configure/automation/admission-controller',
+              'configure/automation/integrations',
             ],
           }, {
-            title: 'Integrations',
+            title: 'CLI Utility',
             children: [
-              'configure/integrations/slack',
-              'configure/integrations/datadog',
-              'configure/integrations/jira',
-              'configure/integrations/github',
-              'configure/integrations/pagerduty',
+              'configure/cli/cli',
+              'configure/cli/automation-rules',
+              'configure/cli/opa',
             ],
-          }, {
+          }, {  
             title: 'Account Management',
             children: [
               'configure/management/membership',
-              'configure/management/sso',
               'configure/management/delete',
             ],
           },
@@ -133,7 +123,27 @@ module.exports = {
             title: 'Architecture',
             children: [
               'technical-details/architecture/architecture',
-              'technical-details/architecture/sample-reports',
+            ],
+          },
+          {
+            title: 'Reports',
+            children: [
+              'technical-details/reports/polaris',
+              'technical-details/reports/trivy',
+              'technical-details/reports/goldilocks',
+              'technical-details/reports/resource-metrics',
+              'technical-details/reports/opa',
+              'technical-details/reports/kube-bench',
+              'technical-details/reports/nova',
+              'technical-details/reports/pluto',
+              'technical-details/reports/rbac-reporter',
+              'technical-details/reports/kube-hunter',
+              'technical-details/reports/kubesec',
+              'technical-details/reports/workloads',
+              'technical-details/reports/aws-costs',
+              'technical-details/reports/falco',
+              'technical-details/reports/supported-checks',
+              'technical-details/reports/new',
             ],
           },
           {
