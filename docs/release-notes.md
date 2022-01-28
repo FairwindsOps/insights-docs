@@ -338,7 +338,7 @@ We made changes to the navigation bar. We’ve moved the bar to the left-hand-si
 
 ### Prometheus Report
 We added a new report called The Prometheus Collector. The report gathers workload metrics from a Prometheus installation in order to provide fine-grained resource usage data. This can be used to gauge how much different workloads cost, understand cost trends and help set resource requests and limits. Read our docs to learn more. 
-[Learn More](/configure/reports/resource-metrics)
+[Learn More](/technical-details/reports/resource-metrics)
 
 ### Prometheus Graph on Workloads View
 We added visualizations to the workloads feature. You will now be able to see Memory and CPU displayed via a line graph.
@@ -374,7 +374,7 @@ We are happy to introduce The Install Hub, a way for users to cut down on the nu
 
 The Install Hub allows users to decide which reports they would like to run in their clusters. Users will be able to configure each report and set the timeout and schedule when the report runs.
 
-[Learn More](/run/agent/report-hub)
+[Learn More](/configure/agent/install-hub)
 
 ### Filtering on Workloads
 We’ve added filtering options to the Workloads table, and now the graphs will reflect the data from the table shown.
