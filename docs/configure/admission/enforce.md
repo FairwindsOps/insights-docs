@@ -52,14 +52,15 @@ NET_ADMIN
 * In this example if the configuration file does not have memory requests, cpu requests, liveness probes, readiness probes OR Privelege Escalation it will be blocked from entering the intended cluster. 
 
 ```js
-if (ActionItem.EventType === 'memoryRequestsMissing' ||
-   ActionItem.EventType === 'cpuRequestsMissing' || 
-   ActionItem.EventType === 'livenessProbeMissing' || 
-   ActionItem.EventType === 'readinessProbeMissing' || 
-   ActionItem.EventType === 'privilegeEscalationAllowed')
-{
-	ActionItem.Severity = 0.7; //Block
-}else{
+if (
+  ActionItem.EventType === "memoryRequestsMissing" ||
+  ActionItem.EventType === "cpuRequestsMissing" ||
+  ActionItem.EventType === "livenessProbeMissing" ||
+  ActionItem.EventType === "readinessProbeMissing" ||
+  ActionItem.EventType === "privilegeEscalationAllowed"
+) {
+  ActionItem.Severity = 0.7; //Block
+} else {
   ActionItem.Severity = 0.1; //Warn
 }
 ```

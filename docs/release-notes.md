@@ -9,6 +9,29 @@ meta:
 ---
 # Release Notes
 
+## 7.3.0
+### Bug Fixes and Improvements
+* Fixed issue where duplicated PagerDuty incidents were being sent out
+* Admission Controller search will no longer cause admission requests to disappear
+* UI improvements in Admission Controller
+
+## 7.2.0
+### Admission Controller Redesign
+Users will notice a completely new design for the **Admission Controller** page. This page now has a chart so users can quickly see the number of successful
+and failed admission requests for their clusters during a specific Time Range. The Action Items for each failed admission request will appear on the right side in
+a table format.
+
+### Bug Fixes and Improvements
+* Users can no longer create a Compliance report without a name
+* Changing cost difference colors in the **Workloads** page for better accessibility
+
+## 7.1.0
+### Bug Fixes and Improvements
+* After updating a Policy, the page will remain on the Policy page
+* Updating Trivy to 0.22.0
+* Updating Insights CI script to new version 0.6.1
+* Overall improvements to make pages load faster
+
 ## 7.0.0
 ### Bug Fixes
 * Better error messages when a repository is already scanned as part of another organization
