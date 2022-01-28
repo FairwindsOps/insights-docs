@@ -48,7 +48,7 @@ NET_ADMIN
 * tlsSettingsMissing: Ingress does not have TLS configure
 
 #### Example
-> Create an Automation Rule to Increase the Severity of specific out of the box policies that you want to Block. 
+> Create an Automation Rule to Increase the severity of specific out of the box policies that you want to Block. 
 * In this example if the configuration file does not have memory requests, cpu requests, liveness probes, readiness probes OR Privelege Escalation it will be blocked from entering the intended cluster. 
 
 ```js
@@ -63,6 +63,6 @@ if (ActionItem.EventType === 'memoryRequestsMissing' ||
   ActionItem.Severity = 0.1; //Warn
 }
 ```
-Customization of which out of the box checks you would like to enforce can be configured with Automation Rules. See [automation rules documentation](/configure/automation/rules) for further documentation on writing rules and additional examples.
+Customization of which out of the box checks you would like to enforce can be configured with Automation Rules. See [Automation Rules Documentation](/configure/automation/rules) for further documentation on writing rules and additional examples.
 
 If you do not see a check above that meets the requirements of your organization see custom OPA policies.
