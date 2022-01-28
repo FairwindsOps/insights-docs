@@ -10,21 +10,24 @@ Fairwinds provides a powerful, flexible solution for fine-grained customization 
 > Create an Automation Rule to Increase the Severity of an out of the box policy to enforce at the time of Admission
 
 ```js
-if (ActionItem.EventType === 'memoryRequestsMissing' ||
-ActionItem.EventType === 'cpuRequestsMissing' ||
-ActionItem.EventType === 'livenessProbeMissing' ||
-ActionItem.EventType === ‘pullPolicyNotAlways’)
-{
-ActionItem.Severity = 0.75; //Block
+if (
+  ActionItem.EventType === "memoryRequestsMissing" ||
+  ActionItem.EventType === "cpuRequestsMissing" ||
+  ActionItem.EventType === "livenessProbeMissing" ||
+  ActionItem.EventType === "pullPolicyNotAlways"
+) {
+  ActionItem.Severity = 0.75; //Block
+}
 ```
 
 > Block Privilege Escalation from being configured for workloads in application-specific namespaces, but allow it for system namespace like `kube-system`
 
 ```js
-if (ActionItem.EventType === 'privilegeEscalationAllowed' &&
-ActionItem.ResourceNamespace === 'kube-system')
-{
-ActionItem.Severity = 0.5; //Warn only
+if (
+  ActionItem.EventType === "privilegeEscalationAllowed" &&
+  ActionItem.ResourceNamespace === "kube-system"
+) {
+  ActionItem.Severity = 0.5; //Warn only
 }
 ```
 The main input is `ActionItem`, which contains

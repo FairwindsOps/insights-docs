@@ -9,7 +9,7 @@ You can send arbitrary HTTP requests using the `sendHTTPRequest` function. For e
 ```js
 sendHTTPRequest("POST", "https://example.com/action-item", {
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
   body: JSON.stringify(ActionItem),
 });
