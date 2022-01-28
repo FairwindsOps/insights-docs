@@ -5,7 +5,7 @@ meta:
 ---
 # Getting Value from Fairwinds Insights
 
-So you've [installed the Insights agent](/run/agent/installation),
+So you've [installed the Insights agent](/installation/agent/setup),
 and you're getting some results
 back from your audits. Chances are, you're seeing quite a few
 [Action Items](/run/agent/action-items) showing up. Where should you start?

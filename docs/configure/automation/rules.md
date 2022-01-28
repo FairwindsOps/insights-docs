@@ -51,6 +51,12 @@ The following fields can be edited:
 * `AssigneeEmail`
 * `Notes`
 
+Action Item severity is defined as:
+* 0.0 - None
+* 0.1 to 0.39 - Low
+* 0.4 to 0.69 - Medium
+* 0.7 to .89 - High
+* 0.9 to 1.0 - Critical 
 
 ## Publishing Rules
 
@@ -61,8 +67,8 @@ You can use the Automation tab to add new rules, edit rules, and enable/disable 
 
 
 ### CLI
-To manage rules in an infrastructure-as-code repository, you can use the [Insights CLI](/configure/policy/cli).
-Be sure to read the [CLI documentation](/configure/policy/cli) before getting started here.
+To manage rules in an infrastructure-as-code repository, you can use the [Insights CLI](/configure/cli/automation-rules).
+Be sure to read the [CLI documentation](/configure/cli/cli) before getting started here.
 
 First, create a new YAML file in the `rules` directory. This will contain your
 JavaScript, as well as some metadata.

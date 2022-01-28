@@ -19,7 +19,7 @@ Alternatively, you can click on **Prometheus** from the [Install Hub](/configure
 1. Click on the **Configure** tab
 2. Enter the service address of the existing Prometheus instance
 3. Click "Save"
-4. Be sure to [Re-install the Fairwinds Insights agent](/installation/agent/installation) in your cluster
+4. Be sure to [Re-install the Fairwinds Insights agent](/installation/agent/setup) in your cluster
 
 ## Install a new Prometheus
 The Insights Agent chart can also install a new Prometheus server in your cluster to use.

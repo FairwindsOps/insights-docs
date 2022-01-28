@@ -10,12 +10,12 @@ meta:
 # About
 
 > Installing the agent in many different clusters? Check out the
-> [fleet installation](/installation/agent/installation##fleet-installation) docs.
+> [fleet installation](/installation/agent/setup#fleet-installation) docs.
 
 The Insights Agent runs inside your Cluster, and sends back data to Fairwinds Insights.
 
 The Insights Agent comes with several different open source reporting tools, each of which can be
 configured independently using the Install Hub.
-To read more about the different report types, see the [Reports Section](/run/agent/configuration).
+To read more about the different report types, see the [Reports Section](/configure/agent/install-hub).
 
 

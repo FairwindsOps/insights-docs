@@ -13,7 +13,7 @@ If you don't have cert-manager, or if you'd like to provide your own certificate
 stored in your cluster.
 
 ## Installation
-To use the Admission Controller and install it on your cluster, navigate to the [Install Hub](/run/agent/report-hub) and select `Admission Controller`. (You will need to re-install the Helm chart after selecting the Admission Controller.)
+To use the Admission Controller and install it on your cluster, navigate to the [Install Hub](/configure/agent/install-hub) and select `Admission Controller`. (You will need to re-install the Helm chart after selecting the Admission Controller.)
 
 The Admission Controller is installed in Passive Mode by default. This means the Admission Controller will monitor all activities, but not yet deny any deployments.
 

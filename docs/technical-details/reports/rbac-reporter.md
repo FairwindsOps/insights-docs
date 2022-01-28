@@ -10,7 +10,7 @@ meta:
 
 # RBAC Reporter
 RBAC Reporter uploads a list of `Roles`, `ClusterRoles`, `RoleBindings`, and `ClusterRoleBindings`
-in your cluster. This information is used to generate the [RBAC report feature](/run/agent/rbac)
+in your cluster. This information is used to generate the [RBAC report feature](/configure/agent/install-hub)
 
 RBAC Reporter does not create any Action Items.
 

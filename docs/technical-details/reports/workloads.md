@@ -10,7 +10,7 @@ meta:
 # Workloads
 The Workloads report uploads a list of all the workloads running in your cluster,
 including `Deployments`, `Jobs`, `CronJobs`, `ReplicaSets`, `DaemonSets`, and `Pods`.
-This information is used to generate the information in the [workloads page](/run/agent/workloads)
+This information is used to generate the information in the workloads page. Make sure to have Golilocks or Prometheus Collector installed [Install Hub](/configure/agent/install-hub)
 
 The Workloads report does not generate any Action Items.
 

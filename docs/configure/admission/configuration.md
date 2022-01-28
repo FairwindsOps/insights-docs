@@ -39,7 +39,7 @@ You can fine-tune which policies are applied by the admission controller. Any po
 Specifically, the following auditing tools
 can be enabled or disabled as part of admission control:
 * Polaris - checks for security and best practices
-* OPA - apply custom policies to resources ([see docs](/configure/policy/opa))
+* OPA - apply custom policies to resources ([see docs](/configure/policy/policy))
 * Pluto - disallow resources that have been deprecated
 
 Enforce policies from the above auditing tools ([see docs](/configure/admission/enforce))

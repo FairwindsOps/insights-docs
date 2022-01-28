@@ -3,7 +3,7 @@ The PagerDuty integration allows you to create PagerDuty incidents for
 any Action Item in Fairwinds Insights. This includes all three contexts -
 CI/CD, Admission Control, and In-Cluster.
 
-PagerDuty incidents are created via [Automation Rules](/configure/automation/integrations##pagerduty-incidents).
+PagerDuty incidents are created via [Automation Rules](/configure/automation/integrations#pagerduty-incidents).
 You can customize your Automation Rule to only trigger on particular events
 (like critical-level container CVEs from Trivy). You can also customize the
 PagerDuty incident with different levels of urgency, add resource metadata
@@ -50,7 +50,7 @@ Then configure an Automation Rule:
 * Navigate to your Organization in Fairwinds Insights
 * Click on “Automation”
 * Click “Create Custom Rule”
-* Configure the context of the rule. Learn more about [Automation Rule configuration here](/configure/automation/rules#automation-rules)
+* Configure the context of the rule. Learn more about [Automation Rule configuration here](/configure/automation/rules)
 * Inside the Automation Rule scripting area, you can use the `createPagerDutyIncident` function to create incidents. You can see [details for this function here](/configure/automation/integrations#pagerduty-incidents)
 
 ### Example

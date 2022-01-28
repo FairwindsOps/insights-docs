@@ -7,7 +7,7 @@ meta:
 Configuration of the CI integration happens mainly in fairwinds-insights.yaml,
 which should be checked into the root of your infrastructure-as-code repository.
 
-You can also see the [automation rules documentation](/configure/policy/rules) for further
+You can also see the [automation rules documentation](/configure/automation/rules) for further
 customization options.
 
 ## fairwinds-insights.yaml
