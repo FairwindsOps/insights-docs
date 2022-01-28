@@ -65,7 +65,6 @@ if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
   }
   createPagerDutyIncident("insights@acme-co.com", incident)
 }
-
 ```
 
 ## How to Uninstall
