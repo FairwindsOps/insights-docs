@@ -11,8 +11,8 @@ Action Item severity is defined as:
 * 0.0 - None
 * 0.1 to 0.39 - Low
 * 0.4 to 0.69 - Medium
-* 0.7 to .89 - High (Will block)
-* 0.9 to 1.0 - Critical (Will block)
+* 0.7 to .89 - High (blocking)
+* 0.9 to 1.0 - Critical (blocking)
 
 ## Polaris
 > The below policies will be blocked if Passive Mode has been toggled off. Can customize the severity through Automation Rules
