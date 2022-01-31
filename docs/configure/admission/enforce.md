@@ -15,7 +15,7 @@ Action Item severity is defined as:
 * 0.9 to 1.0 - Critical (blocking)
 
 ## Polaris
-> The below policies will be blocked if Passive Mode has been toggled off. Can customize the severity through Automation Rules
+> The below policies will be blocking if Passive Mode has been toggled off. You can customize the severity through Automation Rules
 
 * Capabilities: The following security capabilities should not be added: SYS_ADMIN
 * dangerousCapabilites: Container should not have dangerous capabilities
