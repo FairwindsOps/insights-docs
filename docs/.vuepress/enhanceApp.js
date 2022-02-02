@@ -71,10 +71,28 @@ const redirects = [{
   prefix: '/configure/reports',
   redirect: s => '/technical-details' + s.replace('/configure', ''), // this isn't right yet
 }, {
-  prefix: '/run/agent',
+  prefix: '/run/agent/action-items',
   redirect: s => '/code' + s.replace('/run/agent', '')
 }, {
-  prefix: '/run/admission',
+  prefix: '/run/agent/add-ons',
+  redirect: s => '/code' + s.replace('/run/agent', '')
+}, {
+  prefix: '/run/agent/rbac',
+  redirect: s => '/code' + s.replace('/run/agent', '')
+}, {
+  prefix: '/run/agent/vulnerabilities',
+  redirect: s => '/code' + s.replace('/run/agent', '')
+}, {
+  prefix: '/run/agent/workloads',
+  redirect: s => '/code' + s.replace('/run/agent', '')
+}, {
+  prefix: '/run/agent/cluster-comparison',
+  redirect: s => '/code' + s.replace('/run/agent', '')
+}, {
+  prefix: '/run/agent/cluster-summary',
+  redirect: s => '/code' + s.replace('/run/agent', '')
+}, {
+  prefix: '/run/admission/automation',
   redirect: s => '/code' + s.replace('/run/admission', '')
 }, {
   prefix: '/technical-details/architecture/sample-reports',
