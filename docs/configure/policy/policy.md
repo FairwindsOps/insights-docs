@@ -5,7 +5,7 @@ meta:
 ---
 # OPA Policies
 
-The [OPA Report](/configure/reports/opa) allows you to define custom policies for checking Kubernetes resources.
+The [OPA Report](/configure/agent/install-hub) allows you to define custom policies for checking Kubernetes resources.
 This is useful for enforcing policies that are specific to your organization - e.g. particular labeling
 schemes or required annotations.
 
@@ -62,8 +62,8 @@ replicasRequired[actionItem] {
 ## Uploading Policies
 
 ### Via the CLI
-To manage policies in an infrastructure-as-code repository, you can use the [Insights CLI](/configure/policy/cli).
-Be sure to read the [CLI documentation](/configure/policy/cli) before getting started here.
+To manage policies in an infrastructure-as-code repository, you can use the [Insights CLI](/configure/cli/cli).
+Be sure to read the [CLI documentation](/configure/cli/opa) before getting started here.
 
 #### Syncing Policies
 The sync functionality expects a directory structure like the following:

@@ -5,10 +5,9 @@ meta:
 ---
 # Getting Value from Fairwinds Insights
 
-So you've [installed the Insights agent](/run/agent/installation),
+So you've [installed the Insights agent](/installation/agent/setup),
 and you're getting some results
-back from your audits. Chances are, you're seeing quite a few
-[Action Items](/run/agent/action-items) showing up. Where should you start?
+back from your audits. Chances are, you're seeing quite a few Action Items showing up. Where should you start?
 
 While it's good to look through the entire list of Action Items to get a sense for what's there,
 you probably already have a sense for where you should be focusing your efforts. Below are
@@ -20,7 +19,7 @@ their work is done. But if you fail to set some basic configuration
 (like resource limits and liveness probes) for each workload,
 it can cause serious headaches down the line.
 
-Check out the [workload configuration section](/first-steps/workload-configuration) to learn how to audit your
+Check out the [workload configuration](/first-steps/workload-configuration) to learn how to audit your
 workloads for best practices.
 
 ## Container Security

@@ -120,7 +120,7 @@ Insights now detects the Base Image layer for Image Vulnerabilities. You can fin
 ## 6.4.0
 ### Enable and Disable Admission Controller Passive Mode
 Users are now able to enable and disable Passive Mode for the Admission Controller through the API. 
-[Learn more about the Admission Controller Passive Mode](https://insights.docs.fairwinds.com/run/admission/setup/#installation)
+[Learn more about the Admission Controller Passive Mode](https://insights.docs.fairwinds.com/installation/admission/setup/#installation)
 
 ** Starting from this release, the Admission Controller is set to Passive Mode by default for any new clusters **
 
@@ -163,7 +163,7 @@ and Clusters to All Clusters.
 ## 5.7.0
 ### PagerDuty Integration
 Organizations can now setup the PagerDuty integration to automatically send incident events from Insights.
-[Learn more about the PagerDuty Integration](https://insights.docs.fairwinds.com/configure/policy/rules/#pagerduty-incidents)
+[Learn more about the PagerDuty Integration](https://insights.docs.fairwinds.com/configure/automation/rules/#pagerduty-incidents)
 
 ### Bug Fixes
 * Team Management displays a better error when inviting a user that is already part of the organization
@@ -205,7 +205,7 @@ if the Agent fails to install.
 * Previous channel selected didn't display when searching for a different slack channel
 * Users could not delete repositories
 * Issue occurred when enabling SAML
-[Learn More About SAML Integration](https://insights.docs.fairwinds.com/configure/management/sso/)
+[Learn More About SAML Integration](https://insights.docs.fairwinds.com/installation/sso/about/)
 
 ## 5.3.0
 ### Team Management
@@ -237,7 +237,7 @@ We’ve updated the digest emails and Slack notifications to include warnings wh
 ## 5.0.0
 ### SAML Capabilities - Beta
 We are happy to announce we now offer SAML capabilities! Contact us if you want to try it. 
-[Learn More](https://insights.docs.fairwinds.com/configure/management/sso/)
+[Learn More](https://insights.docs.fairwinds.com/configure/sso/setup/)
 
 ### Save Views in Action Item Table
 You can now save filtered views on the Action Items table. Use the star button at the top of the table and assign the view a name. You will then be able to access that view in the future without needing to re-select filtering options.
@@ -272,7 +272,7 @@ notifications for the Admission Controller being offline.
 ## 4.3.0
 ### Custom Notifications Using Automation Rules
 We've added the ability to add custom Slack webhook URLs to send custom messages to the slack environment of your choosing, 
-[Learn More](https://insights.docs.fairwinds.com/configure/policy/rules/#writing-rules)
+[Learn More](https://insights.docs.fairwinds.com/configure/automation/rules/#writing-rules)
 
 
 ### Bug Fixes
@@ -300,7 +300,7 @@ All the great features of Insights but hosted on your infrastructure. Self-hoste
  
 ### Jira Frontend
 You can now create tickets in Jira. Use the "Create Tickets" button at the top of the Action Items table.
-[Learn More](/run/agent/action-items#ticketing-integrations)
+[Learn More](/installation/integrations/jira)
 
 ### Fleet Installation Method (Charts)
 You can now easily install the Insights Agent across a large fleet of clusters using a single helm install command.
@@ -315,7 +315,6 @@ We've improved the history pages' performance by providing links to download and
 ### New Cluster Overview UI
 We redesigned the cluster overview page to better visualize what's happening in your cluster. Users can now see their cluster's health score, Action Items aggregated by namespace and report, top Action Items, a cost summary, assigned Action Items, and more!
 
-[Learn More](/run/agent/cluster-summary)
 
 ### Updated Customer Agreement
 We’ve updated our customer agreement, you will need to accept the new agreement the next time you login.
@@ -340,7 +339,7 @@ We are happy to introduce The Automation Rules UI! Insights provides over 100 ch
 
 If you’re feeling stuck and need inspiration on how to use the automation rules, use the Create from Template section of the feature, and we have eight pre-made rules that can help you get started.
 
-[Learn More](/configure/policy/rules)
+[Learn More](/configure/automation/rules)
 
 ### Collapsible Navigation 
 The navigation bar is now collapsible. All you need to do is click on the small arrow to expand and collapse the navigation bar.
@@ -368,7 +367,7 @@ We made changes to the navigation bar. We’ve moved the bar to the left-hand-si
 
 ### Prometheus Report
 We added a new report called The Prometheus Collector. The report gathers workload metrics from a Prometheus installation in order to provide fine-grained resource usage data. This can be used to gauge how much different workloads cost, understand cost trends and help set resource requests and limits. Read our docs to learn more. 
-[Learn More](/configure/reports/resource-metrics)
+[Learn More](/technical-details/reports/resource-metrics)
 
 ### Prometheus Graph on Workloads View
 We added visualizations to the workloads feature. You will now be able to see Memory and CPU displayed via a line graph.
@@ -404,7 +403,7 @@ We are happy to introduce The Install Hub, a way for users to cut down on the nu
 
 The Install Hub allows users to decide which reports they would like to run in their clusters. Users will be able to configure each report and set the timeout and schedule when the report runs.
 
-[Learn More](/run/agent/report-hub)
+[Learn More](/configure/agent/install-hub)
 
 ### Filtering on Workloads
 We’ve added filtering options to the Workloads table, and now the graphs will reflect the data from the table shown.
