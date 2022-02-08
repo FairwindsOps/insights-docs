@@ -9,6 +9,12 @@ meta:
 ---
 # Release Notes
 
+## 7.4.0
+### Bug Fixes and Improvements
+* We've updated the Insights Agent with some minor improvements and fixes
+* Fixed creating JIRA tickets from the Action Items table
+* Admission Controller UI improvement and fixes
+
 ## 7.3.0
 ### Bug Fixes and Improvements
 * Fixed issue where duplicated PagerDuty incidents were being sent out
