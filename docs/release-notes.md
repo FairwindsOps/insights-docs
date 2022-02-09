@@ -9,6 +9,23 @@ meta:
 ---
 # Release Notes
 
+## 7.5.0
+### New Single Sign-On Settings Page
+Owners of Organizations can now setup SSO for Insights through the UI. Setting up SSO requires a valid Metadata URL and Email Domain. Furthermore, Organizations
+will be able to enforce the use of SSO through Insights.
+
+### Snoozing of Action Items
+Users are now able to **Snooze** Action Items. This will set the Action Item Resolution to **Snoozed**. Snoozing Actions Items is a great way to maintain
+the focus on more important ones. Users can take advantage of this feature for Action Items that they don't expect to resolve in the near future but would
+like to address eventually. 
+
+### Bug Fixes and Improvements
+* The **Create Ticket** button will no longer display a JIRA error if JIRA is not set up
+* Fixed an issue where Action Items were not displaying correctly upon selecting a Saved List
+* Admission requests times are now shown using local time
+* The Support button now directs users to our **Contact Us** page
+* Fixed an issue where Action Items charts were not displaying correctly for specific filters
+
 ## 7.4.0
 ### Bug Fixes and Improvements
 * We've updated the Insights Agent with some minor improvements and fixes
