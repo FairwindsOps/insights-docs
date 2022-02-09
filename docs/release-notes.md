@@ -15,9 +15,8 @@ Owners of Organizations can now setup SSO for Insights through the UI. Setting u
 will be able to enforce the use of SSO through Insights.
 
 ### Snoozing of Action Items
-Users are now able to **Snooze** Action Items. This will set the Action Item Resolution to **Snoozed**. Snoozing Actions Items is a great way to maintain
-the focus on more important ones. Users can take advantage of this feature for Action Items that they don't expect to resolve in the near future but would
-like to address eventually. 
+Users are now able to **Snooze** Action Items. This will set the Action Item Resolution to **Snoozed**. Users can take advantage of this feature for Action Items
+that require remediation but are not an immediate priority. 
 
 ### Bug Fixes and Improvements
 * The **Create Ticket** button will no longer display a JIRA error if JIRA is not set up
