@@ -15,7 +15,7 @@ Owners of Organizations can now setup SSO for Insights through the UI. Setting u
 will be able to enforce the use of SSO through Insights.
 
 ### Snoozing of Action Items
-Users are now able to **Snooze** Action Items. This will set the Action Item Resolution to **Snoozed**. Users can take advantage of this feature for Action Items
+Users are now able to **Snooze** Action Items for a fixed period of time (1 month, 1 week, or 1 day). This will set the Action Item Resolution to **Snoozed**. Users can take advantage of this feature for Action Items
 that require remediation but are not an immediate priority. 
 
 ### Bug Fixes and Improvements
