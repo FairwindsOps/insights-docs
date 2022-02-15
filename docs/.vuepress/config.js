@@ -55,7 +55,7 @@ const baseConfig = {
   plugins: {
     'vuepress-plugin-clean-urls': {
       normalSuffix: '/',
-      notFoundPath: '/error.html',
+      notFoundPath: '/404.html',
     },
     'check-md': {},
   },
