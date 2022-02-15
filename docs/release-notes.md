@@ -9,6 +9,10 @@ meta:
 ---
 # Release Notes
 
+## 7.6.0
+### Bug Fixes and Improvements
+* Faster load times for Action Items and Vulnerabilities pages
+
 ## 7.5.0
 ### New Single Sign-On Settings Page
 Owners of Organizations can now setup SSO for Insights through the UI. Setting up SSO requires a valid Metadata URL and Email Domain. Furthermore, Organizations
