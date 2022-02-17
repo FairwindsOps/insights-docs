@@ -9,7 +9,7 @@ meta:
 ---
 # Release Notes
 
-### 7.7.0
+## 7.7.0
 * No user-facing changes
 
 ## 7.6.0
