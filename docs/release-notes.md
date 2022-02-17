@@ -9,6 +9,9 @@ meta:
 ---
 # Release Notes
 
+## 7.7.0
+* No user-facing changes
+
 ## 7.6.0
 ### Bug Fixes and Improvements
 * Faster load times for Action Items and Vulnerabilities pages
