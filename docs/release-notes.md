@@ -9,6 +9,13 @@ meta:
 ---
 # Release Notes
 
+## 7.8.0
+### Bug Fixes and Improvements
+* Added Recommended Limits and Recommended Requests visuals to CPU and Memory charts in workloads
+* UI Improvements to the Admission Controller chart
+* Sorting by First Seen and Last Reported on Action Items table now works properly
+* Refreshing the page does not remove the filters on the Action Items table
+
 ## 7.7.0
 * No user-facing changes
 
