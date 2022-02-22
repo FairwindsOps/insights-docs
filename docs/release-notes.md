@@ -14,7 +14,7 @@ meta:
 * Added Recommended Limits and Recommended Requests visuals to CPU and Memory charts in workloads
 * UI Improvements to the Admission Controller chart
 * Sorting by First Seen and Last Reported on Action Items table now works properly
-* Refreshing a page on the Action Items table does not remove filters
+* Refreshing the page does not remove the filters on the Action Items table
 
 ## 7.7.0
 * No user-facing changes
