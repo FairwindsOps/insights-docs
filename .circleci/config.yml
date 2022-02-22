@@ -51,8 +51,7 @@ jobs:
             vault --version
 
             echo "Installing yq"
-            curl -LO https://github.com/mikefarah/yq/releases/download/v4.16.2/yq_linux_amd64
-.tar.gz
+            curl -LO https://github.com/mikefarah/yq/releases/download/v4.16.2/yq_linux_amd64.tar.gz
             tar -zxvf yq_linux_amd64.tar.gz
             sudo mv yq_linux_amd64 /usr/bin/yq
             sudo chmod +x /usr/bin/yq
