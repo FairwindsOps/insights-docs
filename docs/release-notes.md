@@ -9,6 +9,20 @@ meta:
 ---
 # Release Notes
 
+## 7.9.0
+### Navigation Improvements
+**A consistent navigation experience across the app** 
+* No more dynamically changing navigation when users switch from the Organization View -> Cluster View
+
+**Introducing the Efficiency page**
+* A new home for the **Workloads** page
+* A placeholder for future Cost Optimization and Reporting enhancements
+
+**Finding Action Items**
+* Easy toggle to look for Action Items for a single cluster, or for the entire Organization from a single page
+
+[Watch the video showing off the new navigation](https://www.youtube.com/watch?v=zrBkTWo2PsI)
+
 ## 7.8.0
 ### Bug Fixes and Improvements
 * Added Recommended Limits and Recommended Requests visuals to CPU and Memory charts in workloads
