@@ -5,8 +5,7 @@ meta:
 ---
 # Installation
 
-> The self-hosted version of Fairwinds Insights is currently in alpha.
-> The documentation is incomplete, and it is subject to breaking changes.
+> The documentation may be incomplete, and it is subject to breaking changes.
 
 > You'll need a code provided by the Fairwinds team in order to try out
 > the self-hosted version of Insights. If you're interested,
