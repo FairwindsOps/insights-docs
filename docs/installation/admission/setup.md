@@ -12,6 +12,8 @@ If you don't have cert-manager, or if you'd like to provide your own certificate
 `caBundle` and `secretName` parameters to pass a CA Bundle and the location of a TLS certificate
 stored in your cluster.
 
+> The Admission Controller listens on port 8443 by default, so a firewall rule or a security group may need to be configured to allow the master nodes to send traffic to the worker nodes on that port.
+
 ## Installation
 To use the Admission Controller and install it on your cluster, navigate to the [Install Hub](/configure/agent/install-hub) and select `Admission Controller`. (You will need to re-install the Helm chart after selecting the Admission Controller.)
 
