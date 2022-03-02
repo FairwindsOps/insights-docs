@@ -9,6 +9,14 @@ meta:
 ---
 # Release Notes
 
+## 7.10.0
+### ### Bug Fixes and Improvements
+* Improvements to the cluster navigation
+* Better user message when first accessing the Efficiency page
+* Top logo will now redirect to the **Home** page
+* Fixed navigating to Action Items page from an external link
+* The cluster list on the **Home** page is now scrollable
+
 ## 7.9.0
 ### Navigation Improvements
 **A consistent navigation experience across the app** 
