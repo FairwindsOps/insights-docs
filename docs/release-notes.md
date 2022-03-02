@@ -10,7 +10,7 @@ meta:
 # Release Notes
 
 ## 7.10.0
-### ### Bug Fixes and Improvements
+### Bug Fixes and Improvements
 * Improvements to the cluster navigation
 * Better user message when first accessing the Efficiency page
 * Top logo will now redirect to the **Home** page
