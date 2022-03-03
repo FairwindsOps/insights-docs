@@ -8,7 +8,7 @@ In the default install, we autogenerate session and cookie keys each time the ap
 installed or upgraded, which could cause disruption for users. Instead, you should generate
 these tokens once and save them in a Kubernetes secret.
 
-> Most secrets (with the exception of your PostgreSQL password) must stored in a secret
+> Most secrets (with the exception of your PostgreSQL password) must be stored in a secret
 > named `fwinsights-secrets`
 
 We'll need the following keys:
@@ -40,7 +40,7 @@ type: Opaque
 ```
 
 ```bash
-kubectl apply -f secrets.yaml -n fwinsights
+kubectl apply -f secrets.yaml -n fairwinds-insights
 ```
 Consider using
 [SOPS](https://github.com/mozilla/sops)
