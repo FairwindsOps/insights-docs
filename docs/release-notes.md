@@ -9,6 +9,21 @@ meta:
 ---
 # Release Notes
 
+## 7.11.0
+### New Insights Status Page
+Users can use this page to track the status of Insights. If we are experiencing wide spread issues, we will
+keep our users informed through this page. The new status page can be found under the **Help** items.
+[Fairwinds Status Page](https://fairwindsops.statuspage.io/)
+
+### Search by Label on Workloads
+Users can now search workloads based on labels. On the Efficiency > Workloads page, use the Search functionality
+to search for desired labels. Example: `app=myApp` 
+
+### Bug Fixes and Improvements
+* Many UI improvements and fixes across Insights
+* Description is now added when Action Items are exported to CSV
+* Users will be asked to choose an organization before being presented the navigation menu
+
 ## 7.10.0
 ### Bug Fixes and Improvements
 * Improvements to the cluster navigation
