@@ -23,13 +23,21 @@ Note that the Insights Agent only requires _egress_ from the cluster - you will 
 open up access for any kind of network ingress.
 
 ## Network Egress
-Fairwinds Insights will need access to the following domains:
-* insights.fairwinds.com
-* quay.io
-* hub.docker.com (kube-hunter)
-* raw.githubusercontent.com (goldilocks)
-* github.com (trivy)
-* github-production-release-asset-*.s3.amazonaws.com (trivy)
+Fairwinds Insights will need access to the following base URLs:
+
+### API (all methods)
+* insights.fairwinds.com/*
+
+### Docker Images (pull only)
+* quay.io/fairwinds/*
+* us-docker.pkg.dev/fairwinds-ops/*
+* index.docker.io/aquasec/*
+* index.docker.io/curlimages/*
+
+### Supplementary Data (GET only)
+* raw.githubusercontent.com/FairwindsOps/* (goldilocks)
+* github.com/aquasecurity/* (trivy)
+* artifacthub.io/api/v1/* (nova)
 
 ## Report Architectures
 Typically, each report runs as a CronJob on a configurable schedule (usually once/hour by default).
