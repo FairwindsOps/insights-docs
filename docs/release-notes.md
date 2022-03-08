@@ -9,6 +9,17 @@ meta:
 ---
 # Release Notes
 
+## 7.12.0
+### Ability to Block Access for Teams
+Owners of organizations are now able to block teams from accessing specific Clusters, Namespaces and Respoitories within Insights. Members of
+teams with specific blocked access will no longer be able to see the Clusters, Namespaces and Repositories in the blocked list.
+
+### Bug Fixes and Improvements
+* Action Items can now be closed using the `Esc` keyboard button
+* All Clusters on the **Home** page show without scrolling
+* Better performance when using search on the **Workloads** page
+* Fixed navigation issue for when the left Navigation Bar is collapsed
+
 ## 7.11.0
 ### New Insights Status Page
 Users can use this page to track the status of Insights. If we are experiencing wide spread issues, we will
@@ -25,6 +36,9 @@ to search for desired labels. Example: `app=myApp`
 * Users will be asked to choose an organization before being presented the navigation menu
 
 ## 7.10.0
+### Updated Fairwinds Insights Terms and Conditions
+Fairwinds has renamed the Customer Agreement to **Fairwinds Insights Terms and Conditions**. In addition, the Terms and Conditions have been updated.
+
 ### Bug Fixes and Improvements
 * Improvements to the cluster navigation
 * Better user message when first accessing the Efficiency page
