@@ -22,8 +22,11 @@ the section below, replacing any values with your own.
 ```yaml
 awscosts:
   enabled: true
+
+  # The AWS credentials should come from the aws-costs-service-account created below.
+  # We recommend creating the awscostssecret yourself and specify secretName, but you can
+  # also pass awsAccessKeyId and awsSecretAccessKey directly to the helm chart.
   secretName: awscostssecret
-  # You only need to specify these if you haven't created the secret above manually
   awsAccessKeyId: ''
   awsSecretAccessKey: ''
 
@@ -117,10 +120,12 @@ resource "aws_iam_policy" "cur-report-s3-access" {
 }
 EOF
 }
+
 resource "aws_iam_role_policy_attachment" "cur-report-s3-access" {
   role       = aws_iam_role.crawler-service-role.name
   policy_arn = aws_iam_policy.cur-report-s3-access.arn
 }
+
 resource "aws_s3_bucket_policy" "s3-bucket-cur-report-policy" {
   bucket = aws_s3_bucket.cur_bucket.id
   policy = <<EOF
@@ -146,6 +151,56 @@ resource "aws_s3_bucket_policy" "s3-bucket-cur-report-policy" {
       "Action": "s3:PutObject",
       "Resource": "arn:aws:s3:::${var.s3_bucket_name}/*"
     }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_user" "aws-costs-service-account" {
+  name = "aws-costs-service-account"
+  path = "/"
+  tags = {
+    tag-key = "service-account"
+  }
+}
+resource "aws_iam_user_policy" "aws-costs-service-policy" {
+  name = "aws-costs-service-policy"
+  user = aws_iam_user.aws-costs-service-account.name
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "athena:StartQueryExecution",
+        "athena:GetQueryExecution",
+        "athena:GetQueryResults",
+        "glue:GetDatabase",
+        "glue:GetTable",
+        "glue:GetPartition",
+        "glue:GetPartitions",
+        "glue:GetCrawler",
+        "glue:GetTags"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+          "s3:GetBucketLocation",
+          "s3:GetObject",
+          "s3:ListBucket",
+          "s3:ListBucketMultipartUploads",
+          "s3:ListMultipartUploadParts",
+          "s3:PutObject"
+      ],
+      "Resource": [
+          "arn:aws:s3:::fairwinds-insights-cost-report-poc",
+          "arn:aws:s3:::fairwinds-insights-cost-report-poc/*"
+      ]
+    }    
   ]
 }
 EOF
