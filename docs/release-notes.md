@@ -9,6 +9,25 @@ meta:
 ---
 # Release Notes
 
+## 7.13.0
+### Automation Rule Logs
+We've added a tab to the Automation Rules page which shows logs for your Automation Rules.
+This makes it easier to debug Automation Rules e.g. by adding `console.log` statements, or
+seeing any runtime errors.
+
+### Suggested Image Upgrades
+Trivy will now search for available updates in the source repo which would resolve the CVEs
+present in the currently-installed image. You'll find these recommendations in the **Remediation**
+text within Trivy Action Items.
+
+You'll need to update to the latest version of the Insights Agent (`1.17.28`) to get this functionality.
+
+### Bug Fixes and Improvements
+* Some fixes for adding/updating Action Item Lists
+* Trivy now allows passing in the `--ignore-unfixed` flag
+* Automation Rules are more robust to runtime errors
+
+
 ## 7.12.0
 ### Ability to Block Access for Teams
 Owners of organizations are now able to block teams from accessing specific Clusters, Namespaces and Respoitories within Insights. Members of
