@@ -9,6 +9,12 @@ meta:
 ---
 # Release Notes
 
+## 7.14.0
+### Bug Fixes and Improvements
+* Owners of organizations are now able to remove SSO for Insights through the UI
+* UI fixes for the Automation Logs page
+* Updated how some columns get displayed in the Action Items table
+
 ## 7.13.0
 ### Automation Rule Logs
 We've added a tab to the Automation Rules page which shows logs for your Automation Rules.
@@ -26,7 +32,6 @@ You'll need to update to the latest version of the Insights Agent (`1.17.28`) to
 * Some fixes for adding/updating Action Item Lists
 * Trivy now allows passing in the `--ignore-unfixed` flag
 * Automation Rules are more robust to runtime errors
-
 
 ## 7.12.0
 ### Ability to Block Access for Teams
