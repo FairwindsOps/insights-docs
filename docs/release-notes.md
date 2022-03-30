@@ -9,6 +9,12 @@ meta:
 ---
 # Release Notes
 
+## 7.15.0
+### Bug Fixes and Improvements
+* Saved Lists in the Action Items table will now populate correctly
+* Moved the **STATUS** column further left in the Automation Logs
+* Fixed navigation issues resulting in 404 errors
+
 ## 7.14.0
 ### Bug Fixes and Improvements
 * Owners of organizations are now able to remove SSO for Insights through the UI
