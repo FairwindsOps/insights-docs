@@ -14,6 +14,7 @@ meta:
 * Saved Lists in the Action Items table will now populate correctly
 * Moved the **STATUS** column further left in the Automation Logs
 * Fixed navigation issues resulting in 404 errors
+* Fixed Slack messages incorrectly stating Prometheus is offline
 
 ## 7.14.0
 ### Bug Fixes and Improvements
