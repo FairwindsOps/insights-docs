@@ -13,7 +13,7 @@ meta:
 ### Bug Fixes and Improvements
 * Fixed JIRA integration not staying authenticated
 * Fixed issue when creating JIRA tickets for some Action Items
-* Added **REPORT** column to the Automation Logs
+* Added `Report` column to the Automation Logs
 * Improved Trivy recommendations
 * Loading indicator now works properly in the Automation Logs
 
