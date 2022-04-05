@@ -9,6 +9,14 @@ meta:
 ---
 # Release Notes
 
+## 8.0.0
+### Bug Fixes and Improvements
+* Fixed JIRA integration not staying authenticated
+* Fixed issue when creating JIRA tickets for some Action Items
+* Added `Report` column to the Automation Logs
+* Improved Trivy recommendations
+* Loading indicator now works properly in the Automation Logs
+
 ## 7.15.0
 ### Bug Fixes and Improvements
 * Saved Lists in the Action Items table will now populate correctly
