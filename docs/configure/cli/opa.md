@@ -3,7 +3,8 @@ You can use the Insights Command-line Interface (CLI) To manage OPA policies, an
 Be sure to first read the [general CLI documentation](/configure/cli/cli) which covers instllation and prerequisites.
 
 ## V1 and V2 Insights OPA Policies
-Version 2 of the [Insights Agent](/configuration/agent/install-hub) supports a new `V2` version of Insights OPA policies which no longer uses an accompanying yaml file to define the Kubernetes Kinds that the policy will process. We recommend use of V2 policies moving forward. See the [[OPA report documentation](/configure/policy/policy) for more information about how V1 and V2 OPA policies differ.
+Version 2 of the [Insights Agent](/configure/agent/install-hub) supports a new `V2` method of specifying an OPA policy without an accompanying instance YAML file. This moves logic for varying policy execution by cluster, Insights context, or other parameters, directly into the policy rego.
+See the [[OPA report documentation](/configure/policy/policy) for more information about how V1 and V2 OPA policies differ.
 
 ## Pushing V2 OPA Policies to Insights
 The Insights CLI push commands expect a directory structure like the following when pushing V2 OPA policies:
@@ -18,7 +19,7 @@ The Insights CLI push commands expect a directory structure like the following w
 
 * Note that it is possible to mix older V1 and these V2 policies within a single `opa` directory. The key differentiation is that V2 policies only have a `policy.rego` file.
 
-### Example
+### Pushing V2 Policies Example
 To upload a`replicas` V2 OPA policy that requires Replicas to be specified for Kubernetes Deploymentss, create the file `./opa/replicas/policy.rego`
 (note that the filename _must_ be named `policy.rego`):
 
@@ -65,7 +66,7 @@ If the [OPA report](/configure/policy/policy) is enabled, you can trigger it to 
 kubectl -n insights-agent create job rule-test --from cronjob/opa
 ```
 
-### Deleting From Insights
+### Deleting OPA Policies From Insights
 By default, the Insights CLI will not _delete_ any OPA policies from Insights - it will
 only add or update them.
 This means there might be some OPA policies running in Insights that are not
@@ -91,7 +92,7 @@ Each policy lives in its own directory, alongside the "policy instance" files th
 
 * Note that it is possible to mix these V1 and the newer V2 policies within a single `opa` directory. The key differentiation is that V2 policies only have a `policy.rego` file.
 
-### Example
+### Pushing V1 Policies Example
 To upload a`replicas` V1 OPA policy that requires Replicas to be specified for Kubernetes Deploymentss, create the file `./opa/replicas/policy.rego`
 (note that the filename _must_ be named `policy.rego`):
 
@@ -137,7 +138,7 @@ To see a list of OPA policies in your Insights organization, you can run:
 FAIRWINDS_TOKEN=YOUR_TOKEN insights-cli list opa --organization YOUR_ORG_NAME
 ```
 
-### Deleting From Insights
+### Deleting OPA Policies From Insights
 By default, the Insights CLI will not _delete_ any OPA policies from Insights - it will
 only add or update them.
 This means there might be some OPA policies running in Insights that are not
@@ -152,7 +153,7 @@ Both OPA policies and automation rules can be pushed to Insights using the singl
 
 * Note that the `--delete` flag is not available for the `push all` command, to avoid unexpected deletes of insights-cli managed configuration resources that are added in the future.
 
-For additional information about automation rules, see the [CLI automation rules documentation](configure/cli/automation-rules.md).
+For additional information about automation rules, see the [CLI automation rules documentation](/configure/cli/automation-rules.md).
 
 ## Validate and Debug OPA Policies
 The Insights CLI can validate Insights OPA policies, which is useful for local policy development or or in your CI/CD workflow. Validation includes
@@ -198,7 +199,7 @@ The `--batch-dir` option instructs the `insights-cli validate opa` command to pr
 * Each `.rego` file is required to have an accompanying `.yaml` file containing the Kubernetes manifest that will be passed as input to that policy.
 * Unlike the above single-policy form of the `validate opa` command, bulk OPA policy validation requires that all policies return a single Insights action item. This means that the accompanying Kubernetes manifest should cause the OPA policy to output its Insights action item.
 
-### Example
+### Batch OPA Policy Validation Example
 
 The `insights-cli validate opa` command expects the following directory structure when using the `--batch-directory` option.
 ```

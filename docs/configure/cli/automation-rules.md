@@ -15,7 +15,7 @@ The Insights CLI push commands expect a directory structure like the following w
 
 * Note that the base file name (minus the .yaml extension) is arbitrary.
 
-### Example
+### Pushing Automation Rules Example
 To upload an automation rule to Insights, create the file `api-action-items.yaml` in the `rules` sub-directory. This will contain the
 rule JavaScript and accompanying metadata.
 
@@ -69,17 +69,7 @@ kubectl -n insights-agent create job rule-test --from cronjob/$REPORT
 
 * Where $REPORT is `polaris`, `trivy`, or any other report type you'd like to test.
 
-#### Automation Rule Metadata Fields
-The following metadata fields can be specified in the rule file:
-
-* `name`
-* `description`
-* `context` - one of `Agent`, `CI/CD`, or `AdmissionController` (or leave blank for all three)
-* `cluster` - the name of a specific cluster this rule should apply to
-* `repository` - the name of a specific repo this rule should apply to
-* `reporttype` - the type of report (e.g. `polaris` or `trivy`) this rule should apply to
-
-### Deleting From Insights
+### Deleting Automation Rules From Insights
 By default, the Insights CLI will not _delete_ any automation rules from Insights - it will
 only add or update them.
 This means there might be some automation rules running in Insights that are not
@@ -93,4 +83,4 @@ Both automation rules and OPA policies can be pushed to Insights using the singl
 
 * Note that the `--delete` flag is not available for the `push all` command, to avoid unexpected deletes of insights-cli managed configuration resources that are added in the future.
 
-For additional information about OPA policies, see the [CLI OPA documentation](configure/cli/opa).
+For additional information about OPA policies, see the [CLI OPA documentation](/configure/cli/opa).
