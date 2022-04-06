@@ -1,7 +1,7 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Documentation. The OPA Report allows you to define custom policies for checking Kubernetes resources. "
+    content: "Fairwinds Insights | Documentation. The OPA Report allows you to define custom OPA policies for checking Kubernetes resources. "
 ---
 # OPA Policies
 
@@ -23,6 +23,7 @@ For example, we can check to make sure that `replicas` is set on all `Deployment
 package fairwinds
 
 replicasRequired[actionItem] {
+  input.kind == "Deployment"
   input.spec.replicas == 0
   actionItem := {}
 }
@@ -43,11 +44,12 @@ Action Item severity is defined as:
 * 0.7 to .89 - High
 * 0.9 to 1.0 - Critical  
 
-For instance, on our check above, we could set:
+For instance, in the above OPA policy, we could set:
 ```rego
 package fairwinds
 
 replicasRequired[actionItem] {
+  input.kind == "Deployment"
   input.spec.replicas == 0
   actionItem := {
     "title": concat(" ", [input.kind, "does not have replicas set"]),
@@ -60,66 +62,6 @@ replicasRequired[actionItem] {
 ```
 
 ## Uploading Policies
-
-### Via the CLI
-To manage policies in an infrastructure-as-code repository, you can use the [Insights CLI](/configure/cli/cli).
-Be sure to read the [CLI documentation](/configure/cli/opa) before getting started here.
-
-#### Syncing Policies
-The sync functionality expects a directory structure like the following:
-```
-.
-+-- checks
-|   +-- policy1
-|       +-- policy.rego
-|       +-- instance1.yaml
-|   +-- policy2
-|       +-- policy.rego
-|       +-- instance1.yaml
-```
-
-Running `insights policy sync` from the root directory will upload any new/changed policies
-to the Insights API, and start applying them to each of your clusters.
-
-#### Example
-
-The Insights CLI expects each policy to live in its own directory, alongside
-the rules that dictate where the rule should be applied.
-
-To upload our `replicasRequired` check, we start by creating `./replicas/policy.rego`
-(note that the filename _must_ be named `policy.rego`):
-```rego
-package fairwinds
-
-replicasRequired[actionItem] {
-  input.spec.replicas == 0
-  actionItem := {
-    "title": concat(" ", [input.kind, "does not have replicas set"]),
-    "description": "All workloads at acme-co must explicitly set the number of replicas. [Read more](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment)",
-    "remediation": "Please set `spec.replicas`",
-    "category": "Reliability",
-    "severity": 0.5
-  }
-}
-```
-
-Next, we'll create `./replicas/deployments.yaml` to tell Insights that this policy
-should be applied to all Deployments:
-```yaml
-targets:
-- apiGroups: ["apps"]
-  kinds: ["Deployment"]
-```
-
-Finally, we can upload our policies using the CLI:
-```bash
-FAIRWINDS_TOKEN=YOUR_TOKEN insights policy sync --organization your-org-name -d .
-```
-
-To see a full list of your organization's policies, you can run:
-```bash
-FAIRWINDS_TOKEN=YOUR_TOKEN insights policy list --organization your-org-name
-```
 
 ### Via the UI
 To get started, go to the `Policy` tab, and click the `Create Custom Policy` button.
@@ -148,6 +90,10 @@ Insights also comes with a library of OPA Policies which you can clone and modif
   <img :src="$withBase('/img/policy-templates.png')" alt="policy templates">
 </div>
 
+### Via the CLI
+To manage policies in an infrastructure-as-code repository, you can use the Insights command-line interface (CLI). Please see both the [general Insights CLI documentation](/configure/cli/cli)
+and the [OPA policy specific CLI documentation](/configure/cli/opa).
+
 ## Testing your Policies
 After uploading new checks, it's good to test that they're working properly. To do so, you can
 manually create a one-off report:
@@ -155,7 +101,9 @@ manually create a one-off report:
 kubectl create job my-opa-test --from=cronjob/opa -n insights-agent
 ```
 
-Watch the logs for the resulting Job to spot any potential errors in your work.
+Watch the pod logs for the resulting Job to spot any potential errors in your OPA policy.
+
+The Insights CLI also facilitates offline testing of OPA policies, see the [CLI OPA policy documentation](/configure/cli/opa).
 
 ## Tips and Tricks
 
@@ -164,6 +112,9 @@ You can reuse the same Rego policy, setting different ActionItem attributes in d
 For instance, say we wanted to apply our `replicas` policy above to both `Deployments` and `StatefulSets`,
 but wanted a higher severity for `Deployments`.
 
+#### V2 OPA Policies
+
+#### V1 OPA Policies
 First, we'd stop specifying `severity` inside our OPA, so that it can be set by the instance:
 **replicas.rego**
 ```rego

@@ -29,6 +29,7 @@ if (ActionItem.ResourceLabels['app'] === 'polaris') {
 }
 ```
 
+### Automation Rule Input
 The main input is `ActionItem`, which contains
 information about the issue detected. The following fields are available:
 * `Cluster`
@@ -45,6 +46,7 @@ information about the issue detected. The following fields are available:
 
 **Please see the [Supported Checks](https://insights.docs.fairwinds.com/reports/supported-checks/) page for a list of available `EventType` and `ReportType` options.**
 
+### Editable Fields
 The following fields can be edited:
 * `Severity`
 * `Resolution` - can be set to the constants `WILL_NOT_FIX_RESOLUTION` or `WORKING_AS_INTENDED_RESOLUTION`
@@ -68,5 +70,4 @@ You can use the Automation tab to add new rules, edit rules, and enable/disable 
 
 ### CLI
 To manage rules in an infrastructure-as-code repository, you can use the [Insights CLI](/configure/cli/automation-rules).
-Be sure to read the [CLI documentation](/configure/cli/cli) before getting started here.
-
+Be sure to read the [CLI documentation](/configure/cli/cli) before getting started.
