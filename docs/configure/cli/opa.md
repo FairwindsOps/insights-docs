@@ -197,7 +197,7 @@ incompleteRule[actionItem] {
 The `--batch-dir` option instructs the `insights-cli validate opa` command to process all `.rego` files in the specified directory.
 
 * Each `.rego` file is required to have an accompanying `.yaml` file containing the Kubernetes manifest that will be passed as input to that policy.
-* Unlike the above single-policy form of the `validate opa` command, bulk OPA policy validation requires that all policies return a single Insights action item. This means that the accompanying Kubernetes manifest should cause the OPA policy to output its Insights action item.
+* The accompanying Kubernetes manifest should cause the OPA policy to output its Insights action item.
 
 ### Batch OPA Policy Validation Example
 
