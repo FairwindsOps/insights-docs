@@ -118,6 +118,7 @@ The Insights OPA plugin executes OPA policies for these Kubernetes resources by 
 * Deployments
 * DaemonSets
 * StatefulSets
+* Pods
 * Jobs
 * CronJobs
 
