@@ -62,13 +62,13 @@ The `createTicket` function takes three arguments:
 
 #### Examples
 ```js
-if (ActionItem.Namespace === "api") {
+if (ActionItem.ResourceNamespace === "api") {
   createTicket("Jira", "API", ["bug"])
 }
 ```
 
 ```js
-if (ActionItem.Namespace === "api") {
+if (ActionItem.ResourceNamespace === "api") {
   createTicket("GitHub", "acme-co/api-server", ["bug"])
 }
 ```
