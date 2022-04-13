@@ -159,7 +159,7 @@ For additional information about automation rules, see the [CLI automation rules
 The Insights CLI can validate Insights OPA policies, which is useful for local policy development or or in your CI/CD workflow. Validation includes
 
 * Verifying rego syntax - the query language used by OPA policies.
-* Some input validation for Insights-provided rego functions, such as `kubernetes()` and `insightsinfo()`.
+* Verifying Insights-provided functions have the correct number of parameters, such as `kubernetes()` and`insightsinfo()`. 
 * Displaying optional rego `print` statements, to aide in debugging.
 * Showing policy output, and validating it contains a valid Insights action item.
 
@@ -175,6 +175,11 @@ Other command-line options are available to override metadata to ease testing po
 * Information returned by Insights-provided rego functions like `insightsinfo()`.
 
 See `insights-cli validate opa --help` and the [OPA Policy docs](/configure/cli/opa) for details.
+
+### Insights-provided Rego Functions
+
+* The `kubernetes` function does not currently return data. In the future we hope to facilitate reading static Kubernetes manifest files which this function can query, in place of an OPA policy running in a live cluster.
+* The `insightsinfo` function will return static data, such as the cluster name and Insights context (Admission, Agent, CI/CD). THese are also configurable via command-line flags.
 
 ### Debug Print Statements
 Rego `print()` statements will be included in the output of `insights-cli validate opa`, to help debug policy execution. For example, this incomplete policy prints two debug messages.
