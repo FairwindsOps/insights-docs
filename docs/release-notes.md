@@ -9,6 +9,16 @@ meta:
 ---
 # Release Notes
 
+## 8.1.0
+### New Cluster and Node Costs
+This new page allows users to quickly visualize how much resources they are using compared to what is available. This is a great
+tool to help users identify clusters that are under or over utilized. Users in the organization can compare resource utilization
+between all their clusters and view the costs associated with each one. Furthermore, they can understand the resource utilization
+of each node within a cluster. The new page can be found under `Efficiency > Capacity`
+
+### Bug Fixes and Improvements
+* Users are now able to create a cluster with the same name as a previously deleted cluster
+
 ## 8.0.0
 ### Bug Fixes and Improvements
 * Fixed JIRA integration not staying authenticated
