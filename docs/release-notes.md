@@ -16,6 +16,7 @@ We're excited to announce version 2.0 of our Insights Agent!
 This new release comes with some small breaking changes to improve the usability of the Helm Chart. While your existing 1.x
 installation will continue working as expected, you may need to change your `values.yaml` when upgrading to Agent 2.0.
 There are also some minor changes to Admission Controller and CI behavior that will take place when updating to a new version.
+[Here is a list of breaking and behavior changes](https://github.com/FairwindsOps/charts/tree/master/stable/insights-agent#version-20)
 
 ### Bug Fixes and Improvements
 * Fixed an issue with the `Contact Us` page when not logged in
