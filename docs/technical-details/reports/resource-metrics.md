@@ -10,9 +10,10 @@ in order to provide fine-grained resource usage data. This can be used to gauge 
 different workloads cost, understand cost trends, and help set resource requests and limits.
 
 ## Use an existing Prometheus installation
-To use an existing Prometheus installation pass the following flag to the Helm chart installation:
+To use an existing Prometheus installation the prometheus service endpoint that exists within the cluster will need to be passed to the Helm Chart installation.here:
+
 ```
---set resourcemetrics.address="http://prometheus-server.<namespace>"
+--set resourcemetrics.address="http://<prometheus-service-name>.<namespace>.svc.cluster.local:<port>"
 ```
 
 Alternatively, you can click on **Prometheus** from the [Install Hub](/configure/agent/install-hub), and then:
