@@ -147,13 +147,14 @@ tracked in your IaC repository.
 You can add the `--delete` flag to the `push opa` command, which
 will delete any OPA policies from Insights that **do not exist** in your IaC repository. Adding the `--dry-run` flag will explain which OPA policies would be deleted without making changes to Insights.
 
-## Pushing OPA Policies Along With Automation Rules
-
-Both OPA policies and automation rules can be pushed to Insights using the single command `insights-cli push all`.
+## Pushing OPA Policies With Other Configuration Resources
+OPA policies can be pushed to Insights along with other Insights configuration using the single command `insights-cli push all`.
 
 * Note that the `--delete` flag is not available for the `push all` command, to avoid unexpected deletes of insights-cli managed configuration resources that are added in the future.
 
-For additional information about automation rules, see the [CLI automation rules documentation](/configure/cli/automation-rules.md).
+For additional information see
+* [CLI automation rules documentation](/configure/cli/automation-rules)
+* [CLI Policy Configuration documentation](/configure/cli/settings)
 
 ## Validate and Debug OPA Policies
 The Insights CLI can validate Insights OPA policies, which is useful for local policy development or or in your CI/CD workflow. Validation includes
