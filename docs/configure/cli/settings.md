@@ -19,14 +19,6 @@ checks:
       admission:
         block: false
         mutate: true
-      overrrides:
-      - match:
-          label:
-            foo: bar
-          kind:
-          - Deployment
-        admission:
-          block: true
 ```
 
 Next use the Insights CLI to push these complete settings to Insights:
