@@ -78,9 +78,11 @@ tracked in your IaC repository.
 You can add the `--delete` flag to the `push rules` command, which
 will delete any automation rules from Insights that **do not exist** in your IaC repository. Adding the `--dry-run` flag will explain which rules would be deleted without making changes to Insights.
 
-## Pushing Automation Rules Along With OPA Policies
-Both automation rules and OPA policies can be pushed to Insights using the single command `insights-cli push all`.
+## Pushing Automation Rules With Other Configuration Resources
+Automation rules can be pushed to Insights along with other Insights configuration using the single command `insights-cli push all`.
 
 * Note that the `--delete` flag is not available for the `push all` command, to avoid unexpected deletes of insights-cli managed configuration resources that are added in the future.
 
-For additional information about OPA policies, see the [CLI OPA documentation](/configure/cli/opa).
+For additional information see
+* [CLI OPA policy documentation](/configure/cli/opa)
+* [CLI Policy Configuration documentation](/configure/cli/settings)
