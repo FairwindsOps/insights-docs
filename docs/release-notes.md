@@ -11,7 +11,7 @@ meta:
 
 ## 8.3.0
 ### Bug Fixes and Improvements
-* Fixed memory difference showing 0 (N/A) if the difference is too large
+* Fixed memory difference showing `0 (N/A)` if the difference is too large
 * Links to Action Items table are now working
 * Clicking the `All Clusters` option from the dropdown goes to the correct page
 * Fixed un-assigning and un-snoozing Action Items
