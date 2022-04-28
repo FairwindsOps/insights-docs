@@ -38,7 +38,7 @@ if you set your image tag based on things like the current Git branch, tag, or c
 ### Manifests
 Specify any YAML or Helm manifests you'd like Insights to scan for configuration issues.
 Helm files can be templated using a variables file, or by specifying variables directly
-in your fairwinds-insights.yaml
+in your fairwinds-insights.yaml file.
 
 * `manifests.yaml` - an array of directories or files containing Kubernetes YAML manifests to scan
 * `manifests.helm` - an array of helm charts to template and scan
@@ -48,7 +48,15 @@ in your fairwinds-insights.yaml
 * `manifests.helm[].chart` - if `repo` is specified, the name of the chart to download
 * `manifests.helm[].fluxFile` - a YAML file containing a Flux HelmRelease CRD (you will still need to specify `repo`)
 * `manifests.helm[].values` - values to pass to the chart when templating
-* `manifests.helm[].valuesFile` - a YAML file containing values to pass to the chart when templating
+* `manifests.helm[].valuesFile` (DEPRECATED) - a YAML file name containing values to pass to the chart when templating
+  * Note this is deprecated in favor of the below `manifests.helm[].valuesFiles`.
+* `manifests.helm[].valuesFiles` - a list of YAML file names containing values to pass to the chart when templating
+
+The priority of multiple Helm values specified in fairwinds-insights.yaml is:
+* Values from the flux file, via `manifests.helm[].fluxFile`
+* Values from the DEPRECATED `manifests.helm[].valuesFile`
+* Values from the `manifests.helm[].valuesFiles`, in he order those files are listed
+* Inline values listed in `manifests.helm[].values`
 
 ### Reports
 You can control which reports run, as well as pass options to each report type.
