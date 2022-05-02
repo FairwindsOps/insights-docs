@@ -13,7 +13,7 @@ different workloads cost, understand cost trends, and help set resource requests
 To use an existing Prometheus installation the prometheus service endpoint that exists within the cluster will need to be passed to the Helm Chart installation.here:
 
 ```
---set resourcemetrics.address="http://<prometheus-service-name>.<namespace>.svc.cluster.local:<port>"
+--set prometheus-metrics.address="http://<prometheus-service-name>.<namespace>.svc.cluster.local:<port>"
 ```
 
 Alternatively, you can click on **Prometheus** from the [Install Hub](/configure/agent/install-hub), and then:
@@ -26,7 +26,7 @@ Alternatively, you can click on **Prometheus** from the [Install Hub](/configure
 The Insights Agent chart can also install a new Prometheus server in your cluster to use.
 To install Prometheus alongside the Agent, pass the following flag to the Helm chart installation:
 ```
---set resourcemetrics.installPrometheus=true
+--set prometheus-metrics.installPrometheusServer=true
 ```
 
 ## Sample Report
