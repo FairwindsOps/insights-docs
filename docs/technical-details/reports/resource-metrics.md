@@ -10,23 +10,19 @@ in order to provide fine-grained resource usage data. This can be used to gauge 
 different workloads cost, understand cost trends, and help set resource requests and limits.
 
 ## Use an existing Prometheus installation
-To use an existing Prometheus installation the prometheus service endpoint that exists within the cluster will need to be passed to the Helm Chart installation.here:
+To use an existing Prometheus installation the prometheus service endpoint that exists within the cluster, set the address in your values.yaml:
 
+```yaml
+prometheus-metrics:
+  address: "http://<prometheus-service-name>.<namespace>.svc.cluster.local:<port>"
 ```
---set prometheus-metrics.address="http://<prometheus-service-name>.<namespace>.svc.cluster.local:<port>"
-```
-
-Alternatively, you can click on **Prometheus** from the [Install Hub](/configure/agent/install-hub), and then:
-1. Click on the **Configure** tab
-2. Enter the service address of the existing Prometheus instance
-3. Click "Save"
-4. Be sure to [Re-install the Fairwinds Insights agent](/installation/agent/setup) in your cluster
 
 ## Install a new Prometheus
 The Insights Agent chart can also install a new Prometheus server in your cluster to use.
-To install Prometheus alongside the Agent, pass the following flag to the Helm chart installation:
+To install Prometheus alongside the Agent, add the following to your values.yaml:
 ```
---set prometheus-metrics.installPrometheusServer=true
+prometheus-metrics:
+  installPrometheusServer: true
 ```
 
 ## Sample Report
