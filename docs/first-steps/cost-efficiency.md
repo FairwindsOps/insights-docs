@@ -45,9 +45,9 @@ You can [read more about cost estimation on our blog](https://www.fairwinds.com/
 
 ## Viewing Workload Costs
 
-On the **Workloads** page, you can see a list of all the workloads in your cluster. By default, they'll be sorted by their _Average Total Cost_.
+On the **Workloads** page, you can see a list of all the workloads in your cluster. By default, they'll be sorted by their _Average Total Cost_. Costs are computing using Memory and CPU usage and settings.
 
-This number utilizes resource requests and limits (if specified), and average pod count to estimate the average cost of each workload. If the workload does not have any requests or limits set, then Insights will use the average historical usage of that workload to populate the _Average Total Cost_.
+If you have the Prometheus Metrics report installed, Fairwinds Insights will use the maximum of requests and actual usage in order to compute the _Average Total Cost_ this workload. Otherwise, Fairwinds Insights will use the average of requests and limits.
 
 <img :src="$withBase('/img/workload-costs.png')" alt="Workload costs">
 
