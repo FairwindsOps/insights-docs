@@ -9,6 +9,15 @@ meta:
 ---
 # Release Notes
 
+## 8.4.0
+### Bug Fixes and Improvements
+* UI improvements to the Efficiency pages
+* Fixed issue where sometimes Nodes were being duplicated in the Nodes Capacity chart
+* Fixed node names in the Nodes Capacity chart
+* Corrected the colors on the Nodes Capacity chart
+* Open source repos should now load in the Repositories page
+* Cluster pages will load faster
+
 ## 8.3.0
 ### Bug Fixes and Improvements
 * Fixed memory difference showing `0 (N/A)` if the difference is too large
