@@ -45,9 +45,9 @@ You can [read more about cost estimation on our blog](https://www.fairwinds.com/
 
 ## Viewing Workload Costs
 
-On the **Workloads** page, you can see a list of all the workloads in your cluster. By default, they'll
-be sorted by their _Average Total Cost_. This number utilizes resource requests and limits (if specified),
-and average pod count to estimate the average cost of each workload.
+On the **Workloads** page, you can see a list of all the workloads in your cluster. By default, they'll be sorted by their _Average Total Cost_.
+
+This number utilizes resource requests and limits (if specified), and average pod count to estimate the average cost of each workload. If the workload does not have any requests or limits set, then Insights will use the average historical usage of that workload to populate the _Average Total Cost_.
 
 <img :src="$withBase('/img/workload-costs.png')" alt="Workload costs">
 
