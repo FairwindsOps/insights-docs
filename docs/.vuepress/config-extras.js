@@ -29,6 +29,7 @@ module.exports = {
               'installation/ci/about',
               'installation/ci/setup',
               'installation/ci/github',
+              'installation/ci/autoscan',
             ],
           }, {
             title: 'Admission Controller',
