@@ -19,9 +19,9 @@ Then, in the GitHub UI, choose which repositories you'd like to link to Insights
 
 # Using the GitHub Integration
 Connect GitHub with Fairwinds Insights unlocks several features:
-- Auto-Scan for Infrastructure-as-Code
+- [Auto-Scan for Infrastructure-as-Code](https://insights.docs.fairwinds.com/installation/ci/autoscan/)
 - Scan results posted to Pull Requests as Comments
-- Fairwinds Insights Status on Pull Requests
+- Fairwinds Insights Status on Pull Requests (see below)
 
 ## Example: Status on Pull Requests
 For example, once your repository is linked, you'll start seeing a Fairwinds Insights status on each of your pull requests.
