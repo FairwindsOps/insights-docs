@@ -4,11 +4,10 @@ meta:
     content: "Fairwinds Insights | Documentation: Setting up continuous integration. "
 ---
 # Setup
-To get started, visit your organization's **Repositories** tab, and click **Add Repo**
-
-<img :src="$withBase('/img/add-repo.png')" alt="Adding a repository">
-
-Following the instructions there, add a `fairwinds-insights.yaml` configuration to the base
+To get started with integrating Fairwinds Insights into your CI/CD pipelines:
+1. Visit your organization's **Repositories** page, and click **Add Repository**
+2. Click on "Connect Manually"
+3. Follow the on-screen instruction. You will need to add a `fairwinds-insights.yaml` configuration to the base
 of your repository. Here's a minimal example:
 
 > Be sure to replace `acme-co` with your organization's name in Insights.
