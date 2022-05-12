@@ -23,7 +23,7 @@ are `push` and `pull request`.
 
 ## Connecting to GitHub
 For customers who do not have GitHub connected to Fairwinds Insights, please follow the steps documented here
-to [setup github integration](https://insights.docs.fairwinds.com/installation/ci/github/)
+to [setup the GitHub integration](https://insights.docs.fairwinds.com/installation/ci/github/)
 
 ## Configuring Auto-Scan for specific Repositories
 Once you have connected Fairwinds Insights to GitHub, you will need to intentionally enable Auto-Scan for the repositories
@@ -45,4 +45,6 @@ If you do not want to use Auto-Scan or connect Fairwinds Insights to GitHub, but
 infrastructure-as-code testing into your workflows, you can still use Fairwinds Insights with your existing CI/CD systems.
 * Under the "Repositories" page, click the "Add Repository" link
 * Click "Connect Manually" and follow instructions for setting up Fairwinds Insights as a job within your CI/CD process. 
-[Additional supporting documentation can be found here](https://insights.docs.fairwinds.com/installation/ci/setup/)
+
+
+To learn more about how to configure Fairwinds Insights in CI/CD systems, see the [Continuous Integration Setup](https://insights.docs.fairwinds.com/installation/ci/setup/) docs.
