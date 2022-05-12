@@ -17,7 +17,7 @@ If you choose to accept these permissions, the following new features will becom
 
 **Auto-Scan for Infrastructure-as-Code**
 
-Auto-Scan enables organizations using GitHub to enable infrastructure-as-code scanning across multiple repositories without having to
+[Auto-Scan](https://insights.docs.fairwinds.com/installation/ci/autoscan/) enables organizations using GitHub to enable infrastructure-as-code scanning across multiple repositories without having to
 configure individual CI pipelines. Scans can be initiated on every pull request on any GitHub repo, and will use the
 Fairwinds Insights SaaS infrastructure to run the checks.
 * This eliminates the need to configure individual CI pipelines, allows organizations to save on compute resources,
