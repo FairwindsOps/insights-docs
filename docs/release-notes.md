@@ -9,6 +9,46 @@ meta:
 ---
 # Release Notes
 
+## 8.5.0
+### Introducing Auto-Scan for Infrastructure as Code
+Fairwinds is upgrading the GitHub integration and making new infrastructure-as-code scanning capabilities available to all customers.
+Please note that existing users of our GitHub integration may be prompted for an additional permissions request from GitHub.
+If you choose to accept these permissions, the following new features will become available:
+
+**Auto-Scan for Infrastructure-as-Code**
+
+Auto-Scan enables organizations using GitHub to enable infrastructure-as-code scanning across multiple repositories without having to
+configure individual CI pipelines. Scans can be initiated on every pull request on any GitHub repo, and will use the
+Fairwinds Insights SaaS infrastructure to run the checks.
+* This eliminates the need to configure individual CI pipelines, allows organizations to save on compute resources,
+and turns on "shift left" infrastructure-as-code testing in minutes.
+
+* Of course, any existing CI pipelines that are configured will continue to operate normally.
+If you decide that Auto-Scan is not for you, no problem — simply choose "Connect Manually" when prompted to add a new repository.
+This will provide the option of running scans in a CI pipeline on your own infrastructure and does not require GitHub permissions.
+
+**Automated discovery of infrastructure-as-code files**
+
+Now, using the new permissions, Fairwinds will automatically locate Helm and YAML files that are available for scanning within your
+GitHub repositories. This avoids the need to specify the exact location of Helm and YAML manifests in a fairwinds-insights.yaml file
+at the root of your repository.
+
+**Scan results posted GitHub Comments**
+
+Using the new permissions, Insights will also post scan results as GitHub comments, keeping developers within their workflow.
+
+**Enhanced Repositories UI**
+
+The Repositories UI has been enhanced to support Auto-Scan and our latest UX standards.
+
+These new features are available to all customers, and accepting the permissions is optional.
+If you choose not to accept the permissions, Auto-Scan will not be available, but users can still adopt infrastructure-as-code
+scanning by integrating Insights into their their existing CI/CD systems.
+
+### Bug Fixes and Improvements
+* Fixed various documentation links across Insights
+* Faster loading of cluster overview page
+
 ## 8.4.0
 ### Bug Fixes and Improvements
 * UI improvements to the Efficiency pages
