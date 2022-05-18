@@ -12,7 +12,7 @@ meta:
 ## 8.6.0
 ### Bug Fixes and Improvements
 * New background for login pages
-* Fixed popups getting cut off when hovering over `Top Issues` graph in `Home`
+* Fixed popups getting cut off when hovering over `Top Issues` chart in `Home`
 * Some workload metrics were showing `N/A` incorrectly
 
 ## 8.5.0
