@@ -9,6 +9,12 @@ meta:
 ---
 # Release Notes
 
+## 8.6.0
+### Bug Fixes and Improvements
+* New background for login pages
+* Fixed popups getting cut off when hovering over `Top Issues` graph in `Home`
+* Some workload metrics were showing `N/A` incorrectly
+
 ## 8.5.0
 ### Introducing Auto-Scan for Infrastructure as Code
 Fairwinds is upgrading the GitHub integration and making new infrastructure-as-code scanning capabilities available to all customers.
