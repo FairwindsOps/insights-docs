@@ -30,8 +30,11 @@ On some cloud providers, your nodes will be automatically configured to have acc
 container registry. For example, GKE nodes should be able to pull images from Google Container
 Registry automatically.
 
-But in many cases, you'll need to grant Trivy permission to access private images. To do so,
-you'll need to create a Kubernetes Secret, and pass the name of that secret to the Helm
+But in many cases, you'll need to grant Trivy permission to access private images. There are a couple of different ways to do this. 
+
+### Passing in access keys directly
+
+For this, you'll need to create a Kubernetes Secret, and pass the name of that secret to the Helm
 installation of the Insights Agent
 
 For example, to create a secret from your personal dockerconfig, you could run:
@@ -44,6 +47,18 @@ We can then install the agent with
 ```bash
   --set trivy.privateImages.dockerConfigSecret=insights-pull
 ```
+
+### Using IRSA (IAM Role for Service Accounts)
+
+The Insights helm chart allows us to pass Trivy an IAM role name to give Trivy the permissions it needs to access an AWS repository. In the agents' values.yaml add:
+
+```yaml
+trivy:
+  serviceAccount:
+    annotations:
+      eks.amazonaws.com/role-arn: arn:aws:iam::ACCOUNT_ID:role/IAM_ROLE_NAME
+```
+
 ## Sample Report 
 Trivy reports contain a list of images running in the cluster, as well as any CVEs in those images
 ```json
