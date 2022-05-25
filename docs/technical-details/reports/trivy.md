@@ -19,11 +19,14 @@ NIST's NVD, RedHat, Debian, etc. You can see the [full list here](https://github
 
 ## Remediation
 If you're seeing Action Items from the Trivy report, there are two typical routes for resolution:
-* If the report is for a third-party library (e.g. a Helm chart), try updating to the latest version.
+
+**1. Third-party containers:** If the report is for a third-party container (e.g. a Helm chart), try updating to the latest version. Fairwinds will automatically scan newer versions of the container image from the source repository and recommend versions that have fewer vulnerabilities. Upgrade recommendations are refreshed each time the container image is re-scanned. To learn more, please [read our blog post about third-party image recommendations](https://www.fairwinds.com/blog/kubernetes-vulnerability-management-third-party-images-up-to-date).
+
 If that doesn't solve the problem, notify the maintainer that the latest version has a vulnerability,
 e.g. by opening a GitHub issue.
-* If the report is for an application you own, try updating the base image and any libraries you've
-installed on top of it.
+
+**2. First-party containers you own and maintain:** If the report is for an application you own, try updating the base image and any libraries you've
+installed on top of it. Fairwinds provides functionality to identify if vulnerable libraries have a known fix available.
 
 ## Private Images
 On some cloud providers, your nodes will be automatically configured to have access to your
