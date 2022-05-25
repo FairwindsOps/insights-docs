@@ -9,6 +9,16 @@ meta:
 ---
 # Release Notes
 
+## 8.7.0
+### CSV Export of NSA Hardening Guidance
+Users are now able to export a report guiding their clusters towards NSA hardening. This report will show the NSA policy, the
+relevant Insights check and the number of Action Items that require resolving. In order to obtain the report, go to the
+`Action Items` page, select a cluster from the top left drop down and click the `Export > Export NSA Report` button.
+
+### Bug Fixes and Improvements
+* Fixed ordering of Top Issues chart in `Repositories`
+* Improvements to make the Cluster Overview page load faster
+
 ## 8.6.0
 ### Bug Fixes and Improvements
 * New background for login pages
