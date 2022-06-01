@@ -132,12 +132,6 @@ The table below enumerates all Action Items currently produced by Fairwinds Insi
 | kube-hunter | possible\_reset\_flood\_attack | In-Cluster | Possible Reset Flood Attack | Security | medium | 0.5 |
 | kube-hunter | privileged\_container | In-Cluster | Privileged Container | Security | low | 0.25 |
 | kube-hunter | unauthenticated\_access\_to\_api | In-Cluster | Unauthenticated access to API | Security | low | 0.25 |
-| kubesec | containers\_information\_leaks | In-Cluster | Other containers information leaks | Security | high | 0.7 |
-| kubesec | large\_container\_attack\_surface | In-Cluster | Large container attack surface | Security | low | 0.1 |
-| kubesec | large\_syscall\_attack\_surface | In-Cluster | Drop all capabilities and add only those required to reduce syscall attack surface | Security | low | 0.1 |
-| kubesec | missing\_servicea\_account\_name | In-Cluster | Service accounts restrict Kubernetes API access and should be configured with least privilege | Security | low | 0.3 |
-| kubesec | remove\_hosts\_aliases | In-Cluster | DNS should be managed by the orchestrator | Security | medium | 0.6 |
-| kubesec | run\_as\_high\_uid\_user | In-Cluster | Run as a high-UID user to avoid conflicts with the host user table | Security | low | 0.1 |
 | nova | helm\_chart\_outdated | In-Cluster | A new release for the aerospike Helm chart is available | Security | none | 0 |
 | pluto | api\_version\_deprecated | CI/CD, Admission Controller, In-Cluster | An apiVersion for accounts/accounts has been deprecated | Reliability | low | 0.2 |
 | pluto | api\_version\_removed | CI/CD, Admission Controller, In-Cluster | An apiVersion for airflow/airflow-redis-master has been removed | Reliability | medium | 0.5 |
