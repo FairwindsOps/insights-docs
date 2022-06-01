@@ -1,31 +1,31 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Documentation. How to set up the Admission controller. "
+    content: "Fairwinds Insights | Documentation. How to set up the Admission controller"
 ---
 # Setup
-## Requirements
+### Requirements
 The default installation requires [cert-manager](https://cert-manager.io/docs/installation/kubernetes/)
 v1.0 or greater.
 
-If you don't have cert-manager, or if you'd like to provide your own certificate for the webhook, you can use the
+If you don't have cert-manager or if you'd like to provide your own certificate for the webhook, you can use the
 `caBundle` and `secretName` parameters to pass a CA Bundle and the location of a TLS certificate
 stored in your cluster.
 
 > The Admission Controller listens on port 8443 by default, so a firewall rule or a security group may need to be configured to allow the master nodes to send traffic to the worker nodes on that port.
 
-## Installation
-To use the Admission Controller and install it on your cluster, navigate to the [Install Hub](/configure/agent/install-hub) and select `Admission Controller`. (You will need to re-install the Helm chart after selecting the Admission Controller.)
+### Installation
+To use the Admission Controller and install it on your cluster, navigate to the [Install Hub](/configure/agent/install-hub) and click the `Quick Add` button on the `Admission Controller` report. Once the report has been added, re-install the Insights Agent in your cluster.
 
-The Admission Controller is installed in Passive Mode by default. This means the Admission Controller will monitor all activities, but not yet deny any deployments.
+The Admission Controller is installed in `Passive Mode` by default. This means the Admission Controller will monitor all activities, but not yet deny any deployments.
 
-In order to disable Passive Mode and block deployments with high severity issues, run the following command:
-```bash
-curl -X POST https://insights.fairwinds.com/v0/organizations/{organization}/clusters/{cluster}/admission/settings -d '{"polarisEnabled": true, "opaEnabled": true, "passiveMode": false}' -H "Authorization: Bearer {admin_token}" -H 'content-type:application/json'
-```
+In order to disable Passive Mode and block deployments with high severity issues:
+1. In `Install Hub`, click on the `Admission Controller` report
+2. In the `Configure` tab, toggle the `Passive Mode` option to disabled
 
-Once Passive Mode is disabled, you can test it out by creating a deployment that creates a high level severity Action Item
-by allowing privilige escalation:
+
+Once `Passive Mode` is disabled, you can test it out by creating a deployment that creates a high level severity Action Item
+by allowing privilege escalation:
 
 **bad-config.yaml**
 ```yaml
