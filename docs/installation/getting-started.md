@@ -3,7 +3,7 @@ meta:
   - name: title
     content: Getting Started with Fairwinds Insights
   - name: description
-    content: "Fairwinds Insights | Documentation for Getting Started with Fairwinds Insights."
+    content: "Fairwinds Insights | Documentation for Getting Started with Fairwinds Insights"
   - name: keywords
     content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
 ---
@@ -11,7 +11,7 @@ meta:
 
 # Getting Started
 
-## Create a New Organization
+### Create a New Organization
 Once you've signed up and confirmed your email address, you'll be prompted to
 create a new organization:
 
@@ -21,4 +21,3 @@ create a new organization:
 
 Choose a unique name for your organization. You'll be able to add clusters to this
 organization, as well as any coworkers you'd like to collaborate with.
-
