@@ -76,9 +76,6 @@ kube-bench needs access to some resources on the node in order to perform its au
 kube-hunter runs in [pod mode](https://github.com/aquasecurity/kube-hunter#pod) in order to discover what
 running a malicious container can do/discover on your cluster.
 
-### kubesec
-kubesec only needs `view` access to the cluster in order to analyze workloads for misconfigurations.
-
 ### Nova
 Nova needs access to `Secrets`, which contain metadata about installed Helm charts.
 
@@ -130,7 +127,6 @@ in the Helm chart by adding `--set $plugin.enabled=false`.
 | kube-bench      |                    |                              |   |
 | kube-hunter     |                    |                              |   |
 | Polaris         |                    | :white_check_mark:           |   |
-| Kubesec         |                    | :white_check_mark:           |   |
 | RBAC reporter   |                    | :white_check_mark:           |   |
 | Trivy           |                    | :white_check_mark:           |   |
 | Workloads       |                    | :white_check_mark:           |   |
