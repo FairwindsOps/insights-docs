@@ -27,9 +27,9 @@ module.exports = {
             title: 'Continuous Integration',
             children: [
               'installation/ci/about',
-              'installation/ci/setup',
               'installation/ci/github',
               'installation/ci/autoscan',
+              'installation/ci/insights-ci-script',
             ],
           }, {
             title: 'Admission Controller',

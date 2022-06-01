@@ -1,7 +1,7 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Documentation for Installation Setup. "
+    content: "Fairwinds Insights | Documentation for Installation Setup"
 ---
 # Setup
 
