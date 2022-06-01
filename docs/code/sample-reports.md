@@ -114,42 +114,6 @@ kube-hunter reports contain a list of Nodes, Services, and detected vulnerabilit
 }
 ```
 
-## kubesec
-kubesec reports contain a list of Namespaces, Deployments, StatefulSets, and DaemonSets,
-as well as any potential configuration issues discovered.
-```json
-{
-    "namespaces": {
-        "my-app": {
-            "daemonsets": [],
-            "statefulsets": [],
-            "deployments": [
-                {
-                    "name": "my-app",
-                    "namespace": "my-app",
-                    "results": [
-                        {
-                            "message": "Passed with a score of 4 points",
-                            "object": "Deployment/my-app.my-app",
-                            "score": 4,
-                            "scoring": {
-                                "advise": [
-                                    {
-                                        "points": 3,
-                                        "reason": "Well defined AppArmor policies may provide greater protection from unknown threats. WARNING: NOT PRODUCTION READY",
-                                        "selector": ".metadata .annotations .\"container.apparmor.security.beta.kubernetes.io/nginx\""
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                }
-            ]
-        }
-    }
-}
-```
-
 ## Nova
 Nova reports contain a list of Helm releases in the cluster, as well as the installed version.
 ```json
