@@ -22,7 +22,7 @@ are `push` and `pull request`.
 
 ### Connecting to GitHub
 For customers who do not have GitHub connected to Fairwinds Insights, follow the steps documented here
-to [setup the GitHub integration.](/installation/ci/github/)
+to [setup the GitHub integration.](/installation/ci/github)
 
 ### Configuring Auto-Scan for Specific Repositories
 Once you have connected Fairwinds Insights to GitHub, you will need to intentionally enable Auto-Scan for the repositories
