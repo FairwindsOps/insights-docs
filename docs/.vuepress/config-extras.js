@@ -99,6 +99,7 @@ module.exports = {
               'configure/cli/cli',
               'configure/cli/automation-rules',
               'configure/cli/opa',
+              'configure/cli/settings',
             ],
           }, {  
             title: 'Account Management',
