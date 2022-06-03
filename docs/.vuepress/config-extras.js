@@ -24,12 +24,11 @@ module.exports = {
               'installation/setup',
             ],
           }, {
-            title: 'Continuous Integration',
+            title: 'Insights Agent',
             children: [
-              'installation/ci/about',
-              'installation/ci/github',
-              'installation/ci/autoscan',
-              'installation/ci/insights-ci-script',
+              'installation/agent/about',
+              'installation/agent/setup',
+              'installation/agent/troubleshooting',
             ],
           }, {
             title: 'Admission Controller',
@@ -38,10 +37,12 @@ module.exports = {
               'installation/admission/setup',
             ]
           }, {
-            title: 'In-Cluster Agent',
+            title: 'Continuous Integration',
             children: [
-              'installation/agent/about',
-              'installation/agent/setup',
+              'installation/ci/about',
+              'installation/ci/github',
+              'installation/ci/autoscan',
+              'installation/ci/insights-ci-script',
             ],
           }, {
             title: 'Single Sign-On',
@@ -75,7 +76,7 @@ module.exports = {
               'configure/admission/enforce',
             ],
           }, {  
-            title: 'In-Cluster Agent',
+            title: 'Insights Agent',
             children: [
               'configure/agent/configuration',
               'configure/agent/install-hub',
