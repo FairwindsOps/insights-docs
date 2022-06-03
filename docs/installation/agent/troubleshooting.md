@@ -41,7 +41,6 @@ If nothing suspicious appears there, you might find an answer in the second cont
 It should end with something like this:
 ```bash
 $ kubectl logs kube-bench-dpvbz -n insights-agent -c insights-uploader
-curl -X POST https://staging.insights.fairwinds.com/v0/organizations/acme-co/clusters/staging/data/kube-bench -L -d @/output/kube-bench.json -H 'Authorization: Bearer <REDACTED>' -H 'Content-Type: application/json' -H 'X-Fairwinds-Agent-Version: 0.1.3' -H 'X-Fairwinds-Report-Version: 0.1' -H 'X-Fairwinds-Agent-Chart-Version: 0.15.2' --fail
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100  174k  100    16  100  174k     23   254k --:--:-- --:--:-- --:--:--  274k
