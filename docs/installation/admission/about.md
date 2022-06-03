@@ -1,7 +1,7 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Documentation about the Admission Controller. Reject resources from entering your cluster if they don't comply with policies"
+    content: "Fairwinds Insights | Documentation: About the Admission Controller. Reject resources from entering your cluster if they don't comply with policies"
 ---
 
 # About

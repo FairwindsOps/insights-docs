@@ -1,7 +1,7 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Documentation. How to set up the Admission controller"
+    content: "Fairwinds Insights | Documentation: How to set up the Admission controller"
 ---
 # Setup
 ### Requirements
