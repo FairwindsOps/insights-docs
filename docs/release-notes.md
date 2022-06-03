@@ -9,6 +9,13 @@ meta:
 ---
 # Release Notes
 
+## 8.8.0
+### Bug Fixes and Improvements
+* Added instructions for setting up CI integration for different platforms
+* Removed nodes that were showing blank in the Node Capacity chart
+* Fixed issue with the contact form
+* Updated Insights CI script
+
 ## 8.7.0
 ### CSV Export of NSA Hardening Guidance
 Users are now able to export a report guiding their clusters towards NSA hardening. This report will show the NSA policy, the
