@@ -9,10 +9,10 @@ The Prometheus Collector report gathers workload metrics from a Prometheus insta
 in order to provide fine-grained resource usage data. This can be used to gauge how much
 different workloads cost, understand cost trends, and help set resource requests and limits.
 
-> Note: Prometheus Collector requires **`kube-state-metrics`** to be installed and running in the cluster.
+> Note: Prometheus Collector requires **`kube-state-metrics`** and **`metrics-server`** to be installed and running in the cluster.
 
 ## Use an existing Prometheus installation
-To use an existing Prometheus installation the prometheus service endpoint that exists within the cluster, set the address in your values.yaml:
+If you already have Prometheus installed you can point Insights to the service endpoint of your installation. If you installed the Prometheus operator the service endpoint will likely end in port 9090, and if you only installed the prometheus-server the service endpoint will probably end in port 80. To configure this in the values.yaml file use the following format:
 
 ```yaml
 prometheus-metrics:
