@@ -18,7 +18,6 @@ checks:
         block: true
       admission:
         block: false
-        mutate: true
 ```
 
 Next use the Insights CLI to push these complete settings to Insights:
