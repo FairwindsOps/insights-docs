@@ -9,6 +9,20 @@ meta:
 ---
 # Release Notes
 
+## 8.9.0
+### Creating New Policies in Insights Using OPA v2
+When creating new Policies using the Insights UI, we will be using OPA v2. The biggest change here is a YAML instance is no longer
+required. All older Policies will continue to work with OPA v1 and are able to be edited from Insights.
+OPA v2 is only available with Insights Agent 2.0. If you are using an older version of the Agent, you can use the Insights
+CLI to create new policies.
+To learn more about the differences between OPA v1 and v2,
+check out [V1 and V2 Insights OPA Policies](https://insights.docs.fairwinds.com/configure/policy/policy/#v1-and-v2-insights-opa-policies)
+
+### Bug Fixes and Improvements
+* Deleting a cluster now requires typing in the cluster name before confirmation
+* Fixed missing `Name` field and duplicated `Namespace` field when exporting Action Items
+* Improvement to Pluto Action Items description and titles
+
 ## 8.8.0
 ### Bug Fixes and Improvements
 * Added instructions for setting up CI integration for different platforms
