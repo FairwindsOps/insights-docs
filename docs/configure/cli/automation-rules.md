@@ -8,7 +8,7 @@ meta:
 You can use the Insights CLI to manage Automation Rules.
 Be sure to first read the [Insights CLI documentation](/configure/cli/cli) which covers installation and preparation.
 
-### Pushing Automation Rules to Insights
+## Pushing Automation Rules to Insights
 When pushing Automation Rules to Insights, the CLI expects a directory structure like the following:
 
 ```
@@ -25,7 +25,7 @@ Once the files have been created, use the following command to push the Rules to
 insights-cli push rules
 ```
 
-### Example
+### Pushing Automation Rules to Insights Example
 To upload an Automation Rule to Insights, create the file `api-action-items.yaml` in the `rules` sub-directory. This file will contain the
 Rule JavaScript and accompanying metadata:
 
@@ -44,7 +44,7 @@ Next use the Insights CLI to push this Automation Rule to Insights
 insights-cli push rules
 ```
 
-### Automation Rule Metadata Fields
+## Automation Rule Metadata Fields
 The following metadata fields can be specified in the Rule file:
 
 * `name` - the name of the Automation Rule in Insights
@@ -54,7 +54,7 @@ The following metadata fields can be specified in the Rule file:
 * `repository` - the name of a specific repository this Rule should apply to
 * `reporttype` - the type of report (e.g. `polaris`, `trivy`, etc.) this Rule should apply to
 
-### Verifying an Automation Rule
+## Verifying an Automation Rule
 To see a list of Automation Rules in your Insights organization, run:
 
 ```bash
@@ -71,7 +71,7 @@ kubectl -n insights-agent create job rule-test --from cronjob/$REPORT
 
 Where $REPORT is `polaris`, `trivy` or any other report type you'd like to test.
 
-### Deleting Automation Rules From Insights
+## Deleting Automation Rules From Insights
 By default, the Insights CLI will not _delete_ any automation rules from Insights. It will
 only add or update them.
 This means there might be some Automation Rules running in Insights that are not
@@ -80,10 +80,10 @@ tracked in your Infrastructure-as-Code (IaC) repository.
 You can add the `--delete` flag to the `push rules` command, which
 will delete any Automation Rules from Insights that **do not exist** in your IaC repository. Adding the `--dry-run` flag will explain which Rules would be deleted without making changes to Insights.
 
-### Pushing Automation Rules Along With Other Configurations
+## Pushing Automation Rules Along With Other Configurations
 Automation Rules can be pushed to Insights along with other Insights configurations using the single command `insights-cli push all`.
 
-* Note that the `--delete` flag is not available for the `push all` command to avoid unexpected deletes of Insights CLI managed configuration resources that are added in the future.
+The `--delete` flag is not available for the `push all` command to avoid unexpected deletes of Insights CLI managed configuration resources that are added in the future.
 
 For additional information see
 * [OPA policies With CLI](/configure/cli/opa)

@@ -4,7 +4,7 @@ meta:
     content: "Fairwinds Insights | Documentation: How to install the Insights Agent"
 ---
 # Setup
-### Install the Agent Through Install Hub
+## Install the Agent Through Install Hub
 When you create a cluster, you'll be taken to the `Install Hub` page for the cluster. To install the Insights Agent:
 1. Decide which reports you would like to run in your cluster
 2. Hover over each of the desired reports, then click the `Quick Add` button at the bottom of the report
@@ -13,7 +13,7 @@ When you create a cluster, you'll be taken to the `Install Hub` page for the clu
 Follow the instructions to install the Insights Agent with Helm. If you'd like to view the Kubernetes
 manifests first, you can use `helm template` to generate the YAML files.
 
-### Fleet Installation
+## Fleet Installation
 To better serve customers with a large number of clusters,
 we've created a flow that allows you to easily deploy the Insights Agent across your fleet.
 

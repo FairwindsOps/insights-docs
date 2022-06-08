@@ -4,6 +4,7 @@ meta:
     content: "Fairwinds Insights | Documentation: Troubleshooting and debugging the Insights Agent"
 ---
 # Troubleshooting
+## Debugging
 If you suspect something is wrong with the Insights Agent installation, you can use `kubectl` to
 debug the problem.
 
@@ -48,8 +49,8 @@ $ kubectl logs kube-bench-dpvbz -n insights-agent -c insights-uploader
 {"Success":true}
 ```
 
-### Common Issues
-#### Resource Limits
+## Common Issues
+### Resource Limits
 We have set reasonable resource requests and limits on each of the audits, but some clusters
 may push the boundaries of our assumptions. If you're seeing out-of-memory errors or other
 resource-related issues, try setting higher resource limits.
@@ -63,7 +64,7 @@ If you're using the helm chart, you can do this by adding
 ```
 to your `helm update --install` command.
 
-#### Timeouts
+### Timeouts
 We have set a reasonable timeout for each of the audits, but again, some clusters may
 push the boundaries of our assumptions. If you're seeing timeout issues in the `insights-uploader`
 container in one of the report types, you can adjust the timeout by adding:
