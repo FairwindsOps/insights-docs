@@ -94,7 +94,7 @@ module.exports = {
               'configure/automation/integrations',
             ],
           }, {
-            title: 'CLI Utility',
+            title: 'Insights CLI',
             children: [
               'configure/cli/cli',
               'configure/cli/automation-rules',

@@ -1,10 +1,15 @@
-# Interacting With Automation Rules Via the CLI
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation: Using the CLI to manage Automation Rules in Insights"
+---
+# Automation Rules With the CLI
 
-You can use the Insights Command-line Interface (CLI) To manage automation rules.
-Be sure to first read the [general CLI documentation](/configure/cli/cli) which covers instllation and prerequisites.
+You can use the Insights CLI to manage Automation Rules.
+Be sure to first read the [Insights CLI documentation](/configure/cli/cli) which covers installation and preparation.
 
-## Pushing Automation Rules to Insights
-The Insights CLI push commands expect a directory structure like the following when pushing automation rules:
+### Pushing Automation Rules to Insights
+When pushing Automation Rules to Insights, the CLI expects a directory structure like the following:
 
 ```
 .
@@ -13,11 +18,16 @@ The Insights CLI push commands expect a directory structure like the following w
 |   +-- another-rule.yaml
 ```
 
-* Note that the base file name (minus the .yaml extension) is arbitrary.
+The file names must have a `.yaml` extension.
 
-### Pushing Automation Rules Example
-To upload an automation rule to Insights, create the file `api-action-items.yaml` in the `rules` sub-directory. This will contain the
-rule JavaScript and accompanying metadata.
+Once the files have been created, use the following command to push the Rules to Insights
+```
+insights-cli push rules
+```
+
+### Example
+To upload an Automation Rule to Insights, create the file `api-action-items.yaml` in the `rules` sub-directory. This file will contain the
+Rule JavaScript and accompanying metadata:
 
 ```yaml
 name: "Assign API Action Items"
@@ -28,61 +38,53 @@ action: |
   }
 ```
 
-Next use the Insights CLI to push this automation rule to Insights
+Next use the Insights CLI to push this Automation Rule to Insights
 
 ```bash
-FAIRWINDS_TOKEN=YOUR_TOKEN insights-cli push rules --organization YOUR_ORG_NAME
+insights-cli push rules
 ```
 
-* This pushes automation rules from the current directory, expecting it to contain the `rules` sub-directory.
-* Typically the `FAIRWINDS_TOKEN` environment variable is set elsewhere and is not included each time the CLI is run.
-* The Insights organization can also be specified in a configuration file, described in the [general Insights CLI documentation](/configure/cli/cli).
-* Use the `--push-directory` option to specify an alternative base directory.
-* It is also possible to override the name of the `rules` sub-directory - see `insights-cli push rules --help` for details.
+### Automation Rule Metadata Fields
+The following metadata fields can be specified in the Rule file:
 
-#### Automation Rule Metadata Fields
-The following metadata fields can be specified in the rule file:
+* `name` - the name of the Automation Rule in Insights
+* `description`- the description of the Automation Rule in Insights
+* `context` - specify `Agent`, `CI/CD`, or `AdmissionController` (leave blank to specify all options)
+* `cluster` - the name of a specific cluster this Rule should apply to
+* `repository` - the name of a specific repository this Rule should apply to
+* `reporttype` - the type of report (e.g. `polaris`, `trivy`, etc.) this Rule should apply to
 
-* `name`
-* `description`
-* `context` - one of `Agent`, `CI/CD`, or `AdmissionController` (or leave blank for all three)
-* `cluster` - the name of a specific cluster this rule should apply to
-* `repository` - the name of a specific repo this rule should apply to
-* `reporttype` - the type of report (e.g. `polaris` or `trivy`) this rule should apply to
-
-### Verifying Success
-To see a list of automation rules in your Insights organization, you can run:
+### Verifying an Automation Rule
+To see a list of Automation Rules in your Insights organization, run:
 
 ```bash
-FAIRWINDS_TOKEN=YOUR_TOKEN insights-cli list rules --organization YOUR_ORG_NAME
+insights-cli list rules
 ```
 
+The rule won't be applied retroactively. The next time the Insights Agent, CI process or Admission Controller runs, the rule will be triggered.
 
-The next time the Insights agent,
-CI process, or Admission Controller runs, the rule will be triggered. The rule won't be applied retroactively.
-
-To be sure the rule functions immediately, you can manually trigger the agent by running:
+To be sure the Rule functions correctly, you can manually trigger the Agent by running:
 
 ```bash
 kubectl -n insights-agent create job rule-test --from cronjob/$REPORT
 ```
 
-* Where $REPORT is `polaris`, `trivy`, or any other report type you'd like to test.
+* Where $REPORT is `polaris`, `trivy` or any other report type you'd like to test.
 
 ### Deleting Automation Rules From Insights
-By default, the Insights CLI will not _delete_ any automation rules from Insights - it will
+By default, the Insights CLI will not _delete_ any automation rules from Insights. It will
 only add or update them.
-This means there might be some automation rules running in Insights that are not
-tracked in your IaC repository.
+This means there might be some Automation Rules running in Insights that are not
+tracked in your Infrastructure-as-Code (IaC) repository.
 
 You can add the `--delete` flag to the `push rules` command, which
-will delete any automation rules from Insights that **do not exist** in your IaC repository. Adding the `--dry-run` flag will explain which rules would be deleted without making changes to Insights.
+will delete any Automation Rules from Insights that **do not exist** in your IaC repository. Adding the `--dry-run` flag will explain which Rules would be deleted without making changes to Insights.
 
-## Pushing Automation Rules With Other Configuration Resources
-Automation rules can be pushed to Insights along with other Insights configuration using the single command `insights-cli push all`.
+### Pushing Automation Rules Along With Other Configurations
+Automation Rules can be pushed to Insights along with other Insights configurations using the single command `insights-cli push all`.
 
-* Note that the `--delete` flag is not available for the `push all` command, to avoid unexpected deletes of insights-cli managed configuration resources that are added in the future.
+* Note that the `--delete` flag is not available for the `push all` command to avoid unexpected deletes of Insights CLI managed configuration resources that are added in the future.
 
 For additional information see
-* [CLI OPA policy documentation](/configure/cli/opa)
-* [CLI Policy Configuration documentation](/configure/cli/settings)
+* [OPA policies With CLI](/configure/cli/opa)
+* [Policies Configuration with CLI](/configure/cli/settings)
