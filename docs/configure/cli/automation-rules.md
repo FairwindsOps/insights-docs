@@ -69,7 +69,7 @@ To be sure the Rule functions correctly, you can manually trigger the Agent by r
 kubectl -n insights-agent create job rule-test --from cronjob/$REPORT
 ```
 
-* Where $REPORT is `polaris`, `trivy` or any other report type you'd like to test.
+Where $REPORT is `polaris`, `trivy` or any other report type you'd like to test.
 
 ### Deleting Automation Rules From Insights
 By default, the Insights CLI will not _delete_ any automation rules from Insights. It will
