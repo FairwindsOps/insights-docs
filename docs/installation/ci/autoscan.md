@@ -4,7 +4,7 @@ meta:
     content: "Fairwinds Insights | Documentation: How to Use Auto Scan"
 ---
 # Using Auto-Scan
-### What is Auto-Scan for Infrastructure-as-Code?
+## What is Auto-Scan for Infrastructure-as-Code?
 Auto-Scan enables organizations using GitHub to enable infrastructure-as-code scanning across multiple repositories without
 having to configure individual CI pipelines. Scans will use the Fairwinds Insights SaaS infrastructure to run the checks.
 
@@ -20,11 +20,11 @@ to create issues within a repository (as part of Create Ticket workflows), post 
 and update commit statuses with a summary of scan results. The repository hooks that Fairwinds Insights monitors
 are `push` and `pull request`.
 
-### Connecting to GitHub
+## Connecting to GitHub
 For customers who do not have GitHub connected to Fairwinds Insights, follow the steps documented here
 to [setup the GitHub integration.](/installation/ci/github)
 
-### Configuring Auto-Scan for Specific Repositories
+## Configuring Auto-Scan for Specific Repositories
 Once you have connected Fairwinds Insights to GitHub, you will need to intentionally enable Auto-Scan for the repositories
 you've selected in the previous steps.
 

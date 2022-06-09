@@ -4,7 +4,7 @@ meta:
     content: "Fairwinds Insights | Documentation: How to set up the Admission controller"
 ---
 # Setup
-### Requirements
+## Requirements
 The default installation requires [cert-manager](https://cert-manager.io/docs/installation/kubernetes/)
 v1.0 or greater.
 
@@ -14,7 +14,7 @@ stored in your cluster.
 
 > The Admission Controller listens on port 8443 by default, so a firewall rule or a security group may need to be configured to allow the master nodes to send traffic to the worker nodes on that port.
 
-### Installation
+## Installation
 To use the Admission Controller and install it on your cluster, navigate to the [Install Hub](/configure/agent/install-hub) and click the `Quick Add` button on the `Admission Controller` report. Once the report has been added, re-install the Insights Agent using the Helm chart in your cluster.
 
 The Admission Controller is installed in `Passive Mode` by default. This means the Admission Controller will monitor all activities, but not yet deny any deployments.
