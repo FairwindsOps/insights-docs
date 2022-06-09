@@ -130,14 +130,14 @@ tracked in your Infrastructure-as-Code (IaC) repository.
 You can add the `--delete` flag to the `push opa` command, which
 will delete any OPA policies from Insights that **do not exist** in your IaC repository. Adding the `--dry-run` flag will explain which Policies would be deleted without making changes to Insights.
 
-## Pushing OPA Policies With Other Configurations
+## Pushing OPA Policies Along With Other Configurations
 OPA policies can be pushed to Insights along with other Insights configurations using the single command `insights-cli push all`.
 
 The `--delete` flag is not available for the `push all` command to avoid unexpected deletes of Insights CLI managed configuration resources that are added in the future.
 
 For additional information see
 * [Automation Rules with CLI](/configure/cli/automation-rules)
-* [Policies Configuration with CLI](/configure/cli/settings)
+* [Configuration of Policies with CLI](/configure/cli/settings)
 
 ## Validate and Debug OPA Policies
 > The `validate` command only works with V2 OPA policies

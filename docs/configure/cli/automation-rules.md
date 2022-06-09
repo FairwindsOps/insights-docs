@@ -87,4 +87,4 @@ The `--delete` flag is not available for the `push all` command to avoid unexpec
 
 For additional information see
 * [OPA policies With CLI](/configure/cli/opa)
-* [Policies Configuration with CLI](/configure/cli/settings)
+* [Configuration of Policies with CLI](/configure/cli/settings)
