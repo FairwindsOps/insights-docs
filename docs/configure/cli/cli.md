@@ -50,4 +50,4 @@ To learn more about using the CLI to work with Policies and Automation Rules, ch
 
 * [OPA Policies with CLI](/configure/cli/opa)
 * [Automation Rules with CLI](/configure/cli/automation-rules)
-* [Configuration of Policies with CLI](/configure/cli/settings)
+* [Policies Configuration with CLI](/configure/cli/settings)

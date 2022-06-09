@@ -137,7 +137,7 @@ The `--delete` flag is not available for the `push all` command to avoid unexpec
 
 For additional information see
 * [Automation Rules with CLI](/configure/cli/automation-rules)
-* [Configuration of Policies with CLI](/configure/cli/settings)
+* [Policies Configuration with CLI](/configure/cli/settings)
 
 ## Validate and Debug OPA Policies
 > The `validate` command only works with V2 OPA policies
