@@ -19,6 +19,6 @@ Connecting GitHub with Fairwinds Insights unlocks several features:
 - Scan results posted to pull requests as comments
 - Fairwinds Insights status on pull requests
 
-## Example: Status on Pull Requests
+### Status on Pull Requests Example
 For example, once your repository is linked, you'll start seeing a Fairwinds Insights status on each of your pull requests.
 <img :src="$withBase('/img/github-status.png')" alt="Check GitHub status">
