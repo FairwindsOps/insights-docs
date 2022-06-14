@@ -15,6 +15,7 @@ checks:
       admission:
         block: <true/false>
 ```
+For OPA policies, the `report type` is `opa` and the `event type` is the Policy name.
 
 Once the file has been created, use the following command to push the Policies Configuration:
 ```
