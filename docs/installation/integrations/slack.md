@@ -22,4 +22,4 @@ To set up Slack notifications:
 3. Once you have connected Slack to Insights, you can choose which channels you'd like notifications to be
 sent to in the `Settings > Notifications` page
 
-See the confgure section to [customize Slack alerts through Automation Rules.](/configure/automation/integrations/#slack-notifications)
+See the confgure section to [customize Slack alerts through Automation Rules.](/configure/automation/integrations#slack-notifications)

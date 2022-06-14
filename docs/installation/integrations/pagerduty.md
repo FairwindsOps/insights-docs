@@ -40,4 +40,4 @@ with Fairwinds Insights to prevent any confusion
 
 1. Visit your organization's `Settings > Integration` page
 2. Hover over `PagerDuty` and click `Add Integration`
-3. Once you have connected PagerDuty to Insights, you can use [Automation Rules to trigger incidents](/configure/automation/integrations/#pagerduty-incidents)
+3. Once you have connected PagerDuty to Insights, you can use [Automation Rules to trigger incidents](/configure/automation/integrations#pagerduty-incidents)
