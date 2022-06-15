@@ -21,6 +21,8 @@ requests and CI/CD pipelines according to the values set in the Policy for `Admi
 Users
 [using the Auto Scan feature](https://insights.docs.fairwinds.com/installation/ci/autoscan/) will automatically use this new script version.
 
+The 2.0 script also defaults to blocking only on Action Items that have High or Critical severity.
+
 ## 8.10.0
 ### Bug Fixes and Improvements
 * Workloads can now be exported even when filtered
