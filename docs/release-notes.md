@@ -9,6 +9,24 @@ meta:
 ---
 # Release Notes
 
+## 8.10.0
+### New Design of Policy Page
+We have redesigned the `Policy` page in Insights. The `Policy` page will now show a list of all Policies that come as part of Insights
+as well as any OPA policies added by users. Users are now able to see the severity of every Policy as well as whether they will currently
+block admission requests or the CI/CD pipeline. Furthermore, users are now able to set these values 
+[using the Insights CLI to customize Policies](https://insights.docs.fairwinds.com/configure/cli/settings) to their needs.
+
+### Insights CI Script 2.0
+A new Insights CI script is available for our users to use in their CI/CD pipelines. The new 2.0 Insights CI script will now block admission
+requests and CI/CD pipelines according to the values set in the Policy for `Admission` and `CI`.
+Users
+[using the Auto Scan feature](https://insights.docs.fairwinds.com/installation/ci/autoscan/) will automatically use this new script version.
+The 2.0 script also defaults to blocking only on Action Items that have `High` or `Critical` severity.
+
+### Bug Fixes and Improvements
+* Workloads can now be exported even when filtered
+* Fixed the display of Admission Controller chart when displaying percentages
+
 ## 8.9.0
 ### Creating New Policies in Insights Using OPA v2
 When creating new Policies using the Insights UI, we will be using OPA v2. The biggest change here is a YAML instance is no longer

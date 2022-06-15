@@ -7,15 +7,15 @@ When pushing configuration of Policies to Insights, the CLI expects a `settings.
 The file should follow the following format:
 ```yaml
 checks:
-  <report type>
-    <event type>
+  $reportType: # You can find this in the Action Items or Policy UI (e.g. `polaris`)
+    $eventType: # You can find this in the Action Items or Policy UI (e.g. `runAsRootAllowed`)
       severity: <critical/high/medium/low/none>
       ci:
         block: <true/false>
       admission:
         block: <true/false>
 ```
-For OPA policies, the `report type` is `opa` and the `event type` is the Policy name.
+For OPA policies, the `$reportType` is `opa` and the `$eventType` is the Policy name.
 
 Once the file has been created, use the following command to push the Policies Configuration:
 ```

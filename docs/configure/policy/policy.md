@@ -135,7 +135,7 @@ opa:
     - ingress
 ```
 
-By default the OPA plugin inharits the same Kubernetes APIGroups and Resources definedin default rules for [the admission controller](/configure/admission/configuration), if enabled.
+By default the OPA plugin inherits the same Kubernetes APIGroups and Resources defined in default rules for [the admission controller](/configure/admission/configuration), if enabled.
 
 #### Q: How do I vary OPA policy execution By cluster or Insights context?
 Insights provides a new `insightsinfo()` rego function, which accepts the following parameters:
