@@ -7,8 +7,8 @@ When pushing configuration of Policies to Insights, the CLI expects a `settings.
 The file should follow the following format:
 ```yaml
 checks:
-  $reportType
-    $eventType
+  $reportType: # You can find this in the Action Items or Policy UI (e.g. `polaris`)
+    $eventType: # You can find this in the Action Items or Policy UI (e.g. `runAsRootAllowed`)
       severity: <critical/high/medium/low/none>
       ci:
         block: <true/false>
