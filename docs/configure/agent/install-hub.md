@@ -7,7 +7,7 @@ meta:
   - name: keywords
     content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
   - name: description
-    content: "Fairwinds Insights | Documentation: Configuring reports through the Install Hub"
+    content: "Fairwinds Insights | Documentation: Report customization through the Install Hub"
 
 ---
 # Install Hub

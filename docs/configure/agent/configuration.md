@@ -1,7 +1,7 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Documentation: Install Hub configuration"
+    content: "Fairwinds Insights | Documentation: Install Hub helm configuration"
 ---
 # Helm
 The Insights Agent can be configured using Helm. To see the full list of options, check out the
