@@ -16,7 +16,7 @@ meta:
 You can customize any of the reports through the `Install Hub`:
 1. Visit your organization's `Clusters` page
 2. After selecting a cluster, go to the `Install Hub` page
-3. Click on a report and navigating to `Configure` 
+3. Click on a report and navigate to `Configure` 
 
 <img :src="$withBase('/img/report-hub-customize.png')" alt="customize report">
 
