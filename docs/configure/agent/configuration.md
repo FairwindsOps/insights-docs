@@ -1,18 +1,14 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights |  Install Hub configuration documentation. "
+    content: "Fairwinds Insights | Documentation: Install Hub configuration"
 ---
-# Configuration
-
-## Helm
-The Insights Agent can be configured using Helm. To see the full list of options,
-you can check out the
+# Helm
+The Insights Agent can be configured using Helm. To see the full list of options, check out the
 [Insights Agent Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/insights-agent)
 
 In particular, for any given report type, you can set the following options:
-* `enabled` - this is typically set to `true` by default
-* `schedule` - a cron expression dictating when this report should run. This is typically set to a random minute every hour
-* `timeout` - how long to wait for output, in seconds
+* `enabled` - set to `true` to enable the report
+* `schedule` - a Cron expression describing when to run this report. This is typically set to a random minute every hour
+* `timeout` - the maximum time this report should run before an error is triggered (seconds)
 * `resources` - requests and limits for CPU and memory for this report
-

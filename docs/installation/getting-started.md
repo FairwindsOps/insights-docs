@@ -21,4 +21,4 @@ Choose a unique name for your organization. You'll be able to add clusters to th
 organization, as well as any coworkers you'd like to collaborate with.
 
 ### Add a Cluster to the Organization
-After you've created an organization, you will be asked to add a new cluster to your organization. Upon creating a cluster, you will be taken to the [Install Hub](/configure/agent/install-hub) where you can install the [Insights Agent.](/installation/agent/about)
+After you've created an organization, you will be asked to add a new cluster to your organization. Upon creating a cluster, you will be taken to the [Install Hub](/installation/agent/setup#install-the-agent-through-install-hub) where you can install the [Insights Agent.](/installation/agent/about)
