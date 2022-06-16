@@ -5,7 +5,7 @@ meta:
 ---
 # Helm
 The Insights Agent can be configured using Helm. To see the full list of options, check out the
-[Insights Agent Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/insights-agent)
+[Insights Agent Helm chart.](https://github.com/FairwindsOps/charts/tree/master/stable/insights-agent)
 
 In particular, for any given report type, you can set the following options:
 * `enabled` - set to `true` to enable the report
