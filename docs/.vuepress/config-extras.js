@@ -74,7 +74,7 @@ module.exports = {
             title: 'Admission Controller',
             children: [
               'configure/admission/configuration',
-              'configure/admission/enforce',
+              'configure/admission/installhub-and-policies',
             ],
           },
           {
