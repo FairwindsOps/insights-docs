@@ -4,7 +4,7 @@ meta:
     content: "Fairwinds Insights | Documentation: Insights Agent helm configuration"
 ---
 # Helm
-The Insights Agent can be configured using Helm. To see the full list of options, check out
+The Insights Agent can be configured using Helm. To see the full list of options, check out the
 [Insights Agent Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/insights-agent)
 
 In particular, for any given report type, you can set the following options:
