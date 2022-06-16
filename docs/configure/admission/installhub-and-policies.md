@@ -25,4 +25,4 @@ To see the current Policies applicable to the Admission Controller:
 If the Admission Controller is not in [Passive Mode](/installation/admission/setup#installation), the Policies that have `Block` under `Admission` will cause admission requests to fail. Others will only create Action Items but will not block admission requests.
 
 To customize the severity or whether a Policy should block an admission request, you can use the
-[Insights CLI to configure Policies.](/configure/cli/settings/)
+[Insights CLI to configure Policies.](/configure/cli/settings)
