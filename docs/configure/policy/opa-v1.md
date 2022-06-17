@@ -5,7 +5,7 @@ meta:
 ---
 # OPA v1
 We recommend using OPA v2 policies. These instructions remain here for backward compatibility.
-For writing OPA v2 policies, refer to the [Designing OPA policies](/configure/policy/opa-policy/#designing-opa-policies) documentation.
+For writing OPA v2 policies, refer to the [Designing OPA policies](/configure/policy/opa-policy#designing-opa-policies) documentation.
 
 ## Varying Action Item Attributes
 The `replicas.rego` file would look like:
