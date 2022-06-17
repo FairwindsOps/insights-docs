@@ -55,7 +55,7 @@ If multiple Helm values are specified in `fairwinds-insights.yaml`, the processi
 4. Inline values listed in `manifests.helm[].values`
 
 ## Reports
-You can control which reports run as well as pass options to each report type.
+You can control which reports run and pass options to each report type.
 
 * `reports.opa.enabled` - set to `false` if you'd like to disable OPA
 * `reports.polaris.enabled` - set to `false` if you'd like to disable Polaris
@@ -70,6 +70,6 @@ It's a good practice to include the `reason` field for future reference.
 
 * `exemptions[].filename` - the name of the file to exempt
 * `exemptions[].image` - the name of the image to exempt for a Trivy scan
-* `exemptions[].report` - the name of the report type (`polaris`, `pluto`, `trivy`, or `opa`)
+* `exemptions[].report` - the name of the report type (`polaris`, `pluto`, `trivy` or `opa`)
 * `exemptions[].checks[]` - an array of check IDs to skip (e.g. `runAsNonRoot`)
 * `exemptions[].reason` - a human-readable description of why this exemption is necessary
