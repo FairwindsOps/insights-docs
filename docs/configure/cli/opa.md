@@ -10,7 +10,7 @@ Be sure to first read the [Insights CLI documentation](/configure/cli/cli) which
 ## V1 and V2 OPA Policies
 Insights Agent 2.0 supports a new method of specifying an OPA policy without an accompanying instance YAML file. This moves the logic for some parameters,
 such as execution by cluster and Insights context directly into the Policy rego.
-See the [OPA policies documentation](/configure/policy/policy) for more information about how V1 and V2 OPA policies differ.
+See the [OPA policies documentation](/configure/policy/opa-policy) for more information about how V1 and V2 OPA policies differ.
 
 ## Pushing V2 OPA Policies to Insights
 When pushing V2 OPA policies to Insights, the CLI expects a directory structure like the following:
@@ -118,7 +118,7 @@ insights-cli list opa
 If the OPA report is enabled, you can trigger it to run immediately and verify new Action Items show up in the Insights UI:
 
 ```bash
-kubectl -n insights-agent create job opa-test --from cronjob/opa
+kubectl create job opa-test --from cronjob/opa -n insights-agent
 ```
 
 ## Deleting OPA Policies From Insights

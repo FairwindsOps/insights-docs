@@ -7,7 +7,7 @@ meta:
 ## Enable or Disable Reports Through Install Hub
 The Admission Controller currently runs the following report types:
 * Polaris - checks for security and best practices
-* [OPA](/configure/policy/policy) - apply custom policies to resources
+* [OPA](/configure/policy/opa-policy) - apply custom policies to resources
 
 To enable or disable a particular report:
 1. Visit your organization's `Clusters` page

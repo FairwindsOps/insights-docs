@@ -163,4 +163,4 @@ The table below enumerates all Action Items currently produced by Fairwinds Insi
 | polaris | tlsSettingsMissing | CI/CD, Admission Controller, In-Cluster | Ingress does not have TLS configured | Security | low | 0.25 |
 | trivy | image\_vulnerability | CI/CD, In-Cluster | Image has vulnerabilities | Security | none | 0 |
 | trivy | unscanned\_images | CI/CD, In-Cluster | Images failed to scan | Security | low | 0.2 |
-| [opa](https://insights.docs.fairwinds.com/reports/opa/) | create-your-own-EventType | CI/CD, Admission Controller, In-Cluster | Use the [Policy](/configure/policy/policy) feature to create your own custom Action Item | Any | Any | 0 - 1 |
+| [opa](https://insights.docs.fairwinds.com/reports/opa/) | create-your-own-EventType | CI/CD, Admission Controller, In-Cluster | Use the [Policy](/configure/policy/opa-policy) feature to create your own custom Action Item | Any | Any | 0 - 1 |

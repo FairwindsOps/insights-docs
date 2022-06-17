@@ -33,7 +33,7 @@ When creating new Policies using the Insights UI, we will be using OPA v2. The b
 required. All v1 Policies will continue to work, and are still able to be edited from within the Insights web UI.
 OPA v2 is only available with [Insights Agent 2.x](https://github.com/FairwindsOps/charts/tree/master/stable/insights-agent#version-20).
 To learn more about the differences between OPA v1 and v2,
-check out [V1 and V2 Insights OPA Policies](https://insights.docs.fairwinds.com/configure/policy/policy/#v1-and-v2-insights-opa-policies)
+check out [V1 and V2 Insights OPA Policies](https://insights.docs.fairwinds.com/configure/policy/opa-policy/#v1-and-v2-insights-opa-policies)
 
 ### Bug Fixes and Improvements
 * Deleting a cluster now requires typing in the cluster name before confirmation
@@ -610,7 +610,7 @@ We will now alert you via our notifications to let you know if your reports have
 ## 3.1.0
 ### OPA UI
 The frontend is out for OPA! Find this new feature under Policy in the navigation bar. You can now create and run custom checks to create Action Items. Read our docs to learn more.
-[Learn More](/configure/policy/policy)
+[Learn More](/configure/policy/opa-policy)
 
 ### Bug Fixes
 * Issue that impacts broken buttons in outlook. Outlook users can now use the links provided in emails
@@ -696,7 +696,7 @@ Minor improvements to the Action Items table UI.
 
 ## 1.10.0
 ### Dynamic Open Policy Agent (OPA) - Beta
-You can now create and run custom checks in Rego (OPA's policy language) to create Action Items in Fairwinds Insights. To get started, visit our Docs to [learn how to add Rego policies to Fairwinds Insights](/configure/policy/policy).
+You can now create and run custom checks in Rego (OPA's policy language) to create Action Items in Fairwinds Insights. To get started, visit our Docs to [learn how to add Rego policies to Fairwinds Insights](/configure/policy/opa-policy).
 
 ### CI/CD Integration - Beta
 We’ve recently shipped a CI/CD integration with Fairwinds Insights to shift Kubernetes configuration validation earlier in the development process. We’ve found that the handoff of Kubernetes applications from development to operations can result in configuration mistakes that lead to future incidents, security risks, and extra infrastructure cost. Today, Ops teams are manually looking for these mistakes, but with our CI/CD integration we are able to shift that closer to the development team to prevent mistakes from entering production.
