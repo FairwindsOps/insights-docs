@@ -63,23 +63,25 @@ module.exports = {
       {
         title: 'Configure',
         children: [
+          {  
+            title: 'Insights Agent',
+            children: [
+              'configure/agent/configuration',
+              'configure/agent/install-hub',
+            ],
+          },
+          {
+            title: 'Admission Controller',
+            children: [
+              'configure/admission/configuration',
+              'configure/admission/installhub-and-policies',
+            ],
+          },
           {
             title: 'Continuous Integration',
             children: [
               'configure/ci/configuration',
               'configure/ci/results',
-            ],
-          }, {
-            title: 'Admission Controller',
-            children: [
-              'configure/admission/configuration',
-              'configure/admission/enforce',
-            ],
-          }, {  
-            title: 'Insights Agent',
-            children: [
-              'configure/agent/configuration',
-              'configure/agent/install-hub',
             ],
           }, {    
             title: 'Policies',
