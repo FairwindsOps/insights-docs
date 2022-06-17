@@ -23,18 +23,17 @@ By default, the Admission Controller will monitor the following resources:
 If you'd like to add additional resources, you can use the `rules`
 setting on the Helm chart. Adding this to the `values.yaml` when installing the Insights Agent:
 ```yaml
-admission:
-  insights-admission:
-    webhookConfig:
-      rules:
-      - apiGroups:
-        - custom
-        apiVersions:
-        - v1
-        operations:
-        - CREATE
-        - UPDATE
-        resources:
-        - customResource
-        scope: Namespaced
+insights-admission:
+  webhookConfig:
+    rules:
+    - apiGroups:
+      - custom
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - customResource
+      scope: Namespaced
 ```

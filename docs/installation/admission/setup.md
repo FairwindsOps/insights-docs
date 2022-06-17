@@ -61,5 +61,4 @@ You should see a message saying:
 Error from server (Privilege escalation should not be allowed: Failure: true): error when creating "STDIN": admission webhook "insights.fairwinds.com" denied the request: Privilege escalation should not be allowed: Failure: true
 ```
 
-
-For further tuning please refer to [Configuration documentation](/configure/admission/configuration)
+For further tuning please refer to [Admission Controller Configuration.](/configure/admission/configuration)
