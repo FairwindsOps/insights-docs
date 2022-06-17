@@ -8,7 +8,6 @@ meta:
     content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
 ---
 # About
-
 > Installing the Agent in many different clusters? Check out the
 > [fleet installation](/installation/agent/setup#fleet-installation) docs.
 

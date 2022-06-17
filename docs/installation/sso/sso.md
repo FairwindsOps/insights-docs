@@ -4,11 +4,9 @@ meta:
     content: "Fairwinds Insights | Documentation: How to setup Single Sign-On (SSO)"
 ---
 # Setup
-
 Fairwinds Insights supports Single Sign-On (SSO) via a SAML identity provider.
 
 ## Identity Provider
-
 * ACS URL: `https://insights.fairwinds.com/v0/organizations/$ORG_NAME/auth/saml`
 * Entity ID: `fairwinds-insights`
 * Name ID: Email Address
@@ -67,7 +65,6 @@ Your metadata should look something like this:
 ```
 
 ## Insights Setup
-
 Before enabling SSO, save your organization's `admin` token from the Insights `Settings > Tokens` page somewhere safe as a
 misconfiguration could prevent you from logging into Insights. If you get locked out, get in touch with the
 Fairwinds team and we'll fix it.

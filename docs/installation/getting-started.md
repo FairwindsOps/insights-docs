@@ -7,10 +7,7 @@ meta:
   - name: keywords
     content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
 ---
-
-
 # Getting Started
-
 ### Create a New Organization
 Once you've signed up and confirmed your email address, you'll be prompted to
 create a new organization:

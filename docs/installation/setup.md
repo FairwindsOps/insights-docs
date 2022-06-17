@@ -4,7 +4,6 @@ meta:
     content: "Fairwinds Insights | Documentation for Installation Setup"
 ---
 # Setup
-
 Fairwinds Insights can help you discover potential Security, Efficiency, and Reliability
 issues with your Kubernetes configuration at each point in the development process.
 
