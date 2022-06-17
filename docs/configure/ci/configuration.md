@@ -54,8 +54,6 @@ If multiple Helm values are specified in `fairwinds-insights.yaml`, the processi
 3. Values from the `manifests.helm[].valuesFiles`, in the order those files are listed
 4. Inline values listed in `manifests.helm[].values`
 
-
-
 ## Reports
 You can control which reports run as well as pass options to each report type.
 
