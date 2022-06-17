@@ -81,7 +81,6 @@ module.exports = {
             title: 'Continuous Integration',
             children: [
               'configure/ci/configuration',
-              'configure/ci/results',
             ],
           }, {    
             title: 'Policies',
