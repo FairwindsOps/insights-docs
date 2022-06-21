@@ -28,7 +28,7 @@ Next, we'd create two instances.
 `deployments.yaml`:
 ```yaml
 output:
-  severity: 0.9
+  severity: CRITICAL_SEVERITY
 targets:
 - apiGroups: ["apps"]
   kinds: ["Deployment"]
@@ -37,7 +37,7 @@ targets:
 `statefulSets.yaml`:
 ```yaml
 output:
-  severity: 0.4
+  severity: MEDIUM_SEVERITY
 targets:
 - apiGroups: ["apps"]
   kinds: ["StatefulSet"]
@@ -79,7 +79,7 @@ replicasRequired[actionItem] {
     "description": "Workloads at acme-co must have minimum number of replicas",
     "remediation": "Please set `spec.replicas` appropriately",
     "category": "Reliability",
-    severity: 0.2,
+    severity: LOW_SEVERITY,
   }
 }
 ```
