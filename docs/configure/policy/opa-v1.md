@@ -28,7 +28,7 @@ Next, we'd create two instances.
 `deployments.yaml`:
 ```yaml
 output:
-  severity: .9
+  severity: 0.9
 targets:
 - apiGroups: ["apps"]
   kinds: ["Deployment"]
@@ -37,7 +37,7 @@ targets:
 `statefulSets.yaml`:
 ```yaml
 output:
-  severity: .4
+  severity: 0.4
 targets:
 - apiGroups: ["apps"]
   kinds: ["StatefulSet"]
