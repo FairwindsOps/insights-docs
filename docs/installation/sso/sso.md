@@ -1,19 +1,22 @@
+---
+meta:
+  - name: description
+    content: "Fairwinds Insights | Documentation: How to setup Single Sign-On (SSO)"
+---
 # Setup
-
-Fairwinds Insights supports Single Sign-On via a SAML identity provider.
+Fairwinds Insights supports Single Sign-On (SSO) via a SAML identity provider.
 
 ## Identity Provider
-
 * ACS URL: `https://insights.fairwinds.com/v0/organizations/$ORG_NAME/auth/saml`
 * Entity ID: `fairwinds-insights`
 * Name ID: Email Address
 * Attributes:
-  * firstName: User's first name
+  * firstName: User's First Name
   * lastName: User's Last Name
-  * isOwner: true if this user should have owner access to the org. False if they should not. Omit this attribute to handle authorization within Insights
-  * teams: A list of teams to grant the user access to. Defaults to view access to each team but an additional role can be specified as `<team>/<role>`
+  * isOwner: `true` if this user should have `Owner` access to the organization. `false` if they should not. Omit this attribute to handle authorization within Insights
+  * teams: A list of teams to grant the user access to. Defaults to `view` access to each team but an additional role can be specified as `<team>/<role>`
 
-Your identity provider should then provide a URL to retrieve SAML metadata,
+Your identity provider should then provide a URL to retrieve SAML metadata
 which contains a public key that can be shared with Insights.
 
 Some SAML providers, including Google, do not yet support dynamic SAML metadata.
@@ -62,48 +65,26 @@ Your metadata should look something like this:
 ```
 
 ## Insights Setup
+Before enabling SSO, save your organization's `admin` token from the Insights `Settings > Tokens` page somewhere safe as a
+misconfiguration could prevent you from logging into Insights. If you get locked out, get in touch with the
+Fairwinds team and we'll fix it.
 
-The `https://insights.fairwinds.com/v0/organizations/$ORG_NAME/saml` endpoint can be used to save SAML settings.
-You'll need to specify a URL containing your org's metadata (namely, a public key),
-and a list of email domain names that are allowed to access your org.
+1. Go to the `Settings > SSO` page on Insights
+2. For the `Metadata URL` field, specify a URL containing your organization's metadata (namely a public key)
+3. For the `Email Domain` field, specify a list of email domain names that are allowed to access your organization
+4. Click `Update SSO`
 
-To change your SAML settings, you'll need your admin API key from
-https://insights.fairwinds.com/orgs/$ORG_NAME/settings/tokens
+### Verifying SSO Setup
+Once your settings have been saved:
+1. Log out of Insights 
+2. On the `Log In` screen, click on the `Log in with SSO` option at the bottom
 
-You should save this token somewhere safe before enabling SSO, as a misconfiguration could prevent you
-from logging into the UI. If you get locked out, get in touch with the Fairwinds team and we'll fix it.
-
-```bash
-curl -X POST "https://insights.fairwinds.com/v0/organizations/$ORG_NAME/saml" \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer $ADMIN_TOKEN" \
-  --data-binary @- << EOF
-{
-  "metadataUrl": "https://raw.githubusercontent.com/$ORG_NAME/insights-configuration/main/metadata.xml",
-  "domains": [
-    {
-        "emailDomain": "example.com"
-    }
-  ]
-}
-EOF
-```
-
-## Logging in
-Once your settings have been saved, you can log in via SSO at
-
+If the `Log in with SSO` button does not show up, you can log in via SSO at:
 `https://insights.fairwinds.com/v0/organizations/$ORG_NAME/auth/saml`
 
-## Strict Mode
-You can enable SSO-strict mode, forcing your users to use SSO in order to log in.
-
-```bash
-curl -X POST "https://insights.fairwinds.com/v0/organizations/$ORG_NAME/sso-strict" \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer $ADMIN_TOKEN" \
-  --data-binary @- << EOF
-{
-  "enabled": true
-}
-EOF
-```
+### SSO Strict Mode
+You can enable SSO strict mode, forcing your users to use SSO in order to log in. Before enabling SSO strict mode,
+verify the SSO setup is working and then:
+1. Go to the `Settings > SSO` page on Insights
+2. Click the `Enable strict provisioning` checkbox
+3. Click `Update SSO`

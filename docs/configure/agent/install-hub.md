@@ -7,38 +7,23 @@ meta:
   - name: keywords
     content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
   - name: description
-    content: "Fairwinds Insights | Documentation: Using the Install Hub to decide which open source tools to run in your cluster. "
+    content: "Fairwinds Insights | Documentation: Report customization through the Install Hub"
 
 ---
 # Install Hub
 
-Use the Install Hub to decide which reports you'd like to run in your cluster.
-
-<img :src="$withBase('/img/report-hub.png')" alt="Install Hub tiles">
-
-The easiest way to install is to use the `Quick Add` button below a report, then click the
-`Install` icon at the top-right.
-
-You'll then be prompted with instructions for installing the Insights Agent in your cluster:
-
-<img :src="$withBase('/img/helm-install.png')" alt="helm install">
-
-## Customization
-You can customize any of the reports by clicking on its tile.
+## Report Customization
+You can customize any of the reports through the `Install Hub`:
+1. Visit your organization's `Clusters` page
+2. After selecting a cluster, go to the `Install Hub` page
+3. Click on a report and navigate to `Configure` 
 
 <img :src="$withBase('/img/report-hub-customize.png')" alt="customize report">
 
-Some common options are:
+You will see the following options:
 * `schedule` - a Cron expression describing when to run this report
-* `timeout` - the maximum time this report should run before an error is triggered
+* `timeout` - the maximum time this report should run before an error is triggered (seconds)
 
-These options will be reflected in the `helm install` command you'll see when you click the `Install` icon.
+These options will be reflected in the `helm install` command you'll see when you click `Ready to Install`
+in the `Install Hub`.
 Be sure to run the new command after making any changes here.
-
-## Report History
-The `History` tab will show you a list of recent reports for each report type.
-
-<img :src="$withBase('/img/report-history.png')" alt="report history">
-
-You can click the `View Report` link to see the raw data from each report.
-This can be helpful for debugging.

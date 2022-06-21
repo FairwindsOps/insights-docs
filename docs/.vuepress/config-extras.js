@@ -24,12 +24,11 @@ module.exports = {
               'installation/setup',
             ],
           }, {
-            title: 'Continuous Integration',
+            title: 'Insights Agent',
             children: [
-              'installation/ci/about',
-              'installation/ci/setup',
-              'installation/ci/github',
-              'installation/ci/autoscan',
+              'installation/agent/about',
+              'installation/agent/setup',
+              'installation/agent/troubleshooting',
             ],
           }, {
             title: 'Admission Controller',
@@ -38,10 +37,12 @@ module.exports = {
               'installation/admission/setup',
             ]
           }, {
-            title: 'In-Cluster Agent',
+            title: 'Continuous Integration',
             children: [
-              'installation/agent/about',
-              'installation/agent/setup',
+              'installation/ci/about',
+              'installation/ci/github',
+              'installation/ci/autoscan',
+              'installation/ci/insights-ci-script',
             ],
           }, {
             title: 'Single Sign-On',
@@ -62,28 +63,30 @@ module.exports = {
       {
         title: 'Configure',
         children: [
-          {
-            title: 'Continuous Integration',
-            children: [
-              'configure/ci/configuration',
-              'configure/ci/results',
-            ],
-          }, {
-            title: 'Admission Controller',
-            children: [
-              'configure/admission/configuration',
-              'configure/admission/enforce',
-            ],
-          }, {  
-            title: 'In-Cluster Agent',
+          {  
+            title: 'Insights Agent',
             children: [
               'configure/agent/configuration',
               'configure/agent/install-hub',
             ],
+          },
+          {
+            title: 'Admission Controller',
+            children: [
+              'configure/admission/configuration',
+              'configure/admission/installhub-and-policies',
+            ],
+          },
+          {
+            title: 'Continuous Integration',
+            children: [
+              'configure/ci/configuration',
+            ],
           }, {    
             title: 'Policies',
             children: [
-              'configure/policy/policy',
+              'configure/policy/opa-policy',
+              'configure/policy/opa-v1',
             ],
           }, {
             title: 'Automation Rules',
@@ -93,11 +96,12 @@ module.exports = {
               'configure/automation/integrations',
             ],
           }, {
-            title: 'CLI Utility',
+            title: 'Insights CLI',
             children: [
               'configure/cli/cli',
               'configure/cli/automation-rules',
               'configure/cli/opa',
+              'configure/cli/settings',
             ],
           }, {  
             title: 'Account Management',

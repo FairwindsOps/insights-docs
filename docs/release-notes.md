@@ -9,6 +9,60 @@ meta:
 ---
 # Release Notes
 
+## 8.10.0
+### New Design of Policy Page
+We have redesigned the `Policy` page in Insights. The `Policy` page will now show a list of all Policies that come as part of Insights
+as well as any OPA policies added by users. Users are now able to see the severity of every Policy as well as whether they will currently
+block admission requests or the CI/CD pipeline. Furthermore, users are now able to set these values 
+[using the Insights CLI to customize Policies](https://insights.docs.fairwinds.com/configure/cli/settings) to their needs.
+
+### Insights CI Script 2.0
+A new Insights CI script is available for our users to use in their CI/CD pipelines. The new 2.0 Insights CI script will now block admission
+requests and CI/CD pipelines according to the values set in the Policy for `Admission` and `CI`.
+Users
+[using the Auto Scan feature](https://insights.docs.fairwinds.com/installation/ci/autoscan/) will automatically use this new script version.
+The 2.0 script also defaults to blocking only on Action Items that have `High` or `Critical` severity.
+
+### Bug Fixes and Improvements
+* Workloads can now be exported even when filtered
+* Fixed the display of Admission Controller chart when displaying percentages
+
+## 8.9.0
+### Creating New Policies in Insights Using OPA v2
+When creating new Policies using the Insights UI, we will be using OPA v2. The biggest change here is a YAML instance is no longer
+required. All v1 Policies will continue to work, and are still able to be edited from within the Insights web UI.
+OPA v2 is only available with [Insights Agent 2.x](https://github.com/FairwindsOps/charts/tree/master/stable/insights-agent#version-20).
+To learn more about the differences between OPA v1 and v2,
+check out [V1 and V2 Insights OPA Policies](https://insights.docs.fairwinds.com/configure/policy/opa-policy/#v1-and-v2-insights-opa-policies)
+
+### Bug Fixes and Improvements
+* Deleting a cluster now requires typing in the cluster name before confirmation
+* Fixed missing `Name` field and duplicated `Namespace` field when exporting Action Items
+* Improvement to Pluto Action Items description and titles
+
+## 8.8.0
+### Bug Fixes and Improvements
+* Added instructions for setting up CI integration for different platforms
+* Removed nodes that were showing blank in the Node Capacity chart
+* Fixed issue with the contact form
+* Updated Insights CI script
+
+## 8.7.0
+### CSV Export of NSA Hardening Guidance
+Users are now able to export a report guiding their clusters towards NSA hardening. This report will show the NSA policy, the
+relevant Insights check and the number of Action Items that require resolving. In order to obtain the report, go to the
+`Action Items` page, select a cluster from the top left drop down and click the `Export > Export NSA Report` button.
+
+### Bug Fixes and Improvements
+* Fixed ordering of Top Issues chart in `Repositories`
+* Improvements to make the Cluster Overview page load faster
+
+## 8.6.0
+### Bug Fixes and Improvements
+* New background for login pages
+* Fixed popups getting cut off when hovering over `Top Issues` chart in `Home`
+* Some workload metrics were showing `N/A` incorrectly
+
 ## 8.5.0
 ### Introducing Auto-Scan for Infrastructure as Code
 Fairwinds is upgrading the GitHub integration and making new infrastructure-as-code scanning capabilities available to all customers.
@@ -556,7 +610,7 @@ We will now alert you via our notifications to let you know if your reports have
 ## 3.1.0
 ### OPA UI
 The frontend is out for OPA! Find this new feature under Policy in the navigation bar. You can now create and run custom checks to create Action Items. Read our docs to learn more.
-[Learn More](/configure/policy/policy)
+[Learn More](/configure/policy/opa-policy)
 
 ### Bug Fixes
 * Issue that impacts broken buttons in outlook. Outlook users can now use the links provided in emails
@@ -642,7 +696,7 @@ Minor improvements to the Action Items table UI.
 
 ## 1.10.0
 ### Dynamic Open Policy Agent (OPA) - Beta
-You can now create and run custom checks in Rego (OPA's policy language) to create Action Items in Fairwinds Insights. To get started, visit our Docs to [learn how to add Rego policies to Fairwinds Insights](/configure/policy/policy).
+You can now create and run custom checks in Rego (OPA's policy language) to create Action Items in Fairwinds Insights. To get started, visit our Docs to [learn how to add Rego policies to Fairwinds Insights](/configure/policy/opa-policy).
 
 ### CI/CD Integration - Beta
 We’ve recently shipped a CI/CD integration with Fairwinds Insights to shift Kubernetes configuration validation earlier in the development process. We’ve found that the handoff of Kubernetes applications from development to operations can result in configuration mistakes that lead to future incidents, security risks, and extra infrastructure cost. Today, Ops teams are manually looking for these mistakes, but with our CI/CD integration we are able to shift that closer to the development team to prevent mistakes from entering production.

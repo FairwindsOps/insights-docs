@@ -45,27 +45,28 @@ You can [read more about cost estimation on our blog](https://www.fairwinds.com/
 
 ## Viewing Workload Costs
 
-On the **Workloads** page, you can see a list of all the workloads in your cluster. By default, they'll
-be sorted by their _Average Total Cost_. This number utilizes resource requests and limits (if specified),
-and average pod count to estimate the average cost of each workload.
+On the **Workloads** page, you can see a list of all the workloads in your cluster. By default, they'll be sorted by their _Average Total Cost_. Costs are computing using actual workload usage, or configured memory and CPU settings.
+
+- If you have the `prometheus-metrics` or `goldilocks` report installed, Fairwinds Insights will use the maximum of requests and actual usage - `max(requests, usage)` - in order to compute the _Average Total Cost_ this workload. 
+- If neither report is installed, Fairwinds Insights will use the average of requests and limits. (This can be less precise, since some workloads may not have requests or limits configured, or the spread between requests and limits can be large.)
 
 <img :src="$withBase('/img/workload-costs.png')" alt="Workload costs">
 
 In the next column, you'll see _Total Costs with Recommendations_, followed by _Cost Difference with Recommendations_.
-If you're not seeing values in these fields, make sure the `goldilocks` report is installed and
+If you're not seeing values in these fields, make sure the `prometheus-metrics` or `goldilocks` report is installed and
 operating properly.
 
-Goldilocks analyzes actual resource usage for your `Deployments`, and makes recommendations for
+When `goldilocks` or `prometheus-metrics` is installed, Insights will analyze actual resource usage for your workloads, and make recommendations for
 how much memory and CPU you _should_ be setting for your requests and limits. While it may recommend
 moving resources up or down, we typically find that teams have set resources too high, since
 workloads with resources that are too low will experience noticeable performance issues.
 
 If you notice a workload with substantial savings available, you can click into it to see what
-Goldilocks recommends you set your resource requests and limits to:
+Insights recommends you set your resource requests and limits to:
 
 <img :src="$withBase('/img/workload-recommendations.png')" alt="Workload recommendations">
 
-Here, Goldilocks has recommended that we change our memory requests and limits from `1Gi` to
+Here, Insights has recommended that we change our memory requests and limits from `1Gi` to
 `263M` (a savings of around 75%), and our CPU requests and limits from `500m` to `25m`, for a savings
 of 95%.
 
@@ -74,6 +75,25 @@ periodic bursts in traffic, you may want to keep your limits relatively high. Fo
 applications, it's wise to make any reduction in resources gradually, monitoring your application for any degradation
 in performance along the way.
 
-It's also good to let Goldilocks gather usage data for 1-7 days before taking its recommendations.
-Without a good, representative baseline for actual resource usage, Goldilocks won't be able to
+It's also good to let Insights gather usage data from either tool for 1-7 days before taking its recommendations.
+Without a good, representative baseline for actual resource usage, Insights won't be able to
 make confident recommendations.
+
+## Comparing Goldliocks and Prometheus
+In general, when the `prometheus-metrics` report is installed, it will provide users with more finer-grained metrics and additional features within the Insights platform. Please see a summary of the differences between each tool below.
+
+| Feature                                      | Resource Type | **Prometheus Installed**                                                                                                                             | **Goldilocks Installed**                                                                                                                                | **None Installed**                                                     |
+| -------------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| **Recommendation Engine**                    |               | "Best"<br />Uses Prometheus to generate and store a historical timeseries of workload usage metrics, driving finer-grained resource recommendations. | "Good"<br />Uses Vertical Pod Autoscaler (VPA) to generate resources recommendations, although lacks a historical timeseries of workload usage metrics. |                                                                        |
+| **Generates Action Items**                   |               | X                                                                                                                                                    | X                                                                                                                                                       |                                                                        |
+| **Average Total Cost**                       | Workloads     | Best - Cost is calculated using the max(requests or usage).                                                                                          | Better - Cost is calculated using the max(requests or VPA recommendation).                                                                              | Good - Estimates are based on the average of requests and limits only. |
+| **Total Cost with Recommendations**          | Workloads     | X                                                                                                                                                    | X                                                                                                                                                       |                                                                        |
+| **Cost Difference with Recommendations**     | Workloads     | X                                                                                                                                                    | X                                                                                                                                                       |                                                                        |
+| **Request/Limit Recommendations**            | Workloads     | X                                                                                                                                                    | X                                                                                                                                                       |                                                                        |
+| **Quality of Service (QoS) Recommendations** | Workloads     | X                                                                                                                                                    |                                                                                                                                                         |                                                                        |
+| **Visualize Historical Usage**               | Workloads     | X                                                                                                                                                    |                                                                                                                                                         |                                                                        |
+| **Rolling 30 days of Cluster Usage**         | Cluster       | X                                                                                                                                                    |                                                                                                                                                         |                                                                        |
+| **Historical Cluster Utilization**           | Cluster       | X                                                                                                                                                    |                                                                                                                                                         |                                                                        |
+| **Works with AWS Billing Integration**       | Cluster       | X                                                                                                                                                    |                                                                                                                                                         |                                                                        |
+
+          

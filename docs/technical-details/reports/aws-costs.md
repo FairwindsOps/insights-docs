@@ -23,12 +23,21 @@ the section below, replacing any values with your own.
 awscosts:
   enabled: true
 
+  # Credentials to AWS can be done with either access keys or IRSA. Choose one of the following:
+
+  # Credentials with AWS Access Keys:
   # The AWS credentials should come from the aws-costs-service-account created below.
   # We recommend creating the awscostssecret yourself and specify secretName, but you can
   # also pass awsAccessKeyId and awsSecretAccessKey directly to the helm chart.
   secretName: awscostssecret
+  
   awsAccessKeyId: ''
   awsSecretAccessKey: ''
+
+  # Credentials with IRSA:
+  serviceAccount:
+    annotations:
+      eks.amazonaws.com/role-arn: arn:aws:iam::ACCOUNT_ID:role/IAM_ROLE_NAME
 
   region: us-east-1
   database: athena_cur_database

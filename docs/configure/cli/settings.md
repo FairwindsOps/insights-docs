@@ -1,42 +1,57 @@
-# Interacting With Policies Configuration Via the CLI
-You can use the Insights Command-line Interface (CLI) To manage policies configuration.
-Be sure to first read the [general CLI documentation](/configure/cli/cli) which covers instllation and prerequisites.
+# Policies Configuration With the CLI
+You can use the Insights CLI to manage the configuration of Policies.
+Be sure to first read the [Insights CLI documentation](/configure/cli/cli) which covers installation and preparation.
 
 ## Pushing Policies Configuration to Insights
-The Insights CLI `push settings` command expects a `settings.yaml` file to be located at the top-level of the directory being used to push files to Insights.
+When pushing configuration of Policies to Insights, the CLI expects a `settings.yaml` file in the current directory.
+The file should follow the following format:
+```yaml
+checks:
+  $reportType: # You can find this in the Action Items or Policy UI (e.g. `polaris`)
+    $eventType: # You can find this in the Action Items or Policy UI (e.g. `runAsRootAllowed`)
+      severity: <critical/high/medium/low/none>
+      ci:
+        block: <true/false>
+      admission:
+        block: <true/false>
+```
+For OPA policies, the `$reportType` is `opa` and the `$eventType` is the Policy name.
+
+Once the file has been created, use the following command to push the Policies Configuration:
+```
+insights-cli push settings
+```
 
 ### Pushing Policies Configuration Example
-Create the `settings.yaml` file in the current directory:
+Create the `settings.yaml` file:
 ```yaml
 checks:
   polaris:
     runAsRootAllowed:
       severity: medium
-    livenessProbeNotSpecified:
+    livenessProbeMissing:
       severity: high
       ci:
         block: true
       admission:
         block: false
-        mutate: true
 ```
 
-Next use the Insights CLI to push these complete settings to Insights:
+Next use the Insights CLI to push these configurations to Insights:
 
 ```bash
-FAIRWINDS_TOKEN=YOUR_TOKEN insights-cli push settings --organization YOUR_ORG_NAME
+insights-cli push settings
 ```
 
-* This pushes policies Configuration from the current directory, expecting it to contain the `settings.yaml` file.
-* Note that the customizations in `settings.yaml` will override any previous customizations made in Insights. For example, if the above yaml was later pushed without the Polaris `livenessProbeNotSpecified` stanza, that check would revert to the Insights defaults.
-* Typically the `FAIRWINDS_TOKEN` environment variable is set elsewhere and is not included each time the CLI is run.
-* The Insights organization can also be specified in a configuration file, described in the [general Insights CLI documentation](/configure/cli/cli).
-* Use the `--push-directory` option to specify an alternative base directory.
+>The customizations in `settings.yaml` will override any previous customizations made in Insights. For example, if the above yaml was later pushed without `livenessProbeMissing`, that Policy would revert to the default values.
 
-#### Verifying Success
-Please check the Insights UI to view the customizations you have just made via the CLI.
+## Verifying the Configuration of Policies
+1. In Insights, go to the `Policy` page
+2. In the Policies table, for the `Configuration` column select the `Customized` filter
 
-## Pushing Policies Configuration With Other Configuration Resources
-Policies configuration can be pushed to Insights along with other Insights configuration using the single command `insights-cli push all`. For additional information see
-* [CLI automation rules documentation](/configure/cli/automation-rules)
-* [CLI OPA documentation](/configure/cli/opa)
+This should show you the Policies that have been modified using the `settings.yaml` file.
+
+## Pushing Policies Configuration Along With Other Configurations
+Configuration of Policies can be pushed to Insights along with other Insights configurations using the single command `insights-cli push all`. For additional information see
+* [Automation Rules with CLI](/configure/cli/automation-rules)
+* [OPA policies With CLI](/configure/cli/opa)
