@@ -85,7 +85,8 @@ module.exports = {
           }, {    
             title: 'Policies',
             children: [
-              'configure/policy/policy',
+              'configure/policy/opa-policy',
+              'configure/policy/opa-v1',
             ],
           }, {
             title: 'Automation Rules',

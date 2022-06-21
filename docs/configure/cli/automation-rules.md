@@ -66,7 +66,7 @@ The rule won't be applied retroactively. The next time the Insights Agent, CI pr
 To be sure the Rule functions correctly, you can manually trigger the Agent by running:
 
 ```bash
-kubectl -n insights-agent create job rule-test --from cronjob/$REPORT
+kubectl create job rule-test --from cronjob/$REPORT -n insights-agent 
 ```
 
 Where $REPORT is `polaris`, `trivy` or any other report type you'd like to test.
