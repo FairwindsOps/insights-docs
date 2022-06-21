@@ -46,11 +46,18 @@ replicasRequired[actionItem] {
 
 The `actionItem` object is what Insights will examine to determine the details of the
 issue. The following fields can be set:
-* `title` - String - a short title for the Action Item
-* `description` - String - a longer description of the issue. Can include markdown
-* `remediation` - String - instructions for fixing the issue. Can include markdown
-* `category` - String - valid values are `Security`, `Efficiency` or `Reliability`
-* `severity` - Constant - valid values are `CRITICAL_SEVERITY`, `HIGH_SEVERITY`, `MEDIUM_SEVERITY`, `LOW_SEVERITY` 
+* `title` - a short title for the Action Item
+* `description` - a longer description of the issue. Can include markdown
+* `remediation` - instructions for fixing the issue. Can include markdown
+* `category` - can be `Security`, `Efficiency` or `Reliability`
+* `severity` - between 0.0 and 1.0.
+
+Action Item severity is defined as:
+* 0.0 - None
+* 0.1 to 0.39 - Low
+* 0.4 to 0.69 - Medium
+* 0.7 to .89 - High
+* 0.9 to 1.0 - Critical
 
 For instance, in the above OPA policy we could set:
 ```rego
@@ -64,7 +71,7 @@ replicasRequired[actionItem] {
     "description": "All workloads at acme-co must explicitly set the number of replicas",
     "remediation": "Please set `spec.replicas`",
     "category": "Reliability",
-    "severity": MEDIUM_SEVERITY
+    "severity": 0.5
   }
 }
 ```
@@ -82,8 +89,8 @@ replicasRequired[actionItem] {
   kinds := {"Deployment", "StatefulSet"}
   # List severities for each of the above Kinds. Kind.
   severityByKind := {
-    "StatefulSet": MEDIUM_SEVERITY,
-    "Deployment": CRITICAL_SEVERITY,
+    "StatefulSet": 0.4,
+    "Deployment": 0.9,
   }
   # Iterate Kinds{} and only continue if input.kind is one of them.
   kind := kinds[val]
@@ -160,7 +167,7 @@ replicasRequired[actionItem] {
     "description": "Workloads at acme-co must have minimum number of replicas",
     "remediation": "Please set `spec.replicas` appropriately",
     "category": "Reliability",
-    "severity": LOW_SEVERITY,
+    "severity": 0.2,
   }
 }
 ```
