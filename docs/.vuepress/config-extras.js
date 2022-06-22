@@ -86,6 +86,7 @@ module.exports = {
           }, {    
             title: 'Policies',
             children: [
+              'configure/policy/configurator',
               'configure/policy/opa-policy',
               'configure/policy/opa-v1',
             ],
