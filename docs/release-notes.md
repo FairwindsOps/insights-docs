@@ -9,6 +9,10 @@ meta:
 ---
 # Release Notes
 
+## 8.11.0
+### Bug Fixes and Improvements
+* `Clusters` page loading improvements
+
 ## 8.10.0
 ### New Design of Policy Page
 We have redesigned the `Policy` page in Insights. The `Policy` page will now show a list of all Policies that come as part of Insights
