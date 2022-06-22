@@ -40,7 +40,7 @@ Here's a description of the flags above:
 * `insights.organization` - String - the name your organization in Insights
 * `insights.cluster` - String - the name you want to give this cluster in the Insights UI. You may want to auto-generate this from your kubectl context
 * `insights.tokenSecretName` - String - the name of the secret where Insights will store your cluster's token. We recommend `insights-token`
-* `insights.apiToken` - String - the admin token from your organization's `Settings` page
+* `insights.apiToken` - String - the admin token from your organization's `Settings > Tokens` page
 
 You'll also want to set `$report.enabled` for each of the reports you want to run,
 as well as any other [chart options](https://github.com/FairwindsOps/charts/tree/master/stable/insights-agent)
@@ -58,7 +58,7 @@ helm upgrade --install insights-agent fairwinds-stable/insights-agent \
   --set insights.apiToken="thisIsTheTestOrgAdminToken1234567"
 ```
 
-When reinstalling the Agent in the same cluster, you can omit `apiToken` and `fleetInstall`,
+When reinstalling the Agent in the same cluster, you can omit `apiToken` and `fleetInstall`
 and simply specify `tokenSecretName`.
 This allows you to hand off control of the Agent to other teams without sharing your
 organization's apiToken.

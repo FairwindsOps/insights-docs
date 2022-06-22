@@ -38,7 +38,7 @@ time="2020-03-11T18:32:51Z" level=info msg="Updating data."
 time="2020-03-11T18:32:54Z" level=info msg="Data updated."
 ```
 
-If nothing suspicious appears there, you might find an answer in the second container, which uploads the results.
+If nothing suspicious appears there, you might find an answer in the second container which uploads the results.
 It should end with something like this:
 ```bash
 $ kubectl logs kube-bench-dpvbz -n insights-agent -c insights-uploader
@@ -53,7 +53,7 @@ $ kubectl logs kube-bench-dpvbz -n insights-agent -c insights-uploader
 ### Resource Limits
 We have set reasonable resource requests and limits on each of the audits, but some clusters
 may push the boundaries of our assumptions. If you're seeing out-of-memory errors or other
-resource-related issues, try setting higher resource limits.
+resource related issues, try setting higher resource limits.
 
 If you're using the helm chart, you can do this by adding
 

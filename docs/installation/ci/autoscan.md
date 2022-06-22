@@ -8,14 +8,14 @@ meta:
 Auto-Scan enables organizations using GitHub to enable infrastructure-as-code scanning across multiple repositories without
 having to configure individual CI pipelines. Scans will use the Fairwinds Insights SaaS infrastructure to run the checks.
 
-This eliminates the need to configure individual CI pipelines, allows organizations to save on compute resources, and turns
+This eliminates the need to configure individual CI pipelines, allows organizations to save on compute resources and turns
 on "shift left" infrastructure-as-code testing in minutes.
 
 This feature requires you to first connect Fairwinds Insights to GitHub. Fairwinds Insights will
 request the following permissions:
 * **Read access to code and metadata:** These permissions allow Fairwinds Insights to identify relevant infrastructure-as-code
 files, such as YAML and Helm Charts that can be scanned for security, efficiency and reliability best practices.
-* **Read and write access to commit statuses, issues, and repository hooks:** These permissions allow Fairwinds Insights
+* **Read and write access to commit statuses, issues and repository hooks:** These permissions allow Fairwinds Insights
 to create issues within a repository (as part of Create Ticket workflows), post scan findings as comments on pull requests
 and update commit statuses with a summary of scan results. The repository hooks that Fairwinds Insights monitors
 are `push` and `pull request`.

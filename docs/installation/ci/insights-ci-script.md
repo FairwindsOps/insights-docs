@@ -37,12 +37,13 @@ manifests:
 
 ## Adding the FAIRWINDS_TOKEN Environment Variable
 Next, you'll need to add the `FAIRWINDS_TOKEN` environment variable to your CI environment. This
-token can be found in the CI instructions in Insights, or on your organization's `Settings` page. Note that
-most CI platforms provide a way to specify secrets in your environment variables.
+token can be found in the CI instructions in Insights, or on your organization's `Settings > Tokens` page. 
+
+> Most CI platforms provide a way to specify secrets in your environment variables.
 
 ## Run the Insights CI Script
 Last, you'll need to execute the Insights CI script within your CI pipeline.
-You may want to download, inspect, and store a copy of the script in your repository.
+You may want to download, inspect and store a copy of the script in your repository.
 The in-app instructions will also provide a SHA which can be checked to verify the integrity of the script.
 
 Your repository will show up in the Insights UI once the script has been successfully run.

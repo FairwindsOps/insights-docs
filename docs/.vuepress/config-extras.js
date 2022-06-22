@@ -12,6 +12,7 @@ module.exports = {
     editLinkText: 'Help us improve this page',
     logo: '/img/logo.svg',
     heroText: '',
+    sidebarDepth: 2,
     sidebar: [
       ['/', 'Home'],
       {
@@ -108,7 +109,6 @@ module.exports = {
             title: 'Account Management',
             children: [
               'configure/management/membership',
-              'configure/management/delete',
             ],
           },
         ]

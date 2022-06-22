@@ -15,9 +15,14 @@ stored in your cluster.
 > The Admission Controller listens on port 8443 by default, so a firewall rule or a security group may need to be configured to allow the master nodes to send traffic to the worker nodes on that port.
 
 ## Installation
-To use the Admission Controller and install it on your cluster, navigate to the `Install Hub` and click the `Quick Add` button on the `Admission Controller` report. Once the report has been added, re-install the Insights Agent using the Helm chart in your cluster.
+To use the Admission Controller and install it on your cluster:
+1. Visit your organization's `Clusters` page
+2. After selecting a cluster, go to the `Install Hub` page
+3. Hover over the `Admission Controller` report and click the `Quick Add` button 
 
-The Admission Controller is installed in `Passive Mode` by default. This means the Admission Controller will monitor all activities, but not yet deny any deployments.
+Once the report has been added, re-install the Insights Agent using the Helm chart in your cluster.
+
+> The Admission Controller is installed in `Passive Mode` by default. This means the Admission Controller will monitor all activities, but not yet deny any deployments.
 
 In order to disable Passive Mode and block deployments with high severity issues:
 1. In `Install Hub`, click on the `Admission Controller` report

@@ -46,11 +46,11 @@ replicasRequired[actionItem] {
 
 The `actionItem` object is what Insights will examine to determine the details of the
 issue. The following fields can be set:
-* `title` - a short title for the Action Item
-* `description` - a longer description of the issue. Can include markdown
-* `remediation` - instructions for fixing the issue. Can include markdown
-* `category` - can be `Security`, `Efficiency` or `Reliability`
-* `severity` - between 0.0 and 1.0.
+* `title` - String - a short title for the Action Item
+* `description` - String - a longer description of the issue. Can include markdown
+* `remediation` - String - instructions for fixing the issue. Can include markdown
+* `category` - String - valid values are `Security`, `Efficiency` or `Reliability`
+* `severity` - Integer - between 0.0 and 1.0.
 
 Action Item severity is defined as:
 * 0.0 - None
