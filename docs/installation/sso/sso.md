@@ -11,8 +11,8 @@ Fairwinds Insights supports Single Sign-On (SSO) via a SAML identity provider.
 * Entity ID: `fairwinds-insights`
 * Name ID: Email Address
 * Attributes:
-  * firstName: User's First Name
-  * lastName: User's Last Name
+  * firstName: User's first name
+  * lastName: User's last name
   * isOwner: `true` if this user should have `Owner` access to the organization. `false` if they should not. Omit this attribute to handle authorization within Insights
   * teams: A list of teams to grant the user access to. Defaults to `view` access to each team but an additional role can be specified as `<team>/<role>`
 
