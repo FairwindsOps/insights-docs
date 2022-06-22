@@ -36,11 +36,11 @@ With these flags set, the Helm chart will create a new cluster in the Insights U
 (unless a cluster with that name already exists) before installing the agent.
 
 Here's a description of the flags above:
-* `fleetInstall` - specify if this install is using the fleet install flow
-* `insights.organization` - the name your organization in Insights
-* `insights.cluster` - the name you want to give this cluster in the Insights UI. You may want to auto-generate this from your kubectl context
-* `insights.tokenSecretName` - the name of the secret where Insights will store your cluster's token. We recommend `insights-token`
-* `insights.apiToken` - the admin token from your organization's `Settings` page
+* `fleetInstall` - Boolean - specify if this install is using the fleet install flow
+* `insights.organization` - String - the name your organization in Insights
+* `insights.cluster` - String - the name you want to give this cluster in the Insights UI. You may want to auto-generate this from your kubectl context
+* `insights.tokenSecretName` - String - the name of the secret where Insights will store your cluster's token. We recommend `insights-token`
+* `insights.apiToken` - String - the admin token from your organization's `Settings` page
 
 You'll also want to set `$report.enabled` for each of the reports you want to run,
 as well as any other [chart options](https://github.com/FairwindsOps/charts/tree/master/stable/insights-agent)

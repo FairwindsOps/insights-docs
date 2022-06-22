@@ -7,13 +7,11 @@ meta:
 You can use the Insights CLI to manage OPA policies and validate OPA policies offline.
 Be sure to first read the [Insights CLI documentation](/configure/cli/cli) which covers installation and preparation.
 
-## V1 and V2 OPA Policies
-Insights Agent 2.0 supports a new method of specifying an OPA policy without an accompanying instance YAML file. This moves the logic for some parameters,
-such as execution by cluster and Insights context directly into the Policy rego.
-See the [OPA policies documentation](/configure/policy/opa-policy) for more information about how V1 and V2 OPA policies differ.
+This page only covers OPA v2 policies with the CLI. For information and examples on how to use the CLI to create OPA v1 policies check out
+[OPA v1 Policies with the CLI](/configure/cli/opa-v1)
 
-## Pushing V2 OPA Policies to Insights
-When pushing V2 OPA policies to Insights, the CLI expects a directory structure like the following:
+## Pushing OPA Policies to Insights
+When pushing OPA policies to Insights, the CLI expects a directory structure like the following:
 ```
 .
 +-- opa
@@ -29,8 +27,8 @@ Once the files have been created, use the following command to push the OPA poli
 insights-cli push opa
 ```
 
-### Pushing V2 OPA Policies Example
-To upload a V2 OPA policy that requires `replicas` to be specified for Kubernetes Deployments, create the file `./opa/replicas/policy.rego`:
+### Pushing OPA Policies Example
+To upload an OPA policy that requires `replicas` to be specified for Kubernetes Deployments, create the file `./opa/replicas/policy.rego`:
 
 ```rego
 package fairwinds
@@ -48,65 +46,13 @@ replicasRequired[actionItem] {
 }
 ```
 
-Note that the OPA policy first checks that `input.kind` is `Deployment` which ensures this only applies to Kubernetes Deployments. This is a difference between V2 and V1 OPA policies.
+Note that the OPA policy first checks that `input.kind` is `Deployment` which ensures this only applies to Kubernetes Deployments.
 
 Next use the Insights CLI to push this OPA policy to Insights:
 
 ```bash
 insights-cli push opa 
 ```
-
-## Pushing V1 Legacy OPA Policies To Insights
-When pushing V1 OPA policies to Insights, the CLI expects a directory structure like the following:
-```
-.
-+-- opa
-|   +-- policy1
-|       +-- policy.rego
-|       +-- instance1.yaml
-|   +-- policy2
-|       +-- policy.rego
-|       +-- instance1.yaml
-```
-
-The Policy file name must be `policy.rego`.
-
-Each Policy lives in its own directory, alongside the "policy instance" files that specify to which Kubernetes Kinds they should be applied.
-
-### Pushing V1 Policies Example
-To upload a V1 OPA policy that requires `replicas` to be specified for Kubernetes Deployments, create the file `./opa/replicas/policy.rego`:
-
-```rego
-package fairwinds
-
-replicasRequired[actionItem] {
-  input.spec.replicas == 0
-  actionItem := {
-    "title": concat(" ", [input.kind, "does not have replicas set"]),
-    "description": "All deployments at acme-co must explicitly set the number of replicas",
-    "remediation": "Please set `spec.replicas`",
-    "category": "Reliability",
-    "severity": 0.5
-  }
-}
-```
-
-Next, create the `./opa/replicas/deployments.yaml` file to tell Insights that this Policy
-will be applied to all Kubernetes Deployments:
-```yaml
-targets:
-- apiGroups: ["apps"]
-  kinds: ["Deployment"]
-```
-
-Finally, we can upload our Policies using the CLI:
-
-```bash
-insights-cli push opa
-```
-
-It is possible to mix V1 and V2 OPA policies within a single `opa` directory. 
-The key differentiation is that V2 Policies only have a `policy.rego` file.
 
 ## Verifying an OPA Policy
 To see a list of OPA policies in your Insights organization, run:
@@ -140,7 +86,7 @@ For additional information see
 * [Policies Configuration with CLI](/configure/cli/settings)
 
 ## Validate and Debug OPA Policies
-> The `validate` command only works with V2 OPA policies
+> The `validate` command only works with v2 OPA policies
 
 The Insights CLI can validate OPA policies which is useful for local policy development or in your CI/CD workflow. 
 Validation includes:

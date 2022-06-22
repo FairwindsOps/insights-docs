@@ -57,7 +57,7 @@ Action Item severity is defined as:
 * 0.1 to 0.39 - Low
 * 0.4 to 0.69 - Medium
 * 0.7 to .89 - High
-* 0.9 to 1.0 - Critical  
+* 0.9 to 1.0 - Critical
 
 For instance, in the above OPA policy we could set:
 ```rego

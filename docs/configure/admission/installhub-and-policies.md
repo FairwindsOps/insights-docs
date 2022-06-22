@@ -3,7 +3,7 @@ meta:
   - name: description
     content: "Fairwinds Insights | Documentation: Admission Controller configuration through Install Hub and Configuration of Policies"
 ---
-# Install Hub and Policies Configuration
+# Install Hub and Policies
 ## Enable or Disable Reports Through Install Hub
 The Admission Controller currently runs the following report types:
 * Polaris - checks for security and best practices
