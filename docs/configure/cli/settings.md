@@ -2,6 +2,8 @@
 You can use the Insights CLI to manage the configuration of Policies.
 Be sure to first read the [Insights CLI documentation](/configure/cli/cli) which covers installation and preparation.
 
+Check out the [Policy Configurator](/configure/policy/configurator) documentation on use cases for configuring Policies.
+
 ## Pushing Policies Configuration to Insights
 When pushing configuration of Policies to Insights, the CLI expects a `settings.yaml` file in the current directory.
 The file should follow the following format:
