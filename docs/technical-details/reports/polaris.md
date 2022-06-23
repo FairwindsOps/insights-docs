@@ -10,7 +10,7 @@ meta:
 # Polaris
 [Polaris](https://github.com/FairwindsOps/polaris) is an open source tool for
 checking workload configurations against a set of best-practices. It can
-be configured and fine-tuned for each organization that uses it, and custom
+be configured and fine tuned for each organization that uses it and custom
 checks can be written using JSON Schema.
 
 Polaris validation checks fall into several different categories:

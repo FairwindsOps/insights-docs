@@ -1,13 +1,13 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Documentation on Insights architecture. "
+    content: "Fairwinds Insights | Documentation: Insights architecture"
 ---
 # Insights Architecture
 
 Fairwinds Insights consists of two main components:
-* The Client - this consists of the users' cluster, where the Insights Agent runs each of the enabled reports
-* The Server - this consists of the Insights backend, database, and file storage
+* Client - this consists of the users' cluster, where the Insights Agent runs each of the enabled reports
+* Server - this consists of the Insights backend, database, and file storage
 
 <img :src="$withBase('/img/architecture.png')" alt="Insights Architecture">
 
@@ -19,7 +19,7 @@ Insights Agent:
 * Network access to `insights.fairwinds.com`
 
 Additional architecture notes and RBAC requirements for different reports are listed below.
-Note that the Insights Agent only requires _egress_ from the cluster - you will not need to
+Note that the Insights Agent only requires _egress_ from the cluster. You will not need to
 open up access for any kind of network ingress.
 
 ## Network Egress
@@ -40,21 +40,21 @@ Fairwinds Insights will need access to the following base URLs:
 * artifacthub.io/api/v1/* (nova)
 
 ## Report Architectures
-Typically, each report runs as a CronJob on a configurable schedule (usually once/hour by default).
-The report will analyze resources in the cluster, then send a JSON report with its findings
+Typically each report runs as a CronJob on a configurable schedule (usually once/hour by default).
+The report will analyze resources in the cluster then send a JSON report with its findings
 to `insights.fairwinds.com`.
 
 Any exceptions or additions to this flow are listed below.
 
 ### Goldilocks
-In addition to the typical cronjob, Goldilocks will run a long-lived Deployment for controlling
+In addition to the typical cronjob, Goldilocks will run a long lived Deployment for controlling
 VPA objects. Goldilocks will add a VPA (in `recommend` mode) to any incoming Deployment in order to
 provide resource recommendations.
 
-Goldilocks needs access to `raw.githubusercontent.com` in order to access the CRDs for VPA objects,
+Goldilocks needs access to `raw.githubusercontent.com` in order to access the CRDs for VPA objects
 which will be installed in the cluster alongside the Insights Agent.
 
-Goldilocks also requires a metrics-server installation.
+Goldilocks also requires a `metrics-server` installation.
 
 ### kube-bench
 kube-bench can run in one of two modes:
@@ -74,15 +74,15 @@ kube-bench needs access to some resources on the node in order to perform its au
 
 ### kube-hunter
 kube-hunter runs in [pod mode](https://github.com/aquasecurity/kube-hunter#pod) in order to discover what
-running a malicious container can do/discover on your cluster.
+running a malicious container can discover and do on your cluster.
 
 ### Nova
-Nova needs access to `Secrets`, which contain metadata about installed Helm charts.
+Nova needs access to `Secrets` which contain metadata about installed Helm charts.
 
 Nova will also need network access to any third-party Helm repositories from which Helm charts have
 been installed (e.g. `https://kubernetes-charts.storage.googleapis.com`).
 
-Nova will find all Helm charts installed in the cluster, then cross-check those charts with the upstream
+Nova will find all Helm charts installed in the cluster then cross-check those charts with the upstream
 repositories to check for new versions.
 
 ### OPA
@@ -100,19 +100,19 @@ access to Secrets in order to examine Helm charts.
 RBAC Reporter needs `view` access to the cluster to aggregate information about RBAC roles and bindings.
 
 ### Trivy
-Trivy will download a list of known CVEs [from GitHub](https://github.com/aquasecurity/trivy-db),
+Trivy will download a list of known CVEs [from GitHub](https://github.com/aquasecurity/trivy-db)
 then cross-check these against images in your cluster.
 
 You may need to grant Trivy access to [private images](/technical-details/reports/trivy#private-images) if your nodes
 don't automatically have access to your private Docker registries.
 
 ### Workloads
-The Workloads report only needs `view` access to your cluster.
+The Workloads report needs `view` access to your cluster.
 
-## RBAC requirements
+## RBAC Requirements
 Each Fairwinds Insights plugin requires a unique set of permissions in order to do its job.
-Here we provide a list of permissions requested by each plugin - you can also review
-the [helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/insights-agent) to
+Here we provide a list of permissions requested by each plugin. You can also review
+the [Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/insights-agent) to
 see the exact RBAC configurations for each plugin.
 
 Notably, some plugins require **read access to secrets**. This is because they examine Helm 3

@@ -10,50 +10,47 @@ meta:
 
 # Trivy
 [Trivy](https://github.com/aquasecurity/trivy) is an open source tool for scanning Docker images
-for vulnerabilities. These scans run on your cluster, and the results are uploaded to Insights
+for vulnerabilities. These scans run on your cluster and the results are uploaded to Insights.
 
 ## Vulnerability Database
 Trivy's vulnerability database is managed via [this GitHub repository](https://github.com/aquasecurity/trivy-db/tree/main/pkg/vulnsrc).
-The database is refreshed every 6 hours, and pulls from many different sources, including
-NIST's NVD, RedHat, Debian, etc. You can see the [full list here](https://github.com/aquasecurity/trivy-db/tree/main/pkg/vulnsrc)
+The database is refreshed every 6 hours and pulls from many different sources, including
+NIST's NVD, RedHat, Debian, etc. You can see the [full list here.](https://github.com/aquasecurity/trivy-db/tree/main/pkg/vulnsrc)
 
 ## Remediation
 If you're seeing Action Items from the Trivy report, there are two typical routes for resolution:
 
-**1. Third-party containers:** If the report is for a third-party container (e.g. a Helm chart), try updating to the latest version. Fairwinds will automatically scan newer versions of the container image from the source repository and recommend versions that have fewer vulnerabilities. Upgrade recommendations are refreshed each time the container image is re-scanned. To learn more, please [read our blog post about third-party image recommendations](https://www.fairwinds.com/blog/kubernetes-vulnerability-management-third-party-images-up-to-date).
+**1. Third-party containers:** If the report is for a third-party container (e.g. a Helm chart), try updating to the latest version. Fairwinds will automatically scan newer versions of the container image from the source repository and recommend versions that have fewer vulnerabilities. Upgrade recommendations are refreshed each time the container image is re-scanned. To learn more, [read our blog post about third-party image recommendations](https://www.fairwinds.com/blog/kubernetes-vulnerability-management-third-party-images-up-to-date).
 
-If that doesn't solve the problem, notify the maintainer that the latest version has a vulnerability,
-e.g. by opening a GitHub issue.
+If that doesn't solve the problem, notify the maintainer that the latest version has a vulnerability(e.g. by opening a GitHub issue).
 
 **2. First-party containers you own and maintain:** If the report is for an application you own, try updating the base image and any libraries you've
 installed on top of it. Fairwinds provides functionality to identify if vulnerable libraries have a known fix available.
 
 ## Private Images
-On some cloud providers, your nodes will be automatically configured to have access to your
+On some cloud providers your nodes will be automatically configured to have access to your
 container registry. For example, GKE nodes should be able to pull images from Google Container
 Registry automatically.
 
-But in many cases, you'll need to grant Trivy permission to access private images. There are a couple of different ways to do this. 
+But in many cases you'll need to grant Trivy permission to access private images. There are a couple of different ways to do this. 
 
-### Passing in access keys directly
-
-For this, you'll need to create a Kubernetes Secret, and pass the name of that secret to the Helm
-installation of the Insights Agent
+### Passing in Access Keys Directly
+For this, you'll need to create a Kubernetes Secret and pass the name of that secret to the Helm
+installation of the Insights Agent.
 
 For example, to create a secret from your personal dockerconfig, you could run:
 ```bash
 kubectl create secret generic insights-pull --from-file=config.json=$HOME/.docker/config.json -n insights-agent
 ```
 
-Note that we named the secret `insights-pull`, and put it in the `insights-agent` namespace.
-We can then install the agent with
+Note that we named the secret `insights-pull` and put it in the `insights-agent` namespace.
+We can then install the agent with:
 ```bash
   --set trivy.privateImages.dockerConfigSecret=insights-pull
 ```
 
 ### Using IRSA (IAM Role for Service Accounts)
-
-The Insights helm chart allows us to pass Trivy an IAM role name to give Trivy the permissions it needs to access an AWS repository. In the agents' values.yaml add:
+The Insights Helm chart allows us to pass Trivy an IAM role name to give Trivy the permissions it needs to access an AWS repository. In the Insights Agent's `values.yaml` add:
 
 ```yaml
 trivy:
@@ -63,7 +60,7 @@ trivy:
 ```
 
 ## Sample Report 
-Trivy reports contain a list of images running in the cluster, as well as any CVEs in those images
+Trivy reports contain a list of images running in the cluster as well as any CVEs in those images
 ```json
 {
     "Images": [

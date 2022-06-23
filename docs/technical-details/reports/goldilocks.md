@@ -15,7 +15,7 @@ based on actual usage.
 
 Goldilocks utilizes the
 [vertical-pod-autoscaler](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler)
-in recommendation mode to extract suggested CPU and Memory limits/requests.
+in recommendation mode to extract suggested CPU and memory limits/requests.
 
 ## Requirements
 Make sure you have
@@ -29,11 +29,11 @@ your own VPA installation, you can `--set goldilocks.installVPA=false`.
 
 ## Remediation
 
-Goldilocks Action Items will suggest particular amounts for CPU and Memory limits/requests.
+Goldilocks Action Items will suggest particular amounts for CPU and memory limits/requests.
 You can copy/paste these recommendations into your workload configuration.
 
 If Goldilocks is making recommendations for a third-party application, you can likely set
-its requests/limits using its helm chart, or by editing its installation YAML by hand.
+its requests/limits using its Helm chart or by editing its installation YAML by hand.
 
 ## Sample Report 
 

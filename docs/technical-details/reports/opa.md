@@ -1,16 +1,12 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Documentation. Fairwinds Insights supports the use of custom OPA policies to create Action Items."
+    content: "Fairwinds Insights | Documentation: Fairwinds Insights supports the use of custom OPA policies to create Action Items"
 ---
 # OPA
 Fairwinds Insights supports the use of custom OPA policies to create Action Items.
 
-## Enable the OPA agent
-To enable OPA, make sure you pass `--set opa.enabled=true` when
-[installing the insights-agent](/installation/agent/setup)
-
-See the [OPA Policy documentation](/configure/policy/opa-policy) for more info on how
+See the [OPA Policy documentation](/configure/policy/opa-policy) for information on how
 to write OPA checks and upload them to Insights.
 
 ## Sample Report 
