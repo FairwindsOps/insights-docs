@@ -31,20 +31,20 @@ spec:
 
 Can you tell what it's doing wrong? The answer is: just about everything!
 
-Here are a few of the issues that Polaris - one of the default reports in Insights - will find with this
+Here are a few of the issues that Polaris, one of the default reports in Insights, will find with this
 deployment:
 * There are no liveness or readiness probes set. Kubernetes won't be able to tell if
-this app crashes, or when it's properly scaled up. This makes it much more likely that we'll experience downtime,
-either as the result of a bug, or just in the normal course of upgrading.
+this app crashes or when it's properly scaled up. This makes it much more likely that we'll experience downtime
+either as the result of a bug or just in the normal course of upgrading.
 * There are no resource requests or limits. We haven't given Kubernetes any clue as to how much memory or CPU we
-expect nginx to use, so if there's a memory leak, we could end up eating up all the cluster's resources. Or if
-other, better-behaved workloads begin to request resources, there's a chance nginx will be killed to make room for them.
+expect nginx to use so if there's a memory leak, we could end up eating up all the cluster's resources. Or if
+other better behaved workloads begin to request resources, there's a chance nginx will be killed to make room for them.
 * It's using the `latest` tag, which could cause us to pull in unwanted updates. It's always good to pin
-the image to a particular tag, so you know what you're running.
+the image to a particular tag so you know what you're running.
 
 And we haven't even gotten to the security issues!
 
-To start uncovering issues with workload configuration, you can visit the Action Items tab
+To start uncovering issues with workload configuration, you can visit the Action Items page
 and filter for the `polaris` report:
 
 <img :src="$withBase('/img/filter-polaris.png')" alt="Filter for Polaris items">

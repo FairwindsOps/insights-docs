@@ -6,6 +6,7 @@ meta:
     content: "Fairwinds Insights | Release Notes. See what's new in the Kubernetes governance software. "
   - name: keywords
     content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
+sidebarDepth: 1
 ---
 # Release Notes
 

@@ -1,17 +1,16 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Documentation. See how to get value from Fairwinds Insights. "
+    content: "Fairwinds Insights | Documentation: How to get value from Fairwinds Insights"
 ---
 # Getting Value from Fairwinds Insights
-
-So you've [installed the Insights agent](/installation/agent/setup),
+So you've [installed the Insights agent](/installation/agent/setup)
 and you're getting some results
-back from your audits. Chances are, you're seeing quite a few Action Items showing up. Where should you start?
+back from your audits. Chances are you're seeing quite a few Action Items showing up. Where should you start?
 
 While it's good to look through the entire list of Action Items to get a sense for what's there,
 you probably already have a sense for where you should be focusing your efforts. Below are
-three common use cases for Insights, as well as more instructions on how to achieve them.
+three common use cases for Insights as well as more instructions on how to achieve them.
 
 ## Workload Configuration
 Often development and ops teams will assume that since the application is running,
@@ -32,8 +31,8 @@ images for known CVEs.
 
 ## Cost Efficiency
 Running workloads in Kubernetes can get expensive quickly. It can be hard to understand which
-workloads have the biggest impact on your bottom line, and often teams are tempted to overprovision
+workloads have the biggest impact on your bottom line and often teams are tempted to overprovision
 resources in order to ensure their application always functions properly.
 
-Check out the [cost efficiency section](/first-steps/cost-efficiency) to learn how to get a better understanding
-of workload cost, as well as detect workloads that are under or over-provisioned.
+Check out the [cost efficiency section](/first-steps/cost-efficiency) to get a better understanding
+of workload cost as well as detect workloads that are under or over-provisioned.
