@@ -1,7 +1,7 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Documentation. Fairwinds Insights provides cost attribution and resource tuning. "
+    content: "Fairwinds Insights | Documentation: Fairwinds Insights provides cost attribution and resource tuning"
 ---
 # Cost Efficiency
 
