@@ -157,9 +157,6 @@ module.exports = {
             title: 'API Access',
             children: [
               'technical-details/api/authentication',
-              'technical-details/api/clusters',
-              'technical-details/api/reports',
-              'technical-details/api/custom-reports',
             ],
           },
           {

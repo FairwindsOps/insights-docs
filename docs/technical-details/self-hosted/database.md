@@ -1,15 +1,15 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Self-hosted Documentation: Fairwinds Insights requires a Postgres database to store backend data."
+    content: "Fairwinds Insights | Self-hosted Documentation: Fairwinds Insights requires a Postgres database to store backend data"
 ---
 # Database
 Fairwinds Insights requires a Postgres database to store backend data.
 
 ## Ephemeral Postgres
 By default, Insights will install Postgres via
-[its helm chart](https://github.com/helm/charts/tree/master/stable/postgresql).
-We don't recommend running databases in Kubernetes, due to the possibility of lost data.
+[its Helm chart](https://github.com/helm/charts/tree/master/stable/postgresql).
+We don't recommend running databases in Kubernetes due to the possibility of lost data.
 If you use this option, keep in mind you'll be responsible for maintaining
 and backing up that database.
 
@@ -31,7 +31,7 @@ postgresql:
 If you'd like to use your own Postgres instance (e.g. on Amazon RDS),
 you'll need to point the Insights chart to your database:
 
-_values.yaml_
+`values.yaml`:
 ```yaml
 postgresql:
   ephemeral: false
@@ -43,7 +43,7 @@ postgresql:
   service:
     port: 5432
 ```
-The password for your postgres database should be in a secret stored in Kubernetes,
+The password for your postgres database should be in a secret stored in Kubernetes
 using the key `postgresql-password`. Make sure the `name` matches `passwordSecret` above.
 
 This example creates a secret with the text `helloworld`:
@@ -52,7 +52,7 @@ echo -n "helloworld" | base64
 # aGVsbG93b3JsZA==
 ```
 
-_postgres-secret.yaml_
+`postgres-secret.yaml`:
 ```yaml
 apiVersion: v1
 data:

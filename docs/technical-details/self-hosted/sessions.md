@@ -1,11 +1,11 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Self-hosted Documentation. Session Keys. "
+    content: "Fairwinds Insights | Self-hosted Documentation: Session Keys"
 ---
 # Session keys
-In the default install, we autogenerate session and cookie keys each time the application is
-installed or upgraded, which could cause disruption for users. Instead, you should generate
+In the default install we autogenerate session and cookie keys each time the application is
+installed or upgraded, which could cause disruption for users. Instead you should generate
 these tokens once and save them in a Kubernetes secret.
 
 > Most secrets (with the exception of your PostgreSQL password) must be stored in a secret
@@ -25,7 +25,7 @@ session_auth_key=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 64 | base64 -w
 session_encryption_key=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32 | base64 -w 0)
 ```
 
-You should use these values to populate _secrets.yaml_:
+You should use these values to populate `secrets.yaml`:
 ```yaml
 apiVersion: v1
 data:
