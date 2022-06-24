@@ -9,9 +9,9 @@ meta:
 ---
 
 # Supported Checks
-Fairwinds Insights supports multiple, out-of-the-box [Reports](https://insights.docs.fairwinds.com/reports/polaris/) that generate Action Items related to Kubernetes security, efficiency, and reliability. 
+Fairwinds Insights supports multiple, out-of-the-box [Reports](https://insights.docs.fairwinds.com/reports/polaris/) that generate Action Items related to Kubernetes security, efficiency and reliability. 
 
-The table below enumerates all Action Items currently produced by Fairwinds Insights, including their respective `ReportType` and `EventType` codes for use with the [Automation Rules](https://insights.docs.fairwinds.com/features/rules/) feature.
+The table below enumerates all Action Items currently produced by Fairwinds Insights, including their respective `ReportType` and `EventType` codes for use with the [Automation Rules.](/configure/automation/rules)
 
 > Note: Not all available Reports, such as RBAC Reporter, generate Action Items.
 

@@ -1,11 +1,11 @@
 # AWS Costs
-The AWS Costs reports syncs your AWS billing data to Insights, so
-Insights can know precisely what you're spending on nodes, and use that
+The AWS Costs report syncs your AWS billing data to Insights so
+it can know precisely what you're spending on nodes and use that
 information to infer accurate workload costs.
 
-This requires some setup on your end:
+This requires some setup:
 * Ensure nodes for different clusters are tagged in a consistent way
-    * E.g. nodes in your staging cluster have tag `cluster=staging`, and your production cluster nodes have `cluster=prod`
+    * E.g. nodes in your staging cluster have tag `cluster=staging` and your production cluster nodes have `cluster=prod`
 * Create an S3 bucket where billing data can be stored
 * Create an Athena database for querying the S3 data
 * Create a Glue crawler to populate the data
@@ -16,7 +16,7 @@ resources below.
 
 ## Agent Configuration
 Once the AWS resources are in place, you'll need to configure the
-AWS agent to start uploading your cost data. Your values.yaml should include
+AWS agent to start uploading your cost data. Your `values.yaml` should include
 the section below, replacing any values with your own.
 
 ```yaml

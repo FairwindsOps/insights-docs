@@ -8,14 +8,14 @@ meta:
     content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, Workloads, open source
 ---
 # Workloads
-The Workloads report uploads a list of all the workloads running in your cluster,
-including `Deployments`, `Jobs`, `CronJobs`, `ReplicaSets`, `DaemonSets`, and `Pods`.
-This information is used to generate the information in the workloads page. Make sure to have Golilocks or Prometheus Collector installed [Install Hub](/configure/agent/install-hub)
+The Workloads report uploads a list of all the workloads running in your cluster
+including `Deployments`, `Jobs`, `CronJobs`, `ReplicaSets`, `DaemonSets` and `Pods`.
+This information is used to generate the information in the workloads page. Make sure to have Goldilocks or Prometheus Collector installed.
 
 The Workloads report does not generate any Action Items.
 
 ## Sample Report 
-Workloads reports contain a list of workloads, Namespaces, and Nodes in the cluster
+Workloads reports contain a list of workloads, Namespaces and Nodes in the cluster
 ```json
 {
     "CreationTime": "2020-02-11T19:08:07.287236228Z",

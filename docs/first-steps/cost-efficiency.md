@@ -23,7 +23,8 @@ the first time you visit the `Efficiency > Workloads` page:
 
 <img :src="$withBase('/img/cost-settings.png')" alt="Cost settings">
 
-We've pre-populated a list of instance types from AWS and GCP, but you can also set custom numbers
+We've pre-populated a list of instance types from AWS and GCP and can sync data from your bill when
+[AWS Costs is enabled](/technical-details/reports/aws-costs). You can also set custom numbers
 if you're running on a different cloud provider or if you're using spot instances. If you have
 multiple node types in your cluster, use the most representative type.
 

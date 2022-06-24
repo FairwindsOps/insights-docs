@@ -23,7 +23,7 @@ Refer to the [kube-hunter documentation](https://aquasecurity.github.io/kube-hun
 for details and remediation steps for each particular kube-hunter finding.
 
 ## Sample Report 
-kube-hunter reports contain a list of Nodes, Services, and detected vulnerabilities.
+kube-hunter reports contain a list of Nodes, Services and detected vulnerabilities.
 
 ```json
 {
