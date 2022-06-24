@@ -4,18 +4,18 @@ meta:
     content: "Fairwinds Insights | Self-hosted Documentation: Email can be sent via AWS SES, or by specifying your own SMTP options"
 ---
 # Email
-Email can be sent via AWS SES, or by specifying your own SMTP options.
+Email can be sent via AWS SES or by specifying your own SMTP options.
 
 ## SES
 
-First, specify the `ses` strategy in _values.yaml_
+First, specify the `ses` strategy in `values.yaml`:
 ```yaml
 email:
   strategy: ses
 ```
 
-Then you'll need to specify your base64-encoded AWS credentials, and add them to your
-_secrets.yaml_:
+Then you'll need to specify your base64-encoded AWS credentials and add them to your
+`secrets.yaml`:
 ```yaml
 apiVersion: v1
 data:
@@ -34,7 +34,7 @@ You can follow
 [these instructions](https://kinsta.com/knowledgebase/free-smtp-server/#step-2-send-mail-as-google-smtp)
 for using a Gmail account with SMTP.
 
-_values.yaml_
+`values.yaml`:
 ```yaml
 email:
   strategy: smtp
@@ -43,7 +43,7 @@ email:
   smtpPort: "465"
 ```
 
-You'll need to put the password in your _secrets.yaml_
+You'll need to put the password in your `secrets.yaml`:
 ```yaml
 apiVersion: v1
 data:

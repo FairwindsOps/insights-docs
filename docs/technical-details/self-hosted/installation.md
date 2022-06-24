@@ -1,18 +1,16 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Self-hosted install Documentation. "
+    content: "Fairwinds Insights | Self-hosted Documentation: Fairwinds Insights self hosted install"
 ---
 # Installation
 
-> The documentation may be incomplete, and it is subject to breaking changes.
-
 > You'll need a code provided by the Fairwinds team in order to try out
-> the self-hosted version of Insights. If you're interested,
+> the self hosted version of Insights. If you're interested,
 > [schedule some time to chat](https://www.fairwinds.com/fairwinds-insights-demo)
 
 ## Quickstart
-These instructions are good for a quick demo of self-hosted Insights. For production-grade
+These instructions are for a quick demo of self hosted Insights. For production grade
 installations, you'll want to use the instructions here to harden your installation.
 
 ```bash
@@ -25,29 +23,29 @@ helm install fairwinds-insights fairwinds-stable/fairwinds-insights \
   --set options.allowHTTPCookies=true \
   --set postgresql.sslMode=disable \
   --set postgresql.password=THISISASECRET \
-  --set installationCode="CODE PROVIDED BY FAIRWINDS"
+  --set installationCode="$FAIRWINDS_PROVIDED_CODE"
 ```
 
-You can then access the dashboard via port-forward
+You can then access the dashboard via port-forward:
 ```
 kubectl port-forward -n fairwinds-insights svc/fairwinds-insights-dashboard 8080:80
 ```
 
-### Hardening
+## Hardening
 The default configuration will give you a working version of Fairwinds Insights.
 But there are a few issues you'll want to solve before starting to use it seriously:
 * [Database](/technical-details/self-hosted/database): set up a durable Postgres database for your data
-* [File Storage](/technical-details/self-hosted/file-storage): set up a durable place to store files (S3 or Minio).
+* [File Storage](/technical-details/self-hosted/file-storage): set up a durable place to store files (S3 or Minio)
 * [Ingress](/technical-details/self-hosted/ingress): host Insights behind a custom domain
-* [Sessions](/technical-details/self-hosted/sessions): Generate permanent session keys in order to preserve running sessions when Insights is updated.
-* [Email](/technical-details/self-hosted/email): In order to confirm email addresses and add new users, you'll need to set up an email provider.
+* [Sessions](/technical-details/self-hosted/sessions): Generate permanent session keys in order to preserve running sessions when Insights is updated
+* [Email](/technical-details/self-hosted/email): In order to confirm email addresses and add new users, you'll need to set up an email provider
 
-Some of these things simply involve passing new data to the Helm chart. Others
+Some of these simply involve passing new data to the Helm chart. Others
 may require the creation of new Kubernetes secrets.
 
 For example, a hardened setup might look like this:
 
-_values.yaml_
+`values.yaml`:
 ```yaml
 fairwindsInsights:
   host: https://insights.example.com
@@ -74,7 +72,7 @@ postgresql:
     port: 5432
 ```
 
-_secrets.yaml_
+`secrets.yaml`:
 ```yaml
 apiVersion: v1
 data:
@@ -91,7 +89,7 @@ metadata:
 type: Opaque
 ```
 
-_postgres-secret.yaml_
+`postgres-secret.yaml`:
 ```yaml
 apiVersion: v1
 data:
@@ -101,5 +99,3 @@ metadata:
     name: fwinsights-postgresql
 type: Opaque
 ```
-
-

@@ -1,5 +1,5 @@
 # Integrations
-To add support for integrations like Slack, GitHub, and Jira, and PagerDuty you can add any of the
+To add support for integrations like Slack, GitHub, Jira and PagerDuty you can add any of the
 following environment variables to your `fwinsights-secrets` secret:
 
 * SLACK_CLIENT_ID
@@ -16,21 +16,19 @@ following environment variables to your `fwinsights-secrets` secret:
 You'll need to create a
 [Slack app](https://api.slack.com/apps/) to enable the Slack integration.
 
-Copy the client ID and secret, and add them to the `fwinsights-secrets` secret (see above).
-
-Then, on the left side, click OAuth & Permissions.
-
-You'll need to add the following scopes:
+1. Copy the client ID and secret and add them to the `fwinsights-secrets` secret (see above)
+2. On the left side, click `OAuth & Permissions`
+3. You'll need to add the following scopes:
 * `channels:join`
 * `channels:read`
 * `chat:write`
 
-You'll also need to add callback URL for
+4. You'll also need to add callback URL for:
 ```
 $HOSTNAME/v0/slack/oauth/callback
 ```
 
-Once finished, restart the API pod and then go to `<host-url>/orgs/<org-name>/settings/integrations` and install the Slack Integration.
+5. Restart the API pod and go to `<host-url>/orgs/<org-name>/settings/integrations` and install the Slack Integration
 
 
 ## GitHub
@@ -38,15 +36,15 @@ You'll need to create a
 GitHub app at `https://github.com/organizations/YOUR_ORG_NAME/settings/apps`
 to enable the GitHub integration.
 
-To set up your app,
-* set `Callback URL` to `$HOSTNAME/v0/github/callback`
-* set `Post Installation Setup URL` to `$HOSTNAME/v0/github/callback`
-    * Check `Redirect on update`
-* under `Webhook`:
-  * check `Active`
-  * set `Webhook URL` to `$HOSTNAME/v0/github/webhook`
-  * set `Webhook secret` (same value and env variable above)
-* enable `SSL verification`
+To set up your app:
+1. Set `Callback URL` to `$HOSTNAME/v0/github/callback`
+2. Set `Post Installation Setup URL` to `$HOSTNAME/v0/github/callback`
+  </br>a. Check `Redirect on update`
+3. Under `Webhook`:
+  </br>a. Check `Active`
+  </br>b. Set `Webhook URL` to `$HOSTNAME/v0/github/webhook`
+  </br>c. Set `Webhook secret` (same value and env variable above)
+4. Enable `SSL verification`
 
 
 ### Permissions
@@ -62,5 +60,5 @@ And the following events:
 To set up PagerDuty, create an app at
 https://pagerduty.com/developer/apps (the URL for your organization may be different).
 
-You will need `Read/Write` scope, and should add a `Redirect URL` to
+You will need `Read/Write` scope and should add a `Redirect URL` to
 `$HOSTNAME/v0/pagerduty/oauth/callback`

@@ -1,16 +1,16 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Self-hosted Documentation. The Helm chart comes with an Ingress object to expose a URL for connecting to Insights."
+    content: "Fairwinds Insights | Self-hosted Documentation: The Helm chart comes with an Ingress object to expose a URL for connecting to Insights"
 ---
 # Ingress
 The Helm chart comes with an Ingress object in order to expose a URL for connecting to Insights.
-Here's an example configuration, using cert-manager and nginx-ingress.
+Here's an example configuration using cert-manager and nginx-ingress.
 
-Note that we allow up to `24m` of data in request bodies - this is important, as some of the
+Note that we allow up to `24m` of data in request bodies. This is important as some of the
 reports sent back from clusters can be fairly large.
 
-_values.yaml_
+`values.yaml`:
 ```yaml
 ingress:
   enabled: true
