@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 8.12.0
+### Bug Fixes and Improvements
+* Improved accessibility throughout Insights
+* Added an Export option for Repository Action Items
+* Fixed links to documentation
+
 ## 8.11.0
 ### Bug Fixes and Improvements
 * `Clusters` page loading improvements
