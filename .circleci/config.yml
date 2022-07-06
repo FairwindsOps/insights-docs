@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   rok8s: fairwinds/rok8s-scripts@11
-  oss-docs: fairwinds/oss-docs@0
+  oss-docs: fairwinds/oss-docs@dev:sudermanjr/bucket-name-override
 
 references:
   test_and_build: &test_and_build
@@ -32,6 +32,7 @@ workflows:
               ignore: main
       - oss-docs/publish-docs:
           repository: insights-docs
+          bucket-name-override: insights.docs.fairwinds.com
           filters:
             branches:
               only: main
