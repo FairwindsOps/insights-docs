@@ -35,4 +35,4 @@ workflows:
           bucket-name-override: insights.docs.fairwinds.com
           filters:
             branches:
-              only: main
+              only: sudermanjr/bucket-name-override
