@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 9.0.0
+### Bug Fixes and Improvements
+* Fixed link to vulnerability for Jira tickets
+* Added description and remediation for `Only one replica is scheduled` Action Item
+* OPA policies now have the correct `Event Type`
+
 ## 8.12.0
 ### Bug Fixes and Improvements
 * Improved accessibility throughout Insights
