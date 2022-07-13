@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 9.1.0
+### Bug Fixes and Improvements
+* Insights Agent 2.4.8
+* `Viewers` are not able to see the `Logs` in `Automation`
+
 ## 9.0.0
 ### Bug Fixes and Improvements
 * Fixed link to vulnerability for Jira tickets
