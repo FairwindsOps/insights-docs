@@ -90,10 +90,12 @@ For additional information see
 
 The Insights CLI can validate OPA policies which is useful for local policy development or in your CI/CD workflow. 
 Validation includes:
+
 * Verifying rego syntax - the query language used by OPA policies
 * Verifying Insights provided functions, such as `kubernetes()` and `insightsinfo()`, have the correct number of parameters
 * Displaying optional rego `print` statements to aide in debugging
-* Showing Policy output, and checking it contains a valid Insights Action Item
+* Showing Policy output, and verifying the syntax of any Insights Action Item
+* Require the OPA policy to succeed or fail in order to pass validation. Configurable via a command-line flag or the extension of the Kubernetes manifest yaml file name
 
 The `insights-cli validate opa` command requires an OPA policy file, and a Kubernetes manifest file that will be passed as input to the Policy:
 
@@ -139,4 +141,24 @@ Next use the Insights CLI to validate all OPA policies
 insights-cli validate opa --batch-directory <directory_path>
 ```
 
-All Policies must generate a single Insights Action Item as output to be considered valid.
+### Requiring Policy Success or Failure
+
+The `--expect-action-item` command-line flag configures whether validation expects a policy to output an Insights Action Item. By default, policies are expected to generate a single Action Item to be considered valid. Setting `--expect-action-item=false` expects Kubernetes manifest files to cause the OPA policy to not output an Action Item.
+
+Alternatively, the extension of the Kubernetes manifest file will determine whether that Policy is expected to produce an Action Item:
+
+* `.success.yaml` - the OPA policy is not expected to output an Action Item
+* `.failure.yaml` - the OPA policy is expected to output an Action Item
+* Any other `*.yaml` - the expectation is configured by the `--expect-action-item` command-line flag
+
+When validating OPA policies in batch mode, each Policy can have a mix of the above Kubernetes yaml files, all of which will be used for validation. For example:
+
+```
+.
++-- file.rego
++-- file.yaml
++-- another-policy.rego
++-- another-policy.success.yaml
++-- another-policy.failure.yaml
++-- another-policy.yaml
+```
