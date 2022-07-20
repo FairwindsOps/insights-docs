@@ -4,9 +4,9 @@ meta:
     content: "Fairwinds Insights | Self-hosted Documentation: Fairwinds Insights requires a Postgres database to store backend data"
 ---
 # Database
-Fairwinds Insights requires a Postgres database to store backend data.
+Fairwinds Insights requires a Postgres database to store backend data, as well as a Timescale database for time-series data.
 
-## Ephemeral Postgres
+## Ephemeral Databases
 By default, Insights will install Postgres via
 [its Helm chart](https://github.com/helm/charts/tree/master/stable/postgresql).
 We don't recommend running databases in Kubernetes due to the possibility of lost data.
@@ -27,8 +27,34 @@ postgresql:
     enabled: false
 ```
 
-## BYO Postgres
-If you'd like to use your own Postgres instance (e.g. on Amazon RDS),
+Similarly, we will install an ephemeral Timescale using a subchart. Again, this is
+not recommended for a production installation due to the possibility of data loss.
+
+```yaml
+timescale:
+  replicaCount: 1
+  clusterName: timescale
+  ephemeral: true
+  sslMode: require
+  postgresqlHost: timescale
+  postgresqlUsername: postgres
+  postgresqlDatabase: fairwinds_timescale
+  secrets:
+    certificateSecretName: fwinsights-timescale-ca
+    credentialsSecretName: fwinsights-timescale
+  loadBalancer:
+    enabled: false
+  resources:
+    limits:
+      cpu: 1
+      memory: 1Gi
+    requests:
+      cpu: 75m
+      memory: 256Mi
+```
+
+## Bring-your-own Database
+If you'd like to use your own Postgres instance (e.g. on Amazon RDS or Timescale.com),
 you'll need to point the Insights chart to your database:
 
 `values.yaml`:
@@ -42,26 +68,46 @@ postgresql:
   sslMode: require
   service:
     port: 5432
+timescale:
+  ephemeral: false
+  postgresqlHost: abc.def.vpc.tsdb.forge.timescale.com
+  postgresqlDatabase: tsdb
+  postgresqlUsername: tsdbadmin
+  service:
+    primary:
+      port: 5432
+    replica:
+      port: 5432
+  secrets:
+    credentialsSecretName: fwinsights-postgresql
 ```
-The password for your postgres database should be in a secret stored in Kubernetes
-using the key `postgresql-password`. Make sure the `name` matches `passwordSecret` above.
 
-This example creates a secret with the text `helloworld`:
+The password for both databases should be in a secret stored in Kubernetes. The secret
+should include two keys:
+
+* `postgresql-password` (if you're setting up an external Postgres)
+* `timescale-password` (if you're setting up an external Timescale)
+
+The name of the secret should match `passwordSecret` and `credentialsSecretName` above.
+
+This example creates the secret with password `helloworld` for both databases:
 ```bash
 echo -n "helloworld" | base64
 # aGVsbG93b3JsZA==
 ```
 
-`postgres-secret.yaml`:
+`database-secrets.yaml`:
 ```yaml
 apiVersion: v1
 data:
     postgresql-password: aGVsbG93b3JsZA==
+    timescale-password: aGVsbG93b3JsZA==
 kind: Secret
 metadata:
     name: fwinsights-postgresql
 type: Opaque
 ```
+
 ```bash
 kubectl apply -f postgres-secret.yaml -n fwinsights
 ```
