@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 9.2.0
+### Bug Fixes and Improvements
+* `Event ID` in the Action Items table is now `Event Type`
+* In the Clusters Overview page, `Insights Version` was changed to `Agent Version`
+
 ## 9.1.0
 ### Bug Fixes and Improvements
 * Updated recommended Insights Agent version to 2.4
