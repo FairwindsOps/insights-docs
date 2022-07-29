@@ -41,16 +41,16 @@ if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
 }
 ```
 
-## GitHub and Jira Tickets
+## Tickets
 Users can also create a Jira or GitHub issue from an Action Item using the `createTicket` function.
 Only one ticket will be created per Action Item.
 
 The `createTicket` function takes three arguments:
 * integration - String - valid values are `GitHub` or `Jira`
-* project - String - GitHub repo name or Jira project ID
+* project - String - name of project
 * labels - Array - a list of labels to put on the ticket
 
-### GitHub and Jira Examples
+### Examples
 ```js
 if (ActionItem.ResourceNamespace === "api") {
   createTicket("Jira", "API", ["bug"])
@@ -60,6 +60,12 @@ if (ActionItem.ResourceNamespace === "api") {
 ```js
 if (ActionItem.ResourceNamespace === "api") {
   createTicket("GitHub", "acme-co/api-server", ["bug"])
+}
+```
+
+```js
+if (ActionItem.ResourceNamespace === "api") {
+  createTicket("GitHub", "azure-org/Project Name", ["bug"])
 }
 ```
 
