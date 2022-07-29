@@ -57,6 +57,7 @@ module.exports = {
               'installation/integrations/datadog',
               'installation/integrations/pagerduty',
               'installation/integrations/jira',
+              'installation/integrations/azure',
             ],
           },
         ]
