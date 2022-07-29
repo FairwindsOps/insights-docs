@@ -46,7 +46,7 @@ Users can also create a Jira or GitHub issue from an Action Item using the `crea
 Only one ticket will be created per Action Item.
 
 The `createTicket` function takes three arguments:
-* integration - String - valid values are `GitHub` or `Jira`
+* integration - String - valid values are `GitHub`, `Azure`, or `Jira`
 * project - String - name of project
 * labels - Array - a list of labels to put on the ticket
 
