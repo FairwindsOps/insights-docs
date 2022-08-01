@@ -65,7 +65,7 @@ if (ActionItem.ResourceNamespace === "api") {
 
 ```js
 if (ActionItem.ResourceNamespace === "api") {
-  createTicket("GitHub", "azure-org/Project Name", ["bug"])
+  createTicket("Azure", "azure-org/Project Name", ["bug"])
 }
 ```
 
