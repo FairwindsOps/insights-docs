@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 9.4.0
+### Bug Fixes and Improvements
+* Passwords for new users require numbers, letters and symbols
+
 ## 9.3.0
 ### Bug Fixes and Improvements
 * Code copy works properly now when selecting `Connect Manually` in `Repositories`

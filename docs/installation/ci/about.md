@@ -8,7 +8,7 @@ Fairwinds Insights offers integrations into popular Git and CI/CD tools to enabl
 
 There are two options for this:
 - [**Auto-Scan**](/installation/ci/autoscan): The easiest option is using our Auto-Scan feature. Auto-Scan uses a GitHub integration to enable infrastructure-as-code scanning across multiple repositories without having to configure individual CI pipelines. This option will use the Fairwinds Insights SaaS infrastructure to run the checks and is recommended for organizations using Github. Currently, Auto-Scan is only able to scan container images from public repositories; for private image scanning, please use the [**Insights CI Script**](/installation/ci/insights-ci-script) instead.
-- [**Insights CI Script**](/installation/ci/insights-ci-script): Recommended for organizations not using Github, this option involves executing our Insights CI script as part of your CI/CD pipelines. In addition, runing Insights in your CI/CD pipeline allows you to optionally pull private images and scan them.
+- [**Insights CI Script**](/installation/ci/insights-ci-script): Recommended for organizations not using Github, this option involves executing our Insights CI script as part of your CI/CD pipelines. In addition, running Insights in your CI/CD pipeline allows you to optionally pull private images and scan them.
 
 Insights will run the following report types in CI:
 * Polaris (configuration validation for best practices)
