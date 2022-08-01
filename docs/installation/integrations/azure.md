@@ -5,7 +5,7 @@ We have preliminary support for Azure DevOps ticketing.
 
 To connect your account, visit:
 ```
-https://staging.insights.fairwinds.com/v0/organizations/$YOUR_ORG_NAME/azure/auth
+https://insights.fairwinds.com/v0/organizations/$YOUR_ORG_NAME/azure/auth
 ```
 
 You can then create Azure DevOps tickets using Automation Rules:
