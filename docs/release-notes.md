@@ -10,6 +10,22 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 9.5.0
+### New Design of Vulnerabilities
+We have redesigned the `Vulnerabilities` page in Insights. The new design enables teams to understand risk at a high level
+and address those with the biggest impact. The `All Images` tab allows organizations to see which images are at a higher risk
+while the `All Vulnerabilities` tab helps users determine if they have been impacted by certain vulnerabilities.
+
+### Pluto in Admission Controller
+Pluto has been enabled in the Admission Controller. Admission requests will create low and medium severity Action Items
+if deprecated or removed Kubernetes resources are used. To learn about how to configure reports in the Admission Controller
+visit the [Install Hub and Policies documentation.](/configure/admission/installhub-and-policies)
+
+### Bug Fixes and Improvements
+* `Settings` button in `Repositories` allows easier access to enable/disable Auto-Scan
+* The Action Items table in `Repositories` now has a `File Name` column
+* The top left Cluster dropdown has been fixed on several pages
+
 ## 9.4.0
 ### Bug Fixes and Improvements
 * Passwords for new users require numbers, letters and symbols
@@ -18,7 +34,7 @@ sidebarDepth: 1
 ### Bug Fixes and Improvements
 * Code copy works properly now when selecting `Connect Manually` in `Repositories`
 * Fixed errors in `Efficiency > Workloads` page when charts are empty
-* Fixed Auto Scan toggle in `Repositories`
+* Fixed Auto-Scan toggle in `Repositories`
 
 ## 9.2.0
 ### Bug Fixes and Improvements
@@ -57,7 +73,7 @@ block admission requests or the CI/CD pipeline. Furthermore, users are now able 
 A new Insights CI script is available for our users to use in their CI/CD pipelines. The new 2.0 Insights CI script will now block admission
 requests and CI/CD pipelines according to the values set in the Policy for `Admission` and `CI`.
 Users
-[using the Auto Scan feature](https://insights.docs.fairwinds.com/installation/ci/autoscan/) will automatically use this new script version.
+[using the Auto-Scan feature](https://insights.docs.fairwinds.com/installation/ci/autoscan/) will automatically use this new script version.
 The 2.0 script also defaults to blocking only on Action Items that have `High` or `Critical` severity.
 
 ### Bug Fixes and Improvements
