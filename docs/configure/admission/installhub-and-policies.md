@@ -8,6 +8,7 @@ meta:
 The Admission Controller currently runs the following report types:
 * Polaris - checks for security and best practices
 * [OPA](/configure/policy/opa-policy) - apply custom policies to resources
+* Pluto - detects Kubernetes resources that have been deprecated or removed
 
 To enable or disable a particular report:
 1. Visit your organization's `Clusters` page
