@@ -19,7 +19,7 @@ while the `All Vulnerabilities` tab helps users determine if they have been impa
 ### Pluto in Admission Controller
 Pluto has been enabled in the Admission Controller. Admission requests will create low and medium severity Action Items
 if deprecated or removed Kubernetes resources are used. To learn about how to configure reports in the Admission Controller
-visit the [Install Hub and Policies documentation.](/configure/admission/installhub-and-policies#enable-or-disable-reports-through-install-hub)
+visit the [Install Hub and Policies documentation.](/configure/admission/installhub-and-policies)
 
 ### Bug Fixes and Improvements
 * `Settings` button in `Repositories` allows easier access to enable/disable Auto-Scan
