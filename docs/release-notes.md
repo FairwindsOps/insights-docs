@@ -10,6 +10,16 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 9.6.0
+### Bug Fixes and Improvements
+* Fairwinds Insights `Details` link in public repositories redirects to the new `Repositories` page
+* New Insights CI script version 2.1.0 recommended during the `Connect Manually` flow for adding repositories
+* Captcha added for register and support pages
+* The columns are now fully expandable in the `Action Items` table
+* Fixed `Organization` dropdown in the left hand navigation when visiting the `User Settings` pages
+* Fixed `ISO 27001` dropdown in the `Compliance` reports
+* Insights Agent 2.6 is now recommended in the `Install Hub`
+
 ## 9.5.0
 ### New Design of Vulnerabilities
 We have redesigned the `Vulnerabilities` page in Insights. The new design enables teams to understand risk at a high level
