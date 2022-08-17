@@ -42,7 +42,7 @@ if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
 ```
 
 ## Tickets
-Users can also create a Jira or GitHub issue from an Action Item using the `createTicket` function.
+Users can also create a Jira, GitHub or Azure DevOps issue from an Action Item using the `createTicket` function.
 Only one ticket will be created per Action Item.
 
 The `createTicket` function takes three arguments:

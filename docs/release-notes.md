@@ -10,6 +10,16 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 9.7.0
+### New Azure DevOps Integration
+The new Azure DevOps integration allows organizations to connect their Azure DevOps to Insights and create tickets
+for Action Items manually or through Automation Rules. To learn more about the Azure DevOps integration
+visit the [Azure DevOps documentation.](/installation/integrations/azure)
+
+### Bug Fixes and Improvements
+* Fixed issue where repository names were being cut off in the `Repositories` page
+* The `Name` column under `All Repositories` is now expandable
+
 ## 9.6.0
 ### Bug Fixes and Improvements
 * Fairwinds Insights `Details` link in public repositories redirects to the new `Repositories` page
