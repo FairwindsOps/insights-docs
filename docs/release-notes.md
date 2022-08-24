@@ -10,6 +10,15 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 9.8.0
+### Bug Fixes and Improvements
+* Nodes list in `Efficiency` page is now sorted by `Role` by default
+* Fixed `Prometheus Collector` documentation link
+* Fixed searching of nodes in `Efficiency` page
+* `Node Capacity` memory chart in `Efficiency` now displays correctly
+* Only organization `owners` are able to add new repositories to Insights
+* Health Scores are now using the new TimeScale DB so health scores may differ slightly
+
 ## 9.7.0
 ### New Azure DevOps Integration
 The new Azure DevOps integration allows organizations to connect their Azure DevOps to Insights and create tickets
