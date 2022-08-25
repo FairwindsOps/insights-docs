@@ -121,7 +121,7 @@ curl 'https://insights.fairwinds.com/v0/organizations/$YOUR_ORG/secrets/bulk' \
     --data-raw '[{"key": "$KEY", "value": "$VALUE"}]'
 ```
 
-Listing secrets keys endpoint:
+To list current secrets:
 ```js
 curl 'https://insights.fairwinds.com/v0/organizations/$YOUR_ORG/secrets/bulk'
 ...
