@@ -123,7 +123,7 @@ curl 'https://insights.fairwinds.com/v0/organizations/$YOUR_ORG/secrets/bulk' \
 
 Listing secrets keys endpoint:
 ```js
-curl 'https://insights.fairwinds.com/v0/organizations/acme-co/secrets/bulk'
+curl 'https://insights.fairwinds.com/v0/organizations/$YOUR_ORG/secrets/bulk'
 ...
 ```
 
