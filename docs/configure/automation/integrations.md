@@ -117,14 +117,12 @@ Create a secret:
 curl 'https://insights.fairwinds.com/v0/organizations/$YOUR_ORG/secrets/bulk' \
   -H 'accept: application/json, text/plain, */*' \
   -H 'content-type: application/json' \
-  ...
-    --data-raw '[{"key": "$KEY", "value": "$VALUE"}]'
+  --data-raw '[{"key": "$KEY", "value": "$VALUE"}]'
 ```
 
-To list current secrets:
+List current secrets:
 ```js
 curl 'https://insights.fairwinds.com/v0/organizations/$YOUR_ORG/secrets/bulk'
-...
 ```
 
 Using the saved secrets:
