@@ -118,7 +118,7 @@ curl 'https://insights.fairwinds.com/v0/organizations/acme-co/secrets/bulk' \
   -H 'accept: application/json, text/plain, */*' \
   -H 'content-type: application/json' \
   ...
-    --data-raw '[{"key": "MY_SECRET", "value": "pwd-12345"}]'
+    --data-raw '[{"key": "$KEY", "value": "$VALUE"}]'
 ```
 
 Listing secrets keys endpoint:
