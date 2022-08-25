@@ -108,3 +108,29 @@ sendHTTPRequest("POST", "https://example.com/action-item", {
   body: JSON.stringify(ActionItem),
 });
 ```
+
+## Adding and Using Secrets
+Users can store encrypted secrets into Insights and use them when creating Automation Rules using the `getSecret` function. 
+
+Create a secret:
+```js
+curl 'https://insights.fairwinds.com/v0/organizations/$YOUR_ORG/secrets/bulk' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'content-type: application/json' \
+  --data-raw '[{"key": "$SECRET_KEY", "value": "$VALUE"}]'
+```
+
+List current secrets:
+```js
+curl 'https://insights.fairwinds.com/v0/organizations/$YOUR_ORG/secrets/bulk'
+```
+
+Using the saved secrets:
+```js
+sendHTTPRequest("POST", "https://example.com/action-item?integrationKey=" + getSecret("$SECRET_KEY"), {
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(ActionItem),
+});
+```
