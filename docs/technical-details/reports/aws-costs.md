@@ -3,7 +3,7 @@ The AWS Costs report syncs your AWS billing data to Insights so
 it can know precisely what you're spending on nodes and use that
 information to infer accurate workload costs.
 
-AWS Costs Report is built on [AWS costs and Usage Report](https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html).
+The AWS Costs Report is built on [AWS costs and Usage Report](https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html).
 
 First step is to create the Athena infrastructure using Terraform, CloudFormation, etc. The CUR report is created by AWS and stored in AWS S3.
 Basically on the Athena process AWS collects CUR data from S3 and make it available as a SQL table that can be queried.
