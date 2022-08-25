@@ -108,3 +108,29 @@ sendHTTPRequest("POST", "https://example.com/action-item", {
   body: JSON.stringify(ActionItem),
 });
 ```
+
+### Adding and using secrets
+Users can save encrypted secrets into Insights and use them when creating integrations using `getSecret` function. For example:
+
+
+Create secret endpoint:
+```js
+curl 'https://insights.fairwinds.com/v0/organizations/acme-co/secrets/bulk' \
+  -H 'accept: application/json, text/plain, */*' \
+  -H 'content-type: application/json' \
+  --data-raw '[{"key": "MY_SECRET", "value": "pwd-12345"}]' \
+```
+
+Get secrets keys endpoint:
+```js
+curl 'https://insights.fairwinds.com/v0/organizations/acme-co/secrets/bulk' \
+```
+
+```js
+sendHTTPRequest("POST", "https://example.com/action-item?integrationKey=" + getSecret("MY_SECRET"), {
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(ActionItem),
+});
+```
