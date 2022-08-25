@@ -8,7 +8,6 @@ The AWS Costs Report is built on [AWS costs and Usage Report](https://docs.aws.a
 First step is to create the Athena infrastructure using Terraform, CloudFormation, etc. The CUR report is created by AWS and stored in AWS S3.
 The Athena process AWS collects CUR data from S3, and makes it available as a SQL table that can be queried.
 
-"Athena is out-of-the-box integrated with AWS Glue Data Catalog".
 If you go to AWS Glue you can see there the infrastructure previously created to connect S3 CUR data into Athena.
 
 This requires some setup:
