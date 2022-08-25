@@ -112,7 +112,7 @@ sendHTTPRequest("POST", "https://example.com/action-item", {
 ## Adding and Using Secrets
 Users can save secrets stored encrypted into Insights and use them, when creating automation rules, using `getSecret` function. For example:
 
-Create secret endpoint:
+Create a secret:
 ```js
 curl 'https://insights.fairwinds.com/v0/organizations/acme-co/secrets/bulk' \
   -H 'accept: application/json, text/plain, */*' \
