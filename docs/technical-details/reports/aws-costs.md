@@ -63,7 +63,7 @@ awscosts:
 * **tagkey**: tag key is the tag used on EC2 to indicate that it's a cluster node. Ex: KubernetesCluster (in case of Kops). The column name in Athena has a prefix resource_tags_user_. Also AWS applies pascal camel to split the tag name. In this example the column in Athena will be: resource_tags_user_kubernetes_cluster.
 * **tagvalue**: the value associated to the tag for filtering. Ex: production, staging
 * **catalog**: default AWS Glue Catalog is AwsDataCatalog
-workgroup: workgroup created on Athena to be used on querying
+* **workgroup**: workgroup created on Athena to be used on querying
 
 
 ## Terraform
