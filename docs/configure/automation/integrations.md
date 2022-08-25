@@ -114,7 +114,7 @@ Users can save secrets stored encrypted into Insights and use them, when creatin
 
 Create a secret:
 ```js
-curl 'https://insights.fairwinds.com/v0/organizations/acme-co/secrets/bulk' \
+curl 'https://insights.fairwinds.com/v0/organizations/$YOUR_ORG/secrets/bulk' \
   -H 'accept: application/json, text/plain, */*' \
   -H 'content-type: application/json' \
   ...
