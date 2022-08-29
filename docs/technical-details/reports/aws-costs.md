@@ -3,10 +3,17 @@ The AWS Costs report syncs your AWS billing data to Insights so
 it can know precisely what you're spending on nodes and use that
 information to infer accurate workload costs.
 
+The AWS Costs Report is built on [AWS costs and Usage Report](https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html).
+
+The first step is to create the Athena infrastructure using Terraform, CloudFormation, etc. The CUR report is created by AWS and stored in AWS S3.
+The Athena process AWS collects CUR data from S3, and makes it available as a SQL table that can be queried.
+
+If you go to AWS Glue you can see there the infrastructure previously created to connect S3 CUR data into Athena.
+
 This requires some setup:
 * Ensure nodes for different clusters are tagged in a consistent way
     * E.g. nodes in your staging cluster have tag `cluster=staging` and your production cluster nodes have `cluster=prod`
-* Create an S3 bucket where billing data can be stored
+* From AWS CUR docs, create an S3 bucket where billing data can be stored
 * Create an Athena database for querying the S3 data
 * Create a Glue crawler to populate the data
 * Finally, install the insights-agent with the aws-costs report configured
@@ -46,10 +53,18 @@ awscosts:
   workgroup: cur_athena_workgroup
 
   # tagkey is the key used to tag your nodes based on which cluster they belong to
-  tagkey: cluster
+  tagkey: kubernetes_cluster
   # tagvalue is the value used for this particular cluster
   tagvalue: staging
 ```
+
+* **database**: the database created on AWS Glue Data
+* **table**: aws cur report name
+* **tagkey**: tag key is the tag used on EC2 to indicate that it's a cluster node. Ex: KubernetesCluster (in case of Kops). The column name in Athena has a prefix resource_tags_user_. Also AWS applies pascal camel to split the tag name. In this example the column in Athena will be: resource_tags_user_kubernetes_cluster.
+* **tagvalue**: the value associated to the tag for filtering. Ex: production, staging
+* **catalog**: default AWS Glue Catalog is AwsDataCatalog
+* **workgroup**: workgroup created on Athena to be used on querying
+
 
 ## Terraform
 Note that you may have to apply the files below twice in order to get them to sync fully.
