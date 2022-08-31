@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 9.9.0
+### Bug Fixes and Improvements
+* Minor UI fixes throughout Insights
+
 ## 9.8.0
 ### Bug Fixes and Improvements
 * Nodes list in `Efficiency` page is now sorted by `Role` by default
