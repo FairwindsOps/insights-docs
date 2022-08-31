@@ -134,6 +134,12 @@ module.exports = {
             ],
           },
           {
+            title: 'Security',
+            children: [
+              'technical-details/security/security',
+            ],
+          },
+          {
             title: 'Reports',
             children: [
               'technical-details/reports/polaris',

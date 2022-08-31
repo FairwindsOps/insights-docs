@@ -38,7 +38,7 @@ features like [Slack notifications](/installation/integrations/slack),
 and our [supported plugins](/technical-details/reports/polaris).
 
 <!-- Begin boilerplate -->
-### Join the Fairwinds Open Source Community
+## Join the Fairwinds Open Source Community
 
 The goal of the Fairwinds Community is to exchange ideas, influence the open source roadmap,
 and network with fellow Kubernetes users.
@@ -50,7 +50,7 @@ or
   <img src="https://www.fairwinds.com/hubfs/Doc_Banners/Fairwinds_OSS_User_Group_740x125_v6.png" alt="Love Fairwinds Open Source? Share your business email and job title and we'll send you a free Fairwinds t-shirt!" />
 </a>
 
-### Other Projects from Fairwinds
+## Other Projects from Fairwinds
 
 Enjoying insights-docs? Check out some of our other projects:
 * [Polaris](https://github.com/FairwindsOps/Polaris) - Audit, enforce, and build policies for Kubernetes resources, including over 20 built-in checks for best practices
