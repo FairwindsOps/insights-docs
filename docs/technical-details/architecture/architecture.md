@@ -11,6 +11,11 @@ Fairwinds Insights consists of two main components:
 
 <img :src="$withBase('/img/architecture.png')" alt="Insights Architecture">
 
+## Report Architectures
+Typically each report runs as a CronJob on a configurable schedule (usually once/hour by default).
+The report will analyze resources in the cluster then send a JSON report with its findings
+to `insights.fairwinds.com`.
+
 While each report has its own requirements, there are some baseline requirements needed by the
 Insights Agent:
 
@@ -21,28 +26,6 @@ Insights Agent:
 Additional architecture notes and RBAC requirements for different reports are listed below.
 Note that the Insights Agent only requires _egress_ from the cluster. You will not need to
 open up access for any kind of network ingress.
-
-## Network Egress
-Fairwinds Insights will need access to the following base URLs:
-
-### API (all methods)
-* insights.fairwinds.com/*
-
-### Docker Images (pull only)
-* quay.io/fairwinds/*
-* us-docker.pkg.dev/fairwinds-ops/*
-* index.docker.io/aquasec/*
-* index.docker.io/curlimages/*
-
-### Supplementary Data (GET only)
-* raw.githubusercontent.com/FairwindsOps/* (goldilocks)
-* github.com/aquasecurity/* (trivy)
-* artifacthub.io/api/v1/* (nova)
-
-## Report Architectures
-Typically each report runs as a CronJob on a configurable schedule (usually once/hour by default).
-The report will analyze resources in the cluster then send a JSON report with its findings
-to `insights.fairwinds.com`.
 
 Any exceptions or additions to this flow are listed below.
 
@@ -109,27 +92,3 @@ don't automatically have access to your private Docker registries.
 ### Workloads
 The Workloads report needs `view` access to your cluster.
 
-## RBAC Requirements
-Each Fairwinds Insights plugin requires a unique set of permissions in order to do its job.
-Here we provide a list of permissions requested by each plugin. You can also review
-the [Helm chart](https://github.com/FairwindsOps/charts/tree/master/stable/insights-agent) to
-see the exact RBAC configurations for each plugin.
-
-Notably, some plugins require **read access to secrets**. This is because they examine Helm 3
-releases, which store metadata inside of a `Secret` object.
-
-If a particular plugin requires permissions that you're uncomfortable with, you can disable it
-in the Helm chart by adding `--set $plugin.enabled=false`.
-
-### Permission List
-| Plugin          | View Secrets       | View Resources (non-secrets) | Other/Notes |
-|-----------------|:------------------:|:----------------------------:|-------------- |
-| kube-bench      |                    |                              |   |
-| kube-hunter     |                    |                              |   |
-| Polaris         |                    | :white_check_mark:           |   |
-| RBAC reporter   |                    | :white_check_mark:           |   |
-| Trivy           |                    | :white_check_mark:           |   |
-| Workloads       |                    | :white_check_mark:           |   |
-| Goldilocks      |                    | :white_check_mark:           | Create/Delete VPAs |
-| Release Watcher | :white_check_mark: | :white_check_mark:           | Needs secrets to view Helm releases |
-| Pluto           | :white_check_mark: | :white_check_mark:           | Needs secrets to view Helm releases |
