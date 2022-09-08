@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 9.10.0
+### Bug Fixes and Improvements
+* When selecting the `Efficiency` page, the `All Clusters` view is always shown
+* By default, the `Most Recent Data` is selected in `Efficiency`
+* For new `Image has vulnerabilities` Action Items, the image is listed under the `Description`
+
 ## 9.9.0
 ### Bug Fixes and Improvements
 * Minor UI fixes throughout Insights
