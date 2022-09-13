@@ -50,6 +50,8 @@ For the `ActionItem` input, the following fields are available:
 * `Cluster`
 * `EventType`
 * `IsNew`
+* `NamespaceAnnotations`
+* `NamespaceLabels`
 * `ReportType`
 * `ResourceAnnotations`
 * `ResourceKind`

@@ -10,6 +10,28 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 9.11.0
+### Right-Sizer, AWS Costs and Falco
+We have added the `Right-Sizer`, `AWS Costs` and `Falco` reports to the `Install Hub` page. The `Right-Sizer` report
+can be added as usual using the `Quick Add` option under the report. However, the `AWS Costs` and `Falco` require more
+configuration and the `Quick Add` option is not available for those reports. Instead you will be taken to the documentation
+pages for those reports.
+
+* [AWS Costs report](/technical-details/reports/aws-costs)
+* [Falco report](/technical-details/reports/falco)
+* [Right-Sizer report](/technical-details/reports/right-sizer)
+
+### New NamespaceLabels and NamespaceAnnotations in Automation Rules
+Users can now access namespace labels and namespace annotations for Action Items in Automation Rules. To access these values
+use `ActionItem.NamespaceLabels` and `ActionItem.NamespaceAnnotations`.
+
+### Bug Fixes and Improvements
+* Users will find the following new information in the `Home` page
+  * Number of `Average Nodes L30D` (Last 30 days)
+  * Number of `Custom Policies Set`
+  * Number of `Custom Rules Set`
+* Users can now set a different scale for the `Cluster Comparison` in the `Efficiency` page
+
 ## 9.10.0
 ### Bug Fixes and Improvements
 * When selecting the `Efficiency` page, the `All Clusters` view is always shown
