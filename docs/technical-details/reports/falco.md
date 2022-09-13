@@ -19,7 +19,37 @@ Some are less severe, like an attempt to run interactive commands by a system
 (i.e. non-login) user.
 
 ## Setup
-Every Falco event that gets triggered will generate an Action Item.
+### Install Falco
+First, you'll need to install Falco in your cluster. We recommend using these values when installing
+via the Helm chart:
+```yaml
+resources:
+  requests:
+    cpu: 100m
+    memory: 256Mi
+  limits:
+    cpu: 200m
+    memory: 512Mi
+falco:
+  jsonOutput: true
+ebpf:
+  enabled: false # You can enable this on newer nodes that support eBPF
+falcosidekick:
+  enabled: true
+  fullfqdn: true
+  config:
+    webhook:
+      address: "http://falco-agent.insights-agent:3031/data"
+```
+
+### Insights
+To enable Falco in the insights-agent, add this to your values.yaml:
+```yaml
+falco:
+  enabled: true
+```
+
+Once enabled, every Falco event that gets triggered will generate an Action Item.
 Many of these events will be expected as part of normal behavior.
 
 Therefore, we recommend running Falco for about 24 hours to accumulate a
