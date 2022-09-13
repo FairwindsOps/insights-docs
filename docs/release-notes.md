@@ -26,7 +26,7 @@ Users can now access namespace labels and namespace annotations for Action Items
 use `ActionItem.NamespaceLabels` and `ActionItem.NamespaceAnnotations`.
 
 ### Bug Fixes and Improvements
-* Users will find the following new information in the `Home` page
+* Users will find the following new information in the `Home` page:
   * Number of `Average Nodes L30D` (Last 30 days)
   * Number of `Custom Policies Set`
   * Number of `Custom Rules Set`
