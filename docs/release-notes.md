@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 9.12.0
+### Bug Fixes and Improvements
+* Improvements for loading the `Clusters` page faster
+* Repositories that have Auto-Scan turned on will now have a scan status
+* New version of Nova in Insights Agent 2.6.11 will create Action Items for out of date containers
+* Fixed labels on `Top Issues` chart in `Repositories`
+
 ## 9.11.0
 ### Right-Sizer, AWS Costs and Falco
 We have added the `Right-Sizer`, `AWS Costs` and `Falco` reports to the `Install Hub` page. The `Right-Sizer` report
