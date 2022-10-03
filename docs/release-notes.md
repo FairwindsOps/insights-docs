@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 9.13.0
+### Bug Fixes and Improvements
+* Changed the filters on the `Recommended Tag` column in `Vulnerabilities`
+* Users are no longer able to create compliance reports with the same names
+* The `Log in with SSO` link will prompt the user for their organization name
+* Fixed issue with Azure DevOps tickets not getting closed after Action Items are `Resolved` or `Fixed`
+* Fixed right-sizer description
+
 ## 9.12.0
 ### Close Third Party Tickets for Fixed and Resolved Action Items
 When an Action Item has a GitHub, Azure DevOps or Jira ticket associated with it and the Action Item is
