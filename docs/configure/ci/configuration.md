@@ -73,3 +73,49 @@ It's a good practice to include the `reason` field for future reference.
 * `exemptions[].report` - String - the name of the report type (`polaris`, `pluto`, `trivy` or `opa`)
 * `exemptions[].checks[]` - Array - an array of check IDs to skip (e.g. `runAsNonRoot`)
 * `exemptions[].reason` - String - a human-readable description of why this exemption is necessary
+
+## Troubleshooting and Advanced Configurations
+
+### Git Checkouts
+Insights needs to gather the following information from Git:
+* The hash of the current commit
+* The hash of the base commit
+* The commit message
+* The branch name
+* The origin URL
+
+Some CI providers only provide a partial checkout of the Git repository
+by default, and some (e.g. Google Cloud Build) check out the repository
+in "detached HEAD" state, which makes it hard to gather this information.
+
+In these cases you may see an error like:
+```bash
+time="2022-08-25T16:47:49Z" level=error msg="Error running /usr/bin/git merge-base HEAD main - fatal: Not a valid object name main\n[exit status 128]"
+time="2022-08-25T16:47:49Z" level=error msg="Unable to get GIT merge-base"
+time="2022-08-25T16:47:49Z" level=fatal msg="Unable to get git details: exit status 128"
+```
+
+There are a couple ways to work around this:
+* Configure your CI provider to do a "full checkout" of the repository
+  * [GitLab example](https://stackoverflow.com/questions/65686740/how-to-fetch-entire-repository-with-gitlab-ci-cd)
+  * [Jenkins docs](https://www.jenkins.io/doc/pipeline/steps/workflow-scm-step/)
+* Set environment variables for the following values:
+  * `MASTER_HASH` - the commit SHA to diff against, typically the tip of your main branch
+  * `COMMIT_HASH` - the SHA of the commit being scanned
+  * `COMMIT_MESSAGE` - the message associated with this commit
+  * `BRANCH_NAME` - the branch associated with this commit
+  * `ORIGIN_URL` - the location of the repository
+
+### Monorepo
+If you build many different docker images as part of a monorepo, you
+may want to only scan the images that have been changed. In this case,
+there is a workaround for dynamically generating the `images` section of
+the `fairwinds-insights.yaml`:
+
+```
+echo "images:" >> fairwinds-insights.yaml
+echo "  docker:" >> fairwinds-insights.yaml
+for image in "${changedImages[@]}"; do
+  echo "  - $image" >> fairwinds-insights.yaml
+done
+```
