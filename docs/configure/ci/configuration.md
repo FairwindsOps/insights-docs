@@ -97,7 +97,14 @@ time="2022-08-25T16:47:49Z" level=fatal msg="Unable to get git details: exit sta
 
 There are a couple ways to work around this:
 * Configure your CI provider to do a "full checkout" of the repository
-  * Jenkins
+  * [GitLab example](https://stackoverflow.com/questions/65686740/how-to-fetch-entire-repository-with-gitlab-ci-cd)
+  * [Jenkins docs](https://www.jenkins.io/doc/pipeline/steps/workflow-scm-step/)
+* Set environment variables for the following values:
+  * `MASTER_HASH` - the commit SHA to diff against, typically the tip of your main branch
+  * `COMMIT_HASH` - the SHA of the commit being scanned
+  * `COMMIT_MESSAGE` - the message associated with this commit
+  * `BRANCH_NAME` - the branch associated with this commit
+  * `ORIGIN_URL` - the location of the repository
 
 ### Monorepo
 If you build many different docker images as part of a monorepo, you
