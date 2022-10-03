@@ -15,3 +15,7 @@ The linked account will show as the creator of any Work Items created via Insigh
 2. Hover over `Azure DevOps` and click `Add Integration`
 3. Once you have connected Azure DevOps to Insights, you can create Work Items for Action Items manually or 
 [automatically using Automation Rules](/configure/automation/integrations#tickets)
+
+## Azure DevOps Work Items and Action Items
+If an Action Item that is associated with an Azure DevOps work item is `Resolved` or `Fixed`, the Azure DevOps
+work item will automatically close.
