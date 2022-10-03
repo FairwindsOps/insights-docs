@@ -88,7 +88,7 @@ Some CI providers only provide a partial checkout of the Git repository
 by default, and some (e.g. Google Cloud Build) check out the repository
 in "detached HEAD" state, which makes it hard to gather this information.
 
-In these cases you may see an error like
+In these cases you may see an error like:
 ```bash
 time="2022-08-25T16:47:49Z" level=error msg="Error running /usr/bin/git merge-base HEAD main - fatal: Not a valid object name main\n[exit status 128]"
 time="2022-08-25T16:47:49Z" level=error msg="Unable to get GIT merge-base"
