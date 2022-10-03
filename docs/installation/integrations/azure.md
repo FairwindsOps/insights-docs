@@ -17,5 +17,5 @@ The linked account will show as the creator of any Work Items created via Insigh
 [automatically using Automation Rules](/configure/automation/integrations#tickets)
 
 ## Azure DevOps Work Items and Action Items
-If an Action Item that is associated with an Azure DevOps work item is `Resolved` or `Fixed`, the Azure DevOps
-work item will automatically close.
+If an Action Item that is associated with an Azure DevOps work item is marked as `Resolved` or `Fixed`, 
+the Azure DevOps work item will automatically close.

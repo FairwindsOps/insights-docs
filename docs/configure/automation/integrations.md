@@ -69,7 +69,7 @@ if (ActionItem.ResourceNamespace === "api") {
 }
 ```
 
-If the Action Item associated with the ticket is `Resolved` or `Fixed`, the third party ticket will automatically close.
+If the Action Item associated with the ticket is marked as `Resolved` or `Fixed`, the third party ticket will automatically close.
 
 ## PagerDuty Incidents
 If you have PagerDuty set up in your Insights organization, you can use the

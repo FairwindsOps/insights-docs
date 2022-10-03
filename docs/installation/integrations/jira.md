@@ -18,5 +18,5 @@ The linked account will show as the creator of any tickets created via Insights
 [automatically using Automation Rules](/configure/automation/integrations#tickets)
 
 ## Jira Tickets and Action Items
-If an Action Item that is associated with a Jira ticket is `Resolved` or `Fixed`, the Jira ticket
-will automatically close.
+If an Action Item that is associated with a Jira ticket is marked as `Resolved` or `Fixed`,
+the Jira ticket will automatically close.
