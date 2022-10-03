@@ -16,3 +16,7 @@ The linked account will show as the creator of any tickets created via Insights
 2. Hover over `Jira` and click `Add Integration`
 3. Once you have connected Jira to Insights, you can create tickets for Action Items manually or 
 [automatically using Automation Rules](/configure/automation/integrations#tickets)
+
+## Jira Tickets and Action Items
+If an Action Item that is associated with a Jira ticket is marked as `Resolved` or `Fixed`,
+the Jira ticket will automatically close.
