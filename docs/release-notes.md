@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 10.0.0
+### Re-Run Autoscan
+Users are now able to re-run the Insights scan on their branches if the repository is setup with Auto-Scan. To do so,
+visit the `Repositories` page, select the repository and the branch and click the `Re-Run Autoscan` button.
+
+### Bug Fixes and Improvements
+* Fixed issue with creating tickets on Azure DevOps Scrum projects
+
 ## 9.13.0
 ### Bug Fixes and Improvements
 * Changed the filters on the `Recommended Tag` column in `Vulnerabilities`
