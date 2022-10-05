@@ -11,7 +11,6 @@ sidebarDepth: 1
 # Release Notes
 
 ## 10.0.0
-
 ### Re-Run Autoscan
 Users are now able to re-run the Insights scan on their branches if the repository is setup with Auto-Scan. To do so,
 visit the `Repositories` page, select the repository and the branch and click the `Re-Run Autoscan` button.
