@@ -21,8 +21,8 @@ options:
 
 images:
   docker:
-  - nginx:1.18-alpine
-  - quay.io/acme-co/my-app:$CI_HASH
+    - nginx:1.18-alpine
+    - quay.io/acme-co/my-app:$CI_HASH
 
 manifests:
   yaml:
