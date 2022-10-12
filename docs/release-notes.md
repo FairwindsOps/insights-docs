@@ -10,6 +10,22 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 10.0.0
+### Re-Run Autoscan
+Users are now able to re-run the Insights scan on their branches if the repository is setup with Auto-Scan. To do so,
+visit the `Repositories` page, select the repository and the branch and click the `Re-Run Autoscan` button.
+
+### Bug Fixes and Improvements
+* Fixed issue with creating tickets on Azure DevOps Scrum projects
+
+## 9.13.0
+### Bug Fixes and Improvements
+* Changed the filters on the `Recommended Tag` column in `Vulnerabilities`
+* Users are no longer able to create compliance reports with the same names
+* The `Log in with SSO` link will prompt the user for their organization name
+* Fixed issue with Azure DevOps tickets not getting closed after Action Items are `Resolved` or `Fixed`
+* Fixed right-sizer description
+
 ## 9.12.0
 ### Close Third Party Tickets for Fixed and Resolved Action Items
 When an Action Item has a GitHub, Azure DevOps or Jira ticket associated with it and the Action Item is

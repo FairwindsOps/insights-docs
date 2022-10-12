@@ -24,6 +24,12 @@ are `push` and `pull request`.
 For customers who do not have GitHub connected to Fairwinds Insights, follow the steps documented here
 to [setup the GitHub integration.](/installation/ci/github)
 
+## Scanning Container Images
+Insights will automatically scan any public container images mentioned in your manifets. You can also add
+additional images to scan in your fairwinds-insights.yaml
+
+Scanning private container images is not yet supported.
+
 ## Configuring Auto-Scan for Specific Repositories
 Once you have connected Fairwinds Insights to GitHub, you will need to intentionally enable Auto-Scan for the repositories
 you've selected in the previous steps.
