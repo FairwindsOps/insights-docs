@@ -12,7 +12,7 @@ sidebarDepth: 1
 
 ## 10.1.0
 # Auto-Scan Logs
-Repositories that have Auto-Scan turned on will now see a `Auto-Scan Logs` section at the bottom of their
+Repositories that have Auto-Scan turned on will now see an `Auto-Scan Logs` section at the bottom of their
 repository page. This will help users better debug issues with the Auto-Scan feature.
 
 ### Bug Fixes and Improvements
