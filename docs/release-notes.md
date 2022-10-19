@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 10.2.0
+### Bug Fixes and Improvements
+* Insights Agent 2.8 is now recommended in the `Install Hub`
+* New `ID` column in the Action Items table
+* UI indicates when a cluster is being deleted in `Danger Zone`
+* Changed the filters on the `Fixed Version` column in `Vulnerabilities`
+
 ## 10.1.0
 # Auto-Scan Logs
 Repositories that have Auto-Scan turned on will now see an `Auto-Scan Logs` section at the bottom of their
