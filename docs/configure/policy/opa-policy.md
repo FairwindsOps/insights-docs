@@ -139,6 +139,19 @@ You can restrict an OPA policy to run in specific Kubernetes clusters:
   cluster == validCluster
 ```
 
+### Varying execution by Admission Request properties
+You can restrict an OPA policy to run based on several admissionRequest properties.
+Accessible via `insightsinfo("admissionRequest")` Rego function:
+
+```rego
+  # List of admission request operations to which this policy should apply.
+  validOperations := {"CREATE"}
+  # Only continue if the policy is executing in one of validOperations list
+  operation := insightsinfo("admissionRequest").operation
+  validOperation := validOperations[val]
+  operation == validOperation
+```
+
 ### Variable Parameters
 If we want:
 * Deployments to have at least three replicas
