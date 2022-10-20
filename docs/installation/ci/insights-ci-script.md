@@ -12,7 +12,7 @@ To get started with integrating Fairwinds Insights into your CI/CD pipelines:
 3. Select your CI provider from the dropdown. If your CI provider is not listed, select 'Other'. 
 4. The example configurations will automatically refresh. Proceed to Step 2 below to create your initial `fairwinds-insights.yaml` configuration file.
 
-## Step 2: Creating your initial fairwinds-insights.yaml configuration file
+## Step 2: Creating Your Initial Fairwinds-insights.yaml Configuration File
 You will need to add a `fairwinds-insights.yaml` configuration file to the root
 of your repository containing infrastructure as code files. Here's a minimal example:
 
@@ -44,7 +44,7 @@ manifests:
       foo: bar
 ```
 
-## Step 3: Run the Insights CI script for the first time
+## Step 3: Run the Insights CI Script for the First Time
 Last, you'll need to execute the Insights CI script within your CI pipeline.
 
 To access the CI script, please do the following:
@@ -60,7 +60,7 @@ The in-app instructions will also provide a SHA which can be checked to verify t
 
 Your repository will show up in the Insights UI once the script has been successfully run.
 
-## Step 4: Add a FAIRWINDS_TOKEN environment variable 
+## Step 4: Add a FAIRWINDS_TOKEN Environment Variable 
 You will need to store a unique Fairwinds Insights' token as an environment variable in your CI provider. This token is used for uploading results to Fairwinds Insights afte ra scan is complete.
 
 

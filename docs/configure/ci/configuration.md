@@ -10,7 +10,7 @@ Specifically, the `fairwinds-insights.yaml` file must provide the location of co
 
 Below is a full list of options available in `fairwinds-insights.yaml`.
 
-## Configuration options for fairwinds-insights.yaml
+## Configuration Options for Fairwinds-insights.yaml
 These are high-level options for the Insights CI integration.
 * `options.organization` - String - the name of your organization in Insights
 * `options.hostname` - String - the host of the Insights instance to send results to. Default `https://insights.fairwinds.com`
@@ -22,7 +22,7 @@ These are high-level options for the Insights CI integration.
 * `options.repositoryName` - String - the name of the repository. Must match the name in GitHub if using the GitHub integration. Defaults to the output of `git remote -v`
 * `options.tempFolder` - String - a temporary directory to store files. Default `./_insightsTemp/`
 
-## Gating pull requests
+## Gating Pull Requests
 You can configure the Insights CI integration to exit with a non-zero exit code, thus allowing you to fail a pipeline job if specific issues are found in a scan. 
 
 When `options.setExitCode` is set to `true`, there are two reasons why an Action Item may cause a CI job to fail:
@@ -36,7 +36,7 @@ options:
   setExitCode: true
 ```
 
-## Scanning public and private images
+## Configuration Options for Fairwinds-insights.yaml
 Specify any images you'd like Insights to scan for vulnerabilities. These images must be available
 locally in your CI environment either through running `docker build` or `docker pull`.
 
@@ -54,7 +54,7 @@ images:
     - 123456.ecr.us-east-1.amazonaws.com/search-app:$CI_SHA1
 ```
 
-## Scanning configuration manifests
+## Scanning Configuration Manifests
 Specify any YAML or Helm manifests you'd like Insights to scan for configuration issues.
 Helm files can be templated using a variables file, or by specifying variables directly
 in your `fairwinds-insights.yaml` file.
@@ -91,7 +91,7 @@ manifests:
       param.enable: true
 ```
 
-### Scanning Flux files
+### Scanning Flux Files
 Fairwinds Insights also supports scanning YAML files that container Flux HelmRelease CRDs. 
 
 Here is an example:
@@ -106,7 +106,7 @@ manifests:
     valuesFiles: [./deploy/prod-app.yaml]
 ```
 
-## Managing exemptions
+## Managing Exemptions
 There may be scenarios where certain container images cannot be updated, or you want to suppress certain checks. 
 
 You can tell Insights that certain files or checks should be excluded from the CI scan.
@@ -131,7 +131,7 @@ exemptions:
   - checks: [runAsRootAllowed, tlsSettingsMissing]
 ```
 
-## Enable/disable scanning tools
+## Enable/Disable Scanning Tools
 You can control which scan tools (known as 'reports') are run as part of an Insights CI job. By default, all reports are enabled.
 
 * `reports.opa.enabled` - Boolean - set to `false` if you'd like to disable OPA
@@ -140,16 +140,15 @@ You can control which scan tools (known as 'reports') are run as part of an Insi
 * `reports.trivy.skipManifests` - Boolean - set to `true` if you don't want to scan images discovered in YAML files and Helm charts
 
 ## Troubleshooting Insights CI
-
-### Git checkout errors
-Insights needs to gather the following information from Git:
+### GitHub Checkout Errors
+Insights needs to gather the following information from GitHub:
 * The hash of the current commit
 * The hash of the base commit
 * The commit message
 * The branch name
 * The origin URL
 
-Some CI providers only provide a partial checkout of the Git repository
+Some CI providers only provide a partial checkout of the GitHub repository
 by default, and some (e.g. Google Cloud Build) check out the repository
 in "detached HEAD" state, which makes it hard to gather this information.
 

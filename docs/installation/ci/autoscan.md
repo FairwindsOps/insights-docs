@@ -30,7 +30,7 @@ To get started:
 Once you authorize GitHub, you can choose which repositories you'd like to add to Insights:
 <img :src="$withBase('/img/github-add-repo.png')" alt="Add repo in GitHub">
 
-## Step 2: Configure Auto-Scan on specific repositories
+## Step 2: Configure Auto-Scan on Specific Repositories
 Once you have connected Fairwinds Insights to GitHub, you will need to intentionally enable Auto-Scan for specific repositories. This is done within Fairwinds Insights
 
 1. Visit your organization's `Repositories` page
@@ -38,10 +38,10 @@ Once you have connected Fairwinds Insights to GitHub, you will need to intention
 3. A modal will appear for configuring Auto-Scan and GitHub Issue creation for each repository. Toggle the `Auto-Scan`
 option to enable/disable Auto-Scan for that specific repository.
 
-## Step 3: Running your first scan
+## Step 3: Running Your First Scan
 For the repositories you've enable Auto-Scan on, Fairwinds Insights will crawl those repositories and scan any YAML and Helm charts on your next pull request.
 
-#### Scanning Container Images with Auto-Scan
+#### Scanning Container Images With Auto-Scan
 Insights will automatically scan any public container images mentioned in your manifets. You can also add
 additional images to scan in your fairwinds-insights.yaml
 
