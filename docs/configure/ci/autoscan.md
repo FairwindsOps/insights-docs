@@ -36,7 +36,7 @@ To customize Auto-Scan behavior, please review the [configuration options for `f
 Occassionally, you may run an Auto-Scan and it will return an error. You will see an Error status like this when you navigate to the `Repositories` page and click on a repo.
 <img :src="$withBase('/img/autoscan-error.png')" alt="An Auto-Scan that has reported an error">
 
-If you see this error, you can scroll to the bottom of the page and get detailed logs about the issue.
-<img :src="$withBase('/img/autoscan-logs.png')" alt="Auto-Scan logs provide details about errors generated during the scan'>
+If you see this error, you can scroll to the bottom of the page and get detailed logs about the issue. 
+<img :src="$withBase('/img/autoscan-logs.png')" alt="Auto-Scan logs provide details about errors generated during the scan">
 
 ### Helm Chart with invalid values file
