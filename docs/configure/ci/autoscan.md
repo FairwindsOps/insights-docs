@@ -21,10 +21,14 @@ To re-run an Auto-Scan:
 Re-running an Auto-Scan job usually takes a few minutes. Look for the 'Completed' status to see your latest results.
 
 ## Customizing Auto-Scan Using Fairwinds-insights.yaml
-Unlike the Insights CI integration, Auto-Scan does not require users to create a `fairwinds-insights.yaml` configuration file at the base of their GitHub repository. However, sometimes users may want to customize Auto-Scan behaviors for a specific repo, such as:
-- Configuring specific exemptions
+Unlike the Insights CI integration, Auto-Scan does not require users to create a `fairwinds-insights.yaml` configuration file at the base of their GitHub repository. This is because Auto-Scan will automatically crawl and discover YAML manifests, Helm charts, and docker images available for scanning.
+
+However, sometimes users may want to customize Auto-Scan behaviors for a specific repo. To do this, you can create a `fairwinds-insights.yaml` file at the root of your git repo and customize things like:
+- [Configuring specific exemptions](/configure/ci/configuration#managing-exemptions)
 - Enabling/disabling specific scanning tools
-- Scanning additional container images not present in your manifests
+- [Scanning additional container images not present in your manifests](/configure/ci/configuration#scanning-container-images)
+
+> NOTE: When you add a `fairwinds-insights.yaml` file to an Auto-Scan enabled repository, automatic discovery of YAML manifests, Helm charts, and docker images is disabled. You must specify the location of these artifacts within the `fairwinds-insights.yaml` file.
 
 To customize Auto-Scan behavior, please review the [configuration options for `fairwinds-insights.yaml`](/configure/ci/configuration).
 

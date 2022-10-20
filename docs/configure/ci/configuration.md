@@ -8,10 +8,12 @@ The Insights CI integration relies on the `fairwinds-insights.yaml` configuratio
 
 Specifically, the `fairwinds-insights.yaml` file must provide the location of configuration files and images you would like to scan.
 
-Below is a full list of options available in `fairwinds-insights.yaml`.
+> If you are looking to setup Insights CI for the first time, please visit our [Insights CI Installation documentation](/installation/ci/insights-ci-script).
+
 
 ## Configuration Options for Fairwinds-insights.yaml
-These are high-level options for the Insights CI integration.
+Below is a full list of options available in `fairwinds-insights.yaml`.
+
 * `options.organization` - String - the name of your organization in Insights
 * `options.hostname` - String - the host of the Insights instance to send results to. Default `https://insights.fairwinds.com`
 * `options.setExitCode` - Boolean - whether to set a non-zero exit code if issues are found. Default `false`
@@ -26,7 +28,7 @@ These are high-level options for the Insights CI integration.
 You can configure the Insights CI integration to exit with a non-zero exit code, thus allowing you to fail a pipeline job if specific issues are found in a scan. 
 
 When `options.setExitCode` is set to `true`, there are two reasons why an Action Item may cause a CI job to fail:
-- The severity of that Action Item exceeds the value in `options.severityThreshold`. Every Action Item has a severity value between 0 and 1, with 1 being "Critical". By default, an Action Item must have a severity of at least 0.7 ("High"). Learn more about severities here. 
+- The severity of that Action Item exceeds the value in `options.severityThreshold`. Every Action Item has a severity value between 0 and 1, with 1 being "Critical". By default, an Action Item must have a severity of at least 0.7 ("High").
 - The Policy is configured to "always fail" when the Action Item is detected in a scan, regardless of that Action Item's severity. Learn more about this in the [Policy Configurator](/configure/policy/configurator) section. 
 
 Here is an example:
@@ -36,7 +38,7 @@ options:
   setExitCode: true
 ```
 
-## Configuration Options for Fairwinds-insights.yaml
+## Scanning Container Images
 Specify any images you'd like Insights to scan for vulnerabilities. These images must be available
 locally in your CI environment either through running `docker build` or `docker pull`.
 
