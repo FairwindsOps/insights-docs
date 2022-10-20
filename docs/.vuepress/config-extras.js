@@ -40,6 +40,7 @@ module.exports = {
           }, {
             title: 'Infrastructure-as-Code Scanning',
             children: [
+              'installation/ci/about',
               'installation/ci/autoscan',
               'installation/ci/insights-ci-script'
             ],
