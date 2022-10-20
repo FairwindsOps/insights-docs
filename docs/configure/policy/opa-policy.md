@@ -139,7 +139,7 @@ You can restrict an OPA policy to run in specific Kubernetes clusters:
   cluster == validCluster
 ```
 
-### Varying execution by Admission Request properties
+### Varying Execution by Admission Request Properties
 You can restrict an OPA policy to run based on several admissionRequest properties.
 Accessible via `insightsinfo("admissionRequest")` Rego function:
 
