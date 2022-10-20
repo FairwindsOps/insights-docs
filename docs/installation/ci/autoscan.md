@@ -3,8 +3,8 @@ meta:
   - name: description
     content: "Fairwinds Insights | Documentation: How to Use Auto Scan"
 ---
-# Using Auto-Scan
-## What is Auto-Scan for Infrastructure-as-Code?
+# Setup Auto-Scan
+## What is Auto-Scan?
 Auto-Scan enables organizations using GitHub to enable infrastructure-as-code scanning across multiple repositories without
 having to configure individual CI pipelines. Scans will use the Fairwinds Insights SaaS infrastructure to run the checks.
 
@@ -20,26 +20,33 @@ to create issues within a repository (as part of Create Ticket workflows), post 
 and update commit statuses with a summary of scan results. The repository hooks that Fairwinds Insights monitors
 are `push` and `pull request`.
 
-## Connecting to GitHub
-For customers who do not have GitHub connected to Fairwinds Insights, follow the steps documented here
-to [setup the GitHub integration.](/installation/ci/github)
+## Step 1: Connect Insights to GitHub
+Connecting Insights to your GitHub repository will help you get the most out of the CI integration.
+To get started:
+1. Visit your organization's `Repositories` page and click `Add Repository`
+2. Click on `Connect GitHub`
+3. Follow the on-screen instructions to authorize Fairwinds Insights access to GitHub
 
-## Scanning Container Images
+Once you authorize GitHub, you can choose which repositories you'd like to add to Insights:
+<img :src="$withBase('/img/github-add-repo.png')" alt="Add repo in GitHub">
+
+## Step 2: Configure Auto-Scan on Specific Repositories
+Once you have connected Fairwinds Insights to GitHub, you will need to intentionally enable Auto-Scan for specific repositories. This is done within Fairwinds Insights
+
+1. Visit your organization's `Repositories` page
+2. Click on `Settings` in the upper-right of the page
+3. A modal will appear for configuring Auto-Scan and GitHub Issue creation for each repository. Toggle the `Auto-Scan`
+option to enable/disable Auto-Scan for that specific repository.
+
+## Step 3: Running Your First Scan
+For the repositories you've enable Auto-Scan on, Fairwinds Insights will crawl those repositories and scan any YAML and Helm charts on your next pull request.
+
+#### Scanning Container Images With Auto-Scan
 Insights will automatically scan any public container images mentioned in your manifets. You can also add
 additional images to scan in your fairwinds-insights.yaml
 
-Scanning private container images is not yet supported.
+Scanning private container images is not yet supported in Auto-Scan, but is currently on-roadmap.
 
-## Configuring Auto-Scan for Specific Repositories
-Once you have connected Fairwinds Insights to GitHub, you will need to intentionally enable Auto-Scan for the repositories
-you've selected in the previous steps.
+## Troubleshooting Auto-Scan
+Please see the [Configure > Infrastructure-as-Code Scanning > Auto-Scan](/configure/ci/autoscan#troubleshooting-auto-scan) page for troubleshooting information.
 
-1. Visit your organization's `Repositories` page and click `Add Repository`
-2. Click on `Connect Github`
-3. A new modal will appear for configuring Auto-Scan and GitHub Issue creation for each repository. Toggle the Auto-Scan
-option to enable/disable Auto-Scan for that specific repository.
-
-Now, next time you make a pull request, Fairwinds Insights will look for YAML and Helm charts in that pull request and 
-automatically scan them.
-
-Note: We will be streamlining this user experience in coming releases — stay tuned!

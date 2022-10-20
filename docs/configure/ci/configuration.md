@@ -3,13 +3,14 @@ meta:
   - name: description
     content: "Fairwinds Insights | Documentation: How to configure the CI integration"
 ---
-# Configuration File
-Configuration of the CI integration happens mainly in `fairwinds-insights.yaml`
-which can be checked into the root of your infrastructure-as-code repository.
+# Insights Continuous Integration (CI)
+The Insights CI integration relies on the `fairwinds-insights.yaml` configuration file in the root of your infrastructure-as-code repository to understand exactly what needs to be scan.
+
+Specifically, the `fairwinds-insights.yaml` file must provide the location of configuration files and images you would like to scan.
 
 Below is a full list of options available in `fairwinds-insights.yaml`.
 
-## Options
+## Configuration Options for Fairwinds-insights.yaml
 These are high-level options for the Insights CI integration.
 * `options.organization` - String - the name of your organization in Insights
 * `options.hostname` - String - the host of the Insights instance to send results to. Default `https://insights.fairwinds.com`
@@ -21,7 +22,21 @@ These are high-level options for the Insights CI integration.
 * `options.repositoryName` - String - the name of the repository. Must match the name in GitHub if using the GitHub integration. Defaults to the output of `git remote -v`
 * `options.tempFolder` - String - a temporary directory to store files. Default `./_insightsTemp/`
 
-## Images
+## Gating Pull Requests
+You can configure the Insights CI integration to exit with a non-zero exit code, thus allowing you to fail a pipeline job if specific issues are found in a scan. 
+
+When `options.setExitCode` is set to `true`, there are two reasons why an Action Item may cause a CI job to fail:
+- The severity of that Action Item exceeds the value in `options.severityThreshold`. Every Action Item has a severity value between 0 and 1, with 1 being "Critical". By default, an Action Item must have a severity of at least 0.7 ("High"). Learn more about severities here. 
+- The Policy is configured to "always fail" when the Action Item is detected in a scan, regardless of that Action Item's severity. Learn more about this in the [Policy Configurator](/configure/policy/configurator) section. 
+
+Here is an example:
+```
+options:
+  severityThreshold: 0.7
+  setExitCode: true
+```
+
+## Configuration Options for Fairwinds-insights.yaml
 Specify any images you'd like Insights to scan for vulnerabilities. These images must be available
 locally in your CI environment either through running `docker build` or `docker pull`.
 
@@ -31,7 +46,15 @@ locally in your CI environment either through running `docker build` or `docker 
 Note that you can include environment variables in your image names and tags. This is helpful
 if you set your image tag based on things like the current Git branch, tag, or commit SHA.
 
-## Manifests
+Here is an example:
+```
+images:
+  docker:
+    - 123456.ecr.us-east-1.amazonaws.com/shopping-cart-app:$CI_SHA1
+    - 123456.ecr.us-east-1.amazonaws.com/search-app:$CI_SHA1
+```
+
+## Scanning Configuration Manifests
 Specify any YAML or Helm manifests you'd like Insights to scan for configuration issues.
 Helm files can be templated using a variables file, or by specifying variables directly
 in your `fairwinds-insights.yaml` file.
@@ -54,15 +77,38 @@ If multiple Helm values are specified in `fairwinds-insights.yaml`, the processi
 3. Values from the `manifests.helm[].valuesFiles`, in the order those files are listed
 4. Inline values listed in `manifests.helm[].values`
 
-## Reports
-You can control which reports run and pass options to each report type.
+Here is an example:
+```
+manifests:
+  yaml:
+  - ./path/to/yaml
+  - ./my-yaml-file.yaml
+  helm:
+  - name: prod-app
+    path: ./deploy/chart
+    valuesFiles: [./deploy/prod-app.yaml]
+    values:
+      param.enable: true
+```
 
-* `reports.opa.enabled` - Boolean - set to `false` if you'd like to disable OPA
-* `reports.polaris.enabled` - Boolean - set to `false` if you'd like to disable Polaris
-* `reports.trivy.enabled` - Boolean - set to `false` if you'd like to disable Trivy
-* `reports.trivy.skipManifests` - Boolean - set to `true` if you don't want to scan images discovered in YAML files and Helm charts
+### Scanning Flux Files
+Fairwinds Insights also supports scanning YAML files that container Flux HelmRelease CRDs. 
 
-## Exemptions
+Here is an example:
+```
+manifests:
+  yaml:
+  - ./path/to/yaml
+  - ./my-yaml-file.yaml
+  helm:
+  - name: prod-app
+    path: ./deploy/chart
+    valuesFiles: [./deploy/prod-app.yaml]
+```
+
+## Managing Exemptions
+There may be scenarios where certain container images cannot be updated, or you want to suppress certain checks. 
+
 You can tell Insights that certain files or checks should be excluded from the CI scan.
 Insights will look for Action Items that match _all_ of the provided fields and mark them as exempt.
 
@@ -74,17 +120,35 @@ It's a good practice to include the `reason` field for future reference.
 * `exemptions[].checks[]` - Array - an array of check IDs to skip (e.g. `runAsNonRoot`)
 * `exemptions[].reason` - String - a human-readable description of why this exemption is necessary
 
-## Troubleshooting and Advanced Configurations
+Here is an example:
+```
+exemptions:
+  - filename: ./my-yaml-file.yaml
+  - image: 123456.ecr.us-east-1.amazonaws.com/search-app
+    reason: "Soon to be EOL"
+  - report: pluto
+    reason: "Monitored by Fairwinds Agent"
+  - checks: [runAsRootAllowed, tlsSettingsMissing]
+```
 
-### Git Checkouts
-Insights needs to gather the following information from Git:
+## Enable/Disable Scanning Tools
+You can control which scan tools (known as 'reports') are run as part of an Insights CI job. By default, all reports are enabled.
+
+* `reports.opa.enabled` - Boolean - set to `false` if you'd like to disable OPA
+* `reports.polaris.enabled` - Boolean - set to `false` if you'd like to disable Polaris
+* `reports.trivy.enabled` - Boolean - set to `false` if you'd like to disable Trivy
+* `reports.trivy.skipManifests` - Boolean - set to `true` if you don't want to scan images discovered in YAML files and Helm charts
+
+## Troubleshooting Insights CI
+### GitHub Checkout Errors
+Insights needs to gather the following information from GitHub:
 * The hash of the current commit
 * The hash of the base commit
 * The commit message
 * The branch name
 * The origin URL
 
-Some CI providers only provide a partial checkout of the Git repository
+Some CI providers only provide a partial checkout of the GitHub repository
 by default, and some (e.g. Google Cloud Build) check out the repository
 in "detached HEAD" state, which makes it hard to gather this information.
 
@@ -106,7 +170,7 @@ There are a couple ways to work around this:
   * `BRANCH_NAME` - the branch associated with this commit
   * `ORIGIN_URL` - the location of the repository
 
-### Monorepo
+### Monorepos
 If you build many different docker images as part of a monorepo, you
 may want to only scan the images that have been changed. In this case,
 there is a workaround for dynamically generating the `images` section of
