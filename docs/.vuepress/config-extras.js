@@ -38,12 +38,10 @@ module.exports = {
               'installation/admission/setup',
             ]
           }, {
-            title: 'Continuous Integration',
+            title: 'Infrastructure-as-Code Scanning',
             children: [
-              'installation/ci/about',
-              'installation/ci/github',
               'installation/ci/autoscan',
-              'installation/ci/insights-ci-script',
+              'installation/ci/insights-ci-script'
             ],
           }, {
             title: 'Single Sign-On',
@@ -80,9 +78,10 @@ module.exports = {
             ],
           },
           {
-            title: 'Continuous Integration',
+            title: 'Infrastructure-as-Code Scanning',
             children: [
-              'configure/ci/configuration',
+              'configure/ci/autoscan',
+              'configure/ci/configuration'
             ],
           }, {    
             title: 'Policies',
