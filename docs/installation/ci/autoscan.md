@@ -48,5 +48,5 @@ additional images to scan in your fairwinds-insights.yaml
 Scanning private container images is not yet supported in Auto-Scan, but is currently on-roadmap.
 
 ## Troubleshooting Auto-Scan
-Please see the [Configure > Infrastructure-as-Code Scanning > Auto-Scan](/configure/ci/autoscan/#troubleshooting-auto-scan) page for troubleshooting information.
+Please see the [Configure > Infrastructure-as-Code Scanning > Auto-Scan](/configure/ci/autoscan#troubleshooting-auto-scan) page for troubleshooting information.
 

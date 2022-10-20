@@ -72,5 +72,5 @@ You will need to store a unique Fairwinds Insights' token as an environment vari
 
 
 ## Troubleshooting Insights CI
-Please see the [Configure > Infrastructure-as-Code Scanning > Insights CI Integration](/configure/ci/configuration/#troubleshooting-insights-ci) page for troubleshooting information.
+Please see the [Configure > Infrastructure-as-Code Scanning > Insights CI Integration](/configure/ci/configuration#troubleshooting-insights-ci) page for troubleshooting information.
 
