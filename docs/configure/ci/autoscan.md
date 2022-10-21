@@ -58,5 +58,5 @@ There are two ways to fix this problem:
 
 OR
 
-- Add a `fairwinds-insights.yaml` to the root of your repository to specify the location of a different values file with the `image.tag` field (or whatever field is not working). Or, you may provide an array of key/value pairs for Insights to use. [Please review this documentation for specifying the location YAML manifests and Helm charts](configure/ci/configuration#scanning-configuration-manifests). 
+- Add a `fairwinds-insights.yaml` to the root of your repository to specify the location of a different values file with the `image.tag` field (or whatever field is not working). Or, you may provide an array of key/value pairs for Insights to use. [Please review this documentation for specifying the location YAML manifests and Helm charts](/configure/ci/configuration#scanning-configuration-manifests). 
 >NOTE: When you add a `fairwinds-insights.yaml` file to an Auto-Scan enabled repository, automatic discovery of YAML manifests, Helm charts, and docker images is disabled. This is why you must specify the location of these artifacts within the `fairwinds-insights.yaml` file.
