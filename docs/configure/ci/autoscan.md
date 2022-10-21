@@ -25,8 +25,9 @@ Unlike the Insights CI integration, Auto-Scan does not require users to create a
 
 However, sometimes users may want to customize Auto-Scan behaviors for a specific repo. To do this, you can create a `fairwinds-insights.yaml` file at the root of your git repo and customize things like:
 - [Configuring specific exemptions](/configure/ci/configuration#managing-exemptions)
-- Enabling/disabling specific scanning tools
+- [Resolving Helm chart errors due to missing values](/configure/ci/autoscan#helm-chart-with-invalid-or-missing-values-file)
 - [Scanning additional container images not present in your manifests](/configure/ci/configuration#scanning-container-images)
+- Enabling/disabling specific scanning tools
 
 > NOTE: When you add a `fairwinds-insights.yaml` file to an Auto-Scan enabled repository, automatic discovery of YAML manifests, Helm charts, and docker images is disabled. You must specify the location of these artifacts within the `fairwinds-insights.yaml` file.
 
@@ -40,7 +41,7 @@ Occassionally, you may run an Auto-Scan and it will return an error. You will se
 If you see this error, you can scroll to the bottom of the page and get detailed logs about the issue. 
 <img :src="$withBase('/img/autoscan-logs.png')" alt="Auto-Scan logs provide details about errors generated during the scan">
 
-### Helm Chart With Invalid Values File
+### Helm Chart With Invalid or Missing Values File
 A common error encountered during CI scanning is invalid default values for a Helm chart. If your repository contains a Helm chart, you may see an error message like this:
 
 ```
