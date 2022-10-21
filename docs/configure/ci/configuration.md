@@ -83,14 +83,14 @@ Here is an example:
 ```
 manifests:
   yaml:
-  - ./path/to/yaml
-  - ./my-yaml-file.yaml
+    - ./path/to/yaml
+    - ./my-yaml-file.yaml
   helm:
-  - name: prod-app
-    path: ./deploy/chart
-    valuesFiles: [./deploy/prod-app.yaml]
-    values:
-      param.enable: true
+    - name: prod-app
+      path: ./deploy/chart
+      valuesFiles: [./deploy/prod-app.yaml]
+      values:
+        image.tag: 1.1
 ```
 
 ### Scanning Flux Files
@@ -99,13 +99,10 @@ Fairwinds Insights also supports scanning YAML files that container Flux HelmRel
 Here is an example:
 ```
 manifests:
-  yaml:
-  - ./path/to/yaml
-  - ./my-yaml-file.yaml
   helm:
-  - name: prod-app
-    path: ./deploy/chart
-    valuesFiles: [./deploy/prod-app.yaml]
+    - name: nginx-fluxfile
+      fluxFile: ./nginx-flux-file.yaml
+      repo: https://helm.nginx.com/stable
 ```
 
 ## Managing Exemptions
