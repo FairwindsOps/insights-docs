@@ -41,3 +41,22 @@ If you see this error, you can scroll to the bottom of the page and get detailed
 <img :src="$withBase('/img/autoscan-logs.png')" alt="Auto-Scan logs provide details about errors generated during the scan">
 
 ### Helm Chart With Invalid Values File
+A common error encountered during CI scanning is invalid default values for a Helm chart. If your repository contains a Helm chart, you may see an error message like this:
+
+```
+time="2022-10-20T14:57:16Z" level=info msg="Updating dependencies for my-app"
+time="2022-10-20T14:57:16Z" level=info msg="Templating: my-app"
+time="2022-10-20T14:57:16Z" level=error msg="Error running /usr/local/bin/helm template my-app /app/repository/my-app/deploy/helm/my-app --output-dir /app/repository/tmp/_insightsTemp//configuration/my-app -f /app/repository/my-app/deploy/helm/my-app/values.yaml - Error: execution error at (my-app/templates/api_deployment.yaml:32:20): image.tag must be specified\n\nUse --debug flag to render out invalid YAML\n[exit status 1]"
+time="2022-10-20T14:57:16Z" level=fatal msg="Error processing repository: Error while processing helm templates: exit status 1"
+```
+
+This message indicates that the Helm chart expected the `image.tag` value to be set, but no value was set in the default `values.yaml` supplied with the chart. 
+
+There are two ways to fix this problem:
+
+- **RECOMMENDED:** Change your default `values.yaml` to include `image.tag` (or whatever field is not working)
+
+OR
+
+- Add a `fairwinds-insights.yaml` to the root of your repository to specify the location of a different values file with the `image.tag` field (or whatever field is not working). Or, you may provide an array of key/value pairs for Insights to use. [Please review this documentation for specifying the location YAML manifests and Helm charts](configure/ci/configuration#scanning-configuration-manifests). 
+>NOTE: When you add a `fairwinds-insights.yaml` file to an Auto-Scan enabled repository, automatic discovery of YAML manifests, Helm charts, and docker images is disabled. This is why you must specify the location of these artifacts within the `fairwinds-insights.yaml` file.
