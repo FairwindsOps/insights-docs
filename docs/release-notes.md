@@ -10,6 +10,16 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 10.3.0
+### New Costs Page - Beta
+Fairwinds has released a beta version for the new `Costs` page. Organizations can use this page to get
+a better understanding of the breakdown of their Kubernetes cluster costs. To check out this new page,
+visit `Efficiency > Costs` in Insights.
+
+### Bug Fixes and Improvements
+* New `Notes` section in Action Item description
+* Add ability to configure multiple email domains for SSO
+
 ## 10.2.0
 ### Bug Fixes and Improvements
 * Insights Agent 2.8 is now recommended in the `Install Hub`
