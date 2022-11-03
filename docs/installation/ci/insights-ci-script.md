@@ -29,8 +29,8 @@ options:
 # Specific docker images to scan 
 images:
   docker:
-  - nginx:1.18-alpine
-  - quay.io/acme-co/my-app:$CI_HASH
+    - nginx:1.18-alpine
+    - quay.io/acme-co/my-app:$CI_HASH
 
 # Location of IaC manifests to scan
 manifests:

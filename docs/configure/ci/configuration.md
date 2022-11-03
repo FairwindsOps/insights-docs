@@ -179,6 +179,6 @@ the `fairwinds-insights.yaml`:
 echo "images:" >> fairwinds-insights.yaml
 echo "  docker:" >> fairwinds-insights.yaml
 for image in "${changedImages[@]}"; do
-  echo "  - $image" >> fairwinds-insights.yaml
+  echo "    - $image" >> fairwinds-insights.yaml
 done
 ```
