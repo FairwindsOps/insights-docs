@@ -119,4 +119,4 @@ The resource recommendation calculations are different depending on your QoS tar
 | **Critical**             | Used for mission-critical workloads that should be over-provisioned for reliability | **max** usage observed over last 2 weeks   | **max**  usage observed over last 2 weeks |
 | **Guaranteed (default)** | Production workloads that can withstand some variability                            | **p95** usage observed over last 2 weeks   | **p95**  usage observed over last 2 weeks |
 | **Burstable**            | Workloads that should prioritize cost efficiency over maximum reliability           | **mean** usage observed over last 2 weeks  | **p95**  usage observed over last 2 weeks |
-| **Limited**              | Workloads that should be given as little resources as needed to operate             | **mean**  usage observed over last 2 weeks | **p95**  usage observed over last 2 weeks |
+| **Limited**              | Workloads that should be given as little resources as needed to operate             | **mean**  usage observed over last 2 weeks | **mean**  usage observed over last 2 weeks |
