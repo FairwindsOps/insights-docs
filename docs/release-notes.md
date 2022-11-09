@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 10.4.0
+### Bug Fixes and Improvements
+* List all open source projects used in Insights
+
 ## 10.3.0
 ### New Costs Page - Beta
 Fairwinds has released a beta version for the new `Costs` page. Organizations can use this page to get
