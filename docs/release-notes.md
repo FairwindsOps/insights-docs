@@ -10,6 +10,9 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 10.5.0
+* No user-facing changes
+
 ## 10.4.0
 ### Bug Fixes and Improvements
 * List all open source projects used in Insights
