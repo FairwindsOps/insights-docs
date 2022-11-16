@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 10.6.0
+### Bug Fixes and Improvements
+* Users are now able to search for projects when creating a third party ticket
+* New `Cost Over Time` chart in the new `Efficiency > Costs` beta page
+
 ## 10.5.0
 * No user-facing changes
 
