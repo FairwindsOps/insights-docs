@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 10.7.0
+### New Insights CI script 2.2.0
+The Insights CI/CD script has been updated to better handle various Git checkout states,
+improving reliability of CI/CD scans. Errors such as "unable to GIT merge-base" should be
+reduced by upgrading to the latest version of the Insights CI/CD script. To get the script,
+navigate to Repositories > Add Repository > Connect Manually.
+
 ## 10.6.0
 ### Bug Fixes and Improvements
 * Users are now able to search for projects when creating a third party ticket
