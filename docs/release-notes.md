@@ -14,7 +14,10 @@ sidebarDepth: 1
 ### New Insights CI script 2.2.0
 The Insights CI/CD script has been updated to better handle various Git checkout states,
 improving reliability of CI/CD scans. Errors such as "unable to GIT merge-base" should be
-reduced by upgrading to the latest version of the Insights CI/CD script. To get the script,
+reduced by upgrading to the latest version of the Insights CI/CD script. Customers who use
+Insights Continuous Integration (CI) script can now scan Terraform files for security weaknesses.
+This enables organizations to achieve greater Infrastructure-as-Code scan coverage. Please
+note this feature is not yet available as part of Auto-Scan. To get the script,
 navigate to Repositories > Add Repository > Connect Manually.
 
 ## 10.6.0
