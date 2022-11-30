@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 10.8.0
+### Bug Fixes and Improvements
+* Added more states to `Compliance` report checks
+* Ability to filter compliance report checks by control IDs
+* Fixed advanced filtering in Costs beta page
+
 ## 10.7.0
 ### New Insights CI script 2.2.0
 The Insights CI/CD script has been updated to better handle various Git checkout states,
