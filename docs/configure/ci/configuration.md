@@ -136,6 +136,7 @@ You can control which scan tools (known as 'reports') are run as part of an Insi
 * `reports.opa.enabled` - Boolean - set to `false` if you'd like to disable OPA
 * `reports.polaris.enabled` - Boolean - set to `false` if you'd like to disable Polaris
 * `reports.trivy.enabled` - Boolean - set to `false` if you'd like to disable Trivy
+* `reports.tfsec.enabled` - Boolean - set to `false` if you'd like to disable tfsec Terraform file scanning
 * `reports.trivy.skipManifests` - Boolean - set to `true` if you don't want to scan images discovered in YAML files and Helm charts
 
 ## Troubleshooting Insights CI
