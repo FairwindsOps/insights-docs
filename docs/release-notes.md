@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 10.9.0
+### Bug Fixes and Improvements
+* Status indicator for Auto-Scan repositories takes user to scan logs
+* Fixed order of Action Items in the Health Score card in `Clusters`
+* Added the file name to the Action Items card in `Repositories`
+
 ## 10.8.0
 ### Bug Fixes and Improvements
 * Added more states to `Compliance` report checks
