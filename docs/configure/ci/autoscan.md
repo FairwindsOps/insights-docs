@@ -61,7 +61,7 @@ Re-running an Auto-Scan job usually takes a few minutes. Look for the 'Completed
 Unlike Insights CI integration, Auto-Scan does not require users to create a `fairwinds-insights.yaml` configuration file at the base of their GitHub repository. This is because Auto-Scan will automatically crawl and discover YAML manifests, Helm charts, and docker images available for scanning.
 
 ### Reports Configuration
-When using auto-discovery, all reports are `enabled` by default, if you want to further customize. It is possible to manually configure it via API using CURL:
+When using auto-discovery, all reports are enabled by default. To customize this, you can manually configure via API using CURL:
 ```
 curl --location --request POST 'https://insights.fairwinds.com/v0/organizations/{orgName}/ci/repositories/{repositoryID}/reports-config' \
 --header 'Content-Type: application/json' \
