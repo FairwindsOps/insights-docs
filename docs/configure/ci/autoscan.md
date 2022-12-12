@@ -20,10 +20,35 @@ To re-run an Auto-Scan:
 
 Re-running an Auto-Scan job usually takes a few minutes. Look for the 'Completed' status to see your latest results.
 
-## Customizing Auto-Scan Using Fairwinds-insights.yaml
-Unlike the Insights CI integration, Auto-Scan does not require users to create a `fairwinds-insights.yaml` configuration file at the base of their GitHub repository. This is because Auto-Scan will automatically crawl and discover YAML manifests, Helm charts, and docker images available for scanning.
+## Manifests auto-discovery
+Unlike Insights CI integration, Auto-Scan does not require users to create a `fairwinds-insights.yaml` configuration file at the base of their GitHub repository. This is because Auto-Scan will automatically crawl and discover YAML manifests, Helm charts, and docker images available for scanning.
 
-However, sometimes users may want to customize Auto-Scan behaviors for a specific repo. To do this, you can create a `fairwinds-insights.yaml` file at the root of your git repo and customize things like:
+### Reports Configuration
+When using auto-discovery, all reports are `enabled` by default, if you want to further customize. It is possible to manually configure it via API using CURL:
+```
+curl --location --request POST 'https://insights.fairwinds.com/v0/organizations/{orgName}/ci/repositories/{repositoryID}/reports-config' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer {adminToken}' \
+--data-raw '{
+  "autoScan": {
+    "polaris": { "enabledOnAutoDiscovery": false },
+    "tfsec": { "enabledOnAutoDiscovery": false }
+  }
+}'
+```
+This configuration disables `polaris` and `tfsec` when using auto-discovery
+
+Possible report types are: `polaris`, `opa`, `pluto`, `trivy`, `tfsec`
+
+To fetch your current configuration using CURL:
+```
+curl --location --request GET 'https://insights.fairwinds.com/v0/organizations/{orgName}/ci/repositories/{repositoryID}/reports-config' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer {adminToken}'
+```
+
+## Customizing Auto-Scan Using Fairwinds-insights.yaml
+Sometimes users may want to customize Auto-Scan behaviors for a specific repo. To do this, you can create a `fairwinds-insights.yaml` file at the root of your git repo and customize things like:
 - [Configuring specific exemptions](/configure/ci/configuration#managing-exemptions)
 - [Resolving Helm chart errors due to missing values](/configure/ci/autoscan#helm-chart-with-invalid-or-missing-values-file)
 - [Scanning additional container images not present in your manifests](/configure/ci/configuration#scanning-container-images)
