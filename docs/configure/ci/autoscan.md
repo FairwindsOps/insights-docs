@@ -9,7 +9,7 @@ meta:
 
 ## Using Auto-Scan to Scan Private Images
 You can now scan private container images by setting up docker registries information in Fairwinds Insights via API.
-These information will be used to authenticate/authorize against your docker registry and fetch private image container to be scanned.
+This information will be used to authenticate/authorize against your docker registry and fetch the private image container to be scanned.
 
 ### Add docker registry
 ```
