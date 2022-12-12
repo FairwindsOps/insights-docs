@@ -8,7 +8,44 @@ meta:
 *Documentation coming soon!*
 
 ## Using Auto-Scan to Scan Private Images
-Scanning private container images is not yet supported in Auto-Scan but is currently on-roadmap.
+You can now scan private container images by setting up docker registries information in Fairwinds Insights via API.
+These information will be used to authenticate/authorize against your docker registry and fetch private image container to be scanned.
+
+### Add docker registry
+```
+curl --location --request POST 'https://insights.fairwinds.com/v0/organizations/{orgName}/ci/docker-registries' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer {insightsToken}' \
+--data-raw '{"domain":"docker.io","username":"usernameOrEmail","password":"p4ssw0rd"}'
+```
+You can also use `token` instead of `username:password` to authorize against your docker registry. When token is used the `username` field should be `<token>` and the `token` must be provided using the `password` field, i.e:
+```
+{"domain":"docker.io","username":"<token>","password":"t0k3nV4lu3"}
+```
+
+The field `password` is safely encrypted before being persisted on Fairwinds Insights databases.
+
+### List docker registries
+```
+curl --location --request GET 'https://insights.fairwinds.com/v0/organizations/{orgName}/ci/docker-registries' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer {insightsToken}'
+```
+
+### Edit docker registry
+```
+curl --location --request PUT 'https://insights.fairwinds.com/v0/organizations/{orgName}/ci/docker-registries/{dockerRegistryID}' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer {insightsToken}' \
+--data-raw '{"domain":"docker.io","username":"usernameOrEmail","password":"p4ssw0rd"}'
+```
+
+### Delete docker registry
+```
+curl --location --request PUT 'https://insights.fairwinds.com/v0/organizations/{orgName}/ci/docker-registries/{dockerRegistryID}' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer {insightsToken}'
+```
 
 ## Re-Running an Auto-Scan
 You can manually re-run an Auto-Scan for specific repository branches. This may be useful if you'd like a refreshed result set, or if you'd like to verify any fixes or changes.
