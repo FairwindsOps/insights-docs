@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 10.10.0
+### Bug Fixes and Improvements
+* Insights Agent 2.9 is now recommended in the `Install Hub`
+
 ## 10.9.0
 ### Bug Fixes and Improvements
 * Status indicator for Auto-Scan repositories takes user to scan logs
