@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 10.11.0
+### Bug Fixes and Improvements
+* Updated Insights welcome Email
+
 ## 10.10.0
 ### Bug Fixes and Improvements
 * Insights Agent 2.9 is now recommended in the `Install Hub`
