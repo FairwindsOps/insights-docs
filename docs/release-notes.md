@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 10.12.0
+### Bug Fixes and Improvements
+* Hide settings and add repository buttons from non-owners
+
 ## 10.11.0
 ### Bug Fixes and Improvements
 * Updated Insights welcome Email
