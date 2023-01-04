@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 11.0.0
+### Bug Fixes and Improvements
+* Fixed `Cost Over Time` chart in `Costs` page
+
 ## 10.12.0
 ### Bug Fixes and Improvements
 * Hide settings and add repository buttons from non-owners
