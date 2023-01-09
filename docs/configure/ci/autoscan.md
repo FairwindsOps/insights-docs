@@ -84,6 +84,20 @@ curl --location --request GET 'https://insights.fairwinds.com/v0/organizations/{
 --header 'Authorization: Bearer {adminToken}'
 ```
 
+### CI plugin version override
+When not explicitly set, auto-scan will run on a sensible default version set by Fairwinds. However, you may want to configure the CI plugin version to a different one on your repository.
+
+To customize this, you can manually configure via API using CURL:
+```
+curl --location --request PUT 'https://insights.fairwinds.com/v0/organizations/{orgName}/ci/repositories/{repositoryID}' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer {adminToken}' \
+--data-raw '{
+  "CIPluginVersion": "X.Y.Z"
+}'
+```
+Make sure the provide version is [SemVer](https://semver.org/) compliant
+
 ## Customizing Auto-Scan Using Fairwinds-insights.yaml
 Sometimes users may want to customize Auto-Scan behaviors for a specific repo. To do this, you can create a `fairwinds-insights.yaml` file at the root of your git repo and customize things like:
 - [Configuring specific exemptions](/configure/ci/configuration#managing-exemptions)
