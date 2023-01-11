@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 11.1.0
+### Bug Fixes and Improvements
+* Fixed Admission Controller result dropdown
+* Fixed Action Items list export sometimes not working
+* Minor UI fixes
+
 ## 11.0.0
 ### Bug Fixes and Improvements
 * Fixed `Cost Over Time` chart in `Costs` page
