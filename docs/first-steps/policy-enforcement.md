@@ -14,7 +14,7 @@ At Fairwinds, we encourage organizations to take a phased approach to rolling ou
 
 Many organizations subscribe to the idea of policy enforcement, but may struggle with the implementation strategy. This is where Fairwinds can help. Using the stages above, policy enforcement increases over time, helping platform engineering teams to balance shipping fast while driving security and reliability improvements.
 
-# Define Policy "Groups"
+## Define Policy "Groups"
 
 We recommend two groups of policies:
 
@@ -23,7 +23,7 @@ We recommend two groups of policies:
 | **Cluster-wide Policies** | Best practices that should apply to all workloads. General recommendation includes:<br />- Memory requests should be set (memoryRequestsMissing) <br />- CPU requests should be set (cpuRequestsMissing) <br />- Liveness probes should be set (livenessProbeMissing) <br />- Readiness probes should be set (readinessProbeMissing) <br />- Image pull policy should be “Always” (pullPolicyNotAlways) <br />- Container should not have dangerous capabilities (dangerousCapabilities) <br />- Image tag should be specified (tagNotSpecified)                                                                                                                                                                                                |
 | **Scoped Policies**       | Policies that may be scoped/targeted to specific resources - such as specific workload labels, namespaces, etc.<br />- Container should not have insecure capabilities (insecureCapabilities) <br />- Host IPC should not be configured (hostIPCSet) <br />- Host PID should not be configured (hostPIDSet) <br />- Privilege escalation should not be allowed (privilegeEscalationAllowed) <br />- Should not be running as privileged (runAsPrivileged) <br />- Container should not be running as root (runAsRootAllowed)<br />Fairwinds supports additional policies, including those references under [<u>Profile Level 1 in the CNCF Mult-Tenancy Benchmark</u>](https://github.com/kubernetes-sigs/multi-tenancy/tree/master/benchmarks) |
 
-# Policy Enforcement Stages
+## Policy Enforcement Stages
 
 Below is an example strategy for gradually rolling out Policy Enforcement in your organization.
 
@@ -54,11 +54,11 @@ _In this stage, we want to warn users when their YAML code or Admission requests
 
 _The simplest way to do this is enabling Admission Controller in your cluster and setting it to Passive Mode (which is enabled by default). Additionally, you can install Insights in your CI pipeline to surface misconfigurations sooner in the process._
 
-### **1. Install Admission Controller**
+### 1. Install Admission Controller
 
 You can install the Admission Controller using the Install Hub. [Learn how to install Admission Controller here](https://insights.docs.fairwinds.com/installation/admission/setup/).
 
-### **2. Set Admission Controller to Passive Mode**
+### 2. Set Admission Controller to Passive Mode
 
 Admission Controller is set to Passive Mode by default. [Learn more how to enable/disable Passive Mode in Admission Controller here](https://insights.docs.fairwinds.com/installation/admission/setup/#installation).
 
@@ -83,7 +83,7 @@ Before proceeding, please verify:
 -   Admission Controller is installed and set to Passive Mode
 -   The Insights CI integration continues to warn when Action Items are found in CI pipelines -- but will not block pipelines. Verify you have `options.setExitCode` set to `false` .
 
-### **1. Disable Passive Mode in Admission Controller**
+### 1. Disable Passive Mode in Admission Controller
 
 Disabling Admission Controller is done on a per-cluster basis. [Learn more how to enable/disable Passive Mode in Admission Controller here](https://insights.docs.fairwinds.com/installation/admission/setup/#installation).
 
@@ -140,7 +140,7 @@ if (ActionItem.Severity >= 0.7) {
 
 ## Implementing Stage 3: Compliance
 
-_In this stage, we want to enforce our Cluster-wide Policies and Scoped policies _
+_In this stage, we want to enforce our Cluster-wide Policies and Scoped policies_
 
 _Optionally, we can enable the Insights CI script to fail pipelines where Cluster-wide Policy issues are present._
 
@@ -225,11 +225,11 @@ metadata:
 
 ### 3. OPTIONAL: Configure Insights to enforce Cluster-wide Policies in CI
 
-**3A) Set the Insights CI integration to gate pull requests**
+#### **3A) Set the Insights CI integration to gate pull requests**
 
 Open the `fairwinds-insights.yaml` file at the root of your Git repo and set `options.setExitCode` to `true`.
 
-**3B) Update Policy Configurator to enforce Cluster-wide Policies in CI**
+#### **3B) Update Policy Configurator to enforce Cluster-wide Policies in CI**
 
 1. Download the [Insights CLI](https://insights.docs.fairwinds.com/configure/cli/cli/)
 2. Update your existing `settings.yaml` file with the configuration below.
@@ -277,15 +277,16 @@ checks:
         block: true
 ```
 
-# Managing Exceptions
+## Managing Exceptions
 
 To configure a workload to bypass the Admission Controller, there are two possible options:
 
-### **RECOMMENDED: Bypass Admission Controller using YAML Annotations**
+### RECOMMENDED: Bypass Admission Controller using YAML Annotations
 
--   Add a specific annotation to that workload, and use an Automation Rule to bypass Admission Controller
 
-    1.  With this option, security engineers and platform engineers are encouraged to use Git workflows to review/approve annotations added by development teams. This provides an audit trail for exceptions, and follows policy-as-code best practices.
+Add a specific annotation to that workload, and use an Automation Rule to bypass Admission Controller
+
+  - With this option, security engineers and platform engineers are encouraged to use Git workflows to review/approve annotations added by development teams. This provides an audit trail for exceptions, and follows policy-as-code best practices.
 
 Automation Rule: `ignore-via-annotation`
 
@@ -306,11 +307,11 @@ if (policyException) {
 }
 ```
 
-### **Bypass Admission Controller using an Allow List**
+### Bypass Admission Controller using an Allow List
 
--   Create an "allow list" within an Insights Automation Rule that forces the Severity of that Action Item to Low.
+Create an "allow list" within an Insights Automation Rule that forces the Severity of that Action Item to Low.
 
-    1.  With this option, security engineers and platform engineers carry the burden of maintaining an exception list. This is useful if development teams are still not fully responsible for their Kubernetes workload configurations.
+- With this option, security engineers and platform engineers carry the burden of maintaining an exception list. This is useful if development teams are still not fully responsible for their Kubernetes workload configurations.
 
 Automation Rule: `ignore-via-allowlist`
 
