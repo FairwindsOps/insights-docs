@@ -4,7 +4,7 @@ meta:
     content: "Fairwinds Insights | Documentation: How to enable Policy Enforcement use cases with Fairwinds Insights"
 ---
 
-# Policy Enforcement with Fairwinds Insights
+# Policy Enforcement
 
 At Fairwinds, we encourage organizations to take a phased approach to rolling out policy enforcement using the Insights Admission Controller. Specifically, we believe in the following stages:
 
@@ -21,15 +21,15 @@ We recommend two groups of policies:
 | **Policy Group**          | **Policies in scope (EventType)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Cluster-wide Policies** | Best practices that should apply to all workloads. General recommendation includes:<br />- Memory requests should be set (memoryRequestsMissing) <br />- CPU requests should be set (cpuRequestsMissing) <br />- Liveness probes should be set (livenessProbeMissing) <br />- Readiness probes should be set (readinessProbeMissing) <br />- Image pull policy should be “Always” (pullPolicyNotAlways) <br />- Container should not have dangerous capabilities (dangerousCapabilities) <br />- Image tag should be specified (tagNotSpecified)                                                                                                                                                                                                |
-| **Scoped Policies**       | Policies that may be scoped/targeted to specific resources - such as specific workload labels, namespaces, etc.<br />- Container should not have insecure capabilities (insecureCapabilities) <br />- Host IPC should not be configured (hostIPCSet) <br />- Host PID should not be configured (hostPIDSet) <br />- Privilege escalation should not be allowed (privilegeEscalationAllowed) <br />- Should not be running as privileged (runAsPrivileged) <br />- Container should not be running as root (runAsRootAllowed)<br />Fairwinds supports additional policies, including those references under [<u>Profile Level 1 in the CNCF Mult-Tenancy Benchmark</u>](https://github.com/kubernetes-sigs/multi-tenancy/tree/master/benchmarks) |
+| **Scoped Policies**       | Policies that may be scoped/targeted to specific resources - such as specific workload labels, namespaces, etc.<br />- Container should not have insecure capabilities (insecureCapabilities) <br />- Host IPC should not be configured (hostIPCSet) <br />- Host PID should not be configured (hostPIDSet) <br />- Privilege escalation should not be allowed (privilegeEscalationAllowed) <br />- Should not be running as privileged (runAsPrivileged) <br />- Container should not be running as root (runAsRootAllowed)<br /><br />Fairwinds supports additional policies, including those references under [<u>Profile Level 1 in the CNCF Mult-Tenancy Benchmark</u>](https://github.com/kubernetes-sigs/multi-tenancy/tree/master/benchmarks) |
 
 ## Policy Enforcement Stages
 
 Below is an example strategy for gradually rolling out Policy Enforcement in your organization.
 
 > Generally speaking, a brand new cluster without active usage is usually the best time to introduce a policy enforcement strategy. This establishes a strong baseline of "best practices" from the start — lowering the cost of compliance on a go-forward basis.
->
-> That said, the below strategy is designed for more real-world scenarios where policy enforcement is needed for existing, running clusters with active usage. The three enforcement stages allow you to gradually roll out policy to these users/teams so best practices can be applied over time.
+<br /><br />
+That said, the below strategy is designed for more real-world scenarios where policy enforcement is needed for existing, running clusters with active usage. The three enforcement stages allow you to gradually roll out policy to these users/teams so best practices can be applied over time.
 
 | **Stage**                                                                             | **Admission Controller Mode** | **Policy Group**                          | **Report Violations for Running Workloads?** | **Enforce in CI?**                | **Enforce in Admission Controller?** | **Tips**                                                                                                       |
 | ------------------------------------------------------------------------------------- | ----------------------------- | ----------------------------------------- | -------------------------------------------- | --------------------------------- | ------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
@@ -120,7 +120,7 @@ checks:
         block: true
 ```
 
-### 3. Use an Automation Rule to keep blocking mode focused on Cluster-wide Policies only
+### 3. Create Automation Rule to keep blocking mode focused on Cluster-wide Policies only
 1. Navigate to the Automation page
 2. Click 'Create Custom Rule'
 3. Create a new Automation Rule with the following settings:
@@ -149,7 +149,7 @@ Before proceeding, please verify:
 -   Admission Controller is installed and Passive Mode is disabled
 -   The Insights CI integration is installed on at least one pipeline and continues to have `options.setExitCode` set to `false`
 
-### 1. Disable the `0002-enforce-cluster-wide-policies-only` Automation Rule
+### 1. Disable the '`0002-enforce-cluster-wide-policies-only`' Automation Rule
 
 To disable the Automation Rule:
 
@@ -185,7 +185,7 @@ policyScope = new Array(
 
 //If Namespace Annotations are set, use this to define specific policies to enforce. Else, use what's configured in the policyScope variable.
 policiesToEnforce = new Array();
-if (ActionItem.NamespaceAnnotation["insights.fairwinds.com/enforce"]) {
+if (ActionItem.NamespaceAnnotations["insights.fairwinds.com/enforce"]) {
   policiesToEnforce = JSON.parse(
     ActionItem.NamespaceAnnotations["insights.fairwinds.com/enforce"]
   );
