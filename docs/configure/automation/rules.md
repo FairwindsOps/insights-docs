@@ -58,6 +58,7 @@ For the `ActionItem` input, the following fields are available:
 * `ResourceLabels`
 * `ResourceName`
 * `ResourceNamespace`
+* `ResourceContainer`
 * `Severity`
 
 To determine the `ReportType` and `EventType` of a certain Action Item:
