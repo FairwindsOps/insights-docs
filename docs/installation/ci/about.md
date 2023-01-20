@@ -15,6 +15,7 @@ Insights will run the following report types in CI:
 * Trivy (scan Docker images for vulnerabilities)
 * OPA (run custom policies)
 * Pluto (detect deprecated resources)
+* tfsec
 
 ### Comparing Auto-Scan and Insights CI Options
 |                                                       | **Auto-Scan**                                                                                                    | **Insights CI Integration**                                                                                                   |
