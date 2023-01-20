@@ -10,6 +10,72 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 11.1.0
+### Bug Fixes and Improvements
+* Fixed Admission Controller result dropdown
+* Fixed Action Items list export sometimes not working
+* Minor UI fixes
+
+## 11.0.0
+### Bug Fixes and Improvements
+* Fixed `Cost Over Time` chart in `Costs` page
+
+## 10.12.0
+### Bug Fixes and Improvements
+* Hide settings and add repository buttons from non-owners
+
+## 10.11.0
+### Bug Fixes and Improvements
+* Updated Insights welcome Email
+
+## 10.10.0
+### Bug Fixes and Improvements
+* Insights Agent 2.9 is now recommended in the `Install Hub`
+
+## 10.9.0
+### Bug Fixes and Improvements
+* Status indicator for Auto-Scan repositories takes user to scan logs
+* Fixed order of Action Items in the Health Score card in `Clusters`
+* Added the file name to the Action Items card in `Repositories`
+
+## 10.8.0
+### Bug Fixes and Improvements
+* Added more states to `Compliance` report checks
+* Ability to filter compliance report checks by control IDs
+* Fixed advanced filtering in Costs beta page
+
+## 10.7.0
+### New Insights CI script 2.2.0
+The Insights CI/CD script has been updated to better handle various Git checkout states,
+improving reliability of CI/CD scans. Errors such as "unable to GIT merge-base" should be
+reduced by upgrading to the latest version of the Insights CI/CD script. Customers who use
+Insights Continuous Integration (CI) script can now scan Terraform files for security weaknesses.
+This enables organizations to achieve greater Infrastructure-as-Code scan coverage. Please
+note this feature is not yet available as part of Auto-Scan. To get the script,
+navigate to Repositories > Add Repository > Connect Manually.
+
+## 10.6.0
+### Bug Fixes and Improvements
+* Users are now able to search for projects when creating a third party ticket
+* New `Cost Over Time` chart in the new `Efficiency > Costs` beta page
+
+## 10.5.0
+* No user-facing changes
+
+## 10.4.0
+### Bug Fixes and Improvements
+* List all open source projects used in Insights
+
+## 10.3.0
+### New Costs Page - Beta
+Fairwinds has released a beta version for the new `Costs` page. Organizations can use this page to get
+a better understanding of the breakdown of their Kubernetes cluster costs. To check out this new page,
+visit `Efficiency > Costs` in Insights.
+
+### Bug Fixes and Improvements
+* New `Notes` section in Action Item description
+* Add ability to configure multiple email domains for SSO
+
 ## 10.2.0
 ### Bug Fixes and Improvements
 * Insights Agent 2.8 is now recommended in the `Install Hub`

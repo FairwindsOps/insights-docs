@@ -122,6 +122,7 @@ module.exports = {
           'first-steps/workload-configuration',
           'first-steps/container-security',
           'first-steps/cost-efficiency',
+          'first-steps/policy-enforcement',
         ],
       },
       {

@@ -52,7 +52,7 @@ The following metadata fields can be specified in the Rule file:
 * `context` - specify `Agent`, `CI/CD`, or `AdmissionController` (leave blank to specify all options)
 * `cluster` - the name of a specific cluster this Rule should apply to
 * `repository` - the name of a specific repository this Rule should apply to
-* `reporttype` - the type of report (e.g. `polaris`, `trivy`, etc.) this Rule should apply to
+* `reportType` - the type of report (e.g. `polaris`, `trivy`, etc.) this Rule should apply to
 
 ## Verifying an Automation Rule
 To see a list of Automation Rules in your Insights organization, run:

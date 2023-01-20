@@ -83,14 +83,14 @@ Here is an example:
 ```
 manifests:
   yaml:
-  - ./path/to/yaml
-  - ./my-yaml-file.yaml
+    - ./path/to/yaml
+    - ./my-yaml-file.yaml
   helm:
-  - name: prod-app
-    path: ./deploy/chart
-    valuesFiles: [./deploy/prod-app.yaml]
-    values:
-      param.enable: true
+    - name: prod-app
+      path: ./deploy/chart
+      valuesFiles: [./deploy/prod-app.yaml]
+      values:
+        image.tag: 1.1
 ```
 
 ### Scanning Flux Files
@@ -99,13 +99,10 @@ Fairwinds Insights also supports scanning YAML files that container Flux HelmRel
 Here is an example:
 ```
 manifests:
-  yaml:
-  - ./path/to/yaml
-  - ./my-yaml-file.yaml
   helm:
-  - name: prod-app
-    path: ./deploy/chart
-    valuesFiles: [./deploy/prod-app.yaml]
+    - name: nginx-fluxfile
+      fluxFile: ./nginx-flux-file.yaml
+      repo: https://helm.nginx.com/stable
 ```
 
 ## Managing Exemptions
@@ -139,6 +136,7 @@ You can control which scan tools (known as 'reports') are run as part of an Insi
 * `reports.opa.enabled` - Boolean - set to `false` if you'd like to disable OPA
 * `reports.polaris.enabled` - Boolean - set to `false` if you'd like to disable Polaris
 * `reports.trivy.enabled` - Boolean - set to `false` if you'd like to disable Trivy
+* `reports.tfsec.enabled` - Boolean - set to `false` if you'd like to disable tfsec Terraform file scanning
 * `reports.trivy.skipManifests` - Boolean - set to `true` if you don't want to scan images discovered in YAML files and Helm charts
 
 ## Troubleshooting Insights CI
@@ -182,6 +180,6 @@ the `fairwinds-insights.yaml`:
 echo "images:" >> fairwinds-insights.yaml
 echo "  docker:" >> fairwinds-insights.yaml
 for image in "${changedImages[@]}"; do
-  echo "  - $image" >> fairwinds-insights.yaml
+  echo "    - $image" >> fairwinds-insights.yaml
 done
 ```
