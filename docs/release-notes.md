@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 11.2.0
+### Bug Fixes and Improvements
+* Improvements to the `Costs` page
+* Fixed redirect of the `Upgrade` button for free tier
+* Fixed editing of Compliance reports
+* Removed the `Set up Insights` from Cluster Overview page
+
 ## 11.1.0
 ### Bug Fixes and Improvements
 * Fixed Admission Controller result dropdown
