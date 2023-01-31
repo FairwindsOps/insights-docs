@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 11.3.0
+### New CI Script 4.2
+The new Insights CI script adds the ability to scan terraform files. Furthermore, the Auto-Scan
+feature allows private image scanning.
+For more information visit [Auto-Scan](/configure/ci/autoscan)
+
 ## 11.2.0
 ### Bug Fixes and Improvements
 * Improvements to the `Costs` page
