@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 11.4.0
+### Automated Compliance TLS for Ingresses
+This compliance test can now be run automatically using Insights. Using polaris, Insights checks whether
+all ingresses within the kubernetes cluster have TLS configured.
+
+### Bug Fixes and Improvements
+* New Sign Up flow for Insights
+
 ## 11.3.0
 ### New CI Script 4.2
 The new Insights CI script adds the ability to scan terraform files. Furthermore, the Auto-Scan
