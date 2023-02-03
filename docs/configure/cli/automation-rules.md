@@ -117,19 +117,11 @@ severity: 0.9
 Once the files have been created, use the following command to validate the rule against Insights
 
 ```bash
-insights-cli validate rule -t  <insights context> -R <report type> {-r <rule file> -a <action item file>} [-i <expected output file>]
+insights-cli validate rule --insights-context  <insights context> --report-type <report type> {--automation-rule-file <rule file> --action-item-file <action item file>} [--expected-action-item <expected output file>]
 ```
-
-Parameters:
-
-Insights context: possible inputs: AdmissionController, Agent, CI/CD
-Report type: possible inputs: opa, nova, kubesec, kube-hunter, kube-bench, goldilocks, admission, pluto, polaris, rbac-reporter, release-watcher, prometheus-metrics, resource-metrics, trivy, workloads, right-sizer, awscosts, falco
-
-You can also provide different file input path, rule path and the expected output file path.
-
 Example:
 ```bash
-insights-cli validate rule -t Agent -R trivy -r ./rule.js -a ./action-items.yaml -i ./expected-output.yaml
+insights-cli validate rule --insights-context Agent --report-type trivy --automation-rule-file ./rule.js --action-item-file ./action-items.yaml --expected-action-item ./expected-output.yaml
 ```
 
 if expected output is provided and the result is the expected one, a success message is displayed:
