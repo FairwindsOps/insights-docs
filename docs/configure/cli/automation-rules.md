@@ -89,7 +89,7 @@ For additional information see
 * [OPA policies With CLI](/configure/cli/opa)
 * [Policies Configuration with CLI](/configure/cli/settings)
 
-## Testing Automation Rules before inserting into Insights
+## Testing Automation Rules
 Before pushing Automation Rules to Insights, you can use the CLI to check if the results will work as expected:
 For the testing we need a rule file and action item file. Optionally we can provide an expected output file to compare:
 
