@@ -91,7 +91,7 @@ For additional information see
 
 ## Testing Automation Rules before inserting into Insights
 Before pushing Automation Rules to Insights, you can use the CLI to check if the results will be as expected:
-For the testing we need a rule and an action item files. Optionally we can have an output expected file:
+For the testing we need a rule file and action item file. Optionally we can have an expected output file:
 
 Rule file example, default file name is ./rule.js:
 ```js
@@ -117,16 +117,29 @@ severity: 0.9
 Once the files have been created, use the following command to validate the Rules to Insights
 
 ```bash
-insights-cli validate rule -t  <insights context> {-r <rule file> -a <action item file>} [-i <expected output file>]
+insights-cli validate rule -t  <insights context> -R <report type> {-r <rule file> -a <action item file>} [-i <expected output file>]
 ```
 
 Parameters:
 
-Insights context: possible input: AdmissionController, Agent, CI/CD
-Report type: possible input: opa, nova, kubesec, kube-hunter, kube-bench, goldilocks, admission, pluto, polaris, rbac-reporter, release-watcher, prometheus-metrics, resource-metrics, trivy, workloads, right-sizer, awscosts, falco
-You can also provide different file input path, rule path and the expected output.
+Insights context: possible inputs: AdmissionController, Agent, CI/CD
+Report type: possible inputs: opa, nova, kubesec, kube-hunter, kube-bench, goldilocks, admission, pluto, polaris, rbac-reporter, release-watcher, prometheus-metrics, resource-metrics, trivy, workloads, right-sizer, awscosts, falco
+
+You can also provide different file input path, rule path and the expected output file path.
 
 Example:
 ```bash
-insights-cli validate rule -t  Agent -r ./rule.js -a ./action-items.yaml -i ./expected-output.yaml
+insights-cli validate rule -t Agent -R trivy -r ./rule.js -a ./action-items.yaml -i ./expected-output.yaml
+```
+
+if expected output is provided and the result is the expected a success message is displayed:
+```bash
+INFO Success - actual response matches expected response 
+```
+
+If no expected output is provided the updated action item yaml is displayed on console:
+```yaml
+title: Image has vulnerabilities
+cluster: production
+severity: 0.9
 ```
