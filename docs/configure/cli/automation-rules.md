@@ -114,7 +114,7 @@ cluster: production
 severity: 0.9
 ```
 
-Once the files have been created, use the following command to validate the rule against Insights
+Once the files have been created, use the following command to validate the rule against Insights:
 
 ```bash
 insights-cli validate rule --insights-context  <insights context> --report-type <report type> {--automation-rule-file <rule file> --action-item-file <action item file>} [--expected-action-item <expected output file>]
@@ -124,7 +124,7 @@ Example:
 insights-cli validate rule --insights-context Agent --report-type trivy --automation-rule-file ./rule.js --action-item-file ./action-items.yaml --expected-action-item ./expected-output.yaml
 ```
 
-if expected output is provided and the result is the expected one, a success message is displayed:
+If the expected output is provided and the actual result matches, a success message is displayed:
 ```bash
 INFO Success - actual response matches expected response 
 ```
