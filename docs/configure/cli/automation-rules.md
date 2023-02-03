@@ -88,3 +88,45 @@ The `--delete` flag is not available for the `push all` command to avoid unexpec
 For additional information see
 * [OPA policies With CLI](/configure/cli/opa)
 * [Policies Configuration with CLI](/configure/cli/settings)
+
+## Testing Automation Rules before inserting into Insights
+Before pushing Automation Rules to Insights, you can use the CLI to check if the results will be as expected:
+For the testing we need a rule and an action item files. Optionally we can have an output expected file:
+
+Rule file example, default file name is ./rule.js:
+```js
+if (ActionItem.ReportType === "trivy" && ActionItem.Cluster === "production") {
+  ActionItem.Severity = 0.9;
+}
+```
+
+Action item file example, default file name is ./action-item.yaml:
+```yaml
+title: Image has vulnerabilities
+cluster: production
+severity: 0.1
+```
+
+Expected output Action item file example:
+```yaml
+title: Image has vulnerabilities
+cluster: production
+severity: 0.9
+```
+
+Once the files have been created, use the following command to validate the Rules to Insights
+
+```bash
+insights-cli validate rule -t  <insights context> {-r <rule file> -a <action item file>} [-i <expected output file>]
+```
+
+Parameters:
+
+Insights context: possible input: AdmissionController, Agent, CI/CD
+Report type: possible input: opa, nova, kubesec, kube-hunter, kube-bench, goldilocks, admission, pluto, polaris, rbac-reporter, release-watcher, prometheus-metrics, resource-metrics, trivy, workloads, right-sizer, awscosts, falco
+You can also provide different file input path, rule path and the expected output.
+
+Example:
+```bash
+insights-cli validate rule -t  Agent -r ./rule.js -a ./action-items.yaml -i ./expected-output.yaml
+```
