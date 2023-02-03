@@ -91,7 +91,7 @@ For additional information see
 
 ## Testing Automation Rules before inserting into Insights
 Before pushing Automation Rules to Insights, you can use the CLI to check if the results will be as expected:
-For the testing we need a rule file and action item file. Optionally we can have an expected output file:
+For the testing we need a rule file and action item file. Optionally we can provide an expected output file to compare:
 
 Rule file example, default file name is ./rule.js:
 ```js
