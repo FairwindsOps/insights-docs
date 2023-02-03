@@ -88,3 +88,50 @@ The `--delete` flag is not available for the `push all` command to avoid unexpec
 For additional information see
 * [OPA policies With CLI](/configure/cli/opa)
 * [Policies Configuration with CLI](/configure/cli/settings)
+
+## Testing Automation Rules
+Before pushing Automation Rules to Insights, you can use the CLI to check if the results will work as expected:
+For the testing, you will need to create a rule file and action item file. You also have the option to create an expected output file to compare to the actual result:
+
+Rule file example, default file name is ./rule.js:
+```js
+if (ActionItem.ReportType === "trivy" && ActionItem.Cluster === "production") {
+  ActionItem.Severity = 0.9;
+}
+```
+
+Action item file example, default file name is ./action-item.yaml:
+```yaml
+title: Image has vulnerabilities
+cluster: production
+severity: 0.1
+```
+
+Expected output Action item file example:
+```yaml
+title: Image has vulnerabilities
+cluster: production
+severity: 0.9
+```
+
+Once the files have been created, use the following command to validate the rule against Insights:
+
+```bash
+insights-cli validate rule --insights-context  <insights context> --report-type <report type> {--automation-rule-file <rule file> --action-item-file <action item file>} [--expected-action-item <expected output file>]
+```
+Example:
+```bash
+insights-cli validate rule --insights-context Agent --report-type trivy --automation-rule-file ./rule.js --action-item-file ./action-items.yaml --expected-action-item ./expected-output.yaml
+```
+
+If the expected output is provided and the actual result matches, a success message is displayed:
+```bash
+INFO Success - actual response matches expected response 
+```
+
+If no expected output is provided the updated action item yaml is displayed:
+```yaml
+title: Image has vulnerabilities
+cluster: production
+severity: 0.9
+```
