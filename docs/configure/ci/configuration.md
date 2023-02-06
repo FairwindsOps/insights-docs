@@ -106,7 +106,7 @@ manifests:
 ```
 
 ## Scanning Terraform Files
-You can scan Terraform files by specificing a list of directories to scan:
+Scan Terraform files by specificing a list of directories to scan:
 ```yaml
 terraform:
   paths:
