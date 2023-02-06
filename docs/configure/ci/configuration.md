@@ -4,7 +4,7 @@ meta:
     content: "Fairwinds Insights | Documentation: How to configure the CI integration"
 ---
 # fairwinds-insights.yaml
-The Insights CI integration relies on the `fairwinds-insights.yaml` configuration file in the root of your infrastructure-as-code repository to understand exactly what needs to be scan.
+The Insights CI integration relies on the `fairwinds-insights.yaml` configuration file in the root of your infrastructure-as-code repository to understand exactly what needs to be scanned.
 
 Specifically, the `fairwinds-insights.yaml` file must provide the location of configuration files and images you would like to scan.
 
