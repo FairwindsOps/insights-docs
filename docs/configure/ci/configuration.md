@@ -3,7 +3,7 @@ meta:
   - name: description
     content: "Fairwinds Insights | Documentation: How to configure the CI integration"
 ---
-# Insights Continuous Integration (CI)
+# fairwinds-insights.yaml
 The Insights CI integration relies on the `fairwinds-insights.yaml` configuration file in the root of your infrastructure-as-code repository to understand exactly what needs to be scan.
 
 Specifically, the `fairwinds-insights.yaml` file must provide the location of configuration files and images you would like to scan.
@@ -103,6 +103,15 @@ manifests:
     - name: nginx-fluxfile
       fluxFile: ./nginx-flux-file.yaml
       repo: https://helm.nginx.com/stable
+```
+
+## Scanning Terraform Files
+You can scan Terraform files by specificing a list of directories to scan:
+```yaml
+terraform:
+  paths:
+    - ./inventory/production
+    - ./inventory/staging
 ```
 
 ## Managing Exemptions
