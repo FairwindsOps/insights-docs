@@ -90,8 +90,8 @@ For additional information see
 * [Policies Configuration with CLI](/configure/cli/settings)
 
 ## Testing Automation Rules
-Before pushing Automation Rules to Insights, you can use the CLI to check if the results will work as expected:
-For the testing, you will need to create a rule file and action item file. You also have the option to create an expected output file to compare to the actual result:
+Before pushing Automation Rules to Insights, you can use the CLI to check if the results will work as expected.
+For the testing, you will need to create a rule file and action item file. You also have the option to create an expected output file to compare to the actual result.
 
 Rule file example, default file name is ./rule.js:
 ```js
