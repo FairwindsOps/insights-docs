@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 11.5.0
+### Bug Fixes and Improvements
+* Small improvements to the cluster overview page
+* Fixed creating third party ticket flow
+* Fixed Vulnerabilities - All Images page not loading for some organizations
+
 ## 11.4.0
 ### Automated Compliance TLS for Ingresses
 This compliance test can now be run automatically using Insights. Using polaris, Insights checks whether
