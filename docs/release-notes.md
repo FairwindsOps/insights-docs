@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 11.7.0
+### Bug Fixes and Improvements
+* Some UI improvements to the `Costs` page
+* The `Compare` page was removed from the navigation bar. It is still available at `insights.fairwinds.com/orgs/{org}/compare`
+* Added falco and right-sizer to the automation rules options
+* Insights Agent 2.10 is now recommended in the `Install Hub`
+
 ## 11.6.0
 ### Cluster Overview Page Improvements
 The Cluster Overview page has many new improvements in this release of Insights. This includes changing
