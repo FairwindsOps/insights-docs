@@ -1,6 +1,4 @@
 # Falco
-> Falco is currently in beta. If you'd like to try out the Falco integration,
-> get in touch with the Fairwinds team!
 
 Falco is a tool for runtime detection of security events. It monitors every machine in your cluster for suspicious events like system files being accessed, network connections, shells being opened, etc.
 
