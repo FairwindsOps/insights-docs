@@ -10,6 +10,18 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 11.8.0
+### Costs [Beta] Page Updates
+We're getting ready to take the Costs page out of beta! We've launched a few new features in preparation:
+* A donut chart, to help contextualize the numbers as you filter and aggregate
+* Quick Views, so you can jump to useful sets of filters and aggregators
+* Recommendation visualizations, so you can see how our recommended memory and CPU settings might affect your workloads
+
+### Bug Fixes and Improvements
+* Fixed issue with resizing of columns in Action Items table
+* Tooltip for Node capacity chart in Efficiency page has correct limits and requests
+* Added Quick views to the costs page
+
 ## 11.7.0
 ### Bug Fixes and Improvements
 * Some UI improvements to the `Costs` page
