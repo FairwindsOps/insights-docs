@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 11.8.0
+### Bug Fixes and Improvements
+* Fixed issue with resizing of columns in Action Items table
+* Multiple UI and data improvements to the `Costs` beta page
+* Tooltip for Node capacity chart in Efficiency page has correct limits and requests
+* Added Quick views to the costs page
+
 ## 11.7.0
 ### Bug Fixes and Improvements
 * Some UI improvements to the `Costs` page
