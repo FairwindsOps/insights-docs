@@ -12,7 +12,7 @@ sidebarDepth: 1
 
 ## 11.9.0
 ### Bug Fixes and Improvements
-* Fixed the error when visiting `Compliance` page that has no reports
+* Fixed an error when visiting `Compliance` page when there are no reports
 * Multiple UI improvements to the `Efficiency > Capacity` page
 * The tooltip in `Efficiency > Capacity` now displays correctly
 
