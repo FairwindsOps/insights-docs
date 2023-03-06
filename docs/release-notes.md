@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 11.9.0
+### Bug Fixes and Improvements
+* Fixed the error when visiting `Compliance` page that has no reports
+* Multiple UI improvements to the `Efficiency > Capacity` page
+* The tooltip in `Efficiency > Capacity` now displays correctly
+
 ## 11.8.0
 ### Costs [Beta] Page Updates
 We're getting ready to take the Costs page out of beta! We've launched a few new features in preparation:
