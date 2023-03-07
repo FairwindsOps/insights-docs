@@ -12,6 +12,7 @@ sidebarDepth: 1
 
 ## 11.9.0
 ### Bug Fixes and Improvements
+* [Breaking] We released a fix for file references in the CI/CD script. You may see action items get fixed and re-opened in the first change using script 5.0. This will automatically roll out for auto-scan users.
 * Fixed an error when visiting `Compliance` page when there are no reports
 * Multiple UI improvements to the `Efficiency > Capacity` page
 * The tooltip in `Efficiency > Capacity` now displays correctly
