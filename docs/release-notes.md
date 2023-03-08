@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 11.10.0
+### Bug Fixes and Improvements
+* Fix current usage and historical node capacity for cpu and memory in use
+* Fixed filtering of OPA policies in the `Policy` page
+* Small UI improvements to the `Costs` page
+
 ## 11.9.0
 ### Bug Fixes and Improvements
 * [Breaking] We released a fix for file references in the CI/CD script. You may see action items get fixed and re-opened in the first change using script 5.0. This will automatically roll out for auto-scan users.
