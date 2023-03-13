@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 11.11.0
+### Bug Fixes and Improvements
+* Removed the `Set Up Insights` section from the `Home` page
+* Minor UI fixes to the `Costs` page
+
 ## 11.10.0
 ### Bug Fixes and Improvements
 * Fix current usage and historical node capacity for cpu and memory in use
