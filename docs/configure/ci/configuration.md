@@ -1,11 +1,10 @@
 ---
 meta:
-  - name: title
-    content: Insights CI Configuration | Fairwinds Documentation
-  - name: description
-    content: Documentation: How to configure the Fairwinds Insights CI integration
+- name: title
+  content: Insights CI Configuration | Fairwinds Documentation
+- name: description
+  content: Documentation: How to configure the Fairwinds Insights CI integration
 ---
-
 # Insights Continuous Integration (CI)
 The Insights CI integration relies on the `fairwinds-insights.yaml` configuration file in the root of your infrastructure-as-code repository to understand exactly what needs to be scan.
 
