@@ -10,6 +10,24 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 11.11.0
+### Bug Fixes and Improvements
+* Removed the `Set Up Insights` section from the `Home` page
+* Minor UI fixes to the `Costs` page
+
+## 11.10.0
+### Bug Fixes and Improvements
+* Fix current usage and historical node capacity for cpu and memory in use
+* Fixed filtering of OPA policies in the `Policy` page
+* Small UI improvements to the `Costs` page
+
+## 11.9.0
+### Bug Fixes and Improvements
+* [Breaking] We released a fix for file references in the CI/CD script. You may see action items get fixed and re-opened in the first change using script 5.0. This will automatically roll out for auto-scan users.
+* Fixed an error when visiting `Compliance` page when there are no reports
+* Multiple UI improvements to the `Efficiency > Capacity` page
+* The tooltip in `Efficiency > Capacity` now displays correctly
+
 ## 11.8.0
 ### Costs [Beta] Page Updates
 We're getting ready to take the Costs page out of beta! We've launched a few new features in preparation:
