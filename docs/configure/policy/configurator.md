@@ -1,7 +1,7 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Documentation: The Policy Configurator provides a way to globally set default values for any Policies used by any of the Report Tools in Insights"
+    content: The Policy Configurator provides a way to globally set default values for any Policies used by any of the Report Tools in Insights
 ---
 # Policy Configurator
 The Policy Configurator provides a way to globally set default values for any Policies used by any of the Report Tools in Insights. These settings make it easy to customize Insights for common policy scenarios without having to first write Automation Rules.
