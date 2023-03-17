@@ -50,7 +50,7 @@ For the `ActionItem` input, the following fields are available:
 * `Cluster`
 * `EventType`
 * `IsNew`
-* `IsChanged` (applicable to Title, Description, Fixed)
+* `IsChanged` (`true` if Title, Description, or Fixed has changed from the most recent report)
 * `NamespaceAnnotations`
 * `NamespaceLabels`
 * `ReportType`
