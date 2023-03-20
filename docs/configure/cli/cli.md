@@ -1,7 +1,7 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Documentation: The Fairwinds Insights CLI is a command-line tool for interacting with the API. It can be used to manage Policies and Automation Rules in Insights and validate OPA policies offline"
+    content: The Fairwinds Insights CLI is a tool for interacting with the API. It can be used to manage Policies and Automation Rules in Insights and validate OPA policies offline
 ---
 # CLI Setup
 The [Fairwinds Insights Command-Line Interface](https://github.com/FairwindsOps/insights-cli) (CLI)

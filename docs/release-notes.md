@@ -10,6 +10,61 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 11.11.0
+### Bug Fixes and Improvements
+* Removed the `Set Up Insights` section from the `Home` page
+* Minor UI fixes to the `Costs` page
+
+## 11.10.0
+### Bug Fixes and Improvements
+* Fix current usage and historical node capacity for cpu and memory in use
+* Fixed filtering of OPA policies in the `Policy` page
+* Small UI improvements to the `Costs` page
+
+## 11.9.0
+### Bug Fixes and Improvements
+* [Breaking] We released a fix for file references in the CI/CD script. You may see action items get fixed and re-opened in the first change using script 5.0. This will automatically roll out for auto-scan users.
+* Fixed an error when visiting `Compliance` page when there are no reports
+* Multiple UI improvements to the `Efficiency > Capacity` page
+* The tooltip in `Efficiency > Capacity` now displays correctly
+
+## 11.8.0
+### Costs [Beta] Page Updates
+We're getting ready to take the Costs page out of beta! We've launched a few new features in preparation:
+* A donut chart, to help contextualize the numbers as you filter and aggregate
+* Quick Views, so you can jump to useful sets of filters and aggregators
+* Recommendation visualizations, so you can see how our recommended memory and CPU settings might affect your workloads
+
+### Bug Fixes and Improvements
+* Fixed issue with resizing of columns in Action Items table
+* Tooltip for Node capacity chart in Efficiency page has correct limits and requests
+* Added Quick views to the costs page
+
+## 11.7.0
+### Bug Fixes and Improvements
+* Some UI improvements to the `Costs` page
+* The `Compare` page was removed from the navigation bar. It is still available at `insights.fairwinds.com/orgs/{org}/compare`
+* Added falco and right-sizer to the automation rules options
+* Insights Agent 2.10 is now recommended in the `Install Hub`
+
+## 11.6.0
+### Cluster Overview Page Improvements
+The Cluster Overview page has many new improvements in this release of Insights. This includes changing
+the behavior of the Action Items chart as well as adding new cluster level data. Users are now able to
+get a quick idea of the overall state of their clusters by visiting this page.
+
+### Bug Fixes and Improvements
+* Users can now navigate to the Affected Images in the Vulnerabilities pages
+* Fixed the node capacity chart not showing in the Efficiency page
+* Users may now select their time zone by visiting the `User Settings > Region` page
+* Fixed an issue with the `Table View` functionality on Action Items lists
+
+## 11.5.0
+### Bug Fixes and Improvements
+* Small improvements to the cluster overview page
+* Fixed creating third party ticket flow
+* Fixed Vulnerabilities - All Images page not loading for some organizations
+
 ## 11.4.0
 ### Automated Compliance TLS for Ingresses
 This compliance test can now be run automatically using Insights. Using polaris, Insights checks whether
