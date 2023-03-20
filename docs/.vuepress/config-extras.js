@@ -42,6 +42,7 @@ module.exports = {
             children: [
               'installation/ci/about',
               'installation/ci/autoscan',
+              'installation/ci/github',
               'installation/ci/insights-ci-script'
             ],
           }, {
