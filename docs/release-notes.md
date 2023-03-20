@@ -10,6 +10,24 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 11.12.0
+### Automated PRs
+We're excited to announce the launch of Automated Fix PRs!
+
+With this new functionality, repositories setup using Auto-Scan will be able to open a Pull Request that fixes one or more Action Items in your infrastructure-as-code.
+
+In order to achieve this, we've added permissions to our GitHub integration to write to repository contents.
+This only applies to repositories you connect to Insights via GitHub, and will always occur on a separate branch -- enabling you to review fix PRs before deciding to merge.
+
+Visit the [Github permissions](/installation/ci/github#fairwinds-insights-github-application-permissions-required) to learn more.
+
+[You can also learn more about Auto-Scan here.](/installation/ci/autoscan)
+
+### Bug Fixes and Improvements
+* Selecting a team in the Action Items table now shows correct Action Items
+* Added a loading indicator in `Reports > History`
+* Multiple fixes to the `Costs` page
+
 ## 11.11.0
 ### Bug Fixes and Improvements
 * Removed the `Set Up Insights` section from the `Home` page
