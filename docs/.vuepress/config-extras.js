@@ -42,6 +42,7 @@ module.exports = {
             children: [
               'installation/ci/about',
               'installation/ci/autoscan',
+              'installation/ci/github',
               'installation/ci/insights-ci-script'
             ],
           }, {
@@ -82,7 +83,8 @@ module.exports = {
             title: 'Infrastructure-as-Code Scanning',
             children: [
               'configure/ci/autoscan',
-              'configure/ci/configuration'
+              'configure/ci/configuration',
+              'configure/ci/github-integration'
             ],
           }, {    
             title: 'Policies',

@@ -790,7 +790,7 @@ We’ve updated the digest emails and Slack notifications to include warnings wh
 
 ## 5.0.0
 ### SAML Capabilities - Beta
-We are happy to announce we now offer SAML capabilities! Contact us if you want to try it. 
+We are happy to announce we now offer SAML capabilities! Contact us if you want to try it.
 [Learn More](https://insights.docs.fairwinds.com/configure/sso/setup/)
 
 ### Save Views in Action Item Table
@@ -800,7 +800,7 @@ You can now save filtered views on the Action Items table. Use the star button a
 We added a scroll bar to repositories and clusters options in the navbar to improve usability.
 
 ### Improved Error Message Handling in the UI
-We updated how we handle presenting error messages. We now allow users to explicitly dismiss the notifications and increased the amount of time we display the message. This way, users have more time to read the error or ignore it more quickly. 
+We updated how we handle presenting error messages. We now allow users to explicitly dismiss the notifications and increased the amount of time we display the message. This way, users have more time to read the error or ignore it more quickly.
 
 ### Bug Fixes
 * Information wasn’t showing up under remediation for Polaris Action Items
