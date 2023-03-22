@@ -33,7 +33,7 @@ This section applies if the Insights Ingress uses a custom SSL certificate which
 
 ### Self-signed SSL Certificate Validation - Insights Agent
 
-The [Insights agent](/configure/agent/configuration) needs to be provided a certificate to validate communication with the Insights API. This can be accomplished by creating a Kubernetes Secret containing the certificate, then including Helm values that intruct the agent chart to use that certificate.
+The [Insights agent](/configure/agent/configuration) needs to be provided a certificate to validate communication with the Insights API. This can be accomplished by creating a Kubernetes Secret containing the certificate, then including Helm values that instruct the agent chart to use that certificate.
 
 1. Create a Kubernetes Secret in each cluster where you will install the Insights agent. For example, to manually create a Secret using the local file myca.crt:  `kubectl create secret generic certificateauthority --from-file=ca.crt=myca.crt`
 2. Include these Helm values when installing the `insights-agent` chart:
