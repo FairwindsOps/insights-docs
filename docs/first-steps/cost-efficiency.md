@@ -60,17 +60,6 @@ memory and CPU to dollars. We will take the `Cost per Node`, attribute half that
 cost to memory and half to CPU. By dividing those numbers by the amount of memory and CPU in
 a single node, we can come to per-CPU and per-GB-memory costs.
 
-To determine the cost of a particular workload, we offer two strategies:
-* `conservative` - this takes into account the potential waste incurred by
-memory or CPU intensive workloads if Kubernetes is unable to bin-pack efficiently.
-It is calculated as `2 * max(cpu_cost, memory_cost)`
-* `optimistic` - this assumes Kubernetes can bin-pack your workloads efficiently.
-It is calculated as `cpu_cost + memory_cost`
-
-If you have spent time optimizing your node size or if you're running a large variety
-of workloads that are small relative to your node size, the `optimistic` strategy
-will probably be more accurate. Otherwise, we recommend the `conservative` strategy.
-
 You can [read more about cost estimation on our blog](https://www.fairwinds.com/blog/5-problems-with-kubernetes-cost-estimation-strategies)
 
 ## Viewing Workload Costs
