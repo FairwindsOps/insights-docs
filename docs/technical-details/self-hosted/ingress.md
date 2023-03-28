@@ -40,9 +40,8 @@ The [Insights agent](/configure/agent/configuration) needs to be provided a cert
 
 ```
 global:
-  sslCertFile:
-    secretName: certificateauthority
-    secretKey: ca.crt
+  sslCertFileSecretName: certificateauthority
+  sslCertFileSecretKey: ca.crt
 ```
 
 ### Self-signed SSL Certificate Validation - CI/CD
