@@ -12,7 +12,9 @@ sidebarDepth: 1
 
 ## 11.13.0
 ### New NSA Hardening Compliance Report
-A new compliance report is added to the `Compliance` page 
+A new compliance report is added to the `Compliance` page to help organizations with their NSA Hardening Compliance.
+Insights Agent will be able to automatically check some of the compliance checks for the NSA Hardening and for the remaining compliance checks, users
+are able to mark the state manually.
 
 ### Bug Fixes and Improvements
 * New look for the `Add Ons` page
