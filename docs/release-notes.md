@@ -10,6 +10,17 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 11.13.0
+### New NSA Hardening Compliance Report
+A new compliance report is added to the `Compliance` page 
+
+### Bug Fixes and Improvements
+* New look for the `Add Ons` page
+* Fixed OPA policies not being blocked by admission controller
+* New `Total Savings Available` in the `Costs` page
+* Fixed and issue where somtimes not all filters showing up in `Action Items` table
+* Removed `Cost Strategy` option from the `Costs` settings page
+
 ## 11.12.0
 ### Automated PRs
 We're excited to announce the launch of Automated Fix PRs!
