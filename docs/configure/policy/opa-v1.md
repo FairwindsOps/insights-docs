@@ -1,7 +1,7 @@
 ---
 meta:
   - name: description
-    content: We recommend using OPA v2 policies. These instructions remain here for backward compatibility. For writing OPA v2 policies, refer to the OPA policies documentation.
+    content: "We recommend using OPA v2 policies. These instructions remain here for backward compatibility. For writing OPA v2 policies, refer to the OPA policies documentation."
 ---
 # OPA v1
 We recommend using OPA v2 policies. These instructions remain here for backward compatibility.

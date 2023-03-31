@@ -1,9 +1,9 @@
 ---
 meta:
   - name: title
-    content: Helm Insights Agent | Fairwinds Documentation
+    content: "Helm Insights Agent | Fairwinds Documentation"
   - name: description
-    content: Configuration for the Fairwinds Insights Agent Helm chart
+    content: "Configuration for the Fairwinds Insights Agent Helm chart"
 ---
 # Helm
 The Insights Agent can be configured using Helm. To see the full list of options, check out the

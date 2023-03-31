@@ -1,7 +1,7 @@
 ---
 meta:
   - name: description
-    content: You can use the Insights CLI to manage the configuration of Policies. Be sure to first read the Insights CLI documentation which covers installation and preparation.
+    content: "You can use the Insights CLI to manage the configuration of Policies. Be sure to first read the Insights CLI documentation which covers installation and preparation."
 ---
 # Policies Configuration With the CLI
 You can use the Insights CLI to manage the configuration of Policies.
