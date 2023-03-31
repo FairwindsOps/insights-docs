@@ -1,7 +1,7 @@
 ---
 meta:
   - name: description
-    content: Fairwinds provides a powerful and flexible solution for fine grained customization of Admission Controller actions through Automation Rules.
+    content: "Fairwinds provides a powerful and flexible solution for fine grained customization of Admission Controller actions through Automation Rules."
 ---
 # Admission Controller
 

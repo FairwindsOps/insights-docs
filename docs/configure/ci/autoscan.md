@@ -1,7 +1,7 @@
 ---
 meta:
   - name: description
-    content: Instructions on how to configure auto-scan, and documentation of auto-scan capabilities.
+    content: "Instructions on how to configure auto-scan, and documentation of auto-scan capabilities."
 ---
 # Auto-Scan
 ## Gating Pull Requests With Github Protected Branches

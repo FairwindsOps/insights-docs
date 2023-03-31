@@ -1,7 +1,7 @@
 ---
 meta:
   - name: description
-    content: The Admission Controller can be further configured using Helm. To see the full list of options, check out the Insights Admission Helm chart
+    content: "The Admission Controller can be further configured using Helm. To see the full list of options, check out the Insights Admission Helm chart"
 ---
 # Helm
 The Admission Controller can be further configured using Helm. To see the full list of options,
