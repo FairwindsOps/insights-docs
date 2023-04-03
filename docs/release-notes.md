@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.0.0
+### Bug Fixes and Improvements
+* Fixed an issue with the Captchas on user register
+* Small UI fixes in `User Settings`
+* Fixed Auto-Scan logs sometimes showing multiple runs
+
 ## 11.13.0
 ### New NSA Hardening Compliance Report
 A new compliance report is added to the `Compliance` page to help organizations with their NSA Hardening Compliance.
