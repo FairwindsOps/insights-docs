@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.1.0
+### Bug Fixes and Improvements
+* Many UI polishes and improvements throughout Insights
+
 ## 12.0.0
 ### Bug Fixes and Improvements
 * Fixed an issue with the Captchas on user register
