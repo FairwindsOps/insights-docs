@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.2.0
+### Bug Fixes and Improvements
+* Minor UI fixes in the `User Settings` pages
+* Fixed issue where sometimes the `Resources Per Pod` chart in `Costs` was blank
+
 ## 12.1.0
 ### Bug Fixes and Improvements
 * Many UI polishes and improvements throughout Insights
