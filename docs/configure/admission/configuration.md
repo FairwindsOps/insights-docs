@@ -40,4 +40,4 @@ insights-admission:
 
 # Passive Mode and Report Types
 
-The [admission controller install hub](/configure/admission/installhub-and-policies) and [Insights CLI policy configuration](/configure/cli/settings) documentation describes methods for [setting admission controller passive mode](/installation/admission/setup/#installation), and which report types will be used with admission controller.
+The [admission controller install hub](/configure/admission/installhub-and-policies) and [Insights CLI policy configuration](/configure/cli/settings) documentation describes methods for [setting admission controller passive mode](/installation/admission/setup), and which report types will be used with admission controller.
