@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.3.0
+### Enabling and Disabling Automation Rule Logs
+Users can now enable or disable the logs for their Automation Rules. On the Automation Rule edit page, toggle the
+`Logs` to enable or disable the logs for the specific rule.
+
+### Bug Fixes and Improvements
+* Various UI polishes throughout Insights
+
 ## 12.2.0
 ### Bug Fixes and Improvements
 * Minor UI fixes in the `User Settings` pages
