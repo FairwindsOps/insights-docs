@@ -10,6 +10,15 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.4.0
+### Bug Fixes and Improvements
+* Users will be able to see if logging is enabled for an Automation Rule from the `All Rules` page
+* Additional information for the user signup
+* Added a tooltip for the donut chart in `Costs`
+* Fixed tab showing "undefined" when on the `Repositories` page
+* Various UI fixes throughout Insights
+* Indicate if a report is old on the `Costs` page
+
 ## 12.3.0
 ### Enabling and Disabling Automation Rule Logs
 Users can now enable or disable the logs for their Automation Rules. On the Automation Rule edit page, toggle the
