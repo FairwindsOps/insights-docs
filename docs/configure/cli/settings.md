@@ -21,8 +21,21 @@ checks:
         block: <true/false>
       admission:
         block: <true/false>
+AdmissionSettings: # Optionally specify per-org or per-cluster admission controller settings
+  passiveMode: <true/false> # Sets passive mode organization-wide
+  opaEnabled: <true/false> # Enable OPA policies with admission, organization-wide
+  plutoEnabled: <true/false> # Enable pluto with admission, organization-wide
+  polarisEnabled: <true/false> # Enable polaris with admission, organization-wide
+  Clusters: # Specify settings per-cluster
+    - ClusterName: dev
+      passiveMode: <true/false>
+      opaEnabled: <true/false>
+      plutoEnabled: <true/false>
+      polarisEnabled: <true/false>
 ```
-For OPA policies, the `$reportType` is `opa` and the `$eventType` is the Policy name.
+
+* For OPA policies under the `checks` section, the `$reportType` is `opa` and the `$eventType` is the Policy name.
+* The `AdmissionSettings` section requires the `passiveMode` and `polarisEnabled` options to be specified.
 
 Once the file has been created, use the following command to push the Policies Configuration:
 ```
@@ -50,7 +63,7 @@ Next use the Insights CLI to push these configurations to Insights:
 insights-cli push settings
 ```
 
->The customizations in `settings.yaml` will override any previous customizations made in Insights. For example, if the above yaml was later pushed without `livenessProbeMissing`, that Policy would revert to the default values.
+>The customizations in the `checks` portion of `settings.yaml` will override any previous customizations made in Insights. For example, if the above yaml was later pushed without `livenessProbeMissing`, that Policy would revert to the default values.
 
 ## Verifying the Configuration of Policies
 1. In Insights, go to the `Policy` page
@@ -58,7 +71,7 @@ insights-cli push settings
 
 This should show you the Policies that have been modified using the `settings.yaml` file.
 
-## Pushing Policies Configuration Along With Other Configurations
-Configuration of Policies can be pushed to Insights along with other Insights configurations using the single command `insights-cli push all`. For additional information see
+## Pushing Policies Configuration Along With Other Configuration Types
+Configuration of Policies can be pushed to Insights along with other types of Insights configuration using the single command `insights-cli push all`. For additional information see
 * [Automation Rules with CLI](/configure/cli/automation-rules)
 * [OPA policies With CLI](/configure/cli/opa)
