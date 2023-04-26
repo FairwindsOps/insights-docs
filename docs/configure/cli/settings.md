@@ -36,6 +36,7 @@ admissionSettings: # Optionally specify per-org or per-cluster admission control
 
 * For OPA policies under the `checks` section, the `$reportType` is `opa` and the `$eventType` is the Policy name.
 * The `admissionSettings` section requires the `passiveMode` and `polarisEnabled` options to be specified.
+* If `admissionSettings` is not specified, all reports are enabled by default, an passive mode is on by default.
 
 Once the file has been created, use the following command to push the Policies Configuration:
 ```
