@@ -22,10 +22,10 @@ checks:
       admission:
         block: <true/false>
 admissionSettings: # Optionally specify per-org or per-cluster admission controller settings
-  passiveMode: <true/false> # Sets passive mode organization-wide
-  opaEnabled: <true/false> # Enable OPA policies with admission, organization-wide
-  plutoEnabled: <true/false> # Enable pluto with admission, organization-wide
-  polarisEnabled: <true/false> # Enable polaris with admission, organization-wide
+  passiveMode: <true/false> # Required. Sets passive mode organization-wide
+  opaEnabled: <true/false> # Required. Enable OPA policies with admission, organization-wide
+  plutoEnabled: <true/false> # Required. Enable pluto with admission, organization-wide
+  polarisEnabled: <true/false> # Required. Enable polaris with admission, organization-wide
   clusters: # Specify settings per-cluster
     - clusterName: dev
       passiveMode: <true/false>
