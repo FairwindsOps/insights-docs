@@ -21,13 +21,13 @@ checks:
         block: <true/false>
       admission:
         block: <true/false>
-AdmissionSettings: # Optionally specify per-org or per-cluster admission controller settings
+admissionSettings: # Optionally specify per-org or per-cluster admission controller settings
   passiveMode: <true/false> # Sets passive mode organization-wide
   opaEnabled: <true/false> # Enable OPA policies with admission, organization-wide
   plutoEnabled: <true/false> # Enable pluto with admission, organization-wide
   polarisEnabled: <true/false> # Enable polaris with admission, organization-wide
-  Clusters: # Specify settings per-cluster
-    - ClusterName: dev
+  clusters: # Specify settings per-cluster
+    - clusterName: dev
       passiveMode: <true/false>
       opaEnabled: <true/false>
       plutoEnabled: <true/false>
@@ -35,7 +35,7 @@ AdmissionSettings: # Optionally specify per-org or per-cluster admission control
 ```
 
 * For OPA policies under the `checks` section, the `$reportType` is `opa` and the `$eventType` is the Policy name.
-* The `AdmissionSettings` section requires the `passiveMode` and `polarisEnabled` options to be specified.
+* The `admissionSettings` section requires the `passiveMode` and `polarisEnabled` options to be specified.
 
 Once the file has been created, use the following command to push the Policies Configuration:
 ```
