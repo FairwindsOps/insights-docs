@@ -12,58 +12,49 @@ const redirects = [{
   redirect: '/run/agent/installation',
 }, {
   prefix: '/features/rules',
-  redirect: '/configure/policy/rules',
+  redirect: '/features/automation-rules',
 }, {
   prefix: '/features/continuous-integration',
-  redirect: '/run/ci/about',
-}, {
-  prefix: '/features/continuous-integration',
-  redirect: '/run/ci/about',
+  redirect: '/features/infrasturcture-as-code-scanning',
 }, {
   prefix: '/features/workloads',
-  redirect: '/run/agent/workloads',
-}, {
-  prefix: '/features/admission-controller',
-  redirect: '/run/admission/about',
-}, {
-  prefix: '/features/cli',
-  redirect: '/configure/policy/cli',
+  redirect: '/features/in-cluster-scanning',
 }, {
   prefix: '/run/admission/configuration',
-  redirect: '/configure/admission/configuration',
+  redirect: '/features/admission-controller',
 }, {
   prefix: '/run/agent/configuration',
-  redirect: '/configure/agent/configuration',
+  redirect: '/features/in-cluster-scanning',
 }, {
   prefix: '/run/ci/configuration',
-  redirect: '/configure/ci/configuration',
+  redirect: '/features/infrasturcture-as-code-scanning',
 }, {
   prefix: '/run/agent/report-hub',
-  redirect: '/configure/agent/install-hub',
+  redirect: '/features/in-cluster-scanning',
 }, {
   prefix: '/run/agent/about',
-  redirect: '/installation/agent/setup',
+  redirect: '/features/in-cluster-scanning',
 }, {
   prefix: '/run/ci/about',
-  redirect: '/installation/ci/about',
+  redirect: '/features/infrasturcture-as-code-scanning',
 }, {
   prefix: '/run/ci/results',
-  redirect: '/installation/ci/results',
+  redirect: '/features/infrasturcture-as-code-scanning',
 }, {
   prefix: '/run/ci/github',
-  redirect: '/installation/ci/github',
+  redirect: '/features/integrations',
 }, {
   prefix: '/run/admission/about',
-  redirect: '/installation/admission/about',
+  redirect: '/features/admission-controller',
 }, {
   prefix: '/run/admission/setup',
-  redirect: '/installation/admission/setup',
+  redirect: '/features/admission-controller',
 }, {
   prefix: '/configure/policy/rules',
-  redirect: '/configure/automation/integrations', // maybe pick a different one here
+  redirect: '/features/automation-rules',
 }, {
   prefix: '/configure/policy/cli',
-  redirect: '/configure/cli/cli',
+  redirect: '/features/insights-cli',
 }, {
   prefix: '/configure/integrations',
   redirect: s => '/installation' + s.replace('/configure', ''),
@@ -98,110 +89,110 @@ const redirects = [{
   prefix: '/technical-details/architecture/sample-reports',
   redirect: '/code/sample-reports',
 }, {
-  prefix: "installation/getting-started",
+  prefix: "/installation/getting-started",
+  redirect: "/features/in-cluster-scanning",
+}, {
+  prefix: "/installation/setup",
+  redirect: "/features/in-cluster-scanning",
+}, {
+  prefix: "/installation/agent/about",
+  redirect: "/features/in-cluster-scanning",
+}, {
+  prefix: "/installation/agent/setup",
+  redirect: "/features/in-cluster-scanning",
+}, {
+  prefix: "/installation/agent/troubleshooting",
+  redirect: "/features/in-cluster-scanning",
+}, {
+  prefix: "/installation/admission/about",
+  redirect: "/features/admission-controller",
+}, {
+  prefix: "/installation/admission/setup",
+  redirect: "/features/admission-controller",
+}, {
+  prefix: "/installation/ci/about",
+  redirect: "/features/infrasturcture-as-code-scanning",
+}, {
+  prefix: "/installation/ci/autoscan",
+  redirect: "/features/infrasturcture-as-code-scanning",
+}, {
+  prefix: "/installation/ci/github",
+  redirect: "/features/integrations",
+}, {
+  prefix: "/installation/ci/insights-ci-script",
+  redirect: "/features/infrasturcture-as-code-scanning",
+}, {
+  prefix: "/installation/sso/sso",
+  redirect: "/features/team-management",
+}, {
+  prefix: "/installation/integrations/slack",
+  redirect: "/features/integrations",
+}, {
+  prefix: "/installation/integrations/datadog",
+  redirect: "/features/integrations",
+}, {
+  prefix: "/installation/integrations/pagerduty",
+}, {
+  prefix: "/installation/integrations/jira",
+  redirect: "/features/integrations",
+}, {
+  prefix: "/installation/integrations/azure",
+  redirect: "/features/integrations",
+}, {
+  prefix: "/configure/agent/configuration",
+  redirect: "/features/in-cluster-scanning",
+}, {
+  prefix: "/configure/agent/install-hub",
+  redirect: "/features/in-cluster-scanning",
+}, {
+  prefix: "/configure/admission/configuration",
+  redirect: "/features/admission-controller",
+}, {
+  prefix: "/configure/admission/installhub-and-policies",
+  redirect: "/features/admission-controller",
+}, {
+  prefix: "/configure/ci/autoscan",
+  redirect: "/features/infrasturcture-as-code-scanning",
+}, {
+  prefix: "/configure/ci/configuration",
+  redirect: "/features/infrasturcture-as-code-scanning",
+}, {
+  prefix: "/configure/policy/configurator",
+  redirect: "/features/policies",
+}, {
+  prefix: "/configure/policy/opa-policy",
+  redirect: "/features/policies",
+}, {
+  prefix: "/configure/policy/opa-v1",
+  redirect: "/features/policies",
   redirect: "",
 }, {
-  prefix: "installation/setup",
-  redirect: "",
+  prefix: "/configure/automation/rules",
+  redirect: "/features/automation-rules",
 }, {
-  prefix: "installation/agent/about",
-  redirect: "",
+  prefix: "/configure/automation/admission-controller",
+  redirect: "/features/admission-controller",
 }, {
-  prefix: "installation/agent/setup",
-  redirect: "",
+  prefix: "/configure/automation/integrations",
+  redirect: "/features/automation-rules",
 }, {
-  prefix: "installation/agent/troubleshooting",
-  redirect: "",
+  prefix: "/configure/cli/cli",
+  redirect: "/features/insights-cli",
 }, {
-  prefix: "installation/admission/about",
-  redirect: "",
+  prefix: "/configure/cli/automation-rules",
+  redirect: "/features/automation-rules",
 }, {
-  prefix: "installation/admission/setup",
-  redirect: "",
+  prefix: "/configure/cli/opa",
+  redirect: "/features/insights-cli",
 }, {
-  prefix: "installation/ci/about",
-  redirect: "",
+  prefix: "/configure/cli/opa-v1",
+  redirect: "/features/insights-cli",
 }, {
-  prefix: "installation/ci/autoscan",
-  redirect: "",
+  prefix: "/configure/cli/settings",
+  redirect: "/features/insights-cli",
 }, {
-  prefix: "installation/ci/github",
-  redirect: "",
-}, {
-  prefix: "installation/ci/insights-ci-script",
-  redirect: "",
-}, {
-  prefix: "installation/sso/sso",
-  redirect: "",
-}, {
-  prefix: "installation/integrations/slack",
-  redirect: "",
-}, {
-  prefix: "installation/integrations/datadog",
-  redirect: "",
-}, {
-  prefix: "installation/integrations/pagerduty",
-  redirect: "",
-}, {
-  prefix: "installation/integrations/jira",
-  redirect: "",
-}, {
-  prefix: "installation/integrations/azure",
-  redirect: "",
-}, {
-  prefix: "configure/agent/configuration",
-  redirect: "",
-}, {
-  prefix: "configure/agent/install-hub",
-  redirect: "",
-}, {
-  prefix: "configure/admission/configuration",
-  redirect: "",
-}, {
-  prefix: "configure/admission/installhub-and-policies",
-  redirect: "",
-}, {
-  prefix: "configure/ci/autoscan",
-  redirect: "",
-}, {
-  prefix: "configure/ci/configuration",
-  redirect: "",
-}, {
-  prefix: "configure/policy/configurator",
-  redirect: "",
-}, {
-  prefix: "configure/policy/opa-policy",
-  redirect: "",
-}, {
-  prefix: "configure/policy/opa-v1",
-  redirect: "",
-}, {
-  prefix: "configure/automation/rules",
-  redirect: "",
-}, {
-  prefix: "configure/automation/admission-controller",
-  redirect: "",
-}, {
-  prefix: "configure/automation/integrations",
-  redirect: "",
-}, {
-  prefix: "configure/cli/cli",
-  redirect: "",
-}, {
-  prefix: "configure/cli/automation-rules",
-  redirect: "",
-}, {
-  prefix: "configure/cli/opa",
-  redirect: "",
-}, {
-  prefix: "configure/cli/opa-v1",
-  redirect: "",
-}, {
-  prefix: "configure/cli/settings",
-  redirect: "",
-}, {
-  prefix: "configure/management/membership",
-  redirect: "",
+  prefix: "/configure/management/membership",
+  redirect: "/features/team-management/",
 }]
 
 export default ({ router }) => {
