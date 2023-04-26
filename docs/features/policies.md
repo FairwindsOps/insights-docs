@@ -324,3 +324,19 @@ opa:
 
 By default the OPA plugin inherits the same Kubernetes APIGroups and Resources defined in the default rules for [the Admission Controller](/configure/admission/configuration).
 
+## Troubleshooting
+### Debug Print Statements
+Rego `print()` statements will be included in the output of `insights-cli validate opa` to help debug Policy execution. For example, this Policy prints two debug messages.
+
+```rego
+package fairwinds
+
+incompleteRule[actionItem] {
+  print("starting our rule")
+  input.kind == "Deployment"
+  print("made it past the kind detection, which is ", input.kind)
+  actionItem := {
+    # This is incomplete!
+  }
+}
+```
