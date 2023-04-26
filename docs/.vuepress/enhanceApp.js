@@ -97,6 +97,111 @@ const redirects = [{
 }, {
   prefix: '/technical-details/architecture/sample-reports',
   redirect: '/code/sample-reports',
+}, {
+  prefix: "installation/getting-started",
+  redirect: "",
+}, {
+  prefix: "installation/setup",
+  redirect: "",
+}, {
+  prefix: "installation/agent/about",
+  redirect: "",
+}, {
+  prefix: "installation/agent/setup",
+  redirect: "",
+}, {
+  prefix: "installation/agent/troubleshooting",
+  redirect: "",
+}, {
+  prefix: "installation/admission/about",
+  redirect: "",
+}, {
+  prefix: "installation/admission/setup",
+  redirect: "",
+}, {
+  prefix: "installation/ci/about",
+  redirect: "",
+}, {
+  prefix: "installation/ci/autoscan",
+  redirect: "",
+}, {
+  prefix: "installation/ci/github",
+  redirect: "",
+}, {
+  prefix: "installation/ci/insights-ci-script",
+  redirect: "",
+}, {
+  prefix: "installation/sso/sso",
+  redirect: "",
+}, {
+  prefix: "installation/integrations/slack",
+  redirect: "",
+}, {
+  prefix: "installation/integrations/datadog",
+  redirect: "",
+}, {
+  prefix: "installation/integrations/pagerduty",
+  redirect: "",
+}, {
+  prefix: "installation/integrations/jira",
+  redirect: "",
+}, {
+  prefix: "installation/integrations/azure",
+  redirect: "",
+}, {
+  prefix: "configure/agent/configuration",
+  redirect: "",
+}, {
+  prefix: "configure/agent/install-hub",
+  redirect: "",
+}, {
+  prefix: "configure/admission/configuration",
+  redirect: "",
+}, {
+  prefix: "configure/admission/installhub-and-policies",
+  redirect: "",
+}, {
+  prefix: "configure/ci/autoscan",
+  redirect: "",
+}, {
+  prefix: "configure/ci/configuration",
+  redirect: "",
+}, {
+  prefix: "configure/policy/configurator",
+  redirect: "",
+}, {
+  prefix: "configure/policy/opa-policy",
+  redirect: "",
+}, {
+  prefix: "configure/policy/opa-v1",
+  redirect: "",
+}, {
+  prefix: "configure/automation/rules",
+  redirect: "",
+}, {
+  prefix: "configure/automation/admission-controller",
+  redirect: "",
+}, {
+  prefix: "configure/automation/integrations",
+  redirect: "",
+}, {
+  prefix: "configure/cli/cli",
+  redirect: "",
+}, {
+  prefix: "configure/cli/automation-rules",
+  redirect: "",
+}, {
+  prefix: "configure/cli/opa",
+  redirect: "",
+}, {
+  prefix: "configure/cli/opa-v1",
+  redirect: "",
+}, {
+  prefix: "configure/cli/settings",
+  redirect: "",
+}, {
+  prefix: "configure/management/membership",
+  redirect: "",
 }]
 
 export default ({ router }) => {
