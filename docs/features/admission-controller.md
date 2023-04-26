@@ -39,6 +39,7 @@ In order to disable Passive Mode and block deployments with high severity issues
 2. In the `Configure` tab, toggle the `Passive Mode` option to disabled
 
 
+### Testing
 Once `Passive Mode` is disabled, you can test it out by creating a deployment that creates a high level severity Action Item
 by allowing privilege escalation:
 
@@ -129,14 +130,8 @@ To enable or disable a particular report:
 <img :src="$withBase('/img/admission-reports.png')" alt="enable reports">
 
 ### Customize Policies
-To see the current Policies applicable to the Admission Controller:
-1. Visit your organizations `Policy` page
-2. Under the `Admission` column, select the `Warn` and `Block` filters
-
-If the Admission Controller is not in [Passive Mode](/installation/admission/setup#installation), the Policies that have `Block` under `Admission` will cause admission requests to fail. Others will only create Action Items but will not block admission requests.
-
 To customize the severity or whether a Policy should block an admission request, you can use the
-[Insights CLI to configure Policies.](/configure/cli/settings)
+[Policy Configuration](/features/policies) feature.
 
 ## Troubleshooting
 To troubleshoot the Admission Controller, you can
