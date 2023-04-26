@@ -16,107 +16,6 @@ module.exports = {
     sidebar: [
       ['/', 'Home'],
       {
-        title: 'Installation',
-        children: [
-          {
-            title: 'First steps',
-            children: [
-              'installation/getting-started',
-              'installation/setup',
-            ],
-          }, {
-            title: 'Insights Agent',
-            children: [
-              'installation/agent/about',
-              'installation/agent/setup',
-              'installation/agent/troubleshooting',
-            ],
-          }, {
-            title: 'Admission Controller',
-            children: [
-              'installation/admission/about',
-              'installation/admission/setup',
-            ]
-          }, {
-            title: 'Infrastructure-as-Code Scanning',
-            children: [
-              'installation/ci/about',
-              'installation/ci/autoscan',
-              'installation/ci/github',
-              'installation/ci/insights-ci-script'
-            ],
-          }, {
-            title: 'Single Sign-On',
-            children: [
-              'installation/sso/sso',
-            ],
-          }, {
-            title: 'Integrations',
-            children: [
-              'installation/integrations/slack',
-              'installation/integrations/datadog',
-              'installation/integrations/pagerduty',
-              'installation/integrations/jira',
-              'installation/integrations/azure',
-            ],
-          },
-        ]
-      },
-      {
-        title: 'Configure',
-        children: [
-          {  
-            title: 'Insights Agent',
-            children: [
-              'configure/agent/configuration',
-              'configure/agent/install-hub',
-            ],
-          },
-          {
-            title: 'Admission Controller',
-            children: [
-              'configure/admission/configuration',
-              'configure/admission/installhub-and-policies',
-            ],
-          },
-          {
-            title: 'Infrastructure-as-Code Scanning',
-            children: [
-              'configure/ci/autoscan',
-              'configure/ci/configuration'
-            ],
-          }, {    
-            title: 'Policies',
-            children: [
-              'configure/policy/configurator',
-              'configure/policy/opa-policy',
-              'configure/policy/opa-v1',
-            ],
-          }, {
-            title: 'Automation Rules',
-            children: [
-              'configure/automation/rules',
-              'configure/automation/admission-controller',
-              'configure/automation/integrations',
-            ],
-          }, {
-            title: 'Insights CLI',
-            children: [
-              'configure/cli/cli',
-              'configure/cli/automation-rules',
-              'configure/cli/opa',
-              'configure/cli/opa-v1',
-              'configure/cli/settings',
-            ],
-          }, {  
-            title: 'Account Management',
-            children: [
-              'configure/management/membership',
-            ],
-          },
-        ]
-      },
-      {
         title: 'Common Use Cases',
         children: [
           'first-steps/getting-value',
@@ -124,6 +23,19 @@ module.exports = {
           'first-steps/container-security',
           'first-steps/cost-efficiency',
           'first-steps/policy-enforcement',
+        ],
+      },
+      {
+        title: 'Features',
+        children: [
+          'features/in-cluster-scanning',
+          'features/admission-controller',
+          'features/infrastructure-as-code-scanning',
+          'features/policies',
+          'features/automation-rules',
+          'features/insights-cli',
+          'features/integrations',
+          'features/team-management',
         ],
       },
       {
