@@ -80,7 +80,7 @@ checks:
 
 This should show you the Policies that have been modified using the `settings.yaml` file.
 
-### Using Policy Configuration with existing Automation Rules
+### Automation Rules
 [Automation Rules](/features/automation) can be used to further customize your policies.
 Automation Rules take precedence over the configuration above.
 

@@ -1,4 +1,8 @@
 # Team Management
+Team Management lets you control who in your organization has access to Insights, as well
+as what resources they're able to see inside the platform.
+
+## In the Insights UI
 Users can visit the `Settings > Team Management` page to invite users to their organization, create teams and manage permissions.
 Insights defines the following roles within an organization:
 

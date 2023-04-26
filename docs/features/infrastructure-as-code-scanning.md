@@ -11,12 +11,6 @@ Scans can be initiated on every pull request and commit on any repository,
 enabling organizations to "shift left" and help catch image vulnerabilities and Kubernetes
 misconfigurations _before_ they make it into production.
 
-### Choosing Insights CI or Auto-Scan
-
-There are two options for this feature:
-- **Auto-Scan**: The easiest option is using our Auto-Scan feature. Auto-Scan uses a GitHub integration to enable infrastructure-as-code scanning across multiple repositories without having to configure individual CI pipelines. This option will use the Fairwinds Insights SaaS infrastructure to run the checks and is recommended for organizations using Github. Currently, Auto-Scan is only able to scan container images from public repositories; for private image scanning, please use the [**Insights CI Script**](/installation/ci/insights-ci-script) instead.
-- **Manual Scan**: Recommended for organizations not using Github, this option involves executing our Insights CI script as part of your CI/CD pipelines. In addition, running Insights in your CI/CD pipeline allows you to optionally pull private images and scan them.
-
 Insights will run the following report types in CI:
 * Polaris (configuration validation for best practices)
 * Trivy (scan Docker images for vulnerabilities)
@@ -24,7 +18,12 @@ Insights will run the following report types in CI:
 * Pluto (detect deprecated resources)
 * tfsec (scan Terraform files for configuration issues)
 
-#### Comparing Auto-Scan and Insights CI Options
+### Choosing Insights CI or Auto-Scan
+
+There are two options for this feature:
+- **Auto-Scan**: The easiest option is using our Auto-Scan feature. Auto-Scan uses a GitHub integration to enable infrastructure-as-code scanning across multiple repositories without having to configure individual CI pipelines. This option will use the Fairwinds Insights SaaS infrastructure to run the checks and is recommended for organizations using Github. Currently, Auto-Scan is only able to scan container images from public repositories; for private image scanning, please use the [**Insights CI Script**](/installation/ci/insights-ci-script) instead.
+- **Manual Scan**: Recommended for organizations not using Github, this option involves executing our Insights CI script as part of your CI/CD pipelines. In addition, running Insights in your CI/CD pipeline allows you to optionally pull private images and scan them.
+
 |                                                       | **Auto-Scan**                                                                                                    | **Insights CI Integration**                                                                                                   |
 | ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | **Key Differences**                                   | Requires GitHub. Enables IaC scanning on multiple repos in minutes. Does not scan private images (soon). | Works with popular CI/CD systems. Integrates into individual CI pipelines. Scans private images. |
@@ -165,7 +164,7 @@ Below is a full list of options available in `fairwinds-insights.yaml`.
 * `options.repositoryName` - String - the name of the repository. Must match the name in GitHub if using the GitHub integration. Defaults to the output of `git remote -v`
 * `options.tempFolder` - String - a temporary directory to store files. Default `./_insightsTemp/`
 
-### Gating Pull Requests
+#### Gating Pull Requests
 You can configure the Insights CI integration to exit with a non-zero exit code, thus allowing you to fail a pipeline job if specific issues are found in a scan. 
 
 When `options.setExitCode` is set to `true`, there are two reasons why an Action Item may cause a CI job to fail:
@@ -179,7 +178,7 @@ options:
   setExitCode: true
 ```
 
-### Scanning Container Images
+#### Scanning Container Images
 Specify any images you'd like Insights to scan for vulnerabilities. These images must be available
 locally in your CI environment either through running `docker build` or `docker pull`.
 
@@ -197,7 +196,7 @@ images:
     - 123456.ecr.us-east-1.amazonaws.com/search-app:$CI_SHA1
 ```
 
-### Scanning Configuration Manifests
+#### Scanning Configuration Manifests
 Specify any YAML or Helm manifests you'd like Insights to scan for configuration issues.
 Helm files can be templated using a variables file, or by specifying variables directly
 in your `fairwinds-insights.yaml` file.
@@ -234,7 +233,7 @@ manifests:
         image.tag: 1.1
 ```
 
-### Scanning Flux Files
+#### Scanning Flux Files
 Fairwinds Insights also supports scanning YAML files that container Flux HelmRelease CRDs. 
 
 Here is an example:
@@ -246,7 +245,7 @@ manifests:
       repo: https://helm.nginx.com/stable
 ```
 
-### Managing Exemptions
+#### Managing Exemptions
 There may be scenarios where certain container images cannot be updated, or you want to suppress certain checks. 
 
 You can tell Insights that certain files or checks should be excluded from the CI scan.
@@ -271,7 +270,7 @@ exemptions:
   - checks: [runAsRootAllowed, tlsSettingsMissing]
 ```
 
-### Enable/Disable Scanning Tools
+#### Enable/Disable Scanning Tools
 You can control which scan tools (known as 'reports') are run as part of an Insights CI job. By default, all reports are enabled.
 
 * `reports.opa.enabled` - Boolean - set to `false` if you'd like to disable OPA
@@ -324,7 +323,7 @@ curl --location --request PUT 'https://insights.fairwinds.com/v0/organizations/{
 #### Manifests auto-discovery
 Unlike Insights CI integration, Auto-Scan does not require users to create a `fairwinds-insights.yaml` configuration file at the base of their GitHub repository. This is because Auto-Scan will automatically crawl and discover YAML manifests, Helm charts, and docker images available for scanning.
 
-##### Reports Configuration
+#### Reports Configuration
 When using auto-discovery, all reports are enabled by default. To customize this, you can manually configure via API using CURL:
 ```
 curl --location --request POST 'https://insights.fairwinds.com/v0/organizations/{orgName}/ci/repositories/{repositoryID}/reports-config' \
@@ -348,7 +347,7 @@ curl --location --request GET 'https://insights.fairwinds.com/v0/organizations/{
 --header 'Authorization: Bearer {adminToken}'
 ```
 
-##### CI plugin version override
+#### CI plugin version override
 When not explicitly set, auto-scan will run on a sensible default version set by Fairwinds. However, you may want to configure the CI plugin version to a different one on your repository.
 
 To customize this, you can manually configure via API using CURL:
