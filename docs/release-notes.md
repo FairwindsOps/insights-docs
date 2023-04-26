@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.5.0
+### Bug Fixes and Improvements
+* Added `Last Scanned` column to the Vulnerabilities table
+* Fixed missing entry in sign up flow
+* Added new automated compliance checks
+* Multiple improvements to the `Costs` page
+* Automation Rules logs are off by default
+
 ## 12.4.0
 ### Bug Fixes and Improvements
 * Users will be able to see if logging is enabled for an Automation Rule from the `All Rules` page
