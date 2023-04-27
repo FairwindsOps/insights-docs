@@ -5,6 +5,7 @@ module.exports = {
     ['link', { rel: 'icon', href: '/favicon.png' }],
   ],
   themeConfig: {
+    base: "/",
     docsRepo: 'FairwindsOps/insights-docs',
     docsDir: 'docs',
     editLinks: true,
