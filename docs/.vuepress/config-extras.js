@@ -1,5 +1,5 @@
 module.exports = {
-  base: "/insights-docs",
+  base: "/",
   title: 'Fairwinds Insights Documentation',
   description: 'Documentation for the Fairwinds Insights Kubernetes auditing platform',
   head: [
