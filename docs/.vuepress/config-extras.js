@@ -13,7 +13,7 @@ module.exports = {
     editLinkText: 'Help us improve this page',
     logo: '/img/logo.svg',
     heroText: '',
-    sidebarDepth: 2,
+    sidebarDepth: 1,
     sidebar: [
       ['/', 'Home'],
       {
