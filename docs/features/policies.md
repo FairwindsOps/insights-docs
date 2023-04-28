@@ -91,7 +91,7 @@ This is useful for enforcing policies that are specific to your organization.
 > [Rego](https://www.openpolicyagent.org/docs/latest/policy-language/),
 > the policy language used by OPA.
 
-This page only covers OPA v2. For examples on how to write OPA v1 policies, refer to [OPA v1.](/configure/policy/opa-v1)
+This page only covers OPA v2. For examples on how to write OPA v1 policies, refer to [OPA v1.](/features/policies)
 
 ### Creating OPA Policies
 #### Using the Insights UI
@@ -107,7 +107,7 @@ Insights also comes with several templates for OPA Policies which you can modify
 
 #### Using the Insights CLI
 To manage policies in an infrastructure-as-code repository, you can use the Insights command-line interface (CLI). Check out
-[OPA Policies with the CLI](/configure/cli/opa) for more information.
+[OPA Policies with the CLI](/features/insights-cli) for more information.
 
 ### Designing OPA Policies
 Each OPA policy will receive an `input` parameter which contains
@@ -297,7 +297,7 @@ kubectl create job opa-test --from cronjob/opa -n insights-agent
 Watch the pod logs for the resulting `Job` to spot any potential errors in your OPA policy.
 
 The Insights CLI also facilitates offline testing of OPA policies. Check out
-the [Validating OPA policy](/configure/cli/opa#validate-and-debug-opa-policies) documentation.
+the [Validating OPA policy](/features/insights-cli#validate-and-debug-opa-policies) documentation.
 
 ### Adding Resources to OPA Policies
 The Insights OPA plugin executes OPA policies for these Kubernetes resources by default:
@@ -322,7 +322,7 @@ opa:
     - ingress
 ```
 
-By default the OPA plugin inherits the same Kubernetes APIGroups and Resources defined in the default rules for [the Admission Controller](/configure/admission/configuration).
+By default the OPA plugin inherits the same Kubernetes APIGroups and Resources defined in the default rules for [the Admission Controller](/features/admission-controller).
 
 ## Troubleshooting
 ### Debug Print Statements

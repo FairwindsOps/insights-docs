@@ -47,9 +47,9 @@ passing in the name of your organization.
 ## Syncing
 ### Policy Configuration
 You can use the Insights CLI to manage the configuration of Policies.
-Be sure to first read the [Insights CLI documentation](/configure/cli/cli) which covers installation and preparation.
+Be sure to first read the [Insights CLI documentation](/features/insights-cli) which covers installation and preparation.
 
-Check out the [Policy Configurator](/configure/policy/configurator) documentation on use cases for configuring Policies.
+Check out the [Policy Configurator](/features/policies) documentation on use cases for configuring Policies.
 
 ```bash
 insights-cli push settings
@@ -57,10 +57,10 @@ insights-cli push settings
 
 ### Custom OPA Policies
 You can use the Insights CLI to manage OPA policies and validate OPA policies offline.
-Be sure to first read the [Insights CLI documentation](/configure/cli/cli) which covers installation and preparation.
+Be sure to first read the [Insights CLI documentation](/features/insights-cli) which covers installation and preparation.
 
 This page only covers OPA v2 policies with the CLI. For information and examples on how to use the CLI to create OPA v1 policies check out
-[OPA v1 Policies with the CLI](/configure/cli/opa-v1)
+[OPA v1 Policies with the CLI](/features/insights-cli-v1)
 
 #### Pushing to Insights
 When pushing OPA policies to Insights, the CLI expects a directory structure like the following:

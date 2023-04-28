@@ -44,9 +44,9 @@ That said, the below strategy is designed for more real-world scenarios where po
 In this guide, you will learn how to:
 
 1.  Enable/disable Admission Controller
-2.  Setup Insights in your [CI/CD pipeline](https://insights.docs.fairwinds.com/installation/ci/insights-ci-script/)
-3.  Use the [Insights CLI](https://insights.docs.fairwinds.com/configure/cli/cli/) to manage [Policy Configurator](https://insights.docs.fairwinds.com/configure/cli/settings/)
-4.  [Create Automation Rules](https://insights.docs.fairwinds.com/configure/automation/rules/#writing-automation-rules) to fine-tune your policy enforcement behaviors in CI and at time of Admission
+2.  Setup Insights in your [CI/CD pipeline](https://insights.docs.fairwinds.com/features/infrasturcture-as-code-scanning/)
+3.  Use the [Insights CLI](https://insights.docs.fairwinds.com/features/insights-cli/) to manage [Policy Configurator](https://insights.docs.fairwinds.com/features/insights-cli/)
+4.  [Create Automation Rules](https://insights.docs.fairwinds.com/features/automation-rules/#writing-automation-rules) to fine-tune your policy enforcement behaviors in CI and at time of Admission
 
 ## Implementing Stage 1: Awareness
 
@@ -56,19 +56,19 @@ _The simplest way to do this is enabling Admission Controller in your cluster an
 
 ### 1. Install Admission Controller
 
-You can install the Admission Controller using the Install Hub. [Learn how to install Admission Controller here](https://insights.docs.fairwinds.com/installation/admission/setup/).
+You can install the Admission Controller using the Install Hub. [Learn how to install Admission Controller here](https://insights.docs.fairwinds.com/features/admission-controller/).
 
 ### 2. Set Admission Controller to Passive Mode
 
-Admission Controller is set to Passive Mode by default. [Learn more how to enable/disable Passive Mode in Admission Controller here](https://insights.docs.fairwinds.com/installation/admission/setup/#installation).
+Admission Controller is set to Passive Mode by default. [Learn more how to enable/disable Passive Mode in Admission Controller here](https://insights.docs.fairwinds.com/features/admission-controller/#installation).
 
 ### 3. OPTIONAL: Install Insights in your CI pipeline to warn users of Policy violations
 
-[Learn how to setup the Insights Continuous Integration (CI) feature here.](https://insights.docs.fairwinds.com/installation/ci/insights-ci-script/)
+[Learn how to setup the Insights Continuous Integration (CI) feature here.](https://insights.docs.fairwinds.com/features/infrasturcture-as-code-scanning/)
 
 > By default, the Insights CI integration is configured NOT to fail CI pipelines.
 >
-> Verify that your `fairwinds-insights.yaml` file at the root of your repo has the `options.setExitCode` set to `false`. [Learn more about gating pull requests with the Insights CI integration here](https://insights.docs.fairwinds.com/configure/ci/configuration/#gating-pull-requests).
+> Verify that your `fairwinds-insights.yaml` file at the root of your repo has the `options.setExitCode` set to `false`. [Learn more about gating pull requests with the Insights CI integration here](https://insights.docs.fairwinds.com/features/infrasturcture-as-code-scanning/#gating-pull-requests).
 
 * * *
 
@@ -85,13 +85,13 @@ Before proceeding, please verify:
 
 ### 1. Disable Passive Mode in Admission Controller
 
-Disabling Admission Controller is done on a per-cluster basis. [Learn more how to enable/disable Passive Mode in Admission Controller here](https://insights.docs.fairwinds.com/installation/admission/setup/#installation).
+Disabling Admission Controller is done on a per-cluster basis. [Learn more how to enable/disable Passive Mode in Admission Controller here](https://insights.docs.fairwinds.com/features/admission-controller/#installation).
 
 ### 2. Use Policy Configurator to enforce Cluster-wide Policies at Admission
 
-1. Download the [Insights CLI](https://insights.docs.fairwinds.com/configure/cli/cli/)
+1. Download the [Insights CLI](https://insights.docs.fairwinds.com/features/insights-cli/)
 2. Create a `settings.yaml` file with the configuration below.
-3. Upload `settings.yaml` using the Insights CLI. [Learn how to manage Policy Configurator using the Insights CLI here](https://insights.docs.fairwinds.com/configure/cli/settings/).
+3. Upload `settings.yaml` using the Insights CLI. [Learn how to manage Policy Configurator using the Insights CLI here](https://insights.docs.fairwinds.com/features/insights-cli/).
 
 Example `settings.yaml`:
 ```yaml
@@ -231,9 +231,9 @@ Open the `fairwinds-insights.yaml` file at the root of your Git repo and set `op
 
 #### **3B) Update Policy Configurator to enforce Cluster-wide Policies in CI**
 
-1. Download the [Insights CLI](https://insights.docs.fairwinds.com/configure/cli/cli/)
+1. Download the [Insights CLI](https://insights.docs.fairwinds.com/features/insights-cli/)
 2. Update your existing `settings.yaml` file with the configuration below.
-3. Upload `settings.yaml` using the Insights CLI. [Learn how to manage Policy Configurator using the Insights CLI here](https://insights.docs.fairwinds.com/configure/cli/settings/).
+3. Upload `settings.yaml` using the Insights CLI. [Learn how to manage Policy Configurator using the Insights CLI here](https://insights.docs.fairwinds.com/features/insights-cli/).
 
 Example `settings.yaml`:
 

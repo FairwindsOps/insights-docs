@@ -4,7 +4,7 @@ meta:
     content: "Fairwinds Insights | Documentation: How to get value from Fairwinds Insights"
 ---
 # Getting Value from Fairwinds Insights
-So you've [installed the Insights agent](/installation/agent/setup)
+So you've [installed the Insights agent](/features/in-cluster-scanning)
 and you're getting some results
 back from your audits. Chances are you're seeing quite a few Action Items showing up. Where should you start?
 
