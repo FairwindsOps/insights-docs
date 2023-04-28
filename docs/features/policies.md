@@ -91,8 +91,6 @@ This is useful for enforcing policies that are specific to your organization.
 > [Rego](https://www.openpolicyagent.org/docs/latest/policy-language/),
 > the policy language used by OPA.
 
-This page only covers OPA v2. For examples on how to write OPA v1 policies, refer to [OPA v1.](/features/policies)
-
 ### Creating OPA Policies
 #### Using the Insights UI
 1. Visit your organization's `Policy` page

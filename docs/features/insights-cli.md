@@ -59,9 +59,6 @@ insights-cli push settings
 You can use the Insights CLI to manage OPA policies and validate OPA policies offline.
 Be sure to first read the [Insights CLI documentation](/features/insights-cli) which covers installation and preparation.
 
-This page only covers OPA v2 policies with the CLI. For information and examples on how to use the CLI to create OPA v1 policies check out
-[OPA v1 Policies with the CLI](/features/insights-cli-v1)
-
 #### Pushing to Insights
 When pushing OPA policies to Insights, the CLI expects a directory structure like the following:
 ```
