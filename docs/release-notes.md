@@ -22,7 +22,6 @@ sidebarDepth: 1
 ### Bug Fixes and Improvements
 * Added `Last Scanned` column to the Vulnerabilities table
 * Fixed missing entry in sign up flow
-* Added new automated compliance checks
 * Multiple improvements to the `Costs` page
 * Automation Rules logs are off by default
 
