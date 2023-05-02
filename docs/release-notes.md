@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.6.0
+### Bug Fixes and Improvements
+* Minor UI changes to the `Costs` page
+* Automated Compliance checks are now searchable
+* Multiple UI polishes in the `Compliance` page
+* Automated Pull Requests only show up on GitHub connected Repositories
+* Trivy is now added automatically to Insights Agent installs for new clusters
+
 ## 12.5.0
 ### Bug Fixes and Improvements
 * Added `Last Scanned` column to the Vulnerabilities table
