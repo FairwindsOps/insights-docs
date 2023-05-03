@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.7.0
+### Bug Fixes and Improvements
+* All users can now create and edit their own Action Items lists
+* New Automated Compliance Checks
+
 ## 12.6.0
 ### Bug Fixes and Improvements
 * Minor UI changes to the `Costs` page
