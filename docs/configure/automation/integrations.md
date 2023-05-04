@@ -71,6 +71,97 @@ if (ActionItem.ResourceNamespace === "api") {
 
 If the Action Item associated with the ticket is marked as `Resolved` or `Fixed`, the third party ticket will automatically close.
 
+### Customizable fields:
+Insights provides ability to customize how the ticket is created in the target ticketing provider in some extent, by adding an a 4th parameter to `createTicket` function.
+This parameter is generic key/value object. 
+For this customization some level os knowledge about the target Ticket Provider is required.
+
+
+#### Jira example
+
+For reference, Jira API for creating ticket can be found here:
+https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/
+
+Properties sent in the customizable fields field will overwrite the `fields` parameter in Jira API:
+
+```js
+customizableFields = {
+   "assignee": {
+      "id": "user123"
+   },
+   "customfield_10000": "09/Jun/19",
+   "issuetype": {
+      "name": "Task"
+   }
+}
+if (ActionItem.ResourceNamespace === "api") {
+  createTicket("Jira", "API", ["bug"], customizableFields)
+}
+```
+In the example above the ticket will be assigned to "user123", we are adding a custom field named "customfield_10000" with value "09/Jun/19" and the issue type will be "Task", instead of our default value "Bug".
+
+
+#### GitHub example
+
+Github provides some limited numbers of fields that could be customized:
+
+```js
+customizableFields = {
+   "assignee": "user123",
+   "assignees": ["user123","user345"] // Notice you should send either assignee or assignees
+   "state": "open",
+   "milestone": 1, // milestone number
+   "labels": ["label_1","label_2"]
+}
+if (ActionItem.ResourceNamespace === "api") {
+  createTicket("GitHub", "acme-co/api-server", ["bug"], customizableFields)
+}
+```
+Those fields will be sent to GitHub Issue API. Reference can be found here:
+https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28
+
+
+#### AzureDevops example
+
+It's possible to add some customizable fields to AzureDevops integration.
+Create Work Items API reference can be found here:
+https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/work-items/create?view=azure-devops-rest-7.0&tabs=HTTP
+
+
+For any customizable field in Insights API we are going to create an op="add" in AzureDevops API. Example
+
+
+```js
+customizableFields = {
+   "/fields/System.Title": "Task title",
+   "/fields/System.AssignedTo": "test@test.com"
+}
+if (ActionItem.ResourceNamespace === "api") {
+  createTicket("GitHub", "acme-co/api-server", ["bug"], customizableFields)
+}
+```
+
+This will be translated to Azure Devops integration as:
+```js
+[
+  {
+    "op": "add",
+    "path": "/fields/System.Title",
+    "from": null,
+    "value": "Task title"
+  },
+  {
+    "op": "add",
+    "path": "/fields/System.AssignedTo",
+    "from": null,
+    "value": "test@test.com"
+  }
+]
+```
+
+In this example a customizable title "Task title" will be added to the Work Item and it will be assigned to "test@test.com". 
+There are a lot other fields for Azure Integration that can be found at Azure Devops API reference page mentioned above.
+
 ## PagerDuty Incidents
 If you have PagerDuty set up in your Insights organization, you can use the
 `createPagerDutyIncident` function to create incidents. 
