@@ -77,7 +77,7 @@ This parameter is a generic key/value object.
 For this customization some level os knowledge about the target Ticket Provider is required.
 
 
-#### Jira example
+#### Jira example:
 
 For reference, Jira API for creating ticket can be found here:
 https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/
@@ -113,7 +113,7 @@ fields: {
 }
 ```
 
-#### GitHub example
+#### GitHub example:
 
 Github provides some limited numbers of fields that could be customized:
 
@@ -133,7 +133,7 @@ Those fields will be sent to GitHub Issue API. Reference can be found here:
 https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28
 
 
-#### AzureDevops example
+#### AzureDevops example:
 
 It's possible to add some customizable fields to AzureDevops integration.
 Create Work Items API reference can be found here:
