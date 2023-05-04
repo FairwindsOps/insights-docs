@@ -140,7 +140,7 @@ Create Work Items API reference can be found here:
 https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/work-items/create?view=azure-devops-rest-7.0&tabs=HTTP
 
 
-For any customizable field in Insights API we are going to create an op="add" in AzureDevops API. Example
+For each customizable field in Insights API we are going to create an op="add" in AzureDevops API. Example
 
 
 ```js
