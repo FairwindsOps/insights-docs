@@ -100,6 +100,19 @@ if (ActionItem.ResourceNamespace === "api") {
 ```
 In the example above the ticket will be assigned to "user123", we are adding a custom field named "customfield_10000" with value "09/Jun/19" and the issue type will be "Task", instead of our default value "Bug".
 
+The payload sent to Jira will be like:
+```js
+fields: {
+   "assignee": {
+      "id": "user123"
+   },
+   "customfield_10000": "09/Jun/19",
+   "issuetype": {
+      "name": "Task"
+   }
+}
+``
+
 
 #### GitHub example
 
