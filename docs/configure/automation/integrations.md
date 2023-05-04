@@ -72,8 +72,8 @@ if (ActionItem.ResourceNamespace === "api") {
 If the Action Item associated with the ticket is marked as `Resolved` or `Fixed`, the third party ticket will automatically close.
 
 ### Customizable fields:
-Insights provides ability to customize how the ticket is created in the target ticketing provider in some extent, by adding an a 4th parameter to `createTicket` function.
-This parameter is generic key/value object. 
+Insights provides ability to customize how the ticket is created at the target ticketing provider in some extent, by adding an a 4th parameter to `createTicket` function.
+This parameter is a generic key/value object. 
 For this customization some level os knowledge about the target Ticket Provider is required.
 
 
@@ -111,8 +111,7 @@ fields: {
       "name": "Task"
    }
 }
-``
-
+```
 
 #### GitHub example
 
