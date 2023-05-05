@@ -72,14 +72,14 @@ if (ActionItem.ResourceNamespace === "api") {
 If the Action Item associated with the ticket is marked as `Resolved` or `Fixed`, the third party ticket will automatically close.
 
 ### Customizable fields:
-Insights provides ability to customize how the ticket is created at the target ticketing provider in some extent, by adding an a 4th parameter to `createTicket` function.
+Insights supports the ability to customize how tickets are created within a target ticketing provider by adding a 4th parameter to the 'createTicket' function..
 This parameter is a generic key/value object. 
-For this customization some level os knowledge about the target Ticket Provider is required.
+For this customization some level of knowledge about the target Ticket Provider is required.
 
 
 #### Jira example:
 
-For reference, Jira API for creating ticket can be found here:
+For reference, the Jira API for ticket creation can be found here:
 https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/
 
 Properties sent in the customizable fields field will overwrite the `fields` parameter in Jira API:
@@ -115,7 +115,7 @@ fields: {
 
 #### GitHub example:
 
-Github provides some limited numbers of fields that could be customized:
+Github provides a limited number of fields that can be customized:
 
 ```js
 customizableFields = {
@@ -172,7 +172,7 @@ This will be translated to Azure Devops integration as:
 ```
 
 In this example a customizable title "Task title" will be added to the Work Item and it will be assigned to "test@test.com". 
-There are a lot other fields for Azure Integration that can be found at Azure Devops API reference page mentioned above.
+Additional customizable fields supported by the Azure Integration can be found at Azure Devops API reference page mentioned above.
 
 ## PagerDuty Incidents
 If you have PagerDuty set up in your Insights organization, you can use the
