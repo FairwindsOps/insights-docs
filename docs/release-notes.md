@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.8.0
+### Bug Fixes and Improvements
+* Added a new workload dropdown in the `Costs` page
+* Fixed `Workloads` Settings page
+
 ## 12.7.0
 ### Bug Fixes and Improvements
 * All users can now create and edit their own Action Items lists
