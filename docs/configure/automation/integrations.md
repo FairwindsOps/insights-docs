@@ -45,10 +45,13 @@ if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
 Users can also create a Jira, GitHub or Azure DevOps issue from an Action Item using the `createTicket` function.
 Only one ticket will be created per Action Item.
 
-The `createTicket` function takes three arguments:
+The `createTicket` function takes six arguments:
 * integration - String - valid values are `GitHub`, `Azure`, or `Jira`
 * project - String - name of project
 * labels - Array - a list of labels to put on the ticket
+* [optional] customizable fields - Object - Object containing customizable fields depending on the target ticketing provider. See "Customizable fields" section below for more details.
+* [optional] issue type - string - Issue type on the target ticketing provider.
+* [optional] issue type group - string - Issue type group on the target ticketing provider. This applies currently for Azure Devops.
 
 ### Examples
 ```js
@@ -120,7 +123,7 @@ Github provides a limited number of fields that can be customized:
 ```js
 customizableFields = {
    "assignee": "user123",
-   "assignees": ["user123","user345"] // Notice you should send either assignee or assignees
+   "assignees": ["user123","user345"], // Notice you should send either assignee or assignees
    "state": "open",
    "milestone": 1, // milestone number
    "labels": ["label_1","label_2"]
