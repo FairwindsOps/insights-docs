@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.9.0
+### Bug Fixes and Improvements
+* Fixed issues with the `Cost Settings` in `Costs`
+* Changed the format of the `Quick Views` in `Costs`
+* Captcha added after an unsuccessful login
+
 ## 12.8.0
 ### Bug Fixes and Improvements
 * Added a new workload dropdown in the `Costs` page
