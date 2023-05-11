@@ -81,7 +81,7 @@ checks:
 This should show you the Policies that have been modified using the `settings.yaml` file.
 
 ### Automation Rules
-[Automation Rules](features/automation) can be used to further customize your policies.
+[Automation Rules](features/automation-rules) can be used to further customize your policies.
 Automation Rules take precedence over the configuration above.
 
 ## Custom Policies with OPA
