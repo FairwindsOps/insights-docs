@@ -44,7 +44,7 @@ That said, the below strategy is designed for more real-world scenarios where po
 In this guide, you will learn how to:
 
 1.  Enable/disable Admission Controller
-2.  Setup Insights in your [CI/CD pipeline](https://insights.docs.fairwinds.com/features/infrasturcture-as-code-scanning/)
+2.  Setup Insights in your [CI/CD pipeline](https://insights.docs.fairwinds.com/features/infrastructure-as-code-scanning/)
 3.  Use the [Insights CLI](https://insights.docs.fairwinds.com/features/insights-cli/) to manage [Policy Configurator](https://insights.docs.fairwinds.com/features/insights-cli/)
 4.  [Create Automation Rules](https://insights.docs.fairwinds.com/features/automation-rules/#writing-automation-rules) to fine-tune your policy enforcement behaviors in CI and at time of Admission
 
@@ -64,11 +64,11 @@ Admission Controller is set to Passive Mode by default. [Learn more how to enabl
 
 ### 3. OPTIONAL: Install Insights in your CI pipeline to warn users of Policy violations
 
-[Learn how to setup the Insights Continuous Integration (CI) feature here.](https://insights.docs.fairwinds.com/features/infrasturcture-as-code-scanning/)
+[Learn how to setup the Insights Continuous Integration (CI) feature here.](https://insights.docs.fairwinds.com/features/infrastructure-as-code-scanning/)
 
 > By default, the Insights CI integration is configured NOT to fail CI pipelines.
 >
-> Verify that your `fairwinds-insights.yaml` file at the root of your repo has the `options.setExitCode` set to `false`. [Learn more about gating pull requests with the Insights CI integration here](https://insights.docs.fairwinds.com/features/infrasturcture-as-code-scanning/#gating-pull-requests).
+> Verify that your `fairwinds-insights.yaml` file at the root of your repo has the `options.setExitCode` set to `false`. [Learn more about gating pull requests with the Insights CI integration here](https://insights.docs.fairwinds.com/features/infrastructure-as-code-scanning/#gating-pull-requests).
 
 * * *
 

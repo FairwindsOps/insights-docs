@@ -46,7 +46,7 @@ global:
 
 ### Self-signed SSL Certificate Validation - CI/CD
 
-The [CI/CD scan](features/infrasturcture-as-code-scanning) needs to be provided a certificate to validate communication with the Insights API. This can be accomplished by running our CI image with a volume that provides a certificate file, and setting an environment variable causing our `insights-ci` binary to include that certificate in its validation chain. Below are two examples of how this could be accomplished.
+The [CI/CD scan](features/infrastructure-as-code-scanning) needs to be provided a certificate to validate communication with the Insights API. This can be accomplished by running our CI image with a volume that provides a certificate file, and setting an environment variable causing our `insights-ci` binary to include that certificate in its validation chain. Below are two examples of how this could be accomplished.
 
 * If running our CI image via Docker, you can accomplish this by including the Docker flags `-e SSL_CERT_FILE=/ssl-cert-file/ca.crt` and `-v `mycert.crt:/ssl-cert-file/ca.crt`.
 

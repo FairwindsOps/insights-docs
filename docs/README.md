@@ -23,7 +23,7 @@ Fairwinds Insights runs across the entire development lifecycle, from CI to Admi
 
 The platform enables DevOps teams to find and prevent configuration problems as applications move
 from development to production. It provides out-of-the-box
-[integrations into CI/CD workflows](features/infrasturcture-as-code-scanning),
+[integrations into CI/CD workflows](features/infrastructure-as-code-scanning),
 an [admission controller](features/admission-controller)
 for enforcing custom policies (using Polaris or Open Policy Agent) at pre-deployment,
 and automation for running

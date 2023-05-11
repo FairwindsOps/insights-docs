@@ -15,7 +15,7 @@ const redirects = [{
   redirect: '/features/automation-rules',
 }, {
   prefix: '/features/continuous-integration',
-  redirect: '/features/infrasturcture-as-code-scanning',
+  redirect: '/features/infrastructure-as-code-scanning',
 }, {
   prefix: '/features/workloads',
   redirect: '/features/in-cluster-scanning',
@@ -27,7 +27,7 @@ const redirects = [{
   redirect: '/features/in-cluster-scanning',
 }, {
   prefix: '/run/ci/configuration',
-  redirect: '/features/infrasturcture-as-code-scanning',
+  redirect: '/features/infrastructure-as-code-scanning',
 }, {
   prefix: '/run/agent/report-hub',
   redirect: '/features/in-cluster-scanning',
@@ -36,10 +36,10 @@ const redirects = [{
   redirect: '/features/in-cluster-scanning',
 }, {
   prefix: '/run/ci/about',
-  redirect: '/features/infrasturcture-as-code-scanning',
+  redirect: '/features/infrastructure-as-code-scanning',
 }, {
   prefix: '/run/ci/results',
-  redirect: '/features/infrasturcture-as-code-scanning',
+  redirect: '/features/infrastructure-as-code-scanning',
 }, {
   prefix: '/run/ci/github',
   redirect: '/features/integrations',
@@ -111,16 +111,16 @@ const redirects = [{
   redirect: "/features/admission-controller",
 }, {
   prefix: "/installation/ci/about",
-  redirect: "/features/infrasturcture-as-code-scanning",
+  redirect: "/features/infrastructure-as-code-scanning",
 }, {
   prefix: "/installation/ci/autoscan",
-  redirect: "/features/infrasturcture-as-code-scanning",
+  redirect: "/features/infrastructure-as-code-scanning",
 }, {
   prefix: "/installation/ci/github",
   redirect: "/features/integrations",
 }, {
   prefix: "/installation/ci/insights-ci-script",
-  redirect: "/features/infrasturcture-as-code-scanning",
+  redirect: "/features/infrastructure-as-code-scanning",
 }, {
   prefix: "/installation/sso/sso",
   redirect: "/features/team-management",
@@ -152,10 +152,10 @@ const redirects = [{
   redirect: "/features/admission-controller",
 }, {
   prefix: "/configure/ci/autoscan",
-  redirect: "/features/infrasturcture-as-code-scanning",
+  redirect: "/features/infrastructure-as-code-scanning",
 }, {
   prefix: "/configure/ci/configuration",
-  redirect: "/features/infrasturcture-as-code-scanning",
+  redirect: "/features/infrastructure-as-code-scanning",
 }, {
   prefix: "/configure/policy/configurator",
   redirect: "/features/policies",

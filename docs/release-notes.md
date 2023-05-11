@@ -113,7 +113,7 @@ This only applies to repositories you connect to Insights via GitHub, and will a
 
 Visit the [Github permissions](features/integrations#fairwinds-insights-github-application-permissions-required) to learn more.
 
-[You can also learn more about Auto-Scan here.](features/infrasturcture-as-code-scanning)
+[You can also learn more about Auto-Scan here.](features/infrastructure-as-code-scanning)
 
 ### Bug Fixes and Improvements
 * Selecting a team in the Action Items table now shows correct Action Items
@@ -187,7 +187,7 @@ all ingresses within the kubernetes cluster have TLS configured.
 ### New CI Script 4.2
 The new Insights CI script adds the ability to scan terraform files. Furthermore, the Auto-Scan
 feature allows private image scanning.
-For more information visit [Auto-Scan](features/infrasturcture-as-code-scanning)
+For more information visit [Auto-Scan](features/infrastructure-as-code-scanning)
 
 ## 11.2.0
 ### Bug Fixes and Improvements
@@ -430,7 +430,7 @@ block admission requests or the CI/CD pipeline. Furthermore, users are now able 
 A new Insights CI script is available for our users to use in their CI/CD pipelines. The new 2.0 Insights CI script will now block admission
 requests and CI/CD pipelines according to the values set in the Policy for `Admission` and `CI`.
 Users
-[using the Auto-Scan feature](https://insights.docs.fairwinds.com/features/infrasturcture-as-code-scanning/) will automatically use this new script version.
+[using the Auto-Scan feature](https://insights.docs.fairwinds.com/features/infrastructure-as-code-scanning/) will automatically use this new script version.
 The 2.0 script also defaults to blocking only on Action Items that have `High` or `Critical` severity.
 
 ### Bug Fixes and Improvements
@@ -481,7 +481,7 @@ If you choose to accept these permissions, the following new features will becom
 
 **Auto-Scan for Infrastructure-as-Code**
 
-[Auto-Scan](https://insights.docs.fairwinds.com/features/infrasturcture-as-code-scanning/) enables organizations using GitHub to enable infrastructure-as-code scanning across multiple repositories without having to
+[Auto-Scan](https://insights.docs.fairwinds.com/features/infrastructure-as-code-scanning/) enables organizations using GitHub to enable infrastructure-as-code scanning across multiple repositories without having to
 configure individual CI pipelines. Scans can be initiated on every pull request on any GitHub repo, and will use the
 Fairwinds Insights SaaS infrastructure to run the checks.
 * This eliminates the need to configure individual CI pipelines, allows organizations to save on compute resources,
@@ -1111,7 +1111,7 @@ You can now create and run custom checks in Rego (OPA's policy language) to crea
 ### CI/CD Integration - Beta
 We’ve recently shipped a CI/CD integration with Fairwinds Insights to shift Kubernetes configuration validation earlier in the development process. We’ve found that the handoff of Kubernetes applications from development to operations can result in configuration mistakes that lead to future incidents, security risks, and extra infrastructure cost. Today, Ops teams are manually looking for these mistakes, but with our CI/CD integration we are able to shift that closer to the development team to prevent mistakes from entering production.
 
-We support all major CI/CD platforms and check container images for vulnerabilities, as well as Kubernetes deployment configurations (e.g. YAML files and helm charts) for common configuration mistakes. [Check out our docs to learn how to integrate Fairwinds Insights into your CI/CD workflow](https://insights.docs.fairwinds.com/features/infrasturcture-as-code-scanning).
+We support all major CI/CD platforms and check container images for vulnerabilities, as well as Kubernetes deployment configurations (e.g. YAML files and helm charts) for common configuration mistakes. [Check out our docs to learn how to integrate Fairwinds Insights into your CI/CD workflow](https://insights.docs.fairwinds.com/features/infrastructure-as-code-scanning).
 
 ### Introducing Nova
 We have integrated [Fairwinds Nova](https://github.com/FairwindsOps/Nova) (formerly known as "Release Watcher"), an open source project that monitors Helm 2 and 3 deployments, with Fairwinds Insights. This data is available via the "Add-ons" tab.
