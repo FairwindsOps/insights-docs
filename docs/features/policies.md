@@ -25,7 +25,7 @@ With the new Policy Configurator, you can now override the default settings of a
 | Blocking override for CI/CD and Admission Controller               | Based on Action Item severity. `High` and `Critical` are blocking | For the CI/CD and Admission Controller contexts, you can enforce a "must always fail" or "must always pass" rule regardless of the Action Item's severity |                                                                                            |
 
 Policy is configured via the CLI, which will sync any YAML or custom OPA policies to the Insights API.
-For more information see the [CLI documentation](/no-exist)
+For more information see the [CLI documentation](/features/insights-cli)
 
 ### Syntax
 The CLI expects a `settings.yaml` file in the current directory. The file should follow the following format:
