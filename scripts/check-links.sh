@@ -9,7 +9,6 @@ for dir in ./docs/*; do
   if [[ $dir == *".json" ]]; then
     continue
   fi
-  echo $dir
   grep -r "](" $dir | grep -v "](http" >> all-links.txt || true
   sed -ri 's/^.*]\(([^)]*)\).*$/\1/' all-links.txt
   # TODO: validate anchors
