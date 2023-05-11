@@ -289,7 +289,7 @@ sendHTTPRequest("POST", "https://example.com/action-item", {
 });
 ```
 
-## Adding and Using Secrets
+### Adding and Using Secrets
 Users can store encrypted secrets into Insights and use them when creating Automation Rules using the `getSecret` function. 
 
 Create a secret:
