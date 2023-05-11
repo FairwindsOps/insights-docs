@@ -56,7 +56,7 @@ The linked account will show as the creator of any tickets created via Insights
 1. Visit your organization's `Settings > Integration` page
 2. Hover over `Jira` and click `Add Integration`
 3. Once you have connected Jira to Insights, you can create tickets for Action Items manually or 
-[automatically using Automation Rules](/features/automation-rules#tickets)
+[automatically using Automation Rules](features/automation-rules#tickets)
 
 ### Jira Tickets and Action Items
 If an Action Item that is associated with a Jira ticket is marked as `Resolved` or `Fixed`,
@@ -73,7 +73,7 @@ The linked account will show as the creator of any Work Items created via Insigh
 1. Visit your organization's `Settings > Integration` page
 2. Hover over `Azure DevOps` and click `Add Integration`
 3. Once you have connected Azure DevOps to Insights, you can create Work Items for Action Items manually or 
-[automatically using Automation Rules](/features/automation-rules#tickets)
+[automatically using Automation Rules](features/automation-rules#tickets)
 
 ### Azure DevOps Work Items and Action Items
 If an Action Item that is associated with an Azure DevOps work item is marked as `Resolved` or `Fixed`, 
@@ -98,14 +98,14 @@ To set up Slack notifications:
 3. Once you have connected Slack to Insights, you can choose which channels you'd like notifications to be
 sent to in the `Settings > Notifications` page
 
-See the confgure section to [customize Slack alerts through Automation Rules.](/features/automation-rules#slack-notifications)
+See the confgure section to [customize Slack alerts through Automation Rules.](features/automation-rules#slack-notifications)
 
 ## PagerDuty
 The PagerDuty integration allows you to create PagerDuty incidents for
 any Action Item in Fairwinds Insights. This includes all three contexts:
 Insights Agent, CI/CD and Admission Controller.
 
-PagerDuty incidents are created via [Automation Rules](/features/automation-rules#pagerduty-incidents).
+PagerDuty incidents are created via [Automation Rules](features/automation-rules#pagerduty-incidents).
 You can customize your Automation Rule to only trigger on particular events
 (e.g. critical level container CVEs from Trivy). You can also customize the
 PagerDuty incident with different levels of urgency, add resource metadata
@@ -137,7 +137,7 @@ with Fairwinds Insights to prevent any confusion
 
 1. Visit your organization's `Settings > Integration` page
 2. Hover over `PagerDuty` and click `Add Integration`
-3. Once you have connected PagerDuty to Insights, you can use [Automation Rules to trigger incidents](/features/automation-rules#pagerduty-incidents)
+3. Once you have connected PagerDuty to Insights, you can use [Automation Rules to trigger incidents](features/automation-rules#pagerduty-incidents)
 
 ## Datadog
 Fairwinds Insights has an integration to feed data into Datadog.

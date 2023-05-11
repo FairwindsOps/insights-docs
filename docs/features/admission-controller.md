@@ -77,7 +77,7 @@ You should see a message saying:
 Error from server (Privilege escalation should not be allowed: Failure: true): error when creating "STDIN": admission webhook "insights.fairwinds.com" denied the request: Privilege escalation should not be allowed: Failure: true
 ```
 
-For further tuning please refer to [Admission Controller Configuration.](/features/admission-controller)
+For further tuning please refer to [Admission Controller Configuration.](features/admission-controller)
 
 ## Configuration
 ### Helm
@@ -118,7 +118,7 @@ insights-admission:
 ### Report Types
 The Admission Controller currently runs the following report types:
 * Polaris - checks for security and best practices
-* [OPA](/features/policies) - apply custom policies to resources
+* [OPA](features/policies) - apply custom policies to resources
 * Pluto - detects Kubernetes resources that have been deprecated or removed
 
 To enable or disable a particular report:
@@ -131,7 +131,7 @@ To enable or disable a particular report:
 
 ### Customize Policies
 To customize the severity or whether a Policy should block an admission request, you can use the
-[Policy Configuration](/features/policies) feature.
+[Policy Configuration](features/policies) feature.
 
 ## Troubleshooting
 To troubleshoot the Admission Controller, you can

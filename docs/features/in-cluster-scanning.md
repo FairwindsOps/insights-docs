@@ -12,8 +12,8 @@ meta:
 The Insights Agent runs inside your cluster and sends back data to Fairwinds Insights. The data is then used to indicate specific security, reliability and efficiency issues in the cluster. These issues are called `Action Items` in Insights.
 
 The Insights Agent comes with several different open source reporting tools, each of which can be
-configured independently using the [Install Hub.](/features/in-cluster-scanning)
-To read more about the different report types, see the [Reports Section](/technical-details/reports/polaris).
+configured independently using the [Install Hub.](features/in-cluster-scanning)
+To read more about the different report types, see the [Reports Section](technical-details/reports/polaris).
 ## Installation
 ### Install Hub
 When you create a cluster, you'll be taken to the `Install Hub` page for the cluster. To install the Insights Agent:
