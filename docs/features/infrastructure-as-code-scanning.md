@@ -21,7 +21,7 @@ Insights will run the following report types in CI:
 ### Choosing Insights CI or Auto-Scan
 
 There are two options for this feature:
-- **Auto-Scan**: The easiest option is using our Auto-Scan feature. Auto-Scan uses a GitHub integration to enable infrastructure-as-code scanning across multiple repositories without having to configure individual CI pipelines. This option will use the Fairwinds Insights SaaS infrastructure to run the checks and is recommended for organizations using Github. Currently, Auto-Scan is only able to scan container images from public repositories; for private image scanning, please use the [**Insights CI Script**](/features/infrasturcture-as-code-scanning) instead.
+- **Auto-Scan**: The easiest option is using our Auto-Scan feature. Auto-Scan uses a GitHub integration to enable infrastructure-as-code scanning across multiple repositories without having to configure individual CI pipelines. This option will use the Fairwinds Insights SaaS infrastructure to run the checks and is recommended for organizations using Github. Currently, Auto-Scan is only able to scan container images from public repositories; for private image scanning, please use the [**Insights CI Script**](features/infrasturcture-as-code-scanning) instead.
 - **Manual Scan**: Recommended for organizations not using Github, this option involves executing our Insights CI script as part of your CI/CD pipelines. In addition, running Insights in your CI/CD pipeline allows you to optionally pull private images and scan them.
 
 |                                                       | **Auto-Scan**                                                                                                    | **Insights CI Integration**                                                                                                   |
@@ -148,7 +148,7 @@ The Insights CI integration relies on the `fairwinds-insights.yaml` configuratio
 
 Specifically, the `fairwinds-insights.yaml` file must provide the location of configuration files and images you would like to scan.
 
-> If you are looking to setup Insights CI for the first time, please visit our [Insights CI Installation documentation](/features/infrasturcture-as-code-scanning).
+> If you are looking to setup Insights CI for the first time, please visit our [Insights CI Installation documentation](features/infrasturcture-as-code-scanning).
 
 
 ### Configuration Options for fairwinds-insights.yaml
@@ -169,7 +169,7 @@ You can configure the Insights CI integration to exit with a non-zero exit code,
 
 When `options.setExitCode` is set to `true`, there are two reasons why an Action Item may cause a CI job to fail:
 - The severity of that Action Item exceeds the value in `options.severityThreshold`. Every Action Item has a severity value between 0 and 1, with 1 being "Critical". By default, an Action Item must have a severity of at least 0.7 ("High").
-- The Policy is configured to "always fail" when the Action Item is detected in a scan, regardless of that Action Item's severity. Learn more about this in the [Policy Configurator](/features/policies) section. 
+- The Policy is configured to "always fail" when the Action Item is detected in a scan, regardless of that Action Item's severity. Learn more about this in the [Policy Configurator](features/policies) section. 
 
 Here is an example:
 ```
@@ -363,14 +363,14 @@ Make sure the provide version is [SemVer](https://semver.org/) compliant
 
 #### Customizing Auto-Scan Using fairwinds-insights.yaml
 Sometimes users may want to customize Auto-Scan behaviors for a specific repo. To do this, you can create a `fairwinds-insights.yaml` file at the root of your git repo and customize things like:
-- [Configuring specific exemptions](/features/infrasturcture-as-code-scanning#managing-exemptions)
-- [Resolving Helm chart errors due to missing values](/features/infrasturcture-as-code-scanning#helm-chart-with-invalid-or-missing-values-file)
-- [Scanning additional container images not present in your manifests](/features/infrasturcture-as-code-scanning#scanning-container-images)
+- [Configuring specific exemptions](features/infrasturcture-as-code-scanning#managing-exemptions)
+- [Resolving Helm chart errors due to missing values](features/infrasturcture-as-code-scanning#helm-chart-with-invalid-or-missing-values-file)
+- [Scanning additional container images not present in your manifests](features/infrasturcture-as-code-scanning#scanning-container-images)
 - Enabling/disabling specific scanning tools
 
 > NOTE: When you add a `fairwinds-insights.yaml` file to an Auto-Scan enabled repository, automatic discovery of YAML manifests, Helm charts, and docker images is disabled. You must specify the location of these artifacts within the `fairwinds-insights.yaml` file.
 
-To customize Auto-Scan behavior, please review the [configuration options for `fairwinds-insights.yaml`](/features/infrasturcture-as-code-scanning).
+To customize Auto-Scan behavior, please review the [configuration options for `fairwinds-insights.yaml`](features/infrasturcture-as-code-scanning).
 
 ## Troubleshooting
 
@@ -454,6 +454,6 @@ There are two ways to fix this problem:
 
 OR
 
-- Add a `fairwinds-insights.yaml` to the root of your repository to specify the location of a different values file with the `image.tag` field (or whatever field is not working). Or, you may provide an array of key/value pairs for Insights to use. [Please review this documentation for specifying the location YAML manifests and Helm charts](/features/infrasturcture-as-code-scanning#scanning-configuration-manifests). 
+- Add a `fairwinds-insights.yaml` to the root of your repository to specify the location of a different values file with the `image.tag` field (or whatever field is not working). Or, you may provide an array of key/value pairs for Insights to use. [Please review this documentation for specifying the location YAML manifests and Helm charts](features/infrasturcture-as-code-scanning#scanning-configuration-manifests). 
 >NOTE: When you add a `fairwinds-insights.yaml` file to an Auto-Scan enabled repository, automatic discovery of YAML manifests, Helm charts, and docker images is disabled. This is why you must specify the location of these artifacts within the `fairwinds-insights.yaml` file.
 

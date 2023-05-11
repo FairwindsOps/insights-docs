@@ -23,19 +23,19 @@ Fairwinds Insights runs across the entire development lifecycle, from CI to Admi
 
 The platform enables DevOps teams to find and prevent configuration problems as applications move
 from development to production. It provides out-of-the-box
-[integrations into CI/CD workflows](/features/infrasturcture-as-code-scanning),
-an [admission controller](/features/admission-controller)
+[integrations into CI/CD workflows](features/infrasturcture-as-code-scanning),
+an [admission controller](features/admission-controller)
 for enforcing custom policies (using Polaris or Open Policy Agent) at pre-deployment,
 and automation for running
-[Kubernetes auditing tools](/features/in-cluster-scanning).
+[Kubernetes auditing tools](features/in-cluster-scanning).
 Findings and recommendations are stored in a single location, enabling operators to gain visibility
 and control over multiple Kubernetes clusters, track and prioritize issues,
 and monitor the security and cost of Kubernetes workloads.
 
 Learn more about
-[installing Fairwinds Insights](/features/in-cluster-scanning),
-features like [Slack notifications](/features/integrations),
-and our [supported plugins](/technical-details/reports/polaris).
+[installing Fairwinds Insights](features/in-cluster-scanning),
+features like [Slack notifications](features/integrations),
+and our [supported plugins](technical-details/reports/polaris).
 
 <!-- Begin boilerplate -->
 ## Join the Fairwinds Open Source Community

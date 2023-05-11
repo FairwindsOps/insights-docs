@@ -111,9 +111,9 @@ With this new functionality, repositories setup using Auto-Scan will be able to 
 In order to achieve this, we've added permissions to our GitHub integration to write to repository contents.
 This only applies to repositories you connect to Insights via GitHub, and will always occur on a separate branch -- enabling you to review fix PRs before deciding to merge.
 
-Visit the [Github permissions](/features/integrations#fairwinds-insights-github-application-permissions-required) to learn more.
+Visit the [Github permissions](features/integrations#fairwinds-insights-github-application-permissions-required) to learn more.
 
-[You can also learn more about Auto-Scan here.](/features/infrasturcture-as-code-scanning)
+[You can also learn more about Auto-Scan here.](features/infrasturcture-as-code-scanning)
 
 ### Bug Fixes and Improvements
 * Selecting a team in the Action Items table now shows correct Action Items
@@ -187,7 +187,7 @@ all ingresses within the kubernetes cluster have TLS configured.
 ### New CI Script 4.2
 The new Insights CI script adds the ability to scan terraform files. Furthermore, the Auto-Scan
 feature allows private image scanning.
-For more information visit [Auto-Scan](/features/infrasturcture-as-code-scanning)
+For more information visit [Auto-Scan](features/infrasturcture-as-code-scanning)
 
 ## 11.2.0
 ### Bug Fixes and Improvements
@@ -313,9 +313,9 @@ can be added as usual using the `Quick Add` option under the report. However, th
 configuration and the `Quick Add` option is not available for those reports. Instead you will be taken to the documentation
 pages for those reports.
 
-* [AWS Costs report](/technical-details/reports/aws-costs)
-* [Falco report](/technical-details/reports/falco)
-* [Right-Sizer report](/technical-details/reports/right-sizer)
+* [AWS Costs report](technical-details/reports/aws-costs)
+* [Falco report](technical-details/reports/falco)
+* [Right-Sizer report](technical-details/reports/right-sizer)
 
 ### New NamespaceLabels and NamespaceAnnotations in Automation Rules
 Users can now access namespace labels and namespace annotations for Action Items in Automation Rules. To access these values
@@ -351,7 +351,7 @@ use `ActionItem.NamespaceLabels` and `ActionItem.NamespaceAnnotations`.
 ### New Azure DevOps Integration
 The new Azure DevOps integration allows organizations to connect their Azure DevOps to Insights and create tickets
 for Action Items manually or through Automation Rules. To learn more about the Azure DevOps integration
-visit the [Azure DevOps documentation.](/features/integrations)
+visit the [Azure DevOps documentation.](features/integrations)
 
 ### Bug Fixes and Improvements
 * Fixed issue where repository names were being cut off in the `Repositories` page
@@ -376,7 +376,7 @@ while the `All Vulnerabilities` tab helps users determine if they have been impa
 ### Pluto in Admission Controller
 Pluto has been enabled in the Admission Controller. Admission requests will create low and medium severity Action Items
 if deprecated or removed Kubernetes resources are used. To learn about how to configure reports in the Admission Controller
-visit the [Install Hub and Policies documentation.](/features/admission-controller)
+visit the [Install Hub and Policies documentation.](features/admission-controller)
 
 ### Bug Fixes and Improvements
 * `Settings` button in `Repositories` allows easier access to enable/disable Auto-Scan
@@ -960,11 +960,11 @@ We've implemented integrity checking in our CI/CD instructions. Please update yo
 ## 4.1.0
 ### Installation Codes for Self-Hosted - Beta
 All the great features of Insights but hosted on your infrastructure. Self-hosted is in beta. Contact us if you want to try it.
-[Learn More](/technical-details/self-hosted/installation)
+[Learn More](technical-details/self-hosted/installation)
  
 ### Jira Frontend
 You can now create tickets in Jira. Use the "Create Tickets" button at the top of the Action Items table.
-[Learn More](/features/integrations)
+[Learn More](features/integrations)
 
 ### Fleet Installation Method (Charts)
 You can now easily install the Insights Agent across a large fleet of clusters using a single helm install command.
@@ -1003,7 +1003,7 @@ We are happy to introduce The Automation Rules UI! Insights provides over 100 ch
 
 If you’re feeling stuck and need inspiration on how to use the automation rules, use the Create from Template section of the feature, and we have eight pre-made rules that can help you get started.
 
-[Learn More](/features/automation-rules)
+[Learn More](features/automation-rules)
 
 ### Collapsible Navigation 
 The navigation bar is now collapsible. All you need to do is click on the small arrow to expand and collapse the navigation bar.
@@ -1020,7 +1020,7 @@ We will now alert you via our notifications to let you know if your reports have
 ## 3.1.0
 ### OPA UI
 The frontend is out for OPA! Find this new feature under Policy in the navigation bar. You can now create and run custom checks to create Action Items. Read our docs to learn more.
-[Learn More](/features/policies)
+[Learn More](features/policies)
 
 ### Bug Fixes
 * Issue that impacts broken buttons in outlook. Outlook users can now use the links provided in emails
@@ -1031,7 +1031,7 @@ We made changes to the navigation bar. We’ve moved the bar to the left-hand-si
 
 ### Prometheus Report
 We added a new report called The Prometheus Collector. The report gathers workload metrics from a Prometheus installation in order to provide fine-grained resource usage data. This can be used to gauge how much different workloads cost, understand cost trends and help set resource requests and limits. Read our docs to learn more. 
-[Learn More](/technical-details/reports/resource-metrics)
+[Learn More](technical-details/reports/resource-metrics)
 
 ### Prometheus Graph on Workloads View
 We added visualizations to the workloads feature. You will now be able to see Memory and CPU displayed via a line graph.
@@ -1067,7 +1067,7 @@ We are happy to introduce The Install Hub, a way for users to cut down on the nu
 
 The Install Hub allows users to decide which reports they would like to run in their clusters. Users will be able to configure each report and set the timeout and schedule when the report runs.
 
-[Learn More](/features/in-cluster-scanning)
+[Learn More](features/in-cluster-scanning)
 
 ### Filtering on Workloads
 We’ve added filtering options to the Workloads table, and now the graphs will reflect the data from the table shown.
@@ -1106,7 +1106,7 @@ Minor improvements to the Action Items table UI.
 
 ## 1.10.0
 ### Dynamic Open Policy Agent (OPA) - Beta
-You can now create and run custom checks in Rego (OPA's policy language) to create Action Items in Fairwinds Insights. To get started, visit our Docs to [learn how to add Rego policies to Fairwinds Insights](/features/policies).
+You can now create and run custom checks in Rego (OPA's policy language) to create Action Items in Fairwinds Insights. To get started, visit our Docs to [learn how to add Rego policies to Fairwinds Insights](features/policies).
 
 ### CI/CD Integration - Beta
 We’ve recently shipped a CI/CD integration with Fairwinds Insights to shift Kubernetes configuration validation earlier in the development process. We’ve found that the handoff of Kubernetes applications from development to operations can result in configuration mistakes that lead to future incidents, security risks, and extra infrastructure cost. Today, Ops teams are manually looking for these mistakes, but with our CI/CD integration we are able to shift that closer to the development team to prevent mistakes from entering production.

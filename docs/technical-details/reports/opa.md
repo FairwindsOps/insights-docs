@@ -6,7 +6,7 @@ meta:
 # OPA
 Fairwinds Insights supports the use of custom OPA policies to create Action Items.
 
-See the [OPA Policy documentation](/features/policies) for information on how
+See the [OPA Policy documentation](features/policies) for information on how
 to write OPA checks and upload them to Insights.
 
 ## Sample Report 

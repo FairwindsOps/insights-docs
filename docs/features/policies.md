@@ -25,7 +25,7 @@ With the new Policy Configurator, you can now override the default settings of a
 | Blocking override for CI/CD and Admission Controller               | Based on Action Item severity. `High` and `Critical` are blocking | For the CI/CD and Admission Controller contexts, you can enforce a "must always fail" or "must always pass" rule regardless of the Action Item's severity |                                                                                            |
 
 Policy is configured via the CLI, which will sync any YAML or custom OPA policies to the Insights API.
-For more information see the [CLI documentation](/features/insights-cli)
+For more information see the [CLI documentation](features/insights-cli)
 
 ### Syntax
 The CLI expects a `settings.yaml` file in the current directory. The file should follow the following format:
@@ -81,7 +81,7 @@ checks:
 This should show you the Policies that have been modified using the `settings.yaml` file.
 
 ### Automation Rules
-[Automation Rules](/features/automation) can be used to further customize your policies.
+[Automation Rules](features/automation) can be used to further customize your policies.
 Automation Rules take precedence over the configuration above.
 
 ## Custom Policies with OPA
@@ -105,7 +105,7 @@ Insights also comes with several templates for OPA Policies which you can modify
 
 #### Using the Insights CLI
 To manage policies in an infrastructure-as-code repository, you can use the Insights command-line interface (CLI). Check out
-[OPA Policies with the CLI](/features/insights-cli) for more information.
+[OPA Policies with the CLI](features/insights-cli) for more information.
 
 ### Designing OPA Policies
 Each OPA policy will receive an `input` parameter which contains
@@ -295,7 +295,7 @@ kubectl create job opa-test --from cronjob/opa -n insights-agent
 Watch the pod logs for the resulting `Job` to spot any potential errors in your OPA policy.
 
 The Insights CLI also facilitates offline testing of OPA policies. Check out
-the [Validating OPA policy](/features/insights-cli#validate-and-debug-opa-policies) documentation.
+the [Validating OPA policy](features/insights-cli#validate-and-debug-opa-policies) documentation.
 
 ### Adding Resources to OPA Policies
 The Insights OPA plugin executes OPA policies for these Kubernetes resources by default:
@@ -320,7 +320,7 @@ opa:
     - ingress
 ```
 
-By default the OPA plugin inherits the same Kubernetes APIGroups and Resources defined in the default rules for [the Admission Controller](/features/admission-controller).
+By default the OPA plugin inherits the same Kubernetes APIGroups and Resources defined in the default rules for [the Admission Controller](features/admission-controller).
 
 ## Troubleshooting
 ### Debug Print Statements
