@@ -47,59 +47,27 @@ passing in the name of your organization.
 ## Syncing
 ### Policy Configuration
 You can use the Insights CLI to manage the configuration of Policies.
-Be sure to first read the [Insights CLI documentation](features/insights-cli) which covers installation and preparation.
 
-Check out the [Policy Configurator](features/policies) documentation on use cases for configuring Policies.
+Check out the [Policy Configuration](features/policies) documentation on use cases for configuring Policies.
 
 ```bash
 insights-cli push settings
 ```
 
 ### Custom OPA Policies
-You can use the Insights CLI to manage OPA policies and validate OPA policies offline.
-Be sure to first read the [Insights CLI documentation](features/insights-cli) which covers installation and preparation.
-
-#### Pushing to Insights
 When pushing OPA policies to Insights, the CLI expects a directory structure like the following:
 ```
 .
 +-- opa
-|   +-- policy1
+|   +-- policy-name
 |       +-- policy.rego
-|   +-- policy2
+|   +-- second-policy-name
 |       +-- policy.rego
 ```
 The Policy file name must be `policy.rego`.
 
 Once the files have been created, use the following command to push the OPA policies to Insights:
 ```
-insights-cli push opa
-```
-
-#### Example
-To upload an OPA policy that requires `replicas` to be specified for Kubernetes Deployments, create the file `./opa/replicas/policy.rego`:
-
-```rego
-package fairwinds
-
-replicasRequired[actionItem] {
-  input.kind == "Deployment"
-  input.spec.replicas == 0
-  actionItem := {
-    "title": concat(" ", [input.kind, "does not have replicas set"]),
-    "description": "All deployments at acme-co must explicitly set the number of replicas",
-    "remediation": "Please set `spec.replicas`",
-    "category": "Reliability",
-    "severity": 0.5
-  }
-}
-```
-
-Note that the OPA policy first checks that `input.kind` is `Deployment` which ensures this only applies to Kubernetes Deployments.
-
-Next use the Insights CLI to push this OPA policy to Insights:
-
-```bash
 insights-cli push opa
 ```
 
@@ -118,8 +86,8 @@ When pushing Automation Rules to Insights, the CLI expects a directory structure
 ```
 .
 +-- rules
-|   +-- rule1.yaml
-|   +-- another-rule.yaml
+|   +-- rule-name.yaml
+|   +-- second-rule-name.yaml
 ```
 
 The file names must have a `.yaml` extension.
@@ -130,8 +98,7 @@ insights-cli push rules
 ```
 
 #### Example
-To upload an Automation Rule to Insights, create the file `api-action-items.yaml` in the `rules` sub-directory. This file will contain the
-Rule JavaScript and accompanying metadata:
+To upload an Automation Rule to Insights, create the file `rules/api-action-items.yaml` in the `rules` sub-directory:
 
 ```yaml
 name: "Assign API Action Items"
@@ -140,12 +107,6 @@ action: |
   if (ActionItem.ResourceNamespace === 'api') {
     ActionItem.AssigneeEmail = 'api-team@acme-co.com';
   }
-```
-
-Next use the Insights CLI to push this Automation Rule to Insights
-
-```bash
-insights-cli push rules
 ```
 
 #### Automation Rule Metadata Fields
@@ -157,23 +118,6 @@ The following metadata fields can be specified in the Rule file:
 * `cluster` - the name of a specific cluster this Rule should apply to
 * `repository` - the name of a specific repository this Rule should apply to
 * `reportType` - the type of report (e.g. `polaris`, `trivy`, etc.) this Rule should apply to
-
-#### Verifying an Automation Rule
-To see a list of Automation Rules in your Insights organization, run:
-
-```bash
-insights-cli list rules
-```
-
-The rule won't be applied retroactively. The next time the Insights Agent, CI process or Admission Controller runs, the rule will be triggered.
-
-To be sure the Rule functions correctly, you can manually trigger the Agent by running:
-
-```bash
-kubectl create job rule-test --from cronjob/$REPORT -n insights-agent 
-```
-
-Where $REPORT is `polaris`, `trivy` or any other report type you'd like to test.
 
 #### Deleting Automation Rules From Insights
 By default, the Insights CLI will not _delete_ any automation rules from Insights. It will
@@ -287,7 +231,7 @@ insights-cli validate rule --insights-context Agent --report-type trivy --automa
 
 If the expected output is provided and the actual result matches, a success message is displayed:
 ```bash
-INFO Success - actual response matches expected response 
+INFO Success - actual response matches expected response
 ```
 
 If no expected output is provided the updated action item yaml is displayed:
@@ -296,4 +240,16 @@ title: Image has vulnerabilities
 cluster: production
 severity: 0.9
 ```
+
+#### Verifying an Automation Rule
+Once you've uploaded an Automation Rule, it will be triggered the next time the Insights Agent, CI process or Admission Controller runs.
+
+To be sure the Rule functions correctly, you can manually trigger the Agent by running:
+
+```bash
+kubectl create job rule-test --from cronjob/$REPORT -n insights-agent
+```
+
+Where $REPORT is `polaris`, `trivy` or any other report type you'd like to test.
+
 
