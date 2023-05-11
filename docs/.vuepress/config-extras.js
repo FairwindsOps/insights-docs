@@ -3,7 +3,8 @@ module.exports = {
   title: 'Fairwinds Insights Documentation',
   description: 'Documentation for the Fairwinds Insights Kubernetes auditing platform',
   head: [
-    ['link', { rel: 'icon', href: '/favicon.png' }],
+    ["base", { href: "/" }],
+    ["link", { rel: "icon", href: "/favicon.png" }],
   ],
   themeConfig: {
     docsRepo: 'FairwindsOps/insights-docs',
