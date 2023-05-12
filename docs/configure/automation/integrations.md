@@ -56,7 +56,7 @@ The `createTicket` function takes six arguments:
 ### Examples
 ```js
 if (ActionItem.ResourceNamespace === "api") {
-  createTicket("Jira", "API", ["bug"], nil, "Task")
+  createTicket("Jira", "API", ["bug"], null, "Task")
 }
 ```
 
