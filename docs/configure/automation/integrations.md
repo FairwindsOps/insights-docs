@@ -56,7 +56,7 @@ The `createTicket` function takes six arguments:
 ### Examples
 ```js
 if (ActionItem.ResourceNamespace === "api") {
-  createTicket("Jira", "API", ["bug"])
+  createTicket("Jira", "API", ["bug"], null, "Task")
 }
 ```
 
@@ -68,7 +68,7 @@ if (ActionItem.ResourceNamespace === "api") {
 
 ```js
 if (ActionItem.ResourceNamespace === "api") {
-  createTicket("Azure", "azure-org/Project Name", ["bug"])
+  createTicket("Azure", "azure-org/Project Name", ["bug"], {"/fields/System.AssignedTo":"test@fairwinds.com"}, "Epic", "Epic Category")
 }
 ```
 
