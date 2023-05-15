@@ -10,6 +10,22 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.10.0
+### Official Launch of Costs
+The Costs page has been officially launched. This replaces the previous `Workloads` page and adds a lot more functionality.
+To check it out, visit `Efficiency > Costs` in Insights.
+
+### Bug Fixes and Improvements
+* Fixed `All Policies` table filters getting wrapped
+* Removed the `Announcements` page
+* Fixed breadcrumb navigation on vulnerabilities
+* Added a `Select All` option to some filters in `Costs`
+* UI polishes to the `Settings` in `Repositories`
+* Multiple UI fixes in `Costs`
+* Added `Last Scanned` column to the vulnerabilities table
+* Multiple fixes to the `Compliance` report page
+* Fixed bulk unassign function in Action Items
+
 ## 12.9.0
 ### Bug Fixes and Improvements
 * Fixed issues with the `Cost Settings` in `Costs`
