@@ -293,7 +293,7 @@ Automation Rule: `ignore-via-annotation`
 Context: Admission Controller
 
 ```javascript
-//Bypass Admission Controller if an annotation such as 'insights.fairwinds.com/ignore: runAsRootAllowed' exists
+//Bypass Admission Controller if an annotation like this exists: insights.fairwinds.com/ignore: "[\"runAsRootAllowed\"]"
 policyException =
   ActionItem.ResourceAnnotations["insights.fairwinds.com/ignore"];
 
