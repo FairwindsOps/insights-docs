@@ -1,9 +1,9 @@
 module.exports = {
-  base: "/",
+  //base: "/",
   title: 'Fairwinds Insights Documentation',
   description: 'Documentation for the Fairwinds Insights Kubernetes auditing platform',
   head: [
-    ["base", { href: "/" }],
+    //["base", { href: "/" }],
     ["link", { rel: "icon", href: "/favicon.png" }],
   ],
   themeConfig: {
