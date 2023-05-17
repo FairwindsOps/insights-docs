@@ -25,11 +25,6 @@ Findings and recommendations are stored in a single location, enabling operators
 and control over multiple Kubernetes clusters, track and prioritize issues,
 and monitor the security and cost of Kubernetes workloads.
 
-Learn more about
-[Fairwinds Insights](https://insights.docs.fairwinds.com),
-features like [Slack notifications](https://insights.docs.fairwinds.com/features/integrations/#slack),
-and our [supported plugins](https://insights.docs.fairwinds.com/technical-details/reports/polaris).
-
 <!-- Begin boilerplate -->
 ## Join the Fairwinds Open Source Community
 
