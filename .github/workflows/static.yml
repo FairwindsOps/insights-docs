@@ -34,7 +34,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - run: |
-          sed -i 's/\/\/base: "\/"/base: "\/insights-docs\/"/' ./docs/.vuepress/config-extras.js
+          sed -i 's/base: "\/"/base: "\/insights-docs\/"/' ./docs/.vuepress/config-extras.js
           sed -i 's/\](\//\](\/insights-docs\//' ./docs/features/*.md
           sed -i 's/\](\//\](\/insights-docs\//' ./docs/first-steps/*.md
           sed -i 's/\](\//\](\/insights-docs\//' ./docs/technical-details/**/*.md
