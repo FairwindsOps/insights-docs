@@ -41,6 +41,8 @@ jobs:
       - run: cd docs && npm i && npm run build
         env:
           NODE_OPTIONS: "--openssl-legacy-provider"
+      - run: |
+          sed -i 's/href="\//href="\/insights-docs\//' ./dist/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
