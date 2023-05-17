@@ -26,7 +26,7 @@ Insights also comes with several templates for Automation Rules which you can mo
 
 ### Using the Insights CLI
 To manage rules in an infrastructure-as-code repository, you can use the Insights command-line interface (CLI).
-Check out [Automation Rules with the CLI](features/automation-rules) for more information.
+Check out [Automation Rules with the CLI](features/insights-cli) for more information.
 
 ## Writing Automation Rules
 Insights Automation Rules are written in JavaScript. The main input is `ActionItem`, which contains
