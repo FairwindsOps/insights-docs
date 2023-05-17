@@ -295,7 +295,7 @@ kubectl create job opa-test --from cronjob/opa -n insights-agent
 Watch the pod logs for the resulting `Job` to spot any potential errors in your OPA policy.
 
 The Insights CLI also facilitates offline testing of OPA policies. Check out
-the [Validating OPA policy](/features/insights-cli#validate-and-debug-opa-policies) documentation.
+the [Validating OPA policy](/features/insights-cli#testing) documentation.
 
 ### Adding Resources to OPA Policies
 The Insights OPA plugin executes OPA policies for these Kubernetes resources by default:
