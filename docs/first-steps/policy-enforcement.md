@@ -45,7 +45,7 @@ In this guide, you will learn how to:
 
 1.  Enable/disable Admission Controller
 2.  Setup Insights in your [CI/CD pipeline](/features/infrastructure-as-code-scanning)
-3.  Use the [Insights CLI](/features/insights-cli) to manage [Policy Configurator](/features/insights-cli)
+3.  Use the [Insights CLI](/features/insights-cli) to manage [Policy Configuration](/features/policies#configuration)
 4.  [Create Automation Rules](/features/automation-rules#writing-automation-rules) to fine-tune your policy enforcement behaviors in CI and at time of Admission
 
 ## Implementing Stage 1: Awareness
@@ -87,11 +87,11 @@ Before proceeding, please verify:
 
 Disabling Admission Controller is done on a per-cluster basis. [Learn more how to enable/disable Passive Mode in Admission Controller here](/features/admission-controller#installation).
 
-### 2. Use Policy Configurator to enforce Cluster-wide Policies at Admission
+### 2. Use Policy Configuration to enforce Cluster-wide Policies at Admission
 
 1. Download the [Insights CLI](/features/insights-cli)
 2. Create a `settings.yaml` file with the configuration below.
-3. Upload `settings.yaml` using the Insights CLI. [Learn how to manage Policy Configurator using the Insights CLI here](/features/insights-cli).
+3. Upload `settings.yaml` using the Insights CLI. [Learn how to manage Policy Configuration using the Insights CLI here](/features/insights-cli).
 
 Example `settings.yaml`:
 ```yaml
@@ -229,11 +229,11 @@ metadata:
 
 Open the `fairwinds-insights.yaml` file at the root of your Git repo and set `options.setExitCode` to `true`.
 
-#### **3B) Update Policy Configurator to enforce Cluster-wide Policies in CI**
+#### **3B) Update Policy Configuration to enforce Cluster-wide Policies in CI**
 
 1. Download the [Insights CLI](/features/insights-cli)
 2. Update your existing `settings.yaml` file with the configuration below.
-3. Upload `settings.yaml` using the Insights CLI. [Learn how to manage Policy Configurator using the Insights CLI here](/features/insights-cli).
+3. Upload `settings.yaml` using the Insights CLI. [Learn how to manage Policy Configuration using the Insights CLI here](/features/insights-cli).
 
 Example `settings.yaml`:
 
