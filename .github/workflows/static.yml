@@ -42,7 +42,7 @@ jobs:
         env:
           NODE_OPTIONS: "--openssl-legacy-provider"
       - run: |
-          sed -i 's/href="\//href="\/insights-docs\//' ./dist/index.html
+          sed -i 's/a href="\//a href="\/insights-docs\//' ./dist/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
