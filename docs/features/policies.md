@@ -80,10 +80,6 @@ checks:
 
 This should show you the Policies that have been modified using the `settings.yaml` file.
 
-### Automation Rules
-[Automation Rules](/features/automation-rules) can be used to further customize your policies.
-Automation Rules take precedence over the configuration above.
-
 ## Custom Policies with OPA
 The OPA report allows you to define custom Policies for checking Kubernetes resources.
 This is useful for enforcing policies that are specific to your organization.
