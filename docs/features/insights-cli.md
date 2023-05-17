@@ -48,7 +48,7 @@ passing in the name of your organization.
 ### Policy Configuration
 You can use the Insights CLI to manage the configuration of Policies.
 
-Check out the [Policy Configuration](features/policies) documentation on use cases for configuring Policies.
+Check out the [Policy Configuration](/features/policies) documentation on use cases for configuring Policies.
 
 ```bash
 insights-cli push settings
