@@ -33,8 +33,8 @@ and control over multiple Kubernetes clusters, track and prioritize issues,
 and monitor the security and cost of Kubernetes workloads.
 
 Learn more about
-[installing Fairwinds Insights](features/in-cluster-scanning),
-features like [Slack notifications](features/integrations),
+[Fairwinds Insights](https://insights.docs.fairwinds.com),
+features like [Slack notifications](features/integrations/#slack),
 and our [supported plugins](technical-details/reports/polaris).
 
 <!-- Begin boilerplate -->
