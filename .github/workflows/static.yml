@@ -35,9 +35,14 @@ jobs:
         uses: actions/configure-pages@v3
       - run: |
           sed -i 's/base: "\/"/base: "\/insights-docs\/"/' ./docs/.vuepress/config-extras.js
+          sed -i 's/\](\//\](\/insights-docs\//' ./docs/features/*.md
+          sed -i 's/\](\//\](\/insights-docs\//' ./docs/first-steps/*.md
+          sed -i 's/\](\//\](\/insights-docs\//' ./docs/technical-details/**/*.md
       - run: cd docs && npm i && npm run build
         env:
           NODE_OPTIONS: "--openssl-legacy-provider"
+      - run: |
+          sed -i 's/a href="\//a href="\/insights-docs\//' ./dist/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

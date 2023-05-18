@@ -23,19 +23,14 @@ Fairwinds Insights runs across the entire development lifecycle, from CI to Admi
 
 The platform enables DevOps teams to find and prevent configuration problems as applications move
 from development to production. It provides out-of-the-box
-[integrations into CI/CD workflows](/installation/ci/about),
-an [admission controller](/installation/admission/about)
+[integrations into CI/CD workflows](/features/infrastructure-as-code-scanning),
+an [admission controller](/features/admission-controller)
 for enforcing custom policies (using Polaris or Open Policy Agent) at pre-deployment,
 and automation for running
-[Kubernetes auditing tools](/installation/agent/about).
+[Kubernetes auditing tools](/features/in-cluster-scanning).
 Findings and recommendations are stored in a single location, enabling operators to gain visibility
 and control over multiple Kubernetes clusters, track and prioritize issues,
 and monitor the security and cost of Kubernetes workloads.
-
-Learn more about
-[installing Fairwinds Insights](/installation/getting-started),
-features like [Slack notifications](/installation/integrations/slack),
-and our [supported plugins](/technical-details/reports/polaris).
 
 <!-- Begin boilerplate -->
 ## Join the Fairwinds Open Source Community
@@ -46,8 +41,9 @@ and network with fellow Kubernetes users.
 or
 [join the user group](https://www.fairwinds.com/open-source-software-user-group) to get involved!
 
-<a href="https://www.fairwinds.com/t-shirt-offer?utm_source=insights-docs&utm_medium=insights-docs&utm_campaign=insights-docs-tshirt">
-  <img src="https://www.fairwinds.com/hubfs/Doc_Banners/Fairwinds_OSS_User_Group_740x125_v6.png" alt="Love Fairwinds Open Source? Share your business email and job title and we'll send you a free Fairwinds t-shirt!" />
+<a href="https://insights.fairwinds.com/auth/register/">
+  <img src="https://www.fairwinds.com/hubfs/Doc_Banners/Fairwinds_OSS_User_Group_740x125_v6.png"
+  alt="Love Fairwinds Open Source? Automate Fairwinds Open Source for free with Fairwinds Insights. Click to learn more" />
 </a>
 
 ## Other Projects from Fairwinds

@@ -1,12 +1,22 @@
----
-meta:
-  - name: description
-    content: "Fairwinds Insights | Documentation: How to setup Single Sign-On (SSO)"
----
-# Setup
+# Team Management
+Team Management lets you control who in your organization has access to Insights, as well
+as what resources they're able to see inside the platform.
+
+## In the Insights UI
+Users can visit the `Settings > Team Management` page to invite users to their organization, create teams and manage permissions.
+Insights defines the following roles within an organization:
+
+* `Owner` - set at the organization level, these users are high level administrative roles. They are able to invite new members, manage everyone's permissions and perform actions like deleting and adding clusters 
+
+Roles within a team are defined as:
+* `viewer` - can only view data associated with the team
+* `editor` - has `viewer` permissions and can take actions like assign Action Items or marking them as resolved
+* `admin` - has `editor` permissions and can manage permissions for a team including adding new members to the team
+
+## Single Sign-on
 Fairwinds Insights supports Single Sign-On (SSO) via a SAML identity provider.
 
-## Identity Provider
+### Identity Provider
 * ACS URL: `https://insights.fairwinds.com/v0/organizations/$ORG_NAME/auth/saml`
 * Entity ID: `fairwinds-insights`
 * Name ID: Email Address
@@ -67,7 +77,7 @@ Your metadata should look something like this:
 </samlp:Response>
 ```
 
-## Insights Setup
+### Insights Setup
 Before enabling SSO, save your organization's `admin` token from the Insights `Settings > Tokens` page somewhere safe as a
 misconfiguration could prevent you from logging into Insights. If you get locked out, get in touch with the
 Fairwinds team and we'll fix it.
@@ -77,7 +87,7 @@ Fairwinds team and we'll fix it.
 3. For the `Email Domain` field, specify a list of email domain names that are allowed to access your organization
 4. Click `Update SSO`
 
-### Verifying SSO Setup
+#### Verifying SSO Setup
 Once your settings have been saved:
 1. Log out of Insights 
 2. On the `Log In` screen, click on the `Log in with SSO` option at the bottom
@@ -85,7 +95,7 @@ Once your settings have been saved:
 If the `Log in with SSO` button does not show up, you can log in via SSO at:
 `https://insights.fairwinds.com/v0/organizations/$ORG_NAME/auth/saml`
 
-### SSO Strict Mode
+#### SSO Strict Mode
 You can enable SSO strict mode, forcing your users to use SSO in order to log in. Before enabling SSO strict mode,
 verify the SSO setup is working and then:
 1. Go to the `Settings > SSO` page on Insights
