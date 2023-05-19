@@ -10,20 +10,24 @@ To view the full docs, visit
 </p>
 </blockquote>
 
-[Fairwinds Insights](https://fairwinds.com/insights) is a policy-driven Configuration Validation platform
-that integrates an extensible set of trusted open source auditing tools.
-Fairwinds Insights runs across the entire development lifecycle, from CI to Admission to Production.
+[Fairwinds Insights](https://fairwinds.com/insights) is a software for platform teams running Kubernetes to enable development.
+A policy engine, Fairwinds Insights provides [workload configuration](https://insights.docs.fairwinds.com/first-steps/getting-value/#workload-configuration)
+feedback loops, detects and prioritizes container security
+vulnerabilities and provides
+[Kubernetes cost allocation and rightsizing](https://insights.docs.fairwinds.com/first-steps/getting-value/#cost-efficiency).
 
-The platform enables DevOps teams to find and prevent configuration problems as applications move
-from development to production. It provides out-of-the-box
-[integrations into CI/CD workflows](https://insights.docs.fairwinds.com/features/infrastructure-as-code-scanning),
-an [admission controller](https://insights.docs.fairwinds.com/features/admission-controller)
-for enforcing custom policies (using Polaris or Open Policy Agent) at pre-deployment,
-and automation for running
-[Kubernetes auditing tools](https://insights.docs.fairwinds.com/features/in-cluster-scanning).
-Findings and recommendations are stored in a single location, enabling operators to gain visibility
-and control over multiple Kubernetes clusters, track and prioritize issues,
-and monitor the security and cost of Kubernetes workloads.
+Fairwinds Insights runs across the entire development lifecycle, from CI to Admission to Production. It enables platform teams
+to find and prevent configuration problems as applications move from development to production. 
+
+It provides out-of-the-box [integrations into CI/CD workflows](https://insights.docs.fairwinds.com/features/infrastructure-as-code-scanning),
+an [Admission Controller](https://insights.docs.fairwinds.com/features/admission-controller)
+for enforcing custom policies (using Polaris or Open Policy Agent)
+at pre-deployment, and automation for running 
+[Kubernetes auditing tools](https://insights.docs.fairwinds.com/features/in-cluster-scanning). 
+
+Findings and recommendations are stored in a single location, enabling operators to gain visibility and control
+over multiple Kubernetes clusters, track and prioritize issues, and monitor the security and cost of Kubernetes workloads.
+
 
 <!-- Begin boilerplate -->
 ## Join the Fairwinds Open Source Community
