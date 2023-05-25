@@ -10,6 +10,15 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.11.0
+### Bug Fixes and Improvements
+* Multiple improvements to the `Costs` page
+* Fixed discrepencies in the CI report
+* Action Items table filters now only show applicable filters in dropdown
+* UI Improvements to the `Integrations` page
+* Fixed issue with reporting prometheus-metrics Action Items
+* `Add Ons` page can now be exported to CSV
+
 ## 12.10.0
 ### Official Launch of Costs
 The Costs page has been officially launched. This replaces the previous `Workloads` page and adds a lot more functionality.
