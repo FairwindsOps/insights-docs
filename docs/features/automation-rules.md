@@ -124,7 +124,8 @@ The `createTicket` function takes three arguments:
 * integration - String - valid values are `GitHub`, `Azure`, or `Jira`
 * project - String - name of project
 * labels - Array - a list of labels to put on the ticket
-
+* [optional] customizable fields - Object - Object containing customizable fields depending on the target ticketing provider. See "Customizable fields" section below for more details.
+* [optional] issue type - string - Issue type on the target ticketing provider.
 ##### Examples
 ```js
 if (ActionItem.ResourceNamespace === "api") {
@@ -140,7 +141,7 @@ if (ActionItem.ResourceNamespace === "api") {
 
 ```js
 if (ActionItem.ResourceNamespace === "api") {
-  createTicket("Azure", "azure-org/Project Name", ["bug"], {"/fields/System.AssignedTo":"test@fairwinds.com"}, "Epic", "Epic Category")
+  createTicket("Azure", "azure-org/Project Name", ["bug"], {"/fields/System.AssignedTo":"test@fairwinds.com"}, "Epic")
 }
 ```
 
