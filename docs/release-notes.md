@@ -13,7 +13,7 @@ sidebarDepth: 1
 ## 12.11.0
 ### Bug Fixes and Improvements
 * Multiple improvements to the `Costs` page
-* Fixed discrepencies in the CI report
+* Fixed discrepancies in the CI report
 * Action Items table filters now only show applicable filters in dropdown
 * UI Improvements to the `Integrations` page
 * Fixed issue with reporting prometheus-metrics Action Items
