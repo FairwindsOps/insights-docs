@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.12.0
+### New Additional Fields for Creating Tickets
+* Users are now able to provide additional fields when creating a ticket for an Action Item.
+
+### Bug Fixes and Improvements
+* Added additional information on what an automated compliance check is checking for in the cluster
+* Various UI polishes across Insights
+
 ## 12.11.0
 ### Bug Fixes and Improvements
 * Multiple improvements to the `Costs` page
