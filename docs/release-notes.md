@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.13.0
+### Bug Fixes and Improvements
+* Action Item IDs are now searchable
+* Insights Agent 2.19 is now recommended in the `Install Hub`
+
 ## 12.12.0
 ### New Additional Fields for Creating Tickets
 * Users are now able to provide additional fields when creating a ticket for an Action Item.
