@@ -19,7 +19,7 @@ Some are less severe, like an attempt to run interactive commands by a system
 ## Setup
 ### Install Falco
 First, you'll need to install Falco in your cluster. We recommend using these values when installing
-via the [Helm chart](https://github.com/falcosecurity/charts/tree/master/falco):
+via the [Helm chart](https://github.com/falcosecurity/charts/tree/master/falco)*:
 ```yaml
 resources:
   requests:
@@ -29,8 +29,8 @@ resources:
     cpu: 200m
     memory: 512Mi
 falco:
-  jsonOutput: true
-ebpf:
+  json_output: true
+driver:
   enabled: false # You can enable this on newer nodes that support eBPF
 falcosidekick:
   enabled: true
@@ -39,6 +39,8 @@ falcosidekick:
     webhook:
       address: "http://falco-agent.insights-agent:3031/data"
 ```
+
+*Please always consult the upstream chart for the latest configuration options and values.
 
 ### Insights
 To enable Falco in the insights-agent, add this to your values.yaml:
