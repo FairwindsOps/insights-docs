@@ -40,7 +40,7 @@ falcosidekick:
       address: "http://falco-agent.insights-agent:3031/data"
 ```
 
-*Please always consult the upstream chart for the latest configuration options and values.
+*Please always consult the upstream chart for the latest configuration options and values. The latest version as of this writing is `3.1.5`.
 
 ### Insights
 To enable Falco in the insights-agent, add this to your values.yaml:
