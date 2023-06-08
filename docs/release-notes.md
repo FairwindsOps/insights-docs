@@ -10,6 +10,16 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.14.0
+### Bug Fixes and Improvements
+* Fixed cluster overview graph not loading
+* Better feedback for user when Action Items list is created from table
+* Better Action Items table experience with filters
+* Updated RBAC permissions labels
+* Fixed modal not closing after deleting SSO from organization
+* UI polishes across Insights
+* Fixed empty query list not loading
+
 ## 12.13.0
 ### Bug Fixes and Improvements
 * Action Item IDs are now searchable
