@@ -252,4 +252,15 @@ kubectl create job rule-test --from cronjob/$REPORT -n insights-agent
 
 Where $REPORT is `polaris`, `trivy` or any other report type you'd like to test.
 
+## Generation
 
+### OPA policies generation powered by OpenAI
+
+With insights-cli, you are able to generate OPA policies powered by OpenAI. 
+Use model `gpt-4` and beyond for better results.  
+
+> NOTICE: The OpenAI integration is available for your convenience. Please be aware that you are using your OpenAI API key and all interaction will be governed by your agreement with OpenAI. Policies are generated in part with OpenAI’s large-scale language-generation model. The generated policy should be reviewed and tested for accuracy and revised in order to obtain the desired outcome. The User is responsible for the accuracy of the policy.
+
+To generate OPA policies powered by OpenAI that `blocks anyone from using the default namespace`, use the following command:
+
+`insights-cli generate opa openai -k $OPENAI_API_KEY -m gpt-4 -p "blocks anyone from using the default namespace"`
