@@ -10,6 +10,24 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.15.0
+### Removed Workloads Page
+The `Efficiency > Workloads` page has been officially deprecated and removed. Resource recommendations for workloads have moved to the `Efficiency > Costs` page.
+To retrieve these recommendations, try the following:
+* Navigate to `Efficiency > Costs`
+* Select Quick Views > Top Workloads
+* Click on a workload to see the Resources per Pod graph
+
+## 12.14.0
+### Bug Fixes and Improvements
+* Fixed cluster overview graph not loading
+* Better feedback for user when Action Items list is created from table
+* Better Action Items table experience with filters
+* Updated RBAC permissions labels
+* Fixed modal not closing after deleting SSO from organization
+* UI polishes across Insights
+* Fixed empty query list not loading
+
 ## 12.13.0
 ### Bug Fixes and Improvements
 * Action Item IDs are now searchable
