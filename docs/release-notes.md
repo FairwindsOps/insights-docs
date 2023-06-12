@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.15.0
+### Removed Workloads Page
+The `Efficiency > Workloads` page has been officially deprecated and removed. Resource recommendations for workloads have moved to the `Efficiency > Costs` page.
+To retrieve these recommendations, try the following:
+* Navigate to `Efficiency > Costs`
+* Select Quick Views > Top Workloads
+* Click on a workload to see the Resources per Pod graph
+
 ## 12.14.0
 ### Bug Fixes and Improvements
 * Fixed cluster overview graph not loading
