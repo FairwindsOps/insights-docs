@@ -154,8 +154,7 @@ For this customization some level of knowledge about the target Ticket Provider 
 
 ##### Jira example:
 
-For reference, the Jira API for ticket creation can be found here:
-https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/
+For reference, the Jira API for ticket creation can be found [here](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-issues/).
 
 Properties sent in the customizable fields field will overwrite the `fields` parameter in Jira API:
 
@@ -204,15 +203,13 @@ if (ActionItem.ResourceNamespace === "api") {
   createTicket("GitHub", "acme-co/api-server", ["bug"], customizableFields)
 }
 ```
-Those fields will be sent to GitHub Issue API. Reference can be found here:
-https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28
+Those fields will be sent to GitHub Issue API. Reference can be found [here](https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28).
 
 
 ##### AzureDevops example:
 
 It's possible to add some customizable fields to AzureDevops integration.
-Create Work Items API reference can be found here:
-https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/work-items/create?view=azure-devops-rest-7.0&tabs=HTTP
+Create Work Items API reference can be found [here](https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/work-items/create?view=azure-devops-rest-7.0&tabs=HTTP).
 
 
 For each customizable field in Insights API we are going to create an op="add" in AzureDevops API. Example:
