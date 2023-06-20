@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.16.0
+### Bug Fixes and Improvements
+* Fixed issue where the country information was getting overridden when updating user information
+* UI polishes for the compliance checks
+
 ## 12.15.0
 ### Removed Workloads Page
 The `Efficiency > Workloads` page has been officially deprecated and removed. Resource recommendations for workloads have moved to the `Efficiency > Costs` page.
