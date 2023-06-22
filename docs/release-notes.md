@@ -16,6 +16,30 @@ sidebarDepth: 1
 * UI polishes for the compliance checks
 
 ## 12.15.0
+### New Polaris policies and changes to some default severities
+The latest version of Insights Agent, 2.20.0, includes a newer version of Polaris, which adds the following policies:
+* priorityClassNotSet
+* metadataAndNameMismatched
+* missingPodDisruptionBudget
+* automountServiceAccountToken
+* missingNetworkPolicy
+
+Additionally, Insights Agent 2.20.0 change the default severity to High or Critical for the following existing Polaris policies:
+* sensitiveContainerEnvVar
+* sensitiveConfigmapContent
+* clusterrolePodExecAttach
+* rolePodExecAttach
+* clusterrolebindingPodExecAttach
+* rolebindingClusterRolePodExecAttach
+* rolebindingRolePodExecAttach
+* clusterrolebindingClusterAdmin
+* rolebindingClusterAdminClusterRole
+* rolebindingClusterAdminRole
+
+While this provides even more visibility to the state of your Kubernetes health, the Policies that change the default severity to High or Critical may block some Admission Controller requests. If you need to mitigate this impact, Fairwinds recommends creating an Automation Rule that lowers the severity of those policies so it does not trigger blocking behavior. If you need assistance with this, please reach out to support@fairwinds.com.
+
+> NOTE: As-of this release, the Install Hub continues to recommend Insight Agent 2.19, although Insights Agent 2.20.0 and newer versions are available from the [Insights Agent chart repository](https://github.com/FairwindsOps/charts/tree/master/stable/insights-agent).
+
 ### Removed Workloads Page
 The `Efficiency > Workloads` page has been officially deprecated and removed. Resource recommendations for workloads have moved to the `Efficiency > Costs` page.
 To retrieve these recommendations, try the following:
