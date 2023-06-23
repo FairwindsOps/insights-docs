@@ -191,7 +191,9 @@ In the following example, the Azure DevOps ticket created from Insights will be 
 
 ```js
 customizableFields = {
-  "parent": {"key": "TEST-1"}
+  "parent": {
+    "key": "TEST-1"
+  }
 };
 createTicket("Jira", "API", null, customizableFields, "Bug");
 ```
@@ -260,7 +262,8 @@ customizableFields = {
     "/relations/-": {
         "rel": "System.LinkTypes.Hierarchy-Reverse", 
         "url": "https://dev.azure.com/insights-test/staging/_workitems/edit/100"
-}};
+    }
+  };
 createTicket("Azure", "insights-test/staging", null, customizableFields, "Epic");
 ```
 
