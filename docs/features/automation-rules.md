@@ -187,7 +187,8 @@ fields: {
 }
 ```
 
-In the following example, the Jira ticket created from Insights will be associated as a sub-issue to an existing parent issue:
+In the following example, the Azure DevOps ticket created from Insights will be associated to an existing parent issue:
+
 ```js
 customizableFields = {"parent": {"key": "TEST-1"}};
 createTicket("Jira", "API", null, customizableFields, "Bug");
