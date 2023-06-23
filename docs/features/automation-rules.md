@@ -264,6 +264,7 @@ customizableFields = {
         "url": "https://dev.azure.com/insights-test/staging/_workitems/edit/100"
     }
   };
+staging/_workitems/edit/100"}};
 createTicket("Azure", "insights-test/staging", null, customizableFields, "Epic");
 ```
 
