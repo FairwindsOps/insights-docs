@@ -187,6 +187,13 @@ fields: {
 }
 ```
 
+In the following example, the Azure DevOps ticket created from Insights will be associated to an existing parent issue:
+
+```js
+customizableFields = {"parent": {"key": "TEST-1"}};
+createTicket("Jira", "API", null, customizableFields, "Bug");
+```
+
 ##### GitHub example:
 
 Github provides a limited number of fields that can be customized:
@@ -244,6 +251,13 @@ This will be translated to Azure Devops integration as:
 ```
 
 In this example a customizable title "Task title" will be added to the Work Item and it will be assigned to "test@test.com". 
+
+In the following example, the Jira ticket created from Insights will be associated as a sub-issue to an existing parent issue:
+```js
+customizableFields = {"/relations/-" : {"rel": "System.LinkTypes.Hierarchy-Reverse", "url": "https://dev.azure.com/insights-test/staging/_workitems/edit/100"}};
+createTicket("Azure", "insights-test/staging", null, customizableFields, "Epic");
+```
+
 Additional customizable fields supported by the Azure Integration can be found at Azure Devops API reference page mentioned above.
 
 #### PagerDuty Incidents
