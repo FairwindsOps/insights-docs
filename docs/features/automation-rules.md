@@ -251,7 +251,7 @@ This will be translated to Azure Devops integration as:
 
 In this example a customizable title "Task title" will be added to the Work Item and it will be assigned to "test@test.com". 
 
-Creating a Jira ticket with a parent example:
+In the following example, the Jira ticket created from Insights will be associated as a sub-issue to an existing parent issue:
 ```js
 customizableFields = {"/relations/-" : {"rel": "System.LinkTypes.Hierarchy-Reverse", "url": "https://dev.azure.com/insights-test/staging/_workitems/edit/100"}};
 createTicket("Azure", "insights-test/staging", null, customizableFields, "Epic");
