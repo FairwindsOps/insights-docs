@@ -10,6 +10,24 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 12.17.0
+### Prometheus-Metrics Will No Longer Generate Action Items for Pods
+Action Items from prometheus-metrics will no longer be generated for Pod resource kinds. Some users may notice a dramatically
+lower Action Item count as a result, which should make Action Items easier to manage and less overwhelming.
+If you have individual Pods you need resource recommendations for, please follow these steps:
+* Navigate to `Efficiency > Costs`
+* Select Quick Views > Top Workloads
+* Under the `Filtering` dropdown, select `Kind = Pod`
+* Click on a workload to see the Resources per Pod graph
+
+We are open to feedback on scenarios where Action Items for Pods are still necessary. If you have a user scenario you'd like to share,
+please reach out to support@fairwinds.com so we can capture your feedback.
+
+### Bug Fixes and Improvements
+* Fixed minor navigation issues on the `Automation` page
+* Removed the search for users when assigning an Action Item
+* Fixed issue with SSO logins
+
 ## 12.16.0
 ### Bug Fixes and Improvements
 * Fixed issue where the country information was getting overridden when updating user information
