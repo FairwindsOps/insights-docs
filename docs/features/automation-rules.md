@@ -187,7 +187,7 @@ fields: {
 }
 ```
 
-In the following example, the Azure DevOps ticket created from Insights will be associated to an existing parent issue:
+In the following example, the Jira ticket created from Insights will be associated to an existing parent issue:
 
 ```js
 customizableFields = {
@@ -256,7 +256,7 @@ This will be translated to Azure Devops integration as:
 
 In this example a customizable title "Task title" will be added to the Work Item and it will be assigned to "test@test.com". 
 
-In the following example, the Jira ticket created from Insights will be associated as a sub-issue to an existing parent issue:
+In the following example, the Azure ticket created from Insights will be associated as a sub-issue to an existing parent issue:
 ```js
 customizableFields = {
     "/relations/-": {
