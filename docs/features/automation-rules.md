@@ -180,10 +180,28 @@ fields: {
    "assignee": {
       "id": "user123"
    },
+   "priority":  { 
+      "name": "High"
+   },
    "customfield_10000": "09/Jun/19",
    "issuetype": {
       "name": "Task"
-   }
+   },
+   "environment": {
+      "content": [
+        {
+          "content": [
+            {
+              "text": "UAT",
+              "type": "text"
+            }
+          ],
+          "type": "paragraph"
+        }
+      ],
+      "type": "doc",
+      "version": 1
+    }
 }
 ```
 
@@ -206,7 +224,6 @@ Github provides a limited number of fields that can be customized:
 customizableFields = {
    "assignee": "user123",
    "assignees": ["user123","user345"] // Notice you should send either assignee or assignees
-   "state": "open",
    "milestone": 1, // milestone number
    "labels": ["label_1","label_2"]
 }
@@ -216,12 +233,14 @@ if (ActionItem.ResourceNamespace === "api") {
 ```
 Those fields will be sent to GitHub Issue API. Reference can be found [here](https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28).
 
+Fields link example for a specific project:
+https://dev.azure.com/staging/insightstest/_apis/wit/fields?api-version=6.1-preview.2
 
 ##### AzureDevops example:
 
 It's possible to add some customizable fields to AzureDevops integration.
 Create Work Items API reference can be found [here](https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/work-items/create?view=azure-devops-rest-7.0&tabs=HTTP).
-
+All fields available can be found here [here](https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/fields/list?tabs=HTTP).
 
 For each customizable field in Insights API we are going to create an op="add" in AzureDevops API. Example:
 
@@ -229,7 +248,10 @@ For each customizable field in Insights API we are going to create an op="add" i
 ```js
 customizableFields = {
    "/fields/System.Title": "Task title",
-   "/fields/System.AssignedTo": "test@test.com"
+   "/fields/System.AssignedTo": "test@test.com",
+   "/fields/System.Reason": "Added to backlog",
+   "/fields/Microsoft.VSTS.Common.Priority": 3,
+   "/fields/Microsoft.VSTS.Scheduling.Effort": 5
 }
 if (ActionItem.ResourceNamespace === "api") {
   createTicket("GitHub", "acme-co/api-server", ["bug"], customizableFields)
@@ -264,7 +286,6 @@ customizableFields = {
         "url": "https://dev.azure.com/insights-test/staging/_workitems/edit/100"
     }
   };
-staging/_workitems/edit/100"}};
 createTicket("Azure", "insights-test/staging", null, customizableFields, "Epic");
 ```
 
