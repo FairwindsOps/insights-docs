@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 13.0.0
+### Bug Fixes and Improvements
+* Insights Agent 2.21 is now recommended in the `Install Hub`
+* New Insights CI script 5.1
+* OPA Policy Editor UI polishes
+* Multiple UI and performance improvements to the `Costs` page
+
 ## 12.17.0
 ### Prometheus-Metrics Will No Longer Generate Action Items for Pods
 Action Items from prometheus-metrics will no longer be generated for Pod resource kinds. Some users may notice a dramatically
