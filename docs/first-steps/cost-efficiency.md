@@ -42,13 +42,12 @@ and inevitably somewhat subjective: how should we rank a CPU intensive applicati
 a memory intensive application? In order to accurately attribute cost, we have to find ways of
 comparing apples to oranges.
 
-To help us best estimate workload costs in your cluster, we ask for a few pieces of information
-the first time you visit the `Efficiency > Workloads` page:
+To help us best estimate workload costs in your cluster, you can go to the `Efficiency > Costs > Costs Settings` page, select the applicable cluster, and tell us:
 * The average node size
 * The average node cost
 * The strategy you'd like to use for workload estimation (more on that below)
 
-<img :src="$withBase('/img/cost-settings.png')" alt="Cost settings">
+<img :src="$withBase('/img/costs-settings.png')" alt="Cost settings">
 
 We've pre-populated a list of instance types from AWS and GCP and can sync data from your bill when
 [AWS Costs is enabled](/technical-details/reports/aws-costs). You can also set custom numbers
@@ -64,14 +63,14 @@ You can [read more about cost estimation on our blog](https://www.fairwinds.com/
 
 ## Viewing Workload Costs
 
-On the `Efficiency > Workloads` page, you can see a list of all the workloads in your cluster. By default, they'll be sorted by their `Average Total Cost`. Costs are computed using actual workload usage or configured memory and CPU settings.
+On the `Efficiency > Costs` page, you can see a list of all the workloads in your cluster by filtering by cluster and selecting workloads as an aggregator. To see additional information on a workload, such as kind or namespace, select those as aggregators also or select `Top Workloads` from the quickview dropdown menu. By default, they'll be sorted by their `Billed Cost`. Costs are computed using actual workload usage or configured memory and CPU settings.
 
 - If you have the `prometheus-metrics` or `goldilocks` report installed, Fairwinds Insights will use the maximum of requests and actual usage (`max(requests, usage)`) in order to compute the `Average Total Cost` of this workload
 - If neither report is installed, Fairwinds Insights will use the average of requests and limits. (This can be less precise since some workloads may not have requests and limits configured, or the spread between requests and limits can be large.)
 
 <img :src="$withBase('/img/workload-costs.png')" alt="Workload costs">
 
-In the next column you'll see `Total Costs with Recommendations`, followed by `Cost Difference with Recommendations`.
+In the next column you'll see `Recommended Cost`, followed by `Cost Difference`.
 If you're not seeing values in these fields, make sure the `prometheus-metrics` or `goldilocks` report is installed and
 operating properly.
 
@@ -85,9 +84,7 @@ Insights recommends setting your resource requests and limits to:
 
 <img :src="$withBase('/img/workload-recommendations.png')" alt="Workload recommendations">
 
-Here, Insights has recommended that we change our memory requests and limits from `1Gi` to
-`263M` (a savings of around 75%) and our CPU requests and limits from `500m` to `25m`, for a savings
-of 95%.
+Here, Insights has recommended that we change our CPU requests and limits from `300m` to `25m`, for a savings of 92%. To see the memory recommendations, change CPU to Memory in the dropdown menu on the upper right of the chart.
 
 Note that these recommendations should be sanity checked by the user. If your application experiences
 periodic bursts in traffic, you may want to keep your limits relatively high. For mission critical
