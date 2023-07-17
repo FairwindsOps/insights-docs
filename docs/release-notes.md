@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 13.1.0
+### Bug Fixes and Improvements
+* UI polishes and cleanup throughout Insights
+
 ## 13.0.0
 ### Bug Fixes and Improvements
 * Insights Agent 2.21 is now recommended in the `Install Hub`
