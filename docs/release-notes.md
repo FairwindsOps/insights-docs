@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 13.2.0
+### Vulnerabilities Page Now Only Shows Main Branch for Repositories
+Going forward, only vulnerable images from the main branch found during repo scanning will be reported on the `Vulnerabilities` page.
+Previously, vulnerable images from all branches were reported. This update will streamline the number of findings to those most relevant.
+
+### Bug Fixes and Improvements
+* UI polishes and color changes throughout Insights
+
 ## 13.1.0
 ### Bug Fixes and Improvements
 * UI polishes and cleanup throughout Insights
