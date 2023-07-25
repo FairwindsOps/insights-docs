@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 13.3.0
+### Bug Fixes and Improvements
+* Fixed labels on bar charts
+* Fixed multiple issues on the `Costs` page
+
 ## 13.2.0
 ### Vulnerabilities Page Now Only Shows Main Branch for Repositories
 Going forward, only vulnerable images from the main branch found during repo scanning will be reported on the `Vulnerabilities` page.
