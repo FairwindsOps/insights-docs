@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 13.4.0
+### Bug Fixes and Improvements
+* Insights Agent 2.23 is now recommended in the `Install Hub`
+
 ## 13.3.0
 ### Bug Fixes and Improvements
 * Fixed labels on bar charts
