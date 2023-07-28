@@ -45,6 +45,12 @@ if (ActionItem.ResourceLabels['app'] === 'polaris') {
 }
 ```
 
+```js
+if (ActionItem.PodLabels['app'] === 'nginx') {
+  ActionItem.AssigneeEmail = 'infra-team@acme-co.com';
+}
+```
+
 ## API
 For the `ActionItem` input, the following fields are available:
 * `Category`
@@ -54,6 +60,7 @@ For the `ActionItem` input, the following fields are available:
 * `IsChanged` (`true` if Title, Description, or Fixed has changed from the most recent report)
 * `NamespaceAnnotations`
 * `NamespaceLabels`
+* `PodLabels`
 * `ReportType`
 * `ResourceAnnotations`
 * `ResourceKind`
