@@ -74,6 +74,18 @@ checks:
         block: false
 ```
 
+#### Custom options
+Some reports may have custom `options` for given `$eventType`.
+
+For `goldilocks` and `prometheus-metrics`, you may configure a `threshold` which control if an action-item must be created or not on Fairwinds Insights, i.e.:
+```yaml
+checks:
+  goldilocks:
+    cpu_limits_too_low:
+      options:
+        threshold: 0.2 # only creates action-items when actual usage deviates from desirable by 20%
+```
+
 ### Verifying the Configuration of Policies
 1. In Insights, go to the `Policy` page
 2. In the Policies table, for the `Configuration` column select the `Customized` filter
