@@ -16,6 +16,7 @@ We'll need the following keys:
 * cookie_block_key (32 chars)
 * session_auth_key (64 chars)
 * session_encryption_key (32 chars)
+* AES cypher key (32 chars)
 
 An easy way to generate these keys is:
 ```bash
@@ -23,16 +24,18 @@ cookie_hash_key=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 64 | base64 -w 
 cookie_block_key=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32 | base64 -w 0)
 session_auth_key=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 64 | base64 -w 0)
 session_encryption_key=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32 | base64 -w 0)
+aes_base64_cypher_key=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32 | base64 -w 0)
 ```
 
 You should use these values to populate `secrets.yaml`:
 ```yaml
 apiVersion: v1
 data:
-    cookie_hash_key: TjZCbzAzMVJ0U1lXS2RPaE9sU0ZERDJJdXpTNFhLeG91VWFYdU9DcU9kTkpmenlFNWFsT29sajZ3VGpNbjNSSA==
-    cookie_block_key: RDFNVVhWVzM4QllJd0Z5NXNIT1kxV1RrVWNweWRnbmM=
-    session_auth_key: NTczV0o0NGFBeGtXVzduZjZHV25FdFZMb0s5TE5SSWU3bG00YkNtaE93bHZUVW1VSXZUYW9ya2UzdHE2eFZXSA==
-    session_encryption_key: ME1LeFRPdTYwOVU0YlVvUGVEUUdQYjZnbTlyZUh4b2I=
+    COOKIE_HASH_KEY: TjZCbzAzMVJ0U1lXS2RPaE9sU0ZERDJJdXpTNFhLeG91VWFYdU9DcU9kTkpmenlFNWFsT29sajZ3VGpNbjNSSA==
+    COOKIE_BLOCK_KEY: RDFNVVhWVzM4QllJd0Z5NXNIT1kxV1RrVWNweWRnbmM=
+    SESSION_AUTH_KEY: NTczV0o0NGFBeGtXVzduZjZHV25FdFZMb0s5TE5SSWU3bG00YkNtaE93bHZUVW1VSXZUYW9ya2UzdHE2eFZXSA==
+    SESSION_ENCRYPTION_KEY: ME1LeFRPdTYwOVU0YlVvUGVEUUdQYjZnbTlyZUh4b2I=
+    AES_BASE64_CYPHER_KEY: ejdGNDVRYWdYRUh5TVc2UEZEbktFTEZ3NUxSQ2JQNFo=
 kind: Secret
 metadata:
     name: fwinsights-secrets
