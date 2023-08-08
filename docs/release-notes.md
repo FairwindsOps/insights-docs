@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 13.5.0
+### Pin a Cluster
+We have added the ability to pin a cluster on Insights to only show information relevant to that cluster as users navigate to the
+different pages. This allows users to focus on a single cluster while on Insights.
+
+### Bug Fixes and Improvements
+* Fixed issue with filtering on Repository branches
+
 ## 13.4.0
 ### Bug Fixes and Improvements
 * Insights Agent 2.23 is now recommended in the `Install Hub`
