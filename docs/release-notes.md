@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 13.6.0
+### Added Hourly Costs Data
+Users are now able to see hourly data in the `Costs` page by selecting a time range of less than 3 days.
+
+### Bug Fixes and Improvements
+* Fixed small issue with the latest commits section on the `Repositories` page
+* UI polishes to the `Danger Zone` page and `Action Items` charts
+
 ## 13.5.0
 ### Pin a Cluster
 We have added the ability to pin a cluster on Insights to only show information relevant to that cluster as users navigate to the
