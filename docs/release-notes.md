@@ -12,7 +12,7 @@ sidebarDepth: 1
 
 ## 13.6.0
 ### Added Hourly Costs Data
-Users are now able to see hourly data in the `Costs` page by selecting a time less than 3 days.
+Users are now able to see hourly data in the `Costs` page by selecting a time range of less than 3 days.
 
 ### Bug Fixes and Improvements
 * Fixed small issue with the latest commits section on the `Repositories` page
