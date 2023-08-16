@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 13.7.0
+### Network and Storage Costs
+Provides a more complete picture of in-cluster spend by attributing network and disk costs.
+
+### Bug Fixes and Improvements
+* UI polishes across Insights
+* Fixed the cost `Efficiency > Capacity` to show correctly based on range selected
+
 ## 13.6.0
 ### Added Hourly Costs Data
 Users are now able to see hourly data in the `Costs` page by selecting a time range of less than 3 days.
