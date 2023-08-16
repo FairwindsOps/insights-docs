@@ -12,7 +12,7 @@ sidebarDepth: 1
 
 ## 13.7.0
 ### Network and Storage Costs
-Provide a more complete picture of in-cluster spend by attributing network and disk costs.
+Provides a more complete picture of in-cluster spend by attributing network and disk costs.
 
 ### Bug Fixes and Improvements
 * UI polishes across Insights
