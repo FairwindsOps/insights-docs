@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 13.8.0
+### Bug Fixes and Improvements
+* UI polishes across Insights
+* Fixed bug in Cluster Overview page where switching clusters was not updating some information
+* Fixed bug in the `Costs` page where in some instance, the Resources Per Pod chart would switch QoS settings
+
 ## 13.7.0
 ### Network and Storage Costs
 Provides a more complete picture of in-cluster spend by attributing network and disk costs.
