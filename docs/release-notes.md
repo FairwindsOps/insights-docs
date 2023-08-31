@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 13.9.0
+### Bug Fixes and Improvements
+* UI polishes and fixes to the Install hub page
+* Fixed secondary nav disappearing on the Automation page on refresh
+
 ## 13.8.0
 ### Bug Fixes and Improvements
 * UI polishes across Insights
