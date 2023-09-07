@@ -71,6 +71,7 @@ module.exports = {
               'technical-details/reports/aws-costs',
               'technical-details/reports/falco',
               'technical-details/reports/right-sizer',
+              'technical-details/reports/kyverno',
               'technical-details/reports/supported-checks',
               'technical-details/reports/new',
             ],
