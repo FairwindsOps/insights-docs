@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 13.10.0
+### Bug Fixes and Improvements
+* Fixed issue where sometimes the user would be taken back to the Install Hub page incorrectly
+* UI polishes to the trend lines
+* Fixed SSO page tab title
+
 ## 13.9.0
 ### Bug Fixes and Improvements
 * UI polishes and fixes to the Install hub page
