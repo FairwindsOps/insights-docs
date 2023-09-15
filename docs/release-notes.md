@@ -10,6 +10,15 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 13.10.11
+## Kyverno Plugin
+Organizations can now use the Kyverno plugin to convert their policies into Action Items. To see how to use
+the Kyverno plugin, visit the `Install Hub` page.
+
+### Bug Fixes and Improvements
+* Fixed ordering issues in the table of the `Costs` page
+* UI change to the `Home` Top Issues chart
+
 ## 13.10.0
 ### Bug Fixes and Improvements
 * Fixed issue where sometimes the user would be taken back to the Install Hub page incorrectly
