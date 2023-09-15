@@ -12,8 +12,8 @@ sidebarDepth: 1
 
 ## 13.11.0
 ## Kyverno Plugin
-Organizations can now use the Kyverno plugin to convert their policies into Action Items. To see how to use
-the Kyverno plugin, visit the `Install Hub` page.
+Organizations can now use the Kyverno plugin to convert their Kyverno background scan policy reports into Action Items. 
+To see how to use the Kyverno plugin, visit the `Install Hub` page.
 
 ### Bug Fixes and Improvements
 * Fixed ordering issues in the table of the `Costs` page
