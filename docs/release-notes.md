@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 13.12.0
+### Action Items Report
+Progress reporting enables organizations to easily view and share their achievements or
+identify areas to improve with their teams or stakeholders. To view your organization's
+progress, visit the `Action Items` page and click on the `Reports` tab.
+
 ## 13.11.0
 ## Kyverno Plugin
 Organizations can now use the Kyverno plugin to convert their Kyverno background scan policy reports into Action Items. 
