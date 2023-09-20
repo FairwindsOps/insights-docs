@@ -20,7 +20,7 @@ progress, visit the `Action Items` page and click on the `Reports` tab.
 Decrease information overload and ticket creation with a single right-sizing recommendation per resource.
 
 ## 13.11.0
-## Kyverno Plugin
+### Kyverno Plugin
 Organizations can now use the Kyverno plugin to convert their Kyverno background scan policy reports into Action Items. 
 To see how to use the Kyverno plugin, visit the `Install Hub` page.
 
