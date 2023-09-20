@@ -16,6 +16,9 @@ Progress reporting enables organizations to easily view and share their achievem
 identify areas to improve with their teams or stakeholders. To view your organization's
 progress, visit the `Action Items` page and click on the `Reports` tab.
 
+### Consolidated Resource Recommendations
+Decrease information overload and ticket creation with a single right-sizing recommendation per resource.
+
 ## 13.11.0
 ## Kyverno Plugin
 Organizations can now use the Kyverno plugin to convert their Kyverno background scan policy reports into Action Items. 
