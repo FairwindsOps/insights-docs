@@ -6,7 +6,7 @@ This is the required set of permissions to install the Fairwinds insights-agent 
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: fairwinds-agent-installer
+  name: fairwinds-insights-agent-installer
 rules:
 - apiGroups:
   - 'apps'
