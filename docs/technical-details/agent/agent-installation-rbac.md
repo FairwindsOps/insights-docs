@@ -1,6 +1,6 @@
-# Required Permissions to Install the Agent
+# Permissions to Install the Agent
 
-This is the required set of permissions to install the Fairwinds insights-agent and insights-admission charts. Note, this does not include any sub-charts that might be included (such as the prometheus chart). Please refer to the chart maintainers for that information.
+This is the required set of permissions to install the Fairwinds insights-agent and insights-admission charts. Note, this is not guaranteed to include any sub-charts that might be installed, however we have attempted to include resources for some additional dependencies. Please refer to the chart maintainers for that information.
 
 ```
 apiVersion: rbac.authorization.k8s.io/v1
@@ -82,6 +82,7 @@ rules:
   - networking.k8s.io
   resources:
   - ingresses
+  - networkpolicies
   verbs:
   - '*'
 ```

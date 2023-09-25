@@ -43,6 +43,12 @@ module.exports = {
         title: 'Technical Details',
         children: [
           {
+            title: 'Agent',
+            children: [
+              'technical-details/agent/agent-installation-rbac',
+            ],
+          },
+          {
             title: 'Architecture',
             children: [
               'technical-details/architecture/architecture',
