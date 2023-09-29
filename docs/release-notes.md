@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 13.13.0
+### Bug Fixes and Improvements
+* Insights Agent 2.24 is now recommended in the `Install Hub`
+* Fixed Slack integration
+
 ## 13.12.0
 ### Action Items Report
 Progress reporting enables organizations to easily view and share their achievements or
