@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 14.0.0
+### Bug Fixes and Improvements
+* UI polishes to the `Team Management` page
+* Fixed default QoS for clusters
+* Fixed `Cost Difference` sorting in `Costs`
+
 ## 13.13.0
 ### Bug Fixes and Improvements
 * Insights Agent 2.24 is now recommended in the `Install Hub`
