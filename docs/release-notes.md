@@ -14,7 +14,7 @@ sidebarDepth: 1
 ### Bug Fixes and Improvements
 * UI polishes to the `Team Management` page
 * Fixed default QoS for clusters
-* Fixed `Cost Different` sorting in `Costs`
+* Fixed `Cost Difference` sorting in `Costs`
 
 ## 13.13.0
 ### Bug Fixes and Improvements
