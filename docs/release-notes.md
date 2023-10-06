@@ -11,6 +11,10 @@ sidebarDepth: 1
 # Release Notes
 
 ## 14.0.0
+### CI/CD Action Items for Right Sizing
+Action Items for right-sizing workloads are now available in CI/CD. 
+You'll see one Action Item per cluster where the workload appears.
+
 ### Bug Fixes and Improvements
 * UI polishes to the `Team Management` page
 * Fixed default QoS for clusters
