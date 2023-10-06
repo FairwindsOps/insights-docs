@@ -17,6 +17,7 @@ Insights will run the following report types in CI:
 * OPA (run custom policies)
 * Pluto (detect deprecated resources)
 * tfsec (scan Terraform files for configuration issues)
+* prometheus-metrics (fetches the latest `Container should be right-sized` resource recommendation for each workload+cluster combination)
 
 ### Choosing Insights CI or Auto-Scan
 
@@ -32,11 +33,12 @@ There are two options for this feature:
 | **GitHub Integration**                                | Required                                                                                                         | Optional                                                                                                                         |
 | **Where scans are run**                               | Fairwinds Insights SaaS infrastructure                                                                           | Your CI/CD platform                                                                                                              |
 | **Automatic discovery of YAML/Helm charts in a repo** | Yes                                                                                                              | No - manually specify in `fairwinds-insights.yaml`                                                                               |
-| **Publish scan results as a GitHub Comment**          | Yes                                                                                                              | Yes (only if GitHub is integrated)                                                                                         |
+| **Publish scan results as a GitHub Comment**          | Yes                                                                                                              | Yes (only if GitHub is integrated)                                                                                               |
 | **Publish GitHub commit status**                      | Yes                                                                                                              | Yes (only if GitHub is integrated)
-| **Automated Pull Request Fix**                        | Yes                                                                                                              | Yes (only if GitHub is integrated)                                                                                                   |
-| **Scan Container Images?**                            | Yes - Public and Private images                                                                                                    | Yes - Public and Private images                                                                                                                     |
-| **How do I get started?**                             | Navigate to: `Repositories > Add Repository > Connect GitHub`                                              | Navigate to: `Repositories > Add Repository > Connect Manually`
+| **Automated Pull Request Fix**                        | Yes                                                                                                              | Yes (only if GitHub is integrated)                                                                                               |
+| **Scan Container Images?**                            | Yes - Public and Private images                                                                                  | Yes - Public and Private images                                                                                                  |
+| **Resource Recommendations**                          | Yes                                                                                                              | Yes
+| **How do I get started?**                             | Navigate to: `Repositories > Add Repository > Connect GitHub`                                                    | Navigate to: `Repositories > Add Repository > Connect Manually`
 
 ## Installation
 ### Auto-Scan
