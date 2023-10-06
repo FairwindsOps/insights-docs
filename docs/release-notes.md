@@ -11,6 +11,9 @@ sidebarDepth: 1
 # Release Notes
 
 ## 14.0.0
+### CI/CD Action Items for Right Sizing
+* Users will start to see Action Items for right sizing their resources
+
 ### Bug Fixes and Improvements
 * UI polishes to the `Team Management` page
 * Fixed default QoS for clusters
