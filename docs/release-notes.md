@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 14.1.0
+### Bug Fixes and Improvements
+* UI polishes across Insights
+
 ## 14.0.0
 ### CI/CD Action Items for Right Sizing
 Action Items for right-sizing workloads are now available in CI/CD. 
