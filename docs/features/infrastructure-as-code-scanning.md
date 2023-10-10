@@ -142,7 +142,7 @@ You will need to store a unique Fairwinds Insights' token as an environment vari
 2. In your CI provider, please create a `FAIRWINDS_TOKEN` environment variable and paste the token.
 
 
-> Most CI platforms provide a way to specify secrets in your environment variables. Please reach out to your CI provider or Fairwinds if you have any issues. 
+> Most CI platforms provide a way to specify secrets in your environment variables. Please reach out to your CI provider or Fairwinds if you have any issues.
 
 ## Configuration
 
@@ -167,11 +167,11 @@ Below is a full list of options available in `fairwinds-insights.yaml`.
 * `options.tempFolder` - String - a temporary directory to store files. Default `./_insightsTemp/`
 
 #### Gating Pull Requests
-You can configure the Insights CI integration to exit with a non-zero exit code, thus allowing you to fail a pipeline job if specific issues are found in a scan. 
+You can configure the Insights CI integration to exit with a non-zero exit code, thus allowing you to fail a pipeline job if specific issues are found in a scan.
 
 When `options.setExitCode` is set to `true`, there are two reasons why an Action Item may cause a CI job to fail:
 - The severity of that Action Item exceeds the value in `options.severityThreshold`. Every Action Item has a severity value between 0 and 1, with 1 being "Critical". By default, an Action Item must have a severity of at least 0.7 ("High").
-- The Policy is configured to "always fail" when the Action Item is detected in a scan, regardless of that Action Item's severity. Learn more about this in the [Policy Configuration](/features/policies#configuration) section. 
+- The Policy is configured to "always fail" when the Action Item is detected in a scan, regardless of that Action Item's severity. Learn more about this in the [Policy Configuration](/features/policies#configuration) section.
 
 Here is an example:
 ```
@@ -237,7 +237,7 @@ manifests:
 ```
 
 #### Scanning Flux Files
-Fairwinds Insights also supports scanning YAML files that container Flux HelmRelease CRDs. 
+Fairwinds Insights also supports scanning YAML files that container Flux HelmRelease CRDs.
 
 Here is an example:
 ```
@@ -249,14 +249,14 @@ manifests:
 ```
 
 #### Managing Exemptions
-There may be scenarios where certain container images cannot be updated, or you want to suppress certain checks. 
+There may be scenarios where certain container images cannot be updated, or you want to suppress certain checks.
 
 You can tell Insights that certain files or checks should be excluded from the CI scan.
 Insights will look for Action Items that match _all_ of the provided fields and mark them as exempt.
 
 It's a good practice to include the `reason` field for future reference.
 
-* `exemptions[].filename` - String - the name of the file to exempt
+* `exemptions[].filename` - String - the name of the file to exempt. Supports a trailing wildcard such as `subfolder/*`.
 * `exemptions[].image` - String - the name of the image to exempt for a Trivy scan
 * `exemptions[].report` - String - the name of the report type (`polaris`, `pluto`, `trivy` or `opa`)
 * `exemptions[].checks[]` - Array - an array of check IDs to skip (e.g. `runAsNonRoot`)
@@ -436,7 +436,7 @@ Re-running an Auto-Scan job usually takes a few minutes. Look for the 'Completed
 Occassionally, you may run an Auto-Scan and it will return an error. You will see an error status like this when you navigate to the `Repositories` page and click on a repository.
 <img :src="$withBase('/img/autoscan-error.png')" alt="An Auto-Scan that has reported an error">
 
-If you see this error, you can scroll to the bottom of the page and get detailed logs about the issue. 
+If you see this error, you can scroll to the bottom of the page and get detailed logs about the issue.
 <img :src="$withBase('/img/autoscan-logs.png')" alt="Auto-Scan logs provide details about errors generated during the scan">
 
 ### Helm Chart With Invalid or Missing Values File
@@ -449,7 +449,7 @@ time="2022-10-20T14:57:16Z" level=error msg="Error running /usr/local/bin/helm t
 time="2022-10-20T14:57:16Z" level=fatal msg="Error processing repository: Error while processing helm templates: exit status 1"
 ```
 
-This message indicates that the Helm chart expected the `image.tag` value to be set, but no value was set in the default `values.yaml` supplied with the chart. 
+This message indicates that the Helm chart expected the `image.tag` value to be set, but no value was set in the default `values.yaml` supplied with the chart.
 
 There are two ways to fix this problem:
 
@@ -457,6 +457,6 @@ There are two ways to fix this problem:
 
 OR
 
-- Add a `fairwinds-insights.yaml` to the root of your repository to specify the location of a different values file with the `image.tag` field (or whatever field is not working). Or, you may provide an array of key/value pairs for Insights to use. [Please review this documentation for specifying the location YAML manifests and Helm charts](/features/infrastructure-as-code-scanning#scanning-configuration-manifests). 
+- Add a `fairwinds-insights.yaml` to the root of your repository to specify the location of a different values file with the `image.tag` field (or whatever field is not working). Or, you may provide an array of key/value pairs for Insights to use. [Please review this documentation for specifying the location YAML manifests and Helm charts](/features/infrastructure-as-code-scanning#scanning-configuration-manifests).
 >NOTE: When you add a `fairwinds-insights.yaml` file to an Auto-Scan enabled repository, automatic discovery of YAML manifests, Helm charts, and docker images is disabled. This is why you must specify the location of these artifacts within the `fairwinds-insights.yaml` file.
 
