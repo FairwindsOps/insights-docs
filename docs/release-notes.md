@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 14.2.0
+### Bug Fixes and Improvements
+* Fixed sorting issues in `Costs`
+* Updating some colors throughout Insights
+* Fixed an issue which sometimes prevented Slack channels showing up on `Settings > Notifications` page 
+
 ## 14.1.0
 ### Bug Fixes and Improvements
 * UI polishes across Insights
