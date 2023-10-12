@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 14.3.0
+### Bug Fixes and Improvements
+* UI polishes to the left navigation bar
+* Removed Goldilocks report from `Install Hub` cards
+
 ## 14.2.0
 ### Bug Fixes and Improvements
 * Fixed sorting issues in `Costs`
