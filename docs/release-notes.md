@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 14.4.0
+### Bug Fixes and Improvements
+* UI polishes to Action Items Reports
+* Small changes to the `Costs` page loading
+
 ## 14.3.0
 ### Bug Fixes and Improvements
 * UI polishes to the left navigation bar
