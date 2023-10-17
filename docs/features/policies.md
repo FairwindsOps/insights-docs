@@ -180,7 +180,7 @@ replicasRequired[actionItem] {
     "Deployment": 0.9,
   }
   # Iterate Kinds{} and only continue if input.kind is one of them.
-  kind := kinds[val]
+  kind := kinds[_]
   input.kind == kind
   input.spec.replicas == 0
   # Set the severity based on the Kind.
@@ -209,7 +209,7 @@ and the `Agent`, `Admission` and `CI/CD` values:
   # List the Insights contexts in which this policy should apply.
   validContexts := {"Admission", "Agent"}
   # Only continue if the policy is executing in one of validContexts{}
-  validContext := validContexts[val]
+  validContext := validContexts[_]
   context == validContext
 ```
 
@@ -222,7 +222,7 @@ You can restrict an OPA policy to run in specific Kubernetes clusters:
   validClusters := {"cluster1", "cluster2"}
   # Only continue if the policy is executing in one of validClusters{}
   cluster := insightsinfo("cluster")
-  validCluster := validClusters[val]
+  validCluster := validClusters[_]
   cluster == validCluster
 ```
 
@@ -235,7 +235,7 @@ Accessible via `insightsinfo("admissionRequest")` Rego function:
   validOperations := {"CREATE"}
   # Only continue if the policy is executing in one of validOperations list
   operation := insightsinfo("admissionRequest").operation
-  validOperation := validOperations[val]
+  validOperation := validOperations[_]
   operation == validOperation
 ```
 
@@ -258,7 +258,7 @@ replicasRequired[actionItem] {
     "Deployment": 3,
   }
   # Iterate Kinds{} and only continue if input.kind is one of them.
-  kind := kinds[val]
+  kind := kinds[_]
   input.kind == kind
   minReplicas := minReplicasByKind[input.kind]
   input.spec.replicas < minReplicas
