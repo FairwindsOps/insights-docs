@@ -12,7 +12,7 @@ sidebarDepth: 1
 
 ## 14.4.0
 ### Bug Fixes and Improvements
-* UI polishes and to Action Items Reports
+* UI polishes to Action Items Reports
 * Small changes to the `Costs` page loading
 
 ## 14.3.0
