@@ -10,6 +10,16 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 14.5.0
+### Updated Costs Settings
+New Costs Settings allows users to set their cost for Disk and Network which will make the Costs reflected
+on the `Costs` page more accurate. Users can access these new settings by visiting `Efficiency > Costs` and
+selecting the `Settings` in the top right.
+
+### Bug Fixes and Improvements
+* Changed the Total Cost chart in `Costs` to reflect percentages of the total cost
+* Fixed the date range on the `Costs` page
+
 ## 14.4.0
 ### Bug Fixes and Improvements
 * UI polishes to Action Items Reports
