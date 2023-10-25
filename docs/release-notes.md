@@ -10,6 +10,24 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 14.6.0
+### Improved Reliability of Action Item Deletion and Reporting
+
+Fairwinds has implemented additional improvements for deleting Action Items when that workload no longer exists in a cluster.
+As a basic rule, Insights already tracks the lifecycle of Action Items, and deletes Action Items when a namespace disappears from a cluster. 
+
+Now, for short-lived workloads, such as ephemeral Jobs and unmanaged Pods, the Action Items associated with those workloads will be deleted from the Action Item table, even if their namespace isn’t deleted. Previously, these Action Items would sometimes persist in the table (rather than get deleted), and get counted as “Fixed” within the Progress Reporting feature (available under Action Items > Reports page) – thus inflating the “Fixed” count. Handling of these scenarios has been improved.
+
+Additionally, “Open” Action Items (e.g., fixed=false) that get deleted when a workload disappears will be properly counted as “Deleted” within the Progress Reporting feature. Action Items where true fixes have been made and verified will be marked “Fixed” (fixed=true) – ensuring developers still get credit.
+
+In summary:
+* For organizations with lots of Kind=Job or Pod workloads, these improvements may result in an immediate reduction of Action Items, but a more manageable experience / less “Action Item overload”.
+* Progress Reporting data will be retroactively altered to account for the deleted items
+* Going forward, the Progress Reporting feature will show more accurate / realistic Fixed and Deleted counts
+
+### Bug Fixes and Improvements
+* For organizations using basic auth in Jira, tickets will auto close when an Action Item is manually resolved or fixed 
+
 ## 14.5.0
 ### Updated Costs Settings
 New Costs Settings allows users to set their cost for Disk and Network which will make the Costs reflected
