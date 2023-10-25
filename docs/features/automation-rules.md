@@ -143,8 +143,7 @@ Steps to add basic auth to Insights:
 echo -n "user@example.com:api_token_string" | base64
 # dXNlckBleGFtcGxlLmNvbTphcGlfdG9rZW5fc3RyaW5n
 ```
- Example: base64EncodedToken = base64Encode('user@example.com:api_token_string')
-- call insights API. Example:
+- call insights API using the encoded token:
 
 ```js
 curl 'https://insights.fairwinds.com/v0/organizations/acme-co/jira/basic-auth' \
