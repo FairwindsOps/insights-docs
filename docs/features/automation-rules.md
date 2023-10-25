@@ -151,7 +151,7 @@ curl 'https://insights.fairwinds.com/v0/organizations/acme-co/jira/basic-auth' \
   -H 'accept: application/json' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-  -H 'cookie: ${YOUR_SESSION_COOKIE}' \
+  -H "Authorization: Bearer $TOKEN" \
   --data-raw '{"url":"https://you-domain.atlassian.net","base64EncodedToken":"dXNlckBleGFtcGxlLmNvbTphcGlfdG9rZW5fc3RyaW5n"}' \
   --compressed -v
 ```
