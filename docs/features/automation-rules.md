@@ -146,7 +146,7 @@ echo -n "user@example.com:api_token_string" | base64
 - call insights API using the encoded token:
 
 ```js
-curl 'https://insights.fairwinds.com/v0/organizations/acme-co/jira/basic-auth' \
+curl 'https://insights.fairwinds.com/v0/organizations/${YOUR_ORG}/jira/basic-auth' \
   -X 'POST' \
   -H 'accept: application/json' \
   -H 'cache-control: no-cache' \
