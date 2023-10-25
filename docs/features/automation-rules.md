@@ -136,60 +136,14 @@ The `createTicket` function takes three arguments:
 ##### Jira Basic Auth:
 Insights provides oath2 integration but also provides basic auth for Jira:
 
-- How to add basic auth to Insights:
-```yaml
- /v0/organizations/{organization}/jira/basic-auth:
-    get:
-      operationId: getJiraBasicAuth
-      tags: [Integrations, Jira]
-      parameters:
-        - in: path
-          name: organization
-          required: true
-          schema:
-            type: string
-      responses:
-        "200":
-          description: Jira Basic Auth settings for organization
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/AuthIntegrationSettings"
-    post:
-      operationId: createJiraBasicAuth
-      tags: [Integrations, Jira]
-      parameters:
-        - in: path
-          name: organization
-          required: true
-          schema:
-            type: string
-      requestBody:
-        content:
-          application/yaml:
-            schema:
-              $ref: "#/components/schemas/BasicAuthRequest"
-          application/json:
-            schema:
-              $ref: "#/components/schemas/BasicAuthRequest"
-              examples:
-                basic-auth-input:
-                  summary: Basic auth request input includes jira base URL and base 64 encoded token
-                          Jira token is something like user@example.com:api_token_string
-                          Apply base64Encode('user@example.com:api_token_string')
-                  value:
-                    {
-                      "url": "https://your-domain.atlassian.net",
-                      "base64EncodedToken": "fasduihasdkfhakjlhfiueruiqwkjahsdfkjahsdf==",
-                    }              
-      responses:
-        "200":
-          $ref: "#/components/responses/SuccessResponse"
-```
-
-Steps:
+Steps to add basic auth to Insights:
 - get e-mail and jira token. Example: user@example.com:api_token_string
-- use some base 64 encode function over email:token string. Example: base64EncodedToken = base64Encode('user@example.com:api_token_string')
+- use some base 64 encode function over 'email:token' string.
+```bash
+echo -n "user@example.com:api_token_string" | base64
+# dXNlckBleGFtcGxlLmNvbTphcGlfdG9rZW5fc3RyaW5n
+```
+ Example: base64EncodedToken = base64Encode('user@example.com:api_token_string')
 - call insights API. Example:
 
 ```js
@@ -199,7 +153,7 @@ curl 'https://insights.fairwinds.com/v0/organizations/acme-co/jira/basic-auth' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -H 'cookie: ${YOUR_SESSION_COOKIE}' \
-  --data-raw '{"url":"https://you-domain.atlassian.net","base64EncodedToken":"asdhfaskdhfklahsdflkhaksjdfhkjashdfjklhaskdfhaskldf=="}' \
+  --data-raw '{"url":"https://you-domain.atlassian.net","base64EncodedToken":"dXNlckBleGFtcGxlLmNvbTphcGlfdG9rZW5fc3RyaW5n"}' \
   --compressed -v
 ```
 
