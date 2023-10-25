@@ -12,7 +12,6 @@ sidebarDepth: 1
 
 ## 14.6.0
 ### Improved Reliability of Action Item Deletion and Reporting
-
 Fairwinds has implemented additional improvements for deleting Action Items when that workload no longer exists in a cluster.
 As a basic rule, Insights already tracks the lifecycle of Action Items, and deletes Action Items when a namespace disappears from a cluster. 
 
