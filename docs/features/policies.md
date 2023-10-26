@@ -154,7 +154,7 @@ replicasRequired[actionItem] {
   input.kind == "Deployment"
   input.spec.replicas == 0
   actionItem := {
-    "title": Deployment does not have replicas set",
+    "title": "Deployment does not have replicas set",
     "description": "All workloads at acme-co must explicitly set the number of replicas",
     "remediation": "Please set `spec.replicas`",
     "category": "Reliability",
@@ -186,7 +186,7 @@ replicasRequired[actionItem] {
   # Set the severity based on the Kind.
   dynamicSeverity := severityByKind[input.kind]
   actionItem := {
-    "title": "Deployment oes not have replicas set",
+    "title": "Deployment does not have replicas set",
     "description": "All workloads at acme-co must explicitly set the number of replicas",
     "remediation": "Please set `spec.replicas`",
     "category": "Reliability",
