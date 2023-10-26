@@ -132,7 +132,34 @@ The `createTicket` function takes three arguments:
 * project - String - name of project
 * labels - Array - a list of labels to put on the ticket
 
-##### Examples
+
+##### Jira Basic Auth:
+Insights provides oath2 integration but also provides basic auth for Jira:
+
+Steps to add basic auth to Insights:
+- get e-mail and jira token. Example: user@example.com:api_token_string
+- use some base 64 encode function over 'email:token' string.
+```bash
+echo -n "user@example.com:api_token_string" | base64
+# dXNlckBleGFtcGxlLmNvbTphcGlfdG9rZW5fc3RyaW5n
+```
+- call insights API using the encoded token:
+
+```js
+curl 'https://insights.fairwinds.com/v0/organizations/${YOUR_ORG}/jira/basic-auth' \
+  -X 'POST' \
+  -H 'accept: application/json' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H "Authorization: Bearer $TOKEN" \
+  --data-raw '{"url":"https://you-domain.atlassian.net","base64EncodedToken":"dXNlckBleGFtcGxlLmNvbTphcGlfdG9rZW5fc3RyaW5n"}' \
+  --compressed -v
+```
+
+- after basic auth config is OK you can follow createTicket example below.
+
+
+##### Create Ticket examples
 ```js
 if (ActionItem.ResourceNamespace === "api") {
   createTicket("Jira", "API", ["bug"], null, "Task")
