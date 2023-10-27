@@ -93,9 +93,9 @@ When you install the `prometheus-metrics` report, Fairwinds Insights allows you 
 
 The resource recommendation calculations are different depending on your QoS target. See below for additional detail.
 
-| **QoS**                  | **Description**                                                                     | **Requests recommendation**                | **Limits recommendation**                 |
-|--------------------------|-------------------------------------------------------------------------------------|--------------------------------------------|-------------------------------------------|
-| **Critical**             | Used for mission-critical workloads that should be over-provisioned for reliability | **max** usage observed over last 2 weeks   | **max**  usage observed over last 2 weeks |
-| **Guaranteed (default)** | Production workloads that can withstand some variability                            | **p95** usage observed over last 2 weeks   | **p95**  usage observed over last 2 weeks |
-| **Burstable**            | Workloads that should prioritize cost efficiency over maximum reliability           | **mean** usage observed over last 2 weeks  | **p95**  usage observed over last 2 weeks |
-| **Limited**              | Workloads that should be given as little resources as needed to operate             | **mean**  usage observed over last 2 weeks | **mean**  usage observed over last 2 weeks |
+| **QoS**                  | **Description**                                                                     | **Requests recommendation**                            | **Limits recommendation**                         |
+|--------------------------|-------------------------------------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------|
+| **Critical**             | Used for mission-critical workloads that should be over-provisioned for reliability | **120% of max** usage observed over last month         | same as requests                                  |
+| **Guaranteed (default)** | Production workloads that can withstand some variability                            | **max** usage observed over last month                 | same as requests                                  |
+| **Burstable**            | Workloads that should prioritize cost efficiency over maximum reliability           | **mean** usage observed over last month                | **p95**  usage observed over last month           |
+| **Limited**              | Workloads that should be given as little resources as needed to operate             | **minimum**  usage observed over last month            | **mean**  usage observed over last month          |
