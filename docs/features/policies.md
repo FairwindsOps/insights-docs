@@ -325,7 +325,7 @@ opa:
   - apiGroups:
     - networking.k8s.io
     resources:
-    - ingress
+    - ingresses
 ```
 
 By default the OPA plugin inherits the same Kubernetes APIGroups and Resources defined in the default rules for [the Admission Controller](/features/admission-controller).
