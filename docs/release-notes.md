@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 14.7.0
+### Bug Fixes and Improvements
+* Updated the move icon throughout Insights
+* UI polishes to the left navigation bar
+* Fixed the badge colors on the `Policy` page
+* Better loading mechanism for elements on the `Costs` page
+
 ## 14.6.0
 ### Improved Reliability of Action Item Deletion and Reporting
 Fairwinds has implemented additional improvements for deleting Action Items when that workload no longer exists in a cluster.
