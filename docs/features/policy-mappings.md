@@ -1,9 +1,9 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Documentation: About the App-Groups."
+    content: "Fairwinds Insights | Documentation: About the Policy-Mappings."
 ---
 
-# App-Groups
+# Policy-Mappings
 
 ## TBD
