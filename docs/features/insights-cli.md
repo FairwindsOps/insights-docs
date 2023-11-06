@@ -130,7 +130,7 @@ will delete any Automation Rules from Insights that **do not exist** in your IaC
 
 ### App-Groups
 
-This feature is under active development and not yet fully-released :construction:
+This feature is under active development and not yet released.
 
 You can use the Insights CLI to manage the configuration of App-Groups.
 
@@ -174,7 +174,7 @@ will delete any App-Groups from Insights that **do not exist** in your IaC repos
 
 ### Policy-Mappings
 
-This feature is under active development and not yet fully-released :construction:
+This feature is under active development and not yet released.
 
 You can use the Insights CLI to manage the configuration of Policy-Mappings.
 
