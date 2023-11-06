@@ -129,6 +129,9 @@ You can add the `--delete` flag to the `push rules` command, which
 will delete any Automation Rules from Insights that **do not exist** in your IaC repository. Adding the `--dry-run` flag will explain which Rules would be deleted without making changes to Insights.
 
 ### App-Groups
+
+This feature is under active development and not yet fully-released :construction:
+
 You can use the Insights CLI to manage the configuration of App-Groups.
 
 Check out the [App-Groups](/features/app-groups) documentation on use cases for configuring App-Groups.
@@ -144,7 +147,7 @@ If you were managing App-Groups via Fairwinds Insights UI. You can download and 
 insights-cli download app-groups
 ```
 
-Obs.: folder `app-groups` must exists.
+Note that the folder `app-groups` must exists.
 
 #### Adding App-Groups
 When pushing App-Groups to Insights, the CLI expects a directory structure like the following:
@@ -170,6 +173,9 @@ You can add the `--delete` flag to the `push app-groups` command, which
 will delete any App-Groups from Insights that **do not exist** in your IaC repository. Adding the `--dry-run` flag will explain which App-Groups would be deleted without making changes to Insights.
 
 ### Policy-Mappings
+
+This feature is under active development and not yet fully-released :construction:
+
 You can use the Insights CLI to manage the configuration of Policy-Mappings.
 
 Check out the [Policy-Mappings](/features/policy-mappings) documentation on use cases for configuring Policy-Mappings.
@@ -185,7 +191,7 @@ If you were managing Policy-Mappings via Fairwinds Insights UI. You can download
 insights-cli download policy-mappings
 ```
 
-Obs.: folder `policy-mappings` must exists.
+Note that the folder `policy-mappings` must exists.
 
 #### Adding Policy-Mappings
 When pushing Policy-Mappings to Insights, the CLI expects a directory structure like the following:
