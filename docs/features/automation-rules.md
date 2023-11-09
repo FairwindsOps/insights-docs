@@ -96,10 +96,13 @@ or send messages via a webhook URL. The Slack message body can be customized to 
 You can also utilize [Slack incoming webhooks](https://slack.com/help/articles/115005265063-Incoming-webhooks-for-Slack)
 to send alerts.
 
-The `sendSlackNotification` function takes three arguments:
-* channel or webhook URL - String - destination for the message
-* message (optional) - String - if not set, Insights will construct a default message from the Action Item
-* isWebhook (optional) - Boolean - set to `true` if the first parameter is a webhook URL
+The `sendSlackNotification` function accepts these arguments:
+| Parameter              | Required? | Type    |                                                                            |   |   |   |   |   |   |
+|------------------------|-----------|---------|----------------------------------------------------------------------------|---|---|---|---|---|---|
+| channel or webhook URL | Yes       | string  | Destination of the message                                                 |   |   |   |   |   |   |
+| message                | No        | string  | If not set, Insights will construct a default message from the Action Item |   |   |   |   |   |   |
+| isWebhook              | No        | boolean | set to `true` if the first parameter is a webhook URL                      |   |   |   |   |   |   |
+
 
 ##### Examples
 ```js
@@ -127,10 +130,14 @@ if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
 Users can also create a Jira, GitHub or Azure DevOps issue from an Action Item using the `createTicket` function.
 Only one ticket will be created per Action Item.
 
-The `createTicket` function takes three arguments:
-* integration - String - valid values are `GitHub`, `Azure`, or `Jira`
-* project - String - name of project
-* labels - Array - a list of labels to put on the ticket
+The `createTicket` function accepts these arguments:
+| Parameter           | Required? | Type   |                                                                           |
+| ------------------- | --------- | ------ | ------------------------------------------------------------------------- |
+| integration         | Yes       | string | valid values are `GitHub`, `Azure`, or `Jira`                             |
+| project             | Yes       | string | project identifier (e.g., `API`)                                          |
+| labels              | Yes       | array  | list of labels to put on the ticket (e.g., `["labelA","labelB"]`)         |
+| customizable fields | No        | object | additional ticket metadata subject to integration provider specifications |
+| issue type          | No        | string | issue identifier (e.g., `Bug`)                                            |
 
 
 ##### Jira Basic Auth:
