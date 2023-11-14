@@ -10,6 +10,43 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 14.7.10
+* Delete action items when a report is disabled
+* Fix issue with Polaris severities
+
+## 14.7.9
+* Fix for costs when a cluster is intermittently available
+* Fix for Action Item severities
+
+## 14.7.8
+* Minor bugfixes
+
+## 14.7.7
+* Minor bugfixes
+
+## 14.7.6
+* Ensure token is visible on "add repository" modal
+* Added a last login column to the team management page
+* Added title attributes to some fields on the Action Items table
+* Better handling of Pluto findings when APIs are removed entirely
+* Fix for Action Item severities
+
+## 14.7.5
+* Fix for node names on cost settings page
+* Added details for some falco checks
+
+## 14.7.4
+* Minor bugfixes
+
+## 14.7.3
+* Minor bugfixes
+
+## 14.7.2
+* Minor bugfixes
+
+## 14.7.1
+* Minor bugfixes
+
 ## 14.7.0
 ### Bug Fixes and Improvements
 * Updated the move icon throughout Insights
