@@ -97,11 +97,11 @@ You can also utilize [Slack incoming webhooks](https://slack.com/help/articles/1
 to send alerts.
 
 The `sendSlackNotification` function accepts these arguments:
-| Parameter              | Required? | Type    |                                                                            |   |   |   |   |   |   |
-|------------------------|-----------|---------|----------------------------------------------------------------------------|---|---|---|---|---|---|
-| channel or webhook URL | Yes       | string  | Destination of the message                                                 |   |   |   |   |   |   |
-| message                | No        | string  | If not set, Insights will construct a default message from the Action Item |   |   |   |   |   |   |
-| isWebhook              | No        | boolean | set to `true` if the first parameter is a webhook URL                      |   |   |   |   |   |   |
+| Parameter              | Required? | Type    |                                                                            |
+|------------------------|-----------|---------|----------------------------------------------------------------------------|
+| channel or webhook URL | Yes       | string  | Destination of the message                                                 |
+| message                | No        | string  | If not set, Insights will construct a default message from the Action Item |
+| isWebhook              | No        | boolean | set to `true` if the first parameter is a webhook URL                      |
 
 
 ##### Examples
