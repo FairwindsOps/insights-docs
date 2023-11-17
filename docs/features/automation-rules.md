@@ -228,6 +228,21 @@ fields: {
    "issuetype": {
       "name": "Task"
    },
+   "description": {
+      "content": [
+        {
+          "content": [
+            {
+              "text": "My description",
+              "type": "text"
+            }
+          ],
+          "type": "paragraph"
+        }
+      ],
+      "type": "doc",
+      "version": 1
+    },
    "environment": {
       "content": [
         {
