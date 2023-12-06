@@ -1,3 +1,7 @@
+# Supported Kubernetes Versions
+
+Fairwinds tests Insights Agent support against Kubernetes versions "N-3". However, it's possible the Insights Agent may continue to work normally on older versions of Kubernetes.
+
 # Permissions to Install the Agent
 
 This is the required set of permissions to install the Fairwinds insights-agent and insights-admission charts. Note, this is not guaranteed to include any sub-charts that might be installed, however we have attempted to include resources for some additional dependencies. Please refer to the chart maintainers for that information.
