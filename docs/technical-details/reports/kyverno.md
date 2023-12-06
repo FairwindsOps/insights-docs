@@ -67,7 +67,7 @@ metadata:
 These annotations are mapped to the corresponding action item when a Kyverno report is sent to Insights in the following way:
 
 * `policies.kyverno.io/title:`, `title`
-* `policies.kyverno.io/category` and an Insights `category` are used in different ways. While `policies.kyverno.io/category` can be set to anything, there are only three categories currently supported by Insights. Those are `efficiency`, `reliability` and `security`. If the annotation is not set to any of the categories supported by insights, it will fall back to `security`
+* `policies.kyverno.io/category` and an Insights `category` are used in different ways. While `policies.kyverno.io/category` can be set to anything, there are only three categories currently supported by Insights. Those are `Efficiency`, `Reliability` and `Security`. If the annotation is not set to any of the categories supported by insights, it will fall back to `Security`
 * Similar to `category`, `policies.kyverno.io/severity` should be set to one of the severeties defined in Insights. Those values are `Critical`, `High`, `Medium`, `Low` and `None`. These are not case-sensitive.
 * `policies.kyverno.io/description` will correspond to the Insights Action Item description
 
