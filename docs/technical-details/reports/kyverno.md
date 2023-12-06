@@ -42,6 +42,37 @@ kubectl apply -f https://raw.githubusercontent.com/kyverno/policies/main/best-pr
 kubectl apply -f https://raw.githubusercontent.com/kyverno/policies/main/best-practices/disallow-latest-tag/disallow-latest-tag.yaml
 ```
 
+#### Note on Mapping Kyverno Policies to Action Items in Insights
+
+If you inspect one of the example policies provided in the Kyverno documentation, you'll see that the following annotations are set:
+
+```
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: disallow-latest-tag
+  annotations:
+    policies.kyverno.io/title: Disallow Latest Tag
+    policies.kyverno.io/category: Best Practices
+    policies.kyverno.io/minversion: 1.6.0
+    policies.kyverno.io/severity: medium
+    policies.kyverno.io/subject: Pod
+    policies.kyverno.io/description: >-
+      The ':latest' tag is mutable and can lead to unexpected errors if the
+      image changes. A best practice is to use an immutable tag that maps to
+      a specific version of an application Pod. This policy validates that the image
+      specifies a tag and that it is not called `latest`.
+```
+
+These annotations are mapped to the corresponding action item when a Kyverno report is sent to Insights in the following way:
+
+* `policies.kyverno.io/title:`, `title`
+* `policies.kyverno.io/category` and an Insights `category` are used in different ways. While `policies.kyverno.io/category` can be set to anything, there are only three categories currently supported by Insights. Those are `efficiency`, `reliability` and `security`. If the annotation is not set to any of the categories supported by insights, it will fall back to `security`
+* Similar to `category`, `policies.kyverno.io/severity` should be set to one of the severeties defined in Insights. Those values are `Critical`, `High`, `Medium`, `Low` and `None`. These are not case-sensitive.
+* `policies.kyverno.io/description` will correspond to the Insights Action Item description
+
+At minimum, you should try to set `policies.kyverno.io/title` when creating a new `policy`/`clusterpolicy` so your Action Items are easy to identify and resolve.
+
 ### Create `deployment`
 
 ```bash
