@@ -46,6 +46,7 @@ module.exports = {
             title: 'Agent',
             children: [
               'technical-details/agent/agent-installation-rbac',
+              'technical-details/agent/collecting-diagnostics',
             ],
           },
           {
