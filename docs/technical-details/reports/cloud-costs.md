@@ -1,4 +1,4 @@
-# Cloud Costs
+# Cloud Costs ( BETA )
 The Cloud Costs report syncs your Cloud billing data to Insights so
 it can know precisely what you're spending on nodes and use that
 information to infer accurate workload costs.
