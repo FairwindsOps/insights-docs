@@ -318,22 +318,13 @@ In GCP:
 2. Click Create Service Account
 3. Give the service account a name then "Create and Continue"
 4. Grant roles: "BigQuery Data Viewer" and "BigQuery Job User" and click Done
-5. Click on your service account and add a private Key as JSON
-6. Save and Download the JSON file. It will be something like:
-```json
-{
-  "type": "service_account",
-  "project_id": "your-project",
-  "private_key_id": "123a4a5d06bd78dc9f80bf1234567e12345fde3f",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQ ............ ASDKJHASDKJHADKJHAKJSHDASDKJH=\n-----END PRIVATE KEY-----\n",
-  "client_email": "bigqueryaccess@your-project.iam.gserviceaccount.com",
-  "client_id": "13254654456564456456",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bigqueryaccess%40your-project.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
-}
+5. Bind your service account to Workload Identity:
+[Use Workload Identity ](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity)
+Example:
+```bash
+gcloud iam service-accounts add-iam-policy-binding bigqueryaccess@your-project.iam.gserviceaccount.com \
+    --role roles/iam.workloadIdentityUser \
+    --member "serviceAccount:your-project.svc.id.goog[insights-agent/insights-agent-cloudcosts]"
 ```
 
 ### Support for GKE Autopilot
@@ -384,7 +375,6 @@ cloudcosts:
   provider: gcp
   tagvalue: "my-gcp-cluster"
   gcp:
-    applicationCredentials: '{"type": "service_account", "project_id": "my-project", "private_key_id": "12345", "private_key": "-----BEGIN PRIVATE KEY-----\nABC=\n-----END PRIVATE KEY-----\n", "client_email": "bigqueryaccess@my-project.iam.gserviceaccount.com",  "client_id": "1234567890", "auth_uri": "https://accounts.google.com/o/oauth2/auth", "token_uri": "https://oauth2.googleapis.com/token", "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs", "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bigqueryaccess%40my-project.iam.gserviceaccount.com",  "universe_domain": "googleapis.com"}'
     projectname: "my-project"
     dataset: "insightscosts"
     billingaccount: "123456-777AAA-123456"      
@@ -396,5 +386,3 @@ cloudcosts:
 * **projectname**: GCP project name
 * **dataset**: dataset name you provided when you setup your BigQuery for Billing
 * **billingaccount**: your Google Billing Account ID that you can get from Billing console, which is used to get the table name for BigQuery. Example: "1A2B3C-4D5E6F-7G8H9I"
-* **applicationCredentials**: key config from service account you have created for BigQuery access
-
