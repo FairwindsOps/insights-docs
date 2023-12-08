@@ -364,16 +364,13 @@ Install the insights-agent with the cloudcosts report configured
 
 ## Agent Configuration
 Once the GCP resources are in place, you'll need to configure the
-AWS agent to start uploading your cost data. Your `values.yaml` should include
+cloudcosts agent to start uploading your cost data. Your `values.yaml` should include
 the section below, replacing any values with your own.
 
 ```yaml
 cloudcosts:
   enabled: true
   provider: gcp
-  serviceAccount:
-    annotations:
-      eks.amazonaws.com/role-arn: arn:aws:iam::ACCOUNT_ID:role/IAM_ROLE_NAME
   tagvalue: "my-gcp-cluster"
   gcp:
     applicationCredentials: '{"type": "service_account", "project_id": "my-project", "private_key_id": "12345", "private_key": "-----BEGIN PRIVATE KEY-----\nABC=\n-----END PRIVATE KEY-----\n", "client_email": "bigqueryaccess@my-project.iam.gserviceaccount.com",  "client_id": "1234567890", "auth_uri": "https://accounts.google.com/o/oauth2/auth", "token_uri": "https://oauth2.googleapis.com/token", "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs", "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bigqueryaccess%40my-project.iam.gserviceaccount.com",  "universe_domain": "googleapis.com"}'
