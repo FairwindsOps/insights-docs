@@ -1,4 +1,4 @@
-# Cloud Costs ( BETA )
+# Cloud Costs Report (BETA)
 The Cloud Costs report syncs your Cloud billing data to Insights so
 it can know precisely what you're spending on nodes and use that
 information to infer accurate workload costs.
@@ -295,28 +295,31 @@ resource "aws_athena_workgroup" "cur_athena_workgroup" {
 }
 ```
 
-## Google Cloud Provider Configuration:
+## Google Cloud Provider (GCP) Configuration:
 
 The GCP Report is built on [Google Cloud Billing](https://cloud.google.com/billing/docs/how-to/export-data-bigquery).
 
-The first step is setting up Cloud Billing to export to BigQuery:
+The first step is setting up Google Cloud Billing to export to BigQuery. To do this, follow these steps:
 - Make sure Billing is enabled
-- Enable BigQuery for Data transfer 
+- Enable BigQuery for data transfer 
 - Create a BigQuery dataset
 - Enable Cloud Billing export to the BigQuery dataset
-All steps are decribed detailed at the link below:
+
+All steps are described in detail at the link below:
 [Set up Cloud Billing data export to BigQuery](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-setup)
 
-We are gonna use table "<projectname>.<datasetName>.gcp_billing_export_resource_v1_<BILLING_ACCOUNT_ID>" which should be created after following the steps above.
-It may takes few days for Google to ingest all data into BigQuery table. You can keep checking out querying the BigQuery data at GCP console to see if the table is up-to-date.
+We are going to use table `<projectname>.<datasetName>.gcp_billing_export_resource_v1_<BILLING_ACCOUNT_ID>` which should be created after following the steps above.
 
-### Create service account to run bq query:
-- Go to IAM & Admin > Select Service Account
-- Click Create Service Account
-1) Give a name then "Create and Continue"
-2) Grant roles: "BigQuery Data Viewer" and "BigQuery Job User" and hit Done
-3) Click on you service account and add a private Key as JSON
-4) Save and Download the JSON file. It will be something like:
+It may takes few days for Google to ingest all the billing data into BigQuery table. 
+
+### Create service account to run BigQuery:
+In GCP:
+1. Go to IAM & Admin > Select Service Account
+2. Click Create Service Account
+3. Give the service account a name then "Create and Continue"
+4. Grant roles: "BigQuery Data Viewer" and "BigQuery Job User" and click Done
+5. Click on your service account and add a private Key as JSON
+6. Save and Download the JSON file. It will be something like:
 ```json
 {
   "type": "service_account",
@@ -333,38 +336,46 @@ It may takes few days for Google to ingest all data into BigQuery table. You can
 }
 ```
 
-### Only if you are using GKE Autopilot
-One of Insights' plugins, prometheus-collector, requires a Prometheus server to collect metrics that are needed for workload usage. Typically, this would be a Prometheus server that is already running in a Kubernetes cluster, or it would be installed through the Insights Helm Chart.
-GKE Autopilot makes it hard to allow a self-installed Prometheus server, however it does have GCP Managed Prometheus set up by default. GCP Managed Prometheus can provide the metrics that are required, and prometheus-collector can retrieve metrics from GCP Managed Prometheus, with some additional configuration.
-1. CollectKubelet/cAdvisor metrics
-GCP Managed Prometheus must be configured to scrape the Kubelet for Kubelet and cAdvisor metrics. This can be set up by editing the OperatorConfig resource as documented here:
+### Support for GKE Autopilot
+Insights requires a Prometheus server to collect metrics for workload usage. Typically, this is a Prometheus server that is already running in a Kubernetes cluster, or a Prometheus server that is installed directly via the Insights Agent Helm Chart.
+
+In GKE Autopilot, users are required to use the GCP Managed Prometheus offering to collect the require container metrics. GCP Managed Prometheus may increase your overall cloud costs and requires additional configuration for the Insights Agent to read those metrics:
+
+#### 1. Collect Kubelet/cAdvisor metrics
+
+GCP Managed Prometheus must be configured to scrape the Kubelet for Kubelet and cAdvisor metrics. This can be setup by editing the OperatorConfig resource as documented here:
 [Install kubelet-cadvisor](https://cloud.google.com/stackdriver/docs/managed-prometheus/exporters/kubelet-cadvisor)
 
-2. Install kube-state-metrics
-GCP Managed Prometheus needs a Kube State Metrics instance installed in order to get metrics from the Kubernetes API. Use the configuration in the "Install Kube State Metrics" section at link below to set this up. install Kube State Metrics. You only need to use this part of the document, you don't need the "Define rules and alerts" section.
-[Configure kubec state metrics](https://cloud.google.com/stackdriver/docs/managed-prometheus/exporters/kube_state_metrics#install-exporter)
+#### 2. Install `kube-state-metrics`
 
-3. Install the GCP Managed Prometheus frontend
-Many GCP APIs require OAuth 2.0. The prometheus-collector requires an "authentication proxy" to get metrics from GCP Managed Prometheus, and GCP provides a mechanism for this through their Prometheus frontend UI deployment. This section will outline the steps in this document that are needed to set this up.
-First, you will need to create Google and Kubernetes service accounts, make sure they have the right permissions, and bind them together. Starting from Set up a namespace (if you would like a separate namespace for the frontend deployment), proceed through the Authorize the service account section.
-Next, do step 1. in the Deploy the frontend UI section, with one change to the YAML. In the Deployment spec, add the name of the Kubernetes serviceAccount created in the previous step to spec.spec.serviceAccount: <name of Kubernetes service account>. If you like, you can run the port-forward command in step 2. to verify that the frontend is able to connect and get metrics from GCP Managed Prometheus.
+GCP Managed Prometheus needs a Kube State Metrics instance installed in order to get metrics from the Kubernetes API. Use the configuration in the "Install Kube State Metrics" section at link below to set this up: 
+[Configure kube-state-metrics](https://cloud.google.com/stackdriver/docs/managed-prometheus/exporters/kube_state_metrics#install-exporter)
+
+#### 3. Install the GCP Managed Prometheus frontend
+
+Many GCP APIs require OAuth 2.0. The Insights Agent requires an "authentication proxy" to get metrics from GCP Managed Prometheus, and GCP provides a mechanism for this via their Prometheus frontend UI deployment. 
+
+This section will outline the steps to set this up:
+
+- First, you will need to create Google and Kubernetes service accounts, make sure they have the right permissions, and bind them together. Starting from Set up a namespace (if you would like a separate namespace for the frontend deployment), proceed through the Authorize the service account section.
+- Next, do step 1. in the Deploy the frontend UI section, with one change to the YAML. In the Deployment spec, add the name of the Kubernetes serviceAccount created in the previous step to spec.spec.serviceAccount: <name of Kubernetes service account>. If you like, you can run the port-forward command in step 2. to verify that the frontend is able to connect and get metrics from GCP Managed Prometheus.
 [Configure a query interface for Google Cloud Managed Service for Prometheus](https://cloud.google.com/stackdriver/docs/managed-prometheus/query)
 
-4. Point prometheus-collector to the frontend
-This last step configures the prometheus-collector to get Prometheus metrics through the frontend service. Here are the Helm values to set in our values.yaml:
+#### 4. Point prometheus-collector to the frontend
+
+This last step configures the prometheus-metrics report in the Insights Agent to get Prometheus metrics through the frontend service. Here are the Helm values to use in the Insights Agent `values.yaml`:
 ```yaml
 prometheus-metrics:
   enabled: true
   installPrometheusServer: false
   address: "http://frontend.<frontend namespace>.svc:9090"
 ```
-where <frontend namespace> is the namespace where the frontend has ben installed.
+>NOTE: `<frontend namespace>` is the namespace where the Prometheus frontend UI has been installed.
 
-Install the insights-agent with the cloudcosts report configured
 
-## Agent Configuration
+## Cloud Costs Agent Configuration
 Once the GCP resources are in place, you'll need to configure the
-cloudcosts agent to start uploading your cost data. Your `values.yaml` should include
+`cloudcosts` report in the Insights Agent to start uploading your cost data. Your `values.yaml` should include
 the section below, replacing any values with your own.
 
 ```yaml
@@ -379,11 +390,11 @@ cloudcosts:
     billingaccount: "123456-777AAA-123456"      
 ```
 
-* **provider**: provider must be "gcp"
-* **tagkey**: optional, tag key is the label name used on GCP to indicate that it's a cluster node. Default value is "goog-k8s-cluster-name".
+* **provider**: provider must be `gcp`
+* **tagkey**: optional. `tagkey` is the label name used on GCP to indicate that it's a cluster node. Default value is "goog-k8s-cluster-name".
 * **tagvalue**: the value associated to the cluster name label for filtering. Ex: production, staging
 * **projectname**: GCP project name
 * **dataset**: dataset name you provided when you setup your BigQuery for Billing
-* **billingaccount**: your Google Billing Account ID that you can get from Billing console, it's used to get the table name for BigQuery. It's something like "1A2B3C-4D5E6F-7G8H9I"
+* **billingaccount**: your Google Billing Account ID that you can get from Billing console, which is used to get the table name for BigQuery. Example: "1A2B3C-4D5E6F-7G8H9I"
 * **applicationCredentials**: key config from service account you have created for BigQuery access
 
