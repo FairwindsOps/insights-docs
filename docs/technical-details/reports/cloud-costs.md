@@ -335,8 +335,6 @@ gcloud container node-pools update your-pool \
     --workload-metadata=GKE_METADATA
 ```
 
-
-
 6. Bind your service account to Workload Identity:
 [Use Workload Identity ](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity)
 Example:
