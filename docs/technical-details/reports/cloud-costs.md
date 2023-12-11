@@ -335,13 +335,23 @@ gcloud container node-pools update your-pool \
     --workload-metadata=GKE_METADATA
 ```
 
-6. Bind your service account to Workload Identity:
+6. Bind your GCP service account and Kubernetes cloudcosts service account:
 [Use Workload Identity ](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity)
 Example:
 ```bash
-gcloud iam service-accounts add-iam-policy-binding bigqueryaccess@your-project.iam.gserviceaccount.com \
+gcloud iam service-accounts add-iam-policy-binding {service-account-name}@{your-project}.iam.gserviceaccount.com \
     --role roles/iam.workloadIdentityUser \
-    --member "serviceAccount:your-project.svc.id.goog[insights-agent/insights-agent-cloudcosts]"
+    --member "serviceAccount:{your-project}.svc.id.goog[insights-agent/insights-agent-cloudcosts]"
+```
+
+7. Annotate the insights-agent-cloudcosts service account:
+Set the annotation in the [values.yaml](https://github.com/FairwindsOps/charts/blob/master/stable/insights-agent/values.yaml#L443-L444)
+Example:
+```yaml
+cloudcosts:
+  serviceAccount:
+    annotations:
+      iam.gke.io/gcp-service-account: {service-account-name}@{your-project}.iam.gserviceaccount.com
 ```
 
 ### Support for GKE Autopilot
