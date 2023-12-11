@@ -318,7 +318,25 @@ In GCP:
 2. Click Create Service Account
 3. Give the service account a name then "Create and Continue"
 4. Grant roles: "BigQuery Data Viewer" and "BigQuery Job User" and click Done
-5. Make sure Workload Identity is enabled (you can enable at cluster overview page; for Autopilot it's enabled by default)
+5. Make sure Workload Identity is enabled: you can enable at cluster overview page. Autopilot is enabled by default.
+Follow instructions from the page below:
+[Use Workload Identity ](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity)
+
+For GKE Standard:
+```bash
+gcloud container clusters update your-cluster \
+    --region=your-region \
+    --workload-pool=your-project.svc.id.goog
+```
+```bash
+gcloud container node-pools update your-pool \
+    --cluster=your-cluster \
+    --region=your-region \
+    --workload-metadata=GKE_METADATA
+```
+
+
+
 6. Bind your service account to Workload Identity:
 [Use Workload Identity ](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity)
 Example:
