@@ -13,7 +13,8 @@ var sf14gv = 32793;
 
 (function() {
   var gtag = document.createElement('script');
-  gtag.src = "https://www.googletagmanager.com/gtag/js?id=G-ZR5M5SRYKY";
+  gtag.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZR5M5SRYKY';
+
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gtag, s);
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -31,3 +32,4 @@ s.parentNode.insertBefore(t,s)}(window,document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '521127644762074');
 fbq('track', 'PageView');
+
