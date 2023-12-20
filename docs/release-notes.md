@@ -10,6 +10,68 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 14.11.0
+* Fix for cluster filtering on Action Items page
+* New and improved GitHub comments
+
+## 14.10.0
+* Added a link to action items from Resources Per Pod graph
+* Updates to resource recommendations for Burstable and Limited QoS
+  * These updates should make workloads more reliable, and reduces the gap between Burstable and Guaranteed
+
+## 14.9.3
+* Fix for empty Resources Per Pod graph on costs page
+
+## 14.9.2
+* Fix for password reset
+* Fix for vulnerabilities links
+* Fix for Slack digest errors
+* Fix for network and storage costs
+
+## 14.9.1
+* Fix for Action Items Reporting print view
+* Fix for tooltip on capacity page
+
+## 14.9.0
+* Improvements to costs UI, including a consolidated control row
+
+## 14.8.4
+* Minor bugfixes
+
+## 14.8.3
+* Minor bugfixes
+
+## 14.8.2
+* Minor bugfixes
+
+## 14.8.1
+* Fix for deleting Action Items when a report is uninstalled
+* Updates to automation rule library
+
+## 14.8.0
+* Improvements to Action Item lifecycle, including deletion
+
+## 14.7.17
+* Minor bugfixes
+
+## 14.7.16
+* Minor bugfixes
+
+## 14.7.15
+* Minor bugfixes
+
+## 14.7.14
+* Minor bugfixes
+
+## 14.7.13
+* Minor bugfixes
+
+## 14.7.12
+* Minor bugfixes
+
+## 14.7.11
+* `.git` suffix is now removed from repository names
+
 ## 14.7.10
 * Delete action items when a report is disabled
 * Fix issue with Polaris severities
