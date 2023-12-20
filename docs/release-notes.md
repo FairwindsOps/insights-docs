@@ -11,13 +11,18 @@ sidebarDepth: 1
 # Release Notes
 
 ## 14.11.0
+### Bug Fixes
 * Fix for cluster filtering on Action Items page
-* New and improved GitHub comments
+
+### Redesigned GitHub Comments
+The GitHub Comment generated after Repo Scans has been redesigned to improve developer experience. Blocking issues are now highlighted at the top of the comment so developers know exactly what is causing a PR to fail. Additionally, developers can see which of their Action Items can be auto-fixed with Fairwinds Insights' Automated Fix PR functionality.
 
 ## 14.10.0
-* Added a link to action items from Resources Per Pod graph
-* Updates to resource recommendations for Burstable and Limited QoS
-  * These updates should make workloads more reliable, and reduces the gap between Burstable and Guaranteed
+### Link to Action Items from Resources Per Pod graph
+Users on the Efficiency > Cost page can now quickly see the relevant Action Items for that workload when reviewing the Resources per Pod graph. This makes it easier to assign Action Items and create tickets for specific resource recommendations.
+
+### Updates Burstable and Limited QoS Recommendtions
+These updates should make workloads more reliable, and reduces the gap between Burstable and Guaranteed QoS recommendations. Please review the [Quality of Service](https://insights.docs.fairwinds.com/first-steps/cost-efficiency/#quality-of-service-qos-recommendations) page to see the updated formulas.
 
 ## 14.9.3
 * Fix for empty Resources Per Pod graph on costs page
