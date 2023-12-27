@@ -10,6 +10,26 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 14.12.1
+### Updated CI/CD to `5.3`
+This includes a change that filters out Action Items unrelated to files changed in your pull request or branch.
+
+### Bug Fixes
+* OPA policy template search is fixed
+* Removed duplicate API calls
+
+## 14.12.0
+### Bug Fixes
+* Fix for space key in repository search box
+* Fix for org switcher
+* Change to how missing filenames are handled in CI/CD
+
+## 14.11.1
+### Bug Fixes
+* Fix for issues using labels for filtering the Costs page
+* Added eventType column to Action Item CSV export
+* Styling fixes on the Costs page
+
 ## 14.11.0
 ### Bug Fixes
 * Fix for cluster filtering on Action Items page
