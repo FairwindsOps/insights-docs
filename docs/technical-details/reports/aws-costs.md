@@ -62,7 +62,7 @@ awscosts:
 
 * **database**: the database created on AWS Glue Data
 * **table**: aws cur report name
-* **tagkey**: tag key is the tag used on EC2 to indicate that it's a cluster node. Ex: KubernetesCluster (in case of Kops). The column name in Athena has a prefix resource_tags_user_. Also AWS applies pascal camel to split 
+* **tagkey**: tag key is the tag used on EC2 to indicate that it's a cluster node. Ex: KubernetesCluster (in case of Kops). The column name in Athena has a prefix resource_tags_user_. Also AWS applies pascal camel to split the tag name. In this example the column in Athena will be: resource_tags_user_kubernetes_cluster.
 * **tagprefix**: tagprefix is a prefix AWS adds to your tag in order to create Athena column. In this example the column in Athena will be: resource_tags_user_kubernetes_cluster.
 Ex: KubernetesCluster (in case of Kops). The column name in Athena has a prefix resource_tags_user_. 
 Also AWS applies pascal camel to split the tag name. In this example the column in Athena will be: resource_tags_user_kubernetes_cluster.
