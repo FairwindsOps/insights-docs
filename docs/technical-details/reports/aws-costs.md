@@ -68,6 +68,7 @@ E.g. if you are using the standard tag `aws:eks:cluster-name` from AWS EKS, the 
 ```yaml
 tagprefix = resource_tags_
 tagkey    = aws_eks_cluster_name
+```
 * **tagvalue**: the value associated to the tag for filtering. Ex: production, staging
 * **catalog**: default AWS Glue Catalog is AwsDataCatalog
 * **workgroup**: workgroup created on Athena to be used on querying
