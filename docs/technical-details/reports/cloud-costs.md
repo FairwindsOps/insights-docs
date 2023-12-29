@@ -53,6 +53,8 @@ cloudcosts:
   aws:  
     awsAccessKeyId: ''
     awsSecretAccessKey: ''
+    # tagprefix is prefix AWS CUR adds to your tag key to create a new column at Athena column
+    tagprefix: 'resource_tags_user_'  # if not user custom tag, value should be resource_tags_
     region: us-east-1
     database: athena_cur_database
     table: fairwinds_insights_cur_report
@@ -63,6 +65,14 @@ cloudcosts:
 * **database**: the database created on AWS Glue Data
 * **table**: aws cur report name
 * **tagkey**: tag key is the tag used on EC2 to indicate that it's a cluster node. Ex: KubernetesCluster (in case of Kops). The column name in Athena has a prefix resource_tags_user_. Also AWS applies pascal camel to split the tag name. In this example the column in Athena will be: resource_tags_user_kubernetes_cluster.
+* **tagprefix**: tagprefix is a prefix AWS adds to your tag in order to create Athena column.
+Ex: KubernetesCluster (in case of Kops). The column name in Athena has a prefix resource_tags_user_. 
+Also AWS applies pascal camel to split the tag name. In this example the column in Athena will be: resource_tags_user_kubernetes_cluster.
+In the case you are using a tag provided by AWS the prefix can be a little bit different like resource_tags_.
+Ex: if you are using standard tag aws:eks:cluster-name from AWS EKS you need to set:
+tagprefix = resource_tags_
+tagkey    = aws_eks_cluster_name
+Athen column in this case is resource_tags_aws_eks_cluster_name
 * **tagvalue**: the value associated to the tag for filtering. Ex: production, staging
 * **catalog**: default AWS Glue Catalog is AwsDataCatalog
 * **workgroup**: workgroup created on Athena to be used on querying
