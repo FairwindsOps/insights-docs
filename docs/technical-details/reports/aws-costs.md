@@ -66,8 +66,8 @@ awscosts:
 * **tagprefix**: tagprefix is a prefix AWS adds to your tag in order to create an Athena column. Default is `resource_tags_user_`, but may change for different circumstances.
 E.g. if you are using the standard tag `aws:eks:cluster-name` from AWS EKS, the Athena column will become `resource_tags_aws_eks_cluster_name`, and you need to set:
 ```yaml
-tagprefix = resource_tags_
-tagkey    = aws_eks_cluster_name
+tagprefix: resource_tags_
+tagkey: aws_eks_cluster_name
 ```
 * **tagvalue**: the value associated to the tag for filtering. Ex: production, staging
 * **catalog**: default AWS Glue Catalog is AwsDataCatalog
