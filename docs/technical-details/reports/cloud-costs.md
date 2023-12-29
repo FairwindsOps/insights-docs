@@ -72,7 +72,7 @@ In the case you are using a tag provided by AWS the prefix can be a little bit d
 Ex: if you are using standard tag aws:eks:cluster-name from AWS EKS you need to set:
 tagprefix = resource_tags_
 tagkey    = aws_eks_cluster_name
-Athen column in this case is resource_tags_aws_eks_cluster_name
+Athena column in this case is resource_tags_aws_eks_cluster_name
 * **tagvalue**: the value associated to the tag for filtering. Ex: production, staging
 * **catalog**: default AWS Glue Catalog is AwsDataCatalog
 * **workgroup**: workgroup created on Athena to be used on querying
