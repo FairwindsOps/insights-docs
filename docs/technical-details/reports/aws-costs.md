@@ -68,8 +68,10 @@ Tags with special characters must be replaced with underscores. Example: `aws:ek
 Ex: `KubernetesCluster` (in case of Kops). The column name in Athena has a prefix resource_tags_user_. 
 In the case you are using a tag provided by AWS the prefix can be a little bit different like resource_tags_.
 Ex: if you are using standard tag `aws:eks:cluster-name` from AWS EKS you need to set:
+```yaml
 tagprefix = resource_tags_
 tagkey    = aws_eks_cluster_name
+```
 Athena column in this case is resource_tags_aws_eks_cluster_name
 * **tagvalue**: the value associated to the tag for filtering. Ex: production, staging
 * **catalog**: default AWS Glue Catalog is AwsDataCatalog
