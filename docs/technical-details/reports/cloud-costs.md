@@ -1,11 +1,11 @@
-# Cloud Costs Report (BETA)
+# Cloud Costs Report
 The Cloud Costs report syncs your Cloud billing data to Insights so
 it can know precisely what you're spending on nodes and use that
 information to infer accurate workload costs.
 
 We currently support AWS and GCP (Standard and Autopilot).
 
-## AWS Configuration:
+## AWS Billing Integration Configuration
 
 The AWS Costs Report is built on [AWS costs and Usage Report](https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html).
 
@@ -25,7 +25,7 @@ This requires some setup:
 For convenience, we've provided some Terraform which can create the necessary AWS
 resources below.
 
-### Agent Configuration
+### Cloud Costs Agent Configuration (AWS)
 Once the AWS resources are in place, you'll need to configure the
 AWS agent to start uploading your cost data. Your `values.yaml` should include
 the section below, replacing any values with your own.
@@ -82,7 +82,7 @@ Athena column in this case is resource_tags_aws_eks_cluster_name
 ### Terraform
 Note that you may have to apply the files below twice in order to get them to sync fully.
 
-### provider.tf
+#### provider.tf
 ```terraform
 provider "aws" {
   region  = "us-east-1"
@@ -90,7 +90,7 @@ provider "aws" {
 }
 ```
 
-### variables.tf
+#### variables.tf
 ```terraform
 variable "s3_bucket_name" {
   type    = string
@@ -110,7 +110,7 @@ variable "aws_region" {
 }
 ```
 
-### iam.tf
+#### iam.tf
 ```terraform
 resource "aws_iam_role" "crawler-service-role" {
   name               = "crawler-service-role"
@@ -244,7 +244,7 @@ EOF
 }
 ```
 
-### main.tf
+#### main.tf
 ```terraform
 resource "aws_s3_bucket" "cur_bucket" {
   bucket = var.s3_bucket_name
@@ -307,7 +307,7 @@ resource "aws_athena_workgroup" "cur_athena_workgroup" {
 }
 ```
 
-## Google Cloud Provider (GCP) Configuration:
+## Google Cloud Provider (GCP) Configuration (BETA)
 
 The GCP Report is built on [Google Cloud Billing](https://cloud.google.com/billing/docs/how-to/export-data-bigquery).
 
@@ -320,11 +320,11 @@ The first step is setting up Google Cloud Billing to export to BigQuery. To do t
 All steps are described in detail at the link below:
 [Set up Cloud Billing data export to BigQuery](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-setup)
 
-We are going to use table `<projectname>.<datasetName>.gcp_billing_export_resource_v1_<BILLING_ACCOUNT_ID>` which should be created after following the steps above.
+Fairwinds will use this table, which is created once you execute the above steps: `<projectname>.<datasetName>.gcp_billing_export_resource_v1_<BILLING_ACCOUNT_ID>` 
 
-It may takes few days for Google to ingest all the billing data into BigQuery table. 
+> NOTE: It may takes few days for Google to ingest all the billing data into BigQuery table. 
 
-### Create service account to run BigQuery:
+### Create service account to run BigQuery
 In GCP:
 1. Go to IAM & Admin > Select Service Account
 2. Click Create Service Account
@@ -347,7 +347,7 @@ gcloud container node-pools update your-pool \
     --workload-metadata=GKE_METADATA
 ```
 
-6. Bind your GCP service account and Kubernetes cloudcosts service account:
+6. Bind your GCP service account and Kubernetes cloud costs service account:
 [Use Workload Identity ](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity)
 Example:
 ```bash
@@ -356,7 +356,7 @@ gcloud iam service-accounts add-iam-policy-binding {service-account-name}@{your-
     --member "serviceAccount:{your-project}.svc.id.goog[insights-agent/insights-agent-cloudcosts]"
 ```
 
-7. Annotate the insights-agent-cloudcosts service account:
+7. Annotate the `insights-agent-cloudcosts` service account:
 Set the annotation in the [values.yaml](https://github.com/FairwindsOps/charts/blob/master/stable/insights-agent/values.yaml#L443-L444)
 Example:
 ```yaml
@@ -366,10 +366,35 @@ cloudcosts:
       iam.gke.io/gcp-service-account: {service-account-name}@{your-project}.iam.gserviceaccount.com
 ```
 
-### Support for GKE Autopilot
+### Cloud Costs Agent Configuration (GCP)
+Once the GCP resources are in place, you'll need to configure the
+`cloudcosts` report in the Insights Agent to start uploading your cost data. Your `values.yaml` should include
+the section below, replacing any values with your own.
+
+```yaml
+cloudcosts:
+  enabled: true
+  provider: gcp
+  tagvalue: "my-gcp-cluster"
+  gcp:
+    projectname: "my-project"
+    dataset: "insightscosts"
+    billingaccount: "123456-777AAA-123456"      
+```
+
+* **provider**: provider must be `gcp`
+* **tagkey**: optional. `tagkey` is the label name used on GCP to indicate that it's a cluster node. Default value is "goog-k8s-cluster-name".
+* **tagvalue**: the value associated to the cluster name label for filtering. Ex: production, staging
+* **projectname**: GCP project name
+* **dataset**: dataset name you provided when you setup your BigQuery for Billing
+* **billingaccount**: your Google Billing Account ID that you can get from Billing console, which is used to get the table name for BigQuery. Example: "1A2B3C-4D5E6F-7G8H9I"
+
+## Prometheus Support for GKE Autopilot
 Insights requires a Prometheus server to collect metrics for workload usage. Typically, this is a Prometheus server that is already running in a Kubernetes cluster, or a Prometheus server that is installed directly via the Insights Agent Helm Chart.
 
-In GKE Autopilot, users are required to use the GCP Managed Prometheus offering to collect the require container metrics. GCP Managed Prometheus may increase your overall cloud costs and requires additional configuration for the Insights Agent to read those metrics:
+In GKE Autopilot, users are required to use the GCP Managed Prometheus offering to collect the require container metrics. GCP Managed Prometheus may increase your overall GCP spend and requires additional configuration for the Insights Agent to read those metrics. 
+
+Follow the below steps for setting up GCP Managed Prometheus and connecting it to Fairwinds Insights.
 
 #### 1. Collect Kubelet/cAdvisor metrics
 
@@ -401,27 +426,3 @@ prometheus-metrics:
   address: "http://frontend.<frontend namespace>.svc:9090"
 ```
 >NOTE: `<frontend namespace>` is the namespace where the Prometheus frontend UI has been installed.
-
-
-## Cloud Costs Agent Configuration
-Once the GCP resources are in place, you'll need to configure the
-`cloudcosts` report in the Insights Agent to start uploading your cost data. Your `values.yaml` should include
-the section below, replacing any values with your own.
-
-```yaml
-cloudcosts:
-  enabled: true
-  provider: gcp
-  tagvalue: "my-gcp-cluster"
-  gcp:
-    projectname: "my-project"
-    dataset: "insightscosts"
-    billingaccount: "123456-777AAA-123456"      
-```
-
-* **provider**: provider must be `gcp`
-* **tagkey**: optional. `tagkey` is the label name used on GCP to indicate that it's a cluster node. Default value is "goog-k8s-cluster-name".
-* **tagvalue**: the value associated to the cluster name label for filtering. Ex: production, staging
-* **projectname**: GCP project name
-* **dataset**: dataset name you provided when you setup your BigQuery for Billing
-* **billingaccount**: your Google Billing Account ID that you can get from Billing console, which is used to get the table name for BigQuery. Example: "1A2B3C-4D5E6F-7G8H9I"
