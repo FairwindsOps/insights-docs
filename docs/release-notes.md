@@ -10,6 +10,63 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 14.13.4
+### Bug Fixex and Enhancements
+* Fix for links from action items to costs page
+* Better GitHub comments
+* Replaced `metadataAndNameMismatched` policy on the policies page with updated version
+
+## 14.13.3
+### Bug Fixes and Enhancements
+* Fix for date range on costs page
+
+## 14.13.2
+### Bug Fixes and Enhancements
+* Fix for container selector on costs page
+* Improved speed when filtering by labels on costs page
+
+## 14.13.1
+### Bug Fixes and Enhancements
+* Fix for table borders
+* Better error message for creating duplicate saved views
+
+## 14.13.0
+### Bug Fixes and Enhancements
+* Fix for "clear" button on costs page
+
+### Costs: Saved Views
+Users can now save any set of filters and aggregators on the Costs page as a "Saved View". This
+allows you to easily revisit the same metrics at a later time, or share them with coworkers.
+
+## 14.12.2
+### Bug Fixes and Enhancements
+* Fix for dates on the costs page
+* Redirect user after initial cluster install
+* Fix for blank repository pages
+* Fix for precision in workload cost settings
+
+## 14.12.1
+### Bug Fixes and Enhancements
+* Updated CI image version
+* Fixed OPA policy template search
+* Removed duplicate API calls
+* Fixed links on report history page
+
+
+## 14.12.0
+### Bug Fixes and Enhancements
+* Allow use of space key in CI scan search box
+* Fix org switcher on home page
+* Changed fallback filename of "polaris.json" for CI scan findings with unknown filenames
+
+## 14.11.1
+### Bug Fixes and Enhancements
+* Fix for label filtering in the costs page
+* Fixed an issue when retrieving historical report data
+* Added `eventType` to the Action Items CSV export
+* UI fixes for costs page
+* Added ability to filter for modified files in CI scans
+
 ## 14.11.0
 ### Bug Fixes
 * Fix for cluster filtering on Action Items page
