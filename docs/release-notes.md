@@ -11,9 +11,8 @@ sidebarDepth: 1
 # Release Notes
 
 ## 14.13.4
-### Bug Fixex and Enhancements
+### Bug Fixes and Enhancements
 * Fix for links from action items to costs page
-* Better GitHub comments
 * Replaced `metadataAndNameMismatched` policy on the policies page with updated version
 
 ## 14.13.3
@@ -58,6 +57,11 @@ allows you to easily revisit the same metrics at a later time, or share them wit
 * Allow use of space key in CI scan search box
 * Fix org switcher on home page
 * Changed fallback filename of "polaris.json" for CI scan findings with unknown filenames
+
+### Repository scanning now only scans changed files on Pull Request
+Fairwinds Insights has improved our CI/CD and Auto-Scan feature to scan only changed files as part of pull requests, rather than scanning all infrastructure-as-code (IaC) files within the entire repository. This will improve the developer experience so engineers only see findings for the files they have changed and responsible for.
+
+For context, we've learned that oftentimes an IaC repo may contain files for many different teams and users. As a result, the developers don't want feedback for things they aren't able to fix. By only scanning changed files, developers get timely, actionable, and less overwhelming feedback.
 
 ## 14.11.1
 ### Bug Fixes and Enhancements
