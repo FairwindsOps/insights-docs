@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 15.0.0
+### Bug Fixes and Enhancements
+* Links to Action Items page now appear in Costs page
+* Fix for cluster switcher when on admission controller page
+* Fix for label aggregators in saved views
+* Fix for unsaved pod labels
+
 ## 14.13.4
 ### Bug Fixes and Enhancements
 * Fix for links from action items to costs page
