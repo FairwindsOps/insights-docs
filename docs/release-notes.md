@@ -10,6 +10,74 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 15.0.0
+### Bug Fixes and Enhancements
+* Links to Action Items page now appear in Costs page
+* Fix for cluster switcher when on admission controller page
+* Fix for label aggregators in saved views
+* Fix for unsaved pod labels
+
+## 14.13.4
+### Bug Fixes and Enhancements
+* Fix for links from action items to costs page
+* Replaced `metadataAndNameMismatched` policy on the policies page with updated version
+
+## 14.13.3
+### Bug Fixes and Enhancements
+* Fix for date range on costs page
+
+## 14.13.2
+### Bug Fixes and Enhancements
+* Fix for container selector on costs page
+* Improved speed when filtering by labels on costs page
+
+## 14.13.1
+### Bug Fixes and Enhancements
+* Fix for table borders
+* Better error message for creating duplicate saved views
+
+## 14.13.0
+### Bug Fixes and Enhancements
+* Fix for "clear" button on costs page
+
+### Costs: Saved Views
+Users can now save any set of filters and aggregators on the Costs page as a "Saved View". This
+allows you to easily revisit the same metrics at a later time, or share them with coworkers.
+
+## 14.12.2
+### Bug Fixes and Enhancements
+* Fix for dates on the costs page
+* Redirect user after initial cluster install
+* Fix for blank repository pages
+* Fix for precision in workload cost settings
+
+## 14.12.1
+### Bug Fixes and Enhancements
+* Updated CI image version
+* Fixed OPA policy template search
+* Removed duplicate API calls
+* Fixed links on report history page
+
+
+## 14.12.0
+### Bug Fixes and Enhancements
+* Allow use of space key in CI scan search box
+* Fix org switcher on home page
+* Changed fallback filename of "polaris.json" for CI scan findings with unknown filenames
+
+### Repository scanning now only scans changed files on Pull Request
+Fairwinds Insights has improved our CI/CD and Auto-Scan feature to scan only changed files as part of pull requests, rather than scanning all infrastructure-as-code (IaC) files within the entire repository. This will improve the developer experience so engineers only see findings for the files they have changed and responsible for.
+
+For context, we've learned that oftentimes an IaC repo may contain files for many different teams and users. As a result, the developers don't want feedback for things they aren't able to fix. By only scanning changed files, developers get timely, actionable, and less overwhelming feedback.
+
+## 14.11.1
+### Bug Fixes and Enhancements
+* Fix for label filtering in the costs page
+* Fixed an issue when retrieving historical report data
+* Added `eventType` to the Action Items CSV export
+* UI fixes for costs page
+* Added ability to filter for modified files in CI scans
+
 ## 14.11.0
 ### Bug Fixes
 * Fix for cluster filtering on Action Items page

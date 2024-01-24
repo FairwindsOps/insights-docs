@@ -86,4 +86,11 @@ prometheus-metrics:
 ```
 where <frontend namespace> is the namespace where the frontend has ben installed.
 
+## Troubleshooting
+If the current resource values of your workloads are missing or reporting as 'unset' in the Efficency section and you are instaling your own prometheus instance, it's likely that kube-state-metrics is not installed. 
+
+If you are installing with the kube-prometheus-stack chart, kube-state-metrics is enabled by default and is controlled with the top level key [kubeStateMetrics.enabled: true](https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack?modal=values&path=kubeStateMetrics.enabled)
+
+It can also be installed via the dedicated kube-state-metrics chart here: 
+[Install kube-state-metrics](https://artifacthub.io/packages/helm/prometheus-community/kube-state-metrics)
 

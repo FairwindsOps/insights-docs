@@ -19,7 +19,7 @@ Some are less severe, like an attempt to run interactive commands by a system
 ## Setup
 ### Install Falco
 First, you'll need to install Falco in your cluster. We recommend using these values when installing
-via the [Helm chart](https://github.com/falcosecurity/charts/tree/master/falco)*:
+via the [Falco Helm chart](https://github.com/falcosecurity/charts/tree/master/charts/falco)*:
 ```yaml
 resources:
   requests:
