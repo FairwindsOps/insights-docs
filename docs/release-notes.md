@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 15.0.1
+### Bug Fixes and Enhancements
+* Fix for saved views when a cluster is selected
+* Fix for incorrect "last scanned" date in vulnerabilities
+* Fix an issue with cluster deletion
+
 ## 15.0.0
 ### Bug Fixes and Enhancements
 * Links to Action Items page now appear in Costs page
