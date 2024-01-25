@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 15.0.2
+### Bug Fixes and Enhancements
+* Speed improvements for costs backend
+
 ## 15.0.1
 ### Bug Fixes and Enhancements
 * Fix for saved views when a cluster is selected
