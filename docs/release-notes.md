@@ -21,6 +21,16 @@ sidebarDepth: 1
 * Removed guided tour for first-time users
 * Fix for mismatch between daily and hourly data in Costs page 
 
+## 15.0.2
+### Bug Fixes and Enhancements
+* Speed improvements for costs backend
+
+## 15.0.1
+### Bug Fixes and Enhancements
+* Fix for saved views when a cluster is selected
+* Fix for incorrect "last scanned" date in vulnerabilities
+* Fix an issue with cluster deletion
+
 ## 15.0.0
 ### Bug Fixes and Enhancements
 * Links to Action Items page now appear in Costs page
