@@ -10,6 +10,17 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 15.1.1
+### Bug Fixes and Enhancements
+* Fix for freeze and repeated tooltip items on the Costs page
+* Admission settings now show correct default for passive mode
+
+## 15.1.0
+### Bug Fixes and Enhancements
+* Fix for copying links in the Costs page
+* Removed guided tour for first-time users
+* Fix for mismatch between daily and hourly data in Costs page 
+
 ## 15.0.2
 ### Bug Fixes and Enhancements
 * Speed improvements for costs backend
