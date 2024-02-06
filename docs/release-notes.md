@@ -10,6 +10,199 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 15.1.1
+### Bug Fixes and Enhancements
+* Fix for freeze and repeated tooltip items on the Costs page
+* Admission settings now show correct default for passive mode
+
+## 15.1.0
+### Bug Fixes and Enhancements
+* Fix for copying links in the Costs page
+* Removed guided tour for first-time users
+* Fix for mismatch between daily and hourly data in Costs page 
+
+## 15.0.2
+### Bug Fixes and Enhancements
+* Speed improvements for costs backend
+
+## 15.0.1
+### Bug Fixes and Enhancements
+* Fix for saved views when a cluster is selected
+* Fix for incorrect "last scanned" date in vulnerabilities
+* Fix an issue with cluster deletion
+
+## 15.0.0
+### Bug Fixes and Enhancements
+* Links to Action Items page now appear in Costs page
+* Fix for cluster switcher when on admission controller page
+* Fix for label aggregators in saved views
+* Fix for unsaved pod labels
+
+## 14.13.4
+### Bug Fixes and Enhancements
+* Fix for links from action items to costs page
+* Replaced `metadataAndNameMismatched` policy on the policies page with updated version
+
+## 14.13.3
+### Bug Fixes and Enhancements
+* Fix for date range on costs page
+
+## 14.13.2
+### Bug Fixes and Enhancements
+* Fix for container selector on costs page
+* Improved speed when filtering by labels on costs page
+
+## 14.13.1
+### Bug Fixes and Enhancements
+* Fix for table borders
+* Better error message for creating duplicate saved views
+
+## 14.13.0
+### Bug Fixes and Enhancements
+* Fix for "clear" button on costs page
+
+### Costs: Saved Views
+Users can now save any set of filters and aggregators on the Costs page as a "Saved View". This
+allows you to easily revisit the same metrics at a later time, or share them with coworkers.
+
+## 14.12.2
+### Bug Fixes and Enhancements
+* Fix for dates on the costs page
+* Redirect user after initial cluster install
+* Fix for blank repository pages
+* Fix for precision in workload cost settings
+
+## 14.12.1
+### Bug Fixes and Enhancements
+* Updated CI image version
+* Fixed OPA policy template search
+* Removed duplicate API calls
+* Fixed links on report history page
+
+
+## 14.12.0
+### Bug Fixes and Enhancements
+* Allow use of space key in CI scan search box
+* Fix org switcher on home page
+* Changed fallback filename of "polaris.json" for CI scan findings with unknown filenames
+
+### Repository scanning now only scans changed files on Pull Request
+Fairwinds Insights has improved our CI/CD and Auto-Scan feature to scan only changed files as part of pull requests, rather than scanning all infrastructure-as-code (IaC) files within the entire repository. This will improve the developer experience so engineers only see findings for the files they have changed and responsible for.
+
+For context, we've learned that oftentimes an IaC repo may contain files for many different teams and users. As a result, the developers don't want feedback for things they aren't able to fix. By only scanning changed files, developers get timely, actionable, and less overwhelming feedback.
+
+## 14.11.1
+### Bug Fixes and Enhancements
+* Fix for label filtering in the costs page
+* Fixed an issue when retrieving historical report data
+* Added `eventType` to the Action Items CSV export
+* UI fixes for costs page
+* Added ability to filter for modified files in CI scans
+
+## 14.11.0
+### Bug Fixes
+* Fix for cluster filtering on Action Items page
+
+### Redesigned GitHub Comments
+The GitHub Comment generated after Repo Scans has been redesigned to improve developer experience. Blocking issues are now highlighted at the top of the comment so developers know exactly what is causing a PR to fail. Additionally, developers can see which of their Action Items can be auto-fixed with Fairwinds Insights' Automated Fix PR functionality.
+
+## 14.10.0
+### Link to Action Items from Resources Per Pod graph
+Users on the Efficiency > Cost page can now quickly see the relevant Action Items for that workload when reviewing the Resources per Pod graph. This makes it easier to assign Action Items and create tickets for specific resource recommendations.
+
+### Updates Burstable and Limited QoS Recommendtions
+These updates should make workloads more reliable, and reduces the gap between Burstable and Guaranteed QoS recommendations. Please review the [Quality of Service](https://insights.docs.fairwinds.com/first-steps/cost-efficiency/#quality-of-service-qos-recommendations) page to see the updated formulas.
+
+## 14.9.3
+* Fix for empty Resources Per Pod graph on costs page
+
+## 14.9.2
+* Fix for password reset
+* Fix for vulnerabilities links
+* Fix for Slack digest errors
+* Fix for network and storage costs
+
+## 14.9.1
+* Fix for Action Items Reporting print view
+* Fix for tooltip on capacity page
+
+## 14.9.0
+* Improvements to costs UI, including a consolidated control row
+
+## 14.8.4
+* Minor bugfixes
+
+## 14.8.3
+* Minor bugfixes
+
+## 14.8.2
+* Minor bugfixes
+
+## 14.8.1
+* Fix for deleting Action Items when a report is uninstalled
+* Updates to automation rule library
+
+## 14.8.0
+* Improvements to Action Item lifecycle, including deletion
+
+## 14.7.17
+* Minor bugfixes
+
+## 14.7.16
+* Minor bugfixes
+
+## 14.7.15
+* Minor bugfixes
+
+## 14.7.14
+* Minor bugfixes
+
+## 14.7.13
+* Minor bugfixes
+
+## 14.7.12
+* Minor bugfixes
+
+## 14.7.11
+* `.git` suffix is now removed from repository names
+
+## 14.7.10
+* Delete action items when a report is disabled
+* Fix issue with Polaris severities
+
+## 14.7.9
+* Fix for costs when a cluster is intermittently available
+* Fix for Action Item severities
+
+## 14.7.8
+* Minor bugfixes
+
+## 14.7.7
+* Minor bugfixes
+
+## 14.7.6
+* Ensure token is visible on "add repository" modal
+* Added a last login column to the team management page
+* Added title attributes to some fields on the Action Items table
+* Better handling of Pluto findings when APIs are removed entirely
+* Fix for Action Item severities
+
+## 14.7.5
+* Fix for node names on cost settings page
+* Added details for some falco checks
+
+## 14.7.4
+* Minor bugfixes
+
+## 14.7.3
+* Minor bugfixes
+
+## 14.7.2
+* Minor bugfixes
+
+## 14.7.1
+* Minor bugfixes
+
 ## 14.7.0
 ### Bug Fixes and Improvements
 * Updated the move icon throughout Insights

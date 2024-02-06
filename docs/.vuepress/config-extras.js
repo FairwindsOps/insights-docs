@@ -46,6 +46,7 @@ module.exports = {
             title: 'Agent',
             children: [
               'technical-details/agent/agent-installation-rbac',
+              'technical-details/agent/collecting-diagnostics',
             ],
           },
           {
@@ -80,6 +81,7 @@ module.exports = {
               'technical-details/reports/kyverno',
               'technical-details/reports/supported-checks',
               'technical-details/reports/new',
+              'technical-details/reports/cloud-costs',
             ],
           },
           {
