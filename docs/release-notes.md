@@ -10,6 +10,20 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 15.1.3
+### Bug Fixes and Enhancements
+* Minor backend fixes
+
+## 15.1.2
+### Admission Request Resolutions
+Admission Request Action Items can now be marked as resolved in the UI.
+If an issue is marked "will not fix" or "working as intended", that Action Item
+will no longer block that workload going forward. You can also use "snooze" to
+stop blocking for a set period of time.
+
+### Bug Fixes and Enhancements
+* Fix links from Costs to Action Items page
+
 ## 15.1.1
 ### Bug Fixes and Enhancements
 * Fix for freeze and repeated tooltip items on the Costs page
