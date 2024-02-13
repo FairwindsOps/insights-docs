@@ -10,6 +10,17 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 15.2.0
+### Aggregated Action Items
+There is a new **Summary** tab in the Action Items page, which can show you a breakdown of your action items
+by cluster, namespace, report type, or other dimensions. This is a great way to see where you have the
+most issues and where you're doing well.
+
+### Bug Fixes and Enhancements
+* Added description and remediation for `metadata.name` Polaris check
+* Better logic to check if reports are enabled
+* Fix UI crash on Repositories page
+
 ## 15.1.3
 ### Bug Fixes and Enhancements
 * Minor backend fixes
