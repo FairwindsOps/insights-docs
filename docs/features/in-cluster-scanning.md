@@ -101,6 +101,23 @@ These options will be reflected in the `helm install` command you'll see when yo
 in the `Install Hub`.
 Be sure to run the new command after making any changes here.
 
+## Reporting
+Insights tracks Action Item remediation progress over-time under the `Action Items > Reports` page. Insights will tally Action Item counts for the following dimensions:
+- Introduced: The number of unique Action Items reported as 'new' for that date window
+- Fixed: The number of Action Items that were verified as fixed and marked as `Fixed=True`. A fixed Action Item is when the policy violation is no longer triggered and the Kubernetes resource continues to persist in the cluster.
+- Deleted: The number of Action Items that have been deleted from the system because the Kubernetes resource no longer exists in the cluster.
+- Open: The number of Action Items that remained in the cluster for that given month
+- Manually Resolved: The number of Action Items that were manually set as `Working as intendend` or `Won't fix`.
+
+### Reporting Fixed and Deleted Action Items
+The below table outlines the logic Insights follows for deleting Action Items or marking them as "Fixed":
+|                                             | **Resource no longer exists in cluster** | **Resource is running in cluster**                                                                                             |
+|---------------------------------------------|------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| **Action Item is Fixed (Fixed=True)**       | Action Item will get deleted*            | Action Item will be reported with these values <br>- `Fixed=True` <br> - `Last Reported` = date when Fixed                              |
+| **Action Item is Not Fixed  (Fixed=False)** | Action Item will get deleted*             | Action Item will be reported with these values <br> - `Fixed=False` <br> - `Last Reported` = date of most recent report (usually < 1 hr) |
+
+\* Action Item deletion may take up to 1 hour after the resource is removed from the cluster.
+
 ## Troubleshooting
 ### Debugging
 If you suspect something is wrong with the Insights Agent installation, you can use `kubectl` to
