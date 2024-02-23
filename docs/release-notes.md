@@ -9,6 +9,15 @@ meta:
 sidebarDepth: 1
 ---
 # Release Notes
+## 15.3.1
+### CI resolutions
+You can now resolve Action Items associated with a particular Infrastructure as Code repository.
+This will prevent the Action Item from showing up in future scans. You can also "snooze" an
+Action Item to mute it for a period of time.
+
+### Bug Fixes and Enhancements
+* Performance improvements for Admission page
+
 ## 15.3.0
 ### App Groups
 You can now create logical groupings of Kubernetes resources on the App Groups page. App Groups
