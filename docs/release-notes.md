@@ -9,6 +9,30 @@ meta:
 sidebarDepth: 1
 ---
 # Release Notes
+## 15.3.0
+### App Groups
+You can now create logical groupings of Kubernetes resources on the App Groups page. App Groups
+can select resources by name, namespace, label, kind, cluster, or any combination of the above.
+You can also use asterisks, like `kube-*`, to match a prefix.
+
+We expect App Groups to become integrated into other features, like policies, costs, and team
+management, in the near future.
+
+### Admission Controller UI
+We've moved the Admission Controller UI to the main navigation. You can also now
+view admission requests across all clusters, instead of focusing on one cluster at a time.
+
+### Clusters Page improvements
+We've redesigned the Clusters page to show the current Kubernetes version, as well
+as agent and admission controller status.
+
+### Efficiency Scores
+The Costs UI has a new column that displays efficiency scores for each workload. These
+scores tell you how optimized a workload is, regardless of its overall scale.
+
+## 15.2.1
+### Bug Fixes and Enhancements
+* Fixed an issue with filenames in tfsec findings
 
 ## 15.2.0
 ### Aggregated Action Items
