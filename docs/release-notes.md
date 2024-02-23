@@ -59,6 +59,8 @@ stop blocking for a set period of time.
 ### Bug Fixes and Enhancements
 * Fix links from Costs to Action Items page
 
+*Please see the [CHANGELOG for the Fairwinds Insights Agent Helm Chart](https://github.com/FairwindsOps/charts/blob/master/stable/insights-agent/CHANGELOG.md) for additional release notes.*
+
 ## 15.1.1
 ### Bug Fixes and Enhancements
 * Fix for freeze and repeated tooltip items on the Costs page
