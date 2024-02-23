@@ -61,30 +61,42 @@ Prometheus Collector contains CPU and Memory usage for different workloads
 ```
 
 ## Running on GKE Autopilot
-GKE Autopilot makes it hard to allow a self-installed Prometheus server, however it does have GCP Managed Prometheus set up by default. GCP Managed Prometheus can provide the metrics that are required, and prometheus-collector can retrieve metrics from GCP Managed Prometheus, with some additional configuration.
-1. CollectKubelet/cAdvisor metrics
-GCP Managed Prometheus must be configured to scrape the Kubelet for Kubelet and cAdvisor metrics. This can be set up by editing the OperatorConfig resource as documented here:
+Insights requires a Prometheus server to collect metrics for workload usage. Typically, this is a Prometheus server that is already running in a Kubernetes cluster, or a Prometheus server that is installed directly via the Insights Agent Helm Chart.
+
+In GKE Autopilot, users are required to use the GCP Managed Prometheus offering to collect the require container metrics. GCP Managed Prometheus may increase your overall GCP spend and requires additional configuration for the Insights Agent to read those metrics. 
+
+Follow the below steps for setting up GCP Managed Prometheus and connecting it to Fairwinds Insights.
+
+### 1. Collect Kubelet/cAdvisor metrics
+
+GCP Managed Prometheus must be configured to scrape the Kubelet for Kubelet and cAdvisor metrics. This can be setup by editing the OperatorConfig resource as documented here:
 [Install kubelet-cadvisor](https://cloud.google.com/stackdriver/docs/managed-prometheus/exporters/kubelet-cadvisor)
 
-2. Install kube-state-metrics
-GCP Managed Prometheus needs a Kube State Metrics instance installed in order to get metrics from the Kubernetes API. Use the configuration in the "Install Kube State Metrics" section at link below to set this up. install Kube State Metrics. You only need to use this part of the document, you don't need the "Define rules and alerts" section.
-[Configure kubec state metrics](https://cloud.google.com/stackdriver/docs/managed-prometheus/exporters/kube_state_metrics#install-exporter)
+### 2. Install `kube-state-metrics`
 
-3. Install the GCP Managed Prometheus frontend
-Many GCP APIs require OAuth 2.0. The prometheus-collector requires an "authentication proxy" to get metrics from GCP Managed Prometheus, and GCP provides a mechanism for this through their Prometheus frontend UI deployment. This section will outline the steps in this document that are needed to set this up.
-First, you will need to create Google and Kubernetes service accounts, make sure they have the right permissions, and bind them together. Starting from Set up a namespace (if you would like a separate namespace for the frontend deployment), proceed through the Authorize the service account section.
-Next, do step 1. in the Deploy the frontend UI section, with one change to the YAML. In the Deployment spec, add the name of the Kubernetes serviceAccount created in the previous step to spec.spec.serviceAccount: <name of Kubernetes service account>. If you like, you can run the port-forward command in step 2. to verify that the frontend is able to connect and get metrics from GCP Managed Prometheus.
-[Configure a query interface for Google Cloud Managed Service for Prometheus](https://cloud.google.com/stackdriver/docs/managed-prometheus/query)
+GCP Managed Prometheus needs a Kube State Metrics instance installed in order to get metrics from the Kubernetes API. Use the configuration in the "Install Kube State Metrics" section at link below to set this up: 
+[Configure kube-state-metrics](https://cloud.google.com/stackdriver/docs/managed-prometheus/exporters/kube_state_metrics#install-exporter)
 
-4. Point prometheus-collector to the frontend
-This last step configures the prometheus-collector to get Prometheus metrics through the frontend service. Here are the Helm values to set in our values.yaml:
+### 3. Install the GCP Managed Prometheus frontend
+
+Many GCP APIs require OAuth 2.0. The Insights Agent requires an "authentication proxy" to get metrics from GCP Managed Prometheus, and GCP provides a mechanism for this via their Prometheus frontend UI deployment. 
+
+This section will outline the steps to set this up, and will refer to this guide: [Configure a query interface for Google Cloud Managed Service for Prometheus](https://cloud.google.com/stackdriver/docs/managed-prometheus/query):
+
+- You will need to create Google and Kubernetes service accounts, make sure they have the right permissions, and bind them together. In the guide referenced above, starting from [Set up a namespace](https://cloud.google.com/stackdriver/docs/managed-prometheus/query#namespace-setup) (if you would like a separate namespace for the frontend deployment), proceed through to the end of the [Authorize the service account section](https://cloud.google.com/stackdriver/docs/managed-prometheus/query#authorize-sa).
+
+- Now, do step 1 in the [Deploy the frontend UI](https://cloud.google.com/stackdriver/docs/managed-prometheus/query#promui-deploy) section, with one change to the YAML. In the Deployment spec, add the name of the Kubernetes serviceAccount created in the previous step to spec.spec.serviceAccount: <name of Kubernetes service account>. If you like, you can run the port-forward command in step 2. to verify that the frontend is able to connect and get metrics from GCP Managed Prometheus.
+
+### 4. Point prometheus-collector to the frontend
+
+This last step configures the prometheus-metrics report in the Insights Agent to get Prometheus metrics through the frontend service. Here are the Helm values to use in the Insights Agent `values.yaml`:
 ```yaml
 prometheus-metrics:
   enabled: true
   installPrometheusServer: false
   address: "http://frontend.<frontend namespace>.svc:9090"
 ```
-where <frontend namespace> is the namespace where the frontend has ben installed.
+>NOTE: `<frontend namespace>` is the namespace where the Prometheus frontend UI has been installed.
 
 ## Troubleshooting
 If the current resource values of your workloads are missing or reporting as 'unset' in the Efficency section and you are instaling your own prometheus instance, it's likely that kube-state-metrics is not installed. 

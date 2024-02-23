@@ -88,6 +88,13 @@ It's also good to let Insights gather usage data from either tool for 1-7 days b
 Without a good, representative baseline for actual resource usage, Insights won't be able to
 make confident recommendations.
 
+## Efficiency Score 
+Insights will report an "Efficiency Score" for each workload reported in the table on the `Efficiency > Costs` page.
+
+The formula for calculating the Efficiency Score is based on the timeframe the user selected. The score is cost-weighted and calculated as follows: `100 * Recommended Cost / Billed Cost`. 
+
+For example, a score under 100% generally means the workload is over-provisioned as the Recommended Cost is lower than the current Billed Cost, meaning there's opportunities to right-size the container to improve efficiency.
+
 ## Quality of Service (QoS) Recommendations
 When you install the `prometheus-metrics` report, Fairwinds Insights allows you to generate different resource request and limit recommendations based on your workload's behavior. 
 

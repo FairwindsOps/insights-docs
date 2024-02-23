@@ -279,10 +279,24 @@ checks:
 
 ## Managing Exceptions
 
-To configure a workload to bypass the Admission Controller, there are two possible options:
+### Manual Exceptions for Admission Controller Requests
+As a Platform Engineer, you may have come to rely on Admission Controllers to ensure deployments are consistently configured with your organization’s best practices. 
 
-### RECOMMENDED: Bypass Admission Controller using YAML Annotations
+From time to time, there are workloads that may need to bypass admission controller — for example, some workloads may not need replicas set, or other workloads don’t need CPU limits. 
 
+In these scenarios, you can Resolve or Snooze an Action Item within an admission request. 
+- A Resolution, such as "Won't fix" will carry forward for that particular workload, and means that Action Item will not be evaluated in the decision-logic for blocking an Admission Request. 
+- A Snoozed Resolution is time-based and temporary, meaning the exception you’re granting will go away after the Snooze period (e.g., 1 day).
+
+You can always "undo" a Resolution by navigating to the most recent admission request and selecting "Resolve > None" or "Snooze > Unsnooze". 
+
+### Automation Rules for Managing Exceptions
+
+Automation Rules provide fine-grained controls for manipulating automation rule logic. There are two common approaches:
+- Using annotations
+- Using allow list
+
+#### Bypass Admission Controller using an Annotation
 
 Add a specific annotation to that workload, and use an Automation Rule to bypass Admission Controller
 
@@ -336,7 +350,6 @@ if (exceptionList[ActionItem.EventType].length > 0) {
   ) {
     //Reduce severity and resolve this ActionItem so it can bypass the Admission Controller
     ActionItem.Severity = LOW_SEVERITY;
-    ActionItem.Resolution = WORKING_AS_INTENDED_RESOLUTION;
   }
 }
 ```
