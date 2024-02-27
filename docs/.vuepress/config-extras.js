@@ -37,6 +37,8 @@ module.exports = {
           'features/insights-cli',
           'features/integrations',
           'features/team-management',
+          'features/app-groups',
+          'features/policy-mappings',
         ],
       },
       {
