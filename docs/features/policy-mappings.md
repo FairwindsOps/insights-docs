@@ -78,4 +78,4 @@ spec:
 
 ## Managing Policy Mappings
 
-For managing Policy Mappings via CLI, refer to [insights CLI - Policy Mappings](/features/insights-cli/#policy-mappings).
+For managing Policy Mappings via CLI, refer to [insights CLI - Policy Mappings](/features/insights-cli#policy-mappings).

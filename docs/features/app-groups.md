@@ -63,4 +63,4 @@ spec:
 
 ## Managing App Groups
 
-For managing App Groups via CLI, refer to [insights CLI - App Groups](/features/insights-cli/#app-groups).
+For managing App Groups via CLI, refer to [insights CLI - App Groups](/features/insights-cli#app-groups).
