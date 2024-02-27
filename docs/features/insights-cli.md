@@ -130,8 +130,6 @@ will delete any Automation Rules from Insights that **do not exist** in your IaC
 
 ### App-Groups
 
-This feature is under active development and not yet released.
-
 You can use the Insights CLI to manage the configuration of App-Groups.
 
 Check out the [App-Groups](/features/app-groups) documentation on use cases for configuring App-Groups.
@@ -173,8 +171,6 @@ You can add the `--delete` flag to the `push app-groups` command, which
 will delete any App-Groups from Insights that **do not exist** in your IaC repository. Adding the `--dry-run` flag will explain which App-Groups would be deleted without making changes to Insights.
 
 ### Policy-Mappings
-
-This feature is under active development and not yet released.
 
 You can use the Insights CLI to manage the configuration of Policy-Mappings.
 
