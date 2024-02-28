@@ -162,13 +162,14 @@ insights-cli push app-groups
 ```
 
 #### Deleting App Groups from Insights
-By default, the Insights CLI will not _delete_ any App Groups from Insights. It will
-only add or update them.
-This means there might be some App Groups created in Insights that are not
-tracked in your Infrastructure-as-Code (IaC) repository.
+By default, the Insights CLI will not _delete_ any App Groups from Insights. It will only add or update them.
+This means there might be some App Groups created in Insights that are not tracked in your Infrastructure-as-Code (IaC) repository.
 
-You can add the `--delete` flag to the `push app-groups` command, which
-will delete any App Groups from Insights that **do not exist** in your IaC repository. Adding the `--dry-run` flag will explain which App Groups would be deleted without making changes to Insights.
+You can add the `--delete` flag to the `push app-groups` command, which will delete any App Groups from Insights that **do not exist** in your IaC repository.
+Adding the `--dry-run` flag will explain which App Groups would be deleted without making changes to Insights.
+
+You cannot delete an App Group if they are being referenced by any Policy Mapping.
+In such cases, you must either update the Policy Mapping to remove the App Group reference or delete the Policy Mapping all together.
 
 ### Policy Mappings
 
