@@ -128,18 +128,18 @@ tracked in your Infrastructure-as-Code (IaC) repository.
 You can add the `--delete` flag to the `push rules` command, which
 will delete any Automation Rules from Insights that **do not exist** in your IaC repository. Adding the `--dry-run` flag will explain which Rules would be deleted without making changes to Insights.
 
-### App-Groups
+### App Groups
 
-You can use the Insights CLI to manage the configuration of App-Groups.
+You can use the Insights CLI to manage the configuration of App Groups.
 
-Check out the [App-Groups](/features/app-groups) documentation on use cases for configuring App-Groups.
+Check out the [App Groups](/features/app-groups) documentation on use cases for configuring App Groups.
 
 ```bash
 insights-cli push app-groups
 ```
 
 #### Syncing from Fairwinds Insights
-If you were managing App-Groups via Fairwinds Insights UI. You can download and sync those definitions using the following command:
+If you were managing App Groups via Fairwinds Insights UI. You can download and sync those definitions using the following command:
 
 ```
 insights-cli download app-groups
@@ -147,8 +147,8 @@ insights-cli download app-groups
 
 Note that the folder `app-groups` must exists.
 
-#### Adding App-Groups
-When pushing App-Groups to Insights, the CLI expects a directory structure like the following:
+#### Adding App Groups
+When pushing App Groups to Insights, the CLI expects a directory structure like the following:
 ```
 .
 +-- app-groups
@@ -156,32 +156,32 @@ When pushing App-Groups to Insights, the CLI expects a directory structure like 
 |   +-- second-app-group.yaml
 ```
 
-Once the files have been created, use the following command to push the App-Groups to Insights:
+Once the files have been created, use the following command to push the App Groups to Insights:
 ```
 insights-cli push app-groups
 ```
 
-#### Deleting App-Groups from Insights
-By default, the Insights CLI will not _delete_ any App-Groups from Insights. It will
+#### Deleting App Groups from Insights
+By default, the Insights CLI will not _delete_ any App Groups from Insights. It will
 only add or update them.
-This means there might be some App-Groups created in Insights that are not
+This means there might be some App Groups created in Insights that are not
 tracked in your Infrastructure-as-Code (IaC) repository.
 
 You can add the `--delete` flag to the `push app-groups` command, which
-will delete any App-Groups from Insights that **do not exist** in your IaC repository. Adding the `--dry-run` flag will explain which App-Groups would be deleted without making changes to Insights.
+will delete any App Groups from Insights that **do not exist** in your IaC repository. Adding the `--dry-run` flag will explain which App Groups would be deleted without making changes to Insights.
 
-### Policy-Mappings
+### Policy Mappings
 
-You can use the Insights CLI to manage the configuration of Policy-Mappings.
+You can use the Insights CLI to manage the configuration of Policy Mappings.
 
-Check out the [Policy-Mappings](/features/policy-mappings) documentation on use cases for configuring Policy-Mappings.
+Check out the [Policy Mappings](/features/policy-mappings) documentation on use cases for configuring Policy Mappings.
 
 ```bash
 insights-cli push policy-mappings
 ```
 
 #### Syncing from Fairwinds Insights
-If you were managing Policy-Mappings via Fairwinds Insights UI. You can download and sync those definitions using the following command:
+If you were managing Policy Mappings via Fairwinds Insights UI. You can download and sync those definitions using the following command:
 
 ```
 insights-cli download policy-mappings
@@ -189,8 +189,8 @@ insights-cli download policy-mappings
 
 Note that the folder `policy-mappings` must exists.
 
-#### Adding Policy-Mappings
-When pushing Policy-Mappings to Insights, the CLI expects a directory structure like the following:
+#### Adding Policy Mappings
+When pushing Policy Mappings to Insights, the CLI expects a directory structure like the following:
 ```
 .
 +-- policy-mappings
@@ -198,19 +198,19 @@ When pushing Policy-Mappings to Insights, the CLI expects a directory structure 
 |   +-- second-policy-mapping.yaml
 ```
 
-Once the files have been created, use the following command to push the Policy-Mappings to Insights:
+Once the files have been created, use the following command to push the Policy Mappings to Insights:
 ```
 insights-cli push policy-mappings
 ```
 
-#### Deleting Policy-Mappings from Insights
-By default, the Insights CLI will not _delete_ any Policy-Mappings from Insights. It will
+#### Deleting Policy Mappings from Insights
+By default, the Insights CLI will not _delete_ any Policy Mappings from Insights. It will
 only add or update them.
-This means there might be some Policy-Mappings created in Insights that are not
+This means there might be some Policy Mappings created in Insights that are not
 tracked in your Infrastructure-as-Code (IaC) repository.
 
 You can add the `--delete` flag to the `push policy-mappings` command, which
-will delete any Policy-Mappings from Insights that **do not exist** in your IaC repository. Adding the `--dry-run` flag will explain which Policy-Mappings would be deleted without making changes to Insights.
+will delete any Policy Mappings from Insights that **do not exist** in your IaC repository. Adding the `--dry-run` flag will explain which Policy Mappings would be deleted without making changes to Insights.
 
 ## Testing
 You can use the insights-cli to test your OPA policies and automation rules. This can also be

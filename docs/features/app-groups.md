@@ -1,12 +1,12 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Documentation: About the App-Groups."
+    content: "Fairwinds Insights | Documentation: About the App Groups."
 ---
 
-# App-Groups
+# App Groups
 
-App-groups is a way for organization owners to specify the Policies they'd like to run for a collection of Kubernetes resources. For example, a user may want to create an App Group for system resources, individual teams or a business unit.
+App Groups is a way for organization owners to specify the Policies they'd like to run for a collection of Kubernetes resources. For example, a user may want to create an App Group for system resources, individual teams or a business unit.
 
 ### Benefits of AppGroups
 - Flexible Resource Selection: Create flexible App Groups that match on any Kubernetes metadata, like namespace, namespace labels, workload names, etc.

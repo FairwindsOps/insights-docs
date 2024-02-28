@@ -1,10 +1,10 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Documentation: About the Policy-Mappings."
+    content: "Fairwinds Insights | Documentation: About the Policy Mappings."
 ---
 
-# Policy-Mappings
+# Policy Mappings
 
 Policy Mappings allow the users to specify the Policies that are allowed to run. Previously, all Policies were run by default. Now, organizations owners can take an “opt-in” approach and declare specific Policies they’d like to run against those resources (provided by the App Groups) – helping Owners reduce Action Item “information overload”.
 
