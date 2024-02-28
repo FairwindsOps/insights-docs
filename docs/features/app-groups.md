@@ -55,7 +55,7 @@ spec:
       labels:
         - app: api
       namespaceLabels:
-        - bu: store
+        - business_unit: store
   exclude:
     -
       kind: [StatefulSet] 
