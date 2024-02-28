@@ -72,6 +72,7 @@ type: PolicyMapping
 name: liveness-probe-missing-only
 spec:
   enabled: false
+  block: true
   appGroups: [match-all]
   policies: [polaris.livenessProbeMissing]
 ```
