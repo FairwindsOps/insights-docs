@@ -37,7 +37,7 @@ spec:
       labels:
         - app: api
       namespaceLabels:
-        - bu: store
+        - business_unit: store
 ```
 
 ### Same as above but we want to target all `kinds` expect `StatefulSet`:
