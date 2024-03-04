@@ -9,6 +9,39 @@ meta:
 sidebarDepth: 1
 ---
 # Release Notes
+
+## 15.4.0
+### Bug Fixes and Enhancements
+* Fix for multiple loads when the "clear" button is clicked on the Costs page
+* Fix for default time period on Costs page
+* Fix for AWS Costs status indicator
+* Updates to Costs "Saved View" modal styles
+
+
+## 15.3.4
+### List Ticket Auto-Updates
+Tickets created in Jira, Azure DevOps, or GitHub that correspond to a list of Action Items
+will now auto-update as the list of Action Items changes. The body of the ticket will
+update to reflect the latest information about which Action Items still need to be addressed,
+and will be closed when all Action Items are addressed.
+
+### Bug Fixes and Enhancements
+* Fix for viewing workloads that lack cost data
+* Fix for datepicker on Costs page
+* Added a "View Ticket" link for lists that have an associated ticket
+* Removed "trends" from the Clusters page
+
+## 15.3.3
+### Bug Fixes and Enhancements
+* Fixed a bug that prevented new users from adding their first cluster
+* Corrected node counts being sent to Datadog metrics
+
+## 15.3.2
+### Bug Fixes and Enhancements
+* Fixed bug that prevented respository deletion
+* Added a `block` field to Policy Mappings
+* Minor updates to the App Groups UI
+
 ## 15.3.1
 ### CI resolutions
 You can now resolve Action Items associated with a particular Infrastructure as Code repository.
