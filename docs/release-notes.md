@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 15.4.1
+### Bug Fixes and Enhancements
+* Updates to third-party libraries
+
 ## 15.4.0
 ### Bug Fixes and Enhancements
 * Fix for multiple loads when the "clear" button is clicked on the Costs page
