@@ -6,22 +6,18 @@ meta:
 
 # App Groups
 
-App Groups is a way for organization owners to specify the Policies they'd like to run for a collection of Kubernetes resources. For example, a user may want to create an App Group for system resources, individual teams or a business unit.
+App Groups are user-defined collections of Kubernetes resources.  You can match on any Kubernetes metadata, such as namespace, kind, workload name, etc.  For example, a user may want to create an App Group for system resources, individual teams or a business unit. App Groups are also multi-cluster and multi-repository, meaning you can select resources across one or many clusters or repositories attached to your Insights organization.
 
-### Benefits of App Groups
-- Flexible Resource Selection: Create flexible App Groups that match on any Kubernetes metadata, like namespace, namespace labels, workload names, etc.
+## AppGroup Examples
 
-## AppGroup examples:
-
-### Selects all resources:
-
+### Selects all resources
 ```yaml
 type: AppGroup
 name: match-all
 spec: {}
 ```
 
-### Matching a very strict workload by every available option:
+### Matching a very strict workload by every available option
 
 ```yaml
 type: AppGroup
@@ -40,7 +36,7 @@ spec:
         - business_unit: store
 ```
 
-### Same as above but we want to target all `kinds` expect `StatefulSet`:
+### Same as above but we want to target all `kinds` expect `StatefulSet`
 
 ```yaml
 type: AppGroup
@@ -63,4 +59,6 @@ spec:
 
 ## Managing App Groups
 
-For managing App Groups via CLI, refer to [insights CLI - App Groups](/features/insights-cli#app-groups).
+You can manage App Groups "as code" via the Insights CLI, or through the Insights UI.
+- For managing App Groups via CLI, refer to [Insights CLI - App Groups](/features/insights-cli#app-groups).
+- For managing App Groups via the Insights UI, you must have an `Owner` role. Select the "App Groups" navigation link to add, edit, or delete your App Group configurations.
