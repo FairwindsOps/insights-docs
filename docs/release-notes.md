@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 15.5.0
+### Bug Fixes and Enhancements
+* Moved link to Cost Settings
+* Fix for empty graphs when there's not enough data on Costs page
+* Major improvements to performance of the Vulnerabilities page
+
 ## 15.4.1
 ### Bug Fixes and Enhancements
 * Updates to third-party libraries
