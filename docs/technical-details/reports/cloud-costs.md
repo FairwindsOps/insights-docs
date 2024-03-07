@@ -1,33 +1,35 @@
 # Cloud Costs Report
-The Cloud Costs report syncs your Cloud billing data to Insights so
+The Fairwinds Cloud Costs report syncs your Cloud billing data with Insights so
 it can know precisely what you're spending on nodes and use that
 information to infer accurate workload costs.
 
-We currently support AWS and GCP (Standard and Autopilot).
+We currently support AWS and GCP (including GKE Standard and GKE Autopilot).
 
 ## AWS Billing Integration Configuration
 
-The AWS Costs Report is built on [AWS costs and Usage Report](https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html).
+The AWS Costs Report is built on [AWS Costs and Usage Report](https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html).
 
-The first step is to create the Athena infrastructure using Terraform, CloudFormation, etc. The CUR report is created by AWS and stored in AWS S3.
-The Athena process AWS collects CUR data from S3, and makes it available as a SQL table that can be queried.
+The first step is to create the Athena infrastructure using Terraform, CloudFormation, etc. The CUR report is created by AWS and stored in an AWS S3 bucket.
 
-If you go to AWS Glue you can see there the infrastructure previously created to connect S3 CUR data into Athena.
+The Athena process in AWS collects CUR data from S3 and makes it available as a SQL table that can be queried.
 
-This requires some setup:
+If you use AWS Glue, you can see the infrastructure previously created to connect S3 CUR data into Athena.
+
+This requires some AWS infrastructure setup:
 * Ensure nodes for different clusters are tagged in a consistent way
     * E.g. nodes in your staging cluster have tag `cluster=staging` and your production cluster nodes have `cluster=prod`
-* From AWS CUR docs, create an S3 bucket where billing data can be stored
+* Following the AWS CUR docs, create an S3 bucket where billing data can be stored
 * Create an Athena database for querying the S3 data
 * Create a Glue crawler to populate the data
-* Finally, install the insights-agent with the aws-costs report configured
+* Finally, [configure the `cloudcosts` report within the `values.yaml` file of your Insights Agent](#configuring-the-insights-cloudcosts-report-for-aws)
 
-For convenience, we've provided some Terraform which can create the necessary AWS
-resources below.
+>For convenience, we've provided some [Terraform scripts](#terraform), which can create the necessary AWS resources below.
 
-### Cloud Costs Agent Configuration (AWS)
+### Configuring the Insights `cloudcosts` report for AWS 
 Once the AWS resources are in place, you'll need to configure the
-AWS agent to start uploading your cost data. Your `values.yaml` should include
+Insights Agent to start uploading your cost data from AWS.
+
+Your Insights Agent `values.yaml` should include
 the section below, replacing any values with your own.
 
 ```yaml
@@ -366,7 +368,7 @@ cloudcosts:
       iam.gke.io/gcp-service-account: {service-account-name}@{your-project}.iam.gserviceaccount.com
 ```
 
-### Cloud Costs Agent Configuration (GCP)
+### Configuring the Insights `cloudcosts` report for GCP 
 Once the GCP resources are in place, you'll need to configure the
 `cloudcosts` report in the Insights Agent to start uploading your cost data. Your `values.yaml` should include
 the section below, replacing any values with your own.
