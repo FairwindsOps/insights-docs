@@ -5,17 +5,22 @@ information to infer accurate workload costs.
 
 We currently support AWS and GCP (including GKE Standard and GKE Autopilot).
 
-## AWS Billing Integration Configuration
+## AWS Billing Integration
 
 The AWS Costs Report is built on [AWS Costs and Usage Report](https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html).
 
-The first step is to create the Athena infrastructure using Terraform, CloudFormation, etc. The CUR report is created by AWS and stored in an AWS S3 bucket.
+The first step is to create the Athena infrastructure using Terraform, CloudFormation, etc. The CUR report is created by AWS and stored in an AWS S3 bucket. 
 
 The Athena process in AWS collects CUR data from S3 and makes it available as a SQL table that can be queried.
 
 If you use AWS Glue, you can see the infrastructure previously created to connect S3 CUR data into Athena.
 
-This requires some AWS infrastructure setup:
+> Note: You will need to setup the one [CUR Processing Infrastructure Setup](#cur-processing-infrastructure-setup) per AWS account.
+
+### CUR Processing Infrastructure Setup
+
+Follow the steps below to setup your CUR Processing Infrastructure for each AWS account:
+
 * Ensure nodes for different clusters are tagged in a consistent way
     * E.g. nodes in your staging cluster have tag `cluster=staging` and your production cluster nodes have `cluster=prod`
 * Following the AWS CUR docs, create an S3 bucket where billing data can be stored
@@ -309,7 +314,7 @@ resource "aws_athena_workgroup" "cur_athena_workgroup" {
 }
 ```
 
-## Google Cloud Provider (GCP) Configuration (BETA)
+## Google Cloud Provider (GCP) Billing Integration (BETA)
 
 The GCP Report is built on [Google Cloud Billing](https://cloud.google.com/billing/docs/how-to/export-data-bigquery).
 
