@@ -3,7 +3,7 @@
 As of Insights Agent version `4.0`, Right-sizer now refers to multiple capabilities:
 
 * A controller that manages VPA objects for automated right-sizing, and
-* A controller that detects and modifies contains that have been OOM-killed
+* A controller that detects, and optionally fixes, containers that have been OOM-killed
 
 These are currently separate binaries and container images:
 
