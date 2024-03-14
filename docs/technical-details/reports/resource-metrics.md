@@ -60,7 +60,7 @@ Prometheus Collector contains CPU and Memory usage for different workloads
 }
 ```
 
-## Running on GKE Autopilot
+## Integration with GKE Autopilot / GCP Managed Prometheus
 
 Insights requires a Prometheus server to collect metrics for workload usage. Typically, this is a Prometheus server that is already running in a Kubernetes cluster, or a Prometheus server that is installed directly via the Insights Agent Helm Chart.
 
@@ -101,7 +101,7 @@ prometheus-metrics:
 
 >NOTE: `<frontend namespace>` is the namespace where the Prometheus frontend UI has been installed.
 
-## Running with Azure Monitor
+## Integration with AKS / Azure Monitor
 
 If Azure Monitor managed service for Prometheus is being used for Prometheus in the cluster, prometheus-metrics can be configured to pull from its API.
 
@@ -111,9 +111,9 @@ If Azure Monitor has not been enabled, follow these steps in this guide:  [Enabl
 
 An authorization proxy is used for prometheus-metrics to pull metrics from the Azure Monitor API. Follow this guide to configure and deploy the proxy to your AKS cluster: [Deploy a prometheus authorization proxy](https://learn.microsoft.com/en-us/azure/azure-monitor/containers/prometheus-authorization-proxy?tabs=query-metrics-example)
 
-### 2. Update the insights agent values
+### 2. Update the `insights-agent` values
 
-Update the insights-agent values with the the service name of the authorization proxy created in the previous step:
+Update the `insights-agent` values with the the service name of the authorization proxy created in the previous step:
 
 ```yaml
 prometheus-metrics:
@@ -130,5 +130,5 @@ If you are installing with the kube-prometheus-stack chart, kube-state-metrics i
 It can also be installed via the dedicated kube-state-metrics chart here: 
 [Install kube-state-metrics](https://artifacthub.io/packages/helm/prometheus-community/kube-state-metrics)
 
-If KSM appears to be running fine, check for any network policies that might prevent Prometheus from scraping kube-state-metrics.
+If KSM appears to be running fine, check for any network policies that might prevent Prometheus from scraping `kube-state-metrics`.
 
