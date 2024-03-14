@@ -1,17 +1,16 @@
 # Right-sizer
 
+To enable right-sizer, you'll need the following in your Insights Agent `values.yaml` at minimum:
+
+```yaml
+right-sizer:
+  enabled: true
+```
+
 As of Insights Agent version `4.0`, Right-sizer now refers to multiple capabilities:
 
 * A controller that manages VPA objects for automated right-sizing, and
 * A controller that detects, and optionally fixes, containers that have been OOM-killed
-
-These are currently separate binaries and container images:
-
-https://quay.io/repository/fairwinds/insights-right-sizer: refers to the VPA controller
-
-https://quay.io/repository/fairwinds/right-sizer: refers to OOM-kill detection and resolution
-
-The intention is to consolidate both of these in a future release once more testing has been done.
 
 ## Breaking Changes
 
@@ -20,66 +19,82 @@ The intention is to consolidate both of these in a future release once more test
 
 ## Automated Workload Right-sizing
 
-## Setup and Configuration
-
-Right-sizer includes a custom `recommender` VPA component, we've modified the recommender to retrieve recommendations from Insights. When `right-sizer` is enabled, we will install the [Fairwinds VPA](https://artifacthub.io/packages/helm/fairwinds-stable/vpa) helm chart with this custom image for you.
-
-The `INSIGHTS_TOKEN` environment variable is necessary for the VPA recommender to query for Insights recommendations. Since it's managed in a separate Helm chart, the VPA installation will assume that the name of your Insights Agent token secret is `insights-agent`. This can be overridden with `recommender.envFromSecret` is needed.
-
-The Right-sizer configuration is YAML definied in a `ConfigMap`
+By default, for every controller, the right-sizer will create a VPA object with `updateMode` `Off`, which will display recommendations, but not apply them. To automatically apply right-sizing recommendations, you'll need to set 
 
 ```yaml
-# when the controller is running with `--on-by-default`,
-# this is the configuration that will be applied to namespaces
-# which are not explicitly configured in `includeNamespaces`
-default:
-  vpa:
-    # full VerticalPodAutoscaler spec
-    minReplicas: 1
-    updatePolicy:
-      updateMode: "Off"
-    resourcePolicy:
-        containerPolicies:
-          - containerName: "*"
-            maxAllowed:
-              cpu: 2
-              memory: "4Gi"
-# namespaces that will be explicitly included for recommendations
-# allows VPAs to be configured individually by namespace
-includeNamespaces:
-  - namespace: "my-namespace-1"
-    vpa:
-      # this is a full VerticalPodAutoscaler specification
-      minReplicas: 1
-      updatePolicy:
-        updateMode: "Auto"
-      resourcePolicy:
-        containerPolicies:
-          - containerName: "*"
-            minAllowed:
-              cpu: "100m"
-            maxAllowed:
-              cpu: 1
-              memory: "2Gi"
-  - namespace: "my-namespace-2"
-    vpa:
-      minReplicas: 1
-      updatePolicy:
-        updateMode: "Auto"
-      resourcePolicy:
-        containerPolicies:
-          - containerName: "*"
-            minAllowed:
-              cpu: "250m"
-            maxAllowed:
-              cpu: 2
-              memory: "3Gi"
-  - namespace: "my-namespace-3"
-# list of namespaces that are explicitly excluded from recommendations
-excludeNamespaces:
-    - default
-    - insights-agent
+right-sizer:
+  enabled: true
+  config:
+    default:
+      vpa:
+        updatePolicy: "Auto"
 ```
+
+This can also be configured individually by namespace, see setup below.
+
+## Setup and Configuration
+
+The Right-sizer configuration can be added to your Helm `values.yaml`
+
+```yaml
+right-sizer:
+  enabled: true
+  config:
+    # when the controller is running with `--on-by-default`,
+    # this is the configuration that will be applied to namespaces
+    # which are not explicitly configured in `includeNamespaces`
+    default:
+      vpa:
+        # full VerticalPodAutoscaler spec
+        minReplicas: 1
+        updatePolicy:
+          updateMode: "Off"
+        resourcePolicy:
+            containerPolicies:
+              - containerName: "*"
+                maxAllowed:
+                  cpu: 2
+                  memory: "4Gi"
+    # namespaces that will be explicitly included for recommendations
+    # allows VPAs to be configured individually by namespace
+    includeNamespaces:
+      - namespace: "my-namespace-1"
+        vpa:
+          # this is a full VerticalPodAutoscaler specification
+          minReplicas: 1
+          updatePolicy:
+            updateMode: "Auto"
+          resourcePolicy:
+            containerPolicies:
+              - containerName: "*"
+                minAllowed:
+                  cpu: "100m"
+                maxAllowed:
+                  cpu: 1
+                  memory: "2Gi"
+      - namespace: "my-namespace-2"
+        vpa:
+          minReplicas: 1
+          updatePolicy:
+            updateMode: "Auto"
+          resourcePolicy:
+            containerPolicies:
+              - containerName: "*"
+                minAllowed:
+                  cpu: "250m"
+                maxAllowed:
+                  cpu: 2
+                  memory: "3Gi"
+      - namespace: "my-namespace-3"
+    # list of namespaces that are explicitly excluded from recommendations
+    excludeNamespaces:
+        - default
+        - insights-agent
+```
+
+### Implementation Details
+
+Right-sizer includes a custom `recommender` VPA component, we've modified the recommender to retrieve recommendations from Insights. When `right-sizer` is enabled, we will install the [Fairwinds VPA](https://artifacthub.io/packages/helm/fairwinds-stable/vpa) helm chart with this custom image for you.
 
 You can also opt-in (when `on-by-default` is enabled) or opt-out of automated right-sizing by annotating Namespaces:
 
@@ -111,3 +126,13 @@ Available configuration includes:
 * The limits increment which is multiplied by the current container limits to calculate the new limits to be updated
 * The maximum limits which is multiplied by the limits of the first-seen OOM-kill to calculate the highest value to which limits can be updated for that container
 * Namespaces which limit both where OOM-kills are considered and where memory limits will be updated
+
+## Implementation Details
+
+These are currently separate binaries and container images:
+
+https://quay.io/repository/fairwinds/insights-right-sizer: refers to the VPA controller
+
+https://quay.io/repository/fairwinds/right-sizer: refers to OOM-kill detection and resolution
+
+The intention is to consolidate both of these in a future release once more testing has been done.
