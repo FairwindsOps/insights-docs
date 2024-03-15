@@ -88,8 +88,8 @@ right-sizer:
       - namespace: "my-namespace-3"
     # list of namespaces that are explicitly excluded from recommendations
     excludeNamespaces:
-        - default
-        - insights-agent
+      - default
+      - insights-agent
 ```
 
 ### Implementation Details
@@ -100,13 +100,13 @@ You can also opt-in (when `on-by-default` is enabled) or opt-out of automated ri
 
 `insights.fairwinds.com/right-sizer` = `true` | `false`
 
-# OOM (Out-Of-Memory) Detection
+## OOM (Out-Of-Memory) Detection
 
 OOM-Detection is a Kubernetes Controller that detects and optionally modifies containers that have run out of memory and been OOM-killed and maintains an Insights report of those containers with their owning pod-controllers (such as Deployments, StatefulSets or DaemonSets). The Controller persists report data in a Kubernetes ConfigMap which the accompanying Insights Agent CronJob retrieves and submits to the Insights API.
 
 The oom-detection controller removes pod-controllers from its report when no OOM-kill has been seen within a time window (default 24 hours) or if the memory limits have been modified compared to the limits from the last-seen OOM-kill. 
 
-## Setup and Configuration
+### Setup and Configuration
 OOM-Detection is on by default when right-sizer is enabled:
 
 ```
