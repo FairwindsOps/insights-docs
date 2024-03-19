@@ -14,7 +14,6 @@ As of Insights Agent version `4.0`, Right-sizer now refers to multiple capabilit
 
 ## Breaking Changes in Agent 4.0
 
- Version 4.0
 > The 4.0 release of insights-agent contains breaking changes to `right-sizer`. This component has been rebranded to refer to Insights automated right sizing. The `right-sizer` prior to this release will be referred to as `oom-detection` going forward. These will be further consolidated in a future release to avoid confusion.
 
 ## Automated Workload Right-sizing (BETA)
