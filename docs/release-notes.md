@@ -9,6 +9,14 @@ meta:
 sidebarDepth: 1
 ---
 # Release Notes
+## 15.5.2
+### Bug Fixes and Enhancements
+* Small fixes for App Groups
+* Show resolution message in Admission Action Items
+* Added monthly projected cost savings to right-sizing action items
+* Improved repository summaries for repos without branch names
+* Removed stale resource-metrics Action Items
+* Fixed up cluster admission status display when org-wide settings are used
 
 ## 15.5.1
 ### Bug Fixes and Enhancements
