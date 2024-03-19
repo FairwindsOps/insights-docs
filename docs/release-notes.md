@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 15.5.1
+### Bug Fixes and Enhancements
+* Added a settings link to the Admission tab
+* Improvements to ticket updating
+
 ## 15.5.0
 ### Bug Fixes and Enhancements
 * Moved link to Cost Settings
