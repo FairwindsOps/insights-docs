@@ -9,15 +9,21 @@ right-sizer:
 
 As of Insights Agent version `4.0`, Right-sizer now refers to multiple capabilities:
 
-* A controller that manages VPA objects for automated right-sizing, and
-* A controller that detects, and optionally fixes, containers that have been OOM-killed
+* **Automated Workload Right-sizer:** A controller that manages VPA objects for automated right-sizing (BETA)
+* **OOMKill Detector:** A controller that detects, and optionally fixes, containers that have been OOM-killed
 
-## Breaking Changes
+## Breaking Changes in Agent 4.0
 
  Version 4.0
 > The 4.0 release of insights-agent contains breaking changes to `right-sizer`. This component has been rebranded to refer to Insights automated right sizing. The `right-sizer` prior to this release will be referred to as `oom-detection` going forward. These will be further consolidated in a future release to avoid confusion.
 
-## Automated Workload Right-sizing
+## Automated Workload Right-sizing (BETA)
+
+### NOTE: Automated Workload Right-sizer is currently in BETA. Here's what you should know:
+- Right-sizer is designed to help automate setting of resource requests and limits for you. It uses Resource Recommendations from Fairwinds Insights to dynamically adjust container resources.
+- Since this is a BETA, there may be scenarios where Automated Right-sizer does not optimize resources correctly. This could result in over-provisioning or under-provisioning. A benefit of having your cluster managed by Fairwinds SREs is we can monitor for these scenarios and provide a feedback loop to our engineering team with data for further improvements.
+- **During the BETA period, we recommend that customers deploy Right-sizer in a dev or staging environment to start.**  This may mean starting with less-critical workloads and namespaces before expanding usage.
+
 
 By default, for every controller, the right-sizer will create a VPA object with `updateMode` `Off`, which will display recommendations, but not apply them. To automatically apply right-sizing recommendations, you'll need to set 
 
