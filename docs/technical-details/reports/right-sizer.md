@@ -21,7 +21,7 @@ As of Insights Agent version `4.0`, Right-sizer now refers to multiple capabilit
 
 ### NOTE: Automated Workload Right-sizer is currently in BETA. Here's what you should know:
 - Right-sizer is designed to help automate setting of resource requests and limits for you. It uses Resource Recommendations from Fairwinds Insights to dynamically adjust container resources.
-- Since this is a BETA, there may be scenarios where Automated Right-sizer does not optimize resources correctly. This could result in over-provisioning or under-provisioning. A benefit of having your cluster managed by Fairwinds SREs is we can monitor for these scenarios and provide a feedback loop to our engineering team with data for further improvements.
+- **Since this is a BETA, there may be scenarios where Automated Right-sizer does not optimize resources correctly. This could result in over-provisioning or under-provisioning, or reliability issues such as resource starvation, OOMKills, or throttling.**
 - **During the BETA period, we recommend that customers deploy Right-sizer in a dev or staging environment to start.**  This may mean starting with less-critical workloads and namespaces before expanding usage.
 
 
