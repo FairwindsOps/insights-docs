@@ -16,6 +16,7 @@ If you already have Prometheus installed you can point Insights to the service e
 
 ```yaml
 prometheus-metrics:
+  enabled: true
   address: "http://<prometheus-service-name>.<namespace>.svc.cluster.local:<port>"
 ```
 
@@ -24,6 +25,7 @@ The Insights Agent chart can also install a new Prometheus server in your cluste
 To install Prometheus alongside the Agent, add the following to your `values.yaml`:
 ```
 prometheus-metrics:
+  enabled: true
   installPrometheusServer: true
 ```
 
