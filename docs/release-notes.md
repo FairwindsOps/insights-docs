@@ -9,6 +9,25 @@ meta:
 sidebarDepth: 1
 ---
 # Release Notes
+## 15.5.2
+### Bug Fixes and Enhancements
+* Small fixes for App Groups
+* Show resolution message in Admission Action Items
+* Added monthly projected cost savings to right-sizing action items
+* Improved repository summaries for repos without branch names
+* Removed stale resource-metrics Action Items
+* Fixed up cluster admission status display when org-wide settings are used
+
+## 15.5.1
+### Bug Fixes and Enhancements
+* Added a settings link to the Admission tab
+* Improvements to ticket updating
+
+## 15.5.0
+### Bug Fixes and Enhancements
+* Moved link to Cost Settings
+* Fix for empty graphs when there's not enough data on Costs page
+* Major improvements to performance of the Vulnerabilities page
 
 ## 15.4.1
 ### Bug Fixes and Enhancements
