@@ -9,6 +9,13 @@ meta:
 sidebarDepth: 1
 ---
 # Release Notes
+## 15.5.4
+### Bug Fixes and Enhancements
+* Fix redirect on Install Hub for old clusters
+
+## 15.5.3
+* Rollback of 15.5.2
+
 ## 15.5.2
 ### Bug Fixes and Enhancements
 * Small fixes for App Groups
