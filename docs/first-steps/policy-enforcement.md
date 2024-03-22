@@ -49,7 +49,7 @@ In this guide, you will learn how to:
 4.  Setup Insights in your [CI/CD pipeline](/features/infrastructure-as-code-scanning)
 5.  Turn on enforcement by enabling the ["Focused" Scan Mode](/features/policy-mappings#scan-mode)
 
-## Pre-work: Design your initial App Groups and Policy Mappings
+## Pre-work: Design initial App Groups and Policy Mappings
 
 Both [App Groups](/features/app-groups) and [Policy Mappings](/features/policy-mappings) are intentionally  flexible concepts, which makes it possible for you to design them around your business needs.
 
@@ -124,23 +124,23 @@ A single Kubernetes resource can be subject to multiple Policy Mappings. The `po
 
 > NOTE: [It's possible for Kubernetes resources to be subject to conflicting `block` directives](/features/policy-mappings#when-a-kubernetes-resource-has-conflicting-block-directives)
 
+* * *
+
 ## Implementing Stage 1: Awareness
 
 _In this stage, we want to setup Insights to report in-cluster policy violations._
 
 _We also want to report (but NOT block) Admission requests and CI scans that contain policy violations. This is to help with raising awareness of configuration standards._
 
-
-
-### 2. Install Admission Controller
+### 1. Install Admission Controller
 
 You can install the Admission Controller using the Install Hub. [Learn how to install Admission Controller here](/features/admission-controller).
 
-### 3. Set Admission Controller to Passive Mode
+### 2. Set Admission Controller to Passive Mode
 
 Admission Controller is set to Passive Mode by default. [Learn more how to enable/disable Passive Mode in Admission Controller here](/features/admission-controller#installation).
 
-### 4. OPTIONAL: Install Insights in your CI pipeline to warn users of Policy violations
+### 3. OPTIONAL: Install Insights in your CI pipeline to warn users of Policy violations
 
 [Learn how to setup the Insights Continuous Integration (CI) feature here.](/features/infrastructure-as-code-scanning)
 
@@ -148,7 +148,7 @@ Admission Controller is set to Passive Mode by default. [Learn more how to enabl
 >
 > Verify that your `fairwinds-insights.yaml` file at the root of your repo has the `options.setExitCode` set to `false`. [Learn more about gating pull requests with the Insights CI integration here](/features/infrastructure-as-code-scanning#gating-pull-requests).
 
-### 5. Turn on "Focused" Scan Mode
+### 4. Turn on "Focused" Scan Mode
 Navigate to the Policies > Policy Mapping page and set the [Scan Mode](/features/policy-mappings#scan-mode) to "Focused". 
 
 At this point, you will now see:
