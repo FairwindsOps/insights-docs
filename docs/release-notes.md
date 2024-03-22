@@ -9,6 +9,24 @@ meta:
 sidebarDepth: 1
 ---
 # Release Notes
+
+## 15.5.6
+### Policy Mappings
+You can now create Policy Mappings in the UI. Policy Mappings associate a set of policies
+with App Groups, allowing you to fine-tune Action Item reporting and blocking
+by resource and policy.
+
+### Bug Fixes and Enhancements
+* Fix for cluster switcher on Install Hub
+* Improvements to Aggregated Action Items page (links, team filtering)
+* Fix for repositories that report `HEAD` as the branch name
+* Fix for filtering by team in Action Items
+* Speed improvements to Clusters page
+
+## 15.5.5
+### Bug Fixes and Enhancements
+* Fix for API server memory usage 
+
 ## 15.5.4
 ### Bug Fixes and Enhancements
 * Fix redirect on Install Hub for old clusters
