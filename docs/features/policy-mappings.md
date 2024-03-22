@@ -68,12 +68,13 @@ spec:
 ```
 
 ### Scan only `polaris.livenessProbeMissing` policy
+Note, if you do not specify any `contexts`, Insights will default to all contexts (Agent, Admission, and CI).
 
 ```yaml
 type: PolicyMapping
 name: liveness-probe-missing-only
 spec:
-  appGroups: [match-all]
+  appGroups: [ecommerce-business-unit]
   policies: [polaris.livenessProbeMissing]
 ```
 
