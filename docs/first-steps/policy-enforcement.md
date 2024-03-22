@@ -57,7 +57,7 @@ Here's an example of how most organizations get started:
 
 ### 1. Configure in-cluster reporting of policy violations
 
-**1A. Create a `match-all` App Group that matches on everything** -- [example here](/features/app-groups/#selects-all-resources)
+**1A. Create a `match-all` App Group that matches on everything** -- [example here](/features/app-groups#selects-all-resources)
 |App Group Setting |   |
 |--|--|
 | App Group Name |`match-all`|
@@ -101,7 +101,7 @@ _Scoped Policies target resources associated with teams, apps, or business units
 | Exclude| _nothing_ |
 
 
-**3B. Create a Policy Mapping with specific policies, and link it to that App Group** -- [example here](/features/policy-mappings#scan-only-polarislivenessprobemissing-policy) 
+**3B. Create a Policy Mapping with specific policies, and link it to that App Group** -- [example here](/features/policy-mappings#scan-only-polaris-livenessprobemissing-policy) 
 
 |Policy Mapping Setting |   |
 |--|--|
@@ -122,7 +122,7 @@ A single Kubernetes resource can be subject to multiple Policy Mappings. The `po
       - `polaris.cpuRequestsRequired`
       - `polaris.memoryRequestsRequired`
 
-> NOTE: [It's possible for Kubernetes resources to be subject to conflicting `block` directives](#/features/policy-mappings#when-a-kubernetes-resource-has-conflicting-block-directives)
+> NOTE: [It's possible for Kubernetes resources to be subject to conflicting `block` directives](/features/policy-mappings#when-a-kubernetes-resource-has-conflicting-block-directives)
 
 ## Implementing Stage 1: Awareness
 
@@ -221,8 +221,8 @@ In these scenarios, you can Resolve or Snooze an Action Item within an admission
 You can always "undo" a Resolution by navigating to the most recent admission request and selecting "Resolve > None" or "Snooze > Unsnooze". 
 
 ### Using App Groups to create Exemptions
-[App Groups] provide a way to "exclude" resources from everything gathered by the "matched" resources. You can see an [example here](/features/app-groups/#appgroup-examples).
+[App Groups] provide a way to "exclude" resources from everything gathered by the "matched" resources. You can see an [example here](/features/app-groups#appgroup-examples).
 
 **Example: Global Namespace Exemptions**
 
-For example, we created a `match-all` App Group in the [Pre-work section of this document](#1-configure-in-cluster-reporting-of-policy-violations). You may choose to list specific namespaces that should be excluded from reporting or enforcement by adding them to the "exclude" section of the App Group. This would essentially match all resources except for the namespaces you list.
+For example, we created a `match-all` App Group in the [Pre-work section of this document](/features/policy-enforcement#1-configure-in-cluster-reporting-of-policy-violations). You may choose to list specific namespaces that should be excluded from reporting or enforcement by adding them to the "exclude" section of the App Group. This would essentially match all resources except for the namespaces you list.
