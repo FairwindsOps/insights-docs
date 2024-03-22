@@ -31,7 +31,7 @@ Below is an example strategy for gradually rolling out Policy Enforcement in you
 <br /><br />
 That said, the below strategy is designed for more real-world scenarios where policy enforcement is needed for existing, running clusters with active usage. The three enforcement stages allow you to gradually roll out policy to these users/teams so best practices can be applied over time.
 
-| **Stage**                                                                             | **Admission Controller Mode** | **Policy Group**                          | **Report Violations for Running Workloads?** | **Enforce in CI?**                | **Enforce in Admission Controller?** | **Tips**                                                                                                       |
+| **Stage**                                                                             | **Admission Controller Mode** | **Policy Group**                          | **In-cluster Reporting?** | **Enforce in CI?**                | **Enforce in Admission Controller?** | **Tips**                                                                                                       |
 | ------------------------------------------------------------------------------------- | ----------------------------- | ----------------------------------------- | -------------------------------------------- | --------------------------------- | ------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
 | **Stage 1: Awareness**<br />Alert on policy violations, but do not block.             | Passive                       | Cluster-wide Policies AND Scoped Policies | Yes                                          | Warn (do not block)               | Warn (do not block)                  | Consider integrating Insights in CI to provide these notifications earlier in the development process.         |
 | **Stage 2: Enforcement**<br />Begin blocking on Cluster-wide Policies.                | Active                        | Cluster-wide Policies                     | Yes                                          | Warn (do not block)               | **Block**                            | Consider integrating Insights in CI to provide these notifications earlier in the development process.         |
@@ -43,26 +43,104 @@ That said, the below strategy is designed for more real-world scenarios where po
 
 In this guide, you will learn how to:
 
-1.  Enable/disable Admission Controller
-2.  Setup Insights in your [CI/CD pipeline](/features/infrastructure-as-code-scanning)
-3.  Use the [Insights CLI](/features/insights-cli) to manage [Policy Configuration](/features/policies#configuration)
-4.  [Create Automation Rules](/features/automation-rules#writing-automation-rules) to fine-tune your policy enforcement behaviors in CI and at time of Admission
+1.  Create your first [App Groups](/features/app-groups)
+2.  Create your first [Policy Mappings](/features/policy-mappings) for Cluster-wide and Scoped Policies 
+3.  Enable/disable Admission Controller
+4.  Setup Insights in your [CI/CD pipeline](/features/infrastructure-as-code-scanning)
+5.  Turn on enforcement by enabling the ["Focused" Scan Mode](/features/policy-mappings#scan-mode)
+
+## Pre-work: Design your initial App Groups and Policy Mappings
+
+Both [App Groups](/features/app-groups) and [Policy Mappings](/features/policy-mappings) are intentionally  flexible concepts, which makes it possible for you to design them around your business needs.
+
+Here's an example of how most organizations get started:
+
+### 1. Configure in-cluster reporting of policy violations
+
+**1A. Create a `match-all` App Group that matches on everything** -- [example here](/features/app-groups/#selects-all-resources)
+|App Group Setting |   |
+|--|--|
+| App Group Name |`match-all`|
+| Match | _everything_ |
+| Exclude| _nothing_|
+
+
+**1B. Create a Policy Mapping with broad reporting of in-cluster policy violations** - [example here](/features/policy-mappings#only-report-specific-policies-in-agent-context)
+
+|Policy Mapping Setting |   |
+|--|--|
+| Policy Mapping Name |`cluster-wide-reporting`|
+| Linked App Group| `match-all`|
+| Policies | `polaris, trivy, nova, pluto, prometheus-metrics`|
+|Context| Agent|
+|Block| null|
+
+
+### 2. Configure "Cluster-wide Policies" to enforce
+
+**2B. Create a Policy Mapping with narrow enforcement of basic configuration hygiene at time of Admission** - [example here](/features/policy-mappings#enforce-a-baseline-policy-across-all-your-clusters)
+
+|Policy Mapping Setting |   |
+|--|--|
+| Policy Mapping Name |`cluster-wide-enforcement`|
+| Linked App Group| `match-all`|
+| Policies | `polaris.memoryRequestsMissing, polaris.cpuRequestsMissing, ...`|
+|Context| Admission|
+|Block| false|
+
+
+### 3. Configure "Scoped Policies" targeting specific Kubernetes resources
+_Scoped Policies target resources associated with teams, apps, or business units with specific policies (such as security or reliability checks)._
+
+**3A. Create an App Group focused on specific workloads** -- [example here](/features/app-groups#matching-a-very-strict-workload-by-every-available-option)
+
+|App Group Setting |   |
+|--|--|
+| App Group Name |`payment-business-unit`|
+| Match | `namespace: payment-apps` |
+| Exclude| _nothing_ |
+
+
+**3B. Create a Policy Mapping with specific policies, and link it to that App Group** -- [example here](/features/policy-mappings#scan-only-polarislivenessprobemissing-policy) 
+
+|Policy Mapping Setting |   |
+|--|--|
+| Policy Mapping Name |`scoped-policy-enforcement`|
+| Linked App Group| `payment-business-unit`|
+| Policies | `polaris.runAsRootAllowed, polaris.insecureCapabilities ...`|
+|Context| Admission|
+|Block| false|
+
+
+### Important: Policy Mappings are additive
+
+A single Kubernetes resource can be subject to multiple Policy Mappings. The `policies` within a Policy Mapping are additive, so that Kubernetes resource will be evaluated against the unique, aggregate list of policies across all those Policy Mappings. For example:
+  1. `Policy-Mapping-A` has 2 policies `polaris.runAsRootAllowed`, `polaris.cpuRequestsRequired`
+  2. `Policy-Mapping-B` has 2 policies `polaris.memoryRequestsRequired`, `polaris.cpuRequestsRequired`
+  3. Workload `api-server` matches both Policy Mappings, and therefore will be scanned for 3 unique policies:
+      - `polaris.runAsRootAllowed`
+      - `polaris.cpuRequestsRequired`
+      - `polaris.memoryRequestsRequired`
+
+> NOTE: [It's possible for Kubernetes resources to be subject to conflicting `block` directives](#/features/policy-mappings#when-a-kubernetes-resource-has-conflicting-block-directives)
 
 ## Implementing Stage 1: Awareness
 
-_In this stage, we want to warn users when their YAML code or Admission requests contain misconfigurations found in our Cluster-wide Policies or Scoped Policies._
+_In this stage, we want to setup Insights to report in-cluster policy violations._
 
-_The simplest way to do this is enabling Admission Controller in your cluster and setting it to Passive Mode (which is enabled by default). Additionally, you can install Insights in your CI pipeline to surface misconfigurations sooner in the process._
+_We also want to report (but NOT block) Admission requests and CI scans that contain policy violations. This is to help with raising awareness of configuration standards._
 
-### 1. Install Admission Controller
+
+
+### 2. Install Admission Controller
 
 You can install the Admission Controller using the Install Hub. [Learn how to install Admission Controller here](/features/admission-controller).
 
-### 2. Set Admission Controller to Passive Mode
+### 3. Set Admission Controller to Passive Mode
 
 Admission Controller is set to Passive Mode by default. [Learn more how to enable/disable Passive Mode in Admission Controller here](/features/admission-controller#installation).
 
-### 3. OPTIONAL: Install Insights in your CI pipeline to warn users of Policy violations
+### 4. OPTIONAL: Install Insights in your CI pipeline to warn users of Policy violations
 
 [Learn how to setup the Insights Continuous Integration (CI) feature here.](/features/infrastructure-as-code-scanning)
 
@@ -70,7 +148,12 @@ Admission Controller is set to Passive Mode by default. [Learn more how to enabl
 >
 > Verify that your `fairwinds-insights.yaml` file at the root of your repo has the `options.setExitCode` set to `false`. [Learn more about gating pull requests with the Insights CI integration here](/features/infrastructure-as-code-scanning#gating-pull-requests).
 
-* * *
+### 5. Turn on "Focused" Scan Mode
+Navigate to the Policies > Policy Mapping page and set the [Scan Mode](/features/policy-mappings#scan-mode) to "Focused". 
+
+At this point, you will now see:
+- In-cluster reporting of specific policies (via `cluster-wide-reporting` Policy Mapping)
+- Reporting of (but NO blocking of) policy violations at time of Admission for both Cluster-wide Policies (via `cluster-wide-enforcement` Policy Mapping) and Scoped Policies (via `scoped-policy-enforcement` Policy Mapping)
 
 * * *
 
@@ -81,66 +164,27 @@ _In this stage, we want to enforce our Cluster-wide Policies at time of Admissio
 Before proceeding, please verify:
 
 -   Admission Controller is installed and set to Passive Mode
--   The Insights CI integration continues to warn when Action Items are found in CI pipelines -- but will not block pipelines. Verify you have `options.setExitCode` set to `false` .
+-   The Insights CI integration continues to warn when Action Items are found in CI pipelines -- but will not block pipelines. Verify you have `options.setExitCode` set to `false`.
 
-### 1. Disable Passive Mode in Admission Controller
+### 1. Update Policy Mappings to enforce Cluster-wide Policies at Admission
+Return to your `cluster-wide-enforcement` Policy Mapping and update the `block` setting to `true`.
+|Policy Mapping Setting |   |
+|--|--|
+| Policy Mapping Name |`cluster-wide-enforcement`|
+|Block| **true**|
+
+### 2. Disable Passive Mode in Admission Controller
 
 Disabling Admission Controller is done on a per-cluster basis. [Learn more how to enable/disable Passive Mode in Admission Controller here](/features/admission-controller#installation).
 
-### 2. Use Policy Configuration to enforce Cluster-wide Policies at Admission
-
-1. Download the [Insights CLI](/features/insights-cli)
-2. Create a `settings.yaml` file with the configuration below.
-3. Upload `settings.yaml` using the Insights CLI. [Learn how to manage Policy Configuration using the Insights CLI here](/features/insights-cli).
-
-Example `settings.yaml`:
-```yaml
-checks:
-  polaris:
-    memoryRequestsMissing:
-      admission:
-        block: true
-    cpuRequestsMissing:
-      admission:
-        block: true
-    pullPolicyNotAlways:
-      admission:
-        block: true
-    livenessProbeMissing:
-      admission:
-        block: true
-    readinessProbeMissing:
-      admission:
-        block: true
-    dangerousCapabilities:
-      admission:
-        block: true
-    tagNotSpecified:
-      admission:
-        block: true
-```
-
-### 3. Create Automation Rule to keep blocking mode focused on Cluster-wide Policies only
-1. Navigate to the Automation page
-2. Click 'Create Custom Rule'
-3. Create a new Automation Rule with the following settings:
-
-Automation Rule: `0002-enforce-cluster-wide-policies-only`
-
-Context: Admission Controller
-
-```javascript
-//Note: Admission Controller will automatically block when Action Items with a 0.7 severity or higher (High and Critical) are found. This lowers severities to avoid unncessary enforcement.
-if (ActionItem.Severity >= 0.7) {
-  ActionItem.Severity = MEDIUM_SEVERITY;
-}
-```
+### 3. OPTIONAL: Create Policy Exemptions
+Please read: [Using App Groups to create Exemptions](#using-app-groups-to-create-exemptions).
 
 * * *
 
 ## Implementing Stage 3: Compliance
 
-_In this stage, we want to enforce our Cluster-wide Policies and Scoped policies_
+_In this stage, we want to enforce our Cluster-wide Policies AND Scoped policies_
 
 _Optionally, we can enable the Insights CI script to fail pipelines where Cluster-wide Policy issues are present._
 
@@ -149,133 +193,19 @@ Before proceeding, please verify:
 -   Admission Controller is installed and Passive Mode is disabled
 -   The Insights CI integration is installed on at least one pipeline and continues to have `options.setExitCode` set to `false`
 
-### 1. Disable the '`0002-enforce-cluster-wide-policies-only`' Automation Rule
+### 1. Update Policy Mapping to enforce Scoped Policies at Admission
+Return to your `scoped-policy-enforcement` Policy Mapping and update the `block` setting to `true`.
+|Policy Mapping Setting |   |
+|--|--|
+| Policy Mapping Name |`scoped-policy-enforcement`|
+|Block| **true**|
 
-To disable the Automation Rule:
-
--   Ensure you have `Owner` permissions in Insights
--   Navigate to the Automation page
--   Click on the `0002-enforce-cluster-wide-policies-only` Automation Rule
--   In the upper-right, toggle off the 'Enable' switch
--   Click 'Update Rule'
-
-In the next step, you will create a new Automation Rule that enforces Scoped Policies for specific Namespaces.
-
-### 2. Create Automation Rule to enforce Cluster-wide and Scoped Policies at Admission
-
-1. Navigate to the Automation page
-2. Click 'Create Custom Rule'
-3. Create a new Automation Rule with the following settings:
-
-Automation Rule: `0003-enforce-all-policies`
-
-Context: Admission Controller
-
-```javascript
-//Define Namespaces to apply policy to, as well as the specific policies to enforce.
-namespaceScope = new Array("business-app", "production");
-policyScope = new Array(
-  "insecureCapabilities",
-  "hostIPCSet",
-  "hostPIDSet",
-  "privilegeEscalationAllowed",
-  "runAsPrivileged",
-  "runAsRootAllowed"
-);
-
-//If Namespace Annotations are set, use this to define specific policies to enforce. Else, use what's configured in the policyScope variable.
-policiesToEnforce = new Array();
-if (ActionItem.NamespaceAnnotations["insights.fairwinds.com/enforce"]) {
-  policiesToEnforce = JSON.parse(
-    ActionItem.NamespaceAnnotations["insights.fairwinds.com/enforce"]
-  );
-} else if (namespaceScope.indexOf(ActionItem.ResourceNamespace) !== -1) {
-  policiesToEnforce = policyScope;
-}
-
-//Policy Enforcement logic
-//Note: Admission Controller will automatically block when Action Items with a 0.7 severity or higher (High and Critical) are found. This lowers severities to avoid unncessary enforcement.
-if (ActionItem.Severity >= 0.7) {
-  ActionItem.Severity = MEDIUM_SEVERITY;
-}
-
-if (policiesToEnforce.length > 0) {
-  if (policiesToEnforce.indexOf(ActionItem.EventType) !== -1) {
-    //Enforce the policy specified in the Namespace Annotation
-    ActionItem.Severity = CRITICAL_SEVERITY;
-    //Send optional Slack notification
-    //sendSlackNotification("infra-notifications", "A deployment failed due to the following issue: "+JSON.stringify(ActionItem));
-  }
-}
-```
-
-**OPTIONAL: Use Namespace Annotations to customize which policies you'd like to enforce at the Namespace level**
-
-The above `0003-enforce-all-policies` Automation Rule allows you to define a custom list of policies you'd like to enforce for a given namespace using the `insights.fairwinds.com/enforce` annotation.
-
-Here's an example of how to use this:
-
-```yaml
-apiVersion: v1
-kind: Namespace
-metadata:
-  annotations:
-    insights.fairwinds.com/enforce: ['runAsRootAllowed','insecureCapabilities'];
-```
-
-### 3. OPTIONAL: Configure Insights to enforce Cluster-wide Policies in CI
-
-#### **3A) Set the Insights CI integration to gate pull requests**
-
-Open the `fairwinds-insights.yaml` file at the root of your Git repo and set `options.setExitCode` to `true`.
-
-#### **3B) Update Policy Configuration to enforce Cluster-wide Policies in CI**
-
-1. Download the [Insights CLI](/features/insights-cli)
-2. Update your existing `settings.yaml` file with the configuration below.
-3. Upload `settings.yaml` using the Insights CLI. [Learn how to manage Policy Configuration using the Insights CLI here](/features/insights-cli).
-
-Example `settings.yaml`:
-
-```yaml
-checks:
-  polaris:
-    memoryRequestsMissing:
-      ci:
-        block: true
-      admission:
-        block: true
-    cpuRequestsMissing:
-      ci:
-        block: true
-      admission:
-        block: true
-    pullPolicyNotAlways:
-      ci:
-        block: true
-      admission:
-        block: true
-    livenessProbeMissing:
-      ci:
-        block: true
-      admission:
-        block: true
-    readinessProbeMissing:
-      ci:
-        block: true
-      admission:
-        block: true
-    dangerousCapabilities:
-      ci:
-        block: true
-      admission:
-        block: true
-    tagNotSpecified:
-      ci:
-        block: true
-      admission:
-        block: true
-```
+### 2. OPTIONAL: Configure Insights to enforce Cluster-wide Policies in CI
+Return to your `cluster-wide-enforcement` Policy Mapping and update the `contexts` setting to `CI, Admission`.
+|Policy Mapping Setting |   |
+|--|--|
+| Policy Mapping Name |`cluster-wide-enforcement`|
+|Contexts| **`CI, Admission`**|
 
 ## Managing Exceptions
 
@@ -290,66 +220,9 @@ In these scenarios, you can Resolve or Snooze an Action Item within an admission
 
 You can always "undo" a Resolution by navigating to the most recent admission request and selecting "Resolve > None" or "Snooze > Unsnooze". 
 
-### Automation Rules for Managing Exceptions
+### Using App Groups to create Exemptions
+[App Groups] provide a way to "exclude" resources from everything gathered by the "matched" resources. You can see an [example here](/features/app-groups/#appgroup-examples).
 
-Automation Rules provide fine-grained controls for manipulating automation rule logic. There are two common approaches:
-- Using annotations
-- Using allow list
+**Example: Global Namespace Exemptions**
 
-#### Bypass Admission Controller using an Annotation
-
-Add a specific annotation to that workload, and use an Automation Rule to bypass Admission Controller
-
-  - With this option, security engineers and platform engineers are encouraged to use Git workflows to review/approve annotations added by development teams. This provides an audit trail for exceptions, and follows policy-as-code best practices.
-
-Automation Rule: `ignore-via-annotation`
-
-Context: Admission Controller
-
-```javascript
-//Bypass Admission Controller if an annotation like this exists: insights.fairwinds.com/ignore: "[\"runAsRootAllowed\"]"
-policyException =
-  ActionItem.ResourceAnnotations["insights.fairwinds.com/ignore"];
-
-if (policyException) {
-  exceptions = JSON.parse(policyException);
-  if (exceptions.indexOf(ActionItem.EventType) !== -1) {
-    //Reduce severity and resolve this ActionItem so it can bypass the Admission Controller
-    ActionItem.Severity = LOW_SEVERITY;
-    ActionItem.Resolution = WORKING_AS_INTENDED_RESOLUTION;
-  }
-}
-```
-
-### Bypass Admission Controller using an Allow List
-
-Create an "allow list" within an Insights Automation Rule that forces the Severity of that Action Item to Low.
-
-- With this option, security engineers and platform engineers carry the burden of maintaining an exception list. This is useful if development teams are still not fully responsible for their Kubernetes workload configurations.
-
-Automation Rule: `ignore-via-allowlist`
-
-Context: Admission Controller
-
-```javascript
-exceptionList = new Array();
-
-//Create an allowlist using EventType, ResourceNamespace, and ResourceName combination.
-//Below is an exception example for kube-system workloads that need to run as root
-exceptionList["runAsRootAllowed"] = new Array(
-  "kube-system/cert-manager",
-  "kube-system/external-dns"
-);
-
-//Enforcement logic for the Allow List
-if (exceptionList[ActionItem.EventType].length > 0) {
-  if (
-    exceptionList[ActionItem.EventType][
-      ActionItem.ResourceNamespace + "/" + ActionItem.ResourceName
-    ]
-  ) {
-    //Reduce severity and resolve this ActionItem so it can bypass the Admission Controller
-    ActionItem.Severity = LOW_SEVERITY;
-  }
-}
-```
+For example, we created a `match-all` App Group in the [Pre-work section of this document](#1-configure-in-cluster-reporting-of-policy-violations). You may choose to list specific namespaces that should be excluded from reporting or enforcement by adding them to the "exclude" section of the App Group. This would essentially match all resources except for the namespaces you list.

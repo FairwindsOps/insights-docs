@@ -132,6 +132,8 @@ To enable or disable a particular report:
 To customize the severity or whether a Policy should block an admission request, you can use the
 [Policy Configuration](/features/policies) feature.
 
+To create more fine-grained enforcement, learn about [Policy Enforcement best practices](/first-steps/policy-enforcement).
+
 ## Troubleshooting
 To troubleshoot the Admission Controller, you can
 * View the logs in the admission pods

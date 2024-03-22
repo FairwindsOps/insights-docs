@@ -36,39 +36,6 @@ There are two Scan Modes:
 
 You can find Scan Mode under the "Policy > Policy Mappings" page.
 
-## Designing your initial Policy Mappings and App Groups
-Both [App Groups](/features/app-grouos) and Policy Mappings are intentionally  flexible concepts, which makes it possible for you to design them around your business needs.
-
-Here's an example of how most organizations get started:
-- **First, create some "cluster wide" policies, including:**
-  - Create a `match-all` App Group that matches on everything -- [example here](/features/app-groups/#selects-all-resources)
-  - Create a Policy Mapping with broad reporting of in-cluster policy violations - [example here](#only-report-specific-policies-in-agent-context)
-  - Create a Policy Mapping with narrow enforcement of basic configuration hygiene at time of Admission- [example here](#enforce-a-baseline-policy-across-all-your-clusters)
-
-
-- **Optionally, you may target some Kubernetes resources (like teams, apps, or business units) with specific policies (such as security or reliability checks)**
-  - Create an App Group focused on specific workloads -- [example here](/features/app-groups#matching-a-very-strict-workload-by-every-available-option)
-  - Create a Policy Mapping with specific policies, and link it to that App Group -- [example here](#scan-only-polarislivenessprobemissing-policy) 
-
-
-
-
-
-
-                                                                              
-
-### Policy Mappings are additive
-
-A single Kubernetes resource can be subject to multiple Policy Mappings. The `policies` within a Policy Mapping are additive, so that Kubernetes resource will be evaluated against the unique, aggregate list of policies across all those Policy Mappings. For example:
-  1. `Policy-Mapping-A` has 2 policies `polaris.runAsRootAllowed`, `polaris.cpuRequestsRequired`
-  2. `Policy-Mapping-B` has 2 policies `polaris.memoryRequestsRequired`, `polaris.cpuRequestsRequired`
-  3. Workload `api-server` matches both Policy Mappings, and therefore will be scanned for 3 unique policies:
-      - `polaris.runAsRootAllowed`
-      - `polaris.cpuRequestsRequired`
-      - `polaris.memoryRequestsRequired`
-
-> NOTE: [It's possible for Kubernetes resources to be subject to conflicting `block` directives](#when-a-kubernetes-resource-has-conflicting-block-directives)
-
 ## Policy Mapping Examples
 
 ### Only report specific Policies in `Agent` context
