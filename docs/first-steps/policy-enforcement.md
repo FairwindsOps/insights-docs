@@ -225,4 +225,4 @@ You can always "undo" a Resolution by navigating to the most recent admission re
 
 **Example: Global Namespace Exemptions**
 
-For example, we created a `match-all` App Group in the [Pre-work section of this document](/features/policy-enforcement#1-configure-in-cluster-reporting-of-policy-violations). You may choose to list specific namespaces that should be excluded from reporting or enforcement by adding them to the "exclude" section of the App Group. This would essentially match all resources except for the namespaces you list.
+For example, we created a `match-all` App Group in the Pre-work section of this document. You may choose to list specific namespaces that should be excluded from reporting or enforcement by adding them to the "exclude" section of the App Group. This would essentially match all resources except for the namespaces you list.
