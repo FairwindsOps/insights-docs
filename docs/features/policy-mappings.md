@@ -111,6 +111,11 @@ The `block` configuration in a Policy Mapping only applies to Admission Controll
 ### When a Kubernetes Resource has conflicting `block` directives
 In a scenario where a Kubernetes resource is subject to multiple Policy Mappings with conflicting `block` values (e.g., one with `block: true` and another with `block: false`), Insights will default to `block:true`, meaning Insights will attempt to enforce/block that Admission Request or Repo Scan.
 
+### Policy Mappings are additive
+A single Kubernetes resource can be subject to multiple Policy Mappings. The `policies` within a Policy Mapping are additive, so that Kubernetes resource will be evaluated against the unique, aggregate list of policies across all those Policy Mappings.
+
+[See an example here](/first-steps/policy-enforcement/#important-policy-mappings-are-additive).
+
 ## Managing Policy Mappings
 
 
