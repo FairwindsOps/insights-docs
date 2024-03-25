@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 15.5.7
+### Bug Fixes and Enhancements
+* Speed up for clusters page
+* Style fix on addons page
+
 ## 15.5.6
 ### Policy Mappings
 You can now create Policy Mappings in the UI. Policy Mappings associate a set of policies
