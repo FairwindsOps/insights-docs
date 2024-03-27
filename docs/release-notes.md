@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 15.5.8
+### Bug Fixes and Enhancements
+* Fix for app group action item counts
+* Fix for cost saved views with labels
+* Fix for event type aggregation in Action Item Reports
+
 ## 15.5.7
 ### Bug Fixes and Enhancements
 * Speed up for clusters page
