@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 15.6.0
+### Bug Fixes and Enhancements
+* Fix for time range on costs page
+* Fix for aggregating by label on costs
+
+
 ## 15.5.8
 ### Bug Fixes and Enhancements
 * Fix for app group action item counts
