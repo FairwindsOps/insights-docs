@@ -10,6 +10,34 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 15.7.0
+### Bug Fixes and Enhancements
+* Redirect old admission tab to new admission page
+* Show policy mappings on App Groups table
+* Show kubeVersion on the add-ons page
+* Fix for some cost recommendations
+
+## 15.6.4
+### Bug Fixes and Enhancements
+* Speed up for automation rule logs
+
+## 15.6.3
+### Bug Fixes and Enhancements
+* Fix for log settings when uploading automation rules
+* Allow editing fields in Cost Settings
+
+## 15.6.2
+### Bug Fixes and Enhancements
+* Added option to show historical requests and limits in the costs page
+* Speed enhancements to vulnerabilities page
+
+## 15.6.1
+### Bug Fixes and Enhancements
+* Added a `fixable` column to the repositories UI
+* Fix for pagination and filters in Costs
+* Clicking rows in the Costs table will now expand to a new aggregator
+
+
 ## 15.6.0
 ### Bug Fixes and Enhancements
 * Fix for time range on costs page
