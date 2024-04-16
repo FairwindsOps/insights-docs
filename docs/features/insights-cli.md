@@ -286,6 +286,11 @@ For the testing, you will need to create a rule file and action item file. You a
 ```js
 if (ActionItem.ReportType === "trivy" && ActionItem.Cluster === "production") {
   ActionItem.Severity = 0.9;
+    
+  sendHTTPRequest("POST", "https://example.com/callback", {
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(ActionItem),
+  });
 }
 ```
 
@@ -320,7 +325,7 @@ Only explicitly set values will be matched.
 Once the files have been created, use the following command to validate the rule against Insights:
 
 ```bash
-insights-cli validate rule --insights-context  <insights context> {--automation-rule-file <rule file> --action-item-file <action item file>} [--expected-action-item <expected output file>]
+insights-cli validate rule --insights-context  <insights context> {--automation-rule-file <rule file> --action-item-file <action item file>} [--expected-action-item <expected output file> --dry-run]
 ```
 
 #### Flags:
@@ -333,7 +338,7 @@ insights-cli validate rule --insights-context  <insights context> {--automation-
 #### Example:
 
 ```bash
-insights-cli validate rule --insights-context Agent --automation-rule-file ./rule.js --action-item-file ./action-items.yaml --expected-action-item ./expected-output.yaml
+insights-cli validate rule --insights-context Agent --automation-rule-file ./rule.js --action-item-file ./action-items.yaml --expected-action-item ./expected-output.yaml --dry-run
 ```
 
 If the expected output is provided and the actual result matches, a success message is displayed:
@@ -341,8 +346,9 @@ If the expected output is provided and the actual result matches, a success mess
 -- Logs --
 
 [info] "edit_action_item" - Action Item modified - ["Severity" was "update" from "0.20" to "0.90"]
+[info] [dry-run] "send_http_request" - HTTP request sent to POST @ https://example.com/callback. Got response: 200
 
--- Diff Result --
+-- Diff Resul-
 
 INFO Success - actual response matches expected response
 ```
@@ -352,6 +358,7 @@ If no expected output is provided the updated action item `yaml` is displayed:
 -- Logs --
 
 [info] "edit_action_item" - Action Item modified - ["Severity" was "update" from "0.20" to "0.90"]
+[info] [dry-run] "send_http_request" - HTTP request sent to POST @ https://example.com/callback. Got response: 200
 
 -- Returned Action Item --
 
@@ -374,6 +381,8 @@ Some actions and function are logged in form of events and will be returned to h
 - `create_jira_ticket` - when `createTicket` is triggered with `Jira` provider.
 - `create_azure_devops_ticket` - when `createTicket` is triggered with `Azure` provider.
 - `send_slack_message` - when `sendSlackNotification` is triggered.
+
+When `--dry-run` is used, external integration will be "mocked" and their events will be marked with a `[dry-run]` tag.
 
 #### Verifying an Automation Rule
 Once you've uploaded an Automation Rule, it will be triggered the next time the Insights Agent, CI process or Admission Controller runs.
