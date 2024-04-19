@@ -278,53 +278,111 @@ Next use the Insights CLI to validate all OPA policies
 insights-cli validate opa --batch-directory <directory_path>
 ```
 
-
 ### Automation Rules
 Before pushing Automation Rules to Insights, you can use the CLI to check if the results will work as expected.
 For the testing, you will need to create a rule file and action item file. You also have the option to create an expected output file to compare to the actual result.
 
-Rule file example, default file name is ./rule.js:
+#### Rule file example, default file name is `./rule.js`:
 ```js
 if (ActionItem.ReportType === "trivy" && ActionItem.Cluster === "production") {
   ActionItem.Severity = 0.9;
+    
+  sendHTTPRequest("POST", "https://example.com/callback", {
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify(ActionItem),
+  });
 }
 ```
 
-Action item file example, default file name is ./action-item.yaml:
+#### Input action item file example, default file name is `./action-item.yaml`:
 ```yaml
 title: Image has vulnerabilities
 cluster: production
+eventType: image_vulnerability
 severity: 0.1
+reportType: trivy
 ```
 
-Expected output Action item file example:
+The following fields are required for input action item: 
+- `title`
+- `eventType`
+- `severity`
+- `reportType`
+
+When `--insights-context` is set to `Agent` or `AdmissionController`, the field `cluster` is also required.
+
+When `--insights-context` is set to `CI/CD`, the field `repository` is required.
+
+#### Expected output Action Item file example:
 ```yaml
-title: Image has vulnerabilities
-cluster: production
 severity: 0.9
 ```
+
+Only explicitly set values will be matched.
+
+---
 
 Once the files have been created, use the following command to validate the rule against Insights:
 
 ```bash
-insights-cli validate rule --insights-context  <insights context> --report-type <report type> {--automation-rule-file <rule file> --action-item-file <action item file>} [--expected-action-item <expected output file>]
+insights-cli validate rule --insights-context  <insights context> {--automation-rule-file <rule file> --action-item-file <action item file>} [--expected-action-item <expected output file> --dry-run]
 ```
-Example:
+
+#### Flags:
+  - **[required]** `-t`, `--insights-context string`   - Insights context: [AdmissionController, Agent or CI/CD]
+  - **[option]** `-a`, `--action-item-file string`     - Action Item file path (default `./action-item.yaml`)
+  - **[option]** `-r`, `--automation-rule-file string` - Automation rule JS file path (default `./rule.js`)
+  - **[option]** `-i`, `--expected-action-item string` - Optional file containing the action item that the automation rule is expected to produce
+  - **[option]** `--dry-run`                           - Optional flag to run the rule without executing any external integration (Slack, Jira, PagerDuty, Azure, http requests).
+
+#### Example:
+
 ```bash
-insights-cli validate rule --insights-context Agent --report-type trivy --automation-rule-file ./rule.js --action-item-file ./action-items.yaml --expected-action-item ./expected-output.yaml
+insights-cli validate rule --insights-context Agent --automation-rule-file ./rule.js --action-item-file ./action-items.yaml --expected-action-item ./expected-output.yaml --dry-run
 ```
 
 If the expected output is provided and the actual result matches, a success message is displayed:
 ```bash
+-- Logs --
+
+[info] "edit_action_item" - Action Item modified - ["Severity" was "update" from "0.20" to "0.90"]
+[info] [dry-run] "send_http_request" - HTTP request sent to POST @ https://example.com/callback. Got response: 200
+
+-- Diff Resul-
+
 INFO Success - actual response matches expected response
 ```
 
-If no expected output is provided the updated action item yaml is displayed:
-```yaml
+If no expected output is provided the updated action item `yaml` is displayed:
+```bash
+-- Logs --
+
+[info] "edit_action_item" - Action Item modified - ["Severity" was "update" from "0.20" to "0.90"]
+[info] [dry-run] "send_http_request" - HTTP request sent to POST @ https://example.com/callback. Got response: 200
+
+-- Returned Action Item --
+
 title: Image has vulnerabilities
 cluster: production
+eventType: image_vulnerability
 severity: 0.9
 ```
+
+#### Logs Events
+
+Some actions and function are logged in form of events and will be returned to help debugging the rule execution verification. In the example above, since the action-item was modified by the rule, Fairwinds Insights will generate an `edit_action_item` log that contains information about the modification that were applied. Below are the supported action and their log events:
+
+- `rule_runtime_error` - when the rule JS runtime has errors.
+- `edit_action_item` - when the action-item is modified.
+- `javascript_console_log` - the result of `console.log` usage.
+- `send_http_request` - when `sendHTTPRequest` function is triggered.
+- `create_pagerduty_incident` - when `createPagerDutyIncident` function is triggered.
+- `create_github_ticket` - when `createTicket` is triggered with `GitHub` provider.
+- `create_jira_ticket` - when `createTicket` is triggered with `Jira` provider.
+- `create_azure_devops_ticket` - when `createTicket` is triggered with `Azure` provider.
+- `send_slack_message` - when `sendSlackNotification` is triggered.
+
+When `--dry-run` is used, external integration will be "mocked" and their events will be marked with a `[dry-run]` tag.
 
 #### Verifying an Automation Rule
 Once you've uploaded an Automation Rule, it will be triggered the next time the Insights Agent, CI process or Admission Controller runs.
