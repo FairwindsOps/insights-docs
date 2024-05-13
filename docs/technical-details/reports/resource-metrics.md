@@ -80,9 +80,7 @@ GCP Managed Prometheus must be configured to scrape the Kubelet for Kubelet and 
 GCP Managed Prometheus needs a Kube State Metrics instance installed in order to get metrics from the Kubernetes API. Use the configuration in the "Install Kube State Metrics" section at link below to set this up: 
 [Configure kube-state-metrics](https://cloud.google.com/stackdriver/docs/managed-prometheus/exporters/kube_state_metrics#install-exporter)
 
-### 3. Add permissions for accessing GCP Managed Prometheus API
-
-### Create service account to run prometheus query
+### 3. Create service account to run prometheus query
 1. Go to IAM & Admin > Select Service Account
 2. Click Create Service Account
 3. Give the service account a name then "Create and Continue"
