@@ -101,9 +101,11 @@ prometheus-metrics:
 - managedPrometheusClusterName: required only when using Managed Promehteus, as Managed Prometheus may have data from multiple clusters
 
 6. Make kubernetes insights-agent-prometheus-metrics service account member to google service account and bind to workload identity role
+```bash
 gcloud iam service-accounts add-iam-policy-binding <my-service-account>@gcp-prime.iam.gserviceaccount.com \
     --role roles/iam.workloadIdentityUser \
     --member "serviceAccount:gcp-prime.svc.id.goog[insights-agent/insights-agent-prometheus-metrics]"
+```
 
 ## Integration with AKS / Azure Monitor
 
