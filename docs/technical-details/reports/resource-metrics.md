@@ -97,11 +97,11 @@ prometheus-metrics:
     annotations:
       iam.gke.io/gcp-service-account: <my-service-account>@gcp-prime.iam.gserviceaccount.com  
 ```
-address: required when you are not using our standard prometheus installation, at the example above provide the GCP Managed Prometheus address
-managedPrometheusClusterName: required only when using Managed Promehteus, as Managed Prometheus may have data from multiple clusters
+- address: required when you are not using our standard prometheus installation, at the example above provide the GCP Managed Prometheus address
+- managedPrometheusClusterName: required only when using Managed Promehteus, as Managed Prometheus may have data from multiple clusters
 
 6. Make kubernetes insights-agent-prometheus-metrics service account member to google service account and bind to workload identity role
-gcloud iam service-accounts add-iam-policy-binding <your-service-account>@gcp-prime.iam.gserviceaccount.com \
+gcloud iam service-accounts add-iam-policy-binding <my-service-account>@gcp-prime.iam.gserviceaccount.com \
     --role roles/iam.workloadIdentityUser \
     --member "serviceAccount:gcp-prime.svc.id.goog[insights-agent/insights-agent-prometheus-metrics]"
 
