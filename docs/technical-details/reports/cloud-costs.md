@@ -395,3 +395,54 @@ cloudcosts:
 * **projectname**: GCP project name
 * **dataset**: dataset name you provided when you setup your BigQuery for Billing
 * **billingaccount**: your Google Billing Account ID that you can get from Billing console, which is used to get the table name for BigQuery. Example: "1A2B3C-4D5E6F-7G8H9I"
+
+# Terraform snippets
+ Create service account to run BigQuery
+ ```yaml
+resource "google_service_account" "bigqueryaccess" {
+  account_id   = "bigqueryaccess"
+  display_name = "Big query Access"
+}
+
+resource "google_project_iam_policy" "bigquery_project_iam_policy" {
+  project     = "${var.project_name}"
+  policy_data = "${data.google_iam_policy.bigquery_iam_policy.policy_data}"
+}
+
+data "google_iam_policy" "bigquery_iam_policy" {
+  binding {
+    role = "roles/bigquery.dataViewer"
+    members = [
+       "serviceAccount:${google_service_account.bigqueryaccess.email}",
+    ]
+  }
+  binding {
+    role = "roles/bigquery.jobUser"
+    members = [
+       "serviceAccount:${google_service_account.bigqueryaccess.email}",
+    ]
+  }
+}
+
+resource "google_service_account_iam_binding" "bigqueryaccess_workload_identity" {
+  service_account_id = google_service_account.bigqueryaccess.name
+  role               = "roles/iam.workloadIdentityUser"
+  members = [
+    "serviceAccount:${var.project_name}.svc.id.goog[insights-agent/insights-agent-cloudcosts]",
+  ]
+}
+
+##########################################################
+# Standard GKE only ADDITITONAL STEPS, ignore if Autopilot
+# For standard GKE add these in your google_container_cluster resource
+# - To enable workload identity
+workload_identity_config {
+    identity_namespace = "${var.google_project}.svc.id.goog"
+}
+# - To enable workload identity in node pools
+workload_metadata_config {
+    node_metadata = "GKE_METADATA_SERVER"
+}
+##########################################################
+
+```

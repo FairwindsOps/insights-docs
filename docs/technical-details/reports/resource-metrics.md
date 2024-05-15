@@ -461,11 +461,6 @@ YAML
 
  Create Google service account to run Prometheus query
  ```yaml
- resource "google_service_account" "bigqueryaccess" {
-  account_id   = "bigqueryaccess"
-  display_name = "Big query Access"
-}
-
 resource "google_service_account" "prometheusqueryaccess" {
   account_id   = "prometheusqueryaccess"
   display_name = "Prometheus query Access"
@@ -489,19 +484,6 @@ data "google_iam_policy" "prometheus_monitoring_viewer_access" {
        "serviceAccount:${google_service_account.prometheusqueryaccess.email}",
     ]
   }
-  binding {
-    role = "roles/bigquery.dataViewer"
-    members = [
-       "serviceAccount:${google_service_account.bigqueryaccess.email}",
-    ]
-  }
-  binding {
-    role = "roles/bigquery.jobUser"
-    members = [
-       "serviceAccount:${google_service_account.bigqueryaccess.email}",
-    ]
-  }
-
 }
 
 resource "google_service_account_iam_binding" "prometheus_workload_identity" {
@@ -509,14 +491,6 @@ resource "google_service_account_iam_binding" "prometheus_workload_identity" {
   role               = "roles/iam.workloadIdentityUser"
   members = [
     "serviceAccount:${var.project_name}.svc.id.goog[insights-agent/insights-agent-prometheus-metrics]",
-  ]
-}
-
-resource "google_service_account_iam_binding" "bigqueryaccess_workload_identity" {
-  service_account_id = google_service_account.bigqueryaccess.name
-  role               = "roles/iam.workloadIdentityUser"
-  members = [
-    "serviceAccount:${var.project_name}.svc.id.goog[insights-agent/insights-agent-cloudcosts]",
   ]
 }
 
