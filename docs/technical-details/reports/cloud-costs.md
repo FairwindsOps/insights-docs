@@ -433,7 +433,7 @@ resource "google_service_account_iam_binding" "bigqueryaccess_workload_identity"
 }
 
 ##########################################################
-# Standard GKE only ADDITITONAL STEPS, ignore if Autopilot
+# Standard GKE only ADDITIONAL STEPS, ignore if Autopilot
 # For standard GKE add these in your google_container_cluster resource
 # - To enable workload identity
 workload_identity_config {
