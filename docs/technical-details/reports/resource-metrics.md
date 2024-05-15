@@ -471,7 +471,7 @@ YAML
 ```
 
  Create Google service account to run Prometheus query
- ```yaml
+ ```
 resource "google_service_account" "prometheusqueryaccess" {
   account_id   = "prometheusqueryaccess"
   display_name = "Prometheus query Access"
