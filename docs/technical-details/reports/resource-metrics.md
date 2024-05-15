@@ -109,7 +109,7 @@ gcloud iam service-accounts add-iam-policy-binding <my-service-account>@gcp-prim
 
 # Terraform snippets
 Collect Kubelet/cAdvisor metrics 
-```yaml
+```terraform
 resource "null_resource" "patch_operator_config" {
   provisioner "local-exec" {
     command = <<EOF

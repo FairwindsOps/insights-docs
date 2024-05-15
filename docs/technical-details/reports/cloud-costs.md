@@ -398,7 +398,7 @@ cloudcosts:
 
 # Terraform snippets
  Create service account to run BigQuery
- ```yaml
+ ```terraform
 resource "google_service_account" "bigqueryaccess" {
   account_id   = "bigqueryaccess"
   display_name = "Big query Access"
