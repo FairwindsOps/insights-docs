@@ -108,6 +108,17 @@ gcloud iam service-accounts add-iam-policy-binding <my-service-account>@gcp-prim
 ```
 
 # Terraform snippets
+Collect Kubelet/cAdvisor metrics 
+```yaml
+resource "null_resource" "patch_operator_config" {
+  provisioner "local-exec" {
+    command = <<EOF
+kubectl patch operatorconfig/config --namespace gmp-public --type merge --patch 'collections:\n   kubeletScraping:\n     interval: 30s' 
+EOF  
+  }
+}
+```
+
 Install `kube-state-metrics`
 ```yaml
 resource "kubectl_manifest" "install_kube_state_metrics" {
