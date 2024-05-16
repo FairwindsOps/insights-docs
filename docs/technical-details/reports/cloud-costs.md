@@ -396,8 +396,6 @@ cloudcosts:
 * **dataset**: dataset name you provided when you setup your BigQuery for Billing
 * **billingaccount**: your Google Billing Account ID that you can get from Billing console, which is used to get the table name for BigQuery. Example: "1A2B3C-4D5E6F-7G8H9I"
 
-
-
 ## Terraform
 Terraform for Google Cloud Provider (GCP) Billing Integration
 
