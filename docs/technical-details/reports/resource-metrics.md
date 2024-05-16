@@ -79,7 +79,7 @@ GCP Managed Prometheus must be configured to scrape the Kubelet for Kubelet and 
 
 GCP Managed Prometheus needs a Kube State Metrics instance installed in order to get metrics from the Kubernetes API. Use the configuration in the "Install Kube State Metrics" section at link below to set this up: 
 [Configure kube-state-metrics](https://cloud.google.com/stackdriver/docs/managed-prometheus/exporters/kube_state_metrics#install-exporter)
-### Note: Google yaml does not include job and cronjob. You may beed to update yaml to include those.
+> Note: Google yaml does not include job and cronjob. You may beed to update yaml to include those.
 ```YAML
 regex: kube_(cronjob|daemonset|deployment|job|replicaset|pod|namespace|node|statefulset|persistentvolume|horizontalpodautoscaler|job_created)(_.+)?
 ```
