@@ -401,7 +401,7 @@ cloudcosts:
 ## Terraform
 Terraform for Google Cloud Provider (GCP) Billing Integration
 
-### versions.tf
+#### versions.tf
 ```terraform
 terraform {
   required_version = ">= 0.13"
@@ -413,18 +413,18 @@ terraform {
 }
 ```
 
-### variables.tf
+#### variables.tf
 ```terraform
 variable "project_name" {
   type = string
 }
 ```
-### gcp-cloud-costs.auto.tfvars
+#### gcp-cloud-costs.auto.tfvars
 ```terraform
 project_name = "my-gcp-project"
 ```
 
-### main.tf
+#### main.tf
 ```terraform
 resource "google_service_account" "bigqueryaccess" {
   account_id   = "bigqueryaccess"

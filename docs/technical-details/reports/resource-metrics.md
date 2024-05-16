@@ -114,7 +114,7 @@ gcloud iam service-accounts add-iam-policy-binding <my-service-account>@gcp-prim
 ## Terraform
 Integration with GKE Autopilot / GCP Managed Prometheus using Terraform
 
-### versions.tf
+#### versions.tf
 ```terraform
 terraform {
   required_version = ">= 0.13"
@@ -126,7 +126,7 @@ terraform {
 }
 ```
 
-### variables.tf
+#### variables.tf
 ```terraform
 variable "project_name" {
   type = string
@@ -140,14 +140,14 @@ variable "gke_cluster_name" {
   type = string
 }
 ```
-### gcp-managed-prometheus.auto.tfvars
+#### gcp-managed-prometheus.auto.tfvars
 ```terraform
 project_name = "my-gcp-project"
 config_path= "~/.kube/config"
 gke_cluster_name = "gke_gcp-prime_us-central1_my_gcp_cluster"
 ```
 
-### main.tf
+#### main.tf
 ```terraform
 provider "kubernetes" {
   config_path    = "${var.config_path}"
