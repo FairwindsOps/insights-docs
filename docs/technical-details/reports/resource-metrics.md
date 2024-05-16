@@ -79,6 +79,10 @@ GCP Managed Prometheus must be configured to scrape the Kubelet for Kubelet and 
 
 GCP Managed Prometheus needs a Kube State Metrics instance installed in order to get metrics from the Kubernetes API. Use the configuration in the "Install Kube State Metrics" section at link below to set this up: 
 [Configure kube-state-metrics](https://cloud.google.com/stackdriver/docs/managed-prometheus/exporters/kube_state_metrics#install-exporter)
+# Note: Google yaml does not include job and cronjob. You may beed to update yaml to include those.
+```YAML
+regex: kube_(cronjob|daemonset|deployment|job|replicaset|pod|namespace|node|statefulset|persistentvolume|horizontalpodautoscaler|job_created)(_.+)?
+```
 
 ### 3. Create Google service account to run Prometheus query
 1. Go to IAM & Admin > Select Service Account
@@ -107,20 +111,57 @@ gcloud iam service-accounts add-iam-policy-binding <my-service-account>@gcp-prim
     --member "serviceAccount:gcp-prime.svc.id.goog[insights-agent/insights-agent-prometheus-metrics]"
 ```
 
-# Terraform snippets
-Collect Kubelet/cAdvisor metrics 
+## Terraform
+Integration with GKE Autopilot / GCP Managed Prometheus using Terraform
+
+### versions.tf
 ```terraform
-resource "null_resource" "patch_operator_config" {
-  provisioner "local-exec" {
-    command = <<EOF
-kubectl patch operatorconfig/config --namespace gmp-public --type merge --patch 'collections:\n   kubeletScraping:\n     interval: 30s' 
-EOF  
+terraform {
+  required_version = ">= 0.13"
+  required_providers {
+    aws = {
+      source = "hashicorp/google"
+    }
   }
 }
 ```
 
-Install `kube-state-metrics`
-```yaml
+### variables.tf
+```terraform
+variable "project_name" {
+  type = string
+}
+
+variable "config_path" {
+  type = string
+}
+
+variable "gke_cluster_name" {
+  type = string
+}
+```
+### gcp-managed-prometheus.auto.tfvars
+```terraform
+project_name = "my-gcp-project"
+config_path= "~/.kube/config"
+gke_cluster_name = "gke_gcp-prime_us-central1_my_gcp_cluster"
+```
+
+### main.tf
+```terraform
+provider "kubernetes" {
+  config_path    = "${var.config_path}"
+  config_context = "${var.gke_cluster_name}"
+}
+
+resource "null_resource" "prometheus_enable_cadvisor" {
+  provisioner "local-exec" {
+    command = <<EOF
+kubectl patch operatorconfig/config --namespace gmp-public --type merge --patch '{"collection": { "kubeletScraping": {"interval": "30s" }}}'
+EOF  
+  }
+}
+
 resource "kubectl_manifest" "install_kube_state_metrics" {
     yaml_body = <<YAML
 # Copyright 2023 Google LLC
@@ -446,7 +487,7 @@ spec:
       # Curated subset of metrics to reduce costs while populating default set of sample dashboards at
       # https://github.com/GoogleCloudPlatform/monitoring-dashboard-samples/tree/master/dashboards/kubernetes
       # Change this regex to fit your needs for which objects you want to monitor    
-      regex: kube_(daemonset|deployment|replicaset|pod|namespace|node|statefulset|persistentvolume|horizontalpodautoscaler|job_created)(_.+)?
+      regex: kube_(cronjob|daemonset|deployment|job|replicaset|pod|namespace|node|statefulset|persistentvolume|horizontalpodautoscaler|job_created)(_.+)?
       sourceLabels: [__name__]
   targetLabels:
     metadata: [] # explicitly empty so the metric labels are respected
@@ -468,33 +509,22 @@ spec:
     interval: 30s
 YAML
 }
-```
 
- Create Google service account to run Prometheus query
- ```terraform
 resource "google_service_account" "prometheusqueryaccess" {
   account_id   = "prometheusqueryaccess"
   display_name = "Prometheus query Access"
 }
 
-resource "google_project_iam_policy" "prometheus_project_iam_policy" {
-  project     = "${var.project_name}"
-  policy_data = "${data.google_iam_policy.prometheus_monitoring_viewer_access.policy_data}"
+resource "google_project_iam_member" "prometheus_project_iam_viewer_member" {
+  role    = "roles/monitoring.viewer"
+  member  = "serviceAccount:${google_service_account.prometheusqueryaccess.email}"
+  project = "${var.project_name}"
 }
 
-data "google_iam_policy" "prometheus_monitoring_viewer_access" {
-  binding {
-    role = "roles/monitoring.viewer"
-    members = [
-       "serviceAccount:${google_service_account.prometheusqueryaccess.email}",
-    ]
-  }
-  binding {
-    role = "roles/iam.serviceAccountTokenCreator"
-    members = [
-       "serviceAccount:${google_service_account.prometheusqueryaccess.email}",
-    ]
-  }
+resource "google_project_iam_member" "prometheus_project_iam_token_creator_member" {
+  role    = "roles/iam.serviceAccountTokenCreator"
+  member  = "serviceAccount:${google_service_account.prometheusqueryaccess.email}"
+  project = "${var.project_name}"
 }
 
 resource "google_service_account_iam_binding" "prometheus_workload_identity" {
@@ -504,9 +534,7 @@ resource "google_service_account_iam_binding" "prometheus_workload_identity" {
     "serviceAccount:${var.project_name}.svc.id.goog[insights-agent/insights-agent-prometheus-metrics]",
   ]
 }
-
- ```
-
+```
 
 ## Integration with AKS / Azure Monitor
 
