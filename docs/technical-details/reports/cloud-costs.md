@@ -395,3 +395,72 @@ cloudcosts:
 * **projectname**: GCP project name
 * **dataset**: dataset name you provided when you setup your BigQuery for Billing
 * **billingaccount**: your Google Billing Account ID that you can get from Billing console, which is used to get the table name for BigQuery. Example: "1A2B3C-4D5E6F-7G8H9I"
+
+## Terraform
+Terraform for Google Cloud Provider (GCP) Billing Integration
+
+#### versions.tf
+```terraform
+terraform {
+  required_version = ">= 0.13"
+  required_providers {
+    aws = {
+      source = "hashicorp/google"
+    }
+  }
+}
+```
+
+#### variables.tf
+```terraform
+variable "project_name" {
+  type = string
+}
+```
+#### gcp-cloud-costs.auto.tfvars
+```terraform
+project_name = "my-gcp-project"
+```
+
+#### main.tf
+```terraform
+resource "google_service_account" "bigqueryaccess" {
+  account_id   = "bigqueryaccess"
+  display_name = "Big query Access"
+}
+
+resource "google_project_iam_member" "bigquery_iam_member_dataViewer" {
+  role    = "roles/bigquery.dataViewer"
+  member  = "serviceAccount:${google_service_account.bigqueryaccess.email}"
+  project = "${var.project_name}"
+}
+
+resource "google_project_iam_member" "bigquery_iam_member_jobUser" {
+  role    = "roles/bigquery.jobUser"
+  member  = "serviceAccount:${google_service_account.bigqueryaccess.email}"
+  project = "${var.project_name}"
+}
+
+resource "google_service_account_iam_binding" "bigqueryaccess_workload_identity" {
+  service_account_id = google_service_account.bigqueryaccess.name
+  role               = "roles/iam.workloadIdentityUser"
+  members = [
+    "serviceAccount:${var.project_name}.svc.id.goog[insights-agent/insights-agent-cloudcosts]",
+  ]
+}
+
+##########################################################
+# Standard GKE only ADDITIONAL STEPS, ignore if Autopilot
+# For standard GKE add these in your google_container_cluster resource
+# To enable workload identity
+#
+#workload_identity_config {
+#    identity_namespace = "${var.google_project}.svc.id.goog"
+#}
+# To enable workload identity in node pools
+#workload_metadata_config {
+#    node_metadata = "GKE_METADATA_SERVER"
+#}
+##########################################################
+
+```
