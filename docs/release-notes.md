@@ -10,11 +10,160 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.0.27
+### Bug Fixes and Enhancements
+* Add migration support for older Timescale version
+
+## 16.0.26
+### Bug Fixes and Enhancements
+* Add migration support for latest RDS version
+
+## 16.0.25
+### Bug Fixes and Enhancements
+* update Timescale migrations to be idempotent
+
+## 16.0.24
+### Bug Fixes and Enhancements
+* [internal] update database types and fixtures
+
+## 16.0.23
+### Bug Fixes and Enhancements
+* Add new query parameters support (`hasRepositories` and `hasWorkloads`) on all vulnerabilities top API
+
+## 16.0.22
+### Bug Fixes and Enhancements
+* Add `pdbDisruptionsIsZero` check to policies page
+* Add fees to nodes total costs in Costs page 
+
+## 16.0.21
+### Bug Fixes and Enhancements
+* Support for contextualized filtering on cost filter API
+
+## 16.0.20
+### Bug Fixes and Enhancements
+* Fix App Group filtering on Costs page
+
+## 16.0.19
+### Bug Fixes and Enhancements
+* Fix error `column reference "cluster" is ambiguous` triggered on costs page
+
+## 16.0.18
+### Bug Fixes and Enhancements
+* Add overhead costs support on Costs page
+* Fix App Groups labels match/exclusion on admission context
+* Add support to wildcard on Costs Page
+
+## 16.0.17
+### Bug Fixes and Enhancements
+* Improve how changes relative to the main branch is calculated on Repositories 
+
+## 16.0.16
+### Bug Fixes and Enhancements
+* [internal] Fix admin permissions
+
+## 16.0.15
+### Bug Fixes and Enhancements
+* Update user's permission for organization creation (cont.)
+
+## 16.0.14
+### Bug Fixes and Enhancements
+* Fix bug on GitHub comments not considering Policy Mappings configuration
+* Fix miss formatted cost in CI/CD Action Items
+
+## 16.0.13
+### Bug Fixes and Enhancements
+* Fix bug on cost APIs when using appGroups query param
+* Add support for enabled/disabled policy mappings
+
+## 16.0.12
+### Bug Fixes and Enhancements
+* Update user's permission for organization creation
+
+## 16.0.11
+### Bug Fixes and Enhancements
+* Bump github.com/go-playground/validator/v10 from 10.19.0 to 10.20.0 (#4679)
+
+## 16.0.10
+### Bug Fixes and Enhancements
+* Fix `Billed Cost Greater Than` filter handling on costs saved views API
+
+## 16.0.9
+### Bug Fixes and Enhancements
+* Add App Groups list of values on Costs filters API
+
+## 16.0.8
+### Bug Fixes and Enhancements
+* Add sorted list of values for App Groups filter on Action Items page
+
+## 16.0.7
+### Bug Fixes and Enhancements
+* Fix costs page when select hourly data
+* Fix `Teams` drop down isn't filtering correctly on Action Items page
+
+## 16.0.6
+### Bug Fixes and Enhancements
+* Fix a bug on date handling costs page
+
+## 16.0.5
+### Bug Fixes and Enhancements
+* Add App Groups filtering support on Action Items Summary page
+
+## 16.0.4
+### Bug Fixes and Enhancements
+* Improve load performance on App Groups summary page
+
+## 16.0.3
+### Bug Fixes and Enhancements
+* Fix costs `NaN` issues
+
+## 16.0.2
+### Bug Fixes and Enhancements
+* Add support for persisting CPU and memory idle info into node capacity history
+* Fix `NaN` values in timescale
+* Fix `GCP` cores cost calculation
+
+## 16.0.1
+### Bug Fixes and Enhancements
+* Fix some potential division by zero on `aws-cost` and `cloud-cost` report processing
+
+## 16.0.0
+### Bug Fixes and Enhancements
+* Fix a bug that prevented the setup of multiple basic-auth integrations
+* Add `Billed Cost Greater Than` and `Efficiencies` filters to Costs page
+
+## 15.7.1
+### Bug Fixes and Enhancements
+* Fix automation rule update bug that created a new rule instead of overwriting it
+* Add support for App Groups in Costs Saved Views
+* Fix time series resource pagination that made the graph wrong when selecting for long periods
+
+## 15.7.0
+### Bug Fixes and Enhancements
+* Fix recommended CPU cost being $0.00 in some cases
+
+## 15.6.4
+### Bug Fixes and Enhancements
+* Add Policy Mapping names to App Group Summaries API
+* Add support for App Groups filtering in Costs API
+* Improve performance on Automation Rule Log page
+
+## 15.6.3
+### Bug Fixes and Enhancements
+* Fix on update rule API to only update `logsEnabled` field if explicitly set
+
+## 15.6.2
+### Bug Fixes and Enhancements
+* Improve loading time for vulnerabilities page
+* Disable Automated right-sizer for free-tier accounts
+
+## 15.6.1
+### Bug Fixes and Enhancements
+* Improve loading time for vulnerabilities page
+
 ## 15.6.0
 ### Bug Fixes and Enhancements
 * Fix for time range on costs page
 * Fix for aggregating by label on costs
-
 
 ## 15.5.8
 ### Bug Fixes and Enhancements
