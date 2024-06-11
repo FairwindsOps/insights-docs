@@ -10,21 +10,21 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.1.0
+### Bug Fixes and Enhancements
+* Update minimum recommended memory to 64Mi
+
 ## 16.0.27
 ### Bug Fixes and Enhancements
-* Add migration support for older Timescale version
+* [self-hosted] Add migration support for older Timescale version
 
 ## 16.0.26
 ### Bug Fixes and Enhancements
-* Add migration support for latest RDS version
+* [self-hosted] Add migration support for latest RDS version
 
 ## 16.0.25
 ### Bug Fixes and Enhancements
-* update Timescale migrations to be idempotent
-
-## 16.0.24
-### Bug Fixes and Enhancements
-* [internal] update database types and fixtures
+* [self-hosted] update Timescale migrations to be idempotent
 
 ## 16.0.23
 ### Bug Fixes and Enhancements
@@ -39,27 +39,11 @@ sidebarDepth: 1
 ### Bug Fixes and Enhancements
 * Support for contextualized filtering on cost filter API
 
-## 16.0.20
-### Bug Fixes and Enhancements
-* Fix App Group filtering on Costs page
-
-## 16.0.19
-### Bug Fixes and Enhancements
-* Fix error `column reference "cluster" is ambiguous` triggered on costs page
-
 ## 16.0.18
 ### Bug Fixes and Enhancements
 * Add overhead costs support on Costs page
 * Fix App Groups labels match/exclusion on admission context
 * Add support to wildcard on Costs Page
-
-## 16.0.17
-### Bug Fixes and Enhancements
-* Improve how changes relative to the main branch is calculated on Repositories 
-
-## 16.0.16
-### Bug Fixes and Enhancements
-* [internal] Fix admin permissions
 
 ## 16.0.15
 ### Bug Fixes and Enhancements
@@ -74,10 +58,6 @@ sidebarDepth: 1
 ### Bug Fixes and Enhancements
 * Fix bug on cost APIs when using appGroups query param
 * Add support for enabled/disabled policy mappings
-
-## 16.0.12
-### Bug Fixes and Enhancements
-* Update user's permission for organization creation
 
 ## 16.0.11
 ### Bug Fixes and Enhancements
@@ -99,10 +79,6 @@ sidebarDepth: 1
 ### Bug Fixes and Enhancements
 * Fix costs page when select hourly data
 * Fix `Teams` drop down isn't filtering correctly on Action Items page
-
-## 16.0.6
-### Bug Fixes and Enhancements
-* Fix a bug on date handling costs page
 
 ## 16.0.5
 ### Bug Fixes and Enhancements
@@ -133,9 +109,7 @@ sidebarDepth: 1
 
 ## 15.7.1
 ### Bug Fixes and Enhancements
-* Fix automation rule update bug that created a new rule instead of overwriting it
 * Add support for App Groups in Costs Saved Views
-* Fix time series resource pagination that made the graph wrong when selecting for long periods
 
 ## 15.7.0
 ### Bug Fixes and Enhancements
@@ -154,7 +128,6 @@ sidebarDepth: 1
 ## 15.6.2
 ### Bug Fixes and Enhancements
 * Improve loading time for vulnerabilities page
-* Disable Automated right-sizer for free-tier accounts
 
 ## 15.6.1
 ### Bug Fixes and Enhancements
