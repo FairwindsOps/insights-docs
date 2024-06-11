@@ -81,7 +81,7 @@ sidebarDepth: 1
 
 ## 16.0.11
 ### Bug Fixes and Enhancements
-* Bump github.com/go-playground/validator/v10 from 10.19.0 to 10.20.0 (#4679)
+* Bump github.com/go-playground/validator/v10 from 10.19.0 to 10.20.0
 
 ## 16.0.10
 ### Bug Fixes and Enhancements
