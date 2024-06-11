@@ -10,11 +10,133 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.1.0
+### Bug Fixes and Enhancements
+* Update minimum recommended memory to 64Mi
+
+## 16.0.27
+### Bug Fixes and Enhancements
+* [self-hosted] Add migration support for older Timescale version
+
+## 16.0.26
+### Bug Fixes and Enhancements
+* [self-hosted] Add migration support for latest RDS version
+
+## 16.0.25
+### Bug Fixes and Enhancements
+* [self-hosted] update Timescale migrations to be idempotent
+
+## 16.0.23
+### Bug Fixes and Enhancements
+* Add new query parameters support (`hasRepositories` and `hasWorkloads`) on all vulnerabilities top API
+
+## 16.0.22
+### Bug Fixes and Enhancements
+* Add `pdbDisruptionsIsZero` check to policies page
+* Add fees to nodes total costs in Costs page 
+
+## 16.0.21
+### Bug Fixes and Enhancements
+* Support for contextualized filtering on cost filter API
+
+## 16.0.18
+### Bug Fixes and Enhancements
+* Add overhead costs support on Costs page
+* Fix App Groups labels match/exclusion on admission context
+* Add support to wildcard on Costs Page
+
+## 16.0.15
+### Bug Fixes and Enhancements
+* Update user's permission for organization creation (cont.)
+
+## 16.0.14
+### Bug Fixes and Enhancements
+* Fix bug on GitHub comments not considering Policy Mappings configuration
+* Fix miss formatted cost in CI/CD Action Items
+
+## 16.0.13
+### Bug Fixes and Enhancements
+* Fix bug on cost APIs when using appGroups query param
+* Add support for enabled/disabled policy mappings
+
+## 16.0.11
+### Bug Fixes and Enhancements
+* Bump github.com/go-playground/validator/v10 from 10.19.0 to 10.20.0
+
+## 16.0.10
+### Bug Fixes and Enhancements
+* Fix `Billed Cost Greater Than` filter handling on costs saved views API
+
+## 16.0.9
+### Bug Fixes and Enhancements
+* Add App Groups list of values on Costs filters API
+
+## 16.0.8
+### Bug Fixes and Enhancements
+* Add sorted list of values for App Groups filter on Action Items page
+
+## 16.0.7
+### Bug Fixes and Enhancements
+* Fix costs page when select hourly data
+* Fix `Teams` drop down isn't filtering correctly on Action Items page
+
+## 16.0.5
+### Bug Fixes and Enhancements
+* Add App Groups filtering support on Action Items Summary page
+
+## 16.0.4
+### Bug Fixes and Enhancements
+* Improve load performance on App Groups summary page
+
+## 16.0.3
+### Bug Fixes and Enhancements
+* Fix costs `NaN` issues
+
+## 16.0.2
+### Bug Fixes and Enhancements
+* Add support for persisting CPU and memory idle info into node capacity history
+* Fix `NaN` values in timescale
+* Fix `GCP` cores cost calculation
+
+## 16.0.1
+### Bug Fixes and Enhancements
+* Fix some potential division by zero on `aws-cost` and `cloud-cost` report processing
+
+## 16.0.0
+### Bug Fixes and Enhancements
+* Fix a bug that prevented the setup of multiple basic-auth integrations
+* Add `Billed Cost Greater Than` and `Efficiencies` filters to Costs page
+
+## 15.7.1
+### Bug Fixes and Enhancements
+* Add support for App Groups in Costs Saved Views
+
+## 15.7.0
+### Bug Fixes and Enhancements
+* Fix recommended CPU cost being $0.00 in some cases
+
+## 15.6.4
+### Bug Fixes and Enhancements
+* Add Policy Mapping names to App Group Summaries API
+* Add support for App Groups filtering in Costs API
+* Improve performance on Automation Rule Log page
+
+## 15.6.3
+### Bug Fixes and Enhancements
+* Fix on update rule API to only update `logsEnabled` field if explicitly set
+
+## 15.6.2
+### Bug Fixes and Enhancements
+* Improve loading time for vulnerabilities page
+
+## 15.6.1
+### Bug Fixes and Enhancements
+* Improve loading time for vulnerabilities page
+
 ## 15.6.0
 ### Bug Fixes and Enhancements
 * Fix for time range on costs page
 * Fix for aggregating by label on costs
-
 
 ## 15.5.8
 ### Bug Fixes and Enhancements
