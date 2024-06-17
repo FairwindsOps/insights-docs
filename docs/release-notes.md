@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.4.0
+### Bug Fixes and Enhancements
+* Improved admission requests data model
+
+## 16.2.0
+### Bug Fixes and Enhancements
+* Update filtering columns on vulns all images page
+
 ## 16.1.0
 ### Bug Fixes and Enhancements
 * Update minimum recommended memory to 64Mi
