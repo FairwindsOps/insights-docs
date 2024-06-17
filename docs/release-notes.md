@@ -16,7 +16,7 @@ sidebarDepth: 1
 
 ## 16.2.0
 ### Bug Fixes and Enhancements
-* Update filtering columns on vulns all images page
+* Update filtering columns on vulnerabilities all images page
 
 ## 16.1.0
 ### Bug Fixes and Enhancements
