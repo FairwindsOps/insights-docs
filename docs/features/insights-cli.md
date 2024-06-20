@@ -61,10 +61,15 @@ When pushing OPA policies to Insights, the CLI expects a directory structure lik
 .
 +-- opa
 |   +-- policy-name
-|       +-- policy.rego
+|       +-- policy-name-check.rego
+|       +-- policy-name-check.success.yaml
+|       +-- policy-name-check.failure.yaml
 |   +-- second-policy-name
-|       +-- policy.rego
+|       +-- second-policy-name-check.rego
 ```
+
+_Note that the `.success.yaml` and `.failure.yaml` files are not required._
+
 Once the files have been created, use the following command to push the OPA policies to Insights:
 ```
 insights-cli push opa
@@ -74,8 +79,8 @@ insights-cli push opa
 
 Insights supports both OPA v1 and OPA v2, but we recommend using OPA v2. To ensure the CLI resolves to using OPA v2, please adhere to the following rules:
 
-- Do not name the rego policy file as `policy.rego` if there are any `yaml` files in the custom policy directory.
-- Do not name the rego policy file the same as the custom policy directory if there are any `yaml` files in that directory.
+- Do not name the rego policy file as `policy.rego` if there are **any** `yaml` files in the custom policy directory.
+- Do not name the rego policy file the same as the custom policy directory if there are **any** `yaml` files in that directory.
 
 If any of the above conditions are met, the CLI will assume you are running OPA v1 custom checks.
 
