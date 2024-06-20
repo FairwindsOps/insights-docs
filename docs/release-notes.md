@@ -10,11 +10,19 @@ sidebarDepth: 1
 ---
 # Release Notes
 
-## 16.4.0
+## 16.1.7
+### Bug Fixes and Enhancements
+* Improved admission requests page performance
+ 
+## 16.1.5
+### Bug Fixes and Enhancements
+* Fixed Total Costs at Pie chart for Costs page when filter returns no workload
+ 
+## 16.1.4
 ### Bug Fixes and Enhancements
 * Improved admission requests data model
 
-## 16.2.0
+## 16.1.2
 ### Bug Fixes and Enhancements
 * Update filtering columns on vulnerabilities all images page
 
