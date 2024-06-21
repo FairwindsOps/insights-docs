@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.1.8
+### Bug Fixes and Enhancements
+* restricted CountryAlpha2 at User information endpoint to max 2 chars
+  
 ## 16.1.7
 ### Bug Fixes and Enhancements
 * Improved admission requests page performance
