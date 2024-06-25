@@ -34,6 +34,7 @@ right-sizer:
     default:
       vpa:
         updatePolicy: "Auto"
+
 right-sizer-vpa:
   recommender:
     extraArgs:
