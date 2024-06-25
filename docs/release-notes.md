@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.1.9
+### Bug Fixes and Enhancements
+* added new parameter min days for resources recommendation
+* improved S3 validation
+* updated alpine to 3.20
+  
 ## 16.1.8
 ### Bug Fixes and Enhancements
 * restricted CountryAlpha2 at User information endpoint to max 2 chars
