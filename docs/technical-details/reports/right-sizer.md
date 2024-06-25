@@ -34,6 +34,11 @@ right-sizer:
     default:
       vpa:
         updatePolicy: "Auto"
+right-sizer-vpa:
+  recommender:
+    extraArgs:
+      insights-organization: 'my-org'
+      insights-cluster: 'my-cluster'
 ```
 
 This can also be configured individually by namespace, see setup below.
