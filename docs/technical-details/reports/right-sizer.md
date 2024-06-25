@@ -30,6 +30,7 @@ By default, Automated Workload Right-sizer is for every controller, the right-si
 ```yaml
 right-sizer:
   enabled: true
+  enableClosedBeta: true
   config:
     default:
       vpa:
