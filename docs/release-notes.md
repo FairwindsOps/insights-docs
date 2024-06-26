@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.1.10
+### Bug Fixes and Enhancements
+* improved capacity page performance
+  
 ## 16.1.9
 ### Bug Fixes and Enhancements
 * added new parameter min days for resources recommendation
