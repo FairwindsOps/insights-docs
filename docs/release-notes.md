@@ -10,6 +10,16 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.1.12
+### Bug Fixes and Enhancements
+* Fix on filter options in vulnerabilities page 
+* Adding date picker filter on Action Items page
+* Improved logs
+
+## 16.1.11
+### Bug Fixes and Enhancements
+* Add support for HPA min and maxAvailable checks
+
 ## 16.1.10
 ### Bug Fixes and Enhancements
 * improved capacity page performance
