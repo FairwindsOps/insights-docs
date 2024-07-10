@@ -105,6 +105,30 @@ right-sizer:
       - insights-agent
 ```
 
+Example for specific container:
+
+```yaml
+right-sizer:
+  enabled: true
+  enableClosedBeta: true
+  config:
+    default:
+      vpa:
+        updatePolicy:
+          updateMode: "Auto"
+    includeNamespaces:
+      - namespace: "my-namespace"
+        vpa:
+          updatePolicy:
+            updateMode: "Auto"
+          resourcePolicy:
+            containerPolicies:
+              - containerName: "my-container-name"
+                mode: "Auto"
+              - containerName: "*"
+                mode: "Off"
+```
+
 ### Implementation Details
 
 Right-sizer includes a custom `recommender` VPA component, we've modified the recommender to retrieve recommendations from Insights. When `right-sizer` is enabled, we will install the [Fairwinds VPA](https://artifacthub.io/packages/helm/fairwinds-stable/vpa) helm chart with this custom image for you.
