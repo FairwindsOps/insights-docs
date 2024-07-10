@@ -123,7 +123,9 @@ right-sizer:
             updateMode: "Auto"
           resourcePolicy:
             containerPolicies:
-              - containerName: "my-container-name"
+              - containerName: "my-container-name-1"
+                mode: "Auto"
+              - containerName: "my-container-name-2"
                 mode: "Auto"
               - containerName: "*"
                 mode: "Off"
