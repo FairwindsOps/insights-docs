@@ -9,6 +9,31 @@ meta:
 sidebarDepth: 1
 ---
 # Release Notes
+## 16.1.18
+### Bug Fixes and Enhancements
+* added support to batch snooze at Action Items page
+
+## 16.1.17
+### Bug Fixes and Enhancements
+* bug fix on Adding CI Code Scan
+* support App Groups in Vulnerabilities
+
+## 16.1.16
+### Bug Fixes and Enhancements
+* added new parameter NetworkingLessThanInMB to costs APIs
+  
+## 16.1.15
+### Bug Fixes and Enhancements
+* persist scan resources namespace and labels
+
+## 16.1.14
+### Bug Fixes and Enhancements
+* improved rate limiting
+
+## 16.1.13
+### Bug Fixes and Enhancements
+* not showing title on dashboard
+* add last scanned filter on vulnerabilities page
 
 ## 16.1.12
 ### Bug Fixes and Enhancements
