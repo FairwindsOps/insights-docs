@@ -60,7 +60,7 @@ in performance along the way.
 It's also good to let Insights gather usage data from either tool for 1-7 days before taking its recommendations.
 Without a good, representative baseline for actual resource usage, Insights won't be able to
 make confident recommendations.
-Currently we use last 30 days of usage to calculate the recommendations. This may provide a good estimate on how the workload works. We do not use longer period than this as the longer the period the longer we are postponing the recommendation savings.
+Recommendations are calculated once a day based on the last 30 days of usage to calculate the recommendations. This may provide a good estimate on how the workload works. We do not use longer period than this as the longer the period the longer we are postponing the recommendation savings.
 
 ### Filtering and aggregations
 We offer many ways to filter workloads such as cluster, namespace, workload name, container, labels and App Groups. Saved view Idle/Stale workloads may be helpfull on identifing such workloads. Cost Greater Than filter may help you focus on more significant workloads.
@@ -86,3 +86,5 @@ The resource recommendation calculations are different depending on your QoS tar
 | **Guaranteed (default)** | Production workloads that can withstand some variability                            | **max** usage observed over last month                 | same as requests                                  |
 | **Burstable**            | Workloads that should prioritize cost efficiency over maximum reliability           | **p90** of max usage observed over last month          | **max**  usage observed over last month           |
 | **Limited**              | Workloads that should be given as little resources as needed to operate             | **average**  usage observed over last month            | **p95** of usage observed over last month          |
+
+Upgrading Qos at Costs page makes the recommendation gets updated on the fly.
