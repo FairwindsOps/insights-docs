@@ -85,7 +85,9 @@ Fairwinds team and we'll fix it.
 1. Go to the `Settings > SSO` page on Insights
 2. For the `Metadata URL` field, specify a URL containing your organization's metadata (namely a public key)
 3. For the `Email Domain` field, specify a list of email domain names that are allowed to access your organization
-4. Click `Update SSO`
+4. For the `Default Team` field, optionally, specify a default team for new SSO users.
+5. For the `Default Role` field, optionally, specify a default role for new SSO users.
+6. Click `Update SSO`
 
 #### Verifying SSO Setup
 Once your settings have been saved:

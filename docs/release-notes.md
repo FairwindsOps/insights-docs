@@ -10,6 +10,49 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.1.25
+### Bug Fixes and Enhancements
+* Minor fix on insights-cli docs
+
+## 16.1.24
+### Bug Fixes and Enhancements
+* Costs: Add "Last X days" to Costs Date Selector
+
+## 16.1.20
+### Bug Fixes and Enhancements
+* Pull OPA Policies into PolicyMappings UI
+* Created default App Group and Policy Mapping
+
+## 16.1.19
+### Bug Fixes and Enhancements
+* repositories are not being counted on top APIs
+
+## 16.1.18
+### Bug Fixes and Enhancements
+* added support to batch snooze at Action Items page
+
+## 16.1.17
+### Bug Fixes and Enhancements
+* bug fix on Adding CI Code Scan
+* support App Groups in Vulnerabilities
+
+## 16.1.16
+### Bug Fixes and Enhancements
+* added new parameter NetworkingLessThanInMB to costs APIs
+  
+## 16.1.15
+### Bug Fixes and Enhancements
+* persist scan resources namespace and labels
+
+## 16.1.14
+### Bug Fixes and Enhancements
+* improved rate limiting
+
+## 16.1.13
+### Bug Fixes and Enhancements
+* not showing title on dashboard
+* add last scanned filter on vulnerabilities page
+
 ## 16.1.12
 ### Bug Fixes and Enhancements
 * Fix on filter options in vulnerabilities page 
