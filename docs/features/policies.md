@@ -293,6 +293,63 @@ hpaRequired[actionItem] {
 }
 ```
 
+### Using a Custom OPA Library
+
+You can create a custom OPA library to encapsulate and reuse Rego code, such as functions and policies, across multiple policy files. Any package that is not within the `fairwinds` namespace can be used as a reusable package.
+
+Consider the following example, where we define a reusable function in a custom package called utils:
+
+```rego
+package utils
+
+hasMatchingHPA(hpas, elem) {
+  hpa := hpas[_]
+  hpa.spec.scaleTargetRef.kind == elem.kind
+  hpa.spec.scaleTargetRef.name == elem.metadata.name
+  hpa.metadata.namespace == elem.metadata.namespace
+  hpa.spec.scaleTargetRef.apiVersion == elem.apiVersion
+}
+```
+
+The `hasMatchingHPA` function is defined within the `utils` package. This function can be imported and reused in other policy checks, allowing you to avoid code duplication and maintain consistency.
+
+#### Example: Reusing the `hasMatchingHPA` Function
+
+To use the `hasMatchingHPA` function in another policy, such as one within the `fairwinds` package, you can import the `utils` package as follows:
+
+##### Importing a Specific Function
+```rego
+package fairwinds
+
+import data.utils.hasMatchingHPA
+
+hpaRequired[actionItem] {
+  not hasMatchingHPA(kubernetes("autoscaling", "HorizontalPodAutoscaler"), input)
+  actionItem := {
+    "title": "No horizontal pod autoscaler found"
+  }
+}
+```
+
+##### Importing the Entire Package
+
+Alternatively, you can import the entire utils package and access the function with the package prefix:
+
+```rego
+package fairwinds
+
+import data.utils
+
+hpaRequired[actionItem] {
+  not utils.hasMatchingHPA(kubernetes("autoscaling", "HorizontalPodAutoscaler"), input)
+  actionItem := {
+    "title": "No horizontal pod autoscaler found"
+  }
+}
+```
+
+In both cases, the `hasMatchingHPA` function is leveraged to determine whether a matching HPA exists, simplifying the policy logic and improving code reuse.
+
 ### Testing OPA Policies
 After uploading a new Policy, it's good to test that it is working properly. To do so you can
 manually kick off a report:

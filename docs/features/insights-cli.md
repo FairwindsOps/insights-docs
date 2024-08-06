@@ -343,10 +343,10 @@ insights-cli validate rule --insights-context  <insights context> {--automation-
 
 #### Flags:
   - **[required]** `-t`, `--insights-context string`   - Insights context: [AdmissionController, Agent or CI/CD]
-  - **[option]** `-a`, `--action-item-file string`     - Action Item file path (default `./action-item.yaml`)
-  - **[option]** `-r`, `--automation-rule-file string` - Automation rule JS file path (default `./rule.js`)
-  - **[option]** `-i`, `--expected-action-item string` - Optional file containing the action item that the automation rule is expected to produce
-  - **[option]** `--dry-run`                           - Optional flag to run the rule without executing any external integration (Slack, Jira, PagerDuty, Azure, http requests).
+  - **[optional]** `-a`, `--action-item-file string`     - Action Item file path (default `./action-item.yaml`)
+  - **[optional]** `-r`, `--automation-rule-file string` - Automation rule JS file path (default `./rule.js`)
+  - **[optional]** `-i`, `--expected-action-item string` - Optional file containing the action item that the automation rule is expected to produce
+  - **[optional]** `--dry-run`                           - Optional flag to run the rule without executing any external integration (Slack, Jira, PagerDuty, Azure, http requests).
 
 #### Example:
 
