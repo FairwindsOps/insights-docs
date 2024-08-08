@@ -23,7 +23,7 @@ sidebarDepth: 1
 
 ## 16.1.29
 ### Bug Fixes and Enhancements
-* added OPA imports
+* Added OPA imports
 * Library regos should be shown differently on policies table 
 
 ## 16.1.26
