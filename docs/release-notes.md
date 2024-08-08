@@ -15,7 +15,7 @@ sidebarDepth: 1
 * Costs: period selector has double border
 * Costs: Updating dates on calendar does not change URL dates params unless Apply is clicked
 * Tooltip is broken from some graphs: AI, Vulnerabilities and Dashboard
-* Add AppGroups to Automation Rules
+* Add [AppGroups to Automation Rules](https://insights.docs.fairwinds.com/features/automation-rules/#appgroups-associateship)
 
 ## 16.1.30
 ### Bug Fixes and Enhancements
