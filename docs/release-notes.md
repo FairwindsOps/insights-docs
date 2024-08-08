@@ -23,7 +23,7 @@ sidebarDepth: 1
 
 ## 16.1.29
 ### Bug Fixes and Enhancements
-* Added OPA imports
+* Added [OPA library and imports support](https://insights.docs.fairwinds.com/features/policies/#custom-policies-with-opa)
 * Library regos should be shown differently on policies table 
 
 ## 16.1.26
