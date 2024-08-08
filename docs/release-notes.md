@@ -10,6 +10,26 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.1.31
+### Bug Fixes and Enhancements
+* Costs: period selector has double border
+* Costs: Updating dates on calendar does not change URL dates params unless Apply is clicked
+* Tooltip is broken from some graphs: AI, Vulnerabilities and Dashboard
+* Add AppGroups to Automation Rules
+
+## 16.1.30
+### Bug Fixes and Enhancements
+* Changed Export button on Costs page
+
+## 16.1.29
+### Bug Fixes and Enhancements
+* added OPA imports
+* Library regos should be shown differently on policies table 
+
+## 16.1.26
+### Bug Fixes and Enhancements
+* New users created via SSO can be assigned a default team
+  
 ## 16.1.24
 ### Bug Fixes and Enhancements
 * Costs: Add "Last X days" to Costs Date Selector
