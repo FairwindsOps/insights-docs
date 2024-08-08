@@ -416,3 +416,21 @@ sendHTTPRequest("POST", "https://example.com/action-item?api_token=" + getSecret
 });
 ```
 
+### AppGroups Associateship
+Users can determine if an Action Item belongs to one or more App Groups based on its name. 
+
+There are two functions available for this purpose. Both functions accept one or more App Group names and return a boolean indicating the result.
+
+- `ActionItem.AppGroupMatchesAll` - Returns `true` if the Action Item is associated with all specified App Groups.
+```js
+if (ActionItem.AppGroupMatchesAll('dev-team', 'prod-team')) {
+  // The Action Item belongs to both 'dev-team' and 'prod-team'
+}
+```
+
+- `ActionItem.AppGroupMatchesAny` - Returns `true` if the Action Item is associated with at least one of the specified App Groups.
+```js
+if (ActionItem.AppGroupMatchesAny('dev-team', 'prod-team')) {
+  // The Action Item belongs to either 'dev-team' or 'prod-team'
+}
+```
