@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.2.3
+### Bug Fixes and Enhancements
+* Improve admission action items App Group and Policy Mapping match visibility
+
 ## 16.1.31
 ### Bug Fixes and Enhancements
 * Costs: period selector has double border
