@@ -383,6 +383,7 @@ severity: 0.9
 
 ### Teams Management
 Insights Teams Management can be done inside Insights UI. Optionally it can be handled using a teams.yaml file to push configurantion via cli into Insights.
+`name` is the only required field. If no specific clusters/namespaces/repositories are included, then all are included.
 
 Example of `teams.yaml`:
 ```yaml
