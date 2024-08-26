@@ -395,10 +395,7 @@ Example of `teams.yaml`:
 - name: NewTeamNoPermission
   clusters: []
   namespaces: []
-  disallowedNamespaces: []
-  disallowedClusters: []
   repositories: []
-  disallowedRepositories: []
 
 - name: NewTeam2
   clusters:
