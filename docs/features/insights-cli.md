@@ -384,7 +384,7 @@ severity: 0.9
 ### Teams Management
 Insights Teams Management can be done inside Insights UI. Optionally it can be handled using a teams.yaml file to push configurantion via cli into Insights.
 
-Example of `team.yaml`:
+Example of `teams.yaml`:
 ```yaml
 - name: NewTeam2
   clusters:
@@ -428,7 +428,7 @@ Example of `team.yaml`:
 ```
 
 Add your teams.xml at same directory on insights-cli and optionally provide `--delete or -x` parameter. 
-This flag determines whether deleting or not teams that are not provided in team.yaml. Default value is false, so it does not delete teams not provided in the file.
+This flag determines whether deleting or not teams that are not provided in teams.yaml. Default value is false, so it does not delete teams not provided in the file.
 
 Example:
 ```bash
