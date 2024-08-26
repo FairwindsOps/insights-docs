@@ -381,6 +381,56 @@ eventType: image_vulnerability
 severity: 0.9
 ```
 
+### Teams Management
+Insights Teams Management can be done inside Insights UI. Optionally it can be handled using a teams.yaml file to push configurantion via cli into Insights.
+
+Example of `team.yaml`:
+```yaml
+- name: NewTeam2
+  clusters:
+  - us-east-1
+  - us-eest-2
+  namespaces:
+  - default
+  - kube-system
+  disallowedNamespaces:
+  - kube-public
+  - kube-node-lease
+  disallowedClusters:
+  - us-west-1
+  - us-west-2
+  repositories:
+  - reposity1
+  - repository2
+  disallowedRepositories:
+  - repository3
+  - repository4
+- name: NewTeam3
+  clusters:
+  - us-east-1
+  - us-eest-2
+  namespaces:
+  - default
+  - kube-system
+  disallowedNamespaces:
+  - kube-public
+  - kube-node-lease
+  disallowedClusters:
+  - us-west-1
+  - us-west-2
+  repositories:
+  - reposity1
+  - repository2
+  disallowedRepositories:
+  - repository3
+  - repository4  
+
+```
+
+Add your teams.xml at same directory on insights-cli and optionally provide `delete-non-provided-teams or -x` parameter:
+This flags determine whether deleting or not teams that are not provided in team.yaml. Default value is false, so it does not delte teams not provided in the file.
+
+
 #### Logs Events
 
 Some actions and function are logged in form of events and will be returned to help debugging the rule execution verification. In the example above, since the action-item was modified by the rule, Fairwinds Insights will generate an `edit_action_item` log that contains information about the modification that were applied. Below are the supported action and their log events:
