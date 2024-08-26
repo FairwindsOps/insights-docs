@@ -387,6 +387,19 @@ Insights Teams Management can be done inside Insights UI. Optionally it can be h
 
 Example of `teams.yaml`:
 ```yaml
+
+-- Example of all clusters, namespaces and repositories allowed
+- name: NewTeamAllPermissions
+
+-- Example of no permission allowed - use empty array []
+- name: NewTeamNoPermission
+  clusters: []
+  namespaces: []
+  disallowedNamespaces: []
+  disallowedClusters: []
+  repositories: []
+  disallowedRepositories: []
+
 - name: NewTeam2
   clusters:
   - us-east-1
