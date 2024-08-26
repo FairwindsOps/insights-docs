@@ -62,7 +62,7 @@ Prometheus Collector contains CPU and Memory usage for different workloads
 }
 ```
 
-## Steps to Intall Insights Agent when running integration with GKE Autopilot / GCP Managed Prometheus
+## Steps to Intall Insights when running integration with GKE Autopilot / GCP Managed Prometheus
 
 Insights requires a Prometheus server to collect metrics for workload usage. Typically, this is a Prometheus server that is already running in a Kubernetes cluster, or a Prometheus server that is installed directly via the Insights Agent Helm Chart.
 
@@ -536,10 +536,10 @@ resource "google_service_account_iam_binding" "prometheus_workload_identity" {
 }
 ```
 
-7. Optionally you can install integration with GCP Billing in order to have more accurate costs. Instructions can be found here:
+### 4. Optionally you can install integration with GCP Billing in order to have more accurate costs. Instructions can be found here:
 [Google Cloud Provider (GCP) Billing Integration] (https://insights.docs.fairwinds.com/technical-details/reports/cloud-costs/#google-cloud-provider-gcp-billing-integration-beta)
 
-8. Install insights-agent. Intruction can be found here:
+### 5. Install insights-agent. Intructions can be found here:
 [Install insights-agent] https://insights.docs.fairwinds.com/features/in-cluster-scanning/
 
 
@@ -549,11 +549,11 @@ If Azure Monitor managed service for Prometheus is being used for Prometheus in 
 
 If Azure Monitor has not been enabled, follow these steps in this guide:  [Enable Azure Monitor in an existing cluster](https://learn.microsoft.com/en-us/azure/azure-monitor/containers/kubernetes-monitoring-enable?tabs=cli#existing-cluster-prometheus-and-container-insights)
 
-### 4. Deploy a Prometheus authorization proxy
+### 1. Deploy a Prometheus authorization proxy
 
 An authorization proxy is used for prometheus-metrics to pull metrics from the Azure Monitor API. Follow this guide to configure and deploy the proxy to your AKS cluster: [Deploy a prometheus authorization proxy](https://learn.microsoft.com/en-us/azure/azure-monitor/containers/prometheus-authorization-proxy?tabs=query-metrics-example)
 
-### 5. Update the `insights-agent` values
+### 2. Update the `insights-agent` values
 
 Update the `insights-agent` values with the the service name of the authorization proxy created in the previous step:
 
