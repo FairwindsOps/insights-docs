@@ -428,7 +428,7 @@ Example of `teams.yaml`:
 
 ```
 
-Add your teams.yaml at same directory on insights-cli and optionally provide `--delete or -x` parameter. 
+Add your teams.yaml at same directory on insights-cli and optionally provide `--delete` or `-x` parameter. 
 This flag determines if teams that are not provided in the teams.yaml should be deleted. The default value is false, so it does not delete teams not provided in the file.
 
 Example:
