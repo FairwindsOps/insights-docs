@@ -549,11 +549,11 @@ If Azure Monitor managed service for Prometheus is being used for Prometheus in 
 
 If Azure Monitor has not been enabled, follow these steps in this guide:  [Enable Azure Monitor in an existing cluster](https://learn.microsoft.com/en-us/azure/azure-monitor/containers/kubernetes-monitoring-enable?tabs=cli#existing-cluster-prometheus-and-container-insights)
 
-### 1. Deploy a Prometheus authorization proxy
+### 4. Deploy a Prometheus authorization proxy
 
 An authorization proxy is used for prometheus-metrics to pull metrics from the Azure Monitor API. Follow this guide to configure and deploy the proxy to your AKS cluster: [Deploy a prometheus authorization proxy](https://learn.microsoft.com/en-us/azure/azure-monitor/containers/prometheus-authorization-proxy?tabs=query-metrics-example)
 
-### 2. Update the `insights-agent` values
+### 5. Update the `insights-agent` values
 
 Update the `insights-agent` values with the the service name of the authorization proxy created in the previous step:
 
