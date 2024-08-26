@@ -92,7 +92,7 @@ You can create the the service account either manually or using Terraform. We pr
 4. Grant roles: "Monitoring Viewer" and "Service Account Token Creator" and click Done
 5. Use the service account when configuring prometheus-metrics with the service account created
 
-Example of snipet configuration for prometheus-metrics that needs to be provided in file values.yaml in step 5:
+Example of snipet configuration for prometheus-metrics that needs to be provided in file values.yaml in step 5 (Install insights-agent):
 ```yaml
 prometheus-metrics:
   enabled: true
