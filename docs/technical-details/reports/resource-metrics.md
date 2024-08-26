@@ -84,13 +84,15 @@ GCP Managed Prometheus needs a Kube State Metrics instance installed in order to
 regex: kube_(cronjob|daemonset|deployment|job|replicaset|pod|namespace|node|statefulset|persistentvolume|horizontalpodautoscaler|job_created)(_.+)?
 ```
 
-### 3. Create Google service account to run Prometheus query
+### 3.a Create Google service account to run Prometheus query
+You can create the the service account either manually or using Terraform. We provide some example on section 3.b Use Terraform
 1. Go to IAM & Admin > Select Service Account
 2. Click Create Service Account
 3. Give the service account a name then "Create and Continue"
 4. Grant roles: "Monitoring Viewer" and "Service Account Token Creator" and click Done
 5. Use the service account when configuring prometheus-metrics with the service account created
 
+Example of snipet configuration for prometheus-metrics that needs to be provided in file values.yaml in step 5:
 ```yaml
 prometheus-metrics:
   enabled: true
@@ -111,7 +113,7 @@ gcloud iam service-accounts add-iam-policy-binding <my-service-account>@gcp-prim
     --member "serviceAccount:gcp-prime.svc.id.goog[insights-agent/insights-agent-prometheus-metrics]"
 ```
 
-## Terraform
+### 3.b Use Terraform
 Integration with GKE Autopilot / GCP Managed Prometheus using Terraform
 
 #### versions.tf
