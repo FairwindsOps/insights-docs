@@ -62,7 +62,7 @@ Prometheus Collector contains CPU and Memory usage for different workloads
 }
 ```
 
-## Steps to Intall INsights when running integration with GKE Autopilot / GCP Managed Prometheus
+## Steps to Intall Insights Agent when running integration with GKE Autopilot / GCP Managed Prometheus
 
 Insights requires a Prometheus server to collect metrics for workload usage. Typically, this is a Prometheus server that is already running in a Kubernetes cluster, or a Prometheus server that is installed directly via the Insights Agent Helm Chart.
 
