@@ -62,7 +62,7 @@ Prometheus Collector contains CPU and Memory usage for different workloads
 }
 ```
 
-## Integration with GKE Autopilot / GCP Managed Prometheus
+## Steps to Intall INsights when running integration with GKE Autopilot / GCP Managed Prometheus
 
 Insights requires a Prometheus server to collect metrics for workload usage. Typically, this is a Prometheus server that is already running in a Kubernetes cluster, or a Prometheus server that is installed directly via the Insights Agent Helm Chart.
 
@@ -535,6 +535,13 @@ resource "google_service_account_iam_binding" "prometheus_workload_identity" {
   ]
 }
 ```
+
+7. Optionally you can install integration with GCP Billing in order to have more accurate costs. Instructions can be found here:
+[Google Cloud Provider (GCP) Billing Integration] (https://insights.docs.fairwinds.com/technical-details/reports/cloud-costs/#google-cloud-provider-gcp-billing-integration-beta)
+
+8. Install insights-agent. Intruction can be found here:
+[Install insights-agent] https://insights.docs.fairwinds.com/features/in-cluster-scanning/
+
 
 ## Integration with AKS / Azure Monitor
 
