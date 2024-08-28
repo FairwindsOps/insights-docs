@@ -77,7 +77,7 @@ GCP Managed Prometheus must be configured to scrape the Kubelet for Kubelet and 
 
 ### 2. Update `kube-state-metrics`
 
-GCP Managed Prometheus has Kube State Metrics instance installed but we need some additional metrics. Update kube-state-metrics using this yaml:
+Autopilot has Kube State Metrics installed by default but we need some additional metrics. Update kube-state-metrics using this yaml:
 ```YAML
 apiVersion: monitoring.googleapis.com/v1
 kind: ClusterPodMonitoring
