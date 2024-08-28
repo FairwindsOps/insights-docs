@@ -424,13 +424,21 @@ spec:
     interval: 30s
 ```
 
-### 3.a Create Google service account to run Prometheus query
+### 3.a Create Google service account to run Prometheus query manually
 You can create the the service account either manually or using Terraform. We provide some example on section 3.b Use Terraform
 1. Go to IAM & Admin > Select Service Account
 2. Click Create Service Account
 3. Give the service account a name then "Create and Continue"
 4. Grant roles: "Monitoring Viewer" and "Service Account Token Creator" and click Done
 5. Use the service account when configuring prometheus-metrics with the service account created
+
+### 3.b Create Google service account to run Prometheus query using Identity Federation
+Run:
+```bash
+gcloud projects add-iam-policy-binding projects/<project-name> --role=roles/monitoring.Viewer --member=principal://iam.googleapis.com/projects/543041133471/locations/global/workloadIdentityPools/<project-name>.svc.id.goog/subject/ns/insights-agent/sa/insights-agent-prometheus-metrics --condition=None
+
+gcloud projects add-iam-policy-binding projects/<project-name> --role=roles/iam.serviceAccountTokenCreator --member=principal://iam.googleapis.com/projects/543041133471/locations/global/workloadIdentityPools/<project-name>.svc.id.goog/subject/ns/insights-agent/sa/insights-agent-prometheus-metrics --condition=None
+```
 
 Example of snipet configuration for prometheus-metrics that needs to be provided in file values.yaml in step 5 (Install insights-agent):
 ```yaml
@@ -453,7 +461,7 @@ gcloud iam service-accounts add-iam-policy-binding <my-service-account>@gcp-prim
     --member "serviceAccount:gcp-prime.svc.id.goog[insights-agent/insights-agent-prometheus-metrics]"
 ```
 
-### 3.b Use Terraform
+### 3.c Use Terraform
 Integration with GKE Autopilot / GCP Managed Prometheus using Terraform
 
 #### versions.tf
