@@ -126,6 +126,15 @@ prometheus-metrics:
     annotations:
       iam.gke.io/gcp-service-account: <my-service-account>@<project-name>.iam.gserviceaccount.com  
 ```
+- address: required when you are not using our standard prometheus installation, at the example above provides the GCP Managed Prometheus address
+- managedPrometheusClusterName: required only when using Managed Promehteus, as Managed Prometheus may have data from multiple clusters
+
+6. Make kubernetes insights-agent-prometheus-metrics service account member to google service account and bind to workload identity role
+```bash
+gcloud iam service-accounts add-iam-policy-binding <my-service-account>@<project-name>.iam.gserviceaccount.com \
+    --role roles/iam.workloadIdentityUser \
+    --member "serviceAccount:<project-name>.svc.id.goog[insights-agent/insights-agent-prometheus-metrics]"
+```
 
 ### 3.b Use Workload Identity Federation to give permissions to Kubernetes service account
 Run:
@@ -146,12 +155,6 @@ prometheus-metrics:
 - address: required when you are not using our standard prometheus installation, at the example above provides the GCP Managed Prometheus address
 - managedPrometheusClusterName: required only when using Managed Promehteus, as Managed Prometheus may have data from multiple clusters
 
-6. Make kubernetes insights-agent-prometheus-metrics service account member to google service account and bind to workload identity role
-```bash
-gcloud iam service-accounts add-iam-policy-binding <my-service-account>@<project-name>.iam.gserviceaccount.com \
-    --role roles/iam.workloadIdentityUser \
-    --member "serviceAccount:<project-name>.svc.id.goog[insights-agent/insights-agent-prometheus-metrics]"
-```
 
 ### 3.c Use Terraform
 Integration with GKE Autopilot / GCP Managed Prometheus using Terraform
