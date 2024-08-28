@@ -381,6 +381,71 @@ eventType: image_vulnerability
 severity: 0.9
 ```
 
+### Teams Management
+Insights Teams Management can be done inside Insights UI. Optionally it can be handled using a teams.yaml file to push configurantion via cli into Insights.
+`name` is the only required field. If no specific clusters/namespaces/repositories are included, then all are included. If empty array `[]` is provided then nothing is allowed.
+
+Example of `teams.yaml`:
+```yaml
+
+# Example of all clusters, namespaces and repositories allowed
+- name: NewTeamAllPermissions
+
+# Example of no permission allowed - use empty array []
+- name: NewTeamNoPermission
+  clusters: []
+  namespaces: []
+  repositories: []
+
+- name: NewTeam2
+  clusters:
+  - us-east-1
+  - us-eest-2
+  namespaces:
+  - default
+  - kube-system
+  disallowedNamespaces:
+  - kube-public
+  - kube-node-lease
+  disallowedClusters:
+  - us-west-1
+  - us-west-2
+  repositories:
+  - reposity1
+  - repository2
+  disallowedRepositories:
+  - repository3
+  - repository4
+- name: NewTeam3
+  clusters:
+  - us-east-1
+  - us-eest-2
+  namespaces:
+  - default
+  - kube-system
+  disallowedNamespaces:
+  - kube-public
+  - kube-node-lease
+  disallowedClusters:
+  - us-west-1
+  - us-west-2
+  repositories:
+  - reposity1
+  - repository2
+  disallowedRepositories:
+  - repository3
+  - repository4  
+
+```
+
+Add your teams.yaml at same directory on insights-cli and optionally provide `--delete` or `-x` parameter. 
+This flag determines if teams that are not provided in the teams.yaml should be deleted. The default value is false, so it does not delete teams not provided in the file.
+
+Example:
+```bash
+insights-cli push teams
+```
+
 #### Logs Events
 
 Some actions and function are logged in form of events and will be returned to help debugging the rule execution verification. In the example above, since the action-item was modified by the rule, Fairwinds Insights will generate an `edit_action_item` log that contains information about the modification that were applied. Below are the supported action and their log events:

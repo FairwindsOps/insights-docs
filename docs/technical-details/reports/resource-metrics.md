@@ -62,7 +62,7 @@ Prometheus Collector contains CPU and Memory usage for different workloads
 }
 ```
 
-## Integration with GKE Autopilot / GCP Managed Prometheus
+## Steps to Intall Insights when running integration with GKE Autopilot / GCP Managed Prometheus
 
 Insights requires a Prometheus server to collect metrics for workload usage. Typically, this is a Prometheus server that is already running in a Kubernetes cluster, or a Prometheus server that is installed directly via the Insights Agent Helm Chart.
 
@@ -75,43 +75,88 @@ Follow the below steps for setting up GCP Managed Prometheus and connecting it t
 GCP Managed Prometheus must be configured to scrape the Kubelet for Kubelet and cAdvisor metrics. This can be setup by editing the OperatorConfig resource as documented here:
 [Install kubelet-cadvisor](https://cloud.google.com/stackdriver/docs/managed-prometheus/exporters/kubelet-cadvisor)
 
-### 2. Install `kube-state-metrics`
+### 2. Update `kube-state-metrics`
 
-GCP Managed Prometheus needs a Kube State Metrics instance installed in order to get metrics from the Kubernetes API. Use the configuration in the "Install Kube State Metrics" section at link below to set this up: 
-[Configure kube-state-metrics](https://cloud.google.com/stackdriver/docs/managed-prometheus/exporters/kube_state_metrics#install-exporter)
-> Note: Google yaml does not include job and cronjob. You may beed to update yaml to include those.
+Autopilot has Kube State Metrics installed by default but we need some additional metrics. Update kube-state-metrics using this yaml:
 ```YAML
-regex: kube_(cronjob|daemonset|deployment|job|replicaset|pod|namespace|node|statefulset|persistentvolume|horizontalpodautoscaler|job_created)(_.+)?
+apiVersion: monitoring.googleapis.com/v1
+kind: ClusterPodMonitoring
+metadata:
+  name: kube-state-metrics-fw
+  labels:
+    app.kubernetes.io/name: kube-state-metrics
+    app.kubernetes.io/part-of: google-cloud-managed-prometheus
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: kube-state-metrics
+  endpoints:
+  - port: metrics
+    interval: 30s
+    metricRelabeling:
+    - action: keep
+      # Curated subset of metrics to reduce costs while populating default set of sample dashboards at
+      # https://github.com/GoogleCloudPlatform/monitoring-dashboard-samples/tree/master/dashboards/kubernetes
+      # Change this regex to fit your needs for which objects you want to monitor    
+      regex: kube_(cronjob|daemonset|deployment|job|replicaset|pod|namespace|node|statefulset|persistentvolume|horizontalpodautoscaler|job_created)(_.+)?
+      sourceLabels: [__name__]
+  targetLabels:
+    metadata: [] # explicitly empty so the metric labels are respected
 ```
 
 ### 3. Create Google service account to run Prometheus query
+You can create service account to run Prometheus query: manually, using Workload Identity Federation or Terraform.
+
+### 3.a Create Google service account to run Prometheus query manually
+You can create the the service account either manually or using Terraform. We provide some example on section 3.b Use Terraform
 1. Go to IAM & Admin > Select Service Account
 2. Click Create Service Account
 3. Give the service account a name then "Create and Continue"
 4. Grant roles: "Monitoring Viewer" and "Service Account Token Creator" and click Done
 5. Use the service account when configuring prometheus-metrics with the service account created
 
+Example of snipet configuration for prometheus-metrics that needs to be provided in file values.yaml in step 5 (Install insights-agent):
 ```yaml
 prometheus-metrics:
   enabled: true
   installPrometheusServer: false
-  address: https://monitoring.googleapis.com/v1/projects/gcp-prime/location/global/prometheus # managed prometheus address
+  address: https://monitoring.googleapis.com/v1/projects/<project-name>/location/global/prometheus # managed prometheus address
   managedPrometheusClusterName: "my-autopilot-cluster"
   serviceAccount:
     annotations:
-      iam.gke.io/gcp-service-account: <my-service-account>@gcp-prime.iam.gserviceaccount.com  
+      iam.gke.io/gcp-service-account: <my-service-account>@<project-name>.iam.gserviceaccount.com  
 ```
 - address: required when you are not using our standard prometheus installation, at the example above provides the GCP Managed Prometheus address
-- managedPrometheusClusterName: required only when using Managed Promehteus, as Managed Prometheus may have data from multiple clusters
+- managedPrometheusClusterName: required only when using Managed Prometheus, as Managed Prometheus may have data from multiple clusters
 
 6. Make kubernetes insights-agent-prometheus-metrics service account member to google service account and bind to workload identity role
 ```bash
-gcloud iam service-accounts add-iam-policy-binding <my-service-account>@gcp-prime.iam.gserviceaccount.com \
+gcloud iam service-accounts add-iam-policy-binding <my-service-account>@<project-name>.iam.gserviceaccount.com \
     --role roles/iam.workloadIdentityUser \
-    --member "serviceAccount:gcp-prime.svc.id.goog[insights-agent/insights-agent-prometheus-metrics]"
+    --member "serviceAccount:<project-name>.svc.id.goog[insights-agent/insights-agent-prometheus-metrics]"
 ```
 
-## Terraform
+### 3.b Use Workload Identity Federation to give permissions to Kubernetes service account
+Run:
+```bash
+gcloud projects add-iam-policy-binding projects/<project-name> --role=roles/monitoring.Viewer --member=principal://iam.googleapis.com/projects/<project-id-number>/locations/global/workloadIdentityPools/<project-name>.svc.id.goog/subject/ns/insights-agent/sa/insights-agent-prometheus-metrics --condition=None
+
+gcloud projects add-iam-policy-binding projects/<project-name> --role=roles/iam.serviceAccountTokenCreator --member=principal://iam.googleapis.com/projects/<project-id-number>/locations/global/workloadIdentityPools/<project-name>.svc.id.goog/subject/ns/insights-agent/sa/insights-agent-prometheus-metrics --condition=None
+```
+
+Example of snipet configuration for prometheus-metrics that needs to be provided in file values.yaml in step 5 (Install insights-agent):
+```yaml
+prometheus-metrics:
+  enabled: true
+  installPrometheusServer: false
+  address: https://monitoring.googleapis.com/v1/projects/<project-name>/location/global/prometheus # managed prometheus address
+  managedPrometheusClusterName: "my-autopilot-cluster"
+```
+- address: required when you are not using our standard prometheus installation, at the example above provides the GCP Managed Prometheus address
+- managedPrometheusClusterName: required only when using Managed Prometheus, as Managed Prometheus may have data from multiple clusters
+
+
+### 3.c Use Terraform
 Integration with GKE Autopilot / GCP Managed Prometheus using Terraform
 
 #### versions.tf
@@ -144,7 +189,7 @@ variable "gke_cluster_name" {
 ```terraform
 project_name = "my-gcp-project"
 config_path= "~/.kube/config"
-gke_cluster_name = "gke_gcp-prime_us-central1_my_gcp_cluster"
+gke_cluster_name = "gke_myproject_us-central1_my_gcp_cluster"
 ```
 
 #### main.tf
@@ -164,314 +209,10 @@ EOF
 
 resource "kubectl_manifest" "install_kube_state_metrics" {
     yaml_body = <<YAML
-# Copyright 2023 Google LLC
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     https://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-apiVersion: apps/v1
-kind: StatefulSet
-metadata:
-  labels:
-    app.kubernetes.io/name: kube-state-metrics
-    app.kubernetes.io/version: 2.8.2
-  namespace: gmp-public
-  name: kube-state-metrics
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app.kubernetes.io/name: kube-state-metrics
-  serviceName: kube-state-metrics
-  template:
-    metadata:
-      labels:
-        app.kubernetes.io/name: kube-state-metrics
-        app.kubernetes.io/version: 2.8.2
-    spec:
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: kubernetes.io/arch
-                operator: In
-                values:
-                - arm64
-                - amd64
-              - key: kubernetes.io/os
-                operator: In
-                values:
-                - linux
-      containers:
-      - name: kube-state-metric
-        image: k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.8.2
-        env:
-        - name: POD_NAME
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.name
-        - name: POD_NAMESPACE
-          valueFrom:
-            fieldRef:
-              fieldPath: metadata.namespace
-        args:
-        - --pod=$(POD_NAME)
-        - --pod-namespace=$(POD_NAMESPACE)
-        - --port=8080
-        - --telemetry-port=8081
-        ports:
-        - name: metrics
-          containerPort: 8080
-        - name: metrics-self
-          containerPort: 8081
-        resources:
-          requests:
-            cpu: 100m
-            memory: 190Mi
-          limits:
-            memory: 250Mi
-        securityContext:
-          allowPrivilegeEscalation: false
-          privileged: false
-          capabilities:
-            drop:
-            - all
-          runAsUser: 1000
-          runAsGroup: 1000
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 8080
-          initialDelaySeconds: 5
-          timeoutSeconds: 5
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 8081
-          initialDelaySeconds: 5
-          timeoutSeconds: 5
-      serviceAccountName: kube-state-metrics
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app.kubernetes.io/name: kube-state-metrics
-    app.kubernetes.io/version: 2.8.2
-  namespace: gmp-public
-  name: kube-state-metrics
-spec:
-  clusterIP: None
-  ports:
-  - name: metrics
-    port: 8080
-    targetPort: metrics
-  - name: metrics-self
-    port: 8081
-    targetPort: metrics-self
-  selector:
-    app.kubernetes.io/name: kube-state-metrics
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  namespace: gmp-public
-  name: kube-state-metrics
-  labels:
-    app.kubernetes.io/name: kube-state-metrics
-    app.kubernetes.io/version: 2.8.2
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: gmp-public:kube-state-metrics
-  labels:
-    app.kubernetes.io/name: kube-state-metrics
-    app.kubernetes.io/version: 2.8.2
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: gmp-public:kube-state-metrics
-subjects:
-- kind: ServiceAccount
-  namespace: gmp-public
-  name: kube-state-metrics
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: gmp-public:kube-state-metrics
-  labels:
-    app.kubernetes.io/name: kube-state-metrics
-    app.kubernetes.io/version: 2.8.2
-rules:
-- apiGroups:
-  - ""
-  resources:
-  - configmaps
-  - secrets
-  - nodes
-  - pods
-  - services
-  - resourcequotas
-  - replicationcontrollers
-  - limitranges
-  - persistentvolumeclaims
-  - persistentvolumes
-  - namespaces
-  - endpoints
-  verbs:
-  - list
-  - watch
-- apiGroups:
-  - ""
-  resources:
-  - pods
-  verbs:
-  - get
-- apiGroups:
-  - extensions
-  resources:
-  - daemonsets
-  - deployments
-  - replicasets
-  - ingresses
-  verbs:
-  - list
-  - watch
-- apiGroups:
-  - apps
-  resources:
-  - statefulsets
-  - daemonsets
-  - deployments
-  - replicasets
-  verbs:
-  - list
-  - watch
-- apiGroups:
-  - apps
-  resources:
-  - statefulsets
-  verbs:
-  - get 
-- apiGroups:
-  - batch
-  resources:
-  - cronjobs
-  - jobs
-  verbs:
-  - list
-  - watch
-- apiGroups:
-  - autoscaling
-  resources:
-  - horizontalpodautoscalers
-  verbs:
-  - list
-  - watch
-- apiGroups:
-  - authentication.k8s.io
-  resources:
-  - tokenreviews
-  verbs:
-  - create
-- apiGroups:
-  - authorization.k8s.io
-  resources:
-  - subjectaccessreviews
-  verbs:
-  - create
-- apiGroups:
-  - policy
-  resources:
-  - poddisruptionbudgets
-  verbs:
-  - list
-  - watch
-- apiGroups:
-  - certificates.k8s.io
-  resources:
-  - certificatesigningrequests
-  verbs:
-  - list
-  - watch
-- apiGroups:
-  - storage.k8s.io
-  resources:
-  - storageclasses
-  - volumeattachments
-  verbs:
-  - list
-  - watch
-- apiGroups:
-  - admissionregistration.k8s.io
-  resources:
-  - mutatingwebhookconfigurations
-  - validatingwebhookconfigurations
-  verbs:
-  - list
-  - watch
-- apiGroups:
-  - networking.k8s.io
-  resources:
-  - networkpolicies
-  - ingresses
-  verbs:
-  - list
-  - watch
-- apiGroups:
-  - coordination.k8s.io
-  resources:
-  - leases
-  verbs:
-  - list
-  - watch
----
-apiVersion: autoscaling/v2
-kind: HorizontalPodAutoscaler
-metadata:
-  name: kube-state-metrics
-  namespace: gmp-public
-spec:
-  maxReplicas: 10
-  minReplicas: 1
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: StatefulSet
-    name: kube-state-metrics
-  metrics:
-  - type: Resource
-    resource:
-      name: memory
-      target:
-        type: Utilization
-        averageUtilization: 60
-  behavior:
-    scaleDown:
-      policies:
-      - type: Pods
-        value: 1
-        # Under-utilization needs to persist for `periodSeconds` before any action can be taken.
-        # Current supported max from https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/horizontal-pod-autoscaler-v2beta2/.
-        periodSeconds: 1800
-      # Current supported max from https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/horizontal-pod-autoscaler-v2beta2/.
-      stabilizationWindowSeconds: 3600
----
 apiVersion: monitoring.googleapis.com/v1
 kind: ClusterPodMonitoring
 metadata:
-  name: kube-state-metrics
+  name: kube-state-metrics-fw
   labels:
     app.kubernetes.io/name: kube-state-metrics
     app.kubernetes.io/part-of: google-cloud-managed-prometheus
@@ -491,22 +232,6 @@ spec:
       sourceLabels: [__name__]
   targetLabels:
     metadata: [] # explicitly empty so the metric labels are respected
----
-apiVersion: monitoring.googleapis.com/v1
-kind: PodMonitoring
-metadata:
-  namespace: gmp-public
-  name: kube-state-metrics
-  labels:
-    app.kubernetes.io/name: kube-state-metrics
-    app.kubernetes.io/part-of: google-cloud-managed-prometheus
-spec:
-  selector:
-    matchLabels:
-      app.kubernetes.io/name: kube-state-metrics
-  endpoints:
-  - port: metrics-self
-    interval: 30s
 YAML
 }
 
@@ -535,6 +260,13 @@ resource "google_service_account_iam_binding" "prometheus_workload_identity" {
   ]
 }
 ```
+
+### 4. Optionally you can install integration with GCP Billing in order to have more accurate costs. Instructions can be found here:
+[Google Cloud Provider (GCP) Billing Integration](https://insights.docs.fairwinds.com/technical-details/reports/cloud-costs/#google-cloud-provider-gcp-billing-integration-beta)
+
+### 5. Install insights-agent. Intructions can be found here:
+[Install insights-agent](https://insights.docs.fairwinds.com/features/in-cluster-scanning/)
+
 
 ## Integration with AKS / Azure Monitor
 
