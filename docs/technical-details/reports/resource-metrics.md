@@ -75,7 +75,7 @@ Follow the below steps for setting up GCP Managed Prometheus and connecting it t
 GCP Managed Prometheus must be configured to scrape the Kubelet for Kubelet and cAdvisor metrics. This can be setup by editing the OperatorConfig resource as documented here:
 [Install kubelet-cadvisor](https://cloud.google.com/stackdriver/docs/managed-prometheus/exporters/kubelet-cadvisor)
 
-### 2. Install `kube-state-metrics`
+### 2. Update `kube-state-metrics`
 
 GCP Managed Prometheus has Kube State Metrics instance installed but we need some additional metrics. Update kube-state-metrics using this yaml:
 ```YAML
