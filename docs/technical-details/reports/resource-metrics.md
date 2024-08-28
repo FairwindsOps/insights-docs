@@ -105,7 +105,7 @@ spec:
 ```
 
 ### 3. Create Google service account to run Prometheus query
-You can create service account to run Promethues query either: manually, using Identity Federantion or Terraform.
+You can create service account to run Promethues query either: manually, using Workload Identity Federation or Terraform.
 
 ### 3.a Create Google service account to run Prometheus query manually
 You can create the the service account either manually or using Terraform. We provide some example on section 3.b Use Terraform
@@ -115,7 +115,7 @@ You can create the the service account either manually or using Terraform. We pr
 4. Grant roles: "Monitoring Viewer" and "Service Account Token Creator" and click Done
 5. Use the service account when configuring prometheus-metrics with the service account created
 
-### 3.b Create Google service account to run Prometheus query using Identity Federation
+### 3.b Create Google service account to run Prometheus query using Workload Identity Federation
 Run:
 ```bash
 gcloud projects add-iam-policy-binding projects/<project-name> --role=roles/monitoring.Viewer --member=principal://iam.googleapis.com/projects/543041133471/locations/global/workloadIdentityPools/<project-name>.svc.id.goog/subject/ns/insights-agent/sa/insights-agent-prometheus-metrics --condition=None
