@@ -104,6 +104,9 @@ spec:
     metadata: [] # explicitly empty so the metric labels are respected
 ```
 
+### 3. Create Google service account to run Prometheus query
+You can create service account to run Promethues query either: manually, using Identity Federantion or Terraform.
+
 ### 3.a Create Google service account to run Prometheus query manually
 You can create the the service account either manually or using Terraform. We provide some example on section 3.b Use Terraform
 1. Go to IAM & Admin > Select Service Account
