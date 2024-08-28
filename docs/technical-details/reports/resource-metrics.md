@@ -118,9 +118,9 @@ You can create the the service account either manually or using Terraform. We pr
 ### 3.b Create Google service account to run Prometheus query using Workload Identity Federation
 Run:
 ```bash
-gcloud projects add-iam-policy-binding projects/<project-name> --role=roles/monitoring.Viewer --member=principal://iam.googleapis.com/projects/543041133471/locations/global/workloadIdentityPools/<project-name>.svc.id.goog/subject/ns/insights-agent/sa/insights-agent-prometheus-metrics --condition=None
+gcloud projects add-iam-policy-binding projects/<project-name> --role=roles/monitoring.Viewer --member=principal://iam.googleapis.com/projects/<project-id-number>/locations/global/workloadIdentityPools/<project-name>.svc.id.goog/subject/ns/insights-agent/sa/insights-agent-prometheus-metrics --condition=None
 
-gcloud projects add-iam-policy-binding projects/<project-name> --role=roles/iam.serviceAccountTokenCreator --member=principal://iam.googleapis.com/projects/543041133471/locations/global/workloadIdentityPools/<project-name>.svc.id.goog/subject/ns/insights-agent/sa/insights-agent-prometheus-metrics --condition=None
+gcloud projects add-iam-policy-binding projects/<project-name> --role=roles/iam.serviceAccountTokenCreator --member=principal://iam.googleapis.com/projects/<project-id-number>/locations/global/workloadIdentityPools/<project-name>.svc.id.goog/subject/ns/insights-agent/sa/insights-agent-prometheus-metrics --condition=None
 ```
 
 Example of snipet configuration for prometheus-metrics that needs to be provided in file values.yaml in step 5 (Install insights-agent):
