@@ -115,6 +115,18 @@ You can create the the service account either manually or using Terraform. We pr
 4. Grant roles: "Monitoring Viewer" and "Service Account Token Creator" and click Done
 5. Use the service account when configuring prometheus-metrics with the service account created
 
+Example of snipet configuration for prometheus-metrics that needs to be provided in file values.yaml in step 5 (Install insights-agent):
+```yaml
+prometheus-metrics:
+  enabled: true
+  installPrometheusServer: false
+  address: https://monitoring.googleapis.com/v1/projects/<project-name>/location/global/prometheus # managed prometheus address
+  managedPrometheusClusterName: "my-autopilot-cluster"
+  serviceAccount:
+    annotations:
+      iam.gke.io/gcp-service-account: <my-service-account>@<project-name>.iam.gserviceaccount.com  
+```
+
 ### 3.b Use Workload Identity Federation to give permissions to Kubernetes service account
 Run:
 ```bash
@@ -130,9 +142,6 @@ prometheus-metrics:
   installPrometheusServer: false
   address: https://monitoring.googleapis.com/v1/projects/<project-name>/location/global/prometheus # managed prometheus address
   managedPrometheusClusterName: "my-autopilot-cluster"
-  serviceAccount:
-    annotations:
-      iam.gke.io/gcp-service-account: <my-service-account>@<project-name>.iam.gserviceaccount.com  
 ```
 - address: required when you are not using our standard prometheus installation, at the example above provides the GCP Managed Prometheus address
 - managedPrometheusClusterName: required only when using Managed Promehteus, as Managed Prometheus may have data from multiple clusters
