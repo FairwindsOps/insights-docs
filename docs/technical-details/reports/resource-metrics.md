@@ -115,7 +115,7 @@ You can create the the service account either manually or using Terraform. We pr
 4. Grant roles: "Monitoring Viewer" and "Service Account Token Creator" and click Done
 5. Use the service account when configuring prometheus-metrics with the service account created
 
-### 3.b Create Google service account to run Prometheus query using Workload Identity Federation
+### 3.b Use Workload Identity Federation to give permissions to Kubernetes service account
 Run:
 ```bash
 gcloud projects add-iam-policy-binding projects/<project-name> --role=roles/monitoring.Viewer --member=principal://iam.googleapis.com/projects/<project-id-number>/locations/global/workloadIdentityPools/<project-name>.svc.id.goog/subject/ns/insights-agent/sa/insights-agent-prometheus-metrics --condition=None
