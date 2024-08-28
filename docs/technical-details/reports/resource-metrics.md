@@ -127,7 +127,7 @@ prometheus-metrics:
       iam.gke.io/gcp-service-account: <my-service-account>@<project-name>.iam.gserviceaccount.com  
 ```
 - address: required when you are not using our standard prometheus installation, at the example above provides the GCP Managed Prometheus address
-- managedPrometheusClusterName: required only when using Managed Promehteus, as Managed Prometheus may have data from multiple clusters
+- managedPrometheusClusterName: required only when using Managed Prometheus, as Managed Prometheus may have data from multiple clusters
 
 6. Make kubernetes insights-agent-prometheus-metrics service account member to google service account and bind to workload identity role
 ```bash
@@ -153,7 +153,7 @@ prometheus-metrics:
   managedPrometheusClusterName: "my-autopilot-cluster"
 ```
 - address: required when you are not using our standard prometheus installation, at the example above provides the GCP Managed Prometheus address
-- managedPrometheusClusterName: required only when using Managed Promehteus, as Managed Prometheus may have data from multiple clusters
+- managedPrometheusClusterName: required only when using Managed Prometheus, as Managed Prometheus may have data from multiple clusters
 
 
 ### 3.c Use Terraform
@@ -262,10 +262,10 @@ resource "google_service_account_iam_binding" "prometheus_workload_identity" {
 ```
 
 ### 4. Optionally you can install integration with GCP Billing in order to have more accurate costs. Instructions can be found here:
-[Google Cloud Provider (GCP) Billing Integration] (https://insights.docs.fairwinds.com/technical-details/reports/cloud-costs/#google-cloud-provider-gcp-billing-integration-beta)
+[Google Cloud Provider (GCP) Billing Integration](https://insights.docs.fairwinds.com/technical-details/reports/cloud-costs/#google-cloud-provider-gcp-billing-integration-beta)
 
 ### 5. Install insights-agent. Intructions can be found here:
-[Install insights-agent] https://insights.docs.fairwinds.com/features/in-cluster-scanning/
+[Install insights-agent](https://insights.docs.fairwinds.com/features/in-cluster-scanning/)
 
 
 ## Integration with AKS / Azure Monitor
