@@ -14,7 +14,7 @@ sidebarDepth: 1
 ### Bug Fixes and Enhancements
 *  Fixed bug when creating ticket for list for azure
 *  Kyverno: add support for old and new versions
-*  Fixed bug n github integration
+*  Fixed bug in github integration
 
 ## 16.2.7
 ### Bug Fixes and Enhancements
