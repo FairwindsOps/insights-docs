@@ -24,7 +24,6 @@ sidebarDepth: 1
 ### Bug Fixes and Enhancements
 * Date Range Selector Fixes
 
-  
 ## 16.2.4
 ### Bug Fixes and Enhancements
 * Add new Qos Burstable+
