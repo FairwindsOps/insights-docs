@@ -77,7 +77,7 @@ GCP Managed Prometheus must be configured to scrape the Kubelet for Kubelet and 
 
 ### 2. Update `kube-state-metrics`
 
-Autopilot has Kube State Metrics installed by default but we need some additional metrics. Update kube-state-metrics using this yaml:
+Autopilot has Kube State Metrics installed by default in newer versions (double check if that's your case) but we need some additional metrics. Update kube-state-metrics using this yaml:
 ```YAML
 apiVersion: monitoring.googleapis.com/v1
 kind: ClusterPodMonitoring
@@ -264,7 +264,12 @@ resource "google_service_account_iam_binding" "prometheus_workload_identity" {
 ### 4. Optionally you can install integration with GCP Billing in order to have more accurate costs. Instructions can be found here:
 [Google Cloud Provider (GCP) Billing Integration](https://insights.docs.fairwinds.com/technical-details/reports/cloud-costs/#google-cloud-provider-gcp-billing-integration-beta)
 
-### 5. Install insights-agent. Intructions can be found here:
+### 5. Install cert-manager if you are enabling insights admission:
+```bash
+helm install --create-namespace --namespace cert-manager --set installCRDs=true --set global.leaderElection.namespace=cert-manager cert-manager jetstack/cert-manager
+```
+
+### 6. Install insights-agent. Intructions can be found here:
 [Install insights-agent](https://insights.docs.fairwinds.com/features/in-cluster-scanning/)
 
 
