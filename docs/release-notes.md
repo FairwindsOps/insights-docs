@@ -10,6 +10,29 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.2.8
+### Bug Fixes and Enhancements
+*  Fixed bug when creating ticket for list for azure
+*  Kyverno: add support for old and new versions
+*  Fixed bug in github integration
+
+## 16.2.7
+### Bug Fixes and Enhancements
+*  Added API do add/update/delete multiple Teams
+  
+## 16.2.5
+### Bug Fixes and Enhancements
+* Date Range Selector Fixes
+
+## 16.2.4
+### Bug Fixes and Enhancements
+* Add new Qos Burstable+
+* Add fields Reporter and Assignee when creating Jira ticket
+ 
+## 16.2.3
+### Bug Fixes and Enhancements
+* Improve admission action items App Group and Policy Mapping match visibility
+
 ## 16.1.31
 ### Bug Fixes and Enhancements
 * Costs: period selector has double border
