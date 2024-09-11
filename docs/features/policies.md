@@ -388,7 +388,7 @@ opa:
 By default the OPA plugin inherits the same Kubernetes APIGroups and Resources defined in the default rules for [the Admission Controller](/features/admission-controller).
 
 ## Push OPA checks from external sources
-You can push OPA checks from external sources by creating the following definition file on `external-opa/external-sources.yaml`
+If you manage your OPA policies externally, you can import them into Fairwinds Insights by pushing OPA checks from external sources. To do this, create a definition file at `external-opa/external-sources.yaml` as shown below.
 
 ```
 .
@@ -415,7 +415,7 @@ externalSources:
 
 Each external source reference should point to a raw file on the remove server.
 
-i.e: content of `https://gist.githubusercontent.com/username/sha/raw/sha/rego1.rego`
+i.e: A valid content for `https://gist.githubusercontent.com/username/sha/raw/sha/rego1.rego`
 ```rego
 package fairwinds
 
