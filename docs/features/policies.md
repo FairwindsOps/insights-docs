@@ -398,17 +398,18 @@ If you manage your OPA policies externally, you can import them into Fairwinds I
 
 ```yaml
 externalSources:
-  - name: "this-is-an-external-lib.rego" # lib files should be included first due to dependency
+  - name: "this-is-an-external-lib" # lib files should be included first due to dependency
     description: "This is an external lib"
     url: "https://gist.githubusercontent.com/username/sha/raw/sha/rego1.rego"
-  - name: "this-uses-the-lib.rego"
+  - name: "this-uses-the-lib"
     description: "This uses the external lib"
     url: "https://gist.githubusercontent.com/username/sha/raw/sha/rego2.rego"
     enabled: false
 ```
 
 **Fields Explained:**
-- `name`: Name of the OPA policy -- this will be the policy name used on Fairwinds Insights
+- `name`: Name of the OPA policy, this will be the policy name used on Fairwinds Insights
+  - must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character.
 - `description`: A brief explanation of what the policy does.
 - `url`: The direct URL to the raw content of the Rego file.
 - `enabled`: Set to `false` if you want to disable this policy by default. Policies are enabled by default if not explicitly set.
