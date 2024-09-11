@@ -387,6 +387,70 @@ opa:
 
 By default the OPA plugin inherits the same Kubernetes APIGroups and Resources defined in the default rules for [the Admission Controller](/features/admission-controller).
 
+## Push OPA checks from external sources
+If you manage your OPA policies externally, you can import them into Fairwinds Insights by pushing OPA checks from external sources. To do this, create a definition file at `external-opa/external-sources.yaml` as shown below.
+
+```
+.
+├── external-opa/
+│   └── external-sources.yaml
+```
+
+```yaml
+externalSources:
+  - name: "this-is-an-external-lib" # lib files should be included first due to dependency
+    description: "This is an external lib"
+    url: "https://gist.githubusercontent.com/username/sha/raw/sha/rego1.rego"
+  - name: "this-uses-the-lib"
+    description: "This uses the external lib"
+    url: "https://gist.githubusercontent.com/username/sha/raw/sha/rego2.rego"
+    enabled: false
+```
+
+**Fields Explained:**
+- `name`: Name of the OPA policy, this will be the policy name used on Fairwinds Insights
+  - must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character.
+- `description`: A brief explanation of what the policy does.
+- `url`: The direct URL to the raw content of the Rego file.
+- `enabled`: Set to `false` if you want to disable this policy by default. Policies are enabled by default if not explicitly set.
+
+Each external source reference should point to a raw file on the remove server.
+
+i.e: A valid content for `https://gist.githubusercontent.com/username/sha/raw/sha/rego1.rego`
+```rego
+package fairwinds
+
+not_in_namespace[actionItem] {
+    blockedNamespaces := ["default"]
+    namespace := blockedNamespaces[_]
+    input.kind == "Pod"
+    input.metadata.namespace == namespace
+    description := sprintf("Namespace %v is forbidden", [namespace])
+    actionItem := {
+        "description": description,
+        "title": "Using the default namespace is bad",
+        "severity": 0.1,
+        "remediation": "Move this resource to a different namespace",
+        "category": "Reliability"
+    }
+}
+```
+
+Then, use the following to push external checks to Fairwinds Insights:
+```sh
+insights-cli push external-opa \
+ -s external-opa \
+ -f external-sources.yaml \
+ -header "Authorization: Bearer $TOKEN" \
+ -header "Accept: text/plain" \
+ --delete
+```
+
+use `insights-cli push external-opa -h` for command and parameters completeness.
+
+**Security Considerations:**
+Ensure that external sources are from trusted locations, especially when linking public Gist URLs. Additionally, handle the `$TOKEN` with care and do not expose it in public repositories or logs.
+
 ## Troubleshooting
 ### Debug Print Statements
 Rego `print()` statements will be included in the output of `insights-cli validate opa` to help debug Policy execution. For example, this Policy prints two debug messages.
