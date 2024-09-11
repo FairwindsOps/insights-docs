@@ -114,7 +114,7 @@ insights-cli push rules
 To upload an Automation Rule to Insights, create the file `rules/api-action-items.yaml` in the `rules` sub-directory:
 
 ```yaml
-name: "Assign API Action Items"
+name: "assign-api-action-items"
 description: "Assigns all Action Items in the api namespace to api-team@acme-co.com"
 action: |
   if (ActionItem.ResourceNamespace === 'api') {
