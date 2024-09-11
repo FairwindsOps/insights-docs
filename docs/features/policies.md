@@ -436,13 +436,13 @@ not_in_namespace[actionItem] {
 ```
 
 Then, use the following to push external checks to Fairwinds Insights:
-```
+```sh
 insights-cli push external-opa \
- -s external-opa
- -f external-sources.yaml
- -header "Authorization: Bearer $TOKEN"
- -header "Accept: text/plain"
- --delete 
+ -s external-opa \
+ -f external-sources.yaml \
+ -header "Authorization: Bearer $TOKEN" \
+ -header "Accept: text/plain" \
+ --delete
 ```
 
 use `insights-cli push external-opa -h` for command and parameters completeness.
