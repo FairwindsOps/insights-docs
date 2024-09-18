@@ -10,6 +10,40 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.2.21
+### Bug Fixes and Enhancements
+* Added Action Items filter by image, tag and sha
+
+## 16.2.18
+### Bug Fixes and Enhancements
+* Bug fix for auto closing tickets
+
+## 16.2.17
+### Bug Fixes and Enhancements
+* Support disabled param on PUT for custom OPA policies
+
+## 16.2.16
+### Bug Fixes and Enhancements
+* Fix Kyverno Action Items title
+
+## 16.2.15
+### Bug Fixes and Enhancements
+* Bug fix on dryRun should be checked before providers creating tickets
+
+## 16.2.14
+### Bug Fixes and Enhancements
+* add workloads and repositories links to image tickets
+* improved admission requests performance
+
+## 16.2.12
+### Bug Fixes and Enhancements
+* fixed bug on creating manual lists
+
+## 16.2.10
+### Bug Fixes and Enhancements
+* Fixed start/end date for firstSeen on action-items page
+* Clean up cost filter drop downs 
+
 ## 16.2.8
 ### Bug Fixes and Enhancements
 *  Fixed bug when creating ticket for list for azure
