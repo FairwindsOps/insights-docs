@@ -14,6 +14,10 @@ This information is used to generate the information in the workloads page. Make
 
 The Workloads report does not generate any Action Items.
 
+## Schedule 
+Even though it's possible to change the report schedule we recommend to keep the default value for this report, which is every hour.
+Report missing for more than 3h is considered Offline in Clusters page.
+
 ## Sample Report 
 Workloads reports contain a list of workloads, Namespaces and Nodes in the cluster
 ```json

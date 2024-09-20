@@ -11,6 +11,11 @@ different workloads cost, understand cost trends and help set resource requests 
 
 > Note: Prometheus Collector requires **`kube-state-metrics`** and **`metrics-server`** to be installed and running in the cluster.
 
+## Schedule 
+Even though it's possible to change the report schedule we recommend to keep the default value for this report, which is every 10 minutes.
+Changing this schedule may cause prometheus data and Costs to be much less accurate.
+Report missing for more than 3h is considered Offline in Clusters page.
+
 ## Use an Existing Prometheus Installation
 If you already have Prometheus installed you can point Insights to the service endpoint of your installation. If you installed the Prometheus operator, the service endpoint will likely end in `port 9090`, and if you only installed the prometheus-server the service endpoint will probably end in `port 80`. To configure this in the `values.yaml` file use the following format:
 
