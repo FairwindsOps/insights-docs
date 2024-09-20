@@ -11,7 +11,7 @@ different workloads cost, understand cost trends and help set resource requests 
 
 > Note: Prometheus Collector requires **`kube-state-metrics`** and **`metrics-server`** to be installed and running in the cluster.
 
-## Schedule 
+## Report schedule 
 Even though it's possible to change the report schedule we recommend to keep the default value for this report, which is every 10 minutes.
 Changing this schedule may cause prometheus data and Costs to be much less accurate.
 Report missing for more than 3h is considered Offline in Clusters page.
