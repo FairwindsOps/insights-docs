@@ -10,6 +10,56 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.2.34
+### Bug Fixes and Enhancements
+* Added CVEs Audit log
+
+## 16.2.33
+### Bug Fixes and Enhancements
+* panic: ERROR: cannot accumulate arrays of different dimensionality (SQLSTATE 2202E)
+
+## 16.2.32
+### Bug Fixes and Enhancements
+* Right-Sie Page: show button should show if single workload is in filtered view
+* Improve IaC Files linkback to repositories
+
+## 16.2.30
+### Bug Fixes and Enhancements
+* Implement IaC Files support on action items page
+* Add list of values for IaCFiles on filter API 
+
+## 16.2.29
+### Bug Fixes and Enhancements
+* App Groups Reporting
+* Expose iac files filters on action items API
+
+## 16.2.28
+### Bug Fixes and Enhancements
+* create cronjob to sync action items and iac files
+* Save Action Items statistics by App Group
+
+## 16.2.27
+### Bug Fixes and Enhancements
+* Show SSO org indication and redirect to login via SSO using that org
+* Implement API to de-link ticket from agent action-item
+
+## 16.2.25
+### Bug Fixes and Enhancements
+* Added a card and a link to the new Right-size page
+* Added date picker on the Right-size page
+* 
+
+## 16.2.24
+### Bug Fixes and Enhancements
+* Right-size: Added CPU and memory graphs
+* Fixed Date filter on Automation Logs
+
+## 16.2.22
+### Bug Fixes and Enhancements
+* Implemented quality of service selection box
+* Migrate Insights to Go 1.23
+* Use Error field to enhance the unscanned_images action item
+
 ## 16.2.21
 ### Bug Fixes and Enhancements
 * Added Action Items filter by image, tag and sha
