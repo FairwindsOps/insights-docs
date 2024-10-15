@@ -10,352 +10,352 @@ sidebarDepth: 1
 ---
 # Release Notes
 
-## 16.2.34
+## 16.2.34 (2024-10-14)
 ### Bug Fixes and Enhancements
 * Added CVEs Audit log
 
-## 16.2.33
+## 16.2.33 (2024-10-10)
 ### Bug Fixes and Enhancements
 * panic: ERROR: cannot accumulate arrays of different dimensionality (SQLSTATE 2202E)
 
-## 16.2.32
+## 16.2.32 (2024-10-10)
 ### Bug Fixes and Enhancements
 * Right-Sie Page: show button should show if single workload is in filtered view
 * Improve IaC Files linkback to repositories
 
-## 16.2.30
+## 16.2.30 (2024-10-08)
 ### Bug Fixes and Enhancements
 * Implement IaC Files support on action items page
 * Add list of values for IaCFiles on filter API 
 
-## 16.2.29
+## 16.2.29 (2024-10-07)
 ### Bug Fixes and Enhancements
 * App Groups Reporting
 * Expose iac files filters on action items API
 
-## 16.2.28
+## 16.2.28 (2024-10-07)
 ### Bug Fixes and Enhancements
 * create cronjob to sync action items and iac files
 * Save Action Items statistics by App Group
 
-## 16.2.27
+## 16.2.27 (2024-10-03)
 ### Bug Fixes and Enhancements
 * Show SSO org indication and redirect to login via SSO using that org
 * Implement API to de-link ticket from agent action-item
 
-## 16.2.25
+## 16.2.25 (2024-09-27)
 ### Bug Fixes and Enhancements
 * Added a card and a link to the new Right-size page
 * Added date picker on the Right-size page
 * 
 
-## 16.2.24
+## 16.2.24 (2024-09-25)
 ### Bug Fixes and Enhancements
 * Right-size: Added CPU and memory graphs
 * Fixed Date filter on Automation Logs
 
-## 16.2.22
+## 16.2.22 (2024-09-20)
 ### Bug Fixes and Enhancements
 * Implemented quality of service selection box
 * Migrate Insights to Go 1.23
 * Use Error field to enhance the unscanned_images action item
 
-## 16.2.21
+## 16.2.21 (2024-09-17)
 ### Bug Fixes and Enhancements
 * Added Action Items filter by image, tag and sha
 
-## 16.2.18
+## 16.2.18 (2024-09-16)
 ### Bug Fixes and Enhancements
 * Bug fix for auto closing tickets
 
-## 16.2.17
+## 16.2.17 (2024-09-11)
 ### Bug Fixes and Enhancements
 * Support disabled param on PUT for custom OPA policies
 
-## 16.2.16
+## 16.2.16 (2024-09-10)
 ### Bug Fixes and Enhancements
 * Fix Kyverno Action Items title
 
-## 16.2.15
+## 16.2.15 (2024-09-09)
 ### Bug Fixes and Enhancements
 * Bug fix on dryRun should be checked before providers creating tickets
 
-## 16.2.14
+## 16.2.14 (2024-09-09)
 ### Bug Fixes and Enhancements
 * add workloads and repositories links to image tickets
 * improved admission requests performance
 
-## 16.2.12
+## 16.2.12 (2024-09-06)
 ### Bug Fixes and Enhancements
 * fixed bug on creating manual lists
 
-## 16.2.10
+## 16.2.10 (2024-09-04)
 ### Bug Fixes and Enhancements
 * Fixed start/end date for firstSeen on action-items page
 * Clean up cost filter drop downs 
 
-## 16.2.8
+## 16.2.8 (2024-08-29)
 ### Bug Fixes and Enhancements
 *  Fixed bug when creating ticket for list for azure
 *  Kyverno: add support for old and new versions
 *  Fixed bug in github integration
 
-## 16.2.7
+## 16.2.7 (2024-08-26)
 ### Bug Fixes and Enhancements
 *  Added API do add/update/delete multiple Teams
   
-## 16.2.5
+## 16.2.5 (2024-08-21)
 ### Bug Fixes and Enhancements
 * Date Range Selector Fixes
 
-## 16.2.4
+## 16.2.4 (2024-08-21)
 ### Bug Fixes and Enhancements
 * Add new Qos Burstable+
 * Add fields Reporter and Assignee when creating Jira ticket
  
-## 16.2.3
+## 16.2.3 (2024-08-19)
 ### Bug Fixes and Enhancements
 * Improve admission action items App Group and Policy Mapping match visibility
 
-## 16.1.31
+## 16.1.31 (2024-08-08)
 ### Bug Fixes and Enhancements
 * Costs: period selector has double border
 * Costs: Updating dates on calendar does not change URL dates params unless Apply is clicked
 * Tooltip is broken from some graphs: AI, Vulnerabilities and Dashboard
 * Add [AppGroups to Automation Rules](https://insights.docs.fairwinds.com/features/automation-rules/#appgroups-associateship)
 
-## 16.1.30
+## 16.1.30 (2024-08-07)
 ### Bug Fixes and Enhancements
 * Changed Export button on Costs page
 
-## 16.1.29
+## 16.1.29 (2024-08-06)
 ### Bug Fixes and Enhancements
 * Added [OPA library and imports support](https://insights.docs.fairwinds.com/features/policies/#custom-policies-with-opa)
 * Library regos should be shown differently on policies table 
 
-## 16.1.26
+## 16.1.26 (2024-07-29)
 ### Bug Fixes and Enhancements
 * New users created via SSO can be assigned a default team
   
-## 16.1.24
+## 16.1.24 (2024-07-24)
 ### Bug Fixes and Enhancements
 * Costs: Add "Last X days" to Costs Date Selector
 
-## 16.1.20
+## 16.1.20 (2024-07-18)
 ### Bug Fixes and Enhancements
 * Pull OPA Policies into PolicyMappings UI
 * Created default App Group and Policy Mapping
 
-## 16.1.19
+## 16.1.19 (2024-07-17)
 ### Bug Fixes and Enhancements
 * repositories are not being counted on top APIs
 
-## 16.1.18
+## 16.1.18 (2024-07-16)
 ### Bug Fixes and Enhancements
 * added support to batch snooze at Action Items page
 
-## 16.1.17
+## 16.1.17 (2024-07-15)
 ### Bug Fixes and Enhancements
 * bug fix on Adding CI Code Scan
 * support App Groups in Vulnerabilities
 
-## 16.1.16
+## 16.1.16 (2024-07-12)
 ### Bug Fixes and Enhancements
 * added new parameter NetworkingLessThanInMB to costs APIs
   
-## 16.1.15
+## 16.1.15 (2024-07-12)
 ### Bug Fixes and Enhancements
 * persist scan resources namespace and labels
 
-## 16.1.14
+## 16.1.14 (2024-07-10)
 ### Bug Fixes and Enhancements
 * improved rate limiting
 
-## 16.1.13
+## 16.1.13 (2024-07-09)
 ### Bug Fixes and Enhancements
 * not showing title on dashboard
 * add last scanned filter on vulnerabilities page
 
-## 16.1.12
+## 16.1.12 (2024-07-01)
 ### Bug Fixes and Enhancements
 * Fix on filter options in vulnerabilities page 
 * Adding date picker filter on Action Items page
 * Improved logs
 
-## 16.1.11
+## 16.1.11 (2024-06-28)
 ### Bug Fixes and Enhancements
 * Add support for HPA min and maxAvailable checks
 
-## 16.1.10
+## 16.1.10 (2024-06-26)
 ### Bug Fixes and Enhancements
 * improved capacity page performance
   
-## 16.1.9
+## 16.1.9 (2024-06-24)
 ### Bug Fixes and Enhancements
 * added new parameter min days for resources recommendation
 * improved S3 validation
 * updated alpine to 3.20
   
-## 16.1.8
+## 16.1.8 (2024-06-21)
 ### Bug Fixes and Enhancements
 * restricted CountryAlpha2 at User information endpoint to max 2 chars
   
-## 16.1.7
+## 16.1.7 (2024-06-18)
 ### Bug Fixes and Enhancements
 * Improved admission requests page performance
  
-## 16.1.5
+## 16.1.5 (2024-06-18)
 ### Bug Fixes and Enhancements
 * Fixed Total Costs at Pie chart for Costs page when filter returns no workload
  
-## 16.1.4
+## 16.1.4 (2024-06-17)
 ### Bug Fixes and Enhancements
 * Improved admission requests data model
 
-## 16.1.2
+## 16.1.2 (2024-06-13)
 ### Bug Fixes and Enhancements
 * Update filtering columns on vulnerabilities all images page
 
-## 16.1.0
+## 16.1.0 (2024-06-10)
 ### Bug Fixes and Enhancements
 * Update minimum recommended memory to 64Mi
 
-## 16.0.27
+## 16.0.27 (2024-06-06)
 ### Bug Fixes and Enhancements
 * [self-hosted] Add migration support for older Timescale version
 
-## 16.0.26
+## 16.0.26 (2024-06-05)
 ### Bug Fixes and Enhancements
 * [self-hosted] Add migration support for latest RDS version
 
-## 16.0.25
+## 16.0.25 (2024-06-05)
 ### Bug Fixes and Enhancements
 * [self-hosted] update Timescale migrations to be idempotent
 
-## 16.0.23
+## 16.0.23 (2024-06-04)
 ### Bug Fixes and Enhancements
 * Add new query parameters support (`hasRepositories` and `hasWorkloads`) on all vulnerabilities top API
 
-## 16.0.22
+## 16.0.22 (2024-06-04)
 ### Bug Fixes and Enhancements
 * Add `pdbDisruptionsIsZero` check to policies page
 * Add fees to nodes total costs in Costs page 
 
-## 16.0.21
+## 16.0.21 (2024-05-29)
 ### Bug Fixes and Enhancements
 * Support for contextualized filtering on cost filter API
 
-## 16.0.18
+## 16.0.18 (2024-05-22)
 ### Bug Fixes and Enhancements
 * Add overhead costs support on Costs page
 * Fix App Groups labels match/exclusion on admission context
 * Add support to wildcard on Costs Page
 
-## 16.0.15
+## 16.0.15 (2024-05-14)
 ### Bug Fixes and Enhancements
 * Update user's permission for organization creation (cont.)
 
-## 16.0.14
+## 16.0.14 (2024-05-14)
 ### Bug Fixes and Enhancements
 * Fix bug on GitHub comments not considering Policy Mappings configuration
 * Fix miss formatted cost in CI/CD Action Items
 
-## 16.0.13
+## 16.0.13 (2024-05-09)
 ### Bug Fixes and Enhancements
 * Fix bug on cost APIs when using appGroups query param
 * Add support for enabled/disabled policy mappings
 
-## 16.0.11
+## 16.0.11 (2024-05-06)
 ### Bug Fixes and Enhancements
 * Bump github.com/go-playground/validator/v10 from 10.19.0 to 10.20.0
 
-## 16.0.10
+## 16.0.10 (2024-05-01)
 ### Bug Fixes and Enhancements
 * Fix `Billed Cost Greater Than` filter handling on costs saved views API
 
-## 16.0.9
+## 16.0.9 (2024-04-30)
 ### Bug Fixes and Enhancements
 * Add App Groups list of values on Costs filters API
 
-## 16.0.8
+## 16.0.8 (2024-04-29)
 ### Bug Fixes and Enhancements
 * Add sorted list of values for App Groups filter on Action Items page
 
-## 16.0.7
+## 16.0.7 (2024-04-26)
 ### Bug Fixes and Enhancements
 * Fix costs page when select hourly data
 * Fix `Teams` drop down isn't filtering correctly on Action Items page
 
-## 16.0.5
+## 16.0.5 (2024-04-25)
 ### Bug Fixes and Enhancements
 * Add App Groups filtering support on Action Items Summary page
 
-## 16.0.4
+## 16.0.4 (2024-04-23)
 ### Bug Fixes and Enhancements
 * Improve load performance on App Groups summary page
 
-## 16.0.3
+## 16.0.3 (2024-04-22)
 ### Bug Fixes and Enhancements
 * Fix costs `NaN` issues
 
-## 16.0.2
+## 16.0.2 (2024-04-22)
 ### Bug Fixes and Enhancements
 * Add support for persisting CPU and memory idle info into node capacity history
 * Fix `NaN` values in timescale
 * Fix `GCP` cores cost calculation
 
-## 16.0.1
+## 16.0.1 (2024-04-19)
 ### Bug Fixes and Enhancements
 * Fix some potential division by zero on `aws-cost` and `cloud-cost` report processing
 
-## 16.0.0
+## 16.0.0 (2024-04-18)
 ### Bug Fixes and Enhancements
 * Fix a bug that prevented the setup of multiple basic-auth integrations
 * Add `Billed Cost Greater Than` and `Efficiencies` filters to Costs page
 
-## 15.7.1
+## 15.7.1 (2024-04-15)
 ### Bug Fixes and Enhancements
 * Add support for App Groups in Costs Saved Views
 
-## 15.7.0
+## 15.7.0 (2024-04-11)
 ### Bug Fixes and Enhancements
 * Fix recommended CPU cost being $0.00 in some cases
 
-## 15.6.4
+## 15.6.4 (2024-04-08)
 ### Bug Fixes and Enhancements
 * Add Policy Mapping names to App Group Summaries API
 * Add support for App Groups filtering in Costs API
 * Improve performance on Automation Rule Log page
 
-## 15.6.3
+## 15.6.3 (2024-04-04)
 ### Bug Fixes and Enhancements
 * Fix on update rule API to only update `logsEnabled` field if explicitly set
 
-## 15.6.2
+## 15.6.2 (2024-04-03)
 ### Bug Fixes and Enhancements
 * Improve loading time for vulnerabilities page
 
-## 15.6.1
+## 15.6.1 (2024-04-02)
 ### Bug Fixes and Enhancements
 * Improve loading time for vulnerabilities page
 
-## 15.6.0
+## 15.6.0 (2024-03-29)
 ### Bug Fixes and Enhancements
 * Fix for time range on costs page
 * Fix for aggregating by label on costs
 
-## 15.5.8
+## 15.5.8 (2024-03-27)
 ### Bug Fixes and Enhancements
 * Fix for app group action item counts
 * Fix for cost saved views with labels
 * Fix for event type aggregation in Action Item Reports
 
-## 15.5.7
+## 15.5.7 (2024-03-25)
 ### Bug Fixes and Enhancements
 * Speed up for clusters page
 * Style fix on addons page
 
-## 15.5.6
+## 15.5.6 (2024-03-22)
 ### Policy Mappings
 You can now create Policy Mappings in the UI. Policy Mappings associate a set of policies
 with App Groups, allowing you to fine-tune Action Item reporting and blocking
@@ -368,18 +368,18 @@ by resource and policy.
 * Fix for filtering by team in Action Items
 * Speed improvements to Clusters page
 
-## 15.5.5
+## 15.5.5 (2024-03-20)
 ### Bug Fixes and Enhancements
 * Fix for API server memory usage 
 
-## 15.5.4
+## 15.5.4 (2024-03-20)
 ### Bug Fixes and Enhancements
 * Fix redirect on Install Hub for old clusters
 
-## 15.5.3
+## 15.5.3 (2024-03-11)
 * Rollback of 15.5.2
 
-## 15.5.2
+## 15.5.2 (2024-03-19)
 ### Bug Fixes and Enhancements
 * Small fixes for App Groups
 * Show resolution message in Admission Action Items
@@ -388,22 +388,22 @@ by resource and policy.
 * Removed stale resource-metrics Action Items
 * Fixed up cluster admission status display when org-wide settings are used
 
-## 15.5.1
+## 15.5.1 (2024-03-11)
 ### Bug Fixes and Enhancements
 * Added a settings link to the Admission tab
 * Improvements to ticket updating
 
-## 15.5.0
+## 15.5.0 (2024-03-07)
 ### Bug Fixes and Enhancements
 * Moved link to Cost Settings
 * Fix for empty graphs when there's not enough data on Costs page
 * Major improvements to performance of the Vulnerabilities page
 
-## 15.4.1
+## 15.4.1 (2024-03-04)
 ### Bug Fixes and Enhancements
 * Updates to third-party libraries
 
-## 15.4.0
+## 15.4.0 (2024-03-04)
 ### Bug Fixes and Enhancements
 * Fix for multiple loads when the "clear" button is clicked on the Costs page
 * Fix for default time period on Costs page
@@ -411,7 +411,7 @@ by resource and policy.
 * Updates to Costs "Saved View" modal styles
 
 
-## 15.3.4
+## 15.3.4 (2024-03-01)
 ### List Ticket Auto-Updates
 Tickets created in Jira, Azure DevOps, or GitHub that correspond to a list of Action Items
 will now auto-update as the list of Action Items changes. The body of the ticket will
@@ -424,18 +424,18 @@ and will be closed when all Action Items are addressed.
 * Added a "View Ticket" link for lists that have an associated ticket
 * Removed "trends" from the Clusters page
 
-## 15.3.3
+## 15.3.3 (2024-02-28)
 ### Bug Fixes and Enhancements
 * Fixed a bug that prevented new users from adding their first cluster
 * Corrected node counts being sent to Datadog metrics
 
-## 15.3.2
+## 15.3.2 (2024-02-27)
 ### Bug Fixes and Enhancements
 * Fixed bug that prevented respository deletion
 * Added a `block` field to Policy Mappings
 * Minor updates to the App Groups UI
 
-## 15.3.1
+## 15.3.1 (2024-02-23)
 ### CI resolutions
 You can now resolve Action Items associated with a particular Infrastructure as Code repository.
 This will prevent the Action Item from showing up in future scans. You can also "snooze" an
@@ -444,7 +444,7 @@ Action Item to mute it for a period of time.
 ### Bug Fixes and Enhancements
 * Performance improvements for Admission page
 
-## 15.3.0
+## 15.3.0 (2024-02-20)
 ### App Groups
 You can now create logical groupings of Kubernetes resources on the App Groups page. App Groups
 can select resources by name, namespace, label, kind, cluster, or any combination of the above.
@@ -465,11 +465,11 @@ as agent and admission controller status.
 The Costs UI has a new column that displays efficiency scores for each workload. These
 scores tell you how optimized a workload is, regardless of its overall scale.
 
-## 15.2.1
+## 15.2.1 (2024-02-15)
 ### Bug Fixes and Enhancements
 * Fixed an issue with filenames in tfsec findings
 
-## 15.2.0
+## 15.2.0 (2024-02-13)
 ### Aggregated Action Items
 There is a new **Summary** tab in the Action Items page, which can show you a breakdown of your action items
 by cluster, namespace, report type, or other dimensions. This is a great way to see where you have the
@@ -480,11 +480,11 @@ most issues and where you're doing well.
 * Better logic to check if reports are enabled
 * Fix UI crash on Repositories page
 
-## 15.1.3
+## 15.1.3 (2024-02-07)
 ### Bug Fixes and Enhancements
 * Minor backend fixes
 
-## 15.1.2
+## 15.1.2 (2024-02-02)
 ### Admission Request Resolutions
 Admission Request Action Items can now be marked as resolved in the UI.
 If an issue is marked "will not fix" or "working as intended", that Action Item
@@ -496,54 +496,54 @@ stop blocking for a set period of time.
 
 *Please see the [CHANGELOG for the Fairwinds Insights Agent Helm Chart](https://github.com/FairwindsOps/charts/blob/master/stable/insights-agent/CHANGELOG.md) for additional release notes.*
 
-## 15.1.1
+## 15.1.1 (2024-02-02)
 ### Bug Fixes and Enhancements
 * Fix for freeze and repeated tooltip items on the Costs page
 * Admission settings now show correct default for passive mode
 
-## 15.1.0
+## 15.1.0 (2024-01-30)
 ### Bug Fixes and Enhancements
 * Fix for copying links in the Costs page
 * Removed guided tour for first-time users
 * Fix for mismatch between daily and hourly data in Costs page 
 
-## 15.0.2
+## 15.0.2 (2024-01-24)
 ### Bug Fixes and Enhancements
 * Speed improvements for costs backend
 
-## 15.0.1
+## 15.0.1 (2024-01-24)
 ### Bug Fixes and Enhancements
 * Fix for saved views when a cluster is selected
 * Fix for incorrect "last scanned" date in vulnerabilities
 * Fix an issue with cluster deletion
 
-## 15.0.0
+## 15.0.0 (2024-01-23)
 ### Bug Fixes and Enhancements
 * Links to Action Items page now appear in Costs page
 * Fix for cluster switcher when on admission controller page
 * Fix for label aggregators in saved views
 * Fix for unsaved pod labels
 
-## 14.13.4
+## 14.13.4 (2024-01-18)
 ### Bug Fixes and Enhancements
 * Fix for links from action items to costs page
 * Replaced `metadataAndNameMismatched` policy on the policies page with updated version
 
-## 14.13.3
+## 14.13.3 (2024-01-10)
 ### Bug Fixes and Enhancements
 * Fix for date range on costs page
 
-## 14.13.2
+## 14.13.2 (2024-01-09)
 ### Bug Fixes and Enhancements
 * Fix for container selector on costs page
 * Improved speed when filtering by labels on costs page
 
-## 14.13.1
+## 14.13.1 (2024-01-02)
 ### Bug Fixes and Enhancements
 * Fix for table borders
 * Better error message for creating duplicate saved views
 
-## 14.13.0
+## 14.13.0 (2023-12-29)
 ### Bug Fixes and Enhancements
 * Fix for "clear" button on costs page
 
@@ -551,14 +551,14 @@ stop blocking for a set period of time.
 Users can now save any set of filters and aggregators on the Costs page as a "Saved View". This
 allows you to easily revisit the same metrics at a later time, or share them with coworkers.
 
-## 14.12.2
+## 14.12.2 (2023-12-28)
 ### Bug Fixes and Enhancements
 * Fix for dates on the costs page
 * Redirect user after initial cluster install
 * Fix for blank repository pages
 * Fix for precision in workload cost settings
 
-## 14.12.1
+## 14.12.1 (2023-12-27)
 ### Bug Fixes and Enhancements
 * Updated CI image version
 * Fixed OPA policy template search
@@ -566,7 +566,7 @@ allows you to easily revisit the same metrics at a later time, or share them wit
 * Fixed links on report history page
 
 
-## 14.12.0
+## 14.12.0 (2023-12-26)
 ### Bug Fixes and Enhancements
 * Allow use of space key in CI scan search box
 * Fix org switcher on home page
@@ -577,7 +577,7 @@ Fairwinds Insights has improved our CI/CD and Auto-Scan feature to scan only cha
 
 For context, we've learned that oftentimes an IaC repo may contain files for many different teams and users. As a result, the developers don't want feedback for things they aren't able to fix. By only scanning changed files, developers get timely, actionable, and less overwhelming feedback.
 
-## 14.11.1
+## 14.11.1 (2023-12-20)
 ### Bug Fixes and Enhancements
 * Fix for label filtering in the costs page
 * Fixed an issue when retrieving historical report data
@@ -585,118 +585,118 @@ For context, we've learned that oftentimes an IaC repo may contain files for man
 * UI fixes for costs page
 * Added ability to filter for modified files in CI scans
 
-## 14.11.0
+## 14.11.0 (2023-12-18)
 ### Bug Fixes
 * Fix for cluster filtering on Action Items page
 
 ### Redesigned GitHub Comments
 The GitHub Comment generated after Repo Scans has been redesigned to improve developer experience. Blocking issues are now highlighted at the top of the comment so developers know exactly what is causing a PR to fail. Additionally, developers can see which of their Action Items can be auto-fixed with Fairwinds Insights' Automated Fix PR functionality.
 
-## 14.10.0
+## 14.10.0 (2023-12-13)
 ### Link to Action Items from Resources Per Pod graph
 Users on the Efficiency > Cost page can now quickly see the relevant Action Items for that workload when reviewing the Resources per Pod graph. This makes it easier to assign Action Items and create tickets for specific resource recommendations.
 
 ### Updates Burstable and Limited QoS Recommendtions
 These updates should make workloads more reliable, and reduces the gap between Burstable and Guaranteed QoS recommendations. Please review the [Quality of Service](https://insights.docs.fairwinds.com/first-steps/cost-efficiency/#quality-of-service-qos-recommendations) page to see the updated formulas.
 
-## 14.9.3
+## 14.9.3 (2023-12-13)
 * Fix for empty Resources Per Pod graph on costs page
 
-## 14.9.2
+## 14.9.2 (2023-12-07)
 * Fix for password reset
 * Fix for vulnerabilities links
 * Fix for Slack digest errors
 * Fix for network and storage costs
 
-## 14.9.1
+## 14.9.1 (2023-12-04)
 * Fix for Action Items Reporting print view
 * Fix for tooltip on capacity page
 
-## 14.9.0
+## 14.9.0 (2023-12-04)
 * Improvements to costs UI, including a consolidated control row
 
-## 14.8.4
+## 14.8.4 (2023-11-22)
 * Minor bugfixes
 
-## 14.8.3
+## 14.8.3 (2023-11-21)
 * Minor bugfixes
 
-## 14.8.2
+## 14.8.2 (2023-11-21)
 * Minor bugfixes
 
-## 14.8.1
+## 14.8.1 (2023-11-17)
 * Fix for deleting Action Items when a report is uninstalled
 * Updates to automation rule library
 
-## 14.8.0
+## 14.8.0 (2023-11-17)
 * Improvements to Action Item lifecycle, including deletion
 
 ## 14.7.17
 * Minor bugfixes
 
-## 14.7.16
+## 14.7.16 (2023-11-15)
 * Minor bugfixes
 
-## 14.7.15
+## 14.7.15 (2023-11-15)
 * Minor bugfixes
 
-## 14.7.14
+## 14.7.14 (2023-11-15)
 * Minor bugfixes
 
-## 14.7.13
+## 14.7.13 (2023-11-15)
 * Minor bugfixes
 
-## 14.7.12
+## 14.7.12 (2023-11-15)
 * Minor bugfixes
 
-## 14.7.11
+## 14.7.11 (2023-11-14)
 * `.git` suffix is now removed from repository names
 
-## 14.7.10
+## 14.7.10 (2023-11-14)
 * Delete action items when a report is disabled
 * Fix issue with Polaris severities
 
-## 14.7.9
+## 14.7.9 (2023-11-13)
 * Fix for costs when a cluster is intermittently available
 * Fix for Action Item severities
 
-## 14.7.8
+## 14.7.8 (2023-11-10)
 * Minor bugfixes
 
-## 14.7.7
+## 14.7.7 (2023-11-10)
 * Minor bugfixes
 
-## 14.7.6
+## 14.7.6 (2023-11-07)
 * Ensure token is visible on "add repository" modal
 * Added a last login column to the team management page
 * Added title attributes to some fields on the Action Items table
 * Better handling of Pluto findings when APIs are removed entirely
 * Fix for Action Item severities
 
-## 14.7.5
+## 14.7.5 (2023-11-07)
 * Fix for node names on cost settings page
 * Added details for some falco checks
 
-## 14.7.4
+## 14.7.4 (2023-11-06)
 * Minor bugfixes
 
-## 14.7.3
+## 14.7.3 (2023-11-03)
 * Minor bugfixes
 
-## 14.7.2
+## 14.7.2 (2023-11-01)
 * Minor bugfixes
 
-## 14.7.1
+## 14.7.1 (2023-11-01)
 * Minor bugfixes
 
-## 14.7.0
+## 14.7.0 (2023-10-30)
 ### Bug Fixes and Improvements
 * Updated the move icon throughout Insights
 * UI polishes to the left navigation bar
 * Fixed the badge colors on the `Policy` page
 * Better loading mechanism for elements on the `Costs` page
 
-## 14.6.0
+## 14.6.0 (2023-10-24)
 ### Improved Reliability of Action Item Deletion and Reporting
 Fairwinds has implemented additional improvements for deleting Action Items when that workload no longer exists in a cluster.
 As a basic rule, Insights already tracks the lifecycle of Action Items, and deletes Action Items when a namespace disappears from a cluster. 
@@ -713,7 +713,7 @@ In summary:
 ### Bug Fixes and Improvements
 * For organizations using basic auth in Jira, tickets will auto close when an Action Item is manually resolved or fixed 
 
-## 14.5.0
+## 14.5.0 (2023-10-24)
 ### Updated Costs Settings
 New Costs Settings allows users to set their cost for Disk and Network which will make the Costs reflected
 on the `Costs` page more accurate. Users can access these new settings by visiting `Efficiency > Costs` and
@@ -723,27 +723,27 @@ selecting the `Settings` in the top right.
 * Changed the Total Cost chart in `Costs` to reflect percentages of the total cost
 * Fixed the date range on the `Costs` page
 
-## 14.4.0
+## 14.4.0 (2023-10-17)
 ### Bug Fixes and Improvements
 * UI polishes to Action Items Reports
 * Small changes to the `Costs` page loading
 
-## 14.3.0
+## 14.3.0 (2023-10-12)
 ### Bug Fixes and Improvements
 * UI polishes to the left navigation bar
 * Removed Goldilocks report from `Install Hub` cards
 
-## 14.2.0
+## 14.2.0 (2023-10-11)
 ### Bug Fixes and Improvements
 * Fixed sorting issues in `Costs`
 * Updating some colors throughout Insights
 * Fixed an issue which sometimes prevented Slack channels showing up on `Settings > Notifications` page 
 
-## 14.1.0
+## 14.1.0 (2023-10-10)
 ### Bug Fixes and Improvements
 * UI polishes across Insights
 
-## 14.0.0
+## 14.0.0 (2023-10-03)
 ### CI/CD Action Items for Right Sizing
 Action Items for right-sizing workloads are now available in CI/CD. 
 You'll see one Action Item per cluster where the workload appears.
@@ -753,12 +753,12 @@ You'll see one Action Item per cluster where the workload appears.
 * Fixed default QoS for clusters
 * Fixed `Cost Difference` sorting in `Costs`
 
-## 13.13.0
+## 13.13.0 (2023-09-29)
 ### Bug Fixes and Improvements
 * Insights Agent 2.24 is now recommended in the `Install Hub`
 * Fixed Slack integration
 
-## 13.12.0
+## 13.12.0 (2023-09-20)
 ### Action Items Report
 Progress reporting enables organizations to easily view and share their achievements or
 identify areas to improve with their teams or stakeholders. To view your organization's
@@ -767,7 +767,7 @@ progress, visit the `Action Items` page and click on the `Reports` tab.
 ### Consolidated Resource Recommendations
 Decrease information overload and ticket creation with a single right-sizing recommendation per resource.
 
-## 13.11.0
+## 13.11.0 (2023-09-15)
 ### Kyverno Plugin
 Organizations can now use the Kyverno plugin to convert their Kyverno background scan policy reports into Action Items. 
 To see how to use the Kyverno plugin, visit the `Install Hub` page.
@@ -776,24 +776,24 @@ To see how to use the Kyverno plugin, visit the `Install Hub` page.
 * Fixed ordering issues in the table of the `Costs` page
 * UI change to the `Home` Top Issues chart
 
-## 13.10.0
+## 13.10.0 (2023-09-11)
 ### Bug Fixes and Improvements
 * Fixed issue where sometimes the user would be taken back to the Install Hub page incorrectly
 * UI polishes to the trend lines
 * Fixed SSO page tab title
 
-## 13.9.0
+## 13.9.0 (2023-08-31)
 ### Bug Fixes and Improvements
 * UI polishes and fixes to the Install hub page
 * Fixed secondary nav disappearing on the Automation page on refresh
 
-## 13.8.0
+## 13.8.0 (2023-08-24)
 ### Bug Fixes and Improvements
 * UI polishes across Insights
 * Fixed bug in Cluster Overview page where switching clusters was not updating some information
 * Fixed bug in the `Costs` page where in some instance, the Resources Per Pod chart would switch QoS settings
 
-## 13.7.0
+## 13.7.0 (2023-08-16)
 ### Network and Storage Costs
 Provides a more complete picture of in-cluster spend by attributing network and disk costs.
 
@@ -801,7 +801,7 @@ Provides a more complete picture of in-cluster spend by attributing network and 
 * UI polishes across Insights
 * Fixed the cost `Efficiency > Capacity` to show correctly based on range selected
 
-## 13.6.0
+## 13.6.0 (2023-08-10)
 ### Added Hourly Costs Data
 Users are now able to see hourly data in the `Costs` page by selecting a time range of less than 3 days.
 
@@ -809,7 +809,7 @@ Users are now able to see hourly data in the `Costs` page by selecting a time ra
 * Fixed small issue with the latest commits section on the `Repositories` page
 * UI polishes to the `Danger Zone` page and `Action Items` charts
 
-## 13.5.0
+## 13.5.0 (2023-08-08)
 ### Pin a Cluster
 We have added the ability to pin a cluster on Insights to only show information relevant to that cluster as users navigate to the
 different pages. This allows users to focus on a single cluster while on Insights.
@@ -817,16 +817,16 @@ different pages. This allows users to focus on a single cluster while on Insight
 ### Bug Fixes and Improvements
 * Fixed issue with filtering on Repository branches
 
-## 13.4.0
+## 13.4.0 (2023-07-28)
 ### Bug Fixes and Improvements
 * Insights Agent 2.23 is now recommended in the `Install Hub`
 
-## 13.3.0
+## 13.3.0 (2023-07-25)
 ### Bug Fixes and Improvements
 * Fixed labels on bar charts
 * Fixed multiple issues on the `Costs` page
 
-## 13.2.0
+## 13.2.0 (2023-07-19)
 ### Vulnerabilities Page Now Only Shows Main Branch for Repositories
 Going forward, only vulnerable images from the main branch found during repo scanning will be reported on the `Vulnerabilities` page.
 Previously, vulnerable images from all branches were reported. This update will streamline the number of findings to those most relevant.
@@ -834,18 +834,18 @@ Previously, vulnerable images from all branches were reported. This update will 
 ### Bug Fixes and Improvements
 * UI polishes and color changes throughout Insights
 
-## 13.1.0
+## 13.1.0 (2023-07-17)
 ### Bug Fixes and Improvements
 * UI polishes and cleanup throughout Insights
 
-## 13.0.0
+## 13.0.0 (2023-07-07)
 ### Bug Fixes and Improvements
 * Insights Agent 2.21 is now recommended in the `Install Hub`
 * New Insights CI script 5.1
 * OPA Policy Editor UI polishes
 * Multiple UI and performance improvements to the `Costs` page
 
-## 12.17.0
+## 12.17.0 (2023-06-26)
 ### Prometheus-Metrics Will No Longer Generate Action Items for Pods
 Action Items from prometheus-metrics will no longer be generated for Pod resource kinds. Some users may notice a dramatically
 lower Action Item count as a result, which should make Action Items easier to manage and less overwhelming.
@@ -863,12 +863,12 @@ please reach out to support@fairwinds.com so we can capture your feedback.
 * Removed the search for users when assigning an Action Item
 * Fixed issue with SSO logins
 
-## 12.16.0
+## 12.16.0 (2023-06-20)
 ### Bug Fixes and Improvements
 * Fixed issue where the country information was getting overridden when updating user information
 * UI polishes for the compliance checks
 
-## 12.15.0
+## 12.15.0 (2023-06-12)
 ### New Polaris policies and changes to some default severities
 The latest version of Insights Agent, 2.20.0, includes a newer version of Polaris, which adds the following policies:
 * priorityClassNotSet
@@ -900,7 +900,7 @@ To retrieve these recommendations, try the following:
 * Select Quick Views > Top Workloads
 * Click on a workload to see the Resources per Pod graph
 
-## 12.14.0
+## 12.14.0 (2023-06-07)
 ### Bug Fixes and Improvements
 * Fixed cluster overview graph not loading
 * Better feedback for user when Action Items list is created from table
@@ -910,12 +910,12 @@ To retrieve these recommendations, try the following:
 * UI polishes across Insights
 * Fixed empty query list not loading
 
-## 12.13.0
+## 12.13.0 (2023-06-01)
 ### Bug Fixes and Improvements
 * Action Item IDs are now searchable
 * Insights Agent 2.19 is now recommended in the `Install Hub`
 
-## 12.12.0
+## 12.12.0 (2023-05-31)
 ### New Additional Fields for Creating Tickets
 * Users are now able to provide additional fields when creating a ticket for an Action Item.
 
@@ -923,7 +923,7 @@ To retrieve these recommendations, try the following:
 * Added additional information on what an automated compliance check is checking for in the cluster
 * Various UI polishes across Insights
 
-## 12.11.0
+## 12.11.0 (2023-05-25)
 ### Bug Fixes and Improvements
 * Multiple improvements to the `Costs` page
 * Fixed discrepancies in the CI report
@@ -932,7 +932,7 @@ To retrieve these recommendations, try the following:
 * Fixed issue with reporting prometheus-metrics Action Items
 * `Add Ons` page can now be exported to CSV
 
-## 12.10.0
+## 12.10.0 (2023-05-12)
 ### Official Launch of Costs
 The Costs page has been officially launched. This replaces the previous `Workloads` page and adds a lot more functionality.
 To check it out, visit `Efficiency > Costs` in Insights.
@@ -948,23 +948,23 @@ To check it out, visit `Efficiency > Costs` in Insights.
 * Multiple fixes to the `Compliance` report page
 * Fixed bulk unassign function in Action Items
 
-## 12.9.0
+## 12.9.0 (2023-05-10)
 ### Bug Fixes and Improvements
 * Fixed issues with the `Cost Settings` in `Costs`
 * Changed the format of the `Quick Views` in `Costs`
 * Captcha added after an unsuccessful login
 
-## 12.8.0
+## 12.8.0 (2023-05-05)
 ### Bug Fixes and Improvements
 * Added a new workload dropdown in the `Costs` page
 * Fixed `Workloads` Settings page
 
-## 12.7.0
+## 12.7.0 (2023-05-03)
 ### Bug Fixes and Improvements
 * All users can now create and edit their own Action Items lists
 * New Automated Compliance Checks
 
-## 12.6.0
+## 12.6.0 (2023-05-01)
 ### Bug Fixes and Improvements
 * Minor UI changes to the `Costs` page
 * Automated Compliance checks are now searchable
@@ -972,14 +972,14 @@ To check it out, visit `Efficiency > Costs` in Insights.
 * Automated Pull Requests only show up on GitHub connected Repositories
 * Trivy is now added automatically to Insights Agent installs for new clusters
 
-## 12.5.0
+## 12.5.0 (2023-04-26)
 ### Bug Fixes and Improvements
 * Added `Last Scanned` column to the Vulnerabilities table
 * Fixed missing entry in sign up flow
 * Multiple improvements to the `Costs` page
 * Automation Rules logs are off by default
 
-## 12.4.0
+## 12.4.0 (2023-04-20)
 ### Bug Fixes and Improvements
 * Users will be able to see if logging is enabled for an Automation Rule from the `All Rules` page
 * Additional information for the user signup
@@ -988,7 +988,7 @@ To check it out, visit `Efficiency > Costs` in Insights.
 * Various UI fixes throughout Insights
 * Indicate if a report is old on the `Costs` page
 
-## 12.3.0
+## 12.3.0 (2023-04-17)
 ### Enabling and Disabling Automation Rule Logs
 Users can now enable or disable the logs for their Automation Rules. On the Automation Rule edit page, toggle the
 `Logs` to enable or disable the logs for the specific rule.
@@ -996,22 +996,22 @@ Users can now enable or disable the logs for their Automation Rules. On the Auto
 ### Bug Fixes and Improvements
 * Various UI polishes throughout Insights
 
-## 12.2.0
+## 12.2.0 (2023-04-11)
 ### Bug Fixes and Improvements
 * Minor UI fixes in the `User Settings` pages
 * Fixed issue where sometimes the `Resources Per Pod` chart in `Costs` was blank
 
-## 12.1.0
+## 12.1.0 (2023-04-04)
 ### Bug Fixes and Improvements
 * Many UI polishes and improvements throughout Insights
 
-## 12.0.0
+## 12.0.0 (2023-04-03)
 ### Bug Fixes and Improvements
 * Fixed an issue with the Captchas on user register
 * Small UI fixes in `User Settings`
 * Fixed Auto-Scan logs sometimes showing multiple runs
 
-## 11.13.0
+## 11.13.0 (2023-03-29)
 ### New NSA Hardening Compliance Report
 A new compliance report is added to the `Compliance` page to help organizations with their NSA Hardening Compliance.
 Insights Agent will be able to automatically check some of the compliance checks for the NSA Hardening and for the remaining compliance checks, users
@@ -1024,7 +1024,7 @@ are able to mark the state manually.
 * Fixed and issue where somtimes not all filters showing up in `Action Items` table
 * Removed `Cost Strategy` option from the `Costs` settings page
 
-## 11.12.0
+## 11.12.0 (2023-03-20)
 ### Automated PRs
 We're excited to announce the launch of Automated Fix PRs!
 
@@ -1042,25 +1042,25 @@ Visit the [Github permissions](features/integrations#fairwinds-insights-github-a
 * Added a loading indicator in `Reports > History`
 * Multiple fixes to the `Costs` page
 
-## 11.11.0
+## 11.11.0 (2023-03-13)
 ### Bug Fixes and Improvements
 * Removed the `Set Up Insights` section from the `Home` page
 * Minor UI fixes to the `Costs` page
 
-## 11.10.0
+## 11.10.0 (2023-03-08)
 ### Bug Fixes and Improvements
 * Fix current usage and historical node capacity for cpu and memory in use
 * Fixed filtering of OPA policies in the `Policy` page
 * Small UI improvements to the `Costs` page
 
-## 11.9.0
+## 11.9.0 (2023-03-06)
 ### Bug Fixes and Improvements
 * [Breaking] We released a fix for file references in the CI/CD script. You may see action items get fixed and re-opened in the first change using script 5.0. This will automatically roll out for auto-scan users.
 * Fixed an error when visiting `Compliance` page when there are no reports
 * Multiple UI improvements to the `Efficiency > Capacity` page
 * The tooltip in `Efficiency > Capacity` now displays correctly
 
-## 11.8.0
+## 11.8.0 (2023-02-28)
 ### Costs [Beta] Page Updates
 We're getting ready to take the Costs page out of beta! We've launched a few new features in preparation:
 * A donut chart, to help contextualize the numbers as you filter and aggregate
@@ -1072,14 +1072,14 @@ We're getting ready to take the Costs page out of beta! We've launched a few new
 * Tooltip for Node capacity chart in Efficiency page has correct limits and requests
 * Added Quick views to the costs page
 
-## 11.7.0
+## 11.7.0 (2023-02-22)
 ### Bug Fixes and Improvements
 * Some UI improvements to the `Costs` page
 * The `Compare` page was removed from the navigation bar. It is still available at `insights.fairwinds.com/orgs/{org}/compare`
 * Added falco and right-sizer to the automation rules options
 * Insights Agent 2.10 is now recommended in the `Install Hub`
 
-## 11.6.0
+## 11.6.0 (2023-02-15)
 ### Cluster Overview Page Improvements
 The Cluster Overview page has many new improvements in this release of Insights. This includes changing
 the behavior of the Action Items chart as well as adding new cluster level data. Users are now able to
@@ -1091,13 +1091,13 @@ get a quick idea of the overall state of their clusters by visiting this page.
 * Users may now select their time zone by visiting the `User Settings > Region` page
 * Fixed an issue with the `Table View` functionality on Action Items lists
 
-## 11.5.0
+## 11.5.0 (2023-02-07)
 ### Bug Fixes and Improvements
 * Small improvements to the cluster overview page
 * Fixed creating third party ticket flow
 * Fixed Vulnerabilities - All Images page not loading for some organizations
 
-## 11.4.0
+## 11.4.0 (2023-01-31)
 ### Automated Compliance TLS for Ingresses
 This compliance test can now be run automatically using Insights. Using polaris, Insights checks whether
 all ingresses within the kubernetes cluster have TLS configured.
@@ -1105,54 +1105,54 @@ all ingresses within the kubernetes cluster have TLS configured.
 ### Bug Fixes and Improvements
 * New Sign Up flow for Insights
 
-## 11.3.0
+## 11.3.0 (2023-01-31)
 ### New CI Script 4.2
 The new Insights CI script adds the ability to scan terraform files. Furthermore, the Auto-Scan
 feature allows private image scanning.
 For more information visit [Auto-Scan](features/infrastructure-as-code-scanning)
 
-## 11.2.0
+## 11.2.0 (2023-01-25)
 ### Bug Fixes and Improvements
 * Improvements to the `Costs` page
 * Fixed redirect of the `Upgrade` button for free tier
 * Fixed editing of Compliance reports
 * Removed the `Set up Insights` from Cluster Overview page
 
-## 11.1.0
+## 11.1.0 (2023-01-10)
 ### Bug Fixes and Improvements
 * Fixed Admission Controller result dropdown
 * Fixed Action Items list export sometimes not working
 * Minor UI fixes
 
-## 11.0.0
+## 11.0.0 (2023-01-04)
 ### Bug Fixes and Improvements
 * Fixed `Cost Over Time` chart in `Costs` page
 
-## 10.12.0
+## 10.12.0 (2022-12-27)
 ### Bug Fixes and Improvements
 * Hide settings and add repository buttons from non-owners
 
-## 10.11.0
+## 10.11.0 (2022-12-21)
 ### Bug Fixes and Improvements
 * Updated Insights welcome Email
 
-## 10.10.0
+## 10.10.0 (2022-12-15)
 ### Bug Fixes and Improvements
 * Insights Agent 2.9 is now recommended in the `Install Hub`
 
-## 10.9.0
+## 10.9.0 (2022-12-12)
 ### Bug Fixes and Improvements
 * Status indicator for Auto-Scan repositories takes user to scan logs
 * Fixed order of Action Items in the Health Score card in `Clusters`
 * Added the file name to the Action Items card in `Repositories`
 
-## 10.8.0
+## 10.8.0 (2022-11-29)
 ### Bug Fixes and Improvements
 * Added more states to `Compliance` report checks
 * Ability to filter compliance report checks by control IDs
 * Fixed advanced filtering in Costs beta page
 
-## 10.7.0
+## 10.7.0 (2022-11-21)
 ### New Insights CI script 2.2.0
 The Insights CI/CD script has been updated to better handle various Git checkout states,
 improving reliability of CI/CD scans. Errors such as "unable to GIT merge-base" should be
@@ -1162,19 +1162,19 @@ This enables organizations to achieve greater Infrastructure-as-Code scan covera
 note this feature is not yet available as part of Auto-Scan. To get the script,
 navigate to Repositories > Add Repository > Connect Manually.
 
-## 10.6.0
+## 10.6.0 (2022-11-16)
 ### Bug Fixes and Improvements
 * Users are now able to search for projects when creating a third party ticket
 * New `Cost Over Time` chart in the new `Efficiency > Costs` beta page
 
-## 10.5.0
+## 10.5.0 (2022-11-09)
 * No user-facing changes
 
-## 10.4.0
+## 10.4.0 (2022-11-03)
 ### Bug Fixes and Improvements
 * List all open source projects used in Insights
 
-## 10.3.0
+## 10.3.0 (2022-10-24)
 ### New Costs Page - Beta
 Fairwinds has released a beta version for the new `Costs` page. Organizations can use this page to get
 a better understanding of the breakdown of their Kubernetes cluster costs. To check out this new page,
@@ -1184,14 +1184,14 @@ visit `Efficiency > Costs` in Insights.
 * New `Notes` section in Action Item description
 * Add ability to configure multiple email domains for SSO
 
-## 10.2.0
+## 10.2.0 (2022-10-19)
 ### Bug Fixes and Improvements
 * Insights Agent 2.8 is now recommended in the `Install Hub`
 * New `ID` column in the Action Items table
 * UI indicates when a cluster is being deleted in `Danger Zone`
 * Changed the filters on the `Fixed Version` column in `Vulnerabilities`
 
-## 10.1.0
+## 10.1.0 (2022-10-12)
 # Auto-Scan Logs
 Repositories that have Auto-Scan turned on will now see an `Auto-Scan Logs` section at the bottom of their
 repository page. This will help users better debug issues with the Auto-Scan feature.
@@ -1200,7 +1200,7 @@ repository page. This will help users better debug issues with the Auto-Scan fea
 * `Label` column in Action Items cannot be sorted anymore
 * Improvement to the SSO Login flow
 
-## 10.0.0
+## 10.0.0 (2022-10-05)
 ### Re-Run Autoscan
 Users are now able to re-run the Insights scan on their branches if the repository is setup with Auto-Scan. To do so,
 visit the `Repositories` page, select the repository and the branch and click the `Re-Run Autoscan` button.
@@ -1208,7 +1208,7 @@ visit the `Repositories` page, select the repository and the branch and click th
 ### Bug Fixes and Improvements
 * Fixed issue with creating tickets on Azure DevOps Scrum projects
 
-## 9.13.0
+## 9.13.0 (2022-09-28)
 ### Bug Fixes and Improvements
 * Changed the filters on the `Recommended Tag` column in `Vulnerabilities`
 * Users are no longer able to create compliance reports with the same names
@@ -1216,7 +1216,7 @@ visit the `Repositories` page, select the repository and the branch and click th
 * Fixed issue with Azure DevOps tickets not getting closed after Action Items are `Resolved` or `Fixed`
 * Fixed right-sizer description
 
-## 9.12.0
+## 9.12.0 (2022-09-20)
 ### Close Third Party Tickets for Fixed and Resolved Action Items
 When an Action Item has a GitHub, Azure DevOps or Jira ticket associated with it and the Action Item is
 `Fixed` or `Resolved`, the third party ticket will automatically close.
@@ -1228,7 +1228,7 @@ When an Action Item has a GitHub, Azure DevOps or Jira ticket associated with it
 * Fixed labels on `Top Issues` chart in `Repositories`
 * Fixed export function for the `Vulnerabilities > All Images` table
 
-## 9.11.0
+## 9.11.0 (2022-09-14)
 ### Right-Sizer, AWS Costs and Falco
 We have added the `Right-Sizer`, `AWS Costs` and `Falco` reports to the `Install Hub` page. The `Right-Sizer` report
 can be added as usual using the `Quick Add` option under the report. However, the `AWS Costs` and `Falco` require more
@@ -1250,17 +1250,17 @@ use `ActionItem.NamespaceLabels` and `ActionItem.NamespaceAnnotations`.
   * Number of `Custom Rules Set`
 * Users can now set a different scale for the `Cluster Comparison` in the `Efficiency` page
 
-## 9.10.0
+## 9.10.0 (2022-09-08)
 ### Bug Fixes and Improvements
 * When selecting the `Efficiency` page, the `All Clusters` view is always shown
 * By default, the `Most Recent Data` is selected in `Efficiency`
 * For new `Image has vulnerabilities` Action Items, the image is listed under the `Description`
 
-## 9.9.0
+## 9.9.0 (2022-08-31)
 ### Bug Fixes and Improvements
 * Minor UI fixes throughout Insights
 
-## 9.8.0
+## 9.8.0 (2022-08-24)
 ### Bug Fixes and Improvements
 * Nodes list in `Efficiency` page is now sorted by `Role` by default
 * Fixed `Prometheus Collector` documentation link
@@ -1269,7 +1269,7 @@ use `ActionItem.NamespaceLabels` and `ActionItem.NamespaceAnnotations`.
 * Only organization `owners` are able to add new repositories to Insights
 * Health Scores are now using the new TimeScale DB so health scores may differ slightly
 
-## 9.7.0
+## 9.7.0 (2022-08-17)
 ### New Azure DevOps Integration
 The new Azure DevOps integration allows organizations to connect their Azure DevOps to Insights and create tickets
 for Action Items manually or through Automation Rules. To learn more about the Azure DevOps integration
@@ -1279,7 +1279,7 @@ visit the [Azure DevOps documentation.](features/integrations)
 * Fixed issue where repository names were being cut off in the `Repositories` page
 * The `Name` column under `All Repositories` is now expandable
 
-## 9.6.0
+## 9.6.0 (2022-08-10)
 ### Bug Fixes and Improvements
 * Fairwinds Insights `Details` link in public repositories redirects to the new `Repositories` page
 * New Insights CI script version 2.1.0 recommended during the `Connect Manually` flow for adding repositories
@@ -1289,7 +1289,7 @@ visit the [Azure DevOps documentation.](features/integrations)
 * Fixed `ISO 27001` dropdown in the `Compliance` reports
 * Insights Agent 2.6 is now recommended in the `Install Hub`
 
-## 9.5.0
+## 9.5.0 (2022-08-02)
 ### New Design of Vulnerabilities
 We have redesigned the `Vulnerabilities` page in Insights. The new design enables teams to understand risk at a high level
 and address those with the biggest impact. The `All Images` tab allows organizations to see which images are at a higher risk
@@ -1305,43 +1305,43 @@ visit the [Install Hub and Policies documentation.](features/admission-controlle
 * The Action Items table in `Repositories` now has a `File Name` column
 * The top left Cluster dropdown has been fixed on several pages
 
-## 9.4.0
+## 9.4.0 (2022-08-01)
 ### Bug Fixes and Improvements
 * Passwords for new users require numbers, letters and symbols
 
-## 9.3.0
+## 9.3.0 (2022-07-21)
 ### Bug Fixes and Improvements
 * Code copy works properly now when selecting `Connect Manually` in `Repositories`
 * Fixed errors in `Efficiency > Workloads` page when charts are empty
 * Fixed Auto-Scan toggle in `Repositories`
 
-## 9.2.0
+## 9.2.0 (2022-07-20)
 ### Bug Fixes and Improvements
 * `Event ID` in the Action Items table is now `Event Type`
 * In the Clusters Overview page, `Insights Version` was changed to `Agent Version`
 
-## 9.1.0
+## 9.1.0 (2022-07-13)
 ### Bug Fixes and Improvements
 * Updated recommended Insights Agent version to 2.4
 * `Viewers` are now able to see the `Logs` in `Automation`
 
-## 9.0.0
+## 9.0.0 (2022-07-07)
 ### Bug Fixes and Improvements
 * Fixed link to vulnerability for Jira tickets
 * Added description and remediation for `Only one replica is scheduled` Action Item
 * OPA policies now have the correct `Event Type`
 
-## 8.12.0
+## 8.12.0 (2022-06-29)
 ### Bug Fixes and Improvements
 * Improved accessibility throughout Insights
 * Added an Export option for Repository Action Items
 * Fixed links to documentation
 
-## 8.11.0
+## 8.11.0 (2022-06-22)
 ### Bug Fixes and Improvements
 * `Clusters` page loading improvements
 
-## 8.10.0
+## 8.10.0 (2022-06-15)
 ### New Design of Policy Page
 We have redesigned the `Policy` page in Insights. The `Policy` page will now show a list of all Policies that come as part of Insights
 as well as any OPA policies added by users. Users are now able to see the severity of every Policy as well as whether they will currently
@@ -1359,7 +1359,7 @@ The 2.0 script also defaults to blocking only on Action Items that have `High` o
 * Workloads can now be exported even when filtered
 * Fixed the display of Admission Controller chart when displaying percentages
 
-## 8.9.0
+## 8.9.0 (2022-06-08)
 ### Creating New Policies in Insights Using OPA v2
 When creating new Policies using the Insights UI, we will be using OPA v2. The biggest change here is a YAML instance is no longer
 required. All v1 Policies will continue to work, and are still able to be edited from within the Insights web UI.
@@ -1372,14 +1372,14 @@ check out [V1 and V2 Insights OPA Policies](https://insights.docs.fairwinds.com/
 * Fixed missing `Name` field and duplicated `Namespace` field when exporting Action Items
 * Improvement to Pluto Action Items description and titles
 
-## 8.8.0
+## 8.8.0 (2022-06-03)
 ### Bug Fixes and Improvements
 * Added instructions for setting up CI integration for different platforms
 * Removed nodes that were showing blank in the Node Capacity chart
 * Fixed issue with the contact form
 * Updated Insights CI script
 
-## 8.7.0
+## 8.7.0 (2022-05-24)
 ### CSV Export of NSA Hardening Guidance
 Users are now able to export a report guiding their clusters towards NSA hardening. This report will show the NSA policy, the
 relevant Insights check and the number of Action Items that require resolving. In order to obtain the report, go to the
@@ -1389,13 +1389,13 @@ relevant Insights check and the number of Action Items that require resolving. I
 * Fixed ordering of Top Issues chart in `Repositories`
 * Improvements to make the Cluster Overview page load faster
 
-## 8.6.0
+## 8.6.0 (2022-05-17)
 ### Bug Fixes and Improvements
 * New background for login pages
 * Fixed popups getting cut off when hovering over `Top Issues` chart in `Home`
 * Some workload metrics were showing `N/A` incorrectly
 
-## 8.5.0
+## 8.5.0 (2022-05-10)
 ### Introducing Auto-Scan for Infrastructure as Code
 Fairwinds is upgrading the GitHub integration and making new infrastructure-as-code scanning capabilities available to all customers.
 Please note that existing users of our GitHub integration may be prompted for an additional permissions request from GitHub.
@@ -1435,7 +1435,7 @@ scanning by integrating Insights into their their existing CI/CD systems.
 * Fixed various documentation links across Insights
 * Faster loading of cluster overview page
 
-## 8.4.0
+## 8.4.0 (2022-05-04)
 ### Bug Fixes and Improvements
 * UI improvements to the Efficiency pages
 * Fixed issue where sometimes Nodes were being duplicated in the Nodes Capacity chart
@@ -1444,7 +1444,7 @@ scanning by integrating Insights into their their existing CI/CD systems.
 * Open source repos should now load in the Repositories page
 * Cluster pages will load faster
 
-## 8.3.0
+## 8.3.0 (2022-04-28)
 ### Bug Fixes and Improvements
 * Fixed memory difference showing `0 (N/A)` if the difference is too large
 * Links to Action Items table are now working
@@ -1452,7 +1452,7 @@ scanning by integrating Insights into their their existing CI/CD systems.
 * Fixed un-assigning and un-snoozing Action Items
 * Choosing multiple filters on the Action Items table now shows correct results
 
-## 8.2.0
+## 8.2.0 (2022-04-20)
 ### New Insights Agent 2.0
 We're excited to announce version 2.0 of our Insights Agent!
 
@@ -1465,7 +1465,7 @@ There are also some minor changes to Admission Controller and CI behavior that w
 * Fixed an issue with the `Contact Us` page when not logged in
 * New Clusters can be created with the same name as a previously deleted Cluster (Clusters deleted prior to 8.1.0 release)
 
-## 8.1.0
+## 8.1.0 (2022-04-13)
 ### New Cluster and Node Costs
 This new page allows users to quickly visualize how much resources they are using compared to what is available. This is a great
 tool to help users identify clusters that are under or over utilized. Users in the organization can compare resource utilization
@@ -1475,7 +1475,7 @@ of each node within a cluster. The new page can be found under `Efficiency > Cap
 ### Bug Fixes and Improvements
 * Users are now able to create a cluster with the same name as a previously deleted cluster
 
-## 8.0.0
+## 8.0.0 (2022-04-05)
 ### Bug Fixes and Improvements
 * Fixed JIRA integration not staying authenticated
 * Fixed issue when creating JIRA tickets for some Action Items
@@ -1483,20 +1483,20 @@ of each node within a cluster. The new page can be found under `Efficiency > Cap
 * Improved Trivy recommendations
 * Loading indicator now works properly in the Automation Logs
 
-## 7.15.0
+## 7.15.0 (2022-03-29)
 ### Bug Fixes and Improvements
 * Saved Lists in the Action Items table will now populate correctly
 * Moved the **STATUS** column further left in the Automation Logs
 * Fixed navigation issues resulting in 404 errors
 * Fixed Slack messages incorrectly stating Prometheus is offline
 
-## 7.14.0
+## 7.14.0 (2022-03-23)
 ### Bug Fixes and Improvements
 * Owners of organizations are now able to remove SSO for Insights through the UI
 * UI fixes for the Automation Logs page
 * Updated how some columns get displayed in the Action Items table
 
-## 7.13.0
+## 7.13.0 (2022-03-16)
 ### Automation Rule Logs
 We've added a tab to the Automation Rules page which shows logs for your Automation Rules.
 This makes it easier to debug Automation Rules e.g. by adding `console.log` statements, or
@@ -1514,7 +1514,7 @@ You'll need to update to the latest version of the Insights Agent (`1.17.28`) to
 * Trivy now allows passing in the `--ignore-unfixed` flag
 * Automation Rules are more robust to runtime errors
 
-## 7.12.0
+## 7.12.0 (2022-03-08)
 ### Ability to Block Access for Teams
 Owners of organizations are now able to block teams from accessing specific Clusters, Namespaces and Respoitories within Insights. Members of
 teams with specific blocked access will no longer be able to see the Clusters, Namespaces and Repositories in the blocked list.
@@ -1525,7 +1525,7 @@ teams with specific blocked access will no longer be able to see the Clusters, N
 * Better performance when using search on the **Workloads** page
 * Fixed navigation issue for when the left Navigation Bar is collapsed
 
-## 7.11.0
+## 7.11.0 (2022-03-03)
 ### New Insights Status Page
 Users can use this page to track the status of Insights. If we are experiencing wide spread issues, we will
 keep our users informed through this page. The new status page can be found under the **Help** items.
@@ -1540,7 +1540,7 @@ to search for desired labels. Example: `app=myApp`
 * Description is now added when Action Items are exported to CSV
 * Users will be asked to choose an organization before being presented the navigation menu
 
-## 7.10.0
+## 7.10.0 (2022-03-02)
 ### Updated Fairwinds Insights Terms and Conditions
 Fairwinds has renamed the Customer Agreement to **Fairwinds Insights Terms and Conditions**. In addition, the Terms and Conditions have been updated.
 
@@ -1551,7 +1551,7 @@ Fairwinds has renamed the Customer Agreement to **Fairwinds Insights Terms and C
 * Fixed navigating to Action Items page from an external link
 * The cluster list on the **Home** page is now scrollable
 
-## 7.9.0
+## 7.9.0 (2022-02-24)
 ### Navigation Improvements
 **A consistent navigation experience across the app** 
 * No more dynamically changing navigation when users switch from the Organization View -> Cluster View
@@ -1565,21 +1565,21 @@ Fairwinds has renamed the Customer Agreement to **Fairwinds Insights Terms and C
 
 [Watch the video showing off the new navigation](https://www.youtube.com/watch?v=zrBkTWo2PsI)
 
-## 7.8.0
+## 7.8.0 (2022-02-22)
 ### Bug Fixes and Improvements
 * Added Recommended Limits and Recommended Requests visuals to CPU and Memory charts in workloads
 * UI Improvements to the Admission Controller chart
 * Sorting by First Seen and Last Reported on Action Items table now works properly
 * Refreshing the page does not remove the filters on the Action Items table
 
-## 7.7.0
+## 7.7.0 (2022-02-16)
 * No user-facing changes
 
-## 7.6.0
+## 7.6.0 (2022-02-14)
 ### Bug Fixes and Improvements
 * Faster load times for Action Items and Vulnerabilities pages
 
-## 7.5.0
+## 7.5.0 (2022-02-09)
 ### New Single Sign-On Settings Page
 Owners of Organizations can now setup SSO for Insights through the UI. Setting up SSO requires a valid Metadata URL and Email Domain. Furthermore, Organizations
 will be able to enforce the use of SSO through Insights.
@@ -1595,19 +1595,19 @@ that require remediation but are not an immediate priority.
 * The Support button now directs users to our **Contact Us** page
 * Fixed an issue where Action Items charts were not displaying correctly for specific filters
 
-## 7.4.0
+## 7.4.0 (2022-02-02)
 ### Bug Fixes and Improvements
 * We've updated the Insights Agent with some minor improvements and fixes
 * Fixed creating JIRA tickets from the Action Items table
 * Admission Controller UI improvement and fixes
 
-## 7.3.0
+## 7.3.0 (2022-01-26)
 ### Bug Fixes and Improvements
 * Fixed issue where duplicated PagerDuty incidents were being sent out
 * Admission Controller search will no longer cause admission requests to disappear
 * UI improvements in Admission Controller
 
-## 7.2.0
+## 7.2.0 (2022-01-24)
 ### Admission Controller Redesign
 Users will notice a completely new design for the **Admission Controller** page. This page now has a chart so users can quickly see the number of successful
 and failed admission requests for their clusters during a specific Time Range. The Action Items for each failed admission request will appear on the right side in
@@ -1617,14 +1617,14 @@ a table format.
 * Users can no longer create a Compliance report without a name
 * Changing cost difference colors in the **Workloads** page for better accessibility
 
-## 7.1.0
+## 7.1.0 (2022-01-19)
 ### Bug Fixes and Improvements
 * After updating a Policy, the page will remain on the Policy page
 * Updating Trivy to 0.22.0
 * Updating Insights CI script to new version 0.6.1
 * Overall improvements to make pages load faster
 
-## 7.0.0
+## 7.0.0 (2022-01-11)
 ### Bug Fixes
 * Better error messages when a repository is already scanned as part of another organization
 * Fixed link issue when creating a ticket for an Action Items list
@@ -1633,7 +1633,7 @@ a table format.
 * Workload page no longer shows an error when opened by an owner
 * UI improvements across Insights
 
-## 6.11.0
+## 6.11.0 (2022-01-05)
 ### Action Items Charts
 The **Action Items** pages in Insights now have charts that visually categorize the Action Items by Severity, Top Issues, Top Namespaces and Top Workloads. Users are
 also able to filter the Action Items table by clicking on the items in the charts.
@@ -1644,10 +1644,10 @@ also able to filter the Action Items table by clicking on the items in the chart
 * Some trivy vulnerabilities were not showing in the detailed vulnerability page
 * The Automation Rule **ignore-system-namespaces** (created automatically by Insights) now has **Context** set to **Agent**
 
-## 6.10.0
+## 6.10.0 (2021-12-27)
 * No user-facing changes
 
-## 6.9.0
+## 6.9.0 (2021-12-22)
 ### New Compliance Feature
 This feature allows Organizations to create Compliance Reports for their clusters. Organizations can keep track of their SOC 2, HIPAA and ISO compliances by creating
 reports and taking the self assessments for each check. During the self assessments, users can provide evidence on how they are adhering to each check.
@@ -1663,13 +1663,13 @@ the Organization's owner when they visit the **Install Hub** and click on **Admi
 * Issue with Policy creation through **Create From Template**
 * Issue with deleting some Automation rules
 
-## 6.8.0
+## 6.8.0 (2021-12-14)
 ### Bug Fixes
 * Users were unable to create JIRA tickets for some Action Items
 * Added consistency across badges within All Repositories
 * Fixed PagerDuty integration
 
-## 6.7.0
+## 6.7.0 (2021-12-08)
 ### Admission Controller Kubernetes 1.22 Support
 Admission Controller was updated to support kubernetes 1.22. Users running kubernetes 1.22 on their clusters are now able to use Admission Controller in their clusters.
 
@@ -1677,7 +1677,7 @@ Admission Controller was updated to support kubernetes 1.22. Users running kuber
 * Query list sometimes would show incorrect filters when creating a list from the table
 * Tooltip added to the cost settings in the workload page for the different QoS settings
 
-## 6.6.0
+## 6.6.0 (2021-12-02)
 ### New Action Items Table and Lists
 Users will find the new `Action Items` page under their Organization's navigation bar as well as under a specific Cluster's navigation bar.
 The page includes a completely redesigned version of our Action Items table with a couple of new features such as hiding and showing table columns.
@@ -1692,7 +1692,7 @@ for new organizations.
 * Only admins and editors of Clusters are now able to change the QoS of workloads
 * Vulnerabilities that have fixes available can now be filtered correctly
 
-## 6.5.0
+## 6.5.0 (2021-11-23)
 ### Admission Controller events now include username of who made the deployment
 When users navigate to the Admission Controller page, they will see events that include the name of the user who made the deployment. This helps Cluster Administrators who support multiple teams/users within a cluster to understand who made a particular deployment.
 
@@ -1703,7 +1703,7 @@ Insights now detects the Base Image layer for Image Vulnerabilities. You can fin
 * Faster loading time for the Organization dashboard
 * Various UI improvements across Insights
 
-## 6.4.0
+## 6.4.0 (2021-11-11)
 ### Enable and Disable Admission Controller Passive Mode
 Users are now able to enable and disable Passive Mode for the Admission Controller through the API. 
 [Learn more about the Admission Controller Passive Mode](https://insights.docs.fairwinds.com/features/admission-controller/#installation)
@@ -1713,7 +1713,7 @@ Users are now able to enable and disable Passive Mode for the Admission Controll
 ### Agent v1.15
 We've updated the Insights Agent with some minor improvements and fixes.
 
-## 6.3.0
+## 6.3.0 (2021-11-03)
 ### Scanning Remote Helm Repositories
 Organizations will now be able to scan charts from remote helm repositories for issues. By providing the `name`,
 `repo` and `chart` in the `fairwinds-insights.yaml` file, Insights will be able to download the chart from the remote
@@ -1723,12 +1723,12 @@ repository and run appropriate scans.
 * Modifying an Automation Rule now shows which user updated it and when it was updated
 * Passing Action Items were missing from the Health Score card
 
-## 6.2.0
+## 6.2.0 (2021-10-29)
 ### Bug Fixes
 * The "Log in with SSO" link did not redirect correctly for some organizations
 * Inconsistent count for Action Items on the cluster overview page 
 
-## 6.1.0
+## 6.1.0 (2021-10-22)
 ### New Prometheus Action Items
 The Prometheus Collector report will now generate Action Items based on workload metrics. 
 
@@ -1736,7 +1736,7 @@ The Prometheus Collector report will now generate Action Items based on workload
 * Faster loading time of clusters table in organization dashboard
 * Various UI improvements across Insights
 
-## 6.0.0
+## 6.0.0 (2021-10-06)
 ### Renaming Navigation Bar Items
 Some Navigation bar items have been renamed. We've changed Report Hub to Install Hub, Repos to All Repositories,
 and Clusters to All Clusters.
@@ -1746,7 +1746,7 @@ and Clusters to All Clusters.
 * Admission Controller items wouldn't load after collapsing
 * Links under the history bar graph on the Cluster Overview page were broken
 
-## 5.7.0
+## 5.7.0 (2021-09-29)
 ### PagerDuty Integration
 Organizations can now setup the PagerDuty integration to automatically send incident events from Insights.
 [Learn more about the PagerDuty Integration](https://insights.docs.fairwinds.com/features/automation-rules/#pagerduty-incidents)
@@ -1754,7 +1754,7 @@ Organizations can now setup the PagerDuty integration to automatically send inci
 ### Bug Fixes
 * Team Management displays a better error when inviting a user that is already part of the organization
 
-## 5.6.0
+## 5.6.0 (2021-09-22)
 ### Quality of Service for Workloads
 The new Quality of Service (QoS) parameter allows users to indicate the importance of their workloads and have
 Insights recommend resources based on this parameter. From highest to lowest importance the values are
@@ -1765,7 +1765,7 @@ Critical, Guaranteed, Burstable and Limited.
 * Action Items table was not correctly filtering based on resolution
 * UI fixes on the organization dashboard
 
-## 5.5.0
+## 5.5.0 (2021-09-09)
 ### New Organization Dashboard
 A new Organization Dashboard is now available in Insights! The dashboard allows users to see how their
 organization is doing in a quick glance. See a high level status of each of their clusters, top organization
@@ -1785,7 +1785,7 @@ if the Agent fails to install.
 * All projects in Jira would not show up in Insights
 * Jira integration would not show correct status in the Settings page
  
-## 5.4.0
+## 5.4.0 (2021-08-25)
 ### Bug Fixes
 * Used “last seen” instead of “first seen” to count fixed Action Items. Fixed action item numbers are more accurate now
 * Previous channel selected didn't display when searching for a different slack channel
@@ -1793,7 +1793,7 @@ if the Agent fails to install.
 * Issue occurred when enabling SAML
 [Learn More About SAML Integration](https://insights.docs.fairwinds.com/installation/sso/about/)
 
-## 5.3.0
+## 5.3.0 (2021-08-11)
 ### Team Management
 We launched a new interface and API for managing teams within your organization. Within an organization,
 you can create multiple teams, each of which has access to a particular set of clusters, namespaces, and repositories.
@@ -1805,7 +1805,7 @@ people. [Read more in the docs](https://insights.docs.fairwinds.com/features/tea
 ### Agent v1.14
 We've updated the Insights Agent with some minor improvements, including better support for Kubernetes 1.21 and the latest plugin updates.
 
-## 5.2.0
+## 5.2.0 (2021-07-28)
 ### Updated Settings
 We’ve made some changes to settings. First, we’ve introduced User Settings which is the place to update any personal user information or password updates. Second, we’ve consolidated organization and cluster settings into one place.
 
@@ -1820,7 +1820,7 @@ We’ve updated the digest emails and Slack notifications to include warnings wh
 * Users weren't allowed to create tickets on the vulnerability page
 * Issue with how duplicate reports are displayed on the report history page
 
-## 5.0.0
+## 5.0.0 (2021-06-30)
 ### SAML Capabilities - Beta
 We are happy to announce we now offer SAML capabilities! Contact us if you want to try it.
 [Learn More](https://insights.docs.fairwinds.com/configure/sso/setup/)
