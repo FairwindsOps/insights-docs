@@ -34,7 +34,8 @@ right-sizer:
   config:
     default:
       vpa:
-        updatePolicy: "Auto"
+        updatePolicy:
+          updateMode: 'Auto'
 
 right-sizer-vpa:
   recommender:
