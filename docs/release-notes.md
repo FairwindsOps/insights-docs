@@ -10,6 +10,19 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.2.39 (2024-10-18)
+### Bug Fixes and Enhancements
+* App Groups reports page clean up
+
+## 16.2.38 (2024-10-17)
+### Bug Fixes and Enhancements
+* Improved CVE reports performance
+
+## 16.2.35 (2024-10-15)
+### Bug Fixes and Enhancements
+* Added link to Download CVE report by App Groups
+* Added export link to App Groups Reporting
+
 ## 16.2.34 (2024-10-14)
 ### Bug Fixes and Enhancements
 * Added CVEs Audit log
