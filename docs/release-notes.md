@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.2.40 (2024-10-18)
+### Bug Fixes and Enhancements
+* Improved App Groups Report performance
+* 
 ## 16.2.39 (2024-10-18)
 ### Bug Fixes and Enhancements
 * App Groups reports page clean up
