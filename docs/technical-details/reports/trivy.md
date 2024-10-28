@@ -59,6 +59,16 @@ trivy:
       eks.amazonaws.com/role-arn: arn:aws:iam::ACCOUNT_ID:role/IAM_ROLE_NAME
 ```
 
+### Using Workload Identity Federation for GKE
+The Insights Helm chart allows us to configure Trivy with the necessary permissions to access a Google Cloud repository by leveraging Workload Identity. In the Insights Agent's `values.yaml`, add the following configuration and ensure Workload Identity is properly set up:
+
+```yaml
+trivy:
+  serviceAccount:
+    annotations:
+      iam.gke.io/gcp-service-account: {IAM_SA_NAME}@{IAM_SA_PROJECT_ID}.iam.gserviceaccount.com
+```
+
 ## Sample Report 
 Trivy reports contain a list of images running in the cluster as well as any CVEs in those images
 ```json
