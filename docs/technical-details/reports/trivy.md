@@ -60,7 +60,7 @@ trivy:
 ```
 
 ### Using Workload Identity Federation for GKE
-The Insights Helm chart allows us to configure Trivy with the necessary permissions to access a Google Cloud repository by leveraging Workload Identity. In the Insights Agent's `values.yaml`, add the following configuration and ensure Workload Identity is properly set up:
+The Insights Helm chart allows us to configure Trivy with the necessary permissions to access a Google Cloud repository by leveraging [Workload Identity](https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity). In the Insights Agent's `values.yaml`, add the following configuration and ensure Workload Identity is properly set up:
 
 ```yaml
 trivy:
