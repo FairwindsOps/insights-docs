@@ -121,7 +121,7 @@ right-sizer:
       - namespace: "my-namespace"
         vpa:
           updatePolicy:
-            updateMode: "Auto"
+            updateMode: "Off"
           resourcePolicy:
             containerPolicies:
               - containerName: "my-container-name-1"
