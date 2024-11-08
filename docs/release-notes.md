@@ -12,7 +12,7 @@ sidebarDepth: 1
 
 ## 16.3.6 (2024-11-08)
 ### Bug Fixes and Enhancements
-* fixed avarege nodes counting
+* fixed average nodes counting
   
 ## 16.3.2 (2024-11-05)
 ### Bug Fixes and Enhancements
