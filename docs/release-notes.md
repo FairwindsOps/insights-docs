@@ -10,6 +10,26 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.3.6 (2024-11-08)
+### Bug Fixes and Enhancements
+* fixed avarege nodes counting
+  
+## 16.3.2 (2024-11-05)
+### Bug Fixes and Enhancements
+* added ability to unlink tickets
+* improved Capacity page performance
+
+## 16.3.1 (2024-10-31)
+### Bug Fixes and Enhancements
+* add passivel-fail on admission requests graph
+
+## 16.3.0 (2024-10-31)
+* improve admission requests count to have PassiveFailCount
+
+## 16.2.41 (2024-10-30)
+### Bug Fixes and Enhancements
+* Added passive fail filter support on admission controller page
+
 ## 16.2.40 (2024-10-18)
 ### Bug Fixes and Enhancements
 * Improved App Groups Report performance
