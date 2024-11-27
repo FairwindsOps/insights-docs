@@ -10,6 +10,23 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.3.16 (2024-11-27)
+### Bug Fixes and Enhancements
+* Upgrade CI image_version to 5.7
+
+## 16.3.15 (2024-11-22)
+### Bug Fixes and Enhancements
+* Allow ticket to be Unassigned when creating a ticket
+* Compliance Reports: Add option to create, view and unlink tickets
+
+## 16.3.9 (2024-11-13)
+### Bug Fixes and Enhancements
+* Add 3 new checks to polaris
+
+## 16.3.8 (2024-11-13)
+### Bug Fixes and Enhancements
+* Action Items report: multi Status Side-by-Side comparison
+
 ## 16.3.6 (2024-11-08)
 ### Bug Fixes and Enhancements
 * fixed average nodes counting
