@@ -36,11 +36,11 @@ spec:
         - business_unit: store
 ```
 
-### Same as above but we want to target all `kinds` expect `StatefulSet`
+### Same as above but we want to target all `kinds` except `StatefulSet`
 
 ```yaml
 type: AppGroup
-name: match-strict-expect-stateful-set
+name: match-strict-except-stateful-set
 spec:
   match:
     -
