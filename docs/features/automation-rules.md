@@ -126,6 +126,59 @@ if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
 }
 ```
 
+#### Microsoft Teams Notifications
+If you have Microsoft Teams set up in your Insights organization, you can use the `sendMSTeamsNotification` function to send messages to specific channels
+or send messages via a webhook URL using the `sendMSTeamsNotificationWebhook` function.
+
+---
+The `sendMSTeamsNotification` function accepts these arguments:
+| Parameter              | Required? | Type   | Values   |                                                                            |
+|------------------------|-----------|------- |----------|----------------------------------------------------------------------------|
+| team                   | Yes       | string |          | Team ID (recommended) or Team name                                         |
+| channel                | Yes       | string |          | Channel ID (recommended) or Channel name                                   |
+| message                | No        | string |          | If not set, Insights will construct a default message from the Action Item |
+| identifierType         | No        | string | id, name | If not set, `id` will be used                                              |
+
+`Team ID` and `Channel ID` can be retrieved via the MS Teams UI - via the `Get link to channel`, you will a URL in the following format:
+- `https://teams.microsoft.com/l/channel/{channelID}/{channelName}?groupId={teamID}&tenantId={tenantID}`
+
+You will need to extract the URL decoded version of `teamID` and `channelID`
+
+----
+
+The `sendMSTeamsNotificationWebhook` function accepts these arguments:
+| Parameter              | Required? | Type   | Values   |                                                                            |
+|------------------------|-----------|------- |----------|----------------------------------------------------------------------------|
+| webhookURL             | Yes       | string |          | Destination of the message                                                 |
+| message                | No        | string |          | If not set, Insights will construct a default message from the Action Item |
+
+When using `sendMSTeamsNotificationWebhook` you should [create incoming webhooks with Workflows for Microsoft Teams](https://support.microsoft.com/en-us/office/create-incoming-webhooks-with-workflows-for-microsoft-teams-8ae491c7-0394-4861-ba59-055e33f75498) to send alerts. The Workflow should use the following configuration:
+* Template: `Post to a channel when a webhook request is received`
+* Select `Team` and `Channel`
+
+----
+
+##### Examples
+```js
+if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
+    sendMSTeamsNotification("37fe380a-d030-454d-b32e-1072b32caf13", "19:nRatJw15Peh5ycoRw7YoOYKDc4LvfbcksGRZrSaLB8I1@thread.tacv2");
+}
+```
+
+```js
+if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
+    sendMSTeamsNotification("37fe380a-d030-454d-b32e-1072b32caf13", "19:nRatJw15Peh5ycoRw7YoOYKDc4LvfbcksGRZrSaLB8I1@thread.tacv2", "a new critical vulnerability! 😱");
+}
+```
+
+```js
+if (ActionItem.Severity >= CRITICAL_SEVERITY && ActionItem.IsNew) {
+  sendMSTeamsNotificationWebhook(
+    "https://prod-09.westus.logic.azure.com:443/workflows/775a223ca4c64d53bf13aec40b0ef985/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=gs2OwhLrdWnrZqHxurfdCM2GsgDzqgPr7iAfL6bOWp4",
+    "Uh oh! New vulnerability!");
+}
+```
+
 #### Tickets
 Users can also create a Jira, GitHub or Azure DevOps issue from an Action Item using the `createTicket` function.
 Only one ticket will be created per Action Item.
