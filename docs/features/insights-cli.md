@@ -460,6 +460,7 @@ Some actions and function are logged in form of events and will be returned to h
 - `create_jira_ticket` - when `createTicket` is triggered with `Jira` provider.
 - `create_azure_devops_ticket` - when `createTicket` is triggered with `Azure` provider.
 - `send_slack_message` - when `sendSlackNotification` is triggered.
+- `send_msteams_message` - when `sendMSTeamsNotification` or `sendMSTeamsNotificationWebhook` is triggered.
 
 When `--dry-run` is used, external integration will be "mocked" and their events will be marked with a `[dry-run]` tag.
 
