@@ -244,7 +244,7 @@ Validation includes:
 The `insights-cli validate opa` command requires an OPA policy file, and a Kubernetes manifest file that will be passed as input to the Policy:
 
 ```bash
-insights-cli validate opa -r not-in-namespace/policy.rego -k test-pod.yaml
+insights-cli validate opa -r not-in-namespace/policy.rego -k test-pod.yaml -L ./libs
 ```
 
 Run `insights-cli validate opa --help` for more options when validating Policies.
