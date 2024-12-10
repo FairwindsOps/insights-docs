@@ -125,7 +125,9 @@ dropsNetRaw(pod) {
     container = containers[_]
     caps := {"NET_RAW", "ALL"}
     cap := caps[_]
-    *input.kind == "Deployment"*
+    
+    input.kind == "Deployment"
+    
     container.securityContext.capabilities.drop[_] == cap
 }
 ```
