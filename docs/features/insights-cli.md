@@ -89,7 +89,7 @@ We are deprecating OPA v1 in favor of OPA v2. We will support OPA v1 until Mar/3
 If you still have OPA v1 policies you will need to migrate to OPA v2. How to migrate:
 - create a new policy in Insights using UI or insights CLI following v2 standards described in the above sections.
 - delete old policy using Insights UI or insights CLI
-- the instance yaml file is not used anymore in OPA v2 - so you may want to migrate the metadata into your rego
+- the instance yaml file is not used anymore in OPA v2 - so you will need to migrate your input metadata directly into your rego.
 
 Example:
 
