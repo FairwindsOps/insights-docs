@@ -86,7 +86,7 @@ If any of the above conditions are met, the CLI will assume you are running OPA 
 
 ##### OPA V1 deprecation
 We are deprecating OPA v1 in favor of OPA v2. We will support OPA v1 until Mar/31/2025.
-If you still have OPA v1 policies you will need to migrate to OPA v2. How to migrate:
+If you still have OPA v1 policies you will need to migrate to OPA v2. Here's how to migrate:
 - create a new policy in Insights using UI or insights CLI following v2 standards described in the above sections.
 - delete old policy using Insights UI or insights CLI
 - the instance yaml file is not used anymore in OPA v2 - so you will need to migrate your input metadata directly into your rego.
