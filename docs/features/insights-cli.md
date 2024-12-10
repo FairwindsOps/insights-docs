@@ -84,6 +84,54 @@ Insights supports both OPA v1 and OPA v2, but we recommend using OPA v2. To ensu
 
 If any of the above conditions are met, the CLI will assume you are running OPA v1 custom checks.
 
+##### OPA V1 deprecation
+We are deprecating OPA v1 in favor of OPA v2. We will support OPA v1 until Mar/31/2025.
+If you still have OPA v1 policies you will need to migrate to OPA v2. Here's how to migrate:
+- create a new policy in Insights using UI or insights CLI following v2 standards described in the above sections.
+- delete old policy using Insights UI or insights CLI
+- the instance yaml file is not used anymore in OPA v2 - so you will need to migrate your input metadata directly into your rego.
+
+Example:
+
+Old v1 way:
+```rego
+package fairwinds
+
+dropsNetRaw(pod) {
+    keys := {"containers", "initContainers"}
+    containers := [c | keys[k]; c = pod.spec[k][_]]
+    container = containers[_]
+    caps := {"NET_RAW", "ALL"}
+    cap := caps[_]
+    container.securityContext.capabilities.drop[_] == cap
+}
+```
+
+```yaml
+targets:
+  - apiGroups:
+      - apps
+    kinds:
+      - Deployment
+```
+
+Should be changed to v2 like this (note the `input.kind == "Deployment"` addition):
+```rego
+package fairwinds
+
+dropsNetRaw(pod) {
+    keys := {"containers", "initContainers"}
+    containers := [c | keys[k]; c = pod.spec[k][_]]
+    container = containers[_]
+    caps := {"NET_RAW", "ALL"}
+    cap := caps[_]
+    
+    input.kind == "Deployment"
+    
+    container.securityContext.capabilities.drop[_] == cap
+}
+```
+
 #### Deleting OPA Policies From Insights
 By default, the Insights CLI will not _delete_ any OPA policies from Insights. It will
 only add or update them.
