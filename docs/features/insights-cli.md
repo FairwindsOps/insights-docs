@@ -115,7 +115,7 @@ targets:
       - Deployment
 ```
 
-could be change to v2 as:
+Should be changed to v2 like this (note the `input.kind == "Deployment"` addition):
 ```rego
 package fairwinds
 
