@@ -1,7 +1,7 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Documentation: Fairwinds Insights integrates with GitHub, Jira, Slack, Datadog, and Azure DevOps"
+    content: "Fairwinds Insights | Documentation: Fairwinds Insights integrates with GitHub, Jira, Slack, Datadog, Azure DevOps and Microsoft Teams"
 ---
 # Integrations
 Fairwinds Insights integrates with a number of third-party tools to better support your team's needs.
@@ -169,4 +169,4 @@ To set up Microsoft Teams notifications:
 2. Hover over `Microsoft Teams` and click `Add Integration`
 3. Once you have connected Microsoft Teams to Insights, you can choose which teams > channels you'd like notifications to be sent to in the `Settings > Notifications` page
 
-See the configure section to [customize Slack alerts through Automation Rules.](/features/automation-rules#microsoft-teams-notifications)
+See the configure section to [customize MS Teams alerts through Automation Rules.](/features/automation-rules#microsoft-teams-notifications)
