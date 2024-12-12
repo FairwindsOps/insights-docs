@@ -24,7 +24,7 @@ sidebarDepth: 1
 ## 16.3.19 (2024-12-05)
 ### Bug Fixes and Enhancements
 * delete not specified cluster admission settings when ingesting settings.yaml
-* send digest and realtime notifications for ms-teams
+* add microsoft teams integration
 
 ## 16.3.18 (2024-12-04)
 ### Bug Fixes and Enhancements
