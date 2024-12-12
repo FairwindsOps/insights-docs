@@ -21,6 +21,19 @@ sidebarDepth: 1
 * Right-sizing: dynamically fit cpu and memory charts to window
 * bump alpine to 3.21
 
+## 16.3.19 (2024-12-05)
+### Bug Fixes and Enhancements
+* delete not specified cluster admission settings when ingesting settings.yaml
+* send digest and realtime notifications for ms-teams
+
+## 16.3.18 (2024-12-05)
+### Bug Fixes and Enhancements
+* Introduced the ability to filter the CVEs generated report on date, status, and severity
+
+## 16.3.17 (2024-12-03)
+### Bug Fixes and Enhancements
+* Jira/Slack ticket should link to new Right-Sizing page
+
 ## 16.3.16 (2024-11-27)
 ### Bug Fixes and Enhancements
 * Upgrade CI image_version to 5.7
