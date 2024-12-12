@@ -10,6 +10,17 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.3.22 (2024-12-12)
+### Bug Fixes and Enhancements
+* Added warning of OPA v1 deprecation
+* Restricted CVE report filter to 2 months
+
+## 16.3.20 (2024-12-10)
+### Bug Fixes and Enhancements
+* upgrade daily and realtime notifications to support both slack and msteams
+* Right-sizing: dynamically fit cpu and memory charts to window
+* bump alpine to 3.21
+
 ## 16.3.16 (2024-11-27)
 ### Bug Fixes and Enhancements
 * Upgrade CI image_version to 5.7
