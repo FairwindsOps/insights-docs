@@ -26,7 +26,7 @@ sidebarDepth: 1
 * delete not specified cluster admission settings when ingesting settings.yaml
 * send digest and realtime notifications for ms-teams
 
-## 16.3.18 (2024-12-05)
+## 16.3.18 (2024-12-04)
 ### Bug Fixes and Enhancements
 * Introduced the ability to filter the CVEs generated report on date, status, and severity
 
