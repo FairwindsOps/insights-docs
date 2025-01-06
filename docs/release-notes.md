@@ -48,6 +48,10 @@ sidebarDepth: 1
 * Added warning of OPA v1 deprecation
 * Restricted CVE report filter to 2 months
 
+## 16.3.21 (2024-12-10)
+### Bug Fixes and Enhancements
+* Minor improvements
+
 ## 16.3.20 (2024-12-10)
 ### Bug Fixes and Enhancements
 * upgrade daily and realtime notifications to support both slack and msteams
