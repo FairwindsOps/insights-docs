@@ -10,10 +10,47 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.3.30 (2025-01-06)
+### Bug Fixes and Enhancements
+* Adjust x-axis for Cost Over Time card on Cost page
+
+## 16.3.29 (2025-01-06)
+### Bug Fixes and Enhancements
+* Minor improvements
+
+## 16.3.28 (2025-01-03)
+### Bug Fixes and Enhancements
+* Fix export CVEs by App Group visibility from image details page
+* Fix on MS Teams integrations errors that prevented some messages to be send
+
+## 16.3.27 (2025-01-02)
+### Bug Fixes and Enhancements
+* Added ticket column on vulnerabilities page
+
+## 16.3.26 (2024-12-20)
+### Bug Fixes and Enhancements
+* Added new column `source` on images details CVEs
+
+## 16.3.25 (2024-12-20)
+### Bug Fixes and Enhancements
+* Fix `QoS` selection on the right-sizer page
+
+## 16.3.24 (2024-12-19)
+### Bug Fixes and Enhancements
+* Minor improvements
+
+## 16.3.23 (2024-12-18)
+### Bug Fixes and Enhancements
+* Added `OPA-Lib` filtering differentiator
+
 ## 16.3.22 (2024-12-12)
 ### Bug Fixes and Enhancements
 * Added warning of OPA v1 deprecation
 * Restricted CVE report filter to 2 months
+
+## 16.3.21 (2024-12-10)
+### Bug Fixes and Enhancements
+* Minor improvements
 
 ## 16.3.20 (2024-12-10)
 ### Bug Fixes and Enhancements
