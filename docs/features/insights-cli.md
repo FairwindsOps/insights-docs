@@ -321,24 +321,38 @@ When validating OPA policies in batch mode, each Policy can have a mix of the ab
 ```
 
 ### Batch Validation of OPA Policies for CI/CD
-The `--batch-dir` option instructs the `insights-cli validate opa` command to process all `.rego` files in the specified directory.
+The `--batch-directory` option for the `insights-cli validate opa` command enables batch validation of all `.rego` files within a specified directory. This feature is particularly useful for CI/CD workflows where policies and their test cases need to be thoroughly validated.
 
-When validating Policies using this option, the command expects the following directory structure:
+#### Features
+- **Support for Multiple Test Files**: Each policy can have multiple test files, enabling comprehensive testing with various scenarios, such as success and failure cases.
+- **Directory Structure Requirements**: To use this option, the directory must follow a specific structure, ensuring a 1:1 relationship between policy files and their corresponding test files.
+
+#### Required Directory Structure
+The following is the expected directory structure when using the `--batch-dir` option:
+
 ```
 .
-+-- file.rego
-+-- file.yaml
-+-- another-policy.rego
-+-- another-policy.yaml
++-- policy1.rego
++-- policy1.yaml
++-- policy2.rego
++-- policy2.testcase1.success.yaml
++-- policy2.testcase2.success.yaml
++-- policy2.failure.yaml
++-- policy2.yaml
 ```
 
-The name of the `.rego` and `.yaml` files must match.
+- **Policy File**: The `.rego` file defines the OPA policy logic.
+- **Data File**: The `.yaml` file provides data for the corresponding `.rego` policy.
+- **Test Files**: Files like `testcase1.success.yaml`, `testcase2.success.yaml`, or `failure.yaml` contain input data to test specific scenarios. The naming convention is flexible; the infix (`testcase1`, `testcase2`) can be any descriptive text.
 
-Next use the Insights CLI to validate all OPA policies
+#### Validating Policies
+Run the following command to validate all OPA policies in the specified directory:
 
 ```bash
 insights-cli validate opa --batch-directory <directory_path>
 ```
+
+Replace `<directory_path>` with the path to your directory containing the `.rego` files and test cases.
 
 ### Automation Rules
 Before pushing Automation Rules to Insights, you can use the CLI to check if the results will work as expected.
