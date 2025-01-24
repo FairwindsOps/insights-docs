@@ -10,6 +10,60 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.3.42 (2025-01-23)
+### Bug Fixes and Enhancements
+* Add Settings > Audit Logs tab (owners only)
+
+## 16.3.41 (2025-01-22)
+### Bug Fixes and Enhancements
+* Fix MSTeams integration channel retrieval
+* Fix a bug where not all labels from Jira where pulled
+
+## 16.3.40 (2025-01-17)
+### Bug Fixes and Enhancements
+* Remove kubesec from Insights Portal
+
+## 16.3.39 (2025-01-16)
+### Bug Fixes and Enhancements
+* Fix bug when using labels to create action item lists
+* Internal improvements [2]
+
+## 16.3.38 (2025-01-15)
+### Bug Fixes and Enhancements
+* Internal improvements [1]
+
+## 16.3.37 (2025-01-14)
+### Bug Fixes and Enhancements
+* Fix bug when trying to edit/delete OPA libraries
+* Add new combo-box fields for Jira ticket provider
+
+## 16.3.36 (2025-01-13)
+### Bug Fixes and Enhancements
+* Add auto-close code scan action items
+* Increase CVE audit log retention [2]
+
+## 16.3.35 (2025-01-09)
+### Bug Fixes and Enhancements
+* Improve error handling in the Insights Portal
+* Fix bug when creating ticket inside image details
+
+## 16.3.34 (2025-01-08)
+### Bug Fixes and Enhancements
+* Increase CVE audit log retention [1]
+* Fix on vulnerabilities ticket creation
+
+## 16.3.33 (2025-01-08)
+### Bug Fixes and Enhancements
+* Fix bug when creating tickets for images [3]
+
+## 16.3.32 (2025-01-07)
+### Bug Fixes and Enhancements
+* Fix bug when creating tickets for images [2]
+
+## 16.3.31 (2025-01-07)
+### Bug Fixes and Enhancements
+* Fix bug when creating tickets for images [1]
+
 ## 16.3.30 (2025-01-06)
 ### Bug Fixes and Enhancements
 * Adjust x-axis for Cost Over Time card on Cost page
