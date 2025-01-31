@@ -10,6 +10,16 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.3.44 (2025-01-31)
+### Bug Fixes and Enhancements
+* New Feature: Organizations may now enable require re-authentication for owner actions  
+* Fix: SSO users should not be redirect to Survey
+
+## 16.3.43 (2025-01-27)
+### Bug Fixes and Enhancements
+* New Feature: CVE Audit Log Monthly Report Email
+* Improvements on Event Audit logs
+
 ## 16.3.42 (2025-01-23)
 ### Bug Fixes and Enhancements
 * Add Settings > Audit Logs tab (owners only)
