@@ -36,7 +36,3 @@ When creating a `Ticket Additional Description`, note that each provider support
 - For **Jira**, use the Atlassian Document Format (ADF). [Atlassian ADF WYSIWYG](https://developer.atlassian.com/cloud/jira/platform/apis/document/playground)
 - For **Azure DevOps**, you can use either HTML or raw text.
 - For **GitHub**, you can use either Markdown or raw text. [Github Markdown Reference](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/about-writing-and-formatting-on-github)
-
-## Additional Fields
-
-TBD
