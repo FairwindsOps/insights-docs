@@ -10,6 +10,44 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.3.53 (2025-02-20)
+### Bug Fixes and Enhancements
+* New Feature: Ticket Additional Descriptions
+
+## 16.3.52 (2025-02-20)
+### Bug Fixes and Enhancements
+* Minor internal fixes
+
+## 16.3.51 (2025-02-19)
+### Bug Fixes and Enhancements
+* Add support for team-management using AppGroups (beta)
+
+## 16.3.50 (2025-02-14)
+### Bug Fixes and Enhancements
+* Improve database schema to support logical replication
+
+## 16.3.49 (2025-02-11)
+### Bug Fixes and Enhancements
+* Improve Right-Sizing page load time
+
+## 16.3.48 (2025-02-10)
+### Bug Fixes and Enhancements
+* Minor improvements on audit logs
+
+## 16.3.47 (2025-02-10)
+### Bug Fixes and Enhancements
+* Fix event label some audit log events
+* Fix executor on audit log for some system events
+
+## 16.3.46 (2025-02-04)
+### Bug Fixes and Enhancements
+* Cluster deletion improvements
+* Add more routes to re-auth flow
+
+## 16.3.45 (2025-02-03)
+### Bug Fixes and Enhancements
+* Fix on monthly CVE email format.
+
 ## 16.3.44 (2025-01-31)
 ### Bug Fixes and Enhancements
 * New Feature: Organizations may now enable require re-authentication for owner actions  
