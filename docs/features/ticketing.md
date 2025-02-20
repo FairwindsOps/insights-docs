@@ -4,9 +4,9 @@
 
 The following integrations provide ticketing capabilities for specific resources in Fairwinds Insights:
 
-- [GitHub](/features/integrations/#github)
-- [Jira](/features/integrations/#jira)
-- [Azure DevOps](/features/integrations/#azure-devops)
+- [GitHub](/features/integrations#github)
+- [Jira](/features/integrations#jira)
+- [Azure DevOps](/features/integrations#azure-devops)
 
 This functionality enables you to track the following resources externally:
 
