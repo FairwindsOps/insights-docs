@@ -36,6 +36,7 @@ module.exports = {
           'features/automation-rules',
           'features/insights-cli',
           'features/integrations',
+          'features/ticketing',
           'features/team-management',
           'features/app-groups',
           'features/policy-mappings',
