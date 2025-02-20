@@ -31,7 +31,7 @@ Tickets are created with default descriptions based on the originating resource.
 
 You may also choose to append an `Additional Description` to the ticket. Additional descriptions must be created on the `Settings > Ticketing` page.
 
-When creating the `Tickets Additional Descriptions` catalog, note that each provider supports its own formatting:
+When creating a `Ticket Additional Description`, note that each provider supports its own formatting:
 
 - For **Jira**, use the Atlassian Document Format (ADF). [Atlassian ADF WYSIWYG](https://developer.atlassian.com/cloud/jira/platform/apis/document/playground)
 - For **Azure DevOps**, you can use either HTML or raw text. [HTML WYSIWYG](https://wysiwyghtml.com/)
