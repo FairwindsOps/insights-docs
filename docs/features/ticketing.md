@@ -29,7 +29,7 @@ Tickets are created with default descriptions based on the originating resource.
 - **Action Item Lists:** The ticket includes details about the list and its underlying action items.
 - **Images:** The ticket includes information about the image and any related CVEs.
 
-You may also choose to append an `Additional Description` to the ticket. Additional descriptions must be registered on the `Settings > Ticketing` page.
+You may also choose to append an `Additional Description` to the ticket. Additional descriptions must be created on the `Settings > Ticketing` page.
 
 When creating the `Tickets Additional Descriptions` catalog, note that each provider supports its own formatting:
 
