@@ -392,9 +392,10 @@ cloudcosts:
 * **provider**: provider must be `gcp`
 * **tagkey**: optional. `tagkey` is the label name used on GCP to indicate that it's a cluster node. Default value is "goog-k8s-cluster-name".
 * **tagvalue**: the value associated to the cluster name label for filtering. Ex: production, staging
-* **projectname**: GCP project name
-* **dataset**: dataset name you provided when you setup your BigQuery for Billing
-* **billingaccount**: your Google Billing Account ID that you can get from Billing console, which is used to get the table name for BigQuery. Example: "1A2B3C-4D5E6F-7G8H9I"
+* **projectname**: GCP project name, required if table is not provided
+* **dataset**: dataset name you provided when you setup your BigQuery for Billing, required if table is not provided
+* **billingaccount**: your Google Billing Account ID that you can get from Billing console, which is used to get the table name for BigQuery. Example: "1A2B3C-4D5E6F-7G8H9I", required if table is not provided
+* **table**: you can provide the GCP BigQuery table instead of providing projectname/dataset/billingaccount
 
 ## Terraform
 Terraform for Google Cloud Provider (GCP) Billing Integration
