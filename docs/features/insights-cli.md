@@ -132,6 +132,14 @@ dropsNetRaw(pod) {
 }
 ```
 
+### Rego v0 and v1
+We are currently supporting both Rego V0 and V1, but we encourage moving to OPA v1 as V0 is deprecated.
+* For more information about [VO upgrade](https://www.openpolicyagent.org/docs/latest/v0-upgrade/)
+* How to migrate [How to migrate][https://www.styra.com/blog/renovating-rego/]
+
+When using `insights-cli push opa` you can use parameter rego-version either values v0 or v1:
+`insights-cli push opa rego-version=v1`
+
 #### Deleting OPA Policies From Insights
 By default, the Insights CLI will not _delete_ any OPA policies from Insights. It will
 only add or update them.
