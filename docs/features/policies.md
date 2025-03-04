@@ -8,6 +8,11 @@ meta:
 Fairwinds Insights comes with over 100 built-in polices that can be used to audit or block resources in your Kubernetes environment or Infrastructure-as-Code.
 You can also create your own custom policies using Open Policy Agent's (OPA) Rego language.
 
+## Rego V0 and V1
+We are currently supporting both Rego V0 and V1, but we encourage moving to OPA v1 as V0 is deprecated.
+* For more information about [VO upgrade](https://www.openpolicyagent.org/docs/latest/v0-upgrade/)
+* How to migrate [How to migrate][https://www.styra.com/blog/renovating-rego/]
+
 ## Configuration
 Policy configuration provides a way to globally set default values for any Policies used by any of the Report Tools in Insights. These settings make it easy to customize Insights for common policy scenarios without having to first write Automation Rules.
 
