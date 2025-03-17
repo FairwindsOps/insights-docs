@@ -135,7 +135,7 @@ The in-app instructions will also provide a SHA which can be checked to verify t
 Your repository will show up in the Insights UI once the script has been successfully run.
 
 #### Step 4: Add a FAIRWINDS_TOKEN Environment Variable
-You will need to store a unique Fairwinds Insights' token as an environment variable in your CI provider. This token is used for uploading results to Fairwinds Insights afte ra scan is complete.
+You will need to store a unique Fairwinds Insights' token as an environment variable in your CI provider. This token is used for uploading results to Fairwinds Insights after a scan is complete.
 
 
 1. In Fairwinds Insights, navigate to the `Settings > Tokens` page to generate a CI token. Copy the token.
