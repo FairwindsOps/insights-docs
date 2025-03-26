@@ -385,6 +385,7 @@ replicasRequired contains actionItem if {
 #### Using the Kubernetes API
 You can cross-check OPA policy input with Kubernetes objects from the cluster at Policy execution time. For example, this ensures that all `Deployments` have an associated `HorizontalPodAutoscaler`:
 
+Rego v0:
 ```rego
 package fairwinds
 
@@ -402,6 +403,25 @@ hpaRequired[actionItem] {
   }
 }
 ```
+Rego V1:
+```rego
+package fairwinds
+
+import rego.v1
+
+hasMatchingHPA(hpas, elem) if {
+        hpa := hpas[_]
+        hpa.spec.scaleTargetRef.kind == elem.kind
+        hpa.spec.scaleTargetRef.name == elem.metadata.name
+        hpa.metadata.namespace == elem.metadata.namespace
+        hpa.spec.scaleTargetRef.apiVersion == elem.apiVersion
+}
+
+hpaRequired contains actionItem if {
+        not hasMatchingHPA(kubernetes("autoscaling", "HorizontalPodAutoscaler"), input)
+        actionItem := {"title": "No horizontal pod autoscaler found"}
+}
+```
 
 ### Using a Custom OPA Library
 
@@ -409,6 +429,7 @@ You can create a custom OPA library to encapsulate and reuse Rego code, such as 
 
 Consider the following example, where we define a reusable function in a custom package called utils:
 
+Rego V0:
 ```rego
 package utils
 
@@ -421,6 +442,21 @@ hasMatchingHPA(hpas, elem) {
 }
 ```
 
+Rego v1:
+```rego
+package utils
+
+import rego.v1
+
+hasMatchingHPA(hpas, elem) if {
+        hpa := hpas[_]
+        hpa.spec.scaleTargetRef.kind == elem.kind
+        hpa.spec.scaleTargetRef.name == elem.metadata.name
+        hpa.metadata.namespace == elem.metadata.namespace
+        hpa.spec.scaleTargetRef.apiVersion == elem.apiVersion
+}
+```
+
 The `hasMatchingHPA` function is defined within the `utils` package. This function can be imported and reused in other policy checks, allowing you to avoid code duplication and maintain consistency.
 
 #### Example: Reusing the `hasMatchingHPA` Function
@@ -428,6 +464,8 @@ The `hasMatchingHPA` function is defined within the `utils` package. This functi
 To use the `hasMatchingHPA` function in another policy, such as one within the `fairwinds` package, you can import the `utils` package as follows:
 
 ##### Importing a Specific Function
+
+Rego v0:
 ```rego
 package fairwinds
 
@@ -441,10 +479,25 @@ hpaRequired[actionItem] {
 }
 ```
 
+Rego v1:
+```rego
+package fairwinds
+
+import rego.v1
+
+import data.utils.hasMatchingHPA
+
+hpaRequired contains actionItem if {
+        not hasMatchingHPA(kubernetes("autoscaling", "HorizontalPodAutoscaler"), input)
+        actionItem := {"title": "No horizontal pod autoscaler found"}
+}
+```
+
 ##### Importing the Entire Package
 
 Alternatively, you can import the entire utils package and access the function with the package prefix:
 
+Rego v0:
 ```rego
 package fairwinds
 
@@ -455,6 +508,20 @@ hpaRequired[actionItem] {
   actionItem := {
     "title": "No horizontal pod autoscaler found"
   }
+}
+```
+
+Rego v1:
+```rego
+package fairwinds
+
+import rego.v1
+
+import data.utils
+
+hpaRequired contains actionItem if {
+        not utils.hasMatchingHPA(kubernetes("autoscaling", "HorizontalPodAutoscaler"), input)
+        actionItem := {"title": "No horizontal pod autoscaler found"}
 }
 ```
 
@@ -527,6 +594,7 @@ externalSources:
 Each external source reference should point to a raw file on the remove server.
 
 i.e: A valid content for `https://gist.githubusercontent.com/username/sha/raw/sha/rego1.rego`
+Rego v0:
 ```rego
 package fairwinds
 
@@ -543,6 +611,28 @@ not_in_namespace[actionItem] {
         "remediation": "Move this resource to a different namespace",
         "category": "Reliability"
     }
+}
+```
+
+Rego v1:
+```rego
+package fairwinds
+
+import rego.v1
+
+not_in_namespace contains actionItem if {
+        blockedNamespaces := ["default"]
+        namespace := blockedNamespaces[_]
+        input.kind == "Pod"
+        input.metadata.namespace == namespace
+        description := sprintf("Namespace %v is forbidden", [namespace])
+        actionItem := {
+                "description": description,
+                "title": "Using the default namespace is bad",
+                "severity": 0.1,
+                "remediation": "Move this resource to a different namespace",
+                "category": "Reliability",
+        }
 }
 ```
 
@@ -565,6 +655,7 @@ Ensure that external sources are from trusted locations, especially when linking
 ### Debug Print Statements
 Rego `print()` statements will be included in the output of `insights-cli validate opa` to help debug Policy execution. For example, this Policy prints two debug messages.
 
+Rego V0:
 ```rego
 package fairwinds
 
@@ -575,5 +666,21 @@ incompleteRule[actionItem] {
   actionItem := {
     # This is incomplete!
   }
+}
+```
+
+Rego v1:
+```rego
+package fairwinds
+
+import rego.v1
+
+incompleteRule contains actionItem if {
+        print("starting our rule")
+        input.kind == "Deployment"
+        print("made it past the kind detection, which is ", input.kind)
+        actionItem := {}
+        # This is incomplete!
+
 }
 ```
