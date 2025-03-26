@@ -8,8 +8,8 @@ meta:
 Fairwinds Insights comes with over 100 built-in polices that can be used to audit or block resources in your Kubernetes environment or Infrastructure-as-Code.
 You can also create your own custom policies using Open Policy Agent's (OPA) Rego language.
 
-## Rego V0 and V1
-We are currently supporting both Rego V0 and V1, but we encourage moving to OPA v1 as V0 is deprecated.
+## Rego v0 and v1
+We are currently supporting both Rego v0 and v1, but we encourage moving to OPA v1 as V0 is deprecated.
 * For more information about [VO upgrade](https://www.openpolicyagent.org/docs/latest/v0-upgrade/)
 * How to migrate [How to migrate][https://www.styra.com/blog/renovating-rego/]
 
@@ -126,6 +126,7 @@ a Kubernetes resource.
 
 For example, we can check to make sure that `replicas` is set on all `Deployments`:
 
+Rego v0:
 ```rego
 package fairwinds
 
@@ -134,6 +135,20 @@ replicasRequired[actionItem] {
   input.spec.replicas == 0
   actionItem := {}
 }
+```
+
+Rego v1:
+```rego
+package fairwinds
+
+import rego.v1
+
+replicasRequired contains actionItem if {
+        input.kind == "Deployment"
+        input.spec.replicas == 0
+        actionItem := {}
+}
+
 ```
 
 The `actionItem` object is what Insights will examine to determine the details of the
@@ -152,6 +167,8 @@ Action Item severity is defined as:
 * 0.9 to 1.0 - Critical
 
 For instance, in the above OPA policy we could set:
+
+Rego v0:
 ```rego
 package fairwinds
 
@@ -168,11 +185,32 @@ replicasRequired[actionItem] {
 }
 ```
 
+Rego v1:
+```rego
+package fairwinds
+
+import rego.v1
+
+replicasRequired contains actionItem if {
+        input.kind == "Deployment"
+        input.spec.replicas == 0
+        actionItem := {
+                "title": "Deployment does not have replicas set",
+                "description": "All workloads at acme-co must explicitly set the number of replicas",
+                "remediation": "Please set `spec.replicas`",
+                "category": "Reliability",
+                "severity": 0.5,
+        }
+
+}
+```
+
 #### Varying Action Item Attributes
 You can reuse the same OPA policy, setting different Action Item attributes for different cases.
 For instance, say we wanted to apply our `replicas` policy above to both `Deployment` and `StatefulSet`
 but wanted a higher severity for `Deployments`:
 
+Revo v0:
 ```rego
 package fairwinds
 
@@ -197,6 +235,39 @@ replicasRequired[actionItem] {
     "category": "Reliability",
     "severity": dynamicSeverity,
   }
+}
+```
+
+Rego v1:
+```rego
+package fairwinds
+
+import rego.v1
+
+replicasRequired contains actionItem if {
+        # List the Kubernetes Kinds to which this policy should apply.
+        kinds := {"Deployment", "StatefulSet"}
+
+        # List severities for each of the above Kinds. Kind.
+        severityByKind := {
+                "StatefulSet": 0.4,
+                "Deployment": 0.9,
+        }
+
+        # Iterate Kinds{} and only continue if input.kind is one of them.
+        kind := kinds[_]
+        input.kind == kind
+        input.spec.replicas == 0
+
+        # Set the severity based on the Kind.
+        dynamicSeverity := severityByKind[input.kind]
+        actionItem := {
+                "title": "Deployment does not have replicas set",
+                "description": "All workloads at acme-co must explicitly set the number of replicas",
+                "remediation": "Please set `spec.replicas`",
+                "category": "Reliability",
+                "severity": dynamicSeverity,
+        }
 }
 ```
 
@@ -251,6 +322,7 @@ If we want:
 
 we can vary this value based on the Kubernetes Kind:
 
+Rego v0:
 ```rego
 package fairwinds
 
@@ -277,9 +349,43 @@ replicasRequired[actionItem] {
 }
 ```
 
+Rego v1:
+```rego
+package fairwinds
+
+import rego.v1
+
+replicasRequired contains actionItem if {
+        # List the Kubernetes Kinds to which this policy should apply.
+        kinds := {"Deployment", "StatefulSet"}
+
+        # List severities for each of the above Kinds. Kind.
+        severityByKind := {
+                "StatefulSet": 0.4,
+                "Deployment": 0.9,
+        }
+
+        # Iterate Kinds{} and only continue if input.kind is one of them.
+        kind := kinds[_]
+        input.kind == kind
+        input.spec.replicas == 0
+
+        # Set the severity based on the Kind.
+        dynamicSeverity := severityByKind[input.kind]
+        actionItem := {
+                "title": "Deployment does not have replicas set",
+                "description": "All workloads at acme-co must explicitly set the number of replicas",
+                "remediation": "Please set `spec.replicas`",
+                "category": "Reliability",
+                "severity": dynamicSeverity,
+        }
+}
+```
+
 #### Using the Kubernetes API
 You can cross-check OPA policy input with Kubernetes objects from the cluster at Policy execution time. For example, this ensures that all `Deployments` have an associated `HorizontalPodAutoscaler`:
 
+Rego v0:
 ```rego
 package fairwinds
 
@@ -297,6 +403,25 @@ hpaRequired[actionItem] {
   }
 }
 ```
+Rego v1:
+```rego
+package fairwinds
+
+import rego.v1
+
+hasMatchingHPA(hpas, elem) if {
+        hpa := hpas[_]
+        hpa.spec.scaleTargetRef.kind == elem.kind
+        hpa.spec.scaleTargetRef.name == elem.metadata.name
+        hpa.metadata.namespace == elem.metadata.namespace
+        hpa.spec.scaleTargetRef.apiVersion == elem.apiVersion
+}
+
+hpaRequired contains actionItem if {
+        not hasMatchingHPA(kubernetes("autoscaling", "HorizontalPodAutoscaler"), input)
+        actionItem := {"title": "No horizontal pod autoscaler found"}
+}
+```
 
 ### Using a Custom OPA Library
 
@@ -304,6 +429,7 @@ You can create a custom OPA library to encapsulate and reuse Rego code, such as 
 
 Consider the following example, where we define a reusable function in a custom package called utils:
 
+Rego v0:
 ```rego
 package utils
 
@@ -316,6 +442,21 @@ hasMatchingHPA(hpas, elem) {
 }
 ```
 
+Rego v1:
+```rego
+package utils
+
+import rego.v1
+
+hasMatchingHPA(hpas, elem) if {
+        hpa := hpas[_]
+        hpa.spec.scaleTargetRef.kind == elem.kind
+        hpa.spec.scaleTargetRef.name == elem.metadata.name
+        hpa.metadata.namespace == elem.metadata.namespace
+        hpa.spec.scaleTargetRef.apiVersion == elem.apiVersion
+}
+```
+
 The `hasMatchingHPA` function is defined within the `utils` package. This function can be imported and reused in other policy checks, allowing you to avoid code duplication and maintain consistency.
 
 #### Example: Reusing the `hasMatchingHPA` Function
@@ -323,6 +464,8 @@ The `hasMatchingHPA` function is defined within the `utils` package. This functi
 To use the `hasMatchingHPA` function in another policy, such as one within the `fairwinds` package, you can import the `utils` package as follows:
 
 ##### Importing a Specific Function
+
+Rego v0:
 ```rego
 package fairwinds
 
@@ -336,10 +479,25 @@ hpaRequired[actionItem] {
 }
 ```
 
+Rego v1:
+```rego
+package fairwinds
+
+import rego.v1
+
+import data.utils.hasMatchingHPA
+
+hpaRequired contains actionItem if {
+        not hasMatchingHPA(kubernetes("autoscaling", "HorizontalPodAutoscaler"), input)
+        actionItem := {"title": "No horizontal pod autoscaler found"}
+}
+```
+
 ##### Importing the Entire Package
 
 Alternatively, you can import the entire utils package and access the function with the package prefix:
 
+Rego v0:
 ```rego
 package fairwinds
 
@@ -350,6 +508,20 @@ hpaRequired[actionItem] {
   actionItem := {
     "title": "No horizontal pod autoscaler found"
   }
+}
+```
+
+Rego v1:
+```rego
+package fairwinds
+
+import rego.v1
+
+import data.utils
+
+hpaRequired contains actionItem if {
+        not utils.hasMatchingHPA(kubernetes("autoscaling", "HorizontalPodAutoscaler"), input)
+        actionItem := {"title": "No horizontal pod autoscaler found"}
 }
 ```
 
@@ -422,6 +594,7 @@ externalSources:
 Each external source reference should point to a raw file on the remove server.
 
 i.e: A valid content for `https://gist.githubusercontent.com/username/sha/raw/sha/rego1.rego`
+Rego v0:
 ```rego
 package fairwinds
 
@@ -438,6 +611,28 @@ not_in_namespace[actionItem] {
         "remediation": "Move this resource to a different namespace",
         "category": "Reliability"
     }
+}
+```
+
+Rego v1:
+```rego
+package fairwinds
+
+import rego.v1
+
+not_in_namespace contains actionItem if {
+        blockedNamespaces := ["default"]
+        namespace := blockedNamespaces[_]
+        input.kind == "Pod"
+        input.metadata.namespace == namespace
+        description := sprintf("Namespace %v is forbidden", [namespace])
+        actionItem := {
+                "description": description,
+                "title": "Using the default namespace is bad",
+                "severity": 0.1,
+                "remediation": "Move this resource to a different namespace",
+                "category": "Reliability",
+        }
 }
 ```
 
@@ -460,6 +655,7 @@ Ensure that external sources are from trusted locations, especially when linking
 ### Debug Print Statements
 Rego `print()` statements will be included in the output of `insights-cli validate opa` to help debug Policy execution. For example, this Policy prints two debug messages.
 
+Rego v0:
 ```rego
 package fairwinds
 
@@ -470,5 +666,21 @@ incompleteRule[actionItem] {
   actionItem := {
     # This is incomplete!
   }
+}
+```
+
+Rego v1:
+```rego
+package fairwinds
+
+import rego.v1
+
+incompleteRule contains actionItem if {
+        print("starting our rule")
+        input.kind == "Deployment"
+        print("made it past the kind detection, which is ", input.kind)
+        actionItem := {}
+        # This is incomplete!
+
 }
 ```
