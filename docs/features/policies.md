@@ -126,6 +126,7 @@ a Kubernetes resource.
 
 For example, we can check to make sure that `replicas` is set on all `Deployments`:
 
+Rego v0:
 ```rego
 package fairwinds
 
@@ -134,6 +135,20 @@ replicasRequired[actionItem] {
   input.spec.replicas == 0
   actionItem := {}
 }
+```
+
+Rego v1:
+```rego
+package fairwinds
+
+import rego.v1
+
+replicasRequired contains actionItem if {
+        input.kind == "Deployment"
+        input.spec.replicas == 0
+        actionItem := {}
+}
+
 ```
 
 The `actionItem` object is what Insights will examine to determine the details of the
