@@ -8,8 +8,8 @@ meta:
 Fairwinds Insights comes with over 100 built-in polices that can be used to audit or block resources in your Kubernetes environment or Infrastructure-as-Code.
 You can also create your own custom policies using Open Policy Agent's (OPA) Rego language.
 
-## Rego V0 and V1
-We are currently supporting both Rego V0 and V1, but we encourage moving to OPA v1 as V0 is deprecated.
+## Rego v0 and v1
+We are currently supporting both Rego v0 and v1, but we encourage moving to OPA v1 as V0 is deprecated.
 * For more information about [VO upgrade](https://www.openpolicyagent.org/docs/latest/v0-upgrade/)
 * How to migrate [How to migrate][https://www.styra.com/blog/renovating-rego/]
 
@@ -322,7 +322,7 @@ If we want:
 
 we can vary this value based on the Kubernetes Kind:
 
-Rego V0:
+Rego v0:
 ```rego
 package fairwinds
 
@@ -403,7 +403,7 @@ hpaRequired[actionItem] {
   }
 }
 ```
-Rego V1:
+Rego v1:
 ```rego
 package fairwinds
 
@@ -429,7 +429,7 @@ You can create a custom OPA library to encapsulate and reuse Rego code, such as 
 
 Consider the following example, where we define a reusable function in a custom package called utils:
 
-Rego V0:
+Rego v0:
 ```rego
 package utils
 
@@ -655,7 +655,7 @@ Ensure that external sources are from trusted locations, especially when linking
 ### Debug Print Statements
 Rego `print()` statements will be included in the output of `insights-cli validate opa` to help debug Policy execution. For example, this Policy prints two debug messages.
 
-Rego V0:
+Rego v0:
 ```rego
 package fairwinds
 
