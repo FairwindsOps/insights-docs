@@ -167,6 +167,8 @@ Action Item severity is defined as:
 * 0.9 to 1.0 - Critical
 
 For instance, in the above OPA policy we could set:
+
+Rego v0:
 ```rego
 package fairwinds
 
@@ -183,11 +185,32 @@ replicasRequired[actionItem] {
 }
 ```
 
+Rego v1:
+```rego
+package fairwinds
+
+import rego.v1
+
+replicasRequired contains actionItem if {
+        input.kind == "Deployment"
+        input.spec.replicas == 0
+        actionItem := {
+                "title": "Deployment does not have replicas set",
+                "description": "All workloads at acme-co must explicitly set the number of replicas",
+                "remediation": "Please set `spec.replicas`",
+                "category": "Reliability",
+                "severity": 0.5,
+        }
+
+}
+```
+
 #### Varying Action Item Attributes
 You can reuse the same OPA policy, setting different Action Item attributes for different cases.
 For instance, say we wanted to apply our `replicas` policy above to both `Deployment` and `StatefulSet`
 but wanted a higher severity for `Deployments`:
 
+Revo v0:
 ```rego
 package fairwinds
 
@@ -212,6 +235,39 @@ replicasRequired[actionItem] {
     "category": "Reliability",
     "severity": dynamicSeverity,
   }
+}
+```
+
+Rego v1:
+```rego
+package fairwinds
+
+import rego.v1
+
+replicasRequired contains actionItem if {
+        # List the Kubernetes Kinds to which this policy should apply.
+        kinds := {"Deployment", "StatefulSet"}
+
+        # List severities for each of the above Kinds. Kind.
+        severityByKind := {
+                "StatefulSet": 0.4,
+                "Deployment": 0.9,
+        }
+
+        # Iterate Kinds{} and only continue if input.kind is one of them.
+        kind := kinds[_]
+        input.kind == kind
+        input.spec.replicas == 0
+
+        # Set the severity based on the Kind.
+        dynamicSeverity := severityByKind[input.kind]
+        actionItem := {
+                "title": "Deployment does not have replicas set",
+                "description": "All workloads at acme-co must explicitly set the number of replicas",
+                "remediation": "Please set `spec.replicas`",
+                "category": "Reliability",
+                "severity": dynamicSeverity,
+        }
 }
 ```
 
@@ -266,6 +322,7 @@ If we want:
 
 we can vary this value based on the Kubernetes Kind:
 
+Rego V0:
 ```rego
 package fairwinds
 
@@ -289,6 +346,39 @@ replicasRequired[actionItem] {
     "category": "Reliability",
     "severity": 0.2,
   }
+}
+```
+
+Rego v1:
+```rego
+package fairwinds
+
+import rego.v1
+
+replicasRequired contains actionItem if {
+        # List the Kubernetes Kinds to which this policy should apply.
+        kinds := {"Deployment", "StatefulSet"}
+
+        # List severities for each of the above Kinds. Kind.
+        severityByKind := {
+                "StatefulSet": 0.4,
+                "Deployment": 0.9,
+        }
+
+        # Iterate Kinds{} and only continue if input.kind is one of them.
+        kind := kinds[_]
+        input.kind == kind
+        input.spec.replicas == 0
+
+        # Set the severity based on the Kind.
+        dynamicSeverity := severityByKind[input.kind]
+        actionItem := {
+                "title": "Deployment does not have replicas set",
+                "description": "All workloads at acme-co must explicitly set the number of replicas",
+                "remediation": "Please set `spec.replicas`",
+                "category": "Reliability",
+                "severity": dynamicSeverity,
+        }
 }
 ```
 
