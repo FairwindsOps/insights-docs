@@ -314,7 +314,7 @@ resource "aws_athena_workgroup" "cur_athena_workgroup" {
 }
 ```
 
-## Google Cloud Provider (GCP) Billing Integration (BETA)
+## Google Cloud Provider (GCP) Billing Integration
 
 The GCP Report is built on [Google Cloud Billing](https://cloud.google.com/billing/docs/how-to/export-data-bigquery).
 
