@@ -1452,7 +1452,7 @@ can be added as usual using the `Quick Add` option under the report. However, th
 configuration and the `Quick Add` option is not available for those reports. Instead you will be taken to the documentation
 pages for those reports.
 
-* [AWS Costs report](technical-details/reports/aws-costs)
+* [AWS Costs report] technical-details/reports/aws-costs
 * [Falco report](technical-details/reports/falco)
 * [Right-Sizer report](technical-details/reports/right-sizer)
 

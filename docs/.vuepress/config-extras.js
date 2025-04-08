@@ -78,7 +78,6 @@ module.exports = {
               'technical-details/reports/rbac-reporter',
               'technical-details/reports/kube-hunter',
               'technical-details/reports/workloads',
-              'technical-details/reports/aws-costs',
               'technical-details/reports/falco',
               'technical-details/reports/right-sizer',
               'technical-details/reports/kyverno',
