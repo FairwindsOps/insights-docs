@@ -151,7 +151,7 @@ insights-admission:
   polaris:
     config:
       mutations:
-        - addMissingLabel  
+        - addMissingLabels 
       checks:
         addMissingLabels: warning
       customChecks:
