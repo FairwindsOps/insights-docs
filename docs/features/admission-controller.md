@@ -168,7 +168,6 @@ insights-admission:
                 type: object
                 required:
                   - labels
-                  - annotations
                 properties:
                   labels:
                     type: object
