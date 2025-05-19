@@ -153,7 +153,7 @@ insights-admission:
       mutations:
         - addMissingLabel  
       checks:
-        addMissingLabel: warning
+        addMissingLabels: warning
       customChecks:
         addMissingLabels:
           successMessage: labels are correct
