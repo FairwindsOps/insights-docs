@@ -134,6 +134,54 @@ To customize the severity or whether a Policy should block an admission request,
 
 To create more fine-grained enforcement, learn about [Policy Enforcement best practices](/first-steps/policy-enforcement).
 
+
+### Using Polaris custom checks with Insights Admission:
+For more information about Polaris custom checks, check out:
+[Polaris Custom Checks](https://polaris.docs.fairwinds.com/customization/custom-checks/#custom-checks)
+
+You can use polaris custom checks with Insights Admission for either Admission and Mutations.
+For accomplishing that add the custom check to your values.yaml, following the example below:
+
+```yaml
+insights-admission:
+  enabled: true
+  webhookConfig:
+    mutating:
+      enable: true
+  polaris:
+    config:
+      mutations:
+        - addMissingLabels 
+      checks:
+        addMissingLabels: warning
+      customChecks:
+        addMissingLabels:
+          successMessage: labels are correct
+          failureMessage: missing labels
+          category: Efficiency
+          target: app/Deployment
+          schema:
+            '$schema': http://json-schema.org/draft-07/schema
+            type: object
+            properties:
+              metadata:
+                type: object
+                required:
+                  - labels
+                properties:
+                  labels:
+                    type: object
+                    required:
+                      - my-required-label
+                    properties:
+                      tmy-required-label:
+                        type: string
+          mutations:
+            - op: add
+              path: "/spec/template/metadata/labels/test3"
+              value: "my-value"
+```              
+
 ## Troubleshooting
 To troubleshoot the Admission Controller, you can
 * View the logs in the admission pods
