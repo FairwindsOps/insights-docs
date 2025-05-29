@@ -181,6 +181,20 @@ insights-admission:
               path: "/spec/template/metadata/labels/test3"
               value: "my-value"
 ```              
+## Using Insights Admission Controller with GKE
+Insights webhook may intercept resources in the kube-system namespace which may lead to some issues on upgrades and nodes being managed by Google.
+We recommend to exclude the kube-system namespace from Insights Admission when running on GKE.
+
+```yaml
+insights-admission:
+  enabled: true
+  webhookConfig:
+    namespaceSelector:
+      matchExpressions:
+        - key: kubernetes.io/metadata.name
+          operator: NotIn
+          values: ["kube-system"]
+```
 
 ## Troubleshooting
 To troubleshoot the Admission Controller, you can
