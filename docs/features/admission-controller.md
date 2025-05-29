@@ -183,7 +183,7 @@ insights-admission:
 ```              
 ## Using Insights Admission Controller with GKE
 Insights webhook may intercept resources in the kube-system namespace which may lead to some issues on upgrades and nodes being managed by Google.
-We recommend to exclude namespace kube-systemm from Insights Admission when running on GKE.
+We recommend to exclude the kube-system namespace from Insights Admission when running on GKE.
 
 ```yaml
 insights-admission:
