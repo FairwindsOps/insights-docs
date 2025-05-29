@@ -189,8 +189,6 @@ We recommend to exclude namespace kube-systemm from Insights Admission when runn
 insights-admission:
   enabled: true
   webhookConfig:
-    mutating:
-      enable: true
     namespaceSelector:
       matchExpressions:
         - key: kubernetes.io/metadata.name
