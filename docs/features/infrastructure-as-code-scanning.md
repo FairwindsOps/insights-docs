@@ -16,7 +16,6 @@ Insights will run the following report types in CI:
 * Trivy (scan Docker images for vulnerabilities)
 * OPA (run custom policies)
 * Pluto (detect deprecated resources)
-* tfsec (scan Terraform files for configuration issues)
 * prometheus-metrics (fetches the latest `Container should be right-sized` resource recommendation for each workload+cluster combination)
 
 ### Choosing Insights CI or Auto-Scan
@@ -279,7 +278,6 @@ You can control which scan tools (known as 'reports') are run as part of an Insi
 * `reports.opa.enabled` - Boolean - set to `false` if you'd like to disable OPA
 * `reports.polaris.enabled` - Boolean - set to `false` if you'd like to disable Polaris
 * `reports.trivy.enabled` - Boolean - set to `false` if you'd like to disable Trivy
-* `reports.tfsec.enabled` - Boolean - set to `false` if you'd like to disable tfsec Terraform file scanning
 * `reports.trivy.skipManifests` - Boolean - set to `true` if you don't want to scan images discovered in YAML files and Helm charts
 
 ### Auto-Scan
@@ -335,13 +333,13 @@ curl --location --request POST 'https://insights.fairwinds.com/v0/organizations/
 --data-raw '{
   "autoScan": {
     "polaris": { "enabledOnAutoDiscovery": false },
-    "tfsec": { "enabledOnAutoDiscovery": false }
+    "opa": { "enabledOnAutoDiscovery": false }
   }
 }'
 ```
-This configuration disables `polaris` and `tfsec` when using auto-discovery
+This configuration disables `polaris` and `opa` when using auto-discovery
 
-Possible report types are: `polaris`, `opa`, `pluto`, `trivy`, `tfsec`
+Possible report types are: `polaris`, `opa`, `pluto`, `trivy`
 
 To fetch your current configuration using CURL:
 ```
