@@ -170,3 +170,42 @@ To set up Microsoft Teams notifications:
 3. Once you have connected Microsoft Teams to Insights, you can choose which teams > channels you'd like notifications to be sent to in the `Settings > Notifications` page
 
 See the configure section to [customize MS Teams alerts through Automation Rules.](/features/automation-rules#microsoft-teams-notifications)
+
+## UTM Stack (beta)
+Fairwinds Insights now integrates with UTM Stack to enhance your security and incident management processes. 
+This integration automatically creates incidents in UTM Stack based on action items from Fairwinds Insights and keeps them in sync as the action items’ statuses change. 
+Whether an action item is `resolved`, `reopened`, or `fixed`, the corresponding incident in UTM Stack reflects those changes in "real-time" (every 5 minutes), ensuring your team stays informed and aligned.
+
+### Installation
+
+Follow these steps to set up the UTM Stack integration:
+
+#### Access Integration Settings
+- Navigate to your organization’s `Settings > Integration` page in Fairwinds Insights.
+#### Initiate UTM Stack Integration
+- Locate the `UTM Stack` option, hover over it, and click `Add Integration`.
+#### Configure the Integration
+- A modal will appear prompting you to enter the following details:
+  - `URL`: The base URL of your UTM Stack instance (e.g., https://your-utm-stack-instance.com).
+  - `User`: The username of the UTM Stack account used for authentication.
+  - `Password`: The password associated with the specified user account.
+  - Click in `Connect` to test your credentials
+
+**Note: For security and clarity, consider creating a dedicated bot or service account in UTM Stack for this integration rather than using personal credentials.**
+- Configure Policies and Save
+  - `Policies`: A list of Fairwinds Insights policies for which action items should generate incidents in UTM Stack. Only action items tied to these policies will be synced.
+  - Click `Save Settings` to enable the integration.
+  - Fairwinds Insights will begin syncing existing action items for the selected policies and will continue to update them as changes occur.
+
+### Using the Integration
+
+#### Once activated, the integration works as follows:
+
+- Incident Creation: New action items in Fairwinds Insights that match your selected policies are automatically turned into incidents in UTM Stack.
+- Status Synchronization: Updates to action items—such as marking them as `resolved` or `fixed` are reflected in the corresponding UTM Stack incidents.
+
+### Best Practices
+
+- Dedicated Account: Use a bot or service account in UTM Stack for this integration to improve security and maintain separation from personal accounts.
+- Policy Selection: Choose policies thoughtfully to avoid flooding UTM Stack with unnecessary incidents—focus on critical issues.
+- Regular Monitoring: Periodically review the Incidents section in UTM Stack to confirm that action items are syncing correctly.
