@@ -10,6 +10,77 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 16.4.97 (2025-06-11)
+### Bug Fixes and Enhancements
+* Improve CVE report
+* Add [UTM-Stack integration support](https://insights.docs.fairwinds.com/features/integrations/#utm-stack-beta)
+
+## 16.4.91 (2025-06-05)
+### Bug Fixes and Enhancements
+* Remove TFSec report support
+
+## 16.4.87 (2025-06-02)
+### Bug Fixes and Enhancements
+* Add Customer Dashboard support
+
+## 16.4.79 (2025-05-23)
+### Bug Fixes and Enhancements
+* Trigger vulnerabilities sync when user access the Vulnerabilities page
+
+## 16.4.67 (2025-05-16)
+### Bug Fixes and Enhancements
+* Add filter CI Action Items by labels and annotations
+
+## 16.4.47 (2025-04-30)
+### Bug Fixes and Enhancements
+* Jira Basic Auth is broken because it can't create webhook
+* Improve cluster and organization deletion flow
+
+## 16.4.42 (2025-04-22)
+### Bug Fixes and Enhancements
+* Remove Mixpanel and event-track endpoint 
+
+## 16.4.41 (2025-04-16)
+### Bug Fixes and Enhancements
+* Create admission settings for each org
+
+## 16.4.39 (2025-04-15)
+### Bug Fixes and Enhancements
+* Remove support for aws-costs from Insights
+
+## 16.4.31 (2025-04-08)
+### Bug Fixes and Enhancements
+* Add utility function to log Go runtime and environment variables
+
+## 16.4.22 (2025-04-03)
+### Bug Fixes and Enhancements
+* Fix Additional Description is lost when the ticket is updated
+
+## 16.4.21 (2025-04-02)
+### Bug Fixes and Enhancements
+* Fix selected Ticket Additional Description is not a valid JSON, it must comply with the Atlassian Document Format (ADF)
+
+## 16.4.20 (2025-04-01)
+### Bug Fixes and Enhancements
+* Cloud costs failing for Autopilot
+
+## 16.4.12 (2025-03-24)
+### Bug Fixes and Enhancements
+* API to download a CSV with policies enforced by Insights
+
+## 16.4.5 (2025-03-18)
+### Bug Fixes and Enhancements
+* Jira webhook support
+
+## 16.3.71 (2025-03-07)
+### Bug Fixes and Enhancements
+* Teams app groups: cluster overview is returning 404 for super admin
+
+## 16.3.66 (2025-03-04)
+### Bug Fixes and Enhancements
+* Fix clusters > version is `N/A` for non-admin users
+* Fix admission requests count API should respect all query params
+
 ## 16.3.53 (2025-02-20)
 ### Bug Fixes and Enhancements
 * New Feature: Ticket Additional Descriptions
