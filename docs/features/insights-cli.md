@@ -75,65 +75,8 @@ Once the files have been created, use the following command to push the OPA poli
 insights-cli push opa
 ```
 
-##### Caveats
-
-Insights supports both OPA v1 and OPA v2, but we recommend using OPA v2. To ensure the CLI resolves to using OPA v2, please adhere to the following rules:
-
-- Do not name the rego policy file as `policy.rego` if there are **any** `yaml` files in the custom policy directory.
-- Do not name the rego policy file the same as the custom policy directory if there are **any** `yaml` files in that directory.
-
-If any of the above conditions are met, the CLI will assume you are running OPA v1 custom checks.
-
-##### OPA V1 deprecation
-We are deprecating OPA v1 in favor of OPA v2. We will support OPA v1 until Mar/31/2025.
-If you still have OPA v1 policies you will need to migrate to OPA v2. Here's how to migrate:
-- create a new policy in Insights using UI or insights CLI following v2 standards described in the above sections.
-- delete old policy using Insights UI or insights CLI
-- the instance yaml file is not used anymore in OPA v2 - so you will need to migrate your input metadata directly into your rego.
-
-Example:
-
-Old v1 way:
-```rego
-package fairwinds
-
-dropsNetRaw(pod) {
-    keys := {"containers", "initContainers"}
-    containers := [c | keys[k]; c = pod.spec[k][_]]
-    container = containers[_]
-    caps := {"NET_RAW", "ALL"}
-    cap := caps[_]
-    container.securityContext.capabilities.drop[_] == cap
-}
-```
-
-```yaml
-targets:
-  - apiGroups:
-      - apps
-    kinds:
-      - Deployment
-```
-
-Should be changed to v2 like this (note the `input.kind == "Deployment"` addition):
-```rego
-package fairwinds
-
-dropsNetRaw(pod) {
-    keys := {"containers", "initContainers"}
-    containers := [c | keys[k]; c = pod.spec[k][_]]
-    container = containers[_]
-    caps := {"NET_RAW", "ALL"}
-    cap := caps[_]
-    
-    input.kind == "Deployment"
-    
-    container.securityContext.capabilities.drop[_] == cap
-}
-```
-
 ### Rego v0 and v1
-We are currently supporting both Rego v0 and v1, but we encourage moving to OPA v1 as V0 is deprecated.
+We are currently supporting both Rego v0 and v1, but we encourage moving to Rego v1 as V0 is deprecated.
 * For more information about [VO upgrade](https://www.openpolicyagent.org/docs/latest/v0-upgrade/)
 * How to migrate [How to migrate][https://www.styra.com/blog/renovating-rego/]
 
