@@ -76,7 +76,7 @@ insights-cli push opa
 ```
 
 ### Rego v0 and v1
-We are currently supporting both Rego v0 and v1, but we encourage moving to OPA v1 as V0 is deprecated.
+We are currently supporting both Rego v0 and v1, but we encourage moving to Rego v1 as V0 is deprecated.
 * For more information about [VO upgrade](https://www.openpolicyagent.org/docs/latest/v0-upgrade/)
 * How to migrate [How to migrate][https://www.styra.com/blog/renovating-rego/]
 
