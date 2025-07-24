@@ -1,11 +1,11 @@
 ---
 meta:
   - name: title
-    content: Fairwinds Insights Agent
+    content: Fairwinds Insights Images Vulnerabilities
   - name: description
-    content: "Fairwinds Insights | Documentation: The Insights Agent runs inside your Cluster, and sends back data to Fairwinds Insights"
+    content: "Fairwinds Insights | Documentation: Images Vulnerabilities page provides a high‑level summary of container images deployed across all Kubernetes clusters, their associated vulnerabilities, and quick‑action widgets for remediation planning"
   - name: keywords
-    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation
+    content: Fairwinds Insights, Kubernetes Audit, Kubernetes configuration validation, Image vulnerabilities
 ---
 # Images & Vulnerabilities
 
