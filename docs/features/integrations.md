@@ -189,7 +189,9 @@ Follow these steps to set up the UTM Stack integration:
   - `URL`: The base URL of your UTM Stack instance (e.g., https://your-utm-stack-instance.com).
   - `User`: The username of the UTM Stack account used for authentication.
   - `Password`: The password associated with the specified user account.
-  - Click in `Connect` to test your credentials
+  - `Skip TLS verification`: If checked, Insights will not verify the TLS certificate when connecting to your UTM Stack instance. **Not recommended**
+  - `CA Certificate or Chain (PEM file)`: (optional) Upload a PEM-encoded CA certificate or certificate chain if your UTM Stack instance uses a custom or self-signed TLS certificate. This allows Fairwinds Insights to securely validate the UTM Stack server's identity. If not provided, system default CAs are used unless "Skip TLS verification" is checked.
+  - Click `Connect` to test your credentials
 
 **Note: For security and clarity, consider creating a dedicated bot or service account in UTM Stack for this integration rather than using personal credentials.**
 - Configure Policies and Save
