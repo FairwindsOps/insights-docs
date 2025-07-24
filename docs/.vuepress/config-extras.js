@@ -40,6 +40,7 @@ module.exports = {
           'features/team-management',
           'features/app-groups',
           'features/policy-mappings',
+          'features/images-vulnerabilities',
         ],
       },
       {
