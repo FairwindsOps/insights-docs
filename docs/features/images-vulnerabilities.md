@@ -37,7 +37,7 @@ A paginated, searchable table listing all container images:
 |----------------------|-----------------------------------------------------------------------------------------------------|
 | **☐**                | Row selection checkbox                                                                              |
 | **Title**            | Image name & tag (e.g. `quay.io/fairwinds/postgres‑partman:16.0`)                                    |
-| **Severity**         | Highest-severity hit for that image.                   |
+| **Severity**         | Highest-severity vulnerability for that image.                                                      |
 | **Vulnerabilities**  | Total number of CVEs detected in that image.                                                       |
 | **Clusters**         | Number of clusters where this image is running.                                                    |
 | **Workloads**        | Number of workloads (Pods/Deployments) using this image.                                           |
@@ -48,7 +48,7 @@ A paginated, searchable table listing all container images:
 | **Resource Labels**  | Kubernetes labels on the running workloads.                                                         |
 | **Namespace Labels** | Kubernetes namespace labels.                                                                        |
 
-- **Search & Filters** above table:  
+**Search & Filters** above table:  
 - Free‑text **Search**  
 - Column‑specific **Filter** dropdowns  
 - Toggle Filters: **Show Resolved Only**, **Show Critical and High Only**
@@ -68,7 +68,7 @@ A paginated, searchable table listing all container images:
 
 ## 2. Vulnerabilities → Image Detail Page
 
-When clicking any image in the “All Images” table, you land on its **Image Detail** page:
+When clicking any image in the "All Images" table, you land on its **Image Detail** page:
 
 ---
 ### 2.1. Header
@@ -132,31 +132,30 @@ Complete list of CVEs found in this image:
 <img :src="$withBase('/img/vulnerabilities-image-details-table.png')" alt="Image CVEs table">
 
 ---
-## 3. Context Menu – Image Detail Actions
+### 2.6. Context Menu – Image Detail Actions
 
 From the **Image Detail** page, click the `...` (More) icon in the top‑right to reveal **Additional Actions**:
 
 | Action                | Description                                                                                                                                 |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | **Create Ticket**     | Open a ticket in your configured issue tracker (Jira, Azure Boards, etc.) using a customizable template including image name and CVE list. |
-| **Resolve** ▶        | Mark all or select CVEs as “Resolved” (i.e. false positive, accepted risk), with option to set expiration.                                  |
-| **Assign** ▶         | Delegate this image or specific CVEs to a team or individual for remediation tracking.                                                      |
+| **Resolve**          | Mark all or select CVEs as "Resolved" (i.e. false positive, accepted risk), with option to set expiration.                                  |
+| **Assign**           | Delegate this image or specific CVEs to a team or individual for remediation tracking.                                                      |
 | **Trigger Image Scan** | Kick off an on‑demand vulnerability scan of this image (e.g. after patching).                                                              |
-
 
 <img :src="$withBase('/img/vulnerabilities-image-details-context.png')" alt="Context Menu Actions">
 
 ---
 
-## 4. Best Practices & Tips
+## 3. Best Practices & Tips
 
 1. **Filter Early**  
- - Use **Show Critical and High Only** to focus on the riskiest images.
+   - Use **Show Critical and High Only** to focus on the riskiest images.
 2. **Leverage Widgets**  
- - Identify “Top Impacted Packages” to prioritize OS patching across images.
+   - Identify "Top Impacted Packages" to prioritize OS patching across images.
 3. **Automate Ticket Creation**  
- - Integrate with Jira/Azure for faster triage and remediation workflows.
+   - Integrate with Jira/Azure for faster triage and remediation workflows.
 4. **On‑Demand Scans**  
- - After applying patches or rebuilding images, use **Trigger Image Scan** to refresh vulnerability data immediately.
+   - After applying patches or rebuilding images, use **Trigger Image Scan** to refresh vulnerability data immediately.
 
 ---
