@@ -147,10 +147,12 @@ An Event is sent into Datadog whenever an Action Item is first discovered or whe
 Also a metric is sent to Datadog representing the number of open Action Items with tags that allow you to filter or compare data.
 
 ### Installation
-To set up DataDog integration:
-1. Visit your organization's `Settings > Integration` page
-2. Hover over `DataDog` and click `Add Integration`
-3. Add the `API key` and click `Connect to Datadog`
+To set up Datadog integration:
+1. Visit your organization's `Settings > Integration` page.
+2. Hover over `Datadog` and click `Add Integration`.
+3. Enter your `API key`.
+4. Choose the appropriate `Datadog site` (e.g., datadoghq.com, datadoghq.eu).
+5. Click `Connect to Datadog` to complete the setup.
 
 ## Microsoft Teams
 Fairwinds Insights has an integration with Microsoft Teams so you can get notifications about critical changes to your clusters.
