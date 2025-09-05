@@ -225,6 +225,121 @@ tracked in your Infrastructure-as-Code (IaC) repository.
 You can add the `--delete` flag to the `push policy-mappings` command, which
 will delete any Policy Mappings from Insights that **do not exist** in your IaC repository. Adding the `--dry-run` flag will explain which Policy Mappings would be deleted without making changes to Insights.
 
+### Teams Management
+
+Teams in **Fairwinds Insights** can be managed in two ways:
+
+1. Through the **Insights UI**  
+2. Using a configuration file (`teams.yaml`) and pushing it via the `insights-cli`
+
+---
+
+#### Configuration Rules - File structure
+
+```
+# teams.yaml schema (simplified)
+- name: string # required, team name
+  clusters:    # optional, list of allowed clusters
+    - string
+  disallowedClusters: # optional, list of disallowed clusters
+    - string
+  namespaces:         # optional, list of allowed namespaces
+    - string
+  disallowedNamespaces: # optional, list of disallowed namespaces
+    - string
+  repositories:           # optional, list of allowed repositories
+    - string
+  disallowedRepositories: # optional, list of disallowed repositories
+    - string
+  appGroups:               # optional, list of app groups
+    - string
+```
+
+- The `name` property is the only required field.  
+- If no `clusters`, `namespaces`, or `repositories` are specified, then **all are allowed**. If an empty array `[]` is provided, then **none are allowed**.  
+- For `disallowedClusters`, `disallowedNamespaces`, and `disallowedRepositories`:
+  - There is **no option** to **disallow all**.  
+  - You must list each disallowed entry individually.  
+- `appGroups` also requires you to list each entry individually.
+---
+
+#### Example `teams.yaml`
+
+```yaml
+# Example 1: All clusters, namespaces, and repositories allowed
+- name: NewTeamAllAllowedPermissions
+```
+
+```yaml
+# Example 2: None allowed (explicit empty arrays)
+- name: NewTeamNoneAllowedPermissions
+  clusters: []
+  namespaces: []
+  repositories: []
+```
+
+```yaml
+# Example 3: Some allowed, none disallowed
+- name: NewTeam
+  clusters:
+    - us-east-1
+    - us-east-2
+  namespaces:
+    - default
+    - kube-system
+  repositories:
+    - repository1
+    - repository2
+```
+
+```yaml
+# Example 4: Some allowed, some disallowed
+- name: NewTeam2
+  clusters:
+    - us-east-1
+    - us-east-2
+  namespaces:
+    - default
+    - kube-system
+  disallowedNamespaces:
+    - kube-public
+    - kube-node-lease
+  disallowedClusters:
+    - us-west-1
+    - us-west-2
+  repositories:
+    - repository1
+    - repository2
+  disallowedRepositories:
+    - repository3
+    - repository4
+```
+
+```yaml
+# Example 5: Mappings Teams and App Groups
+- name: NewTeam3
+  appGroups: ["all-resources"]
+```
+
+#### Using `insights-cli`
+
+By default, the `teams.yaml` file is expected in the current working directory.
+
+```bash
+insights-cli push teams
+```
+
+#### Optional Flags
+
+- `--delete`, `-D` - Delete teams not defined in teams.yaml. Default: `false` (teams not listed remain unchanged).
+- `--dry-run`, `-z` - Show what would be pushed without applying changes.
+- `--push-directory`, `-d` - Path to the directory containing teams.yaml.
+
+#### Example usage with flags:
+```bash
+insights-cli push teams --delete --dry-run --push-directory=./teams
+```
+
 ## Testing
 You can use the insights-cli to test your OPA policies and automation rules. This can also be
 integrated into the CI/CD pipeline for the Infrastructure-as-Code repo containing
@@ -393,71 +508,6 @@ title: Image has vulnerabilities
 cluster: production
 eventType: image_vulnerability
 severity: 0.9
-```
-
-### Teams Management
-Insights Teams Management can be done inside Insights UI. Optionally it can be handled using a teams.yaml file to push configurantion via cli into Insights.
-`name` is the only required field. If no specific clusters/namespaces/repositories are included, then all are included. If empty array `[]` is provided then nothing is allowed.
-
-Example of `teams.yaml`:
-```yaml
-
-# Example of all clusters, namespaces and repositories allowed
-- name: NewTeamAllPermissions
-
-# Example of no permission allowed - use empty array []
-- name: NewTeamNoPermission
-  clusters: []
-  namespaces: []
-  repositories: []
-
-- name: NewTeam2
-  clusters:
-  - us-east-1
-  - us-eest-2
-  namespaces:
-  - default
-  - kube-system
-  disallowedNamespaces:
-  - kube-public
-  - kube-node-lease
-  disallowedClusters:
-  - us-west-1
-  - us-west-2
-  repositories:
-  - reposity1
-  - repository2
-  disallowedRepositories:
-  - repository3
-  - repository4
-- name: NewTeam3
-  clusters:
-  - us-east-1
-  - us-eest-2
-  namespaces:
-  - default
-  - kube-system
-  disallowedNamespaces:
-  - kube-public
-  - kube-node-lease
-  disallowedClusters:
-  - us-west-1
-  - us-west-2
-  repositories:
-  - reposity1
-  - repository2
-  disallowedRepositories:
-  - repository3
-  - repository4  
-
-```
-
-Add your teams.yaml at same directory on insights-cli and optionally provide `--delete` or `-x` parameter. 
-This flag determines if teams that are not provided in the teams.yaml should be deleted. The default value is false, so it does not delete teams not provided in the file.
-
-Example:
-```bash
-insights-cli push teams
 ```
 
 #### Logs Events
