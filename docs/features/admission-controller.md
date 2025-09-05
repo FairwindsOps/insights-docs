@@ -30,13 +30,30 @@ To use the Admission Controller and install it on your cluster:
 2. After selecting a cluster, go to the `Install Hub` page
 3. Hover over the `Admission Controller` report and click the `Quick Add` button 
 
-Once the report has been added, re-install the Insights Agent using the Helm chart in your cluster.
+Once the report has been added, re-install the `Insights Agent` using the Helm chart in your cluster.
 
-> The Admission Controller is installed in `Passive Mode` by default. This means the Admission Controller will monitor all activities, but not yet deny any deployments.
+> Note: The Admission Controller is installed based on your current Organization Settings. If `Passive Mode` is enabled, the controller will monitor all activities but will not deny any deployments.
 
-In order to disable Passive Mode and block deployments with high severity issues:
-1. In `Install Hub`, click on the `Admission Controller` report
-2. In the `Configure` tab, toggle the `Passive Mode` option to disabled
+The default organization settings is **Polaris: ON, OPA: ON, Pluto: ON, Passive Mode: ON**
+
+### Configure Reports & Passive Mode
+
+You can choose which reports run as part of the Admission Controller (Polaris, OPA, Pluto) and whether `Passive Mode` should block deployments with high-severity issues.
+1. In `Install Hub`, click the `Admission Controller` report.
+2. Go to the `Configure` tab. You’ll see something like:
+```
+You are currently using the Org Settings for this cluster. (Polaris: ON/OFF, OPA: ON/OFF, Pluto: ON/OFF, Passive Mode: ON/OFF)
+```
+3. From here, you can:
+    - Change Organization Settings - Click `Go to Default Org Settings` to update settings for all clusters.
+    - Override Cluster Settings - Configure cluster-specific values (Reports and Passive Mode) and click `Override Org Settings`.
+
+### Manage Cluster-Specific Overrides
+
+If you override the default organization settings for a cluster, you’ll see extra options:
+
+- **Update Cluster Settings** – modify the cluster-specific Admission Controller configuration.
+- **Delete Cluster Settings** – remove overrides and fall back to organization settings.
 
 
 ### Testing
