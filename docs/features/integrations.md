@@ -46,7 +46,7 @@ For example, once your repository is linked, you'll start seeing a Fairwinds Ins
 
 ## Jira
 Fairwinds Insights can connect to Jira in order to create Jira tickets
-from Action Items.
+from Action Items with support for custom field mapping and advanced ticket configuration.
 
 ### Installation
 >We recommend creating a "robot account" to connect to your Insights organization
@@ -57,6 +57,15 @@ The linked account will show as the creator of any tickets created via Insights
 2. Hover over `Jira` and click `Add Integration`
 3. Once you have connected Jira to Insights, you can create tickets for Action Items manually or 
 [automatically using Automation Rules](/features/automation-rules#tickets)
+
+### Jira Custom Fields
+Fairwinds Insights supports advanced Jira custom field mapping, allowing you to:
+* Map Jira fields to custom Insights fields
+* Configure default values and validation rules
+* Create context-aware field configurations
+* Support 30+ Jira field types including text, select, user pickers, and more
+
+See [Jira Custom Fields](/features/jira-custom-fields) for detailed configuration instructions.
 
 ### Jira Tickets and Action Items
 If an Action Item that is associated with a Jira ticket is marked as `Resolved` or `Fixed`,
