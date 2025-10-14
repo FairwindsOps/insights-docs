@@ -21,18 +21,18 @@ Before configuring custom fields, ensure you have:
 
 ## Accessing Custom Fields Management
 
-1. Navigate to your organization's `Settings` page
-2. Click on `Jira Custom Fields` in the sidebar
-3. Select a Jira project to view available fields
+1. Navigate to your organization's `Settings > Ticketing` page
+2. Click on `Jira Custom Fields` tab
 
 ## Creating Custom Field Mappings
 
 ### Step 1: Browse Available Fields
 
-1. Click `Create from Jira Field` button
-2. Select your target Jira project from the dropdown
-3. Browse the list of available Jira fields
-4. Click on a field to create a custom mapping
+1. Select a Jira project to view available fields
+2. Click `Create from Jira Field` button
+3. Select your target Jira project from the dropdown
+4. Browse the list of available Jira fields
+5. Click on a field to create a custom mapping
 
 ### Step 2: Configure Field Mapping
 
@@ -42,11 +42,6 @@ When creating a custom field mapping, you can configure:
 * **Custom Field Name**: Display name in Insights ticket creation
 * **Description**: Helper text for users
 * **Display by Default**: Show field automatically in ticket creation modal
-
-#### Advanced Configuration
-* **Default Value**: Pre-populate field with a default value
-* **Field Type**: Automatically detected from Jira field schema
-* **JSON Template**: Advanced field value formatting (for API integrations)
 
 ### Step 3: Save and Test
 
@@ -103,22 +98,6 @@ Set default values for consistent ticket creation:
 * **Display by Default**: Field appears automatically in ticket creation
 * **Optional Selection**: Field available in "Add Custom Field" dropdown
 
-### Validation Rules
-
-Configure field validation (where supported):
-* Required field enforcement
-* Format validation for text fields
-* Range validation for numeric fields
-
-## Managing Custom Fields
-
-### Viewing All Custom Fields
-
-The custom fields management page shows:
-* **Project Organization**: Fields grouped by Jira project
-* **Field Details**: Name, Jira field ID, type, and description
-* **Usage Statistics**: Number of tickets using each field
-
 ### Editing Custom Fields
 
 1. Click `Edit` next to any custom field
@@ -146,43 +125,6 @@ Other custom fields can be added via:
 1. Click `Add Custom Field` in ticket creation modal
 2. Select desired fields from the dropdown
 3. Configure field values as needed
-
-### Field Validation
-
-Custom fields are validated before ticket creation:
-* Required fields must be completed
-* Field formats are validated (URLs, emails, etc.)
-* Option selections are verified against available values
-
-## Advanced Features
-
-### JSON Templates
-
-For advanced integrations, custom fields support JSON templates:
-
-```json
-{
-  "type": "{{.fieldType}}",
-  "value": "{{.value}}",
-  "metadata": {
-    "source": "fairwinds-insights",
-    "timestamp": "{{.timestamp}}"
-  }
-}
-```
-
-### Context-Aware Fields
-
-Some Jira fields are context-aware and may show different options based on:
-* Selected issue type
-* Project configuration
-* User permissions
-
-### Field Dependencies
-
-Certain field types support dependencies:
-* Cascading selects with parent-child relationships
-* Conditional field display based on other field values
 
 ## Troubleshooting
 
