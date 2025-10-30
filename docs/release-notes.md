@@ -10,6 +10,410 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+
+## 18.1.26 (2025-10-28)
+### Bug Fixes and Enhancements
+* Make sure admission is filtering correctly the new kyverno policies
+
+## 18.1.25 (2025-10-27)
+### Bug Fixes and Enhancements
+* Bump insights-ui minor verions
+* Make RefTypeNotSupportedError a non-retryable error
+* Upgrade authboss lib
+
+## 18.1.24 (2025-10-27)
+### Bug Fixes and Enhancements
+* Fix CSS for Cancel Button
+* Improve user feedback when changing repository properties
+* Fix Automated PR Fixes for polaris issues
+* Remove deprecated automated pull requests and repo scan job binaries
+
+## 18.1.23 (2025-10-24)
+### Bug Fixes and Enhancements
+* Create temporal automated PR job
+
+## 18.1.22 (2025-10-23)
+### Bug Fixes and Enhancements
+* Kyverno match should not be empty when matching all
+* Create temporal automated PR job
+
+## 18.1.21 (2025-10-23)
+### Bug Fixes and Enhancements
+* Fix UI logic to get kyverno admission details
+* Fix kyverno admission details
+* Fix policy violation endpoint to support multiple policies
+
+## 18.1.20 (2025-10-22)
+### Bug Fixes and Enhancements
+* Fix broken link to public repos
+* Adding Documenting and Reviewing as History
+* Event time cannot be null
+
+## 18.1.19 (2025-10-22)
+### Bug Fixes and Enhancements
+* Add/improve user feedback
+* Add the github worker
+* Add kyverno admission blocks to admission API
+* Add endpoint to handle event watcher
+
+## 18.1.18 (2025-10-17)
+### Bug Fixes and Enhancements
+* Include exclude selection box
+* Calculate dynamic margin to cluster utilization bar chart
+* We should run kyverno-policy-sync if app group or kyverno policy is upserted
+
+## 18.1.17 (2025-10-16)
+### Bug Fixes and Enhancements
+* Fix non owner css
+* Change default for database connections on the newClientFromEnv
+* Fix kyverno policies yaml
+
+## 18.1.16 (2025-10-15)
+### Bug Fixes and Enhancements
+* Implement non-retryable errors for slack integration
+* App groups to kyverno translator is removing the validate field
+* Fix the logic for closing tickets for all kind of tickets
+* Implement appGroupsExclude query param
+
+## 18.1.15 (2025-10-14)
+### Bug Fixes and Enhancements
+* Bump all insights-ui libs
+* Fix kyverno policies endpoints router
+
+## 18.1.14 (2025-10-14)
+### Bug Fixes and Enhancements
+* Fix schedules, daily digest should send reports at 16h
+* Implement notification process workflows and remove cronjob
+
+## 18.1.13 (2025-10-13)
+### Bug Fixes and Enhancements
+* Add endpoint to return kyverno policies for a cluster
+
+## 18.1.12 (2025-10-10)
+### Bug Fixes and Enhancements
+* Do not fail on temporal scheduler not found
+
+## 18.1.11 (2025-10-10)
+### Bug Fixes and Enhancements
+* Implement one time migration system
+* Create temporal schedulers for notif pref
+* Remove endpoint added by mistake
+
+## 18.1.10 (2025-10-09)
+### Bug Fixes and Enhancements
+* Teams table should always display App groups
+* Allow mapping kyverno policies to app groups
+* Delete notification preferences app groups when resetting integration
+* Allow mapping kyverno policies to app groups
+
+## 18.1.9 (2025-10-09)
+### Bug Fixes and Enhancements
+* When trying to create ticket per image error: value "3342210861" is out of range for type integer
+
+## 18.1.8 (2025-09-09)
+### Bug Fixes and Enhancements
+* Store kyverno policies in DB via API
+
+## 18.1.7 (2025-10-08)
+### Bug Fixes and Enhancements
+* Fix Jira custom fields feature flag
+* Update frontend for handling Jira custom fields
+
+## 18.1.6 (2025-10-07)
+### Bug Fixes and Enhancements
+* Fix vulnerabilities columns
+
+## 18.1.5 (2025-10-07)
+### Bug Fixes and Enhancements
+* Fix vulnerabilities link
+* Add endpoint to retrieve all custom fields for an org
+
+## 18.1.4 (2025-10-06)
+### Bug Fixes and Enhancements
+* Load clusters before matching memberships
+* Remove free tier references and fix a tag rel
+
+## 18.1.3 (2025-10-03)
+### Bug Fixes and Enhancements
+* Sign up after invite fix
+* Remove free tier references and fix a tag rel
+
+## 18.1.2 (2025-10-03)
+### Bug Fixes and Enhancements
+* Super duper admin fix
+* Bump major lib versions and fix vexilla flags
+* Allow to add a Description to a Jira ticket
+
+## 18.1.1 (2025-10-02)
+### Bug Fixes and Enhancements
+* Create general temporal worker
+
+## 18.1.0 (2025-10-02)
+### Bug Fixes and Enhancements
+* FE fixes
+* Update insights-ui to use ui-component from main
+* Remove not used file
+* Upgrade insighst-ui to react 19 and remove VueJS
+* Custom field description is not returning template and example correct
+
+## 18.0.11 (2025-10-01)
+### Bug Fixes and Enhancements
+* Fix addons export functionality
+* Bump Insights libs
+* Save and retrieve Custom fields Default values
+* Description is not showing rich text
+
+## 18.0.10 (2025-09-29)
+### Bug Fixes and Enhancements
+* Update Status Page link in navigation
+* Fix rich text template and example
+
+## 18.0.9 (2025-09-29)
+### Bug Fixes and Enhancements
+* Add a display by default flag to custom fields
+
+## 18.0.8 (2025-09-26)
+### Bug Fixes and Enhancements
+* Use portal ID to link ticket
+* JSON template and example should be consistent
+
+## 18.0.7 (2025-09-26)
+### Bug Fixes and Enhancements
+* Create endpoints to expose Jira fields, metadata and values
+
+## 18.0.6 (2025-09-25)
+### Bug Fixes and Enhancements
+* Add support for portal ID on admin panel
+* Add MsPortalID field to organizations
+* Fix CORS headers
+
+## 18.0.5 (2025-09-24)
+### Bug Fixes and Enhancements
+* Fix loading graph on link accessed
+* Improve error handling in password reset
+* Improve documentation for deprecated fields
+* Fix CORS Access-Control-Allow-Headers
+* Fix Costs export: headers are out of order
+
+## 18.0.4 (2025-09-22)
+### Bug Fixes and Enhancements
+* Resources summary should respect columns parameters
+* Keep track of the last 5 users password and enforce it
+* Extract handler for reuse and fix queue
+
+## 18.0.3 (2025-09-18)
+### Bug Fixes and Enhancements
+* Update calls in delete activities to utilize unscoped option
+
+## 18.0.2 (2025-09-16)
+### Bug Fixes and Enhancements
+* Improve database initialization to support optional required connections
+* Create activity on empty teams
+* Implement custom error handling for SAML middleware
+
+## 18.0.1 (2025-09-11)
+### Bug Fixes and Enhancements
+* Update deletion confirmation modal text
+* Org and cluster deletion cleanup
+* Fix error handling on temporal client creation
+
+## 18.0.0 (2025-09-10)
+### Bug Fixes and Enhancements
+* Column resource_namespace does not exist in op AnyAdmissionRequestsExists
+
+## 17.0.22 (2025-09-10)
+### Bug Fixes and Enhancements
+* Move delete cluster workflows to temporal
+
+## 17.0.21 (2025-09-09)
+### Bug Fixes and Enhancements
+* Upgrade golang to 1.25.1
+* Fix issue on closing Jira tickets
+* Bump Insights libs
+
+## 17.0.20 (2025-09-05)
+### Bug Fixes and Enhancements
+* Show org name on the dashboard
+
+## 17.0.19 (2025-09-05)
+### Bug Fixes and Enhancements
+* More logs for closing tickets
+
+## 17.0.18 (2025-09-05)
+### Bug Fixes and Enhancements
+* Add additional text to CI installation page
+* Upgrade and Work items should be clear
+
+## 17.0.17 (2025-09-04)
+### Bug Fixes and Enhancements
+* Investigate some closing tickets issues
+
+## 17.0.16 (2025-09-04)
+### Bug Fixes and Enhancements
+* Show warn when some action items could not be updated
+* Allow starting api when TS is down
+* Add AffectedActionItems to responses
+
+## 17.0.15 (2025-09-02)
+### Bug Fixes and Enhancements
+* Update icon and add last updated by field
+* Remove feature flag for teamsManagementByAppGroups
+* Fix datadog cost toggle
+* Remove bitnami reference from Insights
+
+## 17.0.14 (2025-08-21)
+### Bug Fixes and Enhancements
+* Add support for datadog sites
+* Datadog client should pick correct site 
+
+## 17.0.13 (2025-08-20)
+### Bug Fixes and Enhancements
+* Image tickets is failing to get proper action items for closing tickets
+
+## 17.0.12 (2025-08-20)
+### Bug Fixes and Enhancements
+* Close and Update tickets bug
+
+## 17.0.11 (2025-08-19)
+### Bug Fixes and Enhancements
+* Add installation instructions for Temporal
+
+## 17.0.10 (2025-08-13)
+### Bug Fixes and Enhancements
+* Improving logs for datadog
+* Fix fixtures
+
+## 17.0.9 (2025-08-05)
+### Bug Fixes and Enhancements
+* Search param missing in admission requests pagination
+* Bump insights fixtures
+
+## 17.0.8 (2025-08-04)
+### Bug Fixes and Enhancements
+* Show error message if admin panel is not allowed
+* Open incidents should not show the ones with status triage
+* Zero should not be considered as falsy in vulnerabilities badge
+
+## 17.0.7 (2025-07-30)
+### Bug Fixes and Enhancements
+* Fix kyverno admission requests search
+* Add suport to require SSO when calling Admin APIs
+* Improve validation for name on opa, app groups and policy mappings
+
+## 17.0.6 (2025-07-24)
+### Bug Fixes and Enhancements
+* Fix passive mode for cluster admission settings
+* Link from CVEs from Customer Dashboard to Action items
+* Add tls skip and file upload/vv/ins 1242
+
+## 17.0.5 (2025-07-23)
+### Bug Fixes and Enhancements
+* Create drop down on Action Items for filtering by Fairwinds/Customer/All
+* Enhance UTMStackIntegration with TLS options and update codegen version
+* Managed by should be filtered by namespace labels
+
+## 17.0.4 (2025-07-23)
+### Bug Fixes and Enhancements
+* Fix Admission Requests action items table filtering
+* Add support to ManagedBy param to action items
+
+## 17.0.3 (2025-07-22)
+### Bug Fixes and Enhancements
+* Insights public link for repo scans are not working
+* Kyverno admission requests should not have menu
+* Add kyverno admission report findings to Action Items
+* Bump Insights libs
+* Fix kyverno admission requests title
+
+## 17.0.2 (2025-07-18)
+### Bug Fixes and Enhancements
+* Remove Service account on Admission page
+
+## 17.0.1 (2025-07-17)
+### Bug Fixes and Enhancements
+* Bump ci version in insights
+* Enhance health check endpoints
+
+## 16.4.112 (2025-07-17)
+### Bug Fixes and Enhancements
+* Update UpcomingUpgrades to support end date, use TBD when start date not defined
+* Remove OPA V1 support message warning
+* Bump ci version in insights
+* Duplicate kyverno report results
+* Add maintenance end date support
+
+## 16.4.111 (2025-07-15)
+### Bug Fixes and Enhancements
+* Add hyperlink to ticket card
+* Lacking of Authorization header on ReceiveXWebhook should not return 500
+* Kyverno admission missing dates
+* Add images without any vulnerabilities
+* Bump Insights ci-images to v14.1-bullseye
+
+## 16.4.110 (2025-07-14)
+### Bug Fixes and Enhancements
+* Support to kyverno admissions at FE
+* Use labels from k8s resources instead of action-items
+
+## 16.4.109 (2025-07-09)
+### Bug Fixes and Enhancements
+* Add trigger to image scan in the UI
+* Support for empty trivy images/vv
+
+## 16.4.108 (2025-07-01)
+### Bug Fixes and Enhancements
+* Remove non-existing fields on hubspot
+* Add Options field to ListOnDemandJobs and update related tests
+
+## 16.4.107 (2025-06-27)
+### Bug Fixes and Enhancements
+* Insert validation reports
+* Implement on demand jobs APIs
+* Dedupe kyverno action items
+
+## 16.4.106 (2025-06-26)
+### Bug Fixes and Enhancements
+* Missing cluster for kyverno policies
+* Jira Project ID and IncidentIO ID must be set for MS customers before enabling MS customer status
+
+## 16.4.105 (2025-06-25)
+### Bug Fixes and Enhancements
+* Missing Project ID on dashboard is causing a 500 error
+
+## 16.4.104 (2025-06-25)
+### Bug Fixes and Enhancements
+* Remove feature flag for Export Policies with App Groups
+* Allow users to collapse cards
+* Ticket vulnerability page giving errors
+* Add kyverno policies to policies API
+
+## 16.4.103 (2025-06-24)
+### Bug Fixes and Enhancements
+* Allow api requests to reference saved view names
+
+## 16.4.102 (2025-06-24)
+### Bug Fixes and Enhancements
+* Kyverno is erroring out
+
+## 16.4.101 (2025-06-24)
+### Bug Fixes and Enhancements
+* Viewer token cannot get resource-summary
+* Process validationadmissionpolicies in Insights
+
+## 16.4.100 (2025-06-18)
+### Bug Fixes and Enhancements
+* Add maintenance issues to history card
+
+## 16.4.99 (2025-06-16)
+### Bug Fixes and Enhancements
+* Fix CVE-2025-22874
+* Bump insights libs
+
+## 16.4.98 (2025-06-12)
+### Bug Fixes and Enhancements
+* DROP TABLE cve_snapshots_by_orgs
+* Delete cluster is hanging too long
+
 ## 16.4.97 (2025-06-11)
 ### Bug Fixes and Enhancements
 * Improve CVE report
