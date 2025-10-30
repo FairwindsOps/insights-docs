@@ -56,7 +56,7 @@ sidebarDepth: 1
 * Add kyverno admission blocks to admission API
 * Add endpoint to handle event watcher
 
-18.1.18 (2025-10-17)
+## 18.1.18 (2025-10-17)
 ### Bug Fixes and Enhancements
 * Include exclude selection box
 * Calculate dynamic margin to cluster utilization bar chart
