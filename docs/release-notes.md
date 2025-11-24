@@ -10,6 +10,80 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.1.41 (2025-11-21)
+### Bug Fixes and Enhancements
+* Use webhook payloads from S3
+  * **IMPORTANT**: `github-worker` deployment should be able to access S3.
+
+## 18.1.40 (2025-11-21)
+### Bug Fixes and Enhancements
+* Save webhook payloads to S3
+  * **IMPORTANT**: It's advisable to create a S3 lifecycle to delete objects under path `webhooks/` after 3 days.
+
+## 18.1.39 (2025-11-20)
+### Bug Fixes and Enhancements
+* Endpoint apply-status should use data router
+* Improve memory usage and increase max processing time
+
+## 18.1.38 (2025-11-19)
+### Bug Fixes and Enhancements
+* Fix duplicated kyverno admissions
+* UTM-Stack send logs integration
+* Add API for saving policy status
+
+## 18.1.37 (2025-11-17)
+### Bug Fixes and Enhancements
+* Search admission for kyverno is not working
+
+## 18.1.36 (2025-11-07)
+### Bug Fixes and Enhancements
+* Do not assume repository is always present
+
+## 18.1.35 (2025-11-07)
+### Bug Fixes and Enhancements
+* Fix empty top vulnerabilities call when app groups by teams is enabled
+
+## 18.1.34 (2025-11-07)
+### Bug Fixes and Enhancements
+* Improve webhook handling to skip on not supported events
+
+## 18.1.33 (2025-11-07)
+### Bug Fixes and Enhancements
+* Revert policy violation unique key
+* Remove unused deprecated query params
+* Fix Insert kyverno policies performance
+
+## 18.1.32 (2025-11-05)
+### Bug Fixes and Enhancements
+* Update task queues for GitHub activities to include dedicated repo-scan queue
+* Add ValidatingPolicy and remove validate from push kyverno-policies
+
+## 18.1.31 (2025-11-04)
+### Bug Fixes and Enhancements
+* Github webhook activity should run in a transaction
+* Admission requests count API is broken
+* Create secrets and configmaps using random names to avoid clashes
+
+## 18.1.30 (2025-11-03)
+### Bug Fixes and Enhancements
+* Update AWS SDK to v2 and refactor S3 and SES services
+
+## 18.1.29 (2025-11-03)
+### Bug Fixes and Enhancements
+* Refactor activity workers in GitHub worker to improve concurrency
+* Fix passive mode for kyverno admission requests
+* Add success field to violation policy endpoint
+
+## 18.1.28 (2025-10-31)
+### Bug Fixes and Enhancements
+* repository not found should be a non-retryable error
+
+## 18.1.27 (2025-10-31)
+### Bug Fixes and Enhancements
+* migrate GitHub webhooks to temporal workflows
+* Migrate Jira webhooks to temporal workflows
+* Migrate HubSpot webhook to temporal workflow
+* Migrate Incidentio webhook to temporal workflows
 
 ## 18.1.26 (2025-10-28)
 ### Bug Fixes and Enhancements
