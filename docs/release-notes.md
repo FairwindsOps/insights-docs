@@ -12,6 +12,7 @@ sidebarDepth: 1
 
 ## 18.1.41 (2025-11-21)
 ### Bug Fixes and Enhancements
+* Update policy UI to reflect Kyverno policy application status (UI)
 * Use webhook payloads from S3
   * **IMPORTANT**: `github-worker` deployment should be able to access S3.
 
@@ -33,6 +34,7 @@ sidebarDepth: 1
 
 ## 18.1.37 (2025-11-17)
 ### Bug Fixes and Enhancements
+* Fix Costs component to track table state changes (UI)
 * Search admission for kyverno is not working
 
 ## 18.1.36 (2025-11-07)
