@@ -104,7 +104,7 @@ spec:
 ## Blocking and Enforcement
 The `block` configuration in a Policy Mapping only applies to Admission Controllers in Blocking mode (e.g., Passive Mode is disabled) and Repo Scans configured to fail pipelines.
 
-- `block` is `null` or not present (default) - Insights will only block if the Action Item has a severity of High or Critical
+- `block` is `null` or not present (default) - Uses the original behavior from the policy (preserves the policy's default enforcement setting)
 - `block: true` - Insights will always block if any of the `policies` are present
 - `block: false` - Insights will never block (but continue to report Action Items) if any of the `policies` are present
 
