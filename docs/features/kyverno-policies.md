@@ -97,54 +97,6 @@ insights-cli push kyverno-policies -p policy1,policy2  # Push specific policies
 insights-cli push kyverno-policies --delete  # Delete policies not in local files
 ```
 
-### Via the API
-
-You can create policies programmatically using the Insights API:
-
-```bash
-curl -X PUT "https://insights.fairwinds.com/v0/organizations/{org}/kyverno-policies/{name}" \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "kind": "ClusterPolicy",
-    "apiVersion": "kyverno.io/v1",
-    "spec": {
-      "validationFailureAction": "Enforce",
-      "rules": [
-        {
-          "name": "require-resource-limits",
-          "match": {
-            "any": [
-              {
-                "resources": {
-                  "kinds": ["Pod"]
-                }
-              }
-            ]
-          },
-          "validate": {
-            "message": "Resource limits are required",
-            "pattern": {
-              "spec": {
-                "containers": [
-                  {
-                    "resources": {
-                      "limits": {
-                        "memory": "?*",
-                        "cpu": "?*"
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        }
-      ]
-    }
-  }'
-```
-
 ### Policy Validation
 
 All policies are validated before being saved:
