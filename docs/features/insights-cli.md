@@ -522,16 +522,6 @@ spec:
   # ... policy spec
 ```
 
-#### Policy Validation Details
-
-The CLI validates policies before pushing them to Insights:
-- **Security validation**: Prevents dangerous configurations
-- **Kyverno CLI validation**: Ensures policy syntax is correct
-- **Conflict detection**: Prevents conflicts with existing cluster policies
-- **Test case validation**: Validates policies against test resources with expected outcomes
-
-If validation fails, you'll see specific error messages to help fix the issue.
-
 ### Teams Management
 
 Teams in **Fairwinds Insights** can be managed in two ways:
