@@ -345,7 +345,7 @@ insights-cli list kyverno-policies --cluster production --format yaml
 
 #### Validating Kyverno Policies
 
-The CLI can validate Kyverno policies before pushing them. You can validate a single policy or a directory of policies with test cases to ensure they work as expected.
+The CLI can validate Kyverno policies before pushing them to Insights. This validation runs locally using the Kyverno CLI to test policies against sample resources, ensuring they work as expected before deployment.
 
 **Test Case File Structure:**
 

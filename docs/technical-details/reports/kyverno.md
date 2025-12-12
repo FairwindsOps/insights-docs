@@ -10,11 +10,24 @@ Refer to the [Kyverno documentation](https://kyverno.io/docs/) for using Kyverno
 Here is an example of installing Kyverno with the `test-org` organization and `prod` cluster:
 
 ### Install `insights-agent` with helm and enable Kyverno plugin
+
+**For Kyverno Policy Scanning (reports Action Items):**
 ```yaml
 insights:
   organization: "test-org"
   cluster: "prod"
 kyverno:
+  enabled: true
+```
+
+**For Kyverno Policy Sync (deploys policies from Insights):**
+```yaml
+insights:
+  organization: "test-org"
+  cluster: "prod"
+kyverno:
+  enabled: true
+kyverno-policy-sync:
   enabled: true
 ```
 
@@ -137,7 +150,13 @@ You should see `PolicyReport`s with each `Policy` name. Under the displayed colu
 
 ## Kyverno Policy Sync
 
-The `kyverno-policy-sync` is a standalone Kubernetes service that synchronizes Kyverno policies between Fairwinds Insights and Kubernetes clusters. It automatically keeps your cluster's Kyverno policies in sync with the policies defined in Fairwinds Insights.
+The `kyverno-policy-sync` is a **separate component** from the Kyverno report plugin. While the Kyverno plugin **scans existing policies** and reports violations as Action Items, the policy sync component **deploys and manages policies** from Insights to your clusters.
+
+### Key Distinction:
+- **Kyverno Plugin**: Scans → Reports violations as Action Items
+- **Policy Sync**: Fetches policies from Insights → Deploys to cluster
+
+The `kyverno-policy-sync` automatically keeps your cluster's Kyverno policies in sync with the policies defined in Fairwinds Insights.
 
 ### Key Features
 

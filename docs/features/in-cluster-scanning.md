@@ -190,7 +190,14 @@ to your `helm update --install` command.
 
 ## Event Watcher
 
-The `insights-event-watcher` is a Kubernetes plugin that monitors policy-related resources and events, with a special focus on **ValidatingAdmissionPolicy violations** that block resource installation. It supports both local audit logs and AWS CloudWatch integration for EKS clusters.
+The `insights-event-watcher` is a specialized Kubernetes component that captures **real-time policy violations** during resource admission. Unlike regular policy scans that find existing violations, the event watcher captures **blocked deployments** as they happen.
+
+### Purpose & Data Flow:
+- **Regular Kyverno Plugin**: Scans existing resources → Reports as Action Items
+- **Event Watcher**: Captures blocked admissions → Reports to Admission page
+- **Focus**: ValidatingAdmissionPolicy and Kyverno policy violations that **prevent** resource creation
+
+The component supports both local audit logs and AWS CloudWatch integration for EKS clusters.
 
 ### Key Features
 
