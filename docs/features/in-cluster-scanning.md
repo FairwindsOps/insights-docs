@@ -198,7 +198,7 @@ The `insights-event-watcher` is a Kubernetes plugin that monitors policy-related
 - **Dual Log Sources**: Supports both local audit logs (Kind/local clusters) and CloudWatch logs (EKS clusters)
 - **Policy Violation Detection**: Automatically detects and processes policy violations from Kubernetes events
 - **CloudWatch Integration**: Real-time processing of EKS audit logs from AWS CloudWatch
-- **Insights Integration**: Sends blocked policy violations directly to Fairwinds Insights API
+- **Insights Integration**: Sends blocked policy violations directly to Fairwinds Insights API for display on the Admission page
 
 ### Enabling Event Watcher
 
@@ -265,7 +265,7 @@ insights-event-watcher:
 1. **Log Source Selection**: Monitors either local audit logs or CloudWatch logs based on configuration
 2. **Policy Violation Detection**: Identifies ValidatingAdmissionPolicy and Kyverno policy violations
 3. **Event Processing**: Processes events that contain "(blocked)" indicators showing policy enforcement
-4. **Insights Transmission**: Sends policy violation events to Fairwinds Insights API
+4. **Insights Transmission**: Sends policy violation events to Fairwinds Insights API for display on the Admission page
 5. **Health Monitoring**: Provides health check endpoints for Kubernetes monitoring
 
 ### Monitored Policy Violations
