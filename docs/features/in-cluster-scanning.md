@@ -199,8 +199,6 @@ The `insights-event-watcher` is a Kubernetes plugin that monitors policy-related
 - **Policy Violation Detection**: Automatically detects and processes policy violations from Kubernetes events
 - **CloudWatch Integration**: Real-time processing of EKS audit logs from AWS CloudWatch
 - **Insights Integration**: Sends blocked policy violations directly to Fairwinds Insights API
-- **Performance Optimized**: Configurable batch sizes, memory limits, and CloudWatch filtering
-- **Health Check Endpoints**: HTTP endpoints for Kubernetes liveness and readiness probes
 
 ### Enabling Event Watcher
 
