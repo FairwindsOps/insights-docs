@@ -97,15 +97,6 @@ insights-cli push kyverno-policies -p policy1,policy2  # Push specific policies
 insights-cli push kyverno-policies --delete  # Delete policies not in local files
 ```
 
-### Policy Validation
-
-All policies are validated before being saved:
-- **Security validation**: Prevents potentially dangerous policy configurations
-- **Kyverno CLI validation**: Ensures the policy is valid according to Kyverno specifications
-- **Conflict detection**: Prevents creating policies that conflict with existing cluster policies
-
-If validation fails, you'll receive detailed error messages to help fix the issue.
-
 ## Mapping Policies to App Groups
 
 To deploy policies to specific clusters and resources, you need to create a Policy Mapping that connects your Kyverno policies to App Groups.
@@ -215,7 +206,7 @@ spec:
 
 ## Policy Transformation with App Groups
 
-When a Kyverno policy is deployed to a cluster, Insights automatically transforms it based on the App Groups in the Policy Mapping. This ensures policies only apply to the resources specified in your App Groups.
+When a Kyverno policy is added to Insights, Insights automatically transforms it based on the App Groups in the Policy Mapping. This ensures policies only apply to the resources specified in your App Groups.
 
 ### How Transformation Works
 
