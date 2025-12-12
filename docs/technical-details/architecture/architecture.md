@@ -29,6 +29,37 @@ open up access for any kind of network ingress.
 
 Any exceptions or additions to this flow are listed below.
 
+## Additional Components
+
+### Kyverno Policy Sync
+The `kyverno-policy-sync` component runs as a CronJob (default: every 5 minutes) to:
+* Fetch Kyverno policies from the Insights API based on App Group and Policy Mapping configurations
+* Use kubectl to apply, update, and delete policies
+* Only manage policies with `insights.fairwinds.com/owned-by: "Fairwinds Insights"` annotation
+* Use Kubernetes Lease-based leader election to prevent concurrent operations
+* Support all Kyverno policy types (ClusterPolicy, Policy, ValidatingAdmissionPolicy, etc.)
+* Provide comprehensive logging of all sync operations
+
+**Requirements:**
+* RBAC permissions to manage all Kyverno policy types and Leases for leader election
+* Network access to Insights API
+* kubectl installed in the container
+* Kyverno CRDs installed in the cluster
+
+### Event Watcher
+The `insights-event-watcher` runs as a Deployment to:
+* Monitor policy-related resources and events, focusing on ValidatingAdmissionPolicy violations
+* Support both local audit logs (Kind/local clusters) and AWS CloudWatch logs (EKS clusters)
+* Detect policy violations that block resource installation (events containing "(blocked)")
+* Send policy violation events to Insights API for correlation with Action Items
+* Provide health check endpoints for Kubernetes monitoring
+
+**Requirements:**
+* RBAC permissions to watch events, ValidatingAdmissionPolicies, and Kyverno resources
+* Network access to Insights API
+* For CloudWatch mode: IAM permissions to access CloudWatch logs (IRSA recommended)
+* Access to audit logs (local mode) or CloudWatch log groups (EKS mode)
+
 ### Goldilocks
 In addition to the typical cronjob, Goldilocks will run a long lived Deployment for controlling
 VPA objects. Goldilocks will add a VPA (in `recommend` mode) to any incoming Deployment in order to

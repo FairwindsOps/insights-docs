@@ -24,7 +24,7 @@ Before managing Kyverno policies in Insights, ensure:
 
 1. **Kyverno is installed** in your clusters (see [Kyverno installation guide](https://kyverno.io/docs/installation/))
 2. **Kyverno plugin is enabled** in your Insights Agent (see [technical documentation](/technical-details/reports/kyverno))
-3. **Kyverno Policy Sync is enabled** for clusters where you want to deploy policies
+3. **Kyverno Policy Sync is enabled** for clusters where you want to deploy policies (see [Policy Sync configuration](/technical-details/reports/kyverno#kyverno-policy-sync))
 
 ## Creating Kyverno Policies
 
@@ -418,6 +418,7 @@ Always validate policies before deploying:
 - [App Groups](/features/app-groups) - Learn how to define resource groups
 - [Policy Mappings](/features/policy-mappings) - Learn how to map policies to App Groups
 - [Insights CLI - Kyverno Policies](/features/insights-cli#kyverno-policies) - Manage policies as code
-- [Kyverno Technical Details](/technical-details/reports/kyverno) - Setup and installation guide
+- [Kyverno Technical Details](/technical-details/reports/kyverno) - Setup, installation, and Policy Sync configuration
+- [Event Watcher](/features/in-cluster-scanning#event-watcher) - Monitor cluster events for policy violations
 - [Admission Controller](/features/admission-controller) - Enforce policies at deployment time
 
