@@ -36,9 +36,7 @@ The `kyverno-policy-sync` component runs as a CronJob (default: every 5 minutes)
 * Fetch Kyverno policies from the Insights API based on App Group and Policy Mapping configurations
 * Use kubectl to apply, update, and delete policies
 * Only manage policies with `insights.fairwinds.com/owned-by: "Fairwinds Insights"` annotation
-* Use Kubernetes Lease-based leader election to prevent concurrent operations
 * Support all Kyverno policy types (ClusterPolicy, Policy, ValidatingAdmissionPolicy, etc.)
-* Provide comprehensive logging of all sync operations
 
 **Requirements:**
 * RBAC permissions to manage all Kyverno policy types and Leases for leader election

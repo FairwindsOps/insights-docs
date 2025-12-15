@@ -268,30 +268,6 @@ The sync supports all Kyverno policy resource types:
 - `namespacedvalidatingpolicies` (NamespacedValidatingPolicy)
 - `policyexceptions` (PolicyException)
 
-### Distributed Locking
-
-The sync uses Kubernetes Lease-based leader election for distributed locking:
-
-#### Lock Mechanism
-- **Lease Name**: `kyverno-policy-sync-lock`
-- **Namespace**: Current pod namespace (or `default`)
-- **Lock Duration**: 15 seconds
-- **Renew Deadline**: 10 seconds
-- **Retry Period**: 2 seconds
-- **Identity**: Pod name or job name
-
-#### Lock Operations
-```bash
-# Check lease status
-kubectl get lease kyverno-policy-sync-lock -n <namespace>
-
-# View lease details
-kubectl describe lease kyverno-policy-sync-lock -n <namespace>
-
-# Manual lease release (if needed - lease will expire automatically)
-kubectl delete lease kyverno-policy-sync-lock -n <namespace>
-```
-
 ### Monitoring Policy Sync
 
 #### Check Sync Job Status
@@ -326,6 +302,18 @@ kubectl get clusterpolicy -l insights.fairwinds.com/owned-by="Fairwinds Insights
 kubectl describe clusterpolicy <policy-name>
 ```
 
+#### Lock Operations for debug
+```bash
+# Check lease status
+kubectl get lease kyverno-policy-sync-lock -n <namespace>
+
+# View lease details
+kubectl describe lease kyverno-policy-sync-lock -n <namespace>
+
+# Manual lease release (if needed - lease will expire automatically)
+kubectl delete lease kyverno-policy-sync-lock -n <namespace>
+```
+
 ### Sync Results Logging
 
 The sync provides detailed logging for monitoring:
@@ -347,19 +335,6 @@ The sync provides detailed logging for monitoring:
 ### Troubleshooting Policy Sync
 
 #### Common Issues
-
-**Leader Election Lock Exists**
-Another sync operation is running or waiting for leadership:
-```bash
-# Check lease details
-kubectl get lease kyverno-policy-sync-lock -n insights-agent -o yaml
-
-# View current leader
-kubectl describe lease kyverno-policy-sync-lock -n insights-agent
-
-# Manual lease release (if confirmed safe - lease expires automatically)
-kubectl delete lease kyverno-policy-sync-lock -n insights-agent
-```
 
 **Policy Application Failed**
 Policy has syntax errors or kubectl apply fails:
