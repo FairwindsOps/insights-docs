@@ -51,6 +51,7 @@ module.exports = {
             children: [
               'technical-details/agent/agent-installation-rbac',
               'technical-details/agent/collecting-diagnostics',
+              'technical-details/agent/insights-event-watcher',
             ],
           },
           {
