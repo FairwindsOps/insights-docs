@@ -167,7 +167,7 @@ The `kyverno-policy-sync` automatically keeps your cluster's Kyverno policies in
 - **Multi-Resource Support**: Supports all Kyverno policy types (ClusterPolicy, Policy, ValidatingAdmissionPolicy, etc.)
 - **Dry-Run Mode**: Preview changes before applying them
 - **Comprehensive Logging**: Detailed audit trail of all operations
-- **Admission Requests Visualization**: By installing Kyverno in your cluster, admission requests evaluated by Kyverno can be surfaced as Action Items within Insights, providing visibility into policy enforcement activity. For even greater visibility, including seeing specifically which requests were blocked by Kyverno policies, you can also install the [insights-event-watcher](technical-details/agent/insights-event-watcher). This enables detailed visualization of denied admission requests directly in the Insights UI.
+- **Admission Requests Visualization**: By installing Kyverno in your cluster, admission requests evaluated by Kyverno can be surfaced as Action Items within Insights, providing visibility into policy enforcement activity. For even greater visibility, including seeing specifically which requests were blocked by Kyverno policies, you can also install the [insights-event-watcher](/technical-details/agent/insights-event-watcher). This enables detailed visualization of denied admission requests directly in the Insights UI.
 
 ### Enabling Policy Sync
 

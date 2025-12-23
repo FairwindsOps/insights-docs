@@ -410,6 +410,6 @@ Always validate policies before deploying:
 - [Policy Mappings](/features/policy-mappings) - Learn how to map policies to App Groups
 - [Insights CLI - Kyverno Policies](/features/insights-cli#kyverno-policies) - Manage policies as code
 - [Kyverno Technical Details](/technical-details/reports/kyverno) - Setup, installation, and Policy Sync configuration
-- [Event Watcher](/features/in-cluster-scanning#event-watcher) - Monitor cluster events for policy violations
+- [Event Watcher](/technical-details/agent/insights-event-watcher) - Monitor cluster events for policy violations
 - [Admission Controller](/features/admission-controller) - Enforce policies at deployment time
 
