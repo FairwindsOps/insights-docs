@@ -7,8 +7,8 @@ meta:
 Fairwinds Insights requires a Postgres database to store backend data, as well as a Timescale database for time-series data.
 
 ## Ephemeral Databases
-By default, Insights will install Postgres via
-[its Helm chart](https://github.com/helm/charts/tree/master/stable/postgresql).
+By default, Insights will install Postgres via [CloudNativePG - PostgreSQL Operator for Kubernetes](https://cloudnative-pg.io/) (CNPG).
+
 We don't recommend running databases in Kubernetes due to the possibility of lost data.
 If you use this option, keep in mind you'll be responsible for maintaining
 and backing up that database.
@@ -26,6 +26,26 @@ postgresql:
   replication:
     enabled: false
 ```
+
+By default, the Fairwinds Insights Helm chart will install and configure the CloudNativePG (CNPG) operator for you. This is controlled by the following configuration in `values.yaml`:
+
+```yaml
+postgresql:
+  operator:
+    install: true # Set to true to install the CNPG operator
+    webhook:
+      mutating:
+        create: true
+      validating:
+        create: true
+    crds:
+      create: true # Manages CRDs for CNPG
+```
+
+**Note:**  
+If you already have the CNPG operator installed and configured in your cluster, you should set these options to `false` to prevent the chart from managing the operator or its webhooks/CRDs.
+
+Make sure only one CNPG operator instance manages your database resources to avoid conflicts.
 
 Similarly, we will install an ephemeral Timescale using a subchart. Again, this is
 not recommended for a production installation due to the possibility of data loss.
