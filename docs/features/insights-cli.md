@@ -225,6 +225,303 @@ tracked in your Infrastructure-as-Code (IaC) repository.
 You can add the `--delete` flag to the `push policy-mappings` command, which
 will delete any Policy Mappings from Insights that **do not exist** in your IaC repository. Adding the `--dry-run` flag will explain which Policy Mappings would be deleted without making changes to Insights.
 
+### Kyverno Policies
+
+You can use the Insights CLI to manage Kyverno policies as code.
+
+Check out the [Kyverno Policies](/features/kyverno-policies) documentation for more information about managing Kyverno policies in Insights.
+
+#### Pushing Kyverno Policies
+
+When pushing Kyverno policies to Insights, the CLI expects a directory structure like the following:
+
+```
+.
++-- kyverno-policies
+||   +-- require-resource-limits.yaml
+||   +-- require-resource-limits.success.yaml
+||   +-- require-resource-limits.failure.yaml
+||   +-- disallow-privileged.yaml
+```
+
+Each file should contain a complete Kyverno policy. The policy name in the file's `metadata.name` will be used as the policy name in Insights.
+
+**Example policy file** (`kyverno-policies/require-resource-limits.yaml`):
+
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: require-resource-limits
+  annotations:
+    policies.kyverno.io/title: Require Resource Limits
+    policies.kyverno.io/category: Efficiency
+    policies.kyverno.io/severity: medium
+    policies.kyverno.io/description: All Pods must have resource limits set
+spec:
+  validationFailureAction: Enforce
+  rules:
+    - name: check-resource-limits
+      match:
+        any:
+          - resources:
+              kinds: [Pod]
+      validate:
+        message: "Resource limits are required"
+        pattern:
+          spec:
+            containers:
+              - resources:
+                  limits:
+                    memory: "?*"
+                    cpu: "?*"
+```
+
+**Basic push command:**
+
+```bash
+insights-cli push kyverno-policies
+```
+
+**Push options:**
+
+```bash
+# Push from a custom subdirectory
+insights-cli push kyverno-policies -s custom-policies
+
+# Push specific policies only
+insights-cli push kyverno-policies -p require-labels,disallow-privileged
+
+# Dry run to see what would be changed
+insights-cli push kyverno-policies --dry-run
+
+# Skip validation (not recommended)
+insights-cli push kyverno-policies --skip-validation
+
+# Force push even if validation fails (use with extreme caution)
+insights-cli push kyverno-policies --force
+
+# Delete policies that don't exist locally
+insights-cli push kyverno-policies --delete
+```
+
+#### Downloading Kyverno Policies
+
+If you were managing Kyverno policies via the Fairwinds Insights UI, you can download and sync those definitions using:
+
+```bash
+# Download all policies from Insights
+insights-cli download kyverno-policies -d .
+
+# Download to custom subdirectory
+insights-cli download kyverno-policies -d . --download-subdirectory my-policies
+
+# Download to specific directory
+insights-cli download kyverno-policies -d /path/to/my/project
+
+# Download with override (overwrite existing local files)
+insights-cli download kyverno-policies -d . --override
+```
+
+Note that the folder `kyverno-policies` (or your custom subdirectory) will be created automatically if it doesn't exist.
+
+#### Listing Kyverno Policies
+
+You can list Kyverno policies from local files or Insights:
+
+```bash
+# List all policies from Insights
+insights-cli list kyverno-policies
+
+# List local policy files
+insights-cli list kyverno-policies --local
+
+# List policies for specific cluster (with app groups applied)
+insights-cli list kyverno-policies --cluster production
+
+# Export cluster policies as YAML
+insights-cli list kyverno-policies --cluster production --format yaml
+```
+
+#### Validating Kyverno Policies
+
+The CLI can validate Kyverno policies before pushing them to Insights. This validation runs locally using the Kyverno CLI to test policies against sample resources, ensuring they work as expected before deployment.
+
+**Test Case File Structure:**
+
+When validating policies, the CLI looks for test case files alongside your policy files. These test files contain Kubernetes resources that should either pass or fail validation according to your policy rules.
+
+**Test case file naming conventions:**
+- `<policy-name>.success.yaml` - Resources that should **pass** validation (policy allows them)
+- `<policy-name>.failure.yaml` - Resources that should **fail** validation (policy blocks them)
+- `<policy-name>.testcase<name>.yaml` - Named test cases with specific expected outcomes
+
+**Example Directory Structure:**
+```
+kyverno-policies/
+├── require-labels.yaml              # The policy file
+├── require-labels.success.yaml      # Resources that should pass
+├── require-labels.failure.yaml      # Resources that should fail
+└── require-labels.testcase-edge.yaml # Additional test case
+```
+
+**Example Policy (`require-labels.yaml`):**
+```yaml
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: require-labels
+spec:
+  validationFailureAction: Enforce
+  rules:
+  - name: check-labels
+    match:
+      any:
+      - resources:
+          kinds:
+          - Pod
+    validate:
+      message: "Required labels missing"
+      pattern:
+        metadata:
+          labels:
+            app: "?*"
+            version: "?*"
+```
+
+**Success Test Case (`require-labels.success.yaml`):**
+```yaml
+# This pod should PASS validation (has required labels)
+apiVersion: v1
+kind: Pod
+metadata:
+  name: good-pod
+  labels:
+    app: my-app
+    version: v1.0.0
+spec:
+  containers:
+  - name: app
+    image: nginx
+---
+# Another pod that should PASS
+apiVersion: v1
+kind: Pod
+metadata:
+  name: another-good-pod
+  labels:
+    app: web-server
+    version: v2.1.0
+spec:
+  containers:
+  - name: web
+    image: httpd
+```
+
+**Failure Test Case (`require-labels.failure.yaml`):**
+```yaml
+# This pod should FAIL validation (missing required labels)
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bad-pod
+  labels:
+    environment: production  # Missing 'app' and 'version' labels
+spec:
+  containers:
+  - name: app
+    image: nginx
+---
+# Another pod that should FAIL
+apiVersion: v1
+kind: Pod
+metadata:
+  name: incomplete-pod
+  labels:
+    app: my-app  # Missing 'version' label
+spec:
+  containers:
+  - name: app
+    image: nginx
+```
+
+**Named Test Case (`require-labels.testcase-edge.yaml`):**
+```yaml
+# Test edge case: pod with empty label values (should fail)
+apiVersion: v1
+kind: Pod
+metadata:
+  name: empty-labels-pod
+  labels:
+    app: ""        # Empty value should fail
+    version: v1.0.0
+spec:
+  containers:
+  - name: app
+    image: nginx
+```
+
+**Validate a single policy with test resources:**
+
+```bash
+# Validate policy against a specific test resource
+insights-cli validate kyverno-policies -r require-labels.yaml -k test-pod.yaml
+
+# Validate policy against multiple test files
+insights-cli validate kyverno-policies -r require-labels.yaml -k good-pod.yaml,bad-pod.yaml
+```
+
+**Validate a directory of policies (recommended):**
+
+```bash
+# Validate all policies in directory with their test cases
+insights-cli validate kyverno-policies -b ./kyverno-policies
+
+# This will automatically:
+# 1. Find all .yaml policy files
+# 2. Look for corresponding .success.yaml and .failure.yaml test files
+# 3. Run validation tests and report results
+
+# Validate only specific policies and their test cases
+insights-cli validate kyverno-policies -b ./kyverno-policies -p require-labels,disallow-privileged
+```
+
+**Understanding Validation Output:**
+
+When validation runs, you'll see output like:
+```
+✓ require-labels.yaml
+  ✓ require-labels.success.yaml (2 resources passed as expected)
+  ✓ require-labels.failure.yaml (2 resources failed as expected)
+  ✓ require-labels.testcase-edge.yaml (1 resource failed as expected)
+
+✗ disallow-privileged.yaml
+  ✗ disallow-privileged.success.yaml (1 resource failed unexpectedly)
+  ✓ disallow-privileged.failure.yaml (1 resource failed as expected)
+```
+
+**Validate policies for a specific cluster:**
+
+```bash
+insights-cli validate kyverno-policies --cluster production
+```
+
+This validates all policies that would be deployed to the cluster (with app groups applied).
+
+#### Namespaced Policies
+
+For namespaced policy kinds (`Policy`, `NamespacedValidatingPolicy`), ensure the `metadata.namespace` field is set in your policy file:
+
+```yaml
+apiVersion: kyverno.io/v1
+kind: Policy
+metadata:
+  name: namespace-specific-policy
+  namespace: production  # Required for namespaced policies
+spec:
+  # ... policy spec
+```
+
 ### Teams Management
 
 Teams in **Fairwinds Insights** can be managed in two ways:

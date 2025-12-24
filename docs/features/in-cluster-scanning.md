@@ -14,6 +14,7 @@ The Insights Agent runs inside your cluster and sends back data to Fairwinds Ins
 The Insights Agent comes with several different open source reporting tools, each of which can be
 configured independently using the [Install Hub.](/features/in-cluster-scanning#install-hub)
 To read more about the different report types, see the [Reports Section](/technical-details/reports/polaris).
+
 ## Installation
 ### Install Hub
 When you create a cluster, you'll be taken to the `Install Hub` page for the cluster. To install the Insights Agent:

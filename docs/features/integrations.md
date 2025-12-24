@@ -60,10 +60,10 @@ The linked account will show as the creator of any tickets created via Insights
 
 ### Jira Custom Fields
 Fairwinds Insights supports advanced Jira custom field mapping, allowing you to:
-* Map Jira fields to custom Insights fields
-* Configure default values and validation rules
-* Create context-aware field configurations
-* Support 30+ Jira field types including text, select, user pickers, and more
+* Map existing Jira fields to Insights custom fields for enhanced ticket creation
+* Configure default values and display preferences
+* Support all standard Jira field types discovered through the API
+* Create sophisticated field mappings with validation and constraints
 
 See [Jira Custom Fields](/features/jira-custom-fields) for detailed configuration instructions.
 
