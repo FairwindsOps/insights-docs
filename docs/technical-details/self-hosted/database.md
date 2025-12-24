@@ -43,7 +43,7 @@ postgresql:
 ```
 
 **Note:**  
-If you already have the CNPG operator installed and configured in your cluster, you should set these options to `false` to prevent the chart from attempting to install the operator or its webhooks/CRDs.
+If you already have the CNPG operator installed and configured in your cluster, you should set the `postgresql.operator.install` option to `false` to prevent the chart from attempting to install the operator or its webhooks/CRDs.
 
 
 Similarly, we will install an ephemeral Timescale using a subchart. Again, this is
