@@ -142,11 +142,20 @@ gcloud iam service-accounts add-iam-policy-binding <my-service-account>@<project
 ```
 
 ### 3.b Use Workload Identity Federation to give permissions to Kubernetes service account
-Run:
+First, get your project number:
 ```bash
-gcloud projects add-iam-policy-binding projects/<project-name> --role=roles/monitoring.Viewer --member=principal://iam.googleapis.com/projects/<project-id-number>/locations/global/workloadIdentityPools/<project-name>.svc.id.goog/subject/ns/insights-agent/sa/insights-agent-prometheus-metrics --condition=None
+PROJECT_NUMBER=$(gcloud projects describe <project-name> --format="value(projectNumber)")
+```
 
-gcloud projects add-iam-policy-binding projects/<project-name> --role=roles/iam.serviceAccountTokenCreator --member=principal://iam.googleapis.com/projects/<project-id-number>/locations/global/workloadIdentityPools/<project-name>.svc.id.goog/subject/ns/insights-agent/sa/insights-agent-prometheus-metrics --condition=None
+Then run:
+```bash
+gcloud projects add-iam-policy-binding projects/<project-name> \
+  --role=roles/monitoring.viewer \
+  --member="principal://iam.googleapis.com/projects/$PROJECT_NUMBER/locations/global/workloadIdentityPools/<project-name>.svc.id.goog/subject/ns/insights-agent/sa/insights-agent-prometheus-metrics"
+
+gcloud projects add-iam-policy-binding projects/<project-name> \
+  --role=roles/iam.serviceAccountTokenCreator \
+  --member="principal://iam.googleapis.com/projects/$PROJECT_NUMBER/locations/global/workloadIdentityPools/<project-name>.svc.id.goog/subject/ns/insights-agent/sa/insights-agent-prometheus-metrics"
 ```
 
 Example of snipet configuration for prometheus-metrics that needs to be provided in file values.yaml in step 5 (Install insights-agent):
