@@ -10,6 +10,144 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.2.13 (2026-01-26)
+### Bug Fixes and Enhancements
+* Add a graph showing pod count and memory/cpu history for Costs (UI)
+* Bump insights-ui libs (UI)
+
+## 18.2.12 (2026-01-23)
+### Bug Fixes and Enhancements
+* Save and display columns from Costs saved views (UI)
+
+## 18.2.11 (2026-01-23)
+### Bug Fixes and Enhancements
+* Add support for columns in Costs saved views API
+
+## 18.2.10 (2026-01-21)
+### Bug Fixes and Enhancements
+* Add CPU request/memory request/memory limit/cpu limit differences (UI)
+* Add support for CPU request/memory request/memory limit/cpu limit differences in the API
+
+## 18.2.9 (2026-01-20)
+### Bug Fixes and Enhancements
+* Bump insights-ui libs (UI)
+* Fix delayed metrics/costs aggregators
+* Bump Insights libs
+
+## 18.2.8 (2026-01-16)
+### Bug Fixes and Enhancements
+* Fix downsampling lag
+
+## 18.2.7 (2026-01-16)
+### Bug Fixes and Enhancements
+* Delete old aggregates
+* Increase number precision on costs query
+
+## 18.2.6 (2026-01-16)
+### Bug Fixes and Enhancements
+* Insert GPU metrics into Insights
+
+## 18.2.5 (2026-01-14)
+### Bug Fixes and Enhancements
+* Use new aggregators with GPU data
+
+## 18.2.4 (2026-01-13)
+### Bug Fixes and Enhancements
+* Fix GPU migrations related to networking data updates
+
+## 18.2.2 (2026-01-12)
+### Bug Fixes and Enhancements
+* Fix GPU migrations with duplicate data
+* Implement request tracker in HubSpot integration
+* [self-hosted] Bump agent version to 5.3.0
+
+## 18.2.1 (2026-01-12)
+### Bug Fixes and Enhancements
+* Support mixed kyverno policies (UI)
+* Add support for unmanaged kyverno details (UI)
+* Return both managed and unmanaged kyverno policies
+* Improve average nodes count query
+
+## 18.2.0 (2026-01-08)
+### Bug Fixes and Enhancements
+* Add support to GPU columns in metrics tables
+
+## 18.1.52 (2026-01-06)
+### Bug Fixes and Enhancements
+* Policy mappings improvements (UI)
+* Add support for action column (UI)
+* Fix user groups list (UI)
+* Bump insights-ui libs (UI)
+* Fix node capacity and node CPU graphs for some orgs
+* Add Jira user groups to API
+* Add unmanaged kyverno API
+* Bump Insights libs
+
+## 18.1.51 (TBD)
+### Bug Fixes and Enhancements
+* Add support for customer-agreement route (UI)
+* Remove PATCH as a valid operation (UI)
+* Add kyverno policy apply action field
+* Change organizations default to focused mode and refactor query params
+
+## 18.1.50 (2025-12-16)
+### Bug Fixes and Enhancements
+* Improve policy body visualizer (UI)
+* Hide Operations for non-kyverno policies (UI)
+* Increase default pagination for kyverno policies
+* Fix operations injection for Policy and ClusterPolicy
+
+## 18.1.49 (2025-12-11)
+### Bug Fixes and Enhancements
+* Fix kyverno transformation matching logic
+* Fix app groups field mapping and match-all behavior
+* Fix kyverno policy application when using policy mappings
+
+## 18.1.48 (2025-12-10)
+### Bug Fixes and Enhancements
+* Disallow mixing kyverno policy types in a single policy mapping (UI)
+* Disable/ignore context when selecting kyverno validating policies (UI)
+* Replace kyverno rule name with app group ID to avoid random suffixes
+* Ensure kyverno rule names do not exceed the max allowed length
+* Allow mapping kyverno policies not managed by Insights
+* [self-hosted] Bump Insights Agent chart target version to 5.2.0
+
+## 18.1.47 (2025-12-09)
+### Bug Fixes and Enhancements
+* Select dates at Costs page is broken (UI)
+* Improve toaster handling (UI)
+* Add `date-fns-tz` dependency (UI)
+* Add TruncatePartitionedOrganizationTables activity to organization deletion workflow
+
+## 18.1.46 (2025-12-08)
+### Bug Fixes and Enhancements
+* Bump libs (UI)
+* Bump alpine and libs
+* Add more tests and fix transformation issues
+* Fix error syncing kyverno policy ClusterPolicy
+
+## 18.1.45 (2025-12-05)
+### Bug Fixes and Enhancements
+* Add "Managed By Fairwinds" label at Policies UI (UI)
+* Bump insights-ui libs (UI)
+* Bump Insights libs
+* Fix error inserting ClusterCleanupPolicy kyverno policies
+
+## 18.1.44 (2025-12-03)
+### Bug Fixes and Enhancements
+* Handle new kyverno policy types in Insights
+
+## 18.1.43 (2025-12-01)
+### Bug Fixes and Enhancements
+* Implement logs integration for UTM Stack (UI)
+* Add operations field to policy mappings
+* Improve memory usage report job
+
+## 18.1.42 (2025-11-24)
+### Bug Fixes and Enhancements
+* Fix admission search for kyverno policies
+* Set default category for kyverno policies
+
 ## 18.1.41 (2025-11-21)
 ### Bug Fixes and Enhancements
 * Update policy UI to reflect Kyverno policy application status (UI)
