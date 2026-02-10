@@ -19,8 +19,8 @@ Then you'll need to specify your base64-encoded AWS credentials and add them to 
 ```yaml
 apiVersion: v1
 data:
-    aws_access_key_id: aGVsbG93b3JsZA==
-    aws_secret_access_key: aGVsbG93b3JsZA==
+    AWS_ACCESS_KEY_ID: aGVsbG93b3JsZA==
+    AWS_SECRET_ACCESS_KEY: aGVsbG93b3JsZA==
 kind: Secret
 metadata:
     name: fwinsights-secrets
@@ -47,7 +47,7 @@ You'll need to put the password in your `secrets.yaml`:
 ```yaml
 apiVersion: v1
 data:
-    smtp_password: aGVsbG93b3JsZA==
+    SMTP_PASSWORD: aGVsbG93b3JsZA==
 kind: Secret
 metadata:
     name: fwinsights-secrets
