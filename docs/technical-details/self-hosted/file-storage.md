@@ -29,8 +29,8 @@ You'll also need to specify your AWS access key and secret in `secrets.yaml`:
 ```yaml
 apiVersion: v1
 data:
-    aws_access_key_id: aGVsbG93b3JsZA==
-    aws_secret_access_key: aGVsbG93b3JsZA==
+    AWS_ACCESS_KEY_ID: aGVsbG93b3JsZA==
+    AWS_SECRET_ACCESS_KEY: aGVsbG93b3JsZA==
 kind: Secret
 metadata:
     name: fwinsights-secrets
