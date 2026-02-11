@@ -22,7 +22,7 @@ To use Amazon S3, set your bucket name and region in `values.yaml`:
 reportStorage:
   strategy: s3
   bucket: your-bucket-name
-  awsRegion: us-east-1
+  region: us-east-1
 ```
 
 You'll also need to specify your AWS access key and secret in `secrets.yaml`:
