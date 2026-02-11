@@ -14,6 +14,25 @@ email:
   strategy: ses
 ```
 
+### IAM Policy
+
+The IAM user or role used for SES must have the following permissions:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["ses:SendEmail", "ses:SendRawEmail"],
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+### Credentials
+
 Then you'll need to specify your base64-encoded AWS credentials and add them to your
 `secrets.yaml`:
 ```yaml
