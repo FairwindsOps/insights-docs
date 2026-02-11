@@ -6,10 +6,11 @@ meta:
 # Session keys
 In the default install we autogenerate session and cookie keys each time the application is
 installed or upgraded, which could cause disruption for users. Instead you should generate
-these tokens once and save them in a Kubernetes secret.
+these tokens once and save them in a Kubernetes secret. In that case, set `options.autogenerateKeys` to `false`.
 
 > Most secrets (with the exception of your PostgreSQL password) must be stored in a secret
-> named `fwinsights-secrets`
+> named `fwinsights-secrets`. This is the default value for `options.secretName`; override it
+> if you want to use a different secret name.
 
 We'll need the following keys:
 * cookie_hash_key (64 chars)
@@ -45,6 +46,15 @@ type: Opaque
 ```bash
 kubectl apply -f secrets.yaml -n fairwinds-insights
 ```
+
+For the example above, your `values.yaml` would look like:
+
+```yaml
+options:
+  autogenerateKeys: false
+  secretName: fwinsights-secrets
+```
+
 Consider using
 [SOPS](https://github.com/mozilla/sops)
 to encrypt your secrets file and store it in your git repository.
