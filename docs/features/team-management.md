@@ -16,6 +16,8 @@ Roles within a team are defined as:
 ## Single Sign-on
 Fairwinds Insights supports Single Sign-On (SSO) via a SAML identity provider.
 
+> **Self-hosted deployments:** Replace `https://insights.fairwinds.com` with your Insights instance URL in the endpoints below.
+
 ### Identity Provider
 * ACS URL: `https://insights.fairwinds.com/v0/organizations/$ORG_NAME/auth/saml`
 * Entity ID: `fairwinds-insights`
