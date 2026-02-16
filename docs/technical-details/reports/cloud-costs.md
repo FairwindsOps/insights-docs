@@ -3,7 +3,7 @@ The Fairwinds Cloud Costs report syncs your Cloud billing data with Insights so
 it can know precisely what you're spending on nodes and use that
 information to infer accurate workload costs.
 
-We currently support AWS and GCP (including GKE Standard and GKE Autopilot).
+We currently support AWS, GCP (including GKE Standard and GKE Autopilot), and Azure (Alpha).
 
 ## AWS Billing Integration
 
@@ -396,6 +396,84 @@ cloudcosts:
 * **dataset**: dataset name you provided when you setup your BigQuery for Billing, required if table is not provided
 * **billingaccount**: your Google Billing Account ID that you can get from Billing console, which is used to get the table name for BigQuery. Example: "1A2B3C-4D5E6F-7G8H9I", required if table is not provided
 * **table**: you can provide the GCP BigQuery table instead of providing projectname/dataset/billingaccount
+
+## Azure Billing Integration (Alpha)
+
+The Azure Cloud Costs report uses [Azure Cost Management](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/) and [Azure AD Workload Identity](https://learn.microsoft.com/en-us/azure/aks/workload-identity-overview) so the Insights Agent can read cost data without storing credentials. Your AKS cluster must have workload identity (OIDC) enabled.
+
+Azure cost data is always sent in FOCUS format.
+
+### Create Azure AD Workload Identity for cloud-costs
+
+When using `cloudcosts` with `provider: azure`, the Insights Agent uses a federated credential. Create an **App registration** (or user-assigned managed identity) in Microsoft Entra ID and add a **federated identity credential** that matches your AKS cluster and the cloud-costs service account.
+
+1. **Create an App registration** (or use an existing one) in [Microsoft Entra ID](https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade). Note the **Application (client) ID** and **Directory (tenant) ID**; you will set these as `cloudcosts.azure.workloadIdentity.clientId` and `cloudcosts.azure.workloadIdentity.tenantId`.
+
+2. **Get your AKS cluster OIDC issuer URL** (use the exact value, including a trailing slash if present):
+
+   ```bash
+   az aks show --name <cluster-name> --resource-group <resource-group> \
+     --query "oidcIssuerProfile.issuerUrl" -o tsv
+   ```
+
+3. **Create a federated identity credential** on the App registration. In Azure Portal: **App registrations** → your app → **Certificates & secrets** → **Federated credentials** → **Add credential**. Or with Azure CLI (replace `<app-object-id>`, `<issuer-url>`, and `<credential-name>`):
+
+   ```bash
+   az ad app federated-credential create \
+     --id <app-object-id> \
+     --parameters '{
+       "name": "<credential-name>",
+       "issuer": "<issuer-url>",
+       "subject": "system:serviceaccount:insights-agent:insights-agent-cloudcosts",
+       "description": "AKS workload identity for insights-agent cloud-costs",
+       "audiences": ["api://AzureADTokenExchange"]
+     }'
+   ```
+
+   - **Subject** must be exactly: `system:serviceaccount:insights-agent:insights-agent-cloudcosts` (namespace `insights-agent`, service account `insights-agent-cloudcosts`). If you install the Insights Agent in a different namespace, use `system:serviceaccount:<namespace>:insights-agent-cloudcosts`.
+   - **Issuer** must match the URL from step 2 exactly (including or excluding a trailing slash as returned).
+   - **Audiences**: `api://AzureADTokenExchange`.
+
+   To get the app object ID for `--id`: `az ad app show --id <client-id> --query id -o tsv`.
+
+4. **Assign RBAC** so the identity can read cost data. Grant the app's service principal **Reader** and **Cost Management Reader** on the subscription:
+
+   ```bash
+   az role assignment create --role "Reader" \
+     --assignee <client-id> --scope /subscriptions/<subscription-id>
+   az role assignment create --role "Cost Management Reader" \
+     --assignee <client-id> --scope /subscriptions/<subscription-id>
+   ```
+
+   Use the same **client ID** as `cloudcosts.azure.workloadIdentity.clientId` and your subscription ID as `cloudcosts.azure.subscription`.
+
+### Configuring the Insights `cloudcosts` report for Azure
+
+After the App registration and federated credential are in place, configure the Insights Agent. Your `values.yaml` should include:
+
+```yaml
+cloudcosts:
+  enabled: true
+  provider: azure
+  azure:
+    subscription: "<your-subscription-id>"
+    workloadIdentity:
+      clientId: "<application-client-id>"
+      tenantId: "<directory-tenant-id>"
+  # optional: tagkey/tagvalue for filtering
+  # tagkey: ""
+  # tagvalue: ""
+  # days: 5
+```
+
+* **provider**: must be `azure`
+* **subscription**: Azure subscription ID (required)
+* **workloadIdentity.clientId**: Application (client) ID of the App registration (required)
+* **workloadIdentity.tenantId**: Directory (tenant) ID (required)
+* **tagkey** / **tagvalue**: optional; use to filter resources by tags
+* **days**: number of days of cost data to query (default: 5)
+
+No Kubernetes Secret is needed for Azure; authentication uses workload identity only.
 
 ## Terraform
 Terraform for Google Cloud Provider (GCP) Billing Integration
