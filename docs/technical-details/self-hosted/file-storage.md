@@ -25,6 +25,36 @@ reportStorage:
   region: us-east-1
 ```
 
+### IAM Policy
+
+The IAM user or role used for S3 must have the following permissions (replace `your-bucket-name` with your bucket):
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["s3:ListBucket"],
+      "Resource": ["arn:aws:s3:::your-bucket-name"]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObjectAcl",
+        "s3:GetObject",
+        "s3:DeleteObject",
+        "s3:PutObjectAcl"
+      ],
+      "Resource": ["arn:aws:s3:::your-bucket-name/*"]
+    }
+  ]
+}
+```
+
+### Credentials
+
 You'll also need to specify your AWS access key and secret in `secrets.yaml`:
 ```yaml
 apiVersion: v1
