@@ -5,6 +5,8 @@ information to infer accurate workload costs.
 
 We currently support AWS, GCP (including GKE Standard and GKE Autopilot), and Azure (Alpha).
 
+Cost data can be sent in **standard** (provider-native) or **FOCUS** (FinOps Open Cost and Usage Specification) format. Azure always uses FOCUS. The Insights Agent Helm chart (`insights-agent`) exposes these options; see the [chart README](https://github.com/FairwindsOps/charts/blob/master/stable/insights-agent/README.md) for the full configuration reference.
+
 ## AWS Billing Integration
 
 The AWS Costs Report is built on [AWS Costs and Usage Report](https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html).
@@ -46,21 +48,22 @@ cloudcosts:
   # Credentials with AWS Access Keys:
   # The AWS credentials should come from the aws-costs-service-account created below.
   # We recommend creating the awscostssecret yourself and specify secretName, but you can
-  # also pass awsAccessKeyId and awsSecretAccessKey directly to the helm chart.
+  # also pass aws.accessKeyId and aws.secretAccessKey directly to the Helm chart (it will create the secret).
   secretName: awscostssecret
 
-# Credentials with IRSA:
+  # Credentials with IRSA (recommended for EKS): use serviceAccount.annotations instead of secretName.
   serviceAccount:
     annotations:
       eks.amazonaws.com/role-arn: arn:aws:iam::ACCOUNT_ID:role/IAM_ROLE_NAME
-    # tagkey is the key used to tag your nodes based on which cluster they belong to
   tagkey: kubernetes_cluster
-  # tagvalue is the value used for this particular cluster
   tagvalue: staging
-  aws:  
-    awsAccessKeyId: ''
-    awsSecretAccessKey: ''
-    # tagprefix is prefix AWS CUR adds to your tag key to create a new column at Athena column
+  # format: "standard" or "focus" (FOCUS uses FinOps schema; for EKS FOCUS, tagkey can default to aws:eks:cluster-name)
+  format: standard
+  days: 5
+  aws:
+    # If using access keys instead of secretName/IRSA, set accessKeyId and secretAccessKey (chart creates the secret).
+    accessKeyId: ''
+    secretAccessKey: ''
     tagprefix: 'resource_tags_user_'  # if not user custom tag, value should be resource_tags_
     region: us-east-1
     database: athena_cur_database
@@ -85,6 +88,8 @@ Athena column in this case is resource_tags_aws_eks_cluster_name
 * **tagvalue**: the value associated to the tag for filtering. Ex: production, staging
 * **catalog**: default AWS Glue Catalog is AwsDataCatalog
 * **workgroup**: workgroup created on Athena to be used on querying
+* **format**: optional; `standard` (default) or `focus`. FOCUS uses the FinOps Open Cost and Usage Specification.
+* **days**: number of days of cost data to query (default: 5)
 
 ### Terraform
 Note that you may have to apply the files below twice in order to get them to sync fully.
@@ -383,25 +388,33 @@ cloudcosts:
   enabled: true
   provider: gcp
   tagvalue: "my-gcp-cluster"
+  format: standard   # or "focus"; when focus, set gcp.focusview
+  days: 5
   gcp:
     projectname: "my-project"
     dataset: "insightscosts"
-    billingaccount: "123456-777AAA-123456"      
+    billingaccount: "123456-777AAA-123456"
+    # focusview: required when format is focus (e.g. my-project.insightscosts.focus_view)
+    focusview: ""
+    table: ""         # optional; auto-derived from projectname/dataset/billingaccount if not set
 ```
 
 * **provider**: provider must be `gcp`
-* **tagkey**: optional. `tagkey` is the label name used on GCP to indicate that it's a cluster node. Default value is "goog-k8s-cluster-name".
+* **tagkey**: optional. Label name used on GCP to indicate the cluster. Default is `goog-k8s-cluster-name`.
 * **tagvalue**: the value associated to the cluster name label for filtering. Ex: production, staging
-* **projectname**: GCP project name, required if table is not provided
-* **dataset**: dataset name you provided when you setup your BigQuery for Billing, required if table is not provided
-* **billingaccount**: your Google Billing Account ID that you can get from Billing console, which is used to get the table name for BigQuery. Example: "1A2B3C-4D5E6F-7G8H9I", required if table is not provided
-* **table**: you can provide the GCP BigQuery table instead of providing projectname/dataset/billingaccount
+* **projectname**: GCP project name, required if table is not provided (or derived from focusview when format is focus)
+* **dataset**: dataset name you provided when you set up BigQuery for Billing, required if table is not provided
+* **billingaccount**: your Google Billing Account ID from the Billing console, used to derive the BigQuery table name. Example: `1A2B3C-4D5E6F-7G8H9I`; required if table is not provided
+* **table**: optional; you can provide the full BigQuery table path instead of projectname/dataset/billingaccount
+* **focusview**: required when `format` is `focus`. Full BigQuery view name (e.g. `my-project.billing_export.focus_view`). You must create a FOCUS view in BigQuery first; see the [cloud-costs plugin README](https://github.com/FairwindsOps/insights-plugins/tree/master/plugins/cloud-costs) for the SQL template.
+* **format**: optional; `standard` (default) or `focus`. FOCUS uses the FinOps specification.
+* **days**: number of days of cost data to query (default: 5)
 
 ## Azure Billing Integration (Alpha)
 
 The Azure Cloud Costs report uses [Azure Cost Management](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/) and [Azure AD Workload Identity](https://learn.microsoft.com/en-us/azure/aks/workload-identity-overview) so the Insights Agent can read cost data without storing credentials. Your AKS cluster must have workload identity (OIDC) enabled.
 
-Azure cost data is always sent in FOCUS format.
+Azure cost data is always sent in **FOCUS** format. Azure applies a **2-day lag** to cost data (today and yesterday are excluded) so that usage is fully finalized. Filtering is done server-side via the Cost Management API; if you omit `tagkey`, the default is `kubernetes-cluster`.
 
 ### Create Azure AD Workload Identity for cloud-costs
 
@@ -470,8 +483,9 @@ cloudcosts:
 * **subscription**: Azure subscription ID (required)
 * **workloadIdentity.clientId**: Application (client) ID of the App registration (required)
 * **workloadIdentity.tenantId**: Directory (tenant) ID (required)
-* **tagkey** / **tagvalue**: optional; use to filter resources by tags
-* **days**: number of days of cost data to query (default: 5)
+* **tagkey**: optional; tag name to filter resources (default: `kubernetes-cluster`). Resources must be tagged in Azure for the filter to apply.
+* **tagvalue**: optional; tag value to filter to a specific cluster. If provided with tagkey, the API returns only costs for resources with that tag.
+* **days**: number of days of cost data to query (default: 5). Note the 2-day lag: Azure excludes the most recent two days.
 
 No Kubernetes Secret is needed for Azure; authentication uses workload identity only.
 
