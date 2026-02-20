@@ -22,7 +22,7 @@ helm install fairwinds-insights fairwinds-stable/fairwinds-insights \
   --set options.autogenerateKeys=true \
   --set options.allowHTTPCookies=true \
   --set postgresql.sslMode=disable \
-  --set postgresql.password=THISISASECRET \
+  --set postgresql.auth.password=THISISASECRET \
   --set installationCode="$FAIRWINDS_PROVIDED_CODE"
 ```
 
