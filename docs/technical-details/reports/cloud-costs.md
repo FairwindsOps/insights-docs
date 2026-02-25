@@ -366,7 +366,7 @@ gcloud iam service-accounts add-iam-policy-binding {service-account-name}@{your-
 ```
 
 7. Annotate the `insights-agent-cloudcosts` service account:
-Set the annotation in the [values.yaml](https://github.com/FairwindsOps/charts/blob/master/stable/insights-agent/values.yaml#L443-L444)
+Set the annotation under `cloudcosts.serviceAccount.annotations` in the [insights-agent values.yaml](https://github.com/FairwindsOps/charts/blob/master/stable/insights-agent/values.yaml) (see the `cloudcosts` section).
 Example:
 ```yaml
 cloudcosts:
