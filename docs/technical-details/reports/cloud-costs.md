@@ -5,7 +5,7 @@ information to infer accurate workload costs.
 
 We currently support AWS, GCP (including GKE Standard and GKE Autopilot), and Azure (Alpha).
 
-Cost data can be sent in **standard** (provider-native) or **FOCUS** (FinOps Open Cost and Usage Specification) format. Azure always uses FOCUS. The Insights Agent Helm chart (`insights-agent`) exposes these options; see the [chart README](https://github.com/FairwindsOps/charts/blob/master/stable/insights-agent/README.md) for the full configuration reference.
+The Insights Agent Helm chart (`insights-agent`) exposes the cloud-costs options; see the [chart README](https://github.com/FairwindsOps/charts/blob/master/stable/insights-agent/README.md) for the full configuration reference.
 
 ## AWS Billing Integration
 
@@ -57,8 +57,6 @@ cloudcosts:
       eks.amazonaws.com/role-arn: arn:aws:iam::ACCOUNT_ID:role/IAM_ROLE_NAME
   tagkey: kubernetes_cluster
   tagvalue: staging
-  # format: "standard" or "focus" (FOCUS uses FinOps schema; for EKS FOCUS, tagkey can default to aws:eks:cluster-name)
-  format: standard
   days: 5
   aws:
     # If using access keys instead of secretName/IRSA, set accessKeyId and secretAccessKey (chart creates the secret).
@@ -88,7 +86,6 @@ Athena column in this case is resource_tags_aws_eks_cluster_name
 * **tagvalue**: the value associated to the tag for filtering. Ex: production, staging
 * **catalog**: default AWS Glue Catalog is AwsDataCatalog
 * **workgroup**: workgroup created on Athena to be used on querying
-* **format**: optional; `standard` (default) or `focus`. FOCUS uses the FinOps Open Cost and Usage Specification.
 * **days**: number of days of cost data to query (default: 5)
 
 ### Terraform
@@ -369,7 +366,7 @@ gcloud iam service-accounts add-iam-policy-binding {service-account-name}@{your-
 ```
 
 7. Annotate the `insights-agent-cloudcosts` service account:
-Set the annotation in the [values.yaml](https://github.com/FairwindsOps/charts/blob/master/stable/insights-agent/values.yaml#L443-L444)
+Set the annotation under `cloudcosts.serviceAccount.annotations` in the [insights-agent values.yaml](https://github.com/FairwindsOps/charts/blob/master/stable/insights-agent/values.yaml) (see the `cloudcosts` section).
 Example:
 ```yaml
 cloudcosts:
@@ -388,33 +385,28 @@ cloudcosts:
   enabled: true
   provider: gcp
   tagvalue: "my-gcp-cluster"
-  format: standard   # or "focus"; when focus, set gcp.focusview
   days: 5
   gcp:
     projectname: "my-project"
     dataset: "insightscosts"
     billingaccount: "123456-777AAA-123456"
-    # focusview: required when format is focus (e.g. my-project.insightscosts.focus_view)
-    focusview: ""
     table: ""         # optional; auto-derived from projectname/dataset/billingaccount if not set
 ```
 
 * **provider**: provider must be `gcp`
 * **tagkey**: optional. Label name used on GCP to indicate the cluster. Default is `goog-k8s-cluster-name`.
 * **tagvalue**: the value associated to the cluster name label for filtering. Ex: production, staging
-* **projectname**: GCP project name, required if table is not provided (or derived from focusview when format is focus)
+* **projectname**: GCP project name, required if table is not provided
 * **dataset**: dataset name you provided when you set up BigQuery for Billing, required if table is not provided
 * **billingaccount**: your Google Billing Account ID from the Billing console, used to derive the BigQuery table name. Example: `1A2B3C-4D5E6F-7G8H9I`; required if table is not provided
 * **table**: optional; you can provide the full BigQuery table path instead of projectname/dataset/billingaccount
-* **focusview**: required when `format` is `focus`. Full BigQuery view name (e.g. `my-project.billing_export.focus_view`). You must create a FOCUS view in BigQuery first; see the [cloud-costs plugin README](https://github.com/FairwindsOps/insights-plugins/tree/master/plugins/cloud-costs) for the SQL template.
-* **format**: optional; `standard` (default) or `focus`. FOCUS uses the FinOps specification.
 * **days**: number of days of cost data to query (default: 5)
 
 ## Azure Billing Integration (Alpha)
 
 The Azure Cloud Costs report uses [Azure Cost Management](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/) and [Azure AD Workload Identity](https://learn.microsoft.com/en-us/azure/aks/workload-identity-overview) so the Insights Agent can read cost data without storing credentials. Your AKS cluster must have workload identity (OIDC) enabled.
 
-Azure cost data is always sent in **FOCUS** format. Azure applies a **2-day lag** to cost data (today and yesterday are excluded) so that usage is fully finalized. Filtering is done server-side via the Cost Management API; if you omit `tagkey`, the default is `kubernetes-cluster`.
+Azure applies a **2-day lag** to cost data (today and yesterday are excluded) so that usage is fully finalized. Filtering is done server-side via the Cost Management API; if you omit `tagkey`, the default is `kubernetes-cluster`.
 
 ### Create Azure AD Workload Identity for cloud-costs
 
