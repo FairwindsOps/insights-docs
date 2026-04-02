@@ -7,7 +7,7 @@ meta:
 
 Fairwinds Insights consists of two main components:
 * Client - this consists of the users' cluster, where the Insights Agent runs each of the enabled reports
-* Server - this consists of the Insights backend, database, and file storage
+* Server - this consists of the Insights backend, database, and report storage (object storage such as RustFS or Amazon S3 for typical self-hosted installs)
 
 <img :src="$withBase('/img/architecture.png')" alt="Insights Architecture">
 
