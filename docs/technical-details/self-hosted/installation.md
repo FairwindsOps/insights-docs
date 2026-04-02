@@ -35,7 +35,7 @@ kubectl port-forward -n fairwinds-insights svc/fairwinds-insights-dashboard 8080
 The default configuration will give you a working version of Fairwinds Insights.
 But there are a few issues you'll want to solve before starting to use it seriously:
 * [Database](/technical-details/self-hosted/database): set up a durable Postgres database for your data
-* [File Storage](/technical-details/self-hosted/file-storage): set up a durable place to store files (S3 or Minio)
+* [File Storage](/technical-details/self-hosted/file-storage): set up durable report storage (default in-cluster RustFS, Amazon S3, or external S3-compatible storage)
 * [Ingress](/technical-details/self-hosted/ingress): host Insights behind a custom domain
 * [Sessions](/technical-details/self-hosted/sessions): Generate permanent session keys in order to preserve running sessions when Insights is updated
 * [Email](/technical-details/self-hosted/email): In order to confirm email addresses and add new users, you'll need to set up an email provider

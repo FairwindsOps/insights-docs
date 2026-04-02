@@ -46,7 +46,7 @@ metadata:
 type: Opaque
 ```
 
-Note that if you're using other AWS integrations (like S3 above) they will use the same AWS credentials.
+Note that if you're using other AWS integrations (for example **Amazon S3** for [file storage](/technical-details/self-hosted/file-storage) with `reportStorage.strategy: s3`) they will typically use the same AWS credentials in this secret.
 
 ## SMTP
 You can follow
