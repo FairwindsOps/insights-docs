@@ -1,21 +1,20 @@
 ---
 meta:
   - name: description
-    content: "Fairwinds Insights | Self-hosted Documentation: report file storage with RustFS, Amazon S3, or local disk"
+    content: "Fairwinds Insights | Self-hosted Documentation: report file storage with RustFS or Amazon S3"
 ---
 # File Storage
 
-When clusters report back to Fairwinds Insights, the server stores that data as files (for example JSON report payloads). You need a **report storage** backend that the application can read and write through an S3-style API or, for limited cases, local disk.
+When clusters report back to Fairwinds Insights, the server stores that data as files (for example JSON report payloads). You need a **report storage** backend that the application can read and write through an S3-style API.
 
-The Fairwinds Insights Helm chart configures this via `reportStorage.strategy`. Supported values are:
+The Fairwinds Insights Helm chart configures this via `reportStorage.strategy`. For self-hosted production, use:
 
 | Strategy | Use case |
 | -------- | -------- |
 | **`rustfs`** (default) | In-cluster **[RustFS](https://rustfs.com/)** (installed by the chart) **or** any external **S3-compatible** endpoint (RustFS, R2, etc.) |
 | **`s3`** | **Amazon S3** using the default AWS SDK credential chain and **no** custom endpoint (typical AWS installs) |
-| **`local`** | Local filesystem inside the pod (mainly development or fixtures) |
 
-Invalid strategies cause the chart templates to **fail** at render time, so typos are caught early.
+Unknown or deprecated `reportStorage.strategy` values (for example `minio`) cause template rendering to **fail**, so mistakes are caught early.
 
 ## Why chart 7.x uses RustFS instead of bundled MinIO
 
@@ -158,10 +157,6 @@ stringData:
 ```
 
 If you use other AWS integrations (for example SES for email), they typically use the **same** secret keys unless you configure alternatives in the chart.
-
-## Local storage
-
-For `reportStorage.strategy: local`, the server uses a directory inside the container (for example for fixtures or development). Set `rustfs.install: false` when you are not using RustFS. See chart `values.yaml` for `reportStorage.fixturesDir` and related options.
 
 ## Summary
 
