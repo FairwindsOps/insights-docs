@@ -17,8 +17,15 @@ The Fairwinds Insights Helm chart configures this via `reportStorage.strategy`. 
 
 Invalid strategies cause the chart templates to **fail** at render time, so typos are caught early.
 
-> **Upgrading from older charts (MinIO)**  
-> Chart **7.x** removed the bundled object-storage / MinIO subchart. The `reportStorage.strategy: minio` value, `minio:` values, and `reportStorage.minioHost` no longer exist. Migrate to **`rustfs`** (in-cluster or external S3-compatible URL) or to **`s3`** for native AWS. See the sections below and the [fairwinds-insights chart changelog](https://github.com/FairwindsOps/charts/blob/master/stable/fairwinds-insights/CHANGELOG.md).
+## Why chart 7.x uses RustFS instead of bundled MinIO
+
+Fairwinds Insights chart **7.x** removed the bundled object-storage / **MinIO** subchart and defaults to **[RustFS](https://rustfs.com/)** for in-cluster report storage. That change reflects:
+
+- **MinIO upstream lifecycle:** The [MinIO server `README.md` on GitHub](https://github.com/minio/minio/blob/master/README.md) states that **the repository is no longer maintained**, that the **community edition is distributed as source only** (no official pre-built community binaries), and that **legacy pre-built releases are no longer maintained**. Continuing to treat chart-bundled MinIO as the default would lean on a dependency whose public maintenance story has shifted.
+
+- **A single supported default path:** Chart **7.x** standardizes on the **[RustFS Helm chart](https://charts.rustfs.com/)**, or on **Amazon S3** / **another S3-compatible store you operate**, so self-hosted docs and values map to one model. See the [fairwinds-insights chart changelog](https://github.com/FairwindsOps/charts/blob/master/stable/fairwinds-insights/CHANGELOG.md).
+
+**If you upgrade from an older chart,** the `reportStorage.strategy: minio` value, `minio:` values, and `reportStorage.minioHost` **no longer exist**. Migrate to **`rustfs`** (in-cluster or external S3-compatible URL) or to **`s3`** for native AWS. The sections below describe each path.
 
 ## Default: in-cluster RustFS
 
@@ -161,6 +168,6 @@ For `reportStorage.strategy: local`, the server uses a directory inside the cont
 - Prefer **`rustfs`** + **`rustfs.install: true`** for the default self-hosted stack (RustFS subchart + PVC-backed data).
 - Prefer **`rustfs`** + **`rustfs.install: false`** + **`s3Endpoint`** + **`s3CredentialsSecret`** for any external S3-compatible API.
 - Use **`s3`** + **`rustfs.install: false`** + AWS credentials in **`fwinsights-secrets`** for standard Amazon S3.
-- Chart **7.x** no longer supports MinIO via `strategy: minio` or embedded MinIO values; use RustFS or AWS S3 instead.
+- Chart **7.x** no longer supports MinIO via `strategy: minio` or embedded MinIO values; use RustFS or AWS S3 instead (see **Why chart 7.x uses RustFS instead of bundled MinIO**).
 
 For the full list of knobs (ingress, affinity, image overrides, etc.), see the **[fairwinds-insights chart README](https://github.com/FairwindsOps/charts/tree/master/stable/fairwinds-insights)** and **`helm show values fairwinds-stable/fairwinds-insights`**.
