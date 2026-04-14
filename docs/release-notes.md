@@ -10,6 +10,346 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.11 (2026-04-14)
+### Bug Fixes and Enhancements
+* Partition workflow outbox table
+* Add APIs for app groups health score
+* Rename workflow outbox table for outbox worker
+* Update go.temporal.io/api
+* Update all non-major dependencies
+
+## 18.3.10 (2026-04-13)
+### Bug Fixes and Enhancements
+* Remove feature flag for Jira custom fields (UI)
+* Move app group health score processing to general worker
+* Implement workflow outbox with database migration
+* Update module gopkg.in/yaml.v2 to v3
+* Add Temporal workflows for app groups score
+* Update all non-major dependencies
+
+## 18.3.9 (2026-04-10)
+### Bug Fixes and Enhancements
+* Update all non-major dependencies
+* Update golang-jwt/jwt to v5
+* Update r3labs/diff to v3
+* Add logic to calculate health score per app group
+* Update Slack dependency to v6
+
+## 18.3.8 (2026-04-09)
+### Bug Fixes and Enhancements
+* Create schema for app groups health score
+
+## 18.3.7 (2026-04-09)
+### Bug Fixes and Enhancements
+* Fix Cypress tests for Cypress 15 compatibility (UI)
+* Configure Renovate and pin dependencies
+* Refactor report health scores code
+* Update dependencies (including tollbooth, go-github, and others)
+
+## 18.3.6 (2026-04-08)
+### Bug Fixes and Enhancements
+* Fix CPU graph mCPU labels on Right-Sizing and decimal display on Costs (UI)
+
+## 18.3.5 (2026-04-07)
+### Bug Fixes and Enhancements
+* Add visual editor for ticket Additional Descriptions (UI)
+* Remove environment variable checks for skip modified action items
+* Fix workload recommendation bug
+
+## 18.3.4 (2026-04-07)
+### Bug Fixes and Enhancements
+* Add Cypress test coverage for Costs (UI)
+* Fix Action Items row selection and filter styling (UI)
+* Fix vulnerabilities app groups query when using admin bot
+* Policy-compliant Go dependency refresh
+
+## 18.3.3 (2026-04-06)
+### Bug Fixes and Enhancements
+* Fix remaining TypeScript type errors (UI)
+* Improve dependency update plan
+
+## 18.3.2 (2026-04-03)
+### Bug Fixes and Enhancements
+* Add min-release-age to npm
+* Fix table datepicker (UI)
+
+## 18.3.1 (2026-04-03)
+### Bug Fixes and Enhancements
+* Fix bug when selecting a saved view on Costs (UI)
+* Pin axios to a safe version
+
+## 18.3.0 (2026-04-02)
+### Bug Fixes and Enhancements
+* Bump Cypress image version (UI)
+* Add token introspect API
+* Remove MinIO from Insights
+
+## 18.2.58 (2026-03-31)
+### Bug Fixes and Enhancements
+* Fix Insights vulnerability
+* Add rustfs support
+
+## 18.2.57 (2026-03-30)
+### Bug Fixes and Enhancements
+* Fix updating notes on Action Items lists (UI)
+* Bump insights-ui libs (UI)
+* Fix Trivy version
+* Add test coverage for non-compliant JSON columns
+* Bump Go dependencies
+
+## 18.2.56 (2026-03-30)
+### Bug Fixes and Enhancements
+* Migrate Action Items, Costs, and remaining UI routes to OpenAPI; migrate tables to TanStack Table (v8+) (UI)
+* Fix filters and styling across Audit Logs, Repositories, Vulnerabilities, Compliance, and other pages (UI)
+* Fix table sorting, filter fonts, and Delete Policy cancel button styling (UI)
+* TypeScript strictness, lint fixes, and CSS cleanup (UI)
+* Improve backend dependencies update flow and library update planning
+
+## 18.2.55 (2026-03-23)
+### Bug Fixes and Enhancements
+* Bump insights-ui libs (UI)
+* Bump Insights libs
+
+## 18.2.54 (2026-03-23)
+### Bug Fixes and Enhancements
+* Do not abort processing when action items are missing fields
+
+## 18.2.53 (2026-03-20)
+### Bug Fixes and Enhancements
+* Save report files before processing reports
+
+## 18.2.52 (2026-03-19)
+### Bug Fixes and Enhancements
+* Fix automated compliance check status on modal (UI)
+* Fix TypeScript errors (UI)
+
+## 18.2.51 (2026-03-19)
+### Bug Fixes and Enhancements
+* Migrate Costs, Action Items, Clusters, Vulnerabilities, and remaining UI calls to OpenAPI (UI)
+* UI bug fixes (UI)
+* Move ticket reopen and close workflows to Temporal
+* Add authentication endpoints to Swagger
+* Fix public repository and app group access checks
+* Fix required Organization and Cluster fields in Swagger
+
+## 18.2.50 (2026-03-17)
+### Bug Fixes and Enhancements
+* Migrate Vulnerabilities to OpenAPI (UI)
+* Upgrade OpenAPI generator to 2.6.0
+* Refactor ticket creation to use Temporal
+
+## 18.2.49 (2026-03-16)
+### Bug Fixes and Enhancements
+* Bump insights-ui libs (UI)
+* Migrate Clusters to OpenAPI (UI)
+* Fix disconnecting GitHub (UI)
+* Bump Insights libs
+
+## 18.2.48 (2026-03-13)
+### Bug Fixes and Enhancements
+* Migrate user and organization settings to OpenAPI (UI)
+* Fix Action Items filters (UI)
+* Fix Action Items API query parameters (including IaC files and empty filters)
+* Fix cost per GPU hour for AWS
+* Fix JSON and YAML ordering in Swagger
+
+## 18.2.47 (2026-03-12)
+### Bug Fixes and Enhancements
+* Migrate App Groups, Policy, Automation, Admission, Compliance, and Repositories to OpenAPI (UI)
+* Fix filtering Action Items by saved list (UI)
+
+## 18.2.46 (2026-03-10)
+### Bug Fixes and Enhancements
+* Migrate profile and user info to OpenAPI (UI)
+* Bump insights-ui libs (UI)
+* Add script to retrieve GCP instance types
+* Bump Insights libs and address vulnerabilities
+
+## 18.2.45 (2026-03-09)
+### Bug Fixes and Enhancements
+* Add infrastructure to generate TypeScript clients from Swagger (UI)
+* Restore add-instance-types step in migration script
+
+## 18.2.44 (2026-03-06)
+### Bug Fixes and Enhancements
+* Fix dashboard components when GPU feature flag is enabled (UI)
+* Check AWS and GCP instance types are current
+* Small Swagger fix
+
+## 18.2.43 (2026-03-05)
+### Bug Fixes and Enhancements
+* Fix GPU column display when feature flag is enabled and localStorage is empty (UI)
+* Fix missing GPU metrics and costs
+
+## 18.2.42 (2026-03-04)
+### Bug Fixes and Enhancements
+* Add email templates and workflows for user token regeneration and expiration
+* Fix GPU usage average
+
+## 18.2.41 (2026-03-04)
+### Bug Fixes and Enhancements
+* Run admission requests inside a database transaction
+
+## 18.2.40 (2026-03-04)
+### Bug Fixes and Enhancements
+* Add CI pipeline for scanning Insights images and dependencies
+* Bump goose and Kyverno to fix vulnerabilities
+
+## 18.2.39 (2026-03-03)
+### Bug Fixes and Enhancements
+* Bump insights-ui libs (UI)
+* Remove embedded Polaris binary
+* Use batch upserts with larger batch size for TSV updates
+* Bump Insights libs
+
+## 18.2.38 (2026-03-02)
+### Bug Fixes and Enhancements
+* Add user token management in the UI (UI)
+* Configure short-description option for image tickets in the UI (UI)
+* Backend support for user API tokens
+* Apply Go fix toolchain updates
+
+## 18.2.37 (2026-02-26)
+### Bug Fixes and Enhancements
+* Add option for shorter image ticket descriptions
+* Fix Kyverno-related vulnerabilities
+
+## 18.2.36 (2026-02-25)
+### Bug Fixes and Enhancements
+* Fix crash when switching between Costs saved views (UI)
+
+## 18.2.35 (2026-02-25)
+### Bug Fixes and Enhancements
+* Use dedicated database connection pools for health checks
+
+## 18.2.34 (2026-02-24)
+### Bug Fixes and Enhancements
+* Fix feature flag version handling in insights-ui (UI)
+* Return nil when a repository is not found
+
+## 18.2.33 (2026-02-23)
+### Bug Fixes and Enhancements
+* Bump insights-ui libs (UI)
+* Upgrade to Go 1.26 and bump Insights libs
+* GitHub webhook skips processing for missing repositories
+
+## 18.2.32 (2026-02-20)
+### Bug Fixes and Enhancements
+* Fix Total Cluster Cost on Capacity (UI)
+* Display new GPU columns (UI)
+* Fix Efficiency page messaging when Prometheus has little data (UI)
+* Enable team app group mode by default
+* Fix Azure fees and storage costs
+
+## 18.2.31 (2026-02-19)
+### Bug Fixes and Enhancements
+* Fix error when GPU costs are enabled
+* Fix cloud cost history updates for FOCUS on GKE Autopilot
+* Configure logger level and operation name for all binaries
+* Fix error when requesting gpu_cost column
+* Include SQL query details in Insights trace logs
+* Extract Temporal client configuration to environment variables
+
+## 18.2.30 (2026-02-18)
+### Bug Fixes and Enhancements
+* [self-hosted] Enhance migration to create default team and app groups
+* Add GPU costs to totals
+* Fix cluster fees for AWS and GCP FOCUS
+
+## 18.2.29 (2026-02-17)
+### Bug Fixes and Enhancements
+* UI updates for GPU at workload settings (UI)
+* Fix changing workload on Right-Sizing (UI)
+* Add GPU fields to workload settings API
+* Remove deprecated GitHub worker task queues
+
+## 18.2.28 (2026-02-16)
+### Bug Fixes and Enhancements
+* Fix nightly tests and Cypress script (UI)
+* Bump insights-ui libs (UI)
+* Fix Costs date range when only a few hours of data exist (UI)
+* Bump Insights libs
+
+## 18.2.27 (2026-02-16)
+### Bug Fixes and Enhancements
+* Fix Clear button on Costs (UI)
+* Fix Right-Sizing filtering with app group permissions
+* Add dedicated processing queues per feature
+
+## 18.2.26 (2026-02-13)
+### Bug Fixes and Enhancements
+* Fix Costs table headers when aggregating and returning via link (UI)
+* Send admin usage report to configured email address
+
+## 18.2.25 (2026-02-12)
+### Bug Fixes and Enhancements
+* Fix date range encoding for historical incidents (UI)
+* Fix image ticket failure count logic
+
+## 18.2.24 (2026-02-12)
+### Bug Fixes and Enhancements
+* Fix Customer Dashboard history duration dropdown (UI)
+* Ensure report jobs handle and log signals correctly
+
+## 18.2.23 (2026-02-11)
+### Bug Fixes and Enhancements
+* Fix Costs graph tooltip values (UI)
+* Mitigate TigerData out-of-memory errors
+* [self-hosted] Make self-hosted migrations idempotent
+* Fix incidents and issues API date filtering
+
+## 18.2.22 (2026-02-11)
+### Bug Fixes and Enhancements
+* Costs show/hide columns reload no longer affects all graphs (UI)
+* Fix survey middleware
+* OPA editor shows saved policy content after edits (UI)
+* Add button to reset default columns on Costs (UI)
+* [self-hosted] Fix create-organization permission
+
+## 18.2.21 (2026-02-10)
+### Bug Fixes and Enhancements
+* Add CVE response summary to Customer Dashboard history (UI)
+* [self-hosted] Confirm new users by default
+
+## 18.2.20 (2026-02-10)
+### Bug Fixes and Enhancements
+* Fix Policies page stuck loading (UI)
+* Fix Azure fees and storage costs
+* Bump Insights libs
+
+## 18.2.19 (2026-02-09)
+### Bug Fixes and Enhancements
+* Bump insights-ui libs (UI)
+* Fix Costs table when adding columns (UI)
+* Fix Capacity cluster selection redirecting to Cluster Overview (UI)
+* Fix Azure storage costs
+* Azure and FOCUS cloud cost bug fixes
+
+## 18.2.18 (2026-02-06)
+### Bug Fixes and Enhancements
+* Add organization-wide 30-day graph of average daily node usage (UI)
+
+## 18.2.17 (2026-02-05)
+### Bug Fixes and Enhancements
+* Fix maintenance banner accessibility (UI)
+* Fix Costs filters for month, quarter, and last year (UI)
+* Bump insights-ui libs (UI)
+* Azure costs tests and improvements
+
+## 18.2.16 (2026-02-03)
+### Bug Fixes and Enhancements
+* SSO users can see organizations they belong to
+* Fix node average count API
+
+## 18.2.15 (2026-02-02)
+### Bug Fixes and Enhancements
+* Add support for Azure and FOCUS when processing cloud costs
+
+
+## 18.2.14 (2026-01-28)
+### Bug Fixes and Enhancements
+* Add endpoint for average nodes daily
+
 ## 18.2.13 (2026-01-26)
 ### Bug Fixes and Enhancements
 * Add a graph showing pod count and memory/cpu history for Costs (UI)
