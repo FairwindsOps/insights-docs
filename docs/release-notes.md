@@ -345,7 +345,6 @@ sidebarDepth: 1
 ### Bug Fixes and Enhancements
 * Add support for Azure and FOCUS when processing cloud costs
 
-
 ## 18.2.14 (2026-01-28)
 ### Bug Fixes and Enhancements
 * Add endpoint for average nodes daily
