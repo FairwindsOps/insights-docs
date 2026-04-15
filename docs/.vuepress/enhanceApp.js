@@ -126,10 +126,10 @@ const redirects = [{
   redirect: "/technical-details/reports/cloud-costs",
 }, {
   prefix: "/installation/sso/about",
-  redirect: "/features/team-management#single-sign-on",
+  redirect: "/features/team-management/#single-sign-on",
 }, {
   prefix: "/configure/sso/setup",
-  redirect: "/features/team-management#single-sign-on",
+  redirect: "/features/team-management/#single-sign-on",
 }, {
   prefix: "/installation/sso/sso",
   redirect: "/features/team-management",
@@ -141,6 +141,7 @@ const redirects = [{
   redirect: "/features/integrations",
 }, {
   prefix: "/installation/integrations/pagerduty",
+  redirect: "/features/integrations",
 }, {
   prefix: "/installation/integrations/jira",
   redirect: "/features/integrations",
@@ -174,7 +175,6 @@ const redirects = [{
 }, {
   prefix: "/configure/policy/opa-v1",
   redirect: "/features/policies",
-  redirect: "",
 }, {
   prefix: "/configure/automation/rules",
   redirect: "/features/automation-rules",
@@ -205,6 +205,21 @@ const redirects = [{
 }]
 
 export default ({ router }) => {
+  // Ensure same-site navigations to `#fragment` scroll to the target heading (SPA default often misses this).
+  const previousScrollBehavior = router.options.scrollBehavior
+  router.options.scrollBehavior = (to, from, savedPosition) => {
+    if (to.hash) {
+      return { selector: to.hash }
+    }
+    if (typeof previousScrollBehavior === 'function') {
+      return previousScrollBehavior(to, from, savedPosition)
+    }
+    if (savedPosition) {
+      return savedPosition
+    }
+    return { x: 0, y: 0 }
+  }
+
   // FIXME(rbren): this is the only way I can get redirection to work on S3
   router.beforeEach((to, from, next) => {
     redirects.forEach(redir => {
