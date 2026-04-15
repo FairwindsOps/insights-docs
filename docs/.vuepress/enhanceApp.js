@@ -122,6 +122,15 @@ const redirects = [{
   prefix: "/installation/ci/insights-ci-script",
   redirect: "/features/infrastructure-as-code-scanning",
 }, {
+  prefix: "/technical-details/reports/aws-costs",
+  redirect: "/technical-details/reports/cloud-costs",
+}, {
+  prefix: "/installation/sso/about",
+  redirect: "/features/team-management#single-sign-on",
+}, {
+  prefix: "/configure/sso/setup",
+  redirect: "/features/team-management#single-sign-on",
+}, {
   prefix: "/installation/sso/sso",
   redirect: "/features/team-management",
 }, {
