@@ -34,14 +34,7 @@ over multiple Kubernetes clusters, track and prioritize issues, and monitor the 
 
 The goal of the Fairwinds Community is to exchange ideas, influence the open source roadmap,
 and network with fellow Kubernetes users.
-[Chat with us on Slack](https://join.slack.com/t/fairwindscommunity/shared_invite/zt-e3c6vj4l-3lIH6dvKqzWII5fSSFDi1g)
-or
-[join the user group](https://www.fairwinds.com/open-source-software-user-group) to get involved!
-
-<a href="https://insights.fairwinds.com/auth/register/">
-  <img src="https://www.fairwinds.com/hubfs/Doc_Banners/Fairwinds_OSS_User_Group_740x125_v6.png"
-  alt="Love Fairwinds Open Source? Automate Fairwinds Open Source for free with Fairwinds Insights. Click to learn more" />
-</a>
+[Chat with us on Slack](https://join.slack.com/t/fairwindscommunity/shared_invite/zt-2na8gtwb4-DGQ4qgmQbczQyB2NlFlYQQ)
 
 ## Other Projects from Fairwinds
 
