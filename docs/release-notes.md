@@ -10,6 +10,246 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.44 (2026-05-29)
+### Bug Fixes and Enhancements
+* Webpack cleanup (UI)
+* Update Node.js to `v24.16.0` (UI)
+* Fix select values background color (UI)
+* Update all non-major dependencies
+* Fix github comment body size overflow
+* Update module `github.com/getkin/kin-openapi` to `v0.139.0`
+
+## 18.3.43 (2026-05-29)
+### Bug Fixes and Enhancements
+* Migrate `webpack` to `rspack` (UI)
+* Update all non-major dependencies
+* Update module `github.com/google/go-github/v87` to `v88`
+
+## 18.3.42 (2026-05-28)
+### Bug Fixes and Enhancements
+* Simplify webpack configuration (UI)
+* Improve and fix dark mode (UI)
+* Remove openssl legacy provider (UI)
+* Update `webpack`, `npm`, and `stylelint` dependencies (UI)
+
+## 18.3.41 (2026-05-27)
+### Bug Fixes and Enhancements
+* Dark theme support (UI)
+* Support to revoke AI consent
+
+## 18.3.40 (2026-05-27)
+### Bug Fixes and Enhancements
+* Fix Jira custom fields link (UI)
+* Update `npm`, `sass-loader`, `eslint`, and CircleCI dependencies (UI)
+* Refactor signal handling in worker processes to use InterruptCh
+* Update module `github.com/google/go-github/v86` to `v87`
+* Update module `github.com/oapi-codegen/runtime` to `v1.4.1`
+
+## 18.3.39 (2026-05-26)
+### Bug Fixes and Enhancements
+* Improve AI agent processing status (UI)
+* Fix infinite reload on Repositories (UI)
+* Fix loading and feedback text position (UI)
+* Improve LLM UI (UI)
+* Fix repository selection not refreshing data properly (UI)
+* Update `npm`, `knip`, and `@types/node` dependencies (UI)
+* Update all non-major dependencies
+* Create pipeline tests for different Kyverno versions
+* Pass the selected model to action item fixer pod
+* Update module `sigs.k8s.io/controller-runtime` to `v0.24.1`
+
+## 18.3.38 (2026-05-21)
+### Bug Fixes and Enhancements
+* Add support for OpenAI compatible APIs (UI)
+* Add UI for AI agents support (UI)
+* Harden dependency versions for node packages and improve CI commands (UI)
+* Update `npm` and `cypress/included` dependencies (UI)
+* Update LLM cron job image repository and tag to use default values
+* Add LLM credentials OpenAI compatible support
+* Ensure disclaimer checkbox for shipping data to agent processors
+* Fix AI agent metadata hint
+* Introduce `go_lint_and_verify` job and remove those steps from test job
+
+## 18.3.37 (2026-05-18)
+### Bug Fixes and Enhancements
+* Update dependency `webpack-dev-server` to `v5.2.4` [SECURITY] (UI)
+* Fix commands for rule based run
+
+## 18.3.36 (2026-05-18)
+### Bug Fixes and Enhancements
+* Update `npm` and `lint-staged` dependencies (UI)
+* Revert report job transactional support
+* Add agent tools such as Open Hands, CrewAI, Cursor, and Claude for fixing Action Items
+* Update `golang.org/x/exp` digest
+
+## 18.3.35 (2026-05-15)
+### Bug Fixes and Enhancements
+* Update `terser-webpack-plugin` and `npm` dependencies (UI)
+* Fix client reference on temporal report job
+* Fix automated PR process
+* Update module `golang.org/x/text` to `v0.37.0`
+* Update module `github.com/google/go-github/v85` to `v86`
+* Update module `github.com/slack-go/slack` to `v0.23.1` [SECURITY]
+
+## 18.3.34 (2026-05-14)
+### Bug Fixes and Enhancements
+* Fix automated PR job processing
+* Update module `github.com/JohannesKaufmann/html-to-markdown/v2` to `v2.5.1`
+
+## 18.3.33 (2026-05-14)
+### Bug Fixes and Enhancements
+* LLM action items fix with feature flag (UI)
+* Update `npm` and `stylelint` dependencies (UI)
+* Action items auto fix for rule_based, llm and agentic
+* Add API structure to unblock FE
+* Improve error handling report job
+* Security: fix read-only user token bypass vulnerability
+* Update all non-major dependencies
+* Update `github.com/falcosecurity/falcosidekick` digest
+
+## 18.3.32 (2026-05-13)
+### Bug Fixes and Enhancements
+* Internal release changes only
+
+## 18.3.31 (2026-05-12)
+### Bug Fixes and Enhancements
+* Update `npm` non-major dependencies (UI)
+* Fix temporal report job worker
+* Update all non-major dependencies
+* Update module `github.com/huandu/go-sqlbuilder` to `v1.41.0`
+
+## 18.3.30 (2026-05-11)
+### Bug Fixes and Enhancements
+* Fix vault path typo in insights-ui (UI)
+* Add insights dashboard to GCR (UI)
+* Update `npm` and `globals` dependencies (UI)
+
+## 18.3.29 (2026-05-08)
+### Bug Fixes and Enhancements
+* Update `npm` non-major dependencies (UI)
+* Create temporal report job processing
+* Update all non-major dependencies
+
+## 18.3.28 (2026-05-08)
+### Bug Fixes and Enhancements
+* Add processing route column on report_jobs
+
+## 18.3.27 (2026-05-08)
+### Bug Fixes and Enhancements
+* Update `npm`, `cypress/included`, and `knip` dependencies (UI)
+* Add global env to Insights
+* Update all non-major dependencies
+
+## 18.3.26 (2026-05-06)
+### Bug Fixes and Enhancements
+* Update `npm` non-major dependencies (UI)
+* Move Insights images to GCR
+
+## 18.3.25 (2026-05-05)
+### Bug Fixes and Enhancements
+* Update `npm` non-major dependencies (UI)
+* Fix kyverno kind spec
+
+## 18.3.24 (2026-05-05)
+### Bug Fixes and Enhancements
+* Fix Kyverno policies being applied to wrong clusters
+* Captcha remove global store state
+
+## 18.3.23 (2026-05-05)
+### Bug Fixes and Enhancements
+* Pin Node.js (UI)
+* Update `npm`, CircleCI, and `slack` dependencies (UI)
+* Update all non-major dependencies
+* Update module `github.com/getkin/kin-openapi` to `v0.137.0`
+* Update `github.com/fairwindsops/polaris` digest
+
+## 18.3.22 (2026-05-01)
+### Bug Fixes and Enhancements
+* Improve renovate for insights-ui (UI)
+* Remove overrides and resolutions blocks (UI)
+* Update `knip`, `ajv`, `jest-junit`, `hosted-git-info`, `react-virtuoso`, and `terser-webpack-plugin` dependencies (UI)
+* Improve Insights renovate
+* Fix max_stack_depth for reports
+* ErrNotificationIntegrationNotInstalled should be a nonRetryable error
+* Update module `go.temporal.io/api` to `v1.62.11`
+* Update `github.com/falcosecurity/falcosidekick` digest
+
+## 18.3.21 (2026-05-01)
+### Bug Fixes and Enhancements
+* Update all non-major dependencies (UI)
+* Add option to control preloading ContainerResources SpecAppliedSkewPods for k8s resources
+* Update module `go.temporal.io/api` to `v1.62.10`
+* Update module `github.com/aws/smithy-go` to `v1.25.1`
+
+## 18.3.20 (2026-04-30)
+### Bug Fixes and Enhancements
+* Fix delete namespace pipeline for insights-ui (UI)
+* Fix exported columns (UI)
+* Create and use disable-animations logic for Cypress tests (UI)
+* Delete feature branch when merging to main (UI)
+* Consolidate the delete namespace pipeline
+* Remove outdated dependency and license update procedures; update Go release process
+* Update module `github.com/jackc/pgx/v5` to `v5.9.2`
+
+## 18.3.19 (2026-04-29)
+### Bug Fixes and Enhancements
+* Fix OOM on browser when Names has too many options on Action Items (UI)
+* Delete feature branch when merging to main
+* Add test for AWS CUR 2.0 in Insights
+
+## 18.3.18 (2026-04-28)
+### Bug Fixes and Enhancements
+* Add renovate and deprecate dependabot (UI)
+* Bump insights-ui libs (UI)
+* Fix all insights vulnerabilities
+* Update all non-major dependencies
+* Update module `github.com/google/go-github/v84` to `v85`
+
+## 18.3.17 (2026-04-24)
+### Bug Fixes and Enhancements
+* Add resized GPU to FE (UI)
+* Display in-place pod resize in FE (UI)
+* Added more test for App Groups Score
+* App Groups with Namespace Labels equals `ManagedBy=Fairwinds` not generating health scores
+* Process GPU metrics from workloads report
+* Adjust metrics for in-place pod resize
+* Expose divergent pod resources in API
+* Store in-place pod resize data in Insights
+* Update module `k8s.io/apimachinery` to `v0.35.4`
+
+## 18.3.16 (2026-04-21)
+### Bug Fixes and Enhancements
+* Bump insights-ui dependencies (UI)
+* Add ignorePaths to renovate.json for demo and test directories
+* Update `initial_start` intervals on TS CA policies to 1 hour
+* Fix Insights vulnerabilities
+* Improve db checks
+* Update module `github.com/slack-go/slack` to `v0.22.0`
+
+## 18.3.15 (2026-04-20)
+### Bug Fixes and Enhancements
+* Fix failing test (UI)
+* App groups score FE cleanup (UI)
+* Switch temporal call sites to use workflow outbox instead
+* Make so each worker has its own db pool
+* Enhance error handling in goroutines across multiple packages
+* Bump Insights fixtures
+* Decrease timeout and retry for app groups health score
+* Update all non-major dependencies
+
+## 18.3.14 (2026-04-15)
+### Bug Fixes and Enhancements
+* App Groups score API call should be under feature flag (UI)
+
+## 18.3.13 (2026-04-14)
+### Bug Fixes and Enhancements
+* Increase memory for temporal general worker
+
+## 18.3.12 (2026-04-14)
+### Bug Fixes and Enhancements
+* Add app groups score to FE (UI)
+* Generate new APIs and bump libs (UI)
+
 ## 18.3.11 (2026-04-14)
 ### Bug Fixes and Enhancements
 * Partition workflow outbox table
