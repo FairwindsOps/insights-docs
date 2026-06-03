@@ -10,6 +10,15 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.44 (2026-05-29)
+### Bug Fixes and Enhancements
+* Webpack cleanup (UI)
+* Update Node.js to v24.16.0 (UI)
+* Fix select values background color (UI)
+* Update all non-major dependencies
+* Fix github comment body size overflow
+* Update module github.com/getkin/kin-openapi to v0.139.0
+
 ## 18.3.11 (2026-04-14)
 ### Bug Fixes and Enhancements
 * Partition workflow outbox table
