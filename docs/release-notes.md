@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.45 (2026-06-03)
+### Bug Fixes and Enhancements
+* Update frontend dependencies including npm non-major updates, @tanstack/react-query to v5.100.14, and @react-spring/web to v10.1.0 (UI)
+* Fix capacity label graphs (UI)
+* Add debugging information to narrow down Cypress flakiness (UI)
+
 ## 18.3.11 (2026-04-14)
 ### Bug Fixes and Enhancements
 * Partition workflow outbox table
