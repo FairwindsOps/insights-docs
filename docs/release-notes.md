@@ -10,6 +10,20 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.45 (2026-06-04)
+### Bug Fixes and Enhancements
+* Fix right-sizing page in dark mode (UI)
+* Fix search for user and others (UI)
+* Fix cluster utilization chart on dashboard (UI)
+* Improve theme support for repo logs card (UI)
+* Fix preserve repository name for scoped view (UI)
+* Fix capacity label graphs (UI)
+* Add debugging information to narrow down Cypress flakiness (UI)
+* Update `CircleCI` to `v15.16.0`, `Node.js` to `v24.16.0`, `npm` to `v7.29.7`, `@tanstack/react-query` to `v5.100.14`, `@react-spring/web` to `v10.1.0`, and other `npm` non-major dependencies (UI)
+* Enhance cluster deletion process with configurable batch size and sleep
+* Add support to SET ROLE in Insights
+* Update all non-major dependencies
+
 ## 18.3.44 (2026-05-29)
 ### Bug Fixes and Enhancements
 * Webpack cleanup (UI)
