@@ -10,6 +10,16 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.46 (2026-06-08)
+### Bug Fixes and Enhancements
+* Migrate Renovate config (UI)
+* Fix expanding CVEs on the customer dashboard to expand only the selected CVE (UI)
+* Add UI support for image trust (UI)
+* Fix selecting top-level cluster in Vulnerabilities (UI)
+* Update `npm` non-major dependencies to `v8.14.0` and `v7.16.0`, `Dockerfile` and `CircleCI` config regex non-major dependencies to `v11.16.0`, and other `npm` non-major dependencies (UI)
+* Update all non-major dependencies to `v1.44.1` and `v1.17.0`, plus other non-major dependencies
+* Support image trust report in Insights
+
 ## 18.3.45 (2026-06-04)
 ### Bug Fixes and Enhancements
 * Fix right-sizing page in dark mode (UI)
