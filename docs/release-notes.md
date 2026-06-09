@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.48 (2026-06-09)
+### Bug Fixes and Enhancements
+* Update `npm` non-major dependencies to `v2.0.6` and `v8.60.1` (UI)
+
 ## 18.3.47 (2026-06-09)
 ### Bug Fixes and Enhancements
 * Fix LLM tab CSS (UI)
