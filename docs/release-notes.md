@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.47 (2026-06-09)
+### Bug Fixes and Enhancements
+* Fix LLM tab CSS (UI)
+* Add terms and agreements for LLM/AI Agents (UI)
+* Update `npm` non-major dependencies to `v4.12.0`, `CircleCI` non-major dependencies to `v2026.06`, `npm` major dependencies to `v15`, and other `npm` non-major dependencies (UI)
+* Improve error message on login with wrong payload
+* Update all non-major dependencies to `v0.15.6` and `v10.30.3`, plus other non-major dependencies
+
 ## 18.3.46 (2026-06-08)
 ### Bug Fixes and Enhancements
 * Migrate Renovate config (UI)
