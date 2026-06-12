@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.49 (2026-06-12)
+### Bug Fixes and Enhancements
+* Update `npm` non-major dependencies to `v2.0.2`, plus other `npm` non-major dependencies (UI)
+* Improve webhook error handling to return 400 instead of 500
+* Update all non-major dependencies to `v0.25.0`, `v0.140.0`, `v1.27.0`, and `v0.2.3`, plus other non-major dependencies
+
 ## 18.3.48 (2026-06-09)
 ### Bug Fixes and Enhancements
 * Update `npm` non-major dependencies to `v2.0.6` and `v8.60.1` (UI)
