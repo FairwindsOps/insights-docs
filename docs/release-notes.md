@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.50 (2026-06-15)
+### Bug Fixes and Enhancements
+* Update `npm` non-major dependencies (UI)
+* Update all non-major dependencies
+* Add support for env var to control which orgs will be processed by temporal report job
+
 ## 18.3.49 (2026-06-12)
 ### Bug Fixes and Enhancements
 * Update `npm` non-major dependencies to `v2.0.2`, plus other `npm` non-major dependencies (UI)
