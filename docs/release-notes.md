@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.51 (2026-06-18)
+### Bug Fixes and Enhancements
+* Update `npm` non-major dependencies to `v3.8.4`, plus other `npm` non-major dependencies (UI)
+* Process images from workloads report
+* Add percentage based temporal report job switch
+* Update non-major dependencies
+
 ## 18.3.50 (2026-06-15)
 ### Bug Fixes and Enhancements
 * Update `npm` non-major dependencies (UI)
