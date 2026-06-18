@@ -15,7 +15,7 @@ sidebarDepth: 1
 * Update `npm` non-major dependencies to `v3.8.4`, plus other `npm` non-major dependencies (UI)
 * Process images from workloads report
 * Add percentage based temporal report job switch
-* Update all non-major dependencies to `v0.38.0` and `v1.17.1`, plus other non-major dependencies
+* Update non-major dependencies
 
 ## 18.3.50 (2026-06-15)
 ### Bug Fixes and Enhancements
