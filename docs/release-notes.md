@@ -10,6 +10,15 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.52 (2026-06-22)
+### Bug Fixes and Enhancements
+* Fix, enhance and simplify action items routing and default query params (UI)
+* Fix dark theme on bullet chart when switch themes (UI)
+* Update `CircleCI` non-major dependencies to `v15.17.0`, plus other `npm` non-major dependencies (UI)
+* Improve workflow to retry up to 3 times if the activity fails, no retry on timeout
+* Update non-major dependencies
+* Fix SQL error retrieving images inventory
+
 ## 18.3.51 (2026-06-18)
 ### Bug Fixes and Enhancements
 * Update `npm` non-major dependencies to `v3.8.4`, plus other `npm` non-major dependencies (UI)
