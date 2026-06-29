@@ -10,6 +10,18 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.54 (2026-06-29)
+### Bug Fixes and Enhancements
+* Fix `Babel` config, block `Babel` `v8`, and restore the dedicated Cypress `Babel` config (UI)
+* Remove `npm install` from CI/CD (UI)
+* Create Network Observability page (UI)
+* Modify insights-ui pipeline to use Vault for AWS credentials (UI)
+* Add Inventory to UI (UI)
+* Update `npm` major updates to `v8` (UI)
+* Modify pipelines to use Vault for AWS credentials
+* Update module `google.golang.org/grpc` to `v1.81.1`
+* Create backend API, gRPC ingestion server, and database structure for Network Observability
+
 ## 18.3.52 (2026-06-22)
 ### Bug Fixes and Enhancements
 * Fix, enhance and simplify action items routing and default query params (UI)
