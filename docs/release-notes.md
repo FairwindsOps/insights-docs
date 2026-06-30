@@ -16,6 +16,15 @@ sidebarDepth: 1
 * Update `Node.js` to `v24.17.0` (UI)
 * Use warn instead of error when returning 400
 
+## 18.3.55 (2026-06-30)
+### Bug Fixes and Enhancements
+* Update dependencies `knip` to `v6.18.0`, `js-yaml` to `v5`, and `@xyflow/react` to `v12.11.1` (UI)
+* Update `Node.js` to `v24.17.0` (UI)
+* Update non-major dependencies
+* Remove unused main file and supporting functions
+* Increase report job process worker stop timeout to 15 minutes
+* Update `github.com/falcosecurity/falcosidekick` digest to `92f1125`
+
 ## 18.3.54 (2026-06-29)
 ### Bug Fixes and Enhancements
 * Fix `Babel` config, block `Babel` `v8`, and restore the dedicated Cypress `Babel` config (UI)
