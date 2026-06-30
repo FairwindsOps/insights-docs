@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.56 (2026-06-30)
+### Bug Fixes and Enhancements
+* Update `npm` non-major dependencies (UI)
+* Update `Node.js` to `v24.17.0` (UI)
+* Use warn instead of error when returning 400
+
 ## 18.3.55 (2026-06-30)
 ### Bug Fixes and Enhancements
 * Update dependencies `knip` to `v6.18.0`, `js-yaml` to `v5`, and `@xyflow/react` to `v12.11.1` (UI)
