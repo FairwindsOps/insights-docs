@@ -14,8 +14,6 @@ sidebarDepth: 1
 ### Bug Fixes and Enhancements
 * Update `cypress/included` Docker tag to `v15.18.0` (UI)
 * Update `npm` non-major dependencies (UI)
-* Tag tests and use gen2 executors
-* Update env variable name for batch size in IngestBatchSizeFromEnv
 
 ## 18.3.56 (2026-06-30)
 ### Bug Fixes and Enhancements
