@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.58 (2026-07-02)
+### Bug Fixes and Enhancements
+* Update `Node.js` to `v24.18.0` (UI)
+* Update `npm` non-major dependencies (UI)
+* Add gRPC health check endpoint
+* Update module `go.temporal.io/api` to `v1.63.0`
+
 ## 18.3.57 (2026-07-02)
 ### Bug Fixes and Enhancements
 * Update `cypress/included` Docker tag to `v15.18.0` (UI)
