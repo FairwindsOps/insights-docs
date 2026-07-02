@@ -109,9 +109,9 @@ sidebarDepth: 1
 ## 18.3.44 (2026-05-29)
 ### Bug Fixes and Enhancements
 * Webpack cleanup (UI)
-* Update Node.js to `v24.16.0` (UI)
+* Update `Node.js` to `v24.16.0` (UI)
 * Fix select values background color (UI)
-* Update all non-major dependencies
+* Update non-major dependencies
 * Fix github comment body size overflow
 * Update module `github.com/getkin/kin-openapi` to `v0.139.0`
 
