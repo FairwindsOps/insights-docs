@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.57 (2026-07-02)
+### Bug Fixes and Enhancements
+* Update `cypress/included` Docker tag to `v15.18.0` (UI)
+* Update `npm` non-major dependencies (UI)
+
 ## 18.3.56 (2026-06-30)
 ### Bug Fixes and Enhancements
 * Update `npm` non-major dependencies (UI)
