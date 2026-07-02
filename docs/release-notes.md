@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.58 (2026-07-02)
+### Bug Fixes and Enhancements
+* Update `Node.js` to `v24.18.0` (UI)
+* Update `npm` non-major dependencies (UI)
+* Add gRPC health check endpoint
+* Update module `go.temporal.io/api` to `v1.63.0`
+
 ## 18.3.57 (2026-07-02)
 ### Bug Fixes and Enhancements
 * Update `cypress/included` Docker tag to `v15.18.0` (UI)
@@ -109,9 +116,9 @@ sidebarDepth: 1
 ## 18.3.44 (2026-05-29)
 ### Bug Fixes and Enhancements
 * Webpack cleanup (UI)
-* Update `Node.js` to `v24.16.0` (UI)
+* Update Node.js to `v24.16.0` (UI)
 * Fix select values background color (UI)
-* Update non-major dependencies
+* Update all non-major dependencies
 * Fix github comment body size overflow
 * Update module `github.com/getkin/kin-openapi` to `v0.139.0`
 
