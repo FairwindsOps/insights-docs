@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.59 (2026-07-07)
+### Bug Fixes and Enhancements
+* Inventory link is going to Managed Services Dashboard (UI)
+* Update `npm` to `v11.18.0` and `stylelint` to `v17.14.0` (UI)
+* Update non-major dependencies
+* Add support for beta features API
+* Update module `github.com/open-policy-agent/opa` to `v1.18.0`
+
 ## 18.3.58 (2026-07-02)
 ### Bug Fixes and Enhancements
 * Update `Node.js` to `v24.18.0` (UI)
