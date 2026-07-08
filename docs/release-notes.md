@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.62 (2026-07-08)
+### Bug Fixes and Enhancements
+* Update dependency `rok8s` to `v16`
+
 ## 18.3.60 (2026-07-07)
 ### Bug Fixes and Enhancements
 * Drop action_items_filters_mview, always use cluster mview as base instead
