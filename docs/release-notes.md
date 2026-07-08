@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.61 (2026-07-08)
+### Bug Fixes and Enhancements
+* Make temporal worker default and add fallback to legacy worker
+* Update module `golang.org/x/text` to `v0.39.0`
+
 ## 18.3.59 (2026-07-07)
 ### Bug Fixes and Enhancements
 * Inventory link is going to Managed Services Dashboard (UI)
