@@ -14,6 +14,10 @@ sidebarDepth: 1
 ### Bug Fixes and Enhancements
 * Update dependency `rok8s` to `v16`
 
+## 18.3.60 (2026-07-07)
+### Bug Fixes and Enhancements
+* Drop action_items_filters_mview, always use cluster mview as base instead
+
 ## 18.3.59 (2026-07-07)
 ### Bug Fixes and Enhancements
 * Inventory link is going to Managed Services Dashboard (UI)
