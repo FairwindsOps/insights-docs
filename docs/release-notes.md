@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.63 (2026-07-09)
+### Bug Fixes and Enhancements
+* Add support for enable beta feat (UI)
+* Update dependencies `js-yaml` to `v5.2.1` and `rok8s` to `v16` (UI)
+* Update `cimg/base` Docker tag to `v2026.07` (UI)
+* Download and save AWS prices into CSV
+
 ## 18.3.62 (2026-07-08)
 ### Bug Fixes and Enhancements
 * Update dependency `rok8s` to `v16`
