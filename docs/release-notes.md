@@ -10,12 +10,17 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.64 (2026-07-10)
+### Bug Fixes and Enhancements
+* Update dependency `knip` to `v6.24.0` (UI)
+* Update AWS and GCP instance type CSV files
+
 ## 18.3.63 (2026-07-09)
 ### Bug Fixes and Enhancements
 * Add support for enable beta feat (UI)
 * Update dependencies `js-yaml` to `v5.2.1` and `rok8s` to `v16` (UI)
 * Update `cimg/base` Docker tag to `v2026.07` (UI)
-* Download and save AWS prices into CSV
+* Download and save pre-computed AWS prices into CSV
 
 ## 18.3.62 (2026-07-08)
 ### Bug Fixes and Enhancements
@@ -28,7 +33,7 @@ sidebarDepth: 1
 
 ## 18.3.60 (2026-07-07)
 ### Bug Fixes and Enhancements
-* Drop action_items_filters_mview, always use cluster mview as base instead
+* Drop `action_items_filters_mview`, always use cluster materialized view as base instead
 
 ## 18.3.59 (2026-07-07)
 ### Bug Fixes and Enhancements
