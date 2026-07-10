@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.64 (2026-07-10)
+### Bug Fixes and Enhancements
+* Update dependency `knip` to `v6.24.0` (UI)
+* Weekly AWS/GCP instance type CSV refresh
+* Update AWS and GCP instance type CSV files
+
 ## 18.3.63 (2026-07-09)
 ### Bug Fixes and Enhancements
 * Add support for enable beta feat (UI)
