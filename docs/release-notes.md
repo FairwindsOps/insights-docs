@@ -10,6 +10,20 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.65 (2026-07-13)
+### Bug Fixes and Enhancements
+* Service backends UI support and general UI improvements (UI)
+* Add network-observability support in install hub (UI)
+* Fix inventory vulnerabilities link not showing data (UI)
+* Update dependency `@xyflow/react` to `v12.11.2` and `nginxinc/nginx-unprivileged` Docker tag to `v1.31` (UI)
+* Update non-major dependencies
+* Add support for services backends
+* Add support for network observability report handling
+* Fix all images on inventory appearing as unscanned
+* Move AG health-score outside general-worker
+* Update `github.com/falcosecurity/falcosidekick` digest to `3762836`
+* Update module `github.com/aws/aws-sdk-go-v2/feature/s3/transfermanager` to `v0.2.13`
+
 ## 18.3.64 (2026-07-10)
 ### Bug Fixes and Enhancements
 * Update dependency `knip` to `v6.24.0` (UI)
