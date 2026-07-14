@@ -10,6 +10,17 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.66 (2026-07-14)
+### Bug Fixes and Enhancements
+* Improve performance of network-observability map (UI)
+* Handle org owner add app groups filter (UI)
+* Update non-major dependencies
+* Refactor app group match criteria handling to ensure empty match criteria defaults to matching all
+* Add endpoint for image and workload filters
+* Restrict network observability to owners
+* Update module `go.temporal.io/sdk` to `v1.46.0`
+* Update module `github.com/google/go-github/v88` to `v89`
+
 ## 18.3.65 (2026-07-13)
 ### Bug Fixes and Enhancements
 * Service backends UI support and general UI improvements (UI)
