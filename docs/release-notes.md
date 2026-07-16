@@ -10,6 +10,17 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.67 (2026-07-16)
+### Bug Fixes and Enhancements
+* Filter fixes on network observability page (UI)
+* Fix right sizing table sorting and pagination (UI)
+* Add columns filters for image and workload inventory (UI)
+* Make live updates disabled by default (UI)
+* Update non-major dependencies
+* Add ability for filtering kinds and trust status on inventory
+* Update dependency `@uiw/react-codemirror` to `v4.25.11` (UI)
+* Update module `go.temporal.io/api` to `v1.63.2`
+
 ## 18.3.66 (2026-07-14)
 ### Bug Fixes and Enhancements
 * Improve performance of network-observability map (UI)
