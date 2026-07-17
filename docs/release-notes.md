@@ -10,6 +10,15 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.68 (2026-07-17)
+### Bug Fixes and Enhancements
+* Collapse namespace nodes into summaries on big clusters and other improvements (UI)
+* Update non-major dependencies
+* Enhance IngestServer with cluster statistics tracking and logging
+* Refine job triggers for scheduled pipelines
+* Update module `golang.org/x/exp` digest to `9ea1abe`
+* Add namespaces, ingress, nodes to inventory
+
 ## 18.3.67 (2026-07-16)
 ### Bug Fixes and Enhancements
 * Filter fixes on network observability page (UI)
