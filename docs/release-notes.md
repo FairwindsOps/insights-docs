@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.69 (2026-07-20)
+### Bug Fixes and Enhancements
+* Update non-major dependencies (UI)
+* Add API for inventory overview
+* Process new workload fields
+* Update module `go.temporal.io/api` to `v1.63.3`
+
 ## 18.3.68 (2026-07-17)
 ### Bug Fixes and Enhancements
 * Collapse namespace nodes into summaries on big clusters and other improvements (UI)
