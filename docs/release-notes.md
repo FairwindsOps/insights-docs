@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.70 (2026-07-20)
+### Bug Fixes and Enhancements
+* Update dependency `postcss` to `v8.5.19` (UI)
+* Add PCV Topology
+* Process PVC and services
+* Update AWS and GCP instance type CSV files
+* Update non-major dependencies
+
 ## 18.3.69 (2026-07-20)
 ### Bug Fixes and Enhancements
 * Update non-major dependencies (UI)
