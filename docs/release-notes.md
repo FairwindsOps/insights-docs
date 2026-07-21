@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.72 (2026-07-21)
+### Bug Fixes and Enhancements
+* Update `cypress/included` Docker tag to `v15.18.1` (UI)
+* UI improvements for inventory (UI)
+* Update non-major dependencies
+* Implement NetworkFlowQueryExcludeDstKinds parameter and update related components
+* Avoid full unscoped scan of soft-deleted action items on report ingest
+
 ## 18.3.71 (2026-07-21)
 ### Bug Fixes and Enhancements
 * Enhancements to the network service map UI (UI)
