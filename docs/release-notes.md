@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.71 (2026-07-21)
+### Bug Fixes and Enhancements
+* Enhancements to the network service map UI (UI)
+* Update non-major dependencies
+* Update gRPC server options to be env-driven
+
 ## 18.3.70 (2026-07-20)
 ### Bug Fixes and Enhancements
 * Update dependency `postcss` to `v8.5.19` (UI)
