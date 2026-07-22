@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.73 (2026-07-22)
+### Bug Fixes and Enhancements
+* Add deep link support (UI)
+* Wire network dst scope exclude kinds (UI)
+* Update non-major dependencies
+* Fix column `resources.gpu_cost` does not exist
+
 ## 18.3.72 (2026-07-21)
 ### Bug Fixes and Enhancements
 * Update `cypress/included` Docker tag to `v15.18.1` (UI)
