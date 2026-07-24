@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.75 (2026-07-24)
+### Bug Fixes and Enhancements
+* Inventory NodePool UI (UI)
+* Process NodePool info
+* Update dependency `@tisoap/react-flow-smart-edge` to `v4.13.1` and `react-virtuoso` to `v4.18.11` (UI)
+* Update non-major dependencies
+
 ## 18.3.74 (2026-07-24)
 ### Bug Fixes and Enhancements
 * Implement link local type support (UI)
