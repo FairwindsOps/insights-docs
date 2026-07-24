@@ -10,6 +10,16 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.74 (2026-07-24)
+### Bug Fixes and Enhancements
+* Implement link local type support (UI)
+* Add a toggle for showing/hiding the Kubernetes API server in network filters (UI)
+* Inventory UI improvements (UI)
+* Fix dark theme issues and charts logos on addons page (UI)
+* Update dependency `knip` to `v6.27.0` (UI)
+* Add NodePool API
+* Update module `google.golang.org/grpc` to `v1.82.1`
+
 ## 18.3.73 (2026-07-22)
 ### Bug Fixes and Enhancements
 * Add deep link support (UI)
