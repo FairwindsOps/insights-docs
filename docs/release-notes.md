@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.3.76 (2026-07-27)
+### Bug Fixes and Enhancements
+* Fix loading indicator in several pages (UI)
+* Improvements in network-observability page (UI)
+* Search Inventory by labels
+* Update module `github.com/oapi-codegen/oapi-codegen/v2` to `v2.8.0`
+
 ## 18.3.75 (2026-07-24)
 ### Bug Fixes and Enhancements
 * Inventory NodePool UI (UI)
