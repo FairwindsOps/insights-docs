@@ -12,6 +12,7 @@ sidebarDepth: 1
 
 ## 18.4.0 (2026-07-28)
 ### Bug Fixes and Enhancements
+* [New Feature] - Network Observability tab on Cluster detail page
 * Refactor karpenter menu (UI)
 * Kubernetes API enabled by default (UI)
 * Prevent overlap during layout adjustments (UI)
