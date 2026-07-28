@@ -10,6 +10,17 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.0 (2026-07-28)
+### Bug Fixes and Enhancements
+* Refactor karpenter menu (UI)
+* Kubernetes API enabled by default (UI)
+* Prevent overlap during layout adjustments (UI)
+* Update non-major dependencies (UI)
+* Vulnerabilities count does not match
+* Add organization deletion scheduled email notification
+* Fix topology filter for node claim and node class
+* Improve AWS prices calculation to use fixed region and non-RHEL values
+
 ## 18.3.76 (2026-07-27)
 ### Bug Fixes and Enhancements
 * Fix loading indicator in several pages (UI)
