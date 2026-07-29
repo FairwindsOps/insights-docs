@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.2 (2026-07-29)
+### Bug Fixes and Enhancements
+* Make inventory UI consistent (UI)
+* Update dependency `knip` to `v6.29.0` (UI)
+* Update non-major dependencies (UI)
+* Allow filtering trust status by empty string
+
 ## 18.4.1 (2026-07-29)
 ### Bug Fixes and Enhancements
 * Fix inventory tables filters UI (UI)
