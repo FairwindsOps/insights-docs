@@ -10,6 +10,16 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.1 (2026-07-29)
+### Bug Fixes and Enhancements
+* Fix inventory tables filters UI (UI)
+* Fix Inventory action items links (UI)
+* Update `cypress/included` Docker tag to `v15.19.0` (UI)
+* Update non-major dependencies
+* Fix inventory search
+* Update `github.com/fairwindsops/polaris` digest to `4bdf531`
+* Add missing inventory filters to API
+
 ## 18.4.0 (2026-07-28)
 ### Bug Fixes and Enhancements
 * **New Feature - Network Observability tab on Cluster detail page**
