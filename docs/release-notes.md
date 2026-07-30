@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.3 (2026-07-30)
+### Bug Fixes and Enhancements
+* Remove network observability feature flag references (UI)
+* Update LLM catalog
+* Update non-major dependencies
+* Update dependency `pressly/goose` to `v3.27.3`
+* Fix link between inventory and trivy
+
 ## 18.4.2 (2026-07-29)
 ### Bug Fixes and Enhancements
 * Make inventory UI consistent (UI)
