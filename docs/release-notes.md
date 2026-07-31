@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.4 (2026-07-31)
+### Bug Fixes and Enhancements
+* Inventory node costs
+
 ## 18.4.3 (2026-07-30)
 ### Bug Fixes and Enhancements
 * Remove network observability feature flag references (UI)
