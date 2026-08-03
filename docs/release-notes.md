@@ -10,6 +10,19 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.5 (2026-08-03)
+### Bug Fixes and Enhancements
+* Fix links and sorting for inventory (UI)
+* Enhance network event handling and add export functionality (UI)
+* Inventory node costs UI (UI)
+* Unpin insights-iu-components (UI)
+* Bumped insights-ui-components (UI)
+* Update dependency `eslint` to `v10.8.0`, `postcss` to `v8.5.23`, `js-yaml` to `v5.2.2`, `sass` to `v1.101.7`, and `webpack` to `v5.109.0` (UI)
+* Update non-major dependencies
+* Fix nodes filtering and sorting
+* Only refresh `mv_image_vulnerabilities` when necessary
+* Enhance Network Flow API with additional query parameters and filters also add support for CSV
+
 ## 18.4.4 (2026-07-31)
 ### Bug Fixes and Enhancements
 * Inventory node costs
