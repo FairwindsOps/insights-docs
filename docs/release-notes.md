@@ -10,6 +10,61 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.5 (2026-08-03)
+### Bug Fixes and Enhancements
+* Fix links and sorting for inventory (UI)
+* Enhance network event handling and add export functionality (UI)
+* Inventory node costs UI (UI)
+* Unpin insights-iu-components (UI)
+* Bumped insights-ui-components (UI)
+* Update dependency `eslint` to `v10.8.0`, `postcss` to `v8.5.23`, `js-yaml` to `v5.2.2`, `sass` to `v1.101.7`, and `webpack` to `v5.109.0` (UI)
+* Update non-major dependencies
+* Fix nodes filtering and sorting
+* Only refresh `mv_image_vulnerabilities` when necessary
+* Enhance Network Flow API with additional query parameters and filters also add support for CSV
+
+## 18.4.4 (2026-07-31)
+### Bug Fixes and Enhancements
+* Inventory node costs
+
+## 18.4.3 (2026-07-30)
+### Bug Fixes and Enhancements
+* Remove network observability feature flag references (UI)
+* Update LLM catalog
+* Update non-major dependencies
+* Update dependency `pressly/goose` to `v3.27.3`
+* Fix link between inventory and trivy
+
+## 18.4.2 (2026-07-29)
+### Bug Fixes and Enhancements
+* Make inventory UI consistent (UI)
+* Update dependency `knip` to `v6.29.0` (UI)
+* Update non-major dependencies (UI)
+* Allow filtering trust status by empty string
+
+## 18.4.1 (2026-07-29)
+### Bug Fixes and Enhancements
+* Fix inventory tables filters UI (UI)
+* Fix Inventory action items links (UI)
+* Update `cypress/included` Docker tag to `v15.19.0` (UI)
+* Update non-major dependencies
+* Fix inventory search
+* Update `github.com/fairwindsops/polaris` digest to `4bdf531`
+* Add missing inventory filters to API
+
+## 18.4.0 (2026-07-28)
+### Bug Fixes and Enhancements
+* **New Feature - Network Observability tab on Cluster detail page**
+* **New Feature - Network Observability Report on Cluster Install Hub**
+* Refactor karpenter menu (UI)
+* Kubernetes API enabled by default (UI)
+* Prevent overlap during layout adjustments (UI)
+* Update non-major dependencies (UI)
+* Vulnerabilities count does not match
+* Add organization deletion scheduled email notification
+* Fix topology filter for node claim and node class
+* Improve AWS prices calculation to use fixed region and non-RHEL values
+
 ## 18.3.77 (2026-07-27)
 ### Bug Fixes and Enhancements
 * Add gateways info to UI (UI)
@@ -23,7 +78,6 @@ sidebarDepth: 1
 ## 18.3.76 (2026-07-27)
 ### Bug Fixes and Enhancements
 * Fix loading indicator in several pages (UI)
-* Improvements in network-observability page (UI)
 * Search Inventory by labels
 * Update module `github.com/oapi-codegen/oapi-codegen/v2` to `v2.8.0`
 
@@ -91,7 +145,6 @@ sidebarDepth: 1
 
 ## 18.3.67 (2026-07-16)
 ### Bug Fixes and Enhancements
-* Filter fixes on network observability page (UI)
 * Fix right sizing table sorting and pagination (UI)
 * Add columns filters for image and workload inventory (UI)
 * Make live updates disabled by default (UI)
@@ -102,24 +155,20 @@ sidebarDepth: 1
 
 ## 18.3.66 (2026-07-14)
 ### Bug Fixes and Enhancements
-* Improve performance of network-observability map (UI)
 * Handle org owner add app groups filter (UI)
 * Update non-major dependencies
 * Refactor app group match criteria handling to ensure empty match criteria defaults to matching all
 * Add endpoint for image and workload filters
-* Restrict network observability to owners
 * Update module `go.temporal.io/sdk` to `v1.46.0`
 * Update module `github.com/google/go-github/v88` to `v89`
 
 ## 18.3.65 (2026-07-13)
 ### Bug Fixes and Enhancements
 * Service backends UI support and general UI improvements (UI)
-* Add network-observability support in install hub (UI)
 * Fix inventory vulnerabilities link not showing data (UI)
 * Update dependency `@xyflow/react` to `v12.11.2` and `nginxinc/nginx-unprivileged` Docker tag to `v1.31` (UI)
 * Update non-major dependencies
 * Add support for services backends
-* Add support for network observability report handling
 * Fix all images on inventory appearing as unscanned
 * Move AG health-score outside general-worker
 * Update `github.com/falcosecurity/falcosidekick` digest to `3762836`
@@ -189,13 +238,12 @@ sidebarDepth: 1
 ### Bug Fixes and Enhancements
 * Fix `Babel` config, block `Babel` `v8`, and restore the dedicated Cypress `Babel` config (UI)
 * Remove `npm install` from CI/CD (UI)
-* Create Network Observability page (UI)
 * Modify insights-ui pipeline to use Vault for AWS credentials (UI)
 * Add Inventory to UI (UI)
 * Update `npm` major updates to `v8` (UI)
 * Modify pipelines to use Vault for AWS credentials
 * Update module `google.golang.org/grpc` to `v1.81.1`
-* Create backend API, gRPC ingestion server, and database structure for Network Observability
+* Create backend API, gRPC ingestion server, and database structure
 
 ## 18.3.52 (2026-06-22)
 ### Bug Fixes and Enhancements

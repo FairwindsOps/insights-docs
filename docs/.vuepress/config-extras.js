@@ -86,6 +86,7 @@ module.exports = {
               'technical-details/reports/supported-checks',
               'technical-details/reports/new',
               'technical-details/reports/cloud-costs',
+              'technical-details/reports/network-observability',
             ],
           },
           {
