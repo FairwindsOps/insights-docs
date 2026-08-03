@@ -12,7 +12,6 @@ sidebarDepth: 1
 
 ## 18.4.6 (2026-08-03)
 ### Bug Fixes and Enhancements
-* Remove Centaurus code from insights-ui (UI)
 * Update dependency `@percy/cli` to `v1.32.5` (UI)
 * Update non-major dependencies
 
