@@ -65,6 +65,16 @@ sidebarDepth: 1
 * Fix topology filter for node claim and node class
 * Improve AWS prices calculation to use fixed region and non-RHEL values
 
+## 18.3.77 (2026-07-27)
+### Bug Fixes and Enhancements
+* Add gateways info to UI (UI)
+* Process gateway information
+* Update dependency `@tanstack/react-query` to `v5.101.3` (UI)
+* Bump and fix `oapi-codegen` to `2.8.0`
+* Update AWS and GCP instance type CSV files
+* Update non-major dependencies
+* Update module `github.com/getkin/kin-openapi` to `v0.144.0`
+
 ## 18.3.76 (2026-07-27)
 ### Bug Fixes and Enhancements
 * Fix loading indicator in several pages (UI)
