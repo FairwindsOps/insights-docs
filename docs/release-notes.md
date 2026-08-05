@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.8 (2026-08-05)
+### Bug Fixes and Enhancements
+* Update non-major dependencies (UI)
+* Improve slow network observability TS ingestion
+
 ## 18.4.7 (2026-08-05)
 ### Bug Fixes and Enhancements
 * Improve admin performance (UI)
