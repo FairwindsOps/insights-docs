@@ -10,6 +10,18 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.7 (2026-08-05)
+### Bug Fixes and Enhancements
+* Improve admin performance (UI)
+* Fix inventory link from costs (UI)
+* Update non-major dependencies
+* Implement error handling for organization retrieval in GetOrganization
+* Add ClusterCountsByOrganization method and update related tests
+* Update CircleCI PostgreSQL and TimescaleDB configurations for CI testing
+* Refactor report job update status activities
+* Remove centaurus and demo code from Insights
+* Update AWS and GCP instance type CSV files
+
 ## 18.4.6 (2026-08-03)
 ### Bug Fixes and Enhancements
 * Update dependency `@percy/cli` to `v1.32.5` (UI)
