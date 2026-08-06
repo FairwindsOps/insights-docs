@@ -20,14 +20,8 @@ sidebarDepth: 1
 * Cleanup temporal schedules on deletion
 * Update inventory image deletion methods to use unscoped org retrieval
 * Update module `github.com/imroc/req/v3` to `v3.60.0`
-
-## 18.4.8 (2026-08-05)
-### Bug Fixes and Enhancements
 * Update non-major dependencies (UI)
 * Improve slow network observability TS ingestion
-
-## 18.4.7 (2026-08-05)
-### Bug Fixes and Enhancements
 * Improve admin performance (UI)
 * Fix inventory link from costs (UI)
 * Update non-major dependencies
