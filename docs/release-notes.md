@@ -10,6 +10,17 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.9 (2026-08-06)
+### Bug Fixes and Enhancements
+* Deprecating IRouter and named routes in favor of react-router (UI)
+* Update `Node.js` to `v24.18.1` (UI)
+* Update `npm` to `v11.19.0` (UI)
+* Update dependency `axios` to `v1.19.0` and `postcss` to `v8.5.25` (UI)
+* Update non-major dependencies
+* Cleanup temporal schedules on deletion
+* Update inventory image deletion methods to use unscoped org retrieval
+* Update module `github.com/imroc/req/v3` to `v3.60.0`
+
 ## 18.4.8 (2026-08-05)
 ### Bug Fixes and Enhancements
 * Update non-major dependencies (UI)
