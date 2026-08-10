@@ -10,6 +10,15 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.10 (2026-08-10)
+### Bug Fixes and Enhancements
+* Update network access control logic to allow super admins to view network flows (UI)
+* Refactoring to remove route id (UI)
+* Update dependency `knip` to `v6.31.0` (UI)
+* Update non-major dependencies
+* Refactor network flow access control and update related tests
+* Create partman maintenance job
+
 ## 18.4.9 (2026-08-06)
 ### Bug Fixes and Enhancements
 * Deprecating IRouter and named routes in favor of react-router (UI)
