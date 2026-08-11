@@ -10,6 +10,18 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.11 (2026-08-11)
+### Bug Fixes and Enhancements
+* Update `Node.js` to `v24.19.0` (UI)
+* Update dependency `@rspack/dev-server` to `v2.2.0` and `@babel/plugin-transform-regenerator` to `v7.29.8` (UI)
+* Update `cimg/base` Docker tag to `v2026.08` (UI)
+* Update non-major dependencies
+* Recreate action items filters materialized view
+* Re-create vulnerabilities materialized view
+* Enhance admin user role management and update related messages
+* Implement connection lifetime mgmt and idle connection flushing
+* Update AWS and GCP instance type CSV files
+
 ## 18.4.9 (2026-08-06)
 ### Bug Fixes and Enhancements
 * Deprecating IRouter and named routes in favor of react-router (UI)
