@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.12 (2026-08-11)
+### Bug Fixes and Enhancements
+* Update `Node.js` to `v24.19.0` (UI)
+* Update non-major dependencies
+* Remove unnecessary migration logic for image vulnerabilities mview
+
 ## 18.4.11 (2026-08-11)
 ### Bug Fixes and Enhancements
 * Update `Node.js` to `v24.19.0` (UI)
