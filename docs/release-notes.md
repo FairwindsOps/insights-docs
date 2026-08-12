@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.14 (2026-08-12)
+### Bug Fixes and Enhancements
+* Update non-major dependencies (UI)
+
 ## 18.4.12 (2026-08-11)
 ### Bug Fixes and Enhancements
 * Update `Node.js` to `v24.19.0` (UI)
