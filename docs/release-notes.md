@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.13 (2026-08-12)
+### Bug Fixes and Enhancements
+* Refactor navigation route handling in tests and LeftNavigation component (UI)
+* Update module `github.com/google/go-github/v89` to `v90`
+* Implement grace period for organization deletion jobs
+* Add new workflow for cloud prices update
+
 ## 18.4.12 (2026-08-11)
 ### Bug Fixes and Enhancements
 * Update `Node.js` to `v24.19.0` (UI)
