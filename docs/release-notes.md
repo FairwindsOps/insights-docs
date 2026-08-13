@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.15 (2026-08-13)
+### Bug Fixes and Enhancements
+* Implement connection identity logging
+* No need to recreate action items mview
+
 ## 18.4.14 (2026-08-12)
 ### Bug Fixes and Enhancements
 * Update non-major dependencies (UI)
