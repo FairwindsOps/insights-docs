@@ -10,6 +10,22 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.16 (2026-08-13)
+### Bug Fixes and Enhancements
+* Update `cypress/included` Docker tag to `v15.20.0` (UI)
+* Update non-major dependencies (UI)
+* Fix truncate incidents and jira
+* Update module `go.temporal.io/api` to `v1.63.5`
+
+## 18.4.15 (2026-08-13)
+### Bug Fixes and Enhancements
+* Implement connection identity logging
+* No need to recreate action items mview
+
+## 18.4.14 (2026-08-12)
+### Bug Fixes and Enhancements
+* Update non-major dependencies (UI)
+
 ## 18.4.13 (2026-08-12)
 ### Bug Fixes and Enhancements
 * Refactor navigation route handling in tests and LeftNavigation component (UI)
