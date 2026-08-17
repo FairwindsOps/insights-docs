@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.17 (2026-08-17)
+### Bug Fixes and Enhancements
+* Refactor refresh image vulnerability from API
+* Update module `github.com/aws/smithy-go` to `v1.27.7`
+* Update non-major dependencies
+
 ## 18.4.16 (2026-08-13)
 ### Bug Fixes and Enhancements
 * Update `cypress/included` Docker tag to `v15.20.0` (UI)
