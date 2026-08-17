@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.18 (2026-08-17)
+### Bug Fixes and Enhancements
+* Update non-major dependencies (UI)
+* Update module `github.com/stretchr/testify` to `v1.12.0`
+
 ## 18.4.17 (2026-08-17)
 ### Bug Fixes and Enhancements
 * Refactor refresh image vulnerability from API
