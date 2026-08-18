@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.19 (2026-08-18)
+### Bug Fixes and Enhancements
+* Renovate should run generate api (UI)
+* Update `cypress/included` Docker tag to `v15.20.1` (UI)
+* Update non-major dependencies
+
 ## 18.4.18 (2026-08-17)
 ### Bug Fixes and Enhancements
 * Update non-major dependencies (UI)
