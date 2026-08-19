@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.21 (2026-08-19)
+### Bug Fixes and Enhancements
+* Fix AWS cloud prices update timing out
+
 ## 18.4.20 (2026-08-19)
 ### Bug Fixes and Enhancements
 * Enhance Cypress tests with intercepts for API calls to avoid flaky tests (UI)
