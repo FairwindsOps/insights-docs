@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.20 (2026-08-19)
+### Bug Fixes and Enhancements
+* Enhance Cypress tests with intercepts for API calls to avoid flaky tests (UI)
+* Update non-major dependencies (UI)
+* Implement organization not found handling in notification workflows
+* Refactor ListClustersActivity to return structured output to decrease its size
+* Update module `golang.org/x/text` to `v0.41.0`
+
 ## 18.4.19 (2026-08-18)
 ### Bug Fixes and Enhancements
 * Renovate should run generate api (UI)
