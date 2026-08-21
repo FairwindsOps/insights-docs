@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.23 (2026-08-21)
+### Bug Fixes and Enhancements
+* Update non-major dependencies
+* Propagate WorkflowID and other context properties into workflows
+
 ## 18.4.21 (2026-08-19)
 ### Bug Fixes and Enhancements
 * Fix AWS cloud prices update timing out
