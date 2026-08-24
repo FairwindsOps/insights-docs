@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.24 (2026-08-24)
+### Bug Fixes and Enhancements
+* Update dependency `@tanstack/react-table` to `v9`, `@tisoap/react-flow-smart-edge` to `v5`, and `eslint-plugin-cypress` to `v7` (UI)
+* Refactor renovate to remove major update groups (UI)
+* Update non-major dependencies
+* Update `github.com/falcosecurity/falcosidekick` digest to `8807ab7`
+* Update module `github.com/sirupsen/logrus` to `v1.10.0`
+
 ## 18.4.23 (2026-08-21)
 ### Bug Fixes and Enhancements
 * Update non-major dependencies
