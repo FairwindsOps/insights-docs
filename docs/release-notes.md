@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.25 (2026-08-25)
+### Bug Fixes and Enhancements
+* Increase resource limits and job deadline in Kubernetes and scan repo job configurations
+* Recreate action_items_filters_by_cluster_mview with memory usage improvements
+* Update module `github.com/open-policy-agent/opa` to `v1.19.1`
+
 ## 18.4.24 (2026-08-24)
 ### Bug Fixes and Enhancements
 * Update dependency `@tanstack/react-table` to `v9`, `@tisoap/react-flow-smart-edge` to `v5`, and `eslint-plugin-cypress` to `v7` (UI)
