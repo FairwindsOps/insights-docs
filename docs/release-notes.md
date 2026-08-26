@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.26 (2026-08-26)
+### Bug Fixes and Enhancements
+* Add support to kgateway in UI (UI)
+* Disable video recording for Cypress tests by default (UI)
+* Process kgateway in Insights
+* Update renovate.json to adjust concurrency limits and add daily scheduling
+
 ## 18.4.25 (2026-08-25)
 ### Bug Fixes and Enhancements
 * Increase resource limits and job deadline in Kubernetes and scan repo job configurations
