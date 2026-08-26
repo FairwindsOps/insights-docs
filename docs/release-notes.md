@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.27 (2026-08-26)
+### Bug Fixes and Enhancements
+* Update non-major dependencies
+
 ## 18.4.26 (2026-08-26)
 ### Bug Fixes and Enhancements
 * Add support to kgateway in UI (UI)
