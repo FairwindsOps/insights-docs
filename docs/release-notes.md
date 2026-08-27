@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.28 (2026-08-27)
+### Bug Fixes and Enhancements
+* Update dependency `jsdom` to `v30` (UI)
+* Fix CPU type convertion and added kyverno index
+* Fix gateway class is empty
+* Refactor error handling in ScanRepoScanJobActivity to classify processing errors
+* Update non-major dependencies
+
 ## 18.4.27 (2026-08-26)
 ### Bug Fixes and Enhancements
 * Update non-major dependencies
