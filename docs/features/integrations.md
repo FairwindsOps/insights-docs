@@ -25,7 +25,7 @@ Connecting GitHub with Fairwinds Insights unlocks several features:
 1. Auto-Scan for Infrastructure-as-Code
 2. Scan results posted to pull requests as comments
 3. Fairwinds Insights status on pull requests
-4. Automated Pull Request Fix
+4. [Automated Pull Request Fix](/features/action-item-fixing) — open GitHub PRs that fix IaC Action Items using rule-based, LLM, or agentic remediation
 5. Create an Github Issue based on a Fairwinds Insights Action Item
 
 ### Fairwinds Insights GitHub Application Permissions Required
