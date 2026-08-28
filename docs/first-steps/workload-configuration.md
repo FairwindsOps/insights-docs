@@ -58,6 +58,8 @@ This is a good way to pick out the most important items to fix.
 Once you've zeroed in on an item that you'd like to fix, click on it to see a description and
 remediation.
 
+For Action Items found in Infrastructure-as-Code scans on GitHub-connected repositories, you can also use [Automated Action Item Fixing](/features/action-item-fixing) to open a pull request with rule-based, LLM, or agentic remediation.
+
 <img :src="$withBase('/img/ai-remediation.png')" alt="Action item remediation">
 
 Bonus: if you notice any Action Items that can't or shouldn't be fixed, you can mark it as resolved:

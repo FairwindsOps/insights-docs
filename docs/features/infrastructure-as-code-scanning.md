@@ -34,7 +34,7 @@ There are two options for this feature:
 | **Automatic discovery of YAML/Helm charts in a repo** | Yes                                                                                                              | No - manually specify in `fairwinds-insights.yaml`                                                                               |
 | **Publish scan results as a GitHub Comment**          | Yes                                                                                                              | Yes (only if GitHub is integrated)                                                                                               |
 | **Publish GitHub commit status**                      | Yes                                                                                                              | Yes (only if GitHub is integrated)
-| **Automated Pull Request Fix**                        | Yes                                                                                                              | No                                                                                              |
+| **[Automated Pull Request Fix](/features/action-item-fixing)** | Yes                                                                                                              | No                                                                                              |
 | **Scan Container Images?**                            | Yes - Public and Private images                                                                                  | Yes - Public and Private images                                                                                                  |
 | **Resource Recommendations**                          | Yes                                                                                                              | Yes
 | **How do I get started?**                             | Navigate to: `Repositories > Add Repository > Connect GitHub`                                                    | Navigate to: `Repositories > Add Repository > Connect Manually`
@@ -76,6 +76,9 @@ option to enable/disable Auto-Scan for that specific repository.
 
 #### Step 3: Running Your First Scan
 For the repositories you've enable Auto-Scan on, Fairwinds Insights will crawl those repositories and scan any YAML and Helm charts on your next pull request.
+
+#### Step 4: Fixing Action Items with a Pull Request
+After a scan completes, open the repository in Insights, select a branch, and use **Create Pull Request** to fix selected Action Items automatically. Auto-Scan supports [rule-based, LLM, and agentic remediation strategies](/features/action-item-fixing). LLM and agentic options require configuration under `Settings > LLM & Agent Credentials`.
 
 ### Manual Scan
 #### Step 1: Setup Insights CI
