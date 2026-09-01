@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.29 (2026-09-01)
+### Bug Fixes and Enhancements
+* Fix Tokens css (UI)
+* Update non-major dependencies
+* Create new aggregates supporting pod/job label aggregation
+
 ## 18.4.28 (2026-08-27)
 ### Bug Fixes and Enhancements
 * Update dependency `jsdom` to `v30` (UI)
