@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.30 (2026-09-01)
+### Bug Fixes and Enhancements
+* Backfill resolved workloads
+
 ## 18.4.29 (2026-09-01)
 ### Bug Fixes and Enhancements
 * Fix Tokens css (UI)
