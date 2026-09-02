@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.32 (2026-09-02)
+### Bug Fixes and Enhancements
+* Copy aggregates to new metrics views and refresh
+* Update non-major dependencies
+
 ## 18.4.31 (2026-09-02)
 ### Bug Fixes and Enhancements
 * Increase report job timeout
