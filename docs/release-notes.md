@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.31 (2026-09-02)
+### Bug Fixes and Enhancements
+* Increase report job timeout
+
 ## 18.4.30 (2026-09-01)
 ### Bug Fixes and Enhancements
 * Backfill resolved workloads
