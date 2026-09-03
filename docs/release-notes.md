@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.34 (2026-09-03)
+### Bug Fixes and Enhancements
+* Remove UTM Stack integration from the codebase (UI)
+* Update non-major dependencies
+
 ## 18.4.32 (2026-09-02)
 ### Bug Fixes and Enhancements
 * Copy aggregates to new metrics views and refresh
