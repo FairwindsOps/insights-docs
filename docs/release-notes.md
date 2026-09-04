@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.35 (2026-09-04)
+### Bug Fixes and Enhancements
+* Update non-major dependencies
+* Implement OOM monitoring functionality across various components
+* Remove UTM Stack integration components and related API endpoints
+* Action items support for the new flag pod/job label aggregation
+
 ## 18.4.32 (2026-09-02)
 ### Bug Fixes and Enhancements
 * Copy aggregates to new metrics views and refresh
