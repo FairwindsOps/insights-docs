@@ -12,7 +12,7 @@ sidebarDepth: 1
 
 ## 18.4.36 (2026-09-04)
 ### Bug Fixes and Enhancements
-* Add OOM monitor webhook configuration and enable OOM monitoring
+* [internal] configuration changes
 
 ## 18.4.35 (2026-09-04)
 ### Bug Fixes and Enhancements
