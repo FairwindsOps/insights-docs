@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.39 (2026-09-10)
+### Bug Fixes and Enhancements
+* Add migration to fix stuck repo scan jobs by updating their status
+
 ## 18.4.37 (2026-09-10)
 ### Bug Fixes and Enhancements
 * Action items summary - clicking on some of the rows they return empty
