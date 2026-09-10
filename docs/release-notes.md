@@ -10,6 +10,15 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.37 (2026-09-10)
+### Bug Fixes and Enhancements
+* Action items summary - clicking on some of the rows they return empty
+* Update `go` to `v1.27`
+* Update dependency `pressly/goose` to `v3.28.0`
+* Fix new gosec rules
+* Repo scan job workflow rewrite
+* Update non-major dependencies
+
 ## 18.4.36 (2026-09-04)
 ### Bug Fixes and Enhancements
 * [internal] configuration changes
