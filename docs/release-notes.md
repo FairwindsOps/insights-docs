@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.40 (2026-09-11)
+### Bug Fixes and Enhancements
+* Demote noise logs
+* Update non-major dependencies
+* Update module `github.com/google/go-github/v90` to `v91`
+
 ## 18.4.39 (2026-09-10)
 ### Bug Fixes and Enhancements
 * Add migration to fix stuck repo scan jobs by updating their status
