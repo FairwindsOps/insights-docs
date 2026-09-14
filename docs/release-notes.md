@@ -10,6 +10,15 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.41 (2026-09-14)
+### Bug Fixes and Enhancements
+* Fix state management for strategy action items and enhance data handling logic (UI)
+* Upgrade `rok8s-scripts` to `v17.0.0` and update CI image to `v17.0-cimg-24.04` (UI)
+* Fix aggregate pod/jobs backfill process
+* Update non-major dependencies
+* Enhance LLM model catalog management by adding newer models and deprecating older ones
+* Update vulnerability scanning to only fail on CRITICAL vulnerabilities
+
 ## 18.4.40 (2026-09-11)
 ### Bug Fixes and Enhancements
 * Demote noise logs
