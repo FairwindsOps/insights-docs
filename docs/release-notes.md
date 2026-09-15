@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.43 (2026-09-15)
+### Bug Fixes and Enhancements
+* Improve costs page performance (UI)
+
 ## 18.4.42 (2026-09-15)
 ### Bug Fixes and Enhancements
 * Fix action items selection while using the search box (UI)
