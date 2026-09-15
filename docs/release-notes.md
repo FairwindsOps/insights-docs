@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.42 (2026-09-15)
+### Bug Fixes and Enhancements
+* Fix action items selection while using the search box (UI)
+* Implement unpaged pagination in useTable for improved data handling (UI)
+* Use new workloads metrics views with aggregated pods/jobs
+* Update module `github.com/jackc/pgx/v5` to `v5.11.0`
+
 ## 18.4.41 (2026-09-14)
 ### Bug Fixes and Enhancements
 * Fix state management for strategy action items and enhance data handling logic (UI)
