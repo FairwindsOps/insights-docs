@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.44 (2026-09-16)
+### Bug Fixes and Enhancements
+* Update `Node.js` to `v26` (UI)
+* Enhance link repo scan jobs to code scans to support optional code scan ID
+* Update non-major dependencies
+* Update `action-item-fixer` to `v0.0.2`
+
 ## 18.4.43 (2026-09-15)
 ### Bug Fixes and Enhancements
 * Improve costs page performance (UI)
