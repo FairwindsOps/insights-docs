@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.46 (2026-09-17)
+### Bug Fixes and Enhancements
+* Drop old workload metrics views
+
 ## 18.4.45 (2026-09-17)
 ### Bug Fixes and Enhancements
 * Enhance multi-architecture support in Docker setup and streamline image building process (UI)
