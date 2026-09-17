@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.45 (2026-09-17)
+### Bug Fixes and Enhancements
+* Enhance multi-architecture support in Docker setup and streamline image building process (UI)
+* Update `insights-ui-components` (UI)
+* Add Dockerfiles for multi-architecture support
+* Update non-major dependencies
+* Update dependency `rok8s` to `v17`
+
 ## 18.4.44 (2026-09-16)
 ### Bug Fixes and Enhancements
 * Update `Node.js` to `v26` (UI)
