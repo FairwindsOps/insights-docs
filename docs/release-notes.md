@@ -12,7 +12,6 @@ sidebarDepth: 1
 
 ## 18.4.47 (2026-09-18)
 ### Bug Fixes and Enhancements
-* Add admin UI to full sync otter conversations (UI)
 * Add Otter conversation models and API integration
 
 ## 18.4.46 (2026-09-17)
