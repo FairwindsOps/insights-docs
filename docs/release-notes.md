@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.47 (2026-09-18)
+### Bug Fixes and Enhancements
+* Add Otter conversation models and API integration
+
 ## 18.4.46 (2026-09-17)
 ### Bug Fixes and Enhancements
 * Drop old workload metrics views
