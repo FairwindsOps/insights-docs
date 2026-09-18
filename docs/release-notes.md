@@ -10,6 +10,59 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.47 (2026-09-18)
+### Bug Fixes and Enhancements
+* Add Otter conversation models and API integration
+
+## 18.4.46 (2026-09-17)
+### Bug Fixes and Enhancements
+* Drop old workload metrics views
+
+## 18.4.45 (2026-09-17)
+### Bug Fixes and Enhancements
+* Enhance multi-architecture support in Docker setup and streamline image building process (UI)
+* Update `insights-ui-components` (UI)
+* Add Dockerfiles for multi-architecture support
+* Update non-major dependencies
+* Update dependency `rok8s` to `v17`
+
+## 18.4.44 (2026-09-16)
+### Bug Fixes and Enhancements
+* Update `Node.js` to `v26` (UI)
+* Enhance link repo scan jobs to code scans to support optional code scan ID
+* Update non-major dependencies
+* Update `action-item-fixer` to `v0.0.2`
+
+## 18.4.43 (2026-09-15)
+### Bug Fixes and Enhancements
+* Improve costs page performance (UI)
+
+## 18.4.42 (2026-09-15)
+### Bug Fixes and Enhancements
+* Fix action items selection while using the search box (UI)
+* Implement unpaged pagination in useTable for improved data handling (UI)
+* Use new workloads metrics views with aggregated pods/jobs
+* Update module `github.com/jackc/pgx/v5` to `v5.11.0`
+
+## 18.4.41 (2026-09-14)
+### Bug Fixes and Enhancements
+* Fix state management for strategy action items and enhance data handling logic (UI)
+* Upgrade `rok8s-scripts` to `v17.0.0` and update CI image to `v17.0-cimg-24.04` (UI)
+* Fix aggregate pod/jobs backfill process
+* Update non-major dependencies
+* Enhance LLM model catalog management by adding newer models and deprecating older ones
+* Update vulnerability scanning to only fail on CRITICAL vulnerabilities
+
+## 18.4.40 (2026-09-11)
+### Bug Fixes and Enhancements
+* Demote noise logs
+* Update non-major dependencies
+* Update module `github.com/google/go-github/v90` to `v91`
+
+## 18.4.39 (2026-09-10)
+### Bug Fixes and Enhancements
+* Add migration to fix stuck repo scan jobs by updating their status
+
 ## 18.4.38 (2026-09-10)
 ### Bug Fixes and Enhancements
 * Recreate and backfill workload metrics views
@@ -33,6 +86,11 @@ sidebarDepth: 1
 * Implement OOM monitoring functionality across various components
 * Remove UTM Stack integration components and related API endpoints
 * Action items support for the new flag pod/job label aggregation
+
+## 18.4.34 (2026-09-03)
+### Bug Fixes and Enhancements
+* Remove UTM Stack integration from the codebase (UI)
+* Update non-major dependencies
 
 ## 18.4.32 (2026-09-02)
 ### Bug Fixes and Enhancements
