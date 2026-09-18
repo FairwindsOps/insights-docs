@@ -83,6 +83,11 @@ sidebarDepth: 1
 * Remove UTM Stack integration components and related API endpoints
 * Action items support for the new flag pod/job label aggregation
 
+## 18.4.34 (2026-09-03)
+### Bug Fixes and Enhancements
+* Remove UTM Stack integration from the codebase (UI)
+* Update non-major dependencies
+
 ## 18.4.32 (2026-09-02)
 ### Bug Fixes and Enhancements
 * Copy aggregates to new metrics views and refresh
