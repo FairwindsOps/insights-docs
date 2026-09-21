@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.48 (2026-09-21)
+### Bug Fixes and Enhancements
+* Fix visual bug displaying efficiency overview (UI)
+* Fix visual bug in settings page (UI)
+* Add conversations card to customer dashboard (UI)
+* Update non-major dependencies
+* Update dependency `kyverno/kyverno` to `v1.19.1`
+
 ## 18.4.47 (2026-09-18)
 ### Bug Fixes and Enhancements
 * Add Otter conversation models and API integration
