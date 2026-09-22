@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.49 (2026-09-22)
+### Bug Fixes and Enhancements
+* Fix costs visual bug when few points of data (UI)
+* Update non-major dependencies
+* Update module `github.com/google/go-github/v91` to `v92`
+
 ## 18.4.48 (2026-09-21)
 ### Bug Fixes and Enhancements
 * Fix visual bug displaying efficiency overview (UI)
