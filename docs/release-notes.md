@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.52 (2026-09-22)
+### Bug Fixes and Enhancements
+* Improve Costs UI performance (UI)
+* Cleanup workloads metrics feature flags (UI)
+
 ## 18.4.51 (2026-09-22)
 ### Bug Fixes and Enhancements
 * Improve Costs performance
