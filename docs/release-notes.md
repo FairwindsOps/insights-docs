@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.50 (2026-09-22)
+### Bug Fixes and Enhancements
+* Update CircleCI non-major updates (UI)
+
 ## 18.4.49 (2026-09-22)
 ### Bug Fixes and Enhancements
 * Fix costs visual bug when few points of data (UI)
