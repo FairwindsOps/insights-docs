@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.54 (2026-09-23)
+### Bug Fixes and Enhancements
+* Improve admission requests performance
+
 ## 18.4.53 (2026-09-23)
 ### Bug Fixes and Enhancements
 * Update dependency `rok8s` to `v17.1.0` (UI)
