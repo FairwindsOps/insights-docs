@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.55 (2026-09-25)
+### Bug Fixes and Enhancements
+* Improve right size performance (UI)
+* Improve right size performance
+
 ## 18.4.54 (2026-09-23)
 ### Bug Fixes and Enhancements
 * Improve admission requests performance
