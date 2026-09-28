@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.56 (2026-09-28)
+### Bug Fixes and Enhancements
+* Improve clusters overview (UI)
+* Add vulnerability scanning job to CircleCI configuration (UI)
+* Update CLI output parsing to ignore YAML file paths in warnings
+* Improve performance in Clusters overview
+* Update non-major dependencies
+
 ## 18.4.55 (2026-09-25)
 ### Bug Fixes and Enhancements
 * Improve right size performance (UI)
