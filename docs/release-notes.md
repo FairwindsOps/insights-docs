@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.58 (2026-09-29)
+### Bug Fixes and Enhancements
+* Update non-major dependencies
+* Update `Node.js` to `v26.9.0` (UI)
+* Do not consider expired trial as ongoing
+
 ## 18.4.57 (2026-09-29)
 ### Bug Fixes and Enhancements
 * Cluster overview is not reloading all components (UI)
