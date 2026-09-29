@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.57 (2026-09-29)
+### Bug Fixes and Enhancements
+* Cluster overview is not reloading all components (UI)
+* Update `Node.js` to `v26.9.0` (UI)
+* Improve healthscore performance
+* Daily vuln check and alerting
+
 ## 18.4.56 (2026-09-28)
 ### Bug Fixes and Enhancements
 * Improve clusters overview (UI)
