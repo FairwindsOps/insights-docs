@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.60 (2026-09-30)
+### Bug Fixes and Enhancements
+* Implement Otter webhook integration
+* Improve memory usage for reports
+
 ## 18.4.59 (2026-09-30)
 ### Bug Fixes and Enhancements
 * Display outline instead summary and remove details button (UI)
