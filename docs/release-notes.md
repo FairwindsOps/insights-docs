@@ -10,6 +10,15 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.59 (2026-09-30)
+### Bug Fixes and Enhancements
+* Display outline instead summary and remove details button (UI)
+* Fix security header (UI)
+* Update non-major dependencies
+* Reduce memory usage when processing reports
+* Fix vulnerability scanning and Slack notification integration
+* Add outline to DashboardConversation model
+
 ## 18.4.58 (2026-09-29)
 ### Bug Fixes and Enhancements
 * Update non-major dependencies
