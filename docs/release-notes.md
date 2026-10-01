@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.61 (2026-10-01)
+### Bug Fixes and Enhancements
+* Fix timescale OOM on resources summary query
+* Update LLM catalog with GPT-6 Sol/Luna and Claude Opus 5.5
+* Update continuous aggregate policies to include initial start time
+
 ## 18.4.60 (2026-09-30)
 ### Bug Fixes and Enhancements
 * Implement Otter webhook integration
