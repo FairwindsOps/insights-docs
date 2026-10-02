@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.63 (2026-10-02)
+### Bug Fixes and Enhancements
+* Fix Total Savings Available discrepancy (UI)
+* Fix Costs showing cached data from right-sizing page (UI)
+* Update non-major dependencies
+* Adjust default poll interval in OOM monitor from 15s to 5s
+
 ## 18.4.62 (2026-10-02)
 ### Bug Fixes and Enhancements
 * Show reports status immediately when landing on the page (UI)
