@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.64 (2026-10-02)
+### Bug Fixes and Enhancements
+* Costs components should be displayed as soon as they are ready (UI)
+
 ## 18.4.63 (2026-10-02)
 ### Bug Fixes and Enhancements
 * Fix Total Savings Available discrepancy (UI)
