@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.62 (2026-10-02)
+### Bug Fixes and Enhancements
+* Show reports status immediately when landing on the page (UI)
+
 ## 18.4.61 (2026-10-01)
 ### Bug Fixes and Enhancements
 * Fix timescale OOM on resources summary query
