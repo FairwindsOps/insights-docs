@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.65 (2026-10-12)
+### Bug Fixes and Enhancements
+* Update non-major dependencies
+* Update LLM catalog with GPT-6.1 Sol and Claude Sonnet 5.5
+
 ## 18.4.64 (2026-10-02)
 ### Bug Fixes and Enhancements
 * Costs components should be displayed as soon as they are ready (UI)
