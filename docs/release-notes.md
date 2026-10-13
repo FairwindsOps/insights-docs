@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.67 (2026-10-13)
+### Bug Fixes and Enhancements
+* Update `cimg/base` Docker tag to `v2026.10` (UI)
+* Update non-major dependencies (UI)
+* Restrict sendHTTPRequest Function calls
+
 ## 18.4.65 (2026-10-12)
 ### Bug Fixes and Enhancements
 * Update non-major dependencies
