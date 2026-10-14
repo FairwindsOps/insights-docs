@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.68 (2026-10-14)
+### Bug Fixes and Enhancements
+* Require re-authentication for updating re-authentication settings
+* Insufficient Rego Code Validation Allows Dangerous OPA Built-ins in Custom Checks
+
 ## 18.4.67 (2026-10-13)
 ### Bug Fixes and Enhancements
 * Update `cimg/base` Docker tag to `v2026.10` (UI)
