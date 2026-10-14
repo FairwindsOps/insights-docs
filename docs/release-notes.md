@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.69 (2026-10-14)
+### Bug Fixes and Enhancements
+* Update dependency `aquasecurity/trivy` to `v0.75.0` (UI)
+* New agent AI endpoint
+* Update non-major dependencies
+
 ## 18.4.68 (2026-10-14)
 ### Bug Fixes and Enhancements
 * Require re-authentication for updating re-authentication settings
