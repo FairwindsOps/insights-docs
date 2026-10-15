@@ -14,6 +14,10 @@ sidebarDepth: 1
 ### Bug Fixes and Enhancements
 * Top workloads should be called concurrently (UI)
 
+## 18.4.71 (2026-10-14)
+### Bug Fixes and Enhancements
+* Use new AI agent endpoint (UI)
+
 ## 18.4.70 (2026-10-14)
 ### Bug Fixes and Enhancements
 * Customizable cards in customer dashboard (UI)
