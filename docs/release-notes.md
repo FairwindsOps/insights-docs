@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.72 (2026-10-15)
+### Bug Fixes and Enhancements
+* Top workloads should be called concurrently (UI)
+
 ## 18.4.70 (2026-10-14)
 ### Bug Fixes and Enhancements
 * Customizable cards in customer dashboard (UI)
