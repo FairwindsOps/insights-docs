@@ -10,6 +10,17 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.74 (2026-10-16)
+### Bug Fixes and Enhancements
+* Fix incomplete Content-Security-Policy missing script-src directive (UI)
+* Create notes component and functionality on customer dashboard (UI)
+* Update `Node.js` to `v26.11.1` (UI)
+* Update dependency `@cypress/webpack-preprocessor` to `v8` and `npm` to `v11.21.0` (UI)
+* Update non-major dependencies
+* Remove internal Kubernetes pod IP addresses in rate limit response headers
+* Fix excessive data exposure in `/v0/current-user` API response
+* Update LLM cron job image repository and tag
+
 ## 18.4.73 (2026-10-16)
 ### Bug Fixes and Enhancements
 * Fix CSRF protection
