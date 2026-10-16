@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.73 (2026-10-16)
+### Bug Fixes and Enhancements
+* Fix CSRF protection
+* Fix rate limit race condition on authentication endpoints
+* Add customer dashboard notes API and data models
+* Improve agent prompt injection
+* Add security headers to endpoints
+
 ## 18.4.72 (2026-10-15)
 ### Bug Fixes and Enhancements
 * Top workloads should be called concurrently (UI)
