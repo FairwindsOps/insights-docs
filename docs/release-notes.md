@@ -10,6 +10,15 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.75 (2026-10-19)
+### Bug Fixes and Enhancements
+* Update `Node.js` to `v26.11.1` (UI)
+* Update kyverno support versions
+* Restrict third-party integration OAuth credentials to owner only
+* Fix orval warnings
+* Fix logout not revoking server-side session token
+* Update non-major dependencies
+
 ## 18.4.74 (2026-10-16)
 ### Bug Fixes and Enhancements
 * Fix incomplete Content-Security-Policy missing script-src directive (UI)
