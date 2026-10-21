@@ -10,6 +10,18 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.76 (2026-10-21)
+### Bug Fixes and Enhancements
+* Fix dev server proxy (UI)
+* Call POST logout endpoint (UI)
+* Hide management columns from non owner users (UI)
+* Fix pipeline (UI)
+* Restrict third-party integration OAuth credentials to owner only (UI)
+* Add reporter and assignee to the API and related processes
+* Reduce data exposure on memberships endpoint
+* Add logout endpoint as POST
+* Fix insights UI pipeline schedule name
+
 ## 18.4.75 (2026-10-19)
 ### Bug Fixes and Enhancements
 * Update `Node.js` to `v26.11.1` (UI)
