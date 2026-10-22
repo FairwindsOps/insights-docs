@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.78 (2026-10-22)
+### Bug Fixes and Enhancements
+* Implement custom height for customer dashboard cards (UI)
+* Add compactCardIds to CustomerDashboardLayout and update related API and tests
+* Fix SSO organization enumeration via differential SAML response
+* Add renovate rule to upgrade kyverno tests pipeline
+* Update module `golang.org/x/exp` digest to `f0251eb`
+
 ## 18.4.76 (2026-10-21)
 ### Bug Fixes and Enhancements
 * Fix dev server proxy (UI)
