@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.79 (2026-10-22)
+### Bug Fixes and Enhancements
+* Fix flaky test (UI)
+* Update LLM catalog with Gemini 4 Argon
+* Fix organization name enumeration via differential API response
+
 ## 18.4.78 (2026-10-22)
 ### Bug Fixes and Enhancements
 * Implement custom height for customer dashboard cards (UI)
