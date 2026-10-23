@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.80 (2026-10-23)
+### Bug Fixes and Enhancements
+* Fix known flaky tests (UI)
+* Add compact mode to customer dashboard cards (UI)
+* Fix timing-based user enumeration on password recovery endpoint
+
 ## 18.4.78 (2026-10-22)
 ### Bug Fixes and Enhancements
 * Implement custom height for customer dashboard cards (UI)
