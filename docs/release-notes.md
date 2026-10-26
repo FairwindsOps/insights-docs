@@ -10,6 +10,19 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.81 (2026-10-26)
+### Bug Fixes and Enhancements
+* Fix error disabling Slack digest (UI)
+* Improve cross site scripting (UI)
+* Update dependency `aquasecurity/trivy` to `v0.76.0` and `dompurify` to `v3.4.17` (UI)
+* Fix CVE-2026-111497
+* Unknown CVEs should generate NONE severity action item
+* Fix verbose error messages on recovery endpoint
+* Fix CORS wildcard misconfiguration on OSS libraries endpoint
+* Fix organization name enumeration via CI bearer token auth path
+* Update non-major dependencies
+* Update module `github.com/google/go-github/v92` to `v93`
+
 ## 18.4.80 (2026-10-23)
 ### Bug Fixes and Enhancements
 * Fix known flaky tests (UI)
