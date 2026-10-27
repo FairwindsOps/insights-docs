@@ -10,6 +10,16 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.82 (2026-10-27)
+### Bug Fixes and Enhancements
+* Fix production source code disclosure via exposed JavaScript source map files (UI)
+* Update dependency `npm` to `v11.21.1` (UI)
+* Update insights-ui-components (UI)
+* Fix CVE-2026-111497: insights-ui vulnerability (UI)
+* Fix create ticket permissions for Editor user
+* Fix missing webhook signature validation on third-party webhook receiver endpoints
+* Update non-major dependencies
+
 ## 18.4.81 (2026-10-26)
 ### Bug Fixes and Enhancements
 * Fix error disabling Slack digest (UI)
