@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.84 (2026-10-28)
+### Bug Fixes and Enhancements
+* Update `kyverno` to `v1.19.2`
+* Fix Activity Details Endpoint permissions
+
 ## 18.4.83 (2026-10-28)
 ### Bug Fixes and Enhancements
 * Fix information disclosure via improper client-side error handling and unhandled exception stack trace (UI)
