@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.84 (2026-10-28)
+### Bug Fixes and Enhancements
+* Update `kyverno` to `v1.19.2`
+* Fix Activity Details Endpoint permissions
+
 ## 18.4.82 (2026-10-27)
 ### Bug Fixes and Enhancements
 * Fix production source code disclosure via exposed JavaScript source map files (UI)
