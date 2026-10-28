@@ -10,6 +10,46 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.84 (2026-10-28)
+### Bug Fixes and Enhancements
+* Update `kyverno` to `v1.19.2`
+* Fix Activity Details Endpoint permissions
+
+## 18.4.83 (2026-10-28)
+### Bug Fixes and Enhancements
+* Fix information disclosure via improper client-side error handling and unhandled exception stack trace (UI)
+* Add warning messages for not exposing secrets (UI)
+* Update dependency `@hookform/resolvers` to `v6` (UI)
+
+## 18.4.82 (2026-10-27)
+### Bug Fixes and Enhancements
+* Fix production source code disclosure via exposed JavaScript source map files (UI)
+* Update dependency `npm` to `v11.21.1` (UI)
+* Update insights-ui-components (UI)
+* Fix CVE-2026-111497: insights-ui vulnerability (UI)
+* Fix create ticket permissions for Editor user
+* Fix missing webhook signature validation on third-party webhook receiver endpoints
+* Update non-major dependencies
+
+## 18.4.81 (2026-10-26)
+### Bug Fixes and Enhancements
+* Fix error disabling Slack digest (UI)
+* Improve cross site scripting (UI)
+* Update dependency `aquasecurity/trivy` to `v0.76.0` and `dompurify` to `v3.4.17` (UI)
+* Fix CVE-2026-111497
+* Unknown CVEs should generate NONE severity action item
+* Fix verbose error messages on recovery endpoint
+* Fix CORS wildcard misconfiguration on OSS libraries endpoint
+* Fix organization name enumeration via CI bearer token auth path
+* Update non-major dependencies
+* Update module `github.com/google/go-github/v92` to `v93`
+
+## 18.4.80 (2026-10-23)
+### Bug Fixes and Enhancements
+* Fix known flaky tests (UI)
+* Add compact mode to customer dashboard cards (UI)
+* Fix timing-based user enumeration on password recovery endpoint
+
 ## 18.4.79 (2026-10-22)
 ### Bug Fixes and Enhancements
 * Fix flaky test (UI)
