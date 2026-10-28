@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.83 (2026-10-28)
+### Bug Fixes and Enhancements
+* Fix information disclosure via improper client-side error handling and unhandled exception stack trace (UI)
+* Add warning messages for not exposing secrets (UI)
+* Update dependency `@hookform/resolvers` to `v6` (UI)
+
 ## 18.4.82 (2026-10-27)
 ### Bug Fixes and Enhancements
 * Fix production source code disclosure via exposed JavaScript source map files (UI)
