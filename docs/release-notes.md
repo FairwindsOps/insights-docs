@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.86 (2026-10-29)
+### Bug Fixes and Enhancements
+* Fix permissions on Authorization on Microsoft Teams Disconnect Endpoint
+* Update Helm release `kyverno-e2e-chart-1.19` to `v3.9.2`
+* Update non-major dependencies
+* Fix excessive session cookie lifespan
+* Fix User Favorites permissions
+
 ## 18.4.84 (2026-10-28)
 ### Bug Fixes and Enhancements
 * Update `kyverno` to `v1.19.2`
