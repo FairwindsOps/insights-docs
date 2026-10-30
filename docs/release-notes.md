@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.88 (2026-10-30)
+### Bug Fixes and Enhancements
+* Update non-major dependencies
+
 ## 18.4.87 (2026-10-30)
 ### Bug Fixes and Enhancements
 * Fix pages timeout are not redirecting to login (UI)
