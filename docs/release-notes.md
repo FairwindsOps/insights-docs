@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.87 (2026-10-30)
+### Bug Fixes and Enhancements
+* Fix pages timeout are not redirecting to login (UI)
+* Update dependency `aquasecurity/trivy` to `v0.76.1` (UI)
+
 ## 18.4.86 (2026-10-29)
 ### Bug Fixes and Enhancements
 * Fix permissions on Authorization on Microsoft Teams Disconnect Endpoint
