@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.89 (2026-11-02)
+### Bug Fixes and Enhancements
+* Update `cypress/included` Docker tag to `v16.2.0` (UI)
+* Update non-major dependencies
+* Fix audit log shows user created for every SSO login
+
 ## 18.4.88 (2026-10-30)
 ### Bug Fixes and Enhancements
 * Update non-major dependencies
