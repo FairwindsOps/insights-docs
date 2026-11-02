@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.90 (2026-11-02)
+### Bug Fixes and Enhancements
+* Rego: validate computationally expensive regex patterns
+
 ## 18.4.89 (2026-11-02)
 ### Bug Fixes and Enhancements
 * Update `cypress/included` Docker tag to `v16.2.0` (UI)
