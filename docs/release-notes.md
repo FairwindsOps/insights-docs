@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.91 (2026-11-04)
+### Bug Fixes and Enhancements
+* Update dependency `glob` to `v14` and `@types/node` to `v26` (UI)
+* Update non-major dependencies
+* Fix CVE-2026-111943 for Insights
+
 ## 18.4.90 (2026-11-02)
 ### Bug Fixes and Enhancements
 * Rego: validate computationally expensive regex patterns
