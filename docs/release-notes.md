@@ -10,6 +10,17 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 18.4.92 (2026-11-05)
+### Bug Fixes and Enhancements
+* Fix adding multiple users (UI)
+* Update dependency `joi` to `v18.3.1` and `path-to-regexp` to `v9` (UI)
+* Update non-major dependencies
+* Add missing headers to API
+* Remove GET logout endpoint
+* Save insights agent workloads status as historical information
+* Implement temporal audit namespace pooling
+* Require re-authentication for updating re-authentication settings
+
 ## 18.4.91 (2026-11-04)
 ### Bug Fixes and Enhancements
 * Update dependency `glob` to `v14` and `@types/node` to `v26` (UI)
