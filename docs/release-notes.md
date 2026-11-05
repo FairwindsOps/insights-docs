@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.1 (2026-11-05)
+### Bug Fixes and Enhancements
+* Fix create Image ticket (UI)
+* Fix ineffective rate limiting on API endpoints
+* Fix improper rate limiting on authentication endpoint
+
 ## 19.0.0 (2026-11-05)
 ### Bug Fixes and Enhancements
 * Replace deprecated fields (UI)
