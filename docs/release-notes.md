@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.0 (2026-11-05)
+### Bug Fixes and Enhancements
+* Replace deprecated fields (UI)
+* Add missing headers to UI (UI)
+* Update non-major dependencies
+* Remove deprecated and unused APIs
+* Fix openapi update with renovate
+
 ## 18.4.92 (2026-11-05)
 ### Bug Fixes and Enhancements
 * Fix adding multiple users (UI)
