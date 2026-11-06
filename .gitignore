@@ -4,3 +4,6 @@ node_modules
 .DS_Store
 all-links.txt
 docs/README.md
+docs/index.md
+docs/.vitepress/cache
+docs/.vitepress/dist
