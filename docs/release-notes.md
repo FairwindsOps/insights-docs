@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.2 (2026-11-06)
+### Bug Fixes and Enhancements
+* Add endpoints for workloads historical information
+* Update dependency `knip` to `v6.44.0` (UI) and module `github.com/open-policy-agent/opa` to `v1.22.0`
+
 ## 19.0.0 (2026-11-05)
 ### Bug Fixes and Enhancements
 * Replace deprecated fields (UI)
