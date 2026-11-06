@@ -17,7 +17,7 @@ references:
 jobs:
   test:
     docker:
-      - image: cimg/node:15.5.1
+      - image: cimg/node:26.13.0
     steps:
       - checkout
       - run: *test_and_build
