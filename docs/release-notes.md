@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.3 (2026-11-09)
+### Bug Fixes and Enhancements
+* Workloads historical information bug fix
+* Update non-major dependencies
+* Update LLM catalog with GPT-6.1 Terra
+
 ## 19.0.2 (2026-11-06)
 ### Bug Fixes and Enhancements
 * Add endpoints for workloads historical information
