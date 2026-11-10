@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.4 (2026-11-10)
+### Bug Fixes and Enhancements
+* Adjust the date picker beside the title instead of in the middle (UI)
+* Clusters should not be required for reports status
+* Update non-major dependencies
+* Update `cimg/base` Docker tag to `v2026.11` (UI)
+* Update dependency `@hookform/resolvers` to `v7` (UI)
+
 ## 19.0.3 (2026-11-09)
 ### Bug Fixes and Enhancements
 * Workloads historical information bug fix
