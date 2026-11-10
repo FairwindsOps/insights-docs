@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.5 (2026-11-10)
+### Bug Fixes and Enhancements
+* Change Jira query to be request date (created date)
+
 ## 19.0.4 (2026-11-10)
 ### Bug Fixes and Enhancements
 * Adjust the date picker beside the title instead of in the middle (UI)
