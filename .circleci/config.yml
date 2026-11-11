@@ -22,6 +22,22 @@ jobs:
       - checkout
       - run: *test_and_build
 
+  # fairwinds/oss-docs@0 publishes on cimg/node:16.15. Vite 6 needs Node 22+.
+  publish:
+    docker:
+      - image: cimg/node:26.13.0
+    steps:
+      - checkout
+      - run: *test_and_build
+      - oss-docs/install-tools
+      - rok8s/get_vault_aws_credentials:
+          vault_path: fairwindsops/sts/insights-docs-docs
+      - rok8s/get_vault_env:
+          vault_path: repo/insights-docs/env
+      - oss-docs/publish-docs-site:
+          repository: insights-docs
+          bucket-name-override: insights.docs.fairwinds.com
+
 workflows:
   version: 2
   release:
@@ -30,9 +46,7 @@ workflows:
           filters:
             branches:
               ignore: main
-      - oss-docs/publish-docs:
-          repository: insights-docs
-          bucket-name-override: insights.docs.fairwinds.com
+      - publish:
           filters:
             branches:
               only: main
