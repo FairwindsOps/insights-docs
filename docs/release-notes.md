@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.6 (2026-11-11)
+### Bug Fixes and Enhancements
+* Add cursor pointer style to remove buttons in accounts tables (UI)
+* Support date filtering for dashboard requests (UI)
+* Update dependency `stylelint` to `v18` and `@hookform/resolvers` to `v7.0.2` (UI)
+* Recreate action items filter Materialized View
+* Update non-major dependencies
+
 ## 19.0.5 (2026-11-10)
 ### Bug Fixes and Enhancements
 * Change Jira query to be request date (created date)
