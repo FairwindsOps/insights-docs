@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.7 (2026-11-11)
+### Bug Fixes and Enhancements
+* Fix API permission inconsistency
+
 ## 19.0.6 (2026-11-11)
 ### Bug Fixes and Enhancements
 * Add cursor pointer style to remove buttons in accounts tables (UI)
