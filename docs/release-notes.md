@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.9 (2026-11-12)
+### Bug Fixes and Enhancements
+* Fix CVE export date bug (UI)
+
 ## 19.0.8 (2026-11-12)
 ### Bug Fixes and Enhancements
 * Fix superuser permissions and make UI consistent (UI)
