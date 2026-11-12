@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.8 (2026-11-12)
+### Bug Fixes and Enhancements
+* Fix superuser permissions and make UI consistent (UI)
+* Update dependency `npm` to `v11.21.2` (UI)
+* Update non-major dependencies
+* Added new activity types for bot, user tokens, rules and admission settings
+
 ## 19.0.7 (2026-11-11)
 ### Bug Fixes and Enhancements
 * Fix API permission inconsistency
