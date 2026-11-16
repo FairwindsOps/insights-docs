@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.10 (2026-11-16)
+### Bug Fixes and Enhancements
+* Visual bug on customer dashboard (UI)
+* Update dependency `aquasecurity/trivy` to `v0.76.2` (UI)
+* Update non-major dependencies
+* Integrate oommonitor package into github_worker for enhanced resource monitoring
+* Add new Postgres schema grants rules for Terraform integration
+
 ## 19.0.9 (2026-11-12)
 ### Bug Fixes and Enhancements
 * Fix CVE export date bug (UI)
