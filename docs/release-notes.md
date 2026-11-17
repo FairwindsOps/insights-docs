@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.11 (2026-11-17)
+### Bug Fixes and Enhancements
+* Update `Node.js` to `v26.13.0` (UI)
+* Update non-major dependencies
+* Update LLM catalog with Claude Fable 5.2
+* Refactor GetPodLogs to use ReadCappedPodLog for improved log handling
+
 ## 19.0.10 (2026-11-16)
 ### Bug Fixes and Enhancements
 * Visual bug on customer dashboard (UI)
