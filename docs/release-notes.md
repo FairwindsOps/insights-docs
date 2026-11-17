@@ -10,6 +10,15 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.12 (2026-11-17)
+### Bug Fixes and Enhancements
+* Update dependency `@vexilla/client` to `v2` (UI)
+* Update non-major dependencies
+* Fix SAML login
+* Add GetFileTail method to FilesystemAPI
+* Delete unnecessary migration for self-hosted
+* Update module `go.opentelemetry.io/otel/sdk` and `go.opentelemetry.io/otel/trace` to `v1.47.0`
+
 ## 19.0.11 (2026-11-17)
 ### Bug Fixes and Enhancements
 * Update `Node.js` to `v26.13.0` (UI)
