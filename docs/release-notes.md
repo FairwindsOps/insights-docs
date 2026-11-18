@@ -10,6 +10,12 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.13 (2026-11-18)
+### Bug Fixes and Enhancements
+* Add workload historical information to UI (UI)
+* Update non-major dependencies
+* Add `job_logs_key` column to `repo_scan_jobs` table and update related structures
+
 ## 19.0.12 (2026-11-17)
 ### Bug Fixes and Enhancements
 * Update dependency `@vexilla/client` to `v2` (UI)
