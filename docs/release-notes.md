@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.14 (2026-11-18)
+### Bug Fixes and Enhancements
+* Update Dockerfile to use the official nginx image instead of nginxinc variant (UI)
+* New renovate rule and `insights-ui-components` bump (UI)
+* Enhance log retrieval by implementing fallback to database logs and updating related tests
+* Add runtime dependency rules tips
+* Refactor log handling in repo scan job activities, improve log streaming and add logsKey
+
 ## 19.0.13 (2026-11-18)
 ### Bug Fixes and Enhancements
 * Add workload historical information to UI (UI)
