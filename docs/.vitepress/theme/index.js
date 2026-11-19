@@ -1,5 +1,5 @@
+// DO NOT EDIT - Managed by Terraform
 // This file is generated from FairwindsOps/documentation-template
-// DO NOT EDIT MANUALLY
 import DefaultTheme from 'vitepress/theme'
 import { withBase } from 'vitepress'
 import Layout from './Layout.vue'
