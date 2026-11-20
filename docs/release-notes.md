@@ -10,6 +10,10 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.15 (2026-11-20)
+### Bug Fixes and Enhancements
+* Add repo scan jobs id endpoint
+
 ## 19.0.14 (2026-11-18)
 ### Bug Fixes and Enhancements
 * Update Dockerfile to use the official nginx image instead of nginxinc variant (UI)
