@@ -10,6 +10,15 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.16 (2026-11-23)
+### Bug Fixes and Enhancements
+* Enhance CI repo scan job handling and loading state in React repository view (UI)
+* Turn on ignored knip rules (UI)
+* Update CI repo scan job tests to reflect changes in log retrieval logic
+* Update `PG` and `TS` dependencies to `v18`
+* Fix tests with TODOs
+* Add repository query parameter to GetCIRepoScanJob endpoint
+
 ## 19.0.15 (2026-11-20)
 ### Bug Fixes and Enhancements
 * Add repo scan jobs id endpoint
