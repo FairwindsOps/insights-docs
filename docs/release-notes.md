@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.17 (2026-11-23)
+### Bug Fixes and Enhancements
+* Update CircleCI non-major updates (UI)
+* Update `Node.js` to `v26.13.1` (UI)
+* Update non-major dependencies
+* Update LLM catalog with GPT-6.2 and Gemini 4
+* Update dependency `kyverno/kyverno` to `v1.20.0`
+
 ## 19.0.16 (2026-11-23)
 ### Bug Fixes and Enhancements
 * Enhance CI repo scan job handling and loading state in React repository view (UI)
