@@ -10,6 +10,13 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.18 (2026-11-24)
+### Bug Fixes and Enhancements
+* Update S3 path to allow exclusive retention policies for repo scan pod logs
+* Refactor pod log retrieval in DataStore to retrieve the full object
+* Persist new fields and add otter action items to API
+* Improve GH repo handling
+
 ## 19.0.17 (2026-11-23)
 ### Bug Fixes and Enhancements
 * Update CircleCI non-major updates (UI)
