@@ -10,6 +10,11 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.19 (2026-11-24)
+### Bug Fixes and Enhancements
+* Update non-major dependencies
+* Fix function to handle image vulnerabilities without clusters and refactor cluster handling logic
+
 ## 19.0.18 (2026-11-24)
 ### Bug Fixes and Enhancements
 * Update S3 path to allow exclusive retention policies for repo scan pod logs
