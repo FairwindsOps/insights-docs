@@ -10,6 +10,14 @@ sidebarDepth: 1
 ---
 # Release Notes
 
+## 19.0.20 (2026-11-25)
+### Bug Fixes and Enhancements
+* Decrease logs for repo scan job
+* Review and tighten-up existing cursor rules
+* Add admin API to trigger an otter organization sync
+* Implement temporal workflow to sync all otter conversations
+* Implement SyncOrganizationOtterConversations workflow and activity
+
 ## 19.0.19 (2026-11-24)
 ### Bug Fixes and Enhancements
 * Update non-major dependencies
